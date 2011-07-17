@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1EE06EC1-97C0-4CFA-8F23-A9151214C13F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AowEmailWrapper</RootNamespace>
+    <AssemblyName>AowEmailWrapper</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>online48.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mail, Version=3.0.11123.1722, Culture=neutral, PublicKeyToken=6dc438ab78a525b3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>beta Mail.dll\Mail.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ASG\ASGFileInfo.cs" />
+    <Compile Include="Classes\ComboBoxItem.cs" />
+    <Compile Include="Classes\ListViewColumnSorter.cs" />
+    <Compile Include="ConfigFramework\AccountConfigValues.cs" />
+    <Compile Include="ConfigFramework\AccountConfigValuesList.cs" />
+    <Compile Include="ConfigFramework\Activity.cs" />
+    <Compile Include="ConfigFramework\ActivityList.cs" />
+    <Compile Include="ConfigFramework\Config.cs" />
+    <Compile Include="ConfigFramework\PollingConfigValues.cs" />
+    <Compile Include="ConfigFramework\PreferencesConfigValues.cs" />
+    <Compile Include="Classes\ProcessInfo.cs" />
+    <Compile Include="ConfigFramework\SmtpConfigValues.cs" />
+    <Compile Include="Classes\StartedTaskWatcher.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Turn.cs" />
+    <Compile Include="Classes\TurnLogger.cs" />
+    <Compile Include="Controls\AccountsConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AccountsConfig.Designer.cs">
+      <DependentUpon>AccountsConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ActivityListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ActivityListView.Designer.cs">
+      <DependentUpon>ActivityListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FormBlockCheckBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FormBlockCheckBox.Designer.cs">
+      <DependentUpon>FormBlockCheckBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\IconMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MessageStoreList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MessageStoreList.Designer.cs">
+      <DependentUpon>MessageStoreList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSES\SmtpSender.cs" />
+    <Compile Include="CSES\SmtpSendResponse.cs" />
+    <Compile Include="Games\AowGameSavedEventArgs.cs" />
+    <Compile Include="Helpers\AppDataHelper.cs" />
+    <Compile Include="Helpers\ConfigHelper.cs" />
+    <Compile Include="Controls\FormBlockText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FormBlockText.Designer.cs">
+      <DependentUpon>FormBlockText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FormBlockCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FormBlockCombo.Designer.cs">
+      <DependentUpon>FormBlockCombo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PollingConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PollingConfig.Designer.cs">
+      <DependentUpon>PollingConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PreferencesConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PreferencesConfig.Designer.cs">
+      <DependentUpon>PreferencesConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SmtpConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SmtpConfig.Designer.cs">
+      <DependentUpon>SmtpConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\CryptographyHelper.cs" />
+    <Compile Include="CSES\AnyRecipientFilter.cs" />
+    <Compile Include="CSES\SmtpSpool.cs" />
+    <Compile Include="Games\AowGame.cs" />
+    <Compile Include="Games\AowGameManager.cs" />
+    <Compile Include="Helpers\DataManagerHelper.cs" />
+    <Compile Include="Helpers\FileHelper.cs" />
+    <Compile Include="Helpers\FileVirtualizationHelper.cs" />
+    <Compile Include="Helpers\XmlHelper.cs" />
+    <Compile Include="Localization\Framework\Language.cs" />
+    <Compile Include="Localization\Framework\Languages.cs" />
+    <Compile Include="Localization\Framework\Lookup.cs" />
+    <Compile Include="Localization\Translator.cs" />
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageStore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageStore.Designer.cs">
+      <DependentUpon>MessageStore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pollers\BasePoller.cs" />
+    <Compile Include="Pollers\ImapPoller.cs" />
+    <Compile Include="Pollers\MessageStore\MessageStoreManager.cs" />
+    <Compile Include="Pollers\MessageStore\MessageStoreMessage.cs" />
+    <Compile Include="Pollers\MessageStore\MessageStoreCollection.cs" />
+    <Compile Include="Pollers\PollerEventArgs.cs" />
+    <Compile Include="Pollers\Pop3Poller.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\AccountsConfig.resx">
+      <DependentUpon>AccountsConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ActivityListView.resx">
+      <DependentUpon>ActivityListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FormBlockCheckBox.resx">
+      <DependentUpon>FormBlockCheckBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FormBlockText.resx">
+      <DependentUpon>FormBlockText.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FormBlockCombo.resx">
+      <DependentUpon>FormBlockCombo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MessageStoreList.resx">
+      <DependentUpon>MessageStoreList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PollingConfig.resx">
+      <DependentUpon>PollingConfig.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PreferencesConfig.resx">
+      <DependentUpon>PreferencesConfig.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SmtpConfig.resx">
+      <DependentUpon>SmtpConfig.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageStore.resx">
+      <DependentUpon>MessageStore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Helpers\RegistryHelper.cs" />
+    <Compile Include="Helpers\StringHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config.xml">
+    </Content>
+    <Content Include="Localization.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MailLicense.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="notify.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="online48.ico" />
+    <Content Include="sent.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EricDaugherty.CSES\EricDaugherty.CSES.csproj">
+      <Project>{A5194231-69A6-4578-9A69-B482F8C346A1}</Project>
+      <Name>EricDaugherty.CSES</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

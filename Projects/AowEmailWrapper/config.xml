@@ -1,0 +1,17 @@
+<aowemailwrapper_config>  
+  <accounts active_account="Hotmail">
+    <account name="Default">
+      <polling_config usepolling="true" emailtype="IMAP" server="imap.gmail.com" port="993" usessl="true" startonstartup="true" username="david.honess" password="=MDbwgWbyBzV" pollinterval="10" />
+      <smtp_config smtpserver="smtp.gmail.com" port="587" emailaddress="david.honess@gmail.com" usessl="true" authentication="true" username="" password="" usepollingcredentials="true" startonstartup="false" smtpssltype="TLS" bccmyself="false"/>
+    </account>
+    <account name="Hotmail">
+      <polling_config usepolling="true" emailtype="POP3" server="pop3.live.com" port="995" usessl="true" startonstartup="true" username="davespice@hotmail.com" password="=U2cv9Wb" pollinterval="15" />
+      <smtp_config smtpserver="smtp.live.com" port="587" emailaddress="davespice@hotmail.com" smtpssltype="TLS" authentication="true" username="" password="" usepollingcredentials="true" startonstartup="false" bccmyself="false" />
+    </account>
+    <account name="Yahoo">
+      <polling_config usepolling="true" emailtype="POP3" server="pop.mail.yahoo.com" port="995" usessl="true" startonstartup="false" username="davespice1977@yahoo.com" password="=MDbwgWbyBzV" pollinterval="10" />
+      <smtp_config smtpserver="smtp.mail.yahoo.com" port="465" emailaddress="davespice1977@yahoo.com" smtpssltype="SSL" authentication="true" username="" password="" usepollingcredentials="true" startonstartup="false" bccmyself="true" />
+    </account>
+  </accounts>
+  <preferences_config playsoundonemail="true" playsoundonsend="true" rungameonstartup="false" closedownwithgame="false" notifydblclick="RunGame" autostart="false" />
+</aowemailwrapper_config>

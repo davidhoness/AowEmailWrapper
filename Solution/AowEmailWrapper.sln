@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AowEmailWrapper", "..\Projects\AowEmailWrapper\AowEmailWrapper.csproj", "{1EE06EC1-97C0-4CFA-8F23-A9151214C13F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{0AF14720-7178-4673-9875-DAA7ACD51074}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EricDaugherty.CSES", "..\Projects\EricDaugherty.CSES\EricDaugherty.CSES.csproj", "{A5194231-69A6-4578-9A69-B482F8C346A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Install Kit", "Install Kit", "{D3BDB817-5B62-4296-ABFF-109279B6B43B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1EE06EC1-97C0-4CFA-8F23-A9151214C13F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EE06EC1-97C0-4CFA-8F23-A9151214C13F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EE06EC1-97C0-4CFA-8F23-A9151214C13F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EE06EC1-97C0-4CFA-8F23-A9151214C13F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5194231-69A6-4578-9A69-B482F8C346A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5194231-69A6-4578-9A69-B482F8C346A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5194231-69A6-4578-9A69-B482F8C346A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5194231-69A6-4578-9A69-B482F8C346A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A5194231-69A6-4578-9A69-B482F8C346A1} = {0AF14720-7178-4673-9875-DAA7ACD51074}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<License>
+  <Id>572e1b9d-8456-448f-84f7-7fcf02b3e882</Id>
+  <ProductName>Mail.dll</ProductName>
+  <ProductVersion>3.0</ProductVersion>
+  <RegisteredTo>Age of Wonders Email Wrapper</RegisteredTo>
+  <LicenseType>Product</LicenseType>
+  <BuyerName>David Honess</BuyerName>
+  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+    <SignedInfo>
+      <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+      <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+      <Reference URI="">
+        <Transforms>
+          <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+        </Transforms>
+        <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <DigestValue>kE+cbu7yZeG3GLPBAT+927q9Gh8=</DigestValue>
+      </Reference>
+    </SignedInfo>
+    <SignatureValue>BWC2ZJH29VlOSZQUBRkiRQnamwHVkHLrGlNAfKrvWPz0yAdHDxN4l2yiGvdRXhrpyzKNtN674j8l6zVdv+YplEdwYNjHhyoBU3fms8hvw/eQTC39lFrh+qwFUbtELYUjLs7pkrsTTi4dl66Xpb/dDLiyk1IJbMKJVrrew5QG4Nw=</SignatureValue>
+  </Signature>
+</License>
