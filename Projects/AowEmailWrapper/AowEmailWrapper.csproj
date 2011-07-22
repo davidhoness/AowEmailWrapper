@@ -34,7 +34,7 @@
   <ItemGroup>
     <Reference Include="Mail, Version=3.0.11123.1722, Culture=neutral, PublicKeyToken=6dc438ab78a525b3, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>beta Mail.dll\Mail.dll</HintPath>
+      <HintPath>.\Mail.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -86,6 +86,9 @@
     </Compile>
     <Compile Include="Controls\ActivityListView.Designer.cs">
       <DependentUpon>ActivityListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BaseFormBlock.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\FormBlockCheckBox.cs">
       <SubType>UserControl</SubType>
@@ -176,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ActivityListView.resx">
       <DependentUpon>ActivityListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\BaseFormBlock.resx">
+      <DependentUpon>BaseFormBlock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\FormBlockCheckBox.resx">
       <DependentUpon>FormBlockCheckBox.cs</DependentUpon>
