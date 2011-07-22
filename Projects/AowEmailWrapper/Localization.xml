@@ -32,10 +32,11 @@
 		<lookup key="tabPreferences" value="Preferences"/>
 		<lookup key="fbSaveFolder" value="Download Folder:"/>
 		<lookup key="groupBoxPreferences" value="Preferences"/>
-		<lookup key="fbAutostart" value="Autostart with Windows"/>
+		<lookup key="fbAutostart" value="Autostart with Windows:"/>
 		<lookup key="fbSentSound" value="Email Sent sound:"/>
 		<lookup key="fbEmailSound" value="Email Downloaded sound:"/>
 		<lookup key="fbLocalization" value="Language:"/>
+    <lookup key="fbCopyToEmailOut" value="Copy to EmailOut after sending:"/>
 		<lookup key="tabActivity" value="Activity Log"/>
 		<lookup key="activityListViewlistView0" value="File Name"/>
 		<lookup key="activityListViewlistView1" value="In"/>
@@ -140,6 +141,7 @@
 		<lookup key="fbSentSound" value="Sonido de Email enviado:"/>
 		<lookup key="fbEmailSound" value="Sonido de Email descargado:"/>
 		<lookup key="fbLocalization" value="Idioma:"/>
+    <lookup key="fbCopyToEmailOut" value="Copiar EmailOut después de enviar:"/>
 		<lookup key="tabActivity" value="Registro de Actividades"/>
 		<lookup key="activityListViewlistView0" value="Nombre de archivo"/>
 		<lookup key="activityListViewlistView1" value="Entrada"/>
@@ -238,6 +240,7 @@
 		<lookup key="fbSentSound" value="Dźwięk wysłanego emaila:"/>
 		<lookup key="fbEmailSound" value="Dźwięk pobranego emaila:"/>
 		<lookup key="fbLocalization" value="Język:"/>
+    <lookup key="fbCopyToEmailOut" value="Skopiuj do EmailOut po wysłaniu:"/>
 		<lookup key="tabActivity" value="Dziennik Aktywności"/>
 		<lookup key="activityListViewlistView0" value="Nazwa Pliku"/>
 		<lookup key="activityListViewlistView1" value="Odebr."/>
@@ -301,7 +304,7 @@
 		<lookup key="activeAccount" value="Aktywne"/>
 		<!-- END: Misc -->
 	</language>
-	<language code="gr" display="ελληνικά">
+	<language code="gr" display="Eλληνικά">
 		<!-- BEGIN: Main forms -->
 		<lookup key="tabAccounts" value="Λογαριασμοί"/>
 		<lookup key="buttonActivate" value="Ενεργοποίηση"/>
@@ -334,6 +337,7 @@
 		<lookup key="fbSentSound" value="Ήχος αποστολής Email:"/>
 		<lookup key="fbEmailSound" value="Ήχος λήψης Email:"/>
 		<lookup key="fbLocalization" value="Γλώσσα:"/>
+    <lookup key="fbCopyToEmailOut" value="Αντιγραφή στο EmailOut μετά την αποστολή:"/>
 		<lookup key="tabActivity" value="Δραστηριότητα"/>
 		<lookup key="activityListViewlistView0" value="Όνομα Αρχείου"/>
 		<lookup key="activityListViewlistView1" value="Εισερχόμενα"/>
