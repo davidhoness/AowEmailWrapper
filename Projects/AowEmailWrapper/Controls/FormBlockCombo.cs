@@ -11,7 +11,7 @@ using AowEmailWrapper.Localization;
 
 namespace AowEmailWrapper.Controls
 {
-    public partial class FormBlockCombo : UserControl
+    public partial class FormBlockCombo : BaseFormBlock
     {
         private const string PleaseChooseTextKey = "enumChooser";
 
@@ -83,19 +83,11 @@ namespace AowEmailWrapper.Controls
             get { return comboBox; }
         }
 
-        protected override void OnResize(EventArgs e)
-        {
-            this.SuspendLayout();
-            base.OnResize(e);
-            double d = this.Width * 0.65;
-            comboBox.Width = Convert.ToInt32(Math.Ceiling(d));
-            this.ResumeLayout();
-        }
-
         public FormBlockCombo()
         {            
             InitializeComponent();
             comboBox.DisplayMember = "Text";
+            base.SetControls(lblName, comboBox);
         }
     }
 }
