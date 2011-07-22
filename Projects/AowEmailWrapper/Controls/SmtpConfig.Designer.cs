@@ -29,22 +29,23 @@
         private void InitializeComponent()
         {
             this.groupBoxServer = new System.Windows.Forms.GroupBox();
+            this.fbBccMyself = new AowEmailWrapper.Controls.FormBlockCheckBox();
+            this.fbAuthentication = new AowEmailWrapper.Controls.FormBlockCheckBox();
             this.fbSSLType = new AowEmailWrapper.Controls.FormBlockCombo();
             this.fbEmailAddress = new AowEmailWrapper.Controls.FormBlockText();
             this.fbPort = new AowEmailWrapper.Controls.FormBlockText();
             this.fbSmtpServer = new AowEmailWrapper.Controls.FormBlockText();
             this.groupBoxAuth = new System.Windows.Forms.GroupBox();
+            this.fbUsePolling = new AowEmailWrapper.Controls.FormBlockCheckBox();
             this.fbPassword = new AowEmailWrapper.Controls.FormBlockText();
             this.fbUserName = new AowEmailWrapper.Controls.FormBlockText();
-            this.fbAuthentication = new AowEmailWrapper.Controls.FormBlockCheckBox();
-            this.fbBccMyself = new AowEmailWrapper.Controls.FormBlockCheckBox();
-            this.fbUsePolling = new AowEmailWrapper.Controls.FormBlockCheckBox();
             this.groupBoxServer.SuspendLayout();
             this.groupBoxAuth.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxServer
             // 
+            this.groupBoxServer.AutoSize = true;
             this.groupBoxServer.Controls.Add(this.fbBccMyself);
             this.groupBoxServer.Controls.Add(this.fbAuthentication);
             this.groupBoxServer.Controls.Add(this.fbSSLType);
@@ -55,18 +56,41 @@
             this.groupBoxServer.Location = new System.Drawing.Point(0, 0);
             this.groupBoxServer.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxServer.Name = "groupBoxServer";
-            this.groupBoxServer.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBoxServer.Size = new System.Drawing.Size(363, 153);
+            this.groupBoxServer.Padding = new System.Windows.Forms.Padding(2, 2, 2, 5);
+            this.groupBoxServer.Size = new System.Drawing.Size(363, 163);
             this.groupBoxServer.TabIndex = 2;
             this.groupBoxServer.TabStop = false;
             this.groupBoxServer.Text = "Server";
+            // 
+            // fbBccMyself
+            // 
+            this.fbBccMyself.Checked = false;
+            this.fbBccMyself.Dock = System.Windows.Forms.DockStyle.Top;
+            this.fbBccMyself.LabelName = "BCC myself:";
+            this.fbBccMyself.Location = new System.Drawing.Point(2, 137);
+            this.fbBccMyself.MinimumSize = new System.Drawing.Size(-2147483648, 24);
+            this.fbBccMyself.Name = "fbBccMyself";
+            this.fbBccMyself.Size = new System.Drawing.Size(359, 24);
+            this.fbBccMyself.TabIndex = 31;
+            // 
+            // fbAuthentication
+            // 
+            this.fbAuthentication.Checked = false;
+            this.fbAuthentication.Dock = System.Windows.Forms.DockStyle.Top;
+            this.fbAuthentication.LabelName = "Authentication Required:";
+            this.fbAuthentication.Location = new System.Drawing.Point(2, 111);
+            this.fbAuthentication.MinimumSize = new System.Drawing.Size(-2147483648, 24);
+            this.fbAuthentication.Name = "fbAuthentication";
+            this.fbAuthentication.Size = new System.Drawing.Size(359, 26);
+            this.fbAuthentication.TabIndex = 30;
             // 
             // fbSSLType
             // 
             this.fbSSLType.Dock = System.Windows.Forms.DockStyle.Top;
             this.fbSSLType.LabelName = "SSL Type:";
-            this.fbSSLType.Location = new System.Drawing.Point(2, 81);
+            this.fbSSLType.Location = new System.Drawing.Point(2, 87);
             this.fbSSLType.Margin = new System.Windows.Forms.Padding(2);
+            this.fbSSLType.MinimumSize = new System.Drawing.Size(-2147483648, 24);
             this.fbSSLType.Name = "fbSSLType";
             this.fbSSLType.SelectedIndex = -1;
             this.fbSSLType.SelectedValue = "";
@@ -79,10 +103,11 @@
             this.fbEmailAddress.Dock = System.Windows.Forms.DockStyle.Top;
             this.fbEmailAddress.IsPassword = false;
             this.fbEmailAddress.LabelName = "Email Address:";
-            this.fbEmailAddress.Location = new System.Drawing.Point(2, 59);
+            this.fbEmailAddress.Location = new System.Drawing.Point(2, 63);
             this.fbEmailAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.fbEmailAddress.MinimumSize = new System.Drawing.Size(-2147483648, 24);
             this.fbEmailAddress.Name = "fbEmailAddress";
-            this.fbEmailAddress.Size = new System.Drawing.Size(359, 22);
+            this.fbEmailAddress.Size = new System.Drawing.Size(359, 24);
             this.fbEmailAddress.TabIndex = 6;
             this.fbEmailAddress.Tag = "The email address that you use.";
             this.fbEmailAddress.TextValue = "";
@@ -92,10 +117,11 @@
             this.fbPort.Dock = System.Windows.Forms.DockStyle.Top;
             this.fbPort.IsPassword = false;
             this.fbPort.LabelName = "Port:";
-            this.fbPort.Location = new System.Drawing.Point(2, 37);
+            this.fbPort.Location = new System.Drawing.Point(2, 39);
             this.fbPort.Margin = new System.Windows.Forms.Padding(2);
+            this.fbPort.MinimumSize = new System.Drawing.Size(-2147483648, 24);
             this.fbPort.Name = "fbPort";
-            this.fbPort.Size = new System.Drawing.Size(359, 22);
+            this.fbPort.Size = new System.Drawing.Size(359, 24);
             this.fbPort.TabIndex = 2;
             this.fbPort.Tag = "The port number to connect to the outgoing email server on.";
             this.fbPort.TextValue = "";
@@ -107,37 +133,51 @@
             this.fbSmtpServer.LabelName = "Smtp Server:";
             this.fbSmtpServer.Location = new System.Drawing.Point(2, 15);
             this.fbSmtpServer.Margin = new System.Windows.Forms.Padding(2);
+            this.fbSmtpServer.MinimumSize = new System.Drawing.Size(-2147483648, 24);
             this.fbSmtpServer.Name = "fbSmtpServer";
-            this.fbSmtpServer.Size = new System.Drawing.Size(359, 22);
+            this.fbSmtpServer.Size = new System.Drawing.Size(359, 24);
             this.fbSmtpServer.TabIndex = 1;
             this.fbSmtpServer.Tag = "The DNS name of the outgoing email server.";
             this.fbSmtpServer.TextValue = "";
             // 
             // groupBoxAuth
             // 
+            this.groupBoxAuth.AutoSize = true;
             this.groupBoxAuth.Controls.Add(this.fbUsePolling);
             this.groupBoxAuth.Controls.Add(this.fbPassword);
             this.groupBoxAuth.Controls.Add(this.fbUserName);
             this.groupBoxAuth.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBoxAuth.Location = new System.Drawing.Point(0, 153);
+            this.groupBoxAuth.Location = new System.Drawing.Point(0, 163);
             this.groupBoxAuth.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxAuth.Name = "groupBoxAuth";
-            this.groupBoxAuth.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBoxAuth.Size = new System.Drawing.Size(363, 85);
+            this.groupBoxAuth.Padding = new System.Windows.Forms.Padding(2, 2, 2, 5);
+            this.groupBoxAuth.Size = new System.Drawing.Size(363, 89);
             this.groupBoxAuth.TabIndex = 3;
             this.groupBoxAuth.TabStop = false;
             this.groupBoxAuth.Text = "Authentication Details";
             this.groupBoxAuth.Visible = false;
+            // 
+            // fbUsePolling
+            // 
+            this.fbUsePolling.Checked = false;
+            this.fbUsePolling.Dock = System.Windows.Forms.DockStyle.Top;
+            this.fbUsePolling.LabelName = "Use Polling Credentials:";
+            this.fbUsePolling.Location = new System.Drawing.Point(2, 63);
+            this.fbUsePolling.MinimumSize = new System.Drawing.Size(-2147483648, 24);
+            this.fbUsePolling.Name = "fbUsePolling";
+            this.fbUsePolling.Size = new System.Drawing.Size(359, 24);
+            this.fbUsePolling.TabIndex = 32;
             // 
             // fbPassword
             // 
             this.fbPassword.Dock = System.Windows.Forms.DockStyle.Top;
             this.fbPassword.IsPassword = true;
             this.fbPassword.LabelName = "Password:";
-            this.fbPassword.Location = new System.Drawing.Point(2, 37);
+            this.fbPassword.Location = new System.Drawing.Point(2, 39);
             this.fbPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.fbPassword.MinimumSize = new System.Drawing.Size(-2147483648, 24);
             this.fbPassword.Name = "fbPassword";
-            this.fbPassword.Size = new System.Drawing.Size(359, 22);
+            this.fbPassword.Size = new System.Drawing.Size(359, 24);
             this.fbPassword.TabIndex = 6;
             this.fbPassword.Tag = "Your email sign in password. ";
             this.fbPassword.TextValue = "";
@@ -149,41 +189,12 @@
             this.fbUserName.LabelName = "User name:";
             this.fbUserName.Location = new System.Drawing.Point(2, 15);
             this.fbUserName.Margin = new System.Windows.Forms.Padding(2);
+            this.fbUserName.MinimumSize = new System.Drawing.Size(-2147483648, 24);
             this.fbUserName.Name = "fbUserName";
-            this.fbUserName.Size = new System.Drawing.Size(359, 22);
+            this.fbUserName.Size = new System.Drawing.Size(359, 24);
             this.fbUserName.TabIndex = 5;
             this.fbUserName.Tag = "Your email sign in username (or email address).";
             this.fbUserName.TextValue = "";
-            // 
-            // fbAuthentication
-            // 
-            this.fbAuthentication.Checked = false;
-            this.fbAuthentication.Dock = System.Windows.Forms.DockStyle.Top;
-            this.fbAuthentication.LabelName = "Authentication Required:";
-            this.fbAuthentication.Location = new System.Drawing.Point(2, 105);
-            this.fbAuthentication.Name = "fbAuthentication";
-            this.fbAuthentication.Size = new System.Drawing.Size(359, 22);
-            this.fbAuthentication.TabIndex = 30;
-            // 
-            // fbBccMyself
-            // 
-            this.fbBccMyself.Checked = false;
-            this.fbBccMyself.Dock = System.Windows.Forms.DockStyle.Top;
-            this.fbBccMyself.LabelName = "BCC myself:";
-            this.fbBccMyself.Location = new System.Drawing.Point(2, 127);
-            this.fbBccMyself.Name = "fbBccMyself";
-            this.fbBccMyself.Size = new System.Drawing.Size(359, 22);
-            this.fbBccMyself.TabIndex = 31;
-            // 
-            // fbUsePolling
-            // 
-            this.fbUsePolling.Checked = false;
-            this.fbUsePolling.Dock = System.Windows.Forms.DockStyle.Top;
-            this.fbUsePolling.LabelName = "Use Polling Credentials:";
-            this.fbUsePolling.Location = new System.Drawing.Point(2, 59);
-            this.fbUsePolling.Name = "fbUsePolling";
-            this.fbUsePolling.Size = new System.Drawing.Size(359, 22);
-            this.fbUsePolling.TabIndex = 32;
             // 
             // SmtpConfig
             // 
@@ -197,6 +208,7 @@
             this.groupBoxServer.ResumeLayout(false);
             this.groupBoxAuth.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
