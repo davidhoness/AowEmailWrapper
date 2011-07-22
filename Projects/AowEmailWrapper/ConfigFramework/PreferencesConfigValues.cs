@@ -23,6 +23,7 @@ namespace AowEmailWrapper.ConfigFramework
         private bool _autostart;
         private EmailSaveFolder _saveFolder = EmailSaveFolder.EmailIn;
         private string _languageCode = Translator.DefaultLanguageCode;
+        private bool _copyToEmailOut = false;
 
         [XmlAttribute("playsoundonemail")]
         public bool PlaySoundOnEmail
@@ -50,6 +51,13 @@ namespace AowEmailWrapper.ConfigFramework
         {
             get { return _saveFolder; }
             set { _saveFolder = value; }
+        }
+
+        [XmlAttribute("copyToEmailOut")]
+        public bool CopyToEmailOut
+        {
+            get { return _copyToEmailOut; }
+            set { _copyToEmailOut = value; }
         }
 
         [XmlAttribute("languageCode")]
