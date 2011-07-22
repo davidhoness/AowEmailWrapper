@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBoxPreferences = new System.Windows.Forms.GroupBox();
-            this.groupBoxEmailSelection = new System.Windows.Forms.GroupBox();
-            this.panelMessage = new System.Windows.Forms.Panel();
-            this.labelMessage = new System.Windows.Forms.Label();
-            this.fbSaveFolder = new AowEmailWrapper.Controls.FormBlockCombo();
             this.fbAutostart = new AowEmailWrapper.Controls.FormBlockCheckBox();
             this.fbSentSound = new AowEmailWrapper.Controls.FormBlockCheckBox();
             this.fbEmailSound = new AowEmailWrapper.Controls.FormBlockCheckBox();
             this.fbLocalization = new AowEmailWrapper.Controls.FormBlockCombo();
+            this.groupBoxEmailSelection = new System.Windows.Forms.GroupBox();
+            this.panelMessage = new System.Windows.Forms.Panel();
+            this.labelMessage = new System.Windows.Forms.Label();
+            this.fbSaveFolder = new AowEmailWrapper.Controls.FormBlockCombo();
+            this.fbCopyToEmailOut = new AowEmailWrapper.Controls.FormBlockCheckBox();
             this.groupBoxPreferences.SuspendLayout();
             this.groupBoxEmailSelection.SuspendLayout();
             this.panelMessage.SuspendLayout();
@@ -45,6 +46,7 @@
             // groupBoxPreferences
             // 
             this.groupBoxPreferences.AutoSize = true;
+            this.groupBoxPreferences.Controls.Add(this.fbCopyToEmailOut);
             this.groupBoxPreferences.Controls.Add(this.fbAutostart);
             this.groupBoxPreferences.Controls.Add(this.fbSentSound);
             this.groupBoxPreferences.Controls.Add(this.fbEmailSound);
@@ -54,10 +56,57 @@
             this.groupBoxPreferences.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxPreferences.Name = "groupBoxPreferences";
             this.groupBoxPreferences.Padding = new System.Windows.Forms.Padding(2, 2, 2, 5);
-            this.groupBoxPreferences.Size = new System.Drawing.Size(387, 118);
+            this.groupBoxPreferences.Size = new System.Drawing.Size(423, 140);
             this.groupBoxPreferences.TabIndex = 0;
             this.groupBoxPreferences.TabStop = false;
             this.groupBoxPreferences.Text = "Preferences";
+            // 
+            // fbAutostart
+            // 
+            this.fbAutostart.Checked = false;
+            this.fbAutostart.Dock = System.Windows.Forms.DockStyle.Top;
+            this.fbAutostart.LabelName = "Autostart with Windows:";
+            this.fbAutostart.Location = new System.Drawing.Point(2, 87);
+            this.fbAutostart.MinimumSize = new System.Drawing.Size(0, 24);
+            this.fbAutostart.Name = "fbAutostart";
+            this.fbAutostart.Size = new System.Drawing.Size(419, 24);
+            this.fbAutostart.TabIndex = 34;
+            // 
+            // fbSentSound
+            // 
+            this.fbSentSound.Checked = false;
+            this.fbSentSound.Dock = System.Windows.Forms.DockStyle.Top;
+            this.fbSentSound.LabelName = "Email Sent sound:";
+            this.fbSentSound.Location = new System.Drawing.Point(2, 63);
+            this.fbSentSound.MinimumSize = new System.Drawing.Size(0, 24);
+            this.fbSentSound.Name = "fbSentSound";
+            this.fbSentSound.Size = new System.Drawing.Size(419, 24);
+            this.fbSentSound.TabIndex = 33;
+            // 
+            // fbEmailSound
+            // 
+            this.fbEmailSound.Checked = false;
+            this.fbEmailSound.Dock = System.Windows.Forms.DockStyle.Top;
+            this.fbEmailSound.LabelName = "Email Downloaded sound:";
+            this.fbEmailSound.Location = new System.Drawing.Point(2, 39);
+            this.fbEmailSound.MinimumSize = new System.Drawing.Size(0, 24);
+            this.fbEmailSound.Name = "fbEmailSound";
+            this.fbEmailSound.Size = new System.Drawing.Size(419, 24);
+            this.fbEmailSound.TabIndex = 32;
+            // 
+            // fbLocalization
+            // 
+            this.fbLocalization.Dock = System.Windows.Forms.DockStyle.Top;
+            this.fbLocalization.LabelName = "Language:";
+            this.fbLocalization.Location = new System.Drawing.Point(2, 15);
+            this.fbLocalization.Margin = new System.Windows.Forms.Padding(2);
+            this.fbLocalization.MinimumSize = new System.Drawing.Size(0, 24);
+            this.fbLocalization.Name = "fbLocalization";
+            this.fbLocalization.SelectedIndex = -1;
+            this.fbLocalization.SelectedValue = "";
+            this.fbLocalization.Size = new System.Drawing.Size(419, 24);
+            this.fbLocalization.TabIndex = 19;
+            this.fbLocalization.Tag = "";
             // 
             // groupBoxEmailSelection
             // 
@@ -65,11 +114,11 @@
             this.groupBoxEmailSelection.Controls.Add(this.panelMessage);
             this.groupBoxEmailSelection.Controls.Add(this.fbSaveFolder);
             this.groupBoxEmailSelection.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBoxEmailSelection.Location = new System.Drawing.Point(0, 118);
+            this.groupBoxEmailSelection.Location = new System.Drawing.Point(0, 140);
             this.groupBoxEmailSelection.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxEmailSelection.Name = "groupBoxEmailSelection";
             this.groupBoxEmailSelection.Padding = new System.Windows.Forms.Padding(2, 2, 2, 5);
-            this.groupBoxEmailSelection.Size = new System.Drawing.Size(387, 65);
+            this.groupBoxEmailSelection.Size = new System.Drawing.Size(423, 65);
             this.groupBoxEmailSelection.TabIndex = 14;
             this.groupBoxEmailSelection.TabStop = false;
             this.groupBoxEmailSelection.Text = "Email Attachment Downloading";
@@ -82,7 +131,7 @@
             this.panelMessage.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelMessage.Location = new System.Drawing.Point(2, 39);
             this.panelMessage.Name = "panelMessage";
-            this.panelMessage.Size = new System.Drawing.Size(383, 21);
+            this.panelMessage.Size = new System.Drawing.Size(419, 21);
             this.panelMessage.TabIndex = 19;
             // 
             // labelMessage
@@ -90,7 +139,7 @@
             this.labelMessage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelMessage.Location = new System.Drawing.Point(0, 0);
             this.labelMessage.Name = "labelMessage";
-            this.labelMessage.Size = new System.Drawing.Size(381, 19);
+            this.labelMessage.Size = new System.Drawing.Size(417, 19);
             this.labelMessage.TabIndex = 0;
             this.labelMessage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -104,56 +153,20 @@
             this.fbSaveFolder.Name = "fbSaveFolder";
             this.fbSaveFolder.SelectedIndex = -1;
             this.fbSaveFolder.SelectedValue = "";
-            this.fbSaveFolder.Size = new System.Drawing.Size(383, 24);
+            this.fbSaveFolder.Size = new System.Drawing.Size(419, 24);
             this.fbSaveFolder.TabIndex = 18;
             this.fbSaveFolder.Tag = "";
             // 
-            // fbAutostart
+            // fbCopyToEmailOut
             // 
-            this.fbAutostart.Checked = false;
-            this.fbAutostart.Dock = System.Windows.Forms.DockStyle.Top;
-            this.fbAutostart.LabelName = "Autostart with Windows:";
-            this.fbAutostart.Location = new System.Drawing.Point(2, 89);
-            this.fbAutostart.MinimumSize = new System.Drawing.Size(0, 24);
-            this.fbAutostart.Name = "fbAutostart";
-            this.fbAutostart.Size = new System.Drawing.Size(383, 24);
-            this.fbAutostart.TabIndex = 34;
-            // 
-            // fbSentSound
-            // 
-            this.fbSentSound.Checked = false;
-            this.fbSentSound.Dock = System.Windows.Forms.DockStyle.Top;
-            this.fbSentSound.LabelName = "Email Sent sound:";
-            this.fbSentSound.Location = new System.Drawing.Point(2, 65);
-            this.fbSentSound.MinimumSize = new System.Drawing.Size(0, 24);
-            this.fbSentSound.Name = "fbSentSound";
-            this.fbSentSound.Size = new System.Drawing.Size(383, 24);
-            this.fbSentSound.TabIndex = 33;
-            // 
-            // fbEmailSound
-            // 
-            this.fbEmailSound.Checked = false;
-            this.fbEmailSound.Dock = System.Windows.Forms.DockStyle.Top;
-            this.fbEmailSound.LabelName = "Email Downloaded sound:";
-            this.fbEmailSound.Location = new System.Drawing.Point(2, 39);
-            this.fbEmailSound.MinimumSize = new System.Drawing.Size(0, 24);
-            this.fbEmailSound.Name = "fbEmailSound";
-            this.fbEmailSound.Size = new System.Drawing.Size(383, 26);
-            this.fbEmailSound.TabIndex = 32;
-            // 
-            // fbLocalization
-            // 
-            this.fbLocalization.Dock = System.Windows.Forms.DockStyle.Top;
-            this.fbLocalization.LabelName = "Language:";
-            this.fbLocalization.Location = new System.Drawing.Point(2, 15);
-            this.fbLocalization.Margin = new System.Windows.Forms.Padding(2);
-            this.fbLocalization.MinimumSize = new System.Drawing.Size(0, 24);
-            this.fbLocalization.Name = "fbLocalization";
-            this.fbLocalization.SelectedIndex = -1;
-            this.fbLocalization.SelectedValue = "";
-            this.fbLocalization.Size = new System.Drawing.Size(383, 24);
-            this.fbLocalization.TabIndex = 19;
-            this.fbLocalization.Tag = "";
+            this.fbCopyToEmailOut.Checked = false;
+            this.fbCopyToEmailOut.Dock = System.Windows.Forms.DockStyle.Top;
+            this.fbCopyToEmailOut.LabelName = "Copy to EmailOut on send:";
+            this.fbCopyToEmailOut.Location = new System.Drawing.Point(2, 111);
+            this.fbCopyToEmailOut.MinimumSize = new System.Drawing.Size(0, 24);
+            this.fbCopyToEmailOut.Name = "fbCopyToEmailOut";
+            this.fbCopyToEmailOut.Size = new System.Drawing.Size(419, 24);
+            this.fbCopyToEmailOut.TabIndex = 35;
             // 
             // PreferencesConfig
             // 
@@ -163,7 +176,7 @@
             this.Controls.Add(this.groupBoxPreferences);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PreferencesConfig";
-            this.Size = new System.Drawing.Size(387, 272);
+            this.Size = new System.Drawing.Size(423, 272);
             this.groupBoxPreferences.ResumeLayout(false);
             this.groupBoxEmailSelection.ResumeLayout(false);
             this.panelMessage.ResumeLayout(false);
@@ -183,5 +196,6 @@
         private FormBlockCheckBox fbAutostart;
         private FormBlockCheckBox fbSentSound;
         private FormBlockCheckBox fbEmailSound;
+        private FormBlockCheckBox fbCopyToEmailOut;
     }
 }
