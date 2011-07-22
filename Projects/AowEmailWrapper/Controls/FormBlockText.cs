@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace AowEmailWrapper.Controls
 {
-    public partial class FormBlockText : UserControl
+    public partial class FormBlockText : BaseFormBlock
     {
         public string LabelName
         {
@@ -28,15 +28,6 @@ namespace AowEmailWrapper.Controls
             get { return txtValue; }
         }
 
-        protected override void OnResize(EventArgs e)
-        {
-            this.SuspendLayout();
-            base.OnResize(e);
-            double d = this.Width * 0.65;
-            txtValue.Width = Convert.ToInt32(Math.Ceiling(d));
-            this.ResumeLayout();
-        }
-
         public bool IsPassword
         {
             get { return txtValue.UseSystemPasswordChar; }
@@ -46,6 +37,7 @@ namespace AowEmailWrapper.Controls
         public FormBlockText()
         {
             InitializeComponent();
+            base.SetControls(lblName, txtValue);
         }
     }
 }
