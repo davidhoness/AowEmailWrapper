@@ -24,13 +24,15 @@ namespace AowEmailWrapper.Controls
             InitializeComponent();
 
             EventHandler raiseConfigChange = new EventHandler(Raise_Config_Changed);
-
             foreach (EmailSaveFolder value in Enum.GetValues(typeof(EmailSaveFolder)))
             {
                 fbSaveFolder.AddItem(value.ToString(), Translator.TranslateEnum(value));
             }
-            
-            Translator.ComboBoxItems.ForEach(item => fbLocalization.AddItem(item));
+
+            if (Translator.ComboBoxItems != null && Translator.ComboBoxItems.Count > 0)
+            {
+                Translator.ComboBoxItems.ForEach(item => fbLocalization.AddItem(item));
+            }
 
             fbSaveFolder.SelectedIndex = 0;
 
