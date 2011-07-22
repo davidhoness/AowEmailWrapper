@@ -708,10 +708,30 @@ namespace AowEmailWrapper
                     PlaySound(ConfigHelper.SentSound);
                 }
 
-                UpdateActivitySent(theResponse.GameEmail.Attachments[0].FileName);
+                if (theResponse.GameEmail.Attachments.Count > 0)
+                {
+                    MimeData theAttachment = theResponse.GameEmail.Attachments[0];
+                    AowGame theGame = _gameManager.GetGameByFile(theAttachment.FileName);
+
+                    UpdateActivitySent(theAttachment.FileName, theGame);
+
+                    if (_wrapperConfig.PreferencesConfig != null && _wrapperConfig.PreferencesConfig.CopyToEmailOut)
+                    {
+                        try
+                        {
+                            _gameManager.CopyToEmailOut(theAttachment, theGame);
+                        }
+                        catch (Exception ex)
+                        {
+                            Trace.TraceError(ex.ToString());
+                            Trace.Flush();
+                            ShowException(ex);
+                        }
+                    }
+                }
 
                 theResponse.Dispose();
-
+                
                 GC.Collect();
             }
             else
@@ -863,7 +883,7 @@ namespace AowEmailWrapper
             }
         }
 
-        private void UpdateActivitySent(string fileName)
+        private void UpdateActivitySent(string fileName, AowGame theGame)
         {
             Activity currentActivity = _activityLog.GetLastActivityByFileName(fileName);
             if (currentActivity != null)
@@ -875,8 +895,7 @@ namespace AowEmailWrapper
                 }
             }
             else
-            {
-                AowGame theGame = _gameManager.GetGameByFile(fileName);
+            {                
                 if (theGame != null)
                 {
                     Activity newGame = new Activity(theGame.GameType, fileName, ActivityState.New, ActivityState.Sent);
