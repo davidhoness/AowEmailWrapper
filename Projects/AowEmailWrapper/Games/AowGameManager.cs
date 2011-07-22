@@ -8,6 +8,7 @@ using System.Diagnostics;
 using AowEmailWrapper.ASG;
 using AowEmailWrapper.Helpers;
 using AowEmailWrapper.ConfigFramework;
+using Lesnikowski.Mail;
 
 namespace AowEmailWrapper.Games
 {
@@ -270,6 +271,26 @@ namespace AowEmailWrapper.Games
                 if (File.Exists(filePath))
                 {
                     File.Delete(filePath);
+                }
+            }
+        }
+
+        public void CopyToEmailOut(MimeData theAttachment, AowGame theGame)
+        {
+            if (theAttachment != null && theGame != null)
+            {
+                string fileName = theAttachment.FileName;
+
+                if (!string.IsNullOrEmpty(fileName))
+                {
+                    string destPath = Path.Combine(theGame.EmailOut.FullName, fileName);
+
+                    if (File.Exists(destPath))
+                    {
+                        File.Delete(destPath);
+                    }
+
+                    theAttachment.Save(destPath);
                 }
             }
         }
