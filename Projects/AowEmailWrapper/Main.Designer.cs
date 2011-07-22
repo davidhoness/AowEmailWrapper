@@ -113,7 +113,7 @@
             this.panelBottom.Location = new System.Drawing.Point(0, 425);
             this.panelBottom.Name = "panelBottom";
             this.panelBottom.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.panelBottom.Size = new System.Drawing.Size(500, 44);
+            this.panelBottom.Size = new System.Drawing.Size(544, 44);
             this.panelBottom.TabIndex = 2;
             // 
             // cmdSave
@@ -121,7 +121,7 @@
             this.cmdSave.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmdSave.Location = new System.Drawing.Point(0, 5);
             this.cmdSave.Name = "cmdSave";
-            this.cmdSave.Size = new System.Drawing.Size(500, 34);
+            this.cmdSave.Size = new System.Drawing.Size(544, 34);
             this.cmdSave.TabIndex = 0;
             this.cmdSave.Text = "Save Settings";
             this.cmdSave.UseVisualStyleBackColor = true;
@@ -134,7 +134,7 @@
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
             this.panelMain.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panelMain.Size = new System.Drawing.Size(500, 425);
+            this.panelMain.Size = new System.Drawing.Size(544, 425);
             this.panelMain.TabIndex = 3;
             // 
             // tabControlMain
@@ -150,7 +150,7 @@
             this.tabControlMain.Margin = new System.Windows.Forms.Padding(2);
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
-            this.tabControlMain.Size = new System.Drawing.Size(500, 420);
+            this.tabControlMain.Size = new System.Drawing.Size(544, 420);
             this.tabControlMain.TabIndex = 2;
             // 
             // tabAccounts
@@ -159,7 +159,7 @@
             this.tabAccounts.Location = new System.Drawing.Point(4, 22);
             this.tabAccounts.Name = "tabAccounts";
             this.tabAccounts.Padding = new System.Windows.Forms.Padding(5);
-            this.tabAccounts.Size = new System.Drawing.Size(492, 372);
+            this.tabAccounts.Size = new System.Drawing.Size(536, 394);
             this.tabAccounts.TabIndex = 6;
             this.tabAccounts.Text = "Accounts";
             this.tabAccounts.UseVisualStyleBackColor = true;
@@ -170,7 +170,7 @@
             this.accountsConfig.Dock = System.Windows.Forms.DockStyle.Fill;
             this.accountsConfig.Location = new System.Drawing.Point(5, 5);
             this.accountsConfig.Name = "accountsConfig";
-            this.accountsConfig.Size = new System.Drawing.Size(482, 362);
+            this.accountsConfig.Size = new System.Drawing.Size(526, 384);
             this.accountsConfig.TabIndex = 0;
             // 
             // tabIncoming
@@ -212,7 +212,7 @@
             this.pollingConfig.Margin = new System.Windows.Forms.Padding(2);
             this.pollingConfig.Name = "pollingConfig";
             this.pollingConfig.Padding = new System.Windows.Forms.Padding(5);
-            this.pollingConfig.Size = new System.Drawing.Size(492, 240);
+            this.pollingConfig.Size = new System.Drawing.Size(492, 322);
             this.pollingConfig.TabIndex = 0;
             // 
             // tabOutgoing
@@ -221,7 +221,7 @@
             this.tabOutgoing.Location = new System.Drawing.Point(4, 22);
             this.tabOutgoing.Margin = new System.Windows.Forms.Padding(2);
             this.tabOutgoing.Name = "tabOutgoing";
-            this.tabOutgoing.Size = new System.Drawing.Size(492, 372);
+            this.tabOutgoing.Size = new System.Drawing.Size(492, 394);
             this.tabOutgoing.TabIndex = 1;
             this.tabOutgoing.Text = "Outgoing Email";
             this.tabOutgoing.UseVisualStyleBackColor = true;
@@ -244,7 +244,7 @@
             this.smtpConfig.Margin = new System.Windows.Forms.Padding(2);
             this.smtpConfig.Name = "smtpConfig";
             this.smtpConfig.Padding = new System.Windows.Forms.Padding(5);
-            this.smtpConfig.Size = new System.Drawing.Size(492, 256);
+            this.smtpConfig.Size = new System.Drawing.Size(492, 340);
             this.smtpConfig.TabIndex = 0;
             // 
             // tabPreferences
@@ -253,7 +253,7 @@
             this.tabPreferences.Location = new System.Drawing.Point(4, 22);
             this.tabPreferences.Margin = new System.Windows.Forms.Padding(2);
             this.tabPreferences.Name = "tabPreferences";
-            this.tabPreferences.Size = new System.Drawing.Size(492, 372);
+            this.tabPreferences.Size = new System.Drawing.Size(492, 394);
             this.tabPreferences.TabIndex = 3;
             this.tabPreferences.Text = "Preferences";
             this.tabPreferences.UseVisualStyleBackColor = true;
@@ -261,6 +261,7 @@
             // preferencesConfig
             // 
             preferencesConfigValues1.Autostart = false;
+            preferencesConfigValues1.LanguageCode = null;
             preferencesConfigValues1.PlaySoundOnEmail = false;
             preferencesConfigValues1.PlaySoundOnSend = false;
             preferencesConfigValues1.SaveFolder = AowEmailWrapper.ConfigFramework.EmailSaveFolder.EmailIn;
@@ -270,7 +271,7 @@
             this.preferencesConfig.Margin = new System.Windows.Forms.Padding(2);
             this.preferencesConfig.Name = "preferencesConfig";
             this.preferencesConfig.Padding = new System.Windows.Forms.Padding(5);
-            this.preferencesConfig.Size = new System.Drawing.Size(492, 195);
+            this.preferencesConfig.Size = new System.Drawing.Size(492, 313);
             this.preferencesConfig.TabIndex = 0;
             // 
             // tabActivity
@@ -278,7 +279,7 @@
             this.tabActivity.Controls.Add(this.activityListView);
             this.tabActivity.Location = new System.Drawing.Point(4, 22);
             this.tabActivity.Name = "tabActivity";
-            this.tabActivity.Size = new System.Drawing.Size(492, 372);
+            this.tabActivity.Size = new System.Drawing.Size(492, 394);
             this.tabActivity.TabIndex = 7;
             this.tabActivity.Text = "Activity Log";
             this.tabActivity.UseVisualStyleBackColor = true;
@@ -290,7 +291,7 @@
             this.activityListView.Location = new System.Drawing.Point(0, 0);
             this.activityListView.Name = "activityListView";
             this.activityListView.Padding = new System.Windows.Forms.Padding(5);
-            this.activityListView.Size = new System.Drawing.Size(492, 372);
+            this.activityListView.Size = new System.Drawing.Size(492, 394);
             this.activityListView.SmallImageList = null;
             this.activityListView.TabIndex = 0;
             // 
@@ -299,7 +300,7 @@
             this.tabAbout.Controls.Add(this.panelAbout);
             this.tabAbout.Location = new System.Drawing.Point(4, 22);
             this.tabAbout.Name = "tabAbout";
-            this.tabAbout.Size = new System.Drawing.Size(492, 372);
+            this.tabAbout.Size = new System.Drawing.Size(492, 394);
             this.tabAbout.TabIndex = 5;
             this.tabAbout.Text = "About";
             this.tabAbout.UseVisualStyleBackColor = true;
@@ -314,7 +315,7 @@
             this.panelAbout.Location = new System.Drawing.Point(0, 0);
             this.panelAbout.Name = "panelAbout";
             this.panelAbout.Padding = new System.Windows.Forms.Padding(5);
-            this.panelAbout.Size = new System.Drawing.Size(492, 372);
+            this.panelAbout.Size = new System.Drawing.Size(492, 394);
             this.panelAbout.TabIndex = 0;
             // 
             // groupBetaTesters
@@ -323,7 +324,7 @@
             this.groupBetaTesters.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBetaTesters.Location = new System.Drawing.Point(5, 219);
             this.groupBetaTesters.Name = "groupBetaTesters";
-            this.groupBetaTesters.Size = new System.Drawing.Size(482, 148);
+            this.groupBetaTesters.Size = new System.Drawing.Size(482, 170);
             this.groupBetaTesters.TabIndex = 12;
             this.groupBetaTesters.TabStop = false;
             this.groupBetaTesters.Text = "Beta Testers";
@@ -344,7 +345,7 @@
             this.panelBetaTestersGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBetaTestersGroupBox.Location = new System.Drawing.Point(3, 16);
             this.panelBetaTestersGroupBox.Name = "panelBetaTestersGroupBox";
-            this.panelBetaTestersGroupBox.Size = new System.Drawing.Size(476, 129);
+            this.panelBetaTestersGroupBox.Size = new System.Drawing.Size(476, 151);
             this.panelBetaTestersGroupBox.TabIndex = 0;
             // 
             // lblTester10
@@ -548,7 +549,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 469);
+            this.ClientSize = new System.Drawing.Size(544, 469);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelBottom);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
