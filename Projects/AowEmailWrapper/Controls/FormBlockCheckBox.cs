@@ -9,12 +9,14 @@ using System.Windows.Forms;
 
 namespace AowEmailWrapper.Controls
 {
-    public partial class FormBlockCheckBox : UserControl
+    public partial class FormBlockCheckBox : BaseFormBlock
     {
         public FormBlockCheckBox()
         {
             InitializeComponent();
+            base.SetControls(lblName, checkBox);
         }
+
         public string LabelName
         {
             get { return lblName.Text; }
@@ -30,15 +32,6 @@ namespace AowEmailWrapper.Controls
         public CheckBox InnerCheckBox
         {
             get { return checkBox; }
-        }
-
-        protected override void OnResize(EventArgs e)
-        {
-            this.SuspendLayout();
-            base.OnResize(e);
-            double d = this.Width * 0.65;
-            checkBox.Width = Convert.ToInt32(Math.Ceiling(d));
-            this.ResumeLayout();
         }
 
         private void lblName_Click(object sender, EventArgs e)
