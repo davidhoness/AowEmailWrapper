@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Globalization;
 using System.Xml.Serialization;
 using AowEmailWrapper.Localization;
 
@@ -22,7 +23,7 @@ namespace AowEmailWrapper.ConfigFramework
         private bool _playSoundOnSend;
         private bool _autostart;
         private EmailSaveFolder _saveFolder = EmailSaveFolder.EmailIn;
-        private string _languageCode = Translator.DefaultLanguageCode;
+        private string _languageCode = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
         private bool _copyToEmailOut = false;
 
         [XmlAttribute("playsoundonemail")]
@@ -79,6 +80,8 @@ namespace AowEmailWrapper.ConfigFramework
                 _playSoundOnSend = true;
                 _autostart = false;
                 _saveFolder = EmailSaveFolder.EmailIn;
+                _copyToEmailOut = true;
+                _languageCode = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
             }
         }
     }
