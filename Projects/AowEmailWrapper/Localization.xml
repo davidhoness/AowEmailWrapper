@@ -106,6 +106,105 @@
 		<lookup key="activeAccount" value="Active"/>
 		<!-- END: Misc -->
 	</language>
+  <language code="de" display="Deutsch">
+    <!-- BEGIN: Main forms -->
+    <lookup key="tabAccounts" value="Konten" />
+    <lookup key="buttonActivate" value="Aktivieren" />
+    <lookup key="buttonRename" value="Umbenennen" />
+    <lookup key="buttonRemove" value="Entfernen" />
+    <lookup key="buttonAdd" value="Neu hinzufügen" />
+    <lookup key="tabIncoming" value="Eingehende Email" />
+    <lookup key="cmdMessageStore" value="Lokalen Nachrichtenspeicher anzeigen" />
+    <lookup key="groupBoxEmailSelection" value="Email Anhang herunterladen" />
+    <lookup key="fbPollInterval" value="Abruf-Intervall Minuten:" />
+    <lookup key="groupBoxAuth" value="Authentifizierungsinformationen" />
+    <lookup key="fbPassword" value="Kennwort:" />
+    <lookup key="fbUserName" value="Benutzername:" />
+    <lookup key="groupBoxServer" value="Server" />
+    <lookup key="fbUseSSL" value="SSL verwenden:" />
+    <lookup key="fbPort" value="Port:" />
+    <lookup key="fbServer" value="Server:" />
+    <lookup key="fbEmailType" value="Email Typ:" />
+    <lookup key="chkPoll" value="Email Abrufen verwenden (In zeitlichen Intervallen auf Emails überprüfen)" />
+    <lookup key="tabOutgoing" value="Ausgehende Email" />
+    <lookup key="fbUsePolling" value="Abrufverbindungsinformationen verwenden:" />
+    <lookup key="groupBoxServer" value="Server" />
+    <lookup key="fbBccMyself" value="Sich selbst im BCC hinzufügen:" />
+    <lookup key="fbAuthentication" value="Authentifizierung benötigt:" />
+    <lookup key="fbSSLType" value="SSL Typ:" />
+    <lookup key="fbEmailAddress" value="Email Adresse:" />
+    <lookup key="fbSmtpServer" value="SMTP Server:" />
+    <lookup key="tabPreferences" value="Präferenzen" />
+    <lookup key="fbSaveFolder" value="Downloadverzeichnis:" />
+    <lookup key="groupBoxPreferences" value="Präferenzen" />
+    <lookup key="fbAutostart" value="Automatisch mit Windows starten:" />
+    <lookup key="fbSentSound" value="Sound für Email gesendet:" />
+    <lookup key="fbEmailSound" value="Sound für Email heruntergeladen:" />
+    <lookup key="fbLocalization" value="Sprache:" />
+    <lookup key="fbCopyToEmailOut" value="Beim Senden nach EmailOut kopieren:"/>
+    <lookup key="tabActivity" value="Aktivitätsreport" />
+    <lookup key="activityListViewlistView0" value="Dateiname" />
+    <lookup key="activityListViewlistView1" value="Eingang" />
+    <lookup key="activityListViewlistView2" value="Ausgang" />
+    <lookup key="activityListViewlistView3" value="Zeiteinheit" />
+    <lookup key="tabAbout" value="Über" />
+    <lookup key="groupBetaTesters" value="Beta Tester" />
+    <lookup key="groupAuthors" value="Autoren" />
+    <lookup key="lblNotice" value="Der Age of Wonders Email Wrapper ist eine komplett kostenfreie Anwendung, entworfen um die Play-By-Email Automatisierung für alle drei AoW© Spiele zu ermöglichen. Er ist nicht von den Triumph Studios© unterstützt. Es ist ein privates Projekt in welchem der Autor nichts erhält, außer der Zeitersparnis und dem Spaß die Spiele zu spielen. Es wird ohne Verpflichtung zur Hilfeleistung zur Verfügung gestellt, wobei diese nach freundlicher Anfrage höchstwahrscheinlich gewährt wird." />
+    <lookup key="cmdSave" value="Einstellungen speichern" />
+    <lookup key="MessageStore" value="Lokaler Nachrichtenspeicher ({0} auf {1})" />
+    <lookup key="messageStoreListlistView0" value="Von" />
+    <lookup key="messageStoreListlistView1" value="Betreff" />
+    <lookup key="messageStoreListlistView2" value="Datum" />
+    <lookup key="messageStoreListlistView3" value="Dateiname" />
+    <lookup key="messageStoreListlistView4" value="Zeiteinheit" />
+    <lookup key="lblLocalMessageStoreMessage" value="Benutzer die einen Windows basierten E-Mail Client wie Outlook Express, Outlook, Mozilla Thunderbird, Eudora, etc. verwenden, sollten beachten, dass das Standardverhalten für den POP3 Zugriff bedeutet, dass die Nachrichten nach dem Herunterladen vom Server entfernt werden. Sie müssen eine Option ändern um den Client so zu konfigurieren, dass die Nachrichten auf dem Server verbleiben und der Wrapper diese finden kann. Der Wrapper beläßt die Nachrichten immer auf dem Server, so dass der normale E-Mail Client diese auch finden kann." />
+    <lookup key="cmdRedownload" value="Erneut herunterladen" />
+    <lookup key="cmdClose" value="Schließen" />
+    <!-- END: Main forms -->
+    <!-- BEGIN: Messages -->
+    <lookup key="msgWrapperWriteAccess" value="Der Wrapper hat keinen Schreibzugriff auf diese Verzeichnisse:&#xA;{0}&#xA;&#xA; Bitte ändern Sie Ihre System Sicherheitseinstellungen oder starten Sie den Wrapper als Administrator." />
+    <lookup key="msgWrapperArchiveGame" value="Möchten Sie die gewählten Spiele archivieren? Dies verschiebt die Dateien in einen seperaten Ordner mit dem Namen '{0}' , welchen Sie auch im Spiel zur Verfügung haben." />
+    <lookup key="msgWrapperCannotActivateAccount" value="Kann das Konto &quot;{0}&quot; jetzt nicht aktivieren.  Bitte warten Sie bis der Email Versand beendet ist." />
+    <lookup key="msgAccountPrompt" value="Geben Sie den Namen des Kontos ein:" />
+    <lookup key="msgAccountDuplicate" value="Ein Konto mit diesem Namen existiert bereits. Bitte wählen Sie einen anderen Namen." />
+    <lookup key="msgWrapperEmailSentSuccess" value="An [{0}] erfolgreich versendet." />
+    <lookup key="msgWrapperEmailSentFailed" value="Fehler beim Versenden der Email: {0}. An: {1} {2}" />
+    <lookup key="msgEmailInSelected" value="Bitte Szenario &gt; Email &gt; Spiel laden verwenden" />
+    <lookup key="msgSaveSelected" value="Bitte Spiel laden vom Hauptmenü verwenden" />
+    <lookup key="msgWrapperRestartRequired" value="Bitte starten Sie den Wrapper neu um die Änderungen zu übernehmen." />
+    <lookup key="msgWrapperPollFailed" value="Abruf fehlgeschlagen" />
+    <lookup key="msgWrapperGamesWaiting" value="Sie haben {0} Spiel(e) wartend." />
+    <!-- END: Messages -->
+    <!-- BEGIN: Context Menus -->
+    <lookup key="menuItemShow" value="Anzeigen" />
+    <lookup key="menuItemAccounts" value="Konten" />
+    <lookup key="menuItemPollNow" value="Jetzt abrufen" />
+    <lookup key="menuItemExit" value="Beenden" />
+    <lookup key="menuItemActivate" value="Aktivieren" />
+    <lookup key="menuItemRename" value="Umbenennen" />
+    <lookup key="menuItemRemove" value="Entfernen" />
+    <lookup key="menuItemAdd" value="Neu hinzufügen" />
+    <lookup key="menuItemMarkEnded" value="Als beendet markieren" />
+    <lookup key="menuItemMarkSent" value="Als gesendet markieren" />
+    <!-- END: Context Menus -->
+    <!-- BEGIN: Enumerations -->
+    <lookup key="enumChooser" value="Bitte auswählen" />
+    <lookup key="enumNone" value="Nichts" />
+    <lookup key="enumSave" value="Speichern" />
+    <lookup key="enumSending" value="Sendet" />
+    <lookup key="enumChecking" value="Überprüft" />
+    <lookup key="enumEmailWaiting" value="Email erhalten" />
+    <lookup key="enumNew" value="Neu" />
+    <lookup key="enumReceived" value="Erhalten" />
+    <lookup key="enumSent" value="Gesendet" />
+    <lookup key="enumEnded" value="Beendet" />
+    <!-- END: Enumerations -->
+    <!-- BEGIN: Misc -->
+    <lookup key="buttonCancel" value="Abbrechen" />
+    <lookup key="activeAccount" value="Aktiv" />
+    <!-- END: Misc -->
+  </language>
 	<language code="es" display="Español">
 		<!-- BEGIN: Main forms -->
 		<lookup key="tabAccounts" value="Cuentas"/>
@@ -205,7 +304,7 @@
 		<lookup key="activeAccount" value="Activo"/>
 		<!-- END: Misc -->
 	</language>
-	<language code="po" display="Polski">
+	<language code="pl" display="Polski">
 		<!-- BEGIN: Main forms -->
 		<lookup key="tabAccounts" value="Konta"/>
 		<lookup key="buttonActivate" value="Aktywuj"/>
@@ -304,7 +403,7 @@
 		<lookup key="activeAccount" value="Aktywne"/>
 		<!-- END: Misc -->
 	</language>
-	<language code="gr" display="Eλληνικά">
+	<language code="el" display="Eλληνικά">
 		<!-- BEGIN: Main forms -->
 		<lookup key="tabAccounts" value="Λογαριασμοί"/>
 		<lookup key="buttonActivate" value="Ενεργοποίηση"/>
