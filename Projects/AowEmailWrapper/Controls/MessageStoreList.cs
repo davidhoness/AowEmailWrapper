@@ -77,10 +77,10 @@ namespace AowEmailWrapper.Controls
                     _lvwColumnSorter.Order = SortOrder.Descending;
                     listView.Sort();
 
-                    listView.Columns[0].Width = -1;
-                    listView.Columns[1].Width = -1;
-                    listView.Columns[2].Width = -1;
-                    listView.Columns[3].Width = -1;
+                    listView.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
+                    listView.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
+                    listView.Columns[2].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
+                    listView.Columns[3].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
                     listView.Columns[4].Width = 0;
                 }
                 else
