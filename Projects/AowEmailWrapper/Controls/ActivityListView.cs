@@ -27,6 +27,8 @@ namespace AowEmailWrapper.Controls
         private const string Menu_MarkEnded_Tag = "menuItemMarkEnded";
         private const string Menu_MarkSent_Tag = "menuItemMarkSent";
 
+        private bool _populating = false;
+
         #endregion
 
         #region Public Properties
@@ -90,6 +92,7 @@ namespace AowEmailWrapper.Controls
             if (_activityLog != null && _activityLog.Activities != null && _activityLog.Activities.Count > 0)
             {
                 listView.SuspendLayout();
+                _populating = true;
 
                 foreach (Activity activity in _activityLog.Activities)
                 {
@@ -124,12 +127,11 @@ namespace AowEmailWrapper.Controls
 
                 _lvwColumnSorter.SortColumn = 3;
                 listView.Sort();
-                
-                listView.Columns[1].Width = -1;
-                listView.Columns[2].Width = -1;
-                listView.Columns[3].Width = 0;
 
-                listView.ResumeLayout();                
+                listView.Columns[3].Width = 0; //Ticks
+                
+                _populating = false;
+                listView.ResumeLayout();
             }
             else
             {
@@ -142,7 +144,13 @@ namespace AowEmailWrapper.Controls
 
         private void listView_Resize(object sender, EventArgs e)
         {
-            listView.Columns[0].Width = listView.Width - (listView.Columns[1].Width + listView.Columns[2].Width + 25);
+            if (!_populating)
+            {
+                listView.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent); //In
+                listView.Columns[2].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent); //Out
+                int rightMargin = listView.Columns[1].Width + listView.Columns[2].Width + 25;
+                listView.Columns[0].Width = listView.Width - rightMargin; //File Name
+            }
         }
 
         private void RaiseListChanged()
