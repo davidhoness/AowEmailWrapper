@@ -24,18 +24,7 @@ namespace AowEmailWrapper.Localization
 
         private static Language GetLanguage(string code, Languages Languages)
         {
-            Language returnVal = null;            
-
-            if (Languages != null &&
-                Languages.LanguageList != null &&
-                Languages.LanguageList.Count > 0)
-            {
-                _comboBoxItems = new List<ComboBoxItem>();
-                Languages.LanguageList.ForEach(lang => _comboBoxItems.Add(new ComboBoxItem(lang.Code, lang.DisplayName)));
-                returnVal = Languages.LanguageList.Find(lang => lang.Code.Equals(code, StringComparison.InvariantCultureIgnoreCase));
-            }
-
-            return returnVal;
+            return Languages.LanguageList.Find(lang => lang.Code.Equals(code, StringComparison.InvariantCultureIgnoreCase));;
         }
 
         private static Lookup GetLookup(string key)
@@ -147,8 +136,21 @@ namespace AowEmailWrapper.Localization
 
         public static void SetLanguage(string code, Languages Languages)
         {
-            _currentLanguage = GetLanguage(code, Languages);
-            _defaultLanguage = GetLanguage(DefaultLanguageCode, Languages);
+            if (Languages != null &&
+                 Languages.LanguageList != null &&
+                 Languages.LanguageList.Count > 0)
+            {
+                _comboBoxItems = new List<ComboBoxItem>();
+                Languages.LanguageList.ForEach(lang => _comboBoxItems.Add(new ComboBoxItem(lang.Code, lang.DisplayName)));
+
+                _currentLanguage = GetLanguage(code, Languages);
+                _defaultLanguage = GetLanguage(DefaultLanguageCode, Languages);
+
+                if (_currentLanguage == null)
+                {
+                    _currentLanguage = _defaultLanguage;
+                }
+            }
         }
 
         #endregion
