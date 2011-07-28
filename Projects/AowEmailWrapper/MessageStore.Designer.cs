@@ -49,10 +49,10 @@
             this.pnlButton.Controls.Add(this.panelRedownload);
             this.pnlButton.Controls.Add(this.pnlClose);
             this.pnlButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlButton.Location = new System.Drawing.Point(0, 532);
+            this.pnlButton.Location = new System.Drawing.Point(0, 504);
             this.pnlButton.Name = "pnlButton";
             this.pnlButton.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlButton.Size = new System.Drawing.Size(736, 81);
+            this.pnlButton.Size = new System.Drawing.Size(736, 109);
             this.pnlButton.TabIndex = 2;
             // 
             // panelMessage
@@ -64,7 +64,7 @@
             this.panelMessage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMessage.Location = new System.Drawing.Point(5, 5);
             this.panelMessage.Name = "panelMessage";
-            this.panelMessage.Size = new System.Drawing.Size(526, 71);
+            this.panelMessage.Size = new System.Drawing.Size(526, 99);
             this.panelMessage.TabIndex = 18;
             // 
             // lblLocalMessageStoreMessage
@@ -73,10 +73,10 @@
             this.lblLocalMessageStoreMessage.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblLocalMessageStoreMessage.Location = new System.Drawing.Point(0, 0);
             this.lblLocalMessageStoreMessage.Name = "lblLocalMessageStoreMessage";
-            this.lblLocalMessageStoreMessage.Size = new System.Drawing.Size(524, 69);
+            this.lblLocalMessageStoreMessage.Padding = new System.Windows.Forms.Padding(2);
+            this.lblLocalMessageStoreMessage.Size = new System.Drawing.Size(524, 97);
             this.lblLocalMessageStoreMessage.TabIndex = 0;
             this.lblLocalMessageStoreMessage.Text = resources.GetString("lblLocalMessageStoreMessage.Text");
-            this.lblLocalMessageStoreMessage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panelRedownload
             // 
@@ -85,7 +85,7 @@
             this.panelRedownload.Location = new System.Drawing.Point(531, 5);
             this.panelRedownload.Name = "panelRedownload";
             this.panelRedownload.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.panelRedownload.Size = new System.Drawing.Size(100, 71);
+            this.panelRedownload.Size = new System.Drawing.Size(100, 99);
             this.panelRedownload.TabIndex = 7;
             // 
             // cmdRedownload
@@ -106,7 +106,7 @@
             this.pnlClose.Location = new System.Drawing.Point(631, 5);
             this.pnlClose.Name = "pnlClose";
             this.pnlClose.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.pnlClose.Size = new System.Drawing.Size(100, 71);
+            this.pnlClose.Size = new System.Drawing.Size(100, 99);
             this.pnlClose.TabIndex = 5;
             // 
             // cmdClose
@@ -128,7 +128,7 @@
             this.messageStoreList.Messages = null;
             this.messageStoreList.Name = "messageStoreList";
             this.messageStoreList.Padding = new System.Windows.Forms.Padding(5, 5, 5, 1);
-            this.messageStoreList.Size = new System.Drawing.Size(736, 532);
+            this.messageStoreList.Size = new System.Drawing.Size(736, 504);
             this.messageStoreList.TabIndex = 3;
             // 
             // MessageStore
