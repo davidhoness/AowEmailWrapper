@@ -134,8 +134,10 @@ namespace AowEmailWrapper.Localization
             theForm.Text = Translate(theForm.Name);
         }
 
-        public static void SetLanguage(string code, Languages Languages)
+        public static string SetLanguage(string code, Languages Languages)
         {
+            string returnVal = null;
+
             if (Languages != null &&
                  Languages.LanguageList != null &&
                  Languages.LanguageList.Count > 0)
@@ -150,7 +152,11 @@ namespace AowEmailWrapper.Localization
                 {
                     _currentLanguage = _defaultLanguage;
                 }
+
+                returnVal = _currentLanguage.Code;
             }
+
+            return returnVal;
         }
 
         #endregion
