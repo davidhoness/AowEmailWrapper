@@ -180,8 +180,13 @@ namespace AowEmailWrapper
 
         private void LoadTranslations()
         {
-            string loadLanguageCode = (_wrapperConfig.PreferencesConfig != null) ? _wrapperConfig.PreferencesConfig.LanguageCode : Translator.DefaultLanguageCode;
-            Translator.SetLanguage(loadLanguageCode, DataManagerHelper.LoadLanguages());
+            if (_wrapperConfig != null &&
+                _wrapperConfig.PreferencesConfig != null)
+            {
+                //This will make non supported regional settings default to English language
+                string loadedLanguageCode = Translator.SetLanguage(_wrapperConfig.PreferencesConfig.LanguageCode, DataManagerHelper.LoadLanguages());
+                _wrapperConfig.PreferencesConfig.LanguageCode = loadedLanguageCode;
+            }
         }
 
         private void LoadConfig(bool isNewConfig)
