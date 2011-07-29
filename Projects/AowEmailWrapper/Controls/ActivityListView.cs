@@ -128,6 +128,9 @@ namespace AowEmailWrapper.Controls
                 _lvwColumnSorter.SortColumn = 3;
                 listView.Sort();
 
+                listView.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent); //In
+                listView.Columns[2].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent); //Out
+               
                 listView.Columns[3].Width = 0; //Ticks
                 
                 _populating = false;
@@ -146,10 +149,8 @@ namespace AowEmailWrapper.Controls
         {
             if (!_populating)
             {
-                listView.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent); //In
-                listView.Columns[2].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent); //Out
-                int rightMargin = listView.Columns[1].Width + listView.Columns[2].Width + 25;
-                listView.Columns[0].Width = listView.Width - rightMargin; //File Name
+                int listViewRightMargin = listView.Columns[1].Width + listView.Columns[2].Width + 25;
+                listView.Columns[0].Width = listView.Width - listViewRightMargin; //File Name
             }
         }
 
