@@ -534,28 +534,31 @@ namespace AowEmailWrapper
 
         private void PollerEmailEvent(object sender, PollerEventArgs e)
         {
-            switch (e.PollState)
+            if (_closeCancel)
             {
-                case PollState.Begin:
-                    SetIcon(IconState.Checking);
-                    break;
-                case PollState.End:
-                    if (e.EmailRecieved)
-                    {
-                        if (_wrapperConfig.PreferencesConfig != null && _wrapperConfig.PreferencesConfig.PlaySoundOnEmail)
+                switch (e.PollState)
+                {
+                    case PollState.Begin:
+                        SetIcon(IconState.Checking);
+                        break;
+                    case PollState.End:
+                        if (e.EmailRecieved)
                         {
-                            PlaySound(ConfigHelper.NotifySound);
+                            if (_wrapperConfig.PreferencesConfig != null && _wrapperConfig.PreferencesConfig.PlaySoundOnEmail)
+                            {
+                                PlaySound(ConfigHelper.NotifySound);
+                            }
+                            Thread.Sleep(50);
+                            RaiseEvent(_activityLogRefresh, this, new EventArgs());
+                            GC.Collect();
                         }
-                        Thread.Sleep(50);
-                        RaiseEvent(_activityLogRefresh, this, new EventArgs());
-                        GC.Collect();
-                    }
-                    if (e.Exception != null)
-                    {
-                        notifyIcon.ShowBalloonTip(15000, Translator.Translate(WrapperPollFailedKey), e.Exception.Message, ToolTipIcon.Error);
-                    }
-                    CheckNotifyIconState();
-                    break;
+                        if (e.Exception != null)
+                        {
+                            notifyIcon.ShowBalloonTip(15000, Translator.Translate(WrapperPollFailedKey), e.Exception.Message, ToolTipIcon.Error);
+                        }
+                        CheckNotifyIconState();
+                        break;
+                }
             }
         }
 
