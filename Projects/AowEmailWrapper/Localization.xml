@@ -314,8 +314,8 @@
 		<lookup key="tabIncoming" value="Poczta Przychodząca"/>
 		<lookup key="cmdMessageStore" value="Pokaż lokalny zapis wiadomości"/>
 		<lookup key="groupBoxEmailSelection" value="Pobieranie załączników email"/>
-		<lookup key="fbPollInterval" value="Interwał sprawdzania poczty:"/>
-		<lookup key="groupBoxAuth" value="Szczegóły uwierzytelniania"/>
+		<lookup key="fbPollInterval" value="Interwał sprawdzania poczty (min.):"/>
+		<lookup key="groupBoxAuth" value="Szczegóły uwierzytelnienia"/>
 		<lookup key="fbPassword" value="Hasło:"/>
 		<lookup key="fbUserName" value="Nazwa użytkownika:"/>
 		<lookup key="groupBoxServer" value="Serwer"/>
@@ -325,10 +325,10 @@
 		<lookup key="fbEmailType" value="Protokół email:"/>
 		<lookup key="chkPoll" value="Użyj sprawdzania poczty (w określonym interwale czasowym)"/>
 		<lookup key="tabOutgoing" value="Poczta Wychodząca"/>
-		<lookup key="fbUsePolling" value="Użyj Poczta Przychodząca poświadczeń:"/>
+		<lookup key="fbUsePolling" value="Użyj poświadczeń poczty przychodzącej:"/>
 		<lookup key="groupBoxServer" value="Serwer"/>
 		<lookup key="fbBccMyself" value="Wyślij kopię do mnie:"/>
-		<lookup key="fbAuthentication" value="Wymagane Uwierzytelnienie:"/>
+		<lookup key="fbAuthentication" value="Wymagane uwierzytelnienie:"/>
 		<lookup key="fbSSLType" value="Rodzaj SSL:"/>
 		<lookup key="fbEmailAddress" value="Adres email:"/>
 		<lookup key="fbSmtpServer" value="Serwer SMTP:"/>
