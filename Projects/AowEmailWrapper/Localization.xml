@@ -1,4 +1,4 @@
-<languages>
+﻿<languages>
 	<language code="en" display="English">
 		<!-- BEGIN: Main forms -->
 		<lookup key="Main" value="Age of Wonders Email Wrapper"/>
@@ -134,7 +134,7 @@
     <lookup key="fbSSLType" value="Type de SLL:"/>
     <lookup key="fbEmailAddress" value="Adresse mail:"/>
     <lookup key="fbSmtpServer" value="Serveur SMTP:"/>
-    <lookup key="tabPreferences" value="Préférences:"/>
+    <lookup key="tabPreferences" value="Préférences"/>
     <lookup key="fbSaveFolder" value="Répertoire de téléchargement:"/>
     <lookup key="groupBoxPreferences" value="Préférences:"/>
     <lookup key="fbAutostart" value="Démarrer en même temps que Windows:"/>
