@@ -493,8 +493,6 @@
     <lookup key="enumNone" value="Geen"/>
     <lookup key="enumSSL" value="SSL"/>
     <lookup key="enumTLS" value="TLS"/>
-    <lookup key="enumEmailIn" value="Email in"/>
-    <lookup key="enumSave" value="Save"/>
     <lookup key="enumSending" value="Zenden"/>
     <lookup key="enumChecking" value="Checking"/>
     <lookup key="enumEmailWaiting" value="Email ontvangen"/>
