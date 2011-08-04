@@ -169,7 +169,7 @@
     <lookup key="msgAccountPrompt" value="Saisissez le nom du compte :"/>
     <lookup key="msgAccountDuplicate" value="Un compte portant déjà ce nom existe déjà. Merci de choisir un autre nom."/>
     <lookup key="msgWrapperEmailSentSuccess" value="Envoi vers [{0}] réussi."/>
-    <lookup key="msgWrapperEmailSentFailed" value="Erreur pendant l'envoi du mail : {0}. Vers: {1} {2}"/>
+    <lookup key="msgWrapperEmailSentFailed" value="Erreur pendant l'envoi du mail : {0}.&#xA;Vers: {1}&#xA;&#xA;{2}"/>
     <lookup key="msgEmailInSelected" value="Merci d'utiliser Scénario &gt; Email &gt; Charger"/>
     <lookup key="msgSaveSelected" value="Merci d'utiliser Charger depuis le menu principal"/>
     <lookup key="msgWrapperRestartRequired" value="Merci de redémarrer le Wrapper pour que ces changements soient effectifs."/>
@@ -269,7 +269,7 @@
     <lookup key="msgAccountPrompt" value="Geben Sie den Namen des Kontos ein:" />
     <lookup key="msgAccountDuplicate" value="Ein Konto mit diesem Namen existiert bereits. Bitte wählen Sie einen anderen Namen." />
     <lookup key="msgWrapperEmailSentSuccess" value="An [{0}] erfolgreich versendet." />
-    <lookup key="msgWrapperEmailSentFailed" value="Fehler beim Versenden der Email: {0}. An: {1} {2}" />
+    <lookup key="msgWrapperEmailSentFailed" value="Fehler beim Versenden der Email: {0}.&#xA;An: {1}&#xA;&#xA;{2}" />
     <lookup key="msgEmailInSelected" value="Bitte Szenario &gt; Email &gt; Spiel laden verwenden" />
     <lookup key="msgSaveSelected" value="Bitte Spiel laden vom Hauptmenü verwenden" />
     <lookup key="msgWrapperRestartRequired" value="Bitte starten Sie den Wrapper neu um die Änderungen zu übernehmen." />
@@ -368,7 +368,7 @@
 		<lookup key="msgAccountPrompt" value="Ingrese el nombre de la cuenta:"/>
 		<lookup key="msgAccountDuplicate" value="Ya existe una cuenta con este nombre. Por favor elija otro nombre."/>
 		<lookup key="msgWrapperEmailSentSuccess" value="Enviado satisfactoriamente a [{0}]."/>
-		<lookup key="msgWrapperEmailSentFailed" value="Error enviando el email: {0}. Para: {1} {2}"/>
+		<lookup key="msgWrapperEmailSentFailed" value="Error enviando el email: {0}.&#xA;Para: {1}&#xA;&#xA;{2}"/>
 		<lookup key="msgEmailInSelected" value="Por favor use Escenario &gt; Email &gt; Cargar Juego"/>
 		<lookup key="msgSaveSelected" value="Por favor use Cargar Juego desde el menu principal"/>
 		<lookup key="msgWrapperRestartRequired" value="Por favor reinicialice el programa para que estos cambios tengan efecto."/>
@@ -467,7 +467,7 @@
     <lookup key="msgAccountPrompt" value="Account naam:"/>
     <lookup key="msgAccountDuplicate" value="Een account met deze naam bestaat al. Kiest u aub een andere naam."/>
     <lookup key="msgWrapperEmailSentSuccess" value="[{0}] succesvol verzonden."/>
-    <lookup key="msgWrapperEmailSentFailed" value="Error bij het verzenden van Email:  {0}. To: {1} {2}"/>
+    <lookup key="msgWrapperEmailSentFailed" value="Error bij het verzenden van Email: {0}.&#xA;To: {1}&#xA;&#xA;{2}"/>
     <lookup key="msgEmailInSelected" value="Gebruik aub Scenario &gt; Email &gt; Load Game"/>
     <lookup key="msgSaveSelected" value="Gebruik aub Load Game van main menu"/>
     <lookup key="msgWrapperRestartRequired" value="Herstart de Wrapper om deze veranderingen in effect te laten gaan, aub."/>
@@ -570,7 +570,7 @@
 		<lookup key="msgAccountPrompt" value="Wprowadź nazwę konta:"/>
 		<lookup key="msgAccountDuplicate" value="Konto o tej nazwie już istnieje. Proszę wybrać inną nazwę."/>
 		<lookup key="msgWrapperEmailSentSuccess" value="Wysyłanie do [{0}] zakończone pomyślnie."/>
-		<lookup key="msgWrapperEmailSentFailed" value="Błąd wysyłania emaila: {0}. Do: {1} {2}"/>
+		<lookup key="msgWrapperEmailSentFailed" value="Błąd wysyłania emaila: {0}.&#xA;Do: {1}&#xA;&#xA;{2}"/>
 		<lookup key="msgEmailInSelected" value="Proszę użyć opcji Scenariusz &gt; E-mail &gt; Wczytaj Grę"/>
 		<lookup key="msgSaveSelected" value="Proszę użyć opcji Wczytaj Grę z głównego menu"/>
 		<lookup key="msgWrapperRestartRequired" value="Proszę ponownie uruchomić Wrappera, żeby te zmiany zaczęły obowiązywać."/>
@@ -665,7 +665,7 @@
 		<lookup key="msgAccountPrompt" value="Δώστε το όνομα του λογαριασμού:"/>
 		<lookup key="msgAccountDuplicate" value="Αυτό το όνομα λογαριασμού υπάρχει είδη. Επιλέξτε ένα άλλο όνομα."/>
 		<lookup key="msgWrapperEmailSentSuccess" value="Αποστολή στο [{0}] επιτυχής."/>
-		<lookup key="msgWrapperEmailSentFailed" value="Λάθος κατά την αποστολή: {0}. Στο: {1} {2}"/>
+		<lookup key="msgWrapperEmailSentFailed" value="Λάθος κατά την αποστολή: {0}.&#xA;Στο: {1}&#xA;&#xA;{2}"/>
 		<lookup key="msgEmailInSelected" value="Χρησιμοποιήστε το σενάριο &gt; Email &gt; Φορτώστε Παιχνίδι"/>
 		<lookup key="msgSaveSelected" value="Χρησιμοποιήστε Φορτώστε Παιχνίδι από το κεντρικό Μενού"/>
 		<lookup key="msgWrapperRestartRequired" value="Για να ενεργοποιηθούν οι αλλαγές ξεκινήστε πάλη την εφαρμογή."/>
