@@ -131,12 +131,12 @@
     <lookup key="groupBoxServer" value="Serveur"/>
     <lookup key="fbBccMyself" value="Cci à moi-même:"/>
     <lookup key="fbAuthentication" value="Authentification requise :"/>
-    <lookup key="fbSSLType" value="Type de SLL:"/>
+    <lookup key="fbSSLType" value="Type de SSL:"/>
     <lookup key="fbEmailAddress" value="Adresse mail:"/>
     <lookup key="fbSmtpServer" value="Serveur SMTP:"/>
     <lookup key="tabPreferences" value="Préférences"/>
     <lookup key="fbSaveFolder" value="Répertoire de téléchargement:"/>
-    <lookup key="groupBoxPreferences" value="Préférences:"/>
+    <lookup key="groupBoxPreferences" value="Préférences"/>
     <lookup key="fbAutostart" value="Démarrer en même temps que Windows:"/>
     <lookup key="fbSentSound" value="Son pour mail envoyé:"/>
     <lookup key="fbEmailSound" value="Son pour mail reçu:"/>
@@ -152,7 +152,7 @@
     <lookup key="groupAuthors" value="Auteurs"/>
     <lookup key="lblNotice" value="Age of Wonders Email Wrapper est une application entièrement gratuite conçue pour permettre l'automatisation des parties par e-mail pour les trois jeux AoW©. Elle n'est pas validée par Triumph Studios©. Ceci est un projet personnel pour lequel l'auteur n'espère rien gagner d'autre qu'économiser du temps et améliorer le plaisir de jeu. Cette application est fournie sans aucune obligation de maintenance, mais si vous demandez gentiment, vous aurez sans doute de l'aide."/>
     <lookup key="cmdSave" value="Sauvegarder les paramètres"/>
-    <lookup key="MessageStore" value="Stockage des Messages Locaux ({0} on {1})"/>
+    <lookup key="MessageStore" value="Stockage des messages locaux ({0} sur {1})"/>
     <lookup key="messageStoreListlistView0" value="De"/>
     <lookup key="messageStoreListlistView1" value="Sujet"/>
     <lookup key="messageStoreListlistView2" value="Date"/>
@@ -177,13 +177,13 @@
     <lookup key="msgWrapperGamesWaiting" value="Vous avez {0} partie(s) en attente."/>
     <!-- END: Messages -->
     <!-- BEGIN: Context Menus -->
-    <lookup key="menuItemShow" value="Montrer"/>
+    <lookup key="menuItemShow" value="Ouvrir"/>
     <lookup key="menuItemAccounts" value="Comptes"/>
     <lookup key="menuItemPollNow" value="Vérifier maintenant"/>
     <lookup key="menuItemExit" value="Quitter"/>
     <lookup key="menuItemActivate" value="Activer"/>
     <lookup key="menuItemRename" value="Renommer"/>
-    <lookup key="menuItemRemove" value="Enlever"/>
+    <lookup key="menuItemRemove" value="Supprimer"/>
     <lookup key="menuItemAdd" value="Créer"/>
     <lookup key="menuItemMarkEnded" value="Marquer comme terminé"/>
     <lookup key="menuItemMarkSent" value="Marquer comme envoyé"/>
