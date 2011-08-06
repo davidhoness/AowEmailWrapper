@@ -96,6 +96,12 @@
     <Compile Include="Controls\FormBlockCheckBox.Designer.cs">
       <DependentUpon>FormBlockCheckBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\FormBlockPollingSetup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FormBlockPollingSetup.Designer.cs">
+      <DependentUpon>FormBlockPollingSetup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\IconMenuItem.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\FormBlockCheckBox.resx">
       <DependentUpon>FormBlockCheckBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FormBlockPollingSetup.resx">
+      <DependentUpon>FormBlockPollingSetup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\FormBlockText.resx">
       <DependentUpon>FormBlockText.cs</DependentUpon>
