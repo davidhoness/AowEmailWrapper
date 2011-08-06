@@ -11,7 +11,8 @@
 		<lookup key="tabIncoming" value="Incoming Email"/>
 		<lookup key="cmdMessageStore" value="Show Local Message Store"/>
 		<lookup key="groupBoxEmailSelection" value="Email Attachment Downloading"/>
-		<lookup key="fbPollInterval" value="Poll Interval Mins:"/>
+    <lookup key="fbPollingSetup" value="Check for email"/>
+    <lookup key="fbPollingSetup_every" value="every:"/>
 		<lookup key="groupBoxAuth" value="Authentication Details"/>
 		<lookup key="fbPassword" value="Password:"/>
 		<lookup key="fbUserName" value="User name:"/>
@@ -20,7 +21,6 @@
 		<lookup key="fbPort" value="Port:"/>
 		<lookup key="fbServer" value="Server:"/>
 		<lookup key="fbEmailType" value="Email Type:"/>
-		<lookup key="chkPoll" value="Use Email Polling (email checking at timed intervals)"/>
 		<lookup key="tabOutgoing" value="Outgoing Email"/>
 		<lookup key="fbUsePolling" value="Use Polling Credentials:"/>
 		<lookup key="groupBoxServer" value="Server"/>
@@ -74,7 +74,7 @@
 		<!-- BEGIN: Context Menus -->
 		<lookup key="menuItemShow" value="&amp;Show"/>
 		<lookup key="menuItemAccounts" value="Accounts"/>
-		<lookup key="menuItemPollNow" value="&amp;Poll now"/>
+		<lookup key="menuItemPollNow" value="&amp;Check now"/>
 		<lookup key="menuItemExit" value="E&amp;xit"/>
 		<lookup key="menuItemActivate" value="&amp;Activate"/>
 		<lookup key="menuItemRename" value="&amp;Rename"/>
@@ -99,6 +99,7 @@
 		<lookup key="enumReceived" value="Received"/>
 		<lookup key="enumSent" value="Sent"/>
 		<lookup key="enumEnded" value="Ended"/>
+    <lookup key="enumMinutes" value="minutes"/>
 		<!-- END: Enumerations -->
 		<!-- BEGIN: Misc -->
 		<lookup key="buttonOK" value="OK"/>
@@ -116,7 +117,8 @@
     <lookup key="tabIncoming" value="Serveur entrant"/>
     <lookup key="cmdMessageStore" value="Afficher le stockage des messages locaux"/>
     <lookup key="groupBoxEmailSelection" value="Téléchargement des pièces jointes"/>
-    <lookup key="fbPollInterval" value="Intervalle d'attente active (en minutes):"/>
+    <lookup key="fbPollingSetup" value="Vérifiez email"/>
+    <lookup key="fbPollingSetup_every" value="toutes les:"/>
     <lookup key="groupBoxAuth" value="Détails d'authentification"/>
     <lookup key="fbPassword" value="Mot-de-passe:"/>
     <lookup key="fbUserName" value="Nom d'utilisateur:"/>
@@ -125,7 +127,6 @@
     <lookup key="fbPort" value="Port:"/>
     <lookup key="fbServer" value="Serveur:"/>
     <lookup key="fbEmailType" value="Type de compte:"/>
-    <lookup key="chkPoll" value="Utiliser la scrutation des mails (à intervalles de temps)"/>
     <lookup key="tabOutgoing" value="Serveur sortant"/>
     <lookup key="fbUsePolling" value="Utiliser les paramètres de scrutation:"/>
     <lookup key="groupBoxServer" value="Serveur"/>
@@ -198,6 +199,7 @@
     <lookup key="enumReceived" value="Reçu"/>
     <lookup key="enumSent" value="Envoyé"/>
     <lookup key="enumEnded" value="Terminé"/>
+    <lookup key="enumMinutes" value="minutes"/>
     <!-- END: Enumerations -->
     <!-- BEGIN: Misc -->
     <lookup key="buttonCancel" value="Annuler"/>
@@ -214,7 +216,8 @@
     <lookup key="tabIncoming" value="Eingehende Email" />
     <lookup key="cmdMessageStore" value="Lokalen Nachrichtenspeicher anzeigen" />
     <lookup key="groupBoxEmailSelection" value="Email Anhang herunterladen" />
-    <lookup key="fbPollInterval" value="Abruf-Intervall Minuten:" />
+    <lookup key="fbPollingSetup" value="Abrufen email"/>
+    <lookup key="fbPollingSetup_every" value="alle:"/>
     <lookup key="groupBoxAuth" value="Authentifizierungsinformationen" />
     <lookup key="fbPassword" value="Kennwort:" />
     <lookup key="fbUserName" value="Benutzername:" />
@@ -223,7 +226,6 @@
     <lookup key="fbPort" value="Port:" />
     <lookup key="fbServer" value="Server:" />
     <lookup key="fbEmailType" value="Email Typ:" />
-    <lookup key="chkPoll" value="Email Abrufen verwenden (In zeitlichen Intervallen auf Emails überprüfen)" />
     <lookup key="tabOutgoing" value="Ausgehende Email" />
     <lookup key="fbUsePolling" value="Abrufverbindungsinformationen verwenden:" />
     <lookup key="groupBoxServer" value="Server" />
@@ -297,6 +299,7 @@
     <lookup key="enumReceived" value="Erhalten" />
     <lookup key="enumSent" value="Gesendet" />
     <lookup key="enumEnded" value="Beendet" />
+    <lookup key="enumMinutes" value="minuten"/>
     <!-- END: Enumerations -->
     <!-- BEGIN: Misc -->
     <lookup key="buttonCancel" value="Abbrechen" />
@@ -313,7 +316,8 @@
 		<lookup key="tabIncoming" value="Email entrante"/>
 		<lookup key="cmdMessageStore" value="Mostrar mensajes guardados"/>
 		<lookup key="groupBoxEmailSelection" value="Descargando archivo adjunto"/>
-		<lookup key="fbPollInterval" value="Intervalo de chequeo (minutos):"/>
+    <lookup key="fbPollingSetup" value="Chequear email"/>
+    <lookup key="fbPollingSetup_every" value="cada:"/>
 		<lookup key="groupBoxAuth" value="Detalles de autenticación"/>
 		<lookup key="fbPassword" value="Contraseña:"/>
 		<lookup key="fbUserName" value="Nombre de usuario:"/>
@@ -322,7 +326,6 @@
 		<lookup key="fbPort" value="Puerto:"/>
 		<lookup key="fbServer" value="Servidor:"/>
 		<lookup key="fbEmailType" value="Tipo de Email:"/>
-		<lookup key="chkPoll" value="Usar chequeo de Email (chequear email a intervalos fijos)"/>
 		<lookup key="tabOutgoing" value="Email saliente"/>
 		<lookup key="fbUsePolling" value="Usar credenciales de chequeo:"/>
 		<lookup key="groupBoxServer" value="Servidor"/>
@@ -396,6 +399,7 @@
 		<lookup key="enumReceived" value="Recibido"/>
 		<lookup key="enumSent" value="Enviado"/>
 		<lookup key="enumEnded" value="Terminado"/>
+    <lookup key="enumMinutes" value="minutos"/>
 		<!-- END: Enumerations -->
 		<!-- BEGIN: Misc -->
 		<lookup key="buttonCancel" value="Cancelar"/>
@@ -412,7 +416,8 @@
     <lookup key="tabIncoming" value="Inkomende Email"/>
     <lookup key="cmdMessageStore" value="Show Local Message Store"/>
     <lookup key="groupBoxEmailSelection" value="Email Attachment Downloaden"/>
-    <lookup key="fbPollInterval" value="Interval(in min) om Email te doorzoeken:"/>
+    <lookup key="fbPollingSetup" value="Email controleren"/>
+    <lookup key="fbPollingSetup_every" value="elke:"/>
     <lookup key="groupBoxAuth" value="Authentificatie Details"/>
     <lookup key="fbPassword" value="Paswoord:"/>
     <lookup key="fbUserName" value="User naam:"/>
@@ -421,7 +426,6 @@
     <lookup key="fbPort" value="Poort:"/>
     <lookup key="fbServer" value="Server:"/>
     <lookup key="fbEmailType" value="Email type:"/>
-    <lookup key="chkPoll" value="Gebruik 'Email Zoeken' (Doorzoekt email in intervallen)"/>
     <lookup key="tabOutgoing" value="Uitgaande Email"/>
     <lookup key="fbUsePolling" value="Gebruik doorzoek credenties:"/>
     <lookup key="groupBoxServer" value="Server"/>
@@ -498,6 +502,7 @@
     <lookup key="enumReceived" value="Ontvangen"/>
     <lookup key="enumSent" value="Verzonden"/>
     <lookup key="enumEnded" value="Geeindigd"/>
+    <lookup key="enumMinutes" value="minuten"/>
     <!-- END: Enumerations -->
     <!-- BEGIN: Misc -->
     <lookup key="buttonOK" value="Ok"/>
@@ -515,7 +520,8 @@
 		<lookup key="tabIncoming" value="Poczta Przychodząca"/>
 		<lookup key="cmdMessageStore" value="Pokaż lokalny zapis wiadomości"/>
 		<lookup key="groupBoxEmailSelection" value="Pobieranie załączników email"/>
-		<lookup key="fbPollInterval" value="Interwał sprawdzania poczty (min.):"/>
+    <lookup key="fbPollingSetup" value="Sprawdzanie poczty"/>
+    <lookup key="fbPollingSetup_every" value="co:"/>
 		<lookup key="groupBoxAuth" value="Szczegóły uwierzytelnienia"/>
 		<lookup key="fbPassword" value="Hasło:"/>
 		<lookup key="fbUserName" value="Nazwa użytkownika:"/>
@@ -524,7 +530,6 @@
 		<lookup key="fbPort" value="Port:"/>
 		<lookup key="fbServer" value="Serwer:"/>
 		<lookup key="fbEmailType" value="Protokół email:"/>
-		<lookup key="chkPoll" value="Użyj sprawdzania poczty (w określonym interwale czasowym)"/>
 		<lookup key="tabOutgoing" value="Poczta Wychodząca"/>
 		<lookup key="fbUsePolling" value="Użyj poświadczeń poczty przychodzącej:"/>
 		<lookup key="groupBoxServer" value="Serwer"/>
@@ -597,6 +602,7 @@
 		<lookup key="enumReceived" value="Otrzymany"/>
 		<lookup key="enumSent" value="Wysłany"/>
 		<lookup key="enumEnded" value="Zakończony"/>
+    <lookup key="enumMinutes" value="minut"/>
 		<!-- END: Enumerations -->
 		<!-- BEGIN: Misc -->
 		<lookup key="buttonOK" value="OK"/>
@@ -614,14 +620,14 @@
 		<lookup key="tabIncoming" value="Εισερχόμενα Email"/>
 		<lookup key="cmdMessageStore" value="Τοπική αποθήκευση μηνυμάτων"/>
 		<lookup key="groupBoxEmailSelection" value="Κατέβασμα συνημμένου"/>
-		<lookup key="fbPollInterval" value="Έλεγχος κάθε (λεπτά):"/>
+    <lookup key="fbPollingSetup" value="Eλεγχος email"/>
+    <lookup key="fbPollingSetup_every" value="κάθε:"/>
 		<lookup key="groupBoxAuth" value="Στοιχεία Λογαριασμού"/>
 		<lookup key="fbPassword" value="Κωδικός πρόσβασης:"/>
 		<lookup key="fbUserName" value="Όνομα χρήστη:"/>
 		<lookup key="groupBoxServer" value="Server"/>
 		<lookup key="fbUseSSL" value="Χρήση SSL:"/>
 		<lookup key="fbEmailType" value="Τύπος Email:"/>
-		<lookup key="chkPoll" value="Χρήση αυτομάτου ελέγχου Email (σε τακτά διαστήματα)"/>
 		<lookup key="tabOutgoing" value="Αποστολή Email"/>
 		<lookup key="fbUsePolling" value="Ίδια με τα εισερχόμενα:"/>
 		<lookup key="groupBoxServer" value="Server"/>
@@ -693,6 +699,7 @@
 		<lookup key="enumReceived" value="Παρελήφθη"/>
 		<lookup key="enumSent" value="Απεστάλη"/>
 		<lookup key="enumEnded" value="Τέλος"/>
+    <lookup key="enumMinutes" value="λεπτά"/>
 		<!-- END: Enumerations -->
 		<!-- BEGIN: Misc -->
 		<lookup key="buttonCancel" value="Ακύρωση"/>
