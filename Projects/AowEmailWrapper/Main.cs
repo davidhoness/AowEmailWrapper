@@ -237,8 +237,7 @@ namespace AowEmailWrapper
                         AccountConfigValues theAccount = accountConfigValuesList.ActiveAccount;
                         _gameManager.SetEmailConfigAll(AppDataHelper.CheckEmail.FullName, theAccount.SmtpConfig.EmailAddress, "localhost");
 
-                        //FIX
-                        //cmdMessageStore.Visible = theAccount.PollingConfig.EmailType.Equals(EmailType.POP3);
+                        panelLocalMessageStore.Visible = theAccount.PollingConfig.EmailType.Equals(EmailType.POP3);
                     }
                 }
 
@@ -783,8 +782,7 @@ namespace AowEmailWrapper
 
                 if (account.PollingConfig != null)
                 {
-                    //TO DO
-                    //cmdMessageStore.Visible = account.PollingConfig.EmailType.Equals(EmailType.POP3);
+                    panelLocalMessageStore.Visible = account.PollingConfig.EmailType.Equals(EmailType.POP3);
                 }
 
                 if (account.SmtpConfig != null)
