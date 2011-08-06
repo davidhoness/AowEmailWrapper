@@ -30,6 +30,9 @@ namespace AowEmailWrapper.Controls
         private const string Menu_Remove_Tag = "menuItemRemove";
         private const string Menu_Rename_Tag = "menuItemRename";
         private const string Menu_Activate_Tag = "menuItemActivate";
+        private const string DefaultImageKey = "default";
+
+        private bool _configChanged = false;
 
         ContextMenu _contextMenu;
 
@@ -41,12 +44,18 @@ namespace AowEmailWrapper.Controls
         {
             get
             {
+                if (_configChanged)
+                {
+                    Scrape();
+                    _configChanged = false;
+                }
                 return _accountsList; 
             }
             set 
             { 
                 _accountsList = value;
                 Populate();
+                _configChanged = false;
             }
         }
 
@@ -59,6 +68,11 @@ namespace AowEmailWrapper.Controls
             InitializeComponent();
             CreateContextMenu();
             listViewAccounts.DoubleClick += new EventHandler(listViewAccounts_DoubleClick);
+
+            EventHandler raiseConfigChange = new EventHandler(Raise_Config_Changed);
+
+            pollingConfig.Config_Changed += raiseConfigChange;
+            smtpConfig.Config_Changed += raiseConfigChange;
         }
 
         #endregion
@@ -104,6 +118,20 @@ namespace AowEmailWrapper.Controls
 
         #region Private Methods
 
+        private void Raise_Config_Changed()
+        {
+            Raise_Config_Changed(null, null);
+        }
+
+        private void Raise_Config_Changed(object sender, EventArgs e)
+        {
+            _configChanged = true;
+            if (Config_Changed != null)
+            {
+                Config_Changed(this, e);
+            }
+        }
+
         private void Raise_Account_Activated(string theAccountName)
         {
             Raise_Account_Activated(_accountsList.GetAccountByName(theAccountName));
@@ -129,8 +157,9 @@ namespace AowEmailWrapper.Controls
                 {
                     if (!_accountsList.CheckAccountExistsByName(theName))
                     {
-                        _accountsList.Accounts.Add(new AccountConfigValues(true, theName));
-                        Populate();
+                        AccountConfigValues theNewAccount = new AccountConfigValues(true, theName);
+                        _accountsList.Accounts.Add(theNewAccount);
+                        Raise_Account_Activated(theNewAccount);
                         Raise_Config_Changed();
                     }
                     else
@@ -228,7 +257,7 @@ namespace AowEmailWrapper.Controls
 
             if (listViewAccounts.SelectedItems.Count.Equals(1))
             {
-                theTag = listViewAccounts.SelectedItems[0].Tag.ToString();                
+                theTag = listViewAccounts.SelectedItems[0].Tag.ToString();
             }
 
             return theTag;
@@ -240,7 +269,6 @@ namespace AowEmailWrapper.Controls
                 _accountsList.Accounts != null)
             {
                 listViewAccounts.Items.Clear();
-                listViewAccounts.View = View.Details;
                 listViewAccounts.SuspendLayout();
 
                 if (_accountsList.Accounts.Count > 0)
@@ -251,6 +279,10 @@ namespace AowEmailWrapper.Controls
                         if (account.Equals(_accountsList.ActiveAccount))
                         {
                             item.Text = string.Format(AccountActiveTemplate, account.Name, Translator.Translate(AccountActiveTextKey));
+                            item.Font = new Font(item.Font, FontStyle.Bold);
+
+                            pollingConfig.Config = account.PollingConfig;
+                            smtpConfig.Config = account.SmtpConfig;
                         }
                         else
                         {
@@ -259,21 +291,30 @@ namespace AowEmailWrapper.Controls
 
                         item.Tag = account.Name;
 
+                        int imageIndex = -1;
+
+                        if (account.SmtpConfig != null &&
+                            !string.IsNullOrEmpty(account.SmtpConfig.SmtpServer))
+                        {
+                            imageIndex = imageListLargeIcons.Images.IndexOfKey(account.SmtpConfig.SmtpServer);
+                        }
+                      
+                        item.ImageIndex = (imageIndex >= 0) ? imageIndex : imageListLargeIcons.Images.IndexOfKey(DefaultImageKey);
+
                         listViewAccounts.Items.Add(item);
                     }
-
-                    listViewAccounts.Columns[0].Width = listViewAccounts.Width - 25;
                 }
 
                 listViewAccounts.ResumeLayout();
             }
         }
 
-        private void Raise_Config_Changed()
+        private void Scrape()
         {
-            if (Config_Changed != null)
+            if (_accountsList != null && _accountsList.ActiveAccount != null)
             {
-                Config_Changed(this, new EventArgs());
+                _accountsList.ActiveAccount.PollingConfig = pollingConfig.Config;
+                _accountsList.ActiveAccount.SmtpConfig = smtpConfig.Config;
             }
         }
 
@@ -412,5 +453,6 @@ namespace AowEmailWrapper.Controls
         }
 
         #endregion
+
     }
 }
