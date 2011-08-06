@@ -30,10 +30,10 @@ namespace AowEmailWrapper.Controls
 
             foreach (int i in new int[] { 1, 2, 3, 4, 5, 10, 15, 30, 60 })
             {
-                fbPollInterval.AddItem(i.ToString());
+                fbPollingSetup.AddItem(i);
             }
 
-            fbPollInterval.SelectedIndex = 0;
+            fbPollingSetup.SelectedIndex = 0;
 
             EventHandler raiseConfigChange = new EventHandler(Raise_Config_Changed);
 
@@ -42,9 +42,10 @@ namespace AowEmailWrapper.Controls
             fbPort.InnerTextBox.TextChanged += raiseConfigChange;
             fbUserName.InnerTextBox.TextChanged += raiseConfigChange;
             fbPassword.InnerTextBox.TextChanged += raiseConfigChange;
-            fbPollInterval.InnerComboBox.SelectedIndexChanged += raiseConfigChange;
+            fbPollingSetup.InnerComboBox.SelectedIndexChanged += raiseConfigChange;
 
-            chkPoll.CheckedChanged += raiseConfigChange;
+            fbPollingSetup.InnerCheckBox.CheckedChanged += raiseConfigChange;
+            fbPollingSetup.InnerCheckBox.CheckedChanged += new EventHandler(fbPollingSetup_CheckedChanged);
             fbUseSSL.InnerCheckBox.CheckedChanged += raiseConfigChange;
         }
 
@@ -71,7 +72,7 @@ namespace AowEmailWrapper.Controls
         {
             _config = new PollingConfigValues();
 
-            _config.UsePolling = chkPoll.Checked;
+            _config.UsePolling = fbPollingSetup.Checked;
 
             _config.EmailType = ConfigHelper.ParseEnumString<EmailType>(fbEmailType.SelectedValue);
 
@@ -88,32 +89,31 @@ namespace AowEmailWrapper.Controls
             _config.PasswordTrue = fbPassword.TextValue;
 
             int poll = 10;
-            if (int.TryParse(fbPollInterval.SelectedValue, out poll))
+            if (int.TryParse(fbPollingSetup.SelectedValue, out poll))
             {
                 _config.PollInterval = poll;
             }
-
-            
         }
 
         private void Populate()
         {
-            chkPoll.Checked = _config.UsePolling;
+            fbPollingSetup.Checked = _config.UsePolling;
             fbEmailType.SelectedValue = _config.EmailType.ToString();
             fbServer.TextValue = _config.Server;
             fbPort.TextValue = _config.Port.ToString();
             fbUseSSL.Checked = _config.UseSSL;
             fbUserName.TextValue = _config.Username;
             fbPassword.TextValue = _config.PasswordTrue;
-            fbPollInterval.SelectedValue = _config.PollInterval.ToString();
+            fbPollingSetup.SelectedValue = _config.PollInterval.ToString();
         }
 
-        private void chkPoll_CheckedChanged(object sender, EventArgs e)
+        private void fbPollingSetup_CheckedChanged(object sender, EventArgs e)
         {
             this.SuspendLayout();
-            groupBoxEmailSelection.Visible = chkPoll.Checked;
-            groupBoxAuth.Visible = chkPoll.Checked;
-            groupBoxServer.Visible = chkPoll.Checked;
+
+            groupBoxAuth.Visible = fbPollingSetup.Checked;
+            groupBoxServer.Visible = fbPollingSetup.Checked;
+
             this.ResumeLayout();
         }
 
