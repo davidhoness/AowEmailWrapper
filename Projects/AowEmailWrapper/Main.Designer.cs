@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            AowEmailWrapper.ConfigFramework.PollingConfigValues pollingConfigValues1 = new AowEmailWrapper.ConfigFramework.PollingConfigValues();
-            AowEmailWrapper.ConfigFramework.SmtpConfigValues smtpConfigValues1 = new AowEmailWrapper.ConfigFramework.SmtpConfigValues();
             AowEmailWrapper.ConfigFramework.PreferencesConfigValues preferencesConfigValues1 = new AowEmailWrapper.ConfigFramework.PreferencesConfigValues();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.imageListIcons = new System.Windows.Forms.ImageList(this.components);
@@ -40,16 +38,8 @@
             this.panelMain = new System.Windows.Forms.Panel();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabAccounts = new System.Windows.Forms.TabPage();
-            this.accountsConfig = new AowEmailWrapper.Controls.AccountsConfig();
-            this.tabIncoming = new System.Windows.Forms.TabPage();
-            this.cmdMessageStore = new System.Windows.Forms.Button();
-            this.pollingConfig = new AowEmailWrapper.Controls.PollingConfig();
-            this.tabOutgoing = new System.Windows.Forms.TabPage();
-            this.smtpConfig = new AowEmailWrapper.Controls.SmtpConfig();
             this.tabPreferences = new System.Windows.Forms.TabPage();
-            this.preferencesConfig = new AowEmailWrapper.Controls.PreferencesConfig();
             this.tabActivity = new System.Windows.Forms.TabPage();
-            this.activityListView = new AowEmailWrapper.Controls.ActivityListView();
             this.tabAbout = new System.Windows.Forms.TabPage();
             this.panelAbout = new System.Windows.Forms.Panel();
             this.groupBetaTesters = new System.Windows.Forms.GroupBox();
@@ -73,12 +63,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.accountsConfig = new AowEmailWrapper.Controls.AccountsConfig();
+            this.preferencesConfig = new AowEmailWrapper.Controls.PreferencesConfig();
+            this.activityListView = new AowEmailWrapper.Controls.ActivityListView();
             this.panelBottom.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.tabAccounts.SuspendLayout();
-            this.tabIncoming.SuspendLayout();
-            this.tabOutgoing.SuspendLayout();
             this.tabPreferences.SuspendLayout();
             this.tabActivity.SuspendLayout();
             this.tabAbout.SuspendLayout();
@@ -110,10 +101,10 @@
             // 
             this.panelBottom.Controls.Add(this.cmdSave);
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBottom.Location = new System.Drawing.Point(0, 425);
+            this.panelBottom.Location = new System.Drawing.Point(0, 464);
             this.panelBottom.Name = "panelBottom";
             this.panelBottom.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.panelBottom.Size = new System.Drawing.Size(544, 44);
+            this.panelBottom.Size = new System.Drawing.Size(522, 44);
             this.panelBottom.TabIndex = 2;
             // 
             // cmdSave
@@ -121,7 +112,7 @@
             this.cmdSave.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmdSave.Location = new System.Drawing.Point(0, 5);
             this.cmdSave.Name = "cmdSave";
-            this.cmdSave.Size = new System.Drawing.Size(544, 34);
+            this.cmdSave.Size = new System.Drawing.Size(522, 34);
             this.cmdSave.TabIndex = 0;
             this.cmdSave.Text = "Save Settings";
             this.cmdSave.UseVisualStyleBackColor = true;
@@ -134,14 +125,12 @@
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
             this.panelMain.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panelMain.Size = new System.Drawing.Size(544, 425);
+            this.panelMain.Size = new System.Drawing.Size(522, 464);
             this.panelMain.TabIndex = 3;
             // 
             // tabControlMain
             // 
             this.tabControlMain.Controls.Add(this.tabAccounts);
-            this.tabControlMain.Controls.Add(this.tabIncoming);
-            this.tabControlMain.Controls.Add(this.tabOutgoing);
             this.tabControlMain.Controls.Add(this.tabPreferences);
             this.tabControlMain.Controls.Add(this.tabActivity);
             this.tabControlMain.Controls.Add(this.tabAbout);
@@ -150,7 +139,7 @@
             this.tabControlMain.Margin = new System.Windows.Forms.Padding(2);
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
-            this.tabControlMain.Size = new System.Drawing.Size(544, 420);
+            this.tabControlMain.Size = new System.Drawing.Size(522, 459);
             this.tabControlMain.TabIndex = 2;
             // 
             // tabAccounts
@@ -159,93 +148,10 @@
             this.tabAccounts.Location = new System.Drawing.Point(4, 22);
             this.tabAccounts.Name = "tabAccounts";
             this.tabAccounts.Padding = new System.Windows.Forms.Padding(5);
-            this.tabAccounts.Size = new System.Drawing.Size(536, 394);
+            this.tabAccounts.Size = new System.Drawing.Size(514, 433);
             this.tabAccounts.TabIndex = 6;
             this.tabAccounts.Text = "Accounts";
             this.tabAccounts.UseVisualStyleBackColor = true;
-            // 
-            // accountsConfig
-            // 
-            this.accountsConfig.Config = null;
-            this.accountsConfig.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.accountsConfig.Location = new System.Drawing.Point(5, 5);
-            this.accountsConfig.Name = "accountsConfig";
-            this.accountsConfig.Size = new System.Drawing.Size(526, 384);
-            this.accountsConfig.TabIndex = 0;
-            // 
-            // tabIncoming
-            // 
-            this.tabIncoming.Controls.Add(this.cmdMessageStore);
-            this.tabIncoming.Controls.Add(this.pollingConfig);
-            this.tabIncoming.Location = new System.Drawing.Point(4, 22);
-            this.tabIncoming.Margin = new System.Windows.Forms.Padding(2);
-            this.tabIncoming.Name = "tabIncoming";
-            this.tabIncoming.Size = new System.Drawing.Size(492, 394);
-            this.tabIncoming.TabIndex = 2;
-            this.tabIncoming.Text = "Incoming Email";
-            this.tabIncoming.UseVisualStyleBackColor = true;
-            // 
-            // cmdMessageStore
-            // 
-            this.cmdMessageStore.Location = new System.Drawing.Point(3, 344);
-            this.cmdMessageStore.Name = "cmdMessageStore";
-            this.cmdMessageStore.Size = new System.Drawing.Size(155, 47);
-            this.cmdMessageStore.TabIndex = 4;
-            this.cmdMessageStore.Text = "Show Local Message Store";
-            this.cmdMessageStore.UseVisualStyleBackColor = true;
-            this.cmdMessageStore.Click += new System.EventHandler(this.cmdMessageStore_Click);
-            // 
-            // pollingConfig
-            // 
-            pollingConfigValues1.EmailType = AowEmailWrapper.ConfigFramework.EmailType.IMAP;
-            pollingConfigValues1.Password = "";
-            pollingConfigValues1.PasswordTrue = "";
-            pollingConfigValues1.PollInterval = 0;
-            pollingConfigValues1.Port = 0;
-            pollingConfigValues1.Server = "";
-            pollingConfigValues1.UsePolling = false;
-            pollingConfigValues1.Username = "";
-            pollingConfigValues1.UseSSL = false;
-            this.pollingConfig.Config = pollingConfigValues1;
-            this.pollingConfig.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pollingConfig.Location = new System.Drawing.Point(0, 0);
-            this.pollingConfig.Margin = new System.Windows.Forms.Padding(2);
-            this.pollingConfig.Name = "pollingConfig";
-            this.pollingConfig.Padding = new System.Windows.Forms.Padding(5);
-            this.pollingConfig.Size = new System.Drawing.Size(492, 322);
-            this.pollingConfig.TabIndex = 0;
-            // 
-            // tabOutgoing
-            // 
-            this.tabOutgoing.Controls.Add(this.smtpConfig);
-            this.tabOutgoing.Location = new System.Drawing.Point(4, 22);
-            this.tabOutgoing.Margin = new System.Windows.Forms.Padding(2);
-            this.tabOutgoing.Name = "tabOutgoing";
-            this.tabOutgoing.Size = new System.Drawing.Size(492, 394);
-            this.tabOutgoing.TabIndex = 1;
-            this.tabOutgoing.Text = "Outgoing Email";
-            this.tabOutgoing.UseVisualStyleBackColor = true;
-            // 
-            // smtpConfig
-            // 
-            smtpConfigValues1.Authentication = false;
-            smtpConfigValues1.BCCMyself = false;
-            smtpConfigValues1.EmailAddress = "";
-            smtpConfigValues1.Password = "";
-            smtpConfigValues1.PasswordTrue = "";
-            smtpConfigValues1.Port = 0;
-            smtpConfigValues1.SmtpServer = "";
-            smtpConfigValues1.SmtpSSLType = AowEmailWrapper.ConfigFramework.SmtpSSLType.None;
-            smtpConfigValues1.UsePollingCredentials = false;
-            smtpConfigValues1.Username = "";
-            this.smtpConfig.Config = smtpConfigValues1;
-            this.smtpConfig.Dock = System.Windows.Forms.DockStyle.Top;
-            this.smtpConfig.Location = new System.Drawing.Point(0, 0);
-            this.smtpConfig.Margin = new System.Windows.Forms.Padding(2);
-            this.smtpConfig.Name = "smtpConfig";
-            this.smtpConfig.Padding = new System.Windows.Forms.Padding(5);
-            this.smtpConfig.Size = new System.Drawing.Size(492, 340);
-            this.smtpConfig.TabIndex = 0;
             // 
             // tabPreferences
             // 
@@ -253,54 +159,27 @@
             this.tabPreferences.Location = new System.Drawing.Point(4, 22);
             this.tabPreferences.Margin = new System.Windows.Forms.Padding(2);
             this.tabPreferences.Name = "tabPreferences";
-            this.tabPreferences.Size = new System.Drawing.Size(492, 394);
+            this.tabPreferences.Size = new System.Drawing.Size(514, 437);
             this.tabPreferences.TabIndex = 3;
             this.tabPreferences.Text = "Preferences";
             this.tabPreferences.UseVisualStyleBackColor = true;
-            // 
-            // preferencesConfig
-            // 
-            preferencesConfigValues1.Autostart = false;
-            preferencesConfigValues1.LanguageCode = null;
-            preferencesConfigValues1.PlaySoundOnEmail = false;
-            preferencesConfigValues1.PlaySoundOnSend = false;
-            preferencesConfigValues1.SaveFolder = AowEmailWrapper.ConfigFramework.EmailSaveFolder.EmailIn;
-            this.preferencesConfig.Config = preferencesConfigValues1;
-            this.preferencesConfig.Dock = System.Windows.Forms.DockStyle.Top;
-            this.preferencesConfig.Location = new System.Drawing.Point(0, 0);
-            this.preferencesConfig.Margin = new System.Windows.Forms.Padding(2);
-            this.preferencesConfig.Name = "preferencesConfig";
-            this.preferencesConfig.Padding = new System.Windows.Forms.Padding(5);
-            this.preferencesConfig.Size = new System.Drawing.Size(492, 313);
-            this.preferencesConfig.TabIndex = 0;
             // 
             // tabActivity
             // 
             this.tabActivity.Controls.Add(this.activityListView);
             this.tabActivity.Location = new System.Drawing.Point(4, 22);
             this.tabActivity.Name = "tabActivity";
-            this.tabActivity.Size = new System.Drawing.Size(492, 394);
+            this.tabActivity.Size = new System.Drawing.Size(514, 437);
             this.tabActivity.TabIndex = 7;
             this.tabActivity.Text = "Activity Log";
             this.tabActivity.UseVisualStyleBackColor = true;
-            // 
-            // activityListView
-            // 
-            this.activityListView.ActivityLog = null;
-            this.activityListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.activityListView.Location = new System.Drawing.Point(0, 0);
-            this.activityListView.Name = "activityListView";
-            this.activityListView.Padding = new System.Windows.Forms.Padding(5);
-            this.activityListView.Size = new System.Drawing.Size(492, 394);
-            this.activityListView.SmallImageList = null;
-            this.activityListView.TabIndex = 0;
             // 
             // tabAbout
             // 
             this.tabAbout.Controls.Add(this.panelAbout);
             this.tabAbout.Location = new System.Drawing.Point(4, 22);
             this.tabAbout.Name = "tabAbout";
-            this.tabAbout.Size = new System.Drawing.Size(492, 394);
+            this.tabAbout.Size = new System.Drawing.Size(514, 437);
             this.tabAbout.TabIndex = 5;
             this.tabAbout.Text = "About";
             this.tabAbout.UseVisualStyleBackColor = true;
@@ -315,7 +194,7 @@
             this.panelAbout.Location = new System.Drawing.Point(0, 0);
             this.panelAbout.Name = "panelAbout";
             this.panelAbout.Padding = new System.Windows.Forms.Padding(5);
-            this.panelAbout.Size = new System.Drawing.Size(492, 394);
+            this.panelAbout.Size = new System.Drawing.Size(514, 437);
             this.panelAbout.TabIndex = 0;
             // 
             // groupBetaTesters
@@ -324,7 +203,7 @@
             this.groupBetaTesters.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBetaTesters.Location = new System.Drawing.Point(5, 219);
             this.groupBetaTesters.Name = "groupBetaTesters";
-            this.groupBetaTesters.Size = new System.Drawing.Size(482, 170);
+            this.groupBetaTesters.Size = new System.Drawing.Size(504, 213);
             this.groupBetaTesters.TabIndex = 12;
             this.groupBetaTesters.TabStop = false;
             this.groupBetaTesters.Text = "Beta Testers";
@@ -345,7 +224,7 @@
             this.panelBetaTestersGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBetaTestersGroupBox.Location = new System.Drawing.Point(3, 16);
             this.panelBetaTestersGroupBox.Name = "panelBetaTestersGroupBox";
-            this.panelBetaTestersGroupBox.Size = new System.Drawing.Size(476, 151);
+            this.panelBetaTestersGroupBox.Size = new System.Drawing.Size(498, 194);
             this.panelBetaTestersGroupBox.TabIndex = 0;
             // 
             // lblTester10
@@ -354,7 +233,7 @@
             this.lblTester10.Location = new System.Drawing.Point(0, 350);
             this.lblTester10.Name = "lblTester10";
             this.lblTester10.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lblTester10.Size = new System.Drawing.Size(460, 40);
+            this.lblTester10.Size = new System.Drawing.Size(482, 40);
             this.lblTester10.TabIndex = 17;
             this.lblTester10.Text = "David Honess, United Kingdom: A big thank you to everyone who has contributed to " +
                 "this program!";
@@ -365,7 +244,7 @@
             this.lblTester9.Location = new System.Drawing.Point(0, 320);
             this.lblTester9.Name = "lblTester9";
             this.lblTester9.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lblTester9.Size = new System.Drawing.Size(460, 30);
+            this.lblTester9.Size = new System.Drawing.Size(482, 30);
             this.lblTester9.TabIndex = 16;
             this.lblTester9.Text = "Bryan Carter, United Kingdom: If it ain\'t broke, you haven\'t tested it long enoug" +
                 "h!";
@@ -376,7 +255,7 @@
             this.lblTester8.Location = new System.Drawing.Point(0, 250);
             this.lblTester8.Name = "lblTester8";
             this.lblTester8.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lblTester8.Size = new System.Drawing.Size(460, 70);
+            this.lblTester8.Size = new System.Drawing.Size(482, 70);
             this.lblTester8.TabIndex = 15;
             this.lblTester8.Text = resources.GetString("lblTester8.Text");
             // 
@@ -386,7 +265,7 @@
             this.lblTester7.Location = new System.Drawing.Point(0, 220);
             this.lblTester7.Name = "lblTester7";
             this.lblTester7.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lblTester7.Size = new System.Drawing.Size(460, 30);
+            this.lblTester7.Size = new System.Drawing.Size(482, 30);
             this.lblTester7.TabIndex = 14;
             this.lblTester7.Text = "Kyle Welykholowa, Canada: Power to the peoples of the Age of Wonders!";
             // 
@@ -396,7 +275,7 @@
             this.lblTester6.Location = new System.Drawing.Point(0, 180);
             this.lblTester6.Name = "lblTester6";
             this.lblTester6.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lblTester6.Size = new System.Drawing.Size(460, 40);
+            this.lblTester6.Size = new System.Drawing.Size(482, 40);
             this.lblTester6.TabIndex = 13;
             this.lblTester6.Text = "Jaime González Peña, Mexico: Thank you very much for the wrapper, it works wondro" +
                 "usly.";
@@ -407,7 +286,7 @@
             this.lblTester5.Location = new System.Drawing.Point(0, 150);
             this.lblTester5.Name = "lblTester5";
             this.lblTester5.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lblTester5.Size = new System.Drawing.Size(460, 30);
+            this.lblTester5.Size = new System.Drawing.Size(482, 30);
             this.lblTester5.TabIndex = 12;
             this.lblTester5.Text = "Frida Rodelo, Mexico: ¡A jugar!";
             // 
@@ -417,7 +296,7 @@
             this.lblTester4.Location = new System.Drawing.Point(0, 110);
             this.lblTester4.Name = "lblTester4";
             this.lblTester4.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lblTester4.Size = new System.Drawing.Size(460, 40);
+            this.lblTester4.Size = new System.Drawing.Size(482, 40);
             this.lblTester4.TabIndex = 11;
             this.lblTester4.Text = "Kasper Bergh, Denmark: You live and learn. At any rate, you live. Unless of cours" +
                 "e you\'re the Undead!";
@@ -428,7 +307,7 @@
             this.lblTester3.Location = new System.Drawing.Point(0, 70);
             this.lblTester3.Name = "lblTester3";
             this.lblTester3.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lblTester3.Size = new System.Drawing.Size(460, 40);
+            this.lblTester3.Size = new System.Drawing.Size(482, 40);
             this.lblTester3.TabIndex = 10;
             this.lblTester3.Text = "Aggelon, Nancy, France: Thanks Dave: this soft is a dream for PBEM players ! Enjo" +
                 "y it !";
@@ -439,7 +318,7 @@
             this.lblTester2.Location = new System.Drawing.Point(0, 30);
             this.lblTester2.Name = "lblTester2";
             this.lblTester2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lblTester2.Size = new System.Drawing.Size(460, 40);
+            this.lblTester2.Size = new System.Drawing.Size(482, 40);
             this.lblTester2.TabIndex = 9;
             this.lblTester2.Text = "Nguyen Huy Hai, Vietnam: I hope you enjoy playing game with the Wrapper as much a" +
                 "s I do.";
@@ -450,7 +329,7 @@
             this.lblTester1.Location = new System.Drawing.Point(0, 0);
             this.lblTester1.Name = "lblTester1";
             this.lblTester1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lblTester1.Size = new System.Drawing.Size(460, 30);
+            this.lblTester1.Size = new System.Drawing.Size(482, 30);
             this.lblTester1.TabIndex = 8;
             this.lblTester1.Text = "Travis, United States: I implore you to reconsider!!";
             // 
@@ -461,7 +340,7 @@
             this.groupAuthors.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupAuthors.Location = new System.Drawing.Point(5, 128);
             this.groupAuthors.Name = "groupAuthors";
-            this.groupAuthors.Size = new System.Drawing.Size(482, 91);
+            this.groupAuthors.Size = new System.Drawing.Size(504, 91);
             this.groupAuthors.TabIndex = 11;
             this.groupAuthors.TabStop = false;
             this.groupAuthors.Text = "Authors";
@@ -472,7 +351,7 @@
             this.lblAuthor2.Location = new System.Drawing.Point(3, 49);
             this.lblAuthor2.Name = "lblAuthor2";
             this.lblAuthor2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lblAuthor2.Size = new System.Drawing.Size(476, 33);
+            this.lblAuthor2.Size = new System.Drawing.Size(498, 33);
             this.lblAuthor2.TabIndex = 7;
             this.lblAuthor2.Text = "David N.T. Honess: Development, Programming";
             // 
@@ -482,7 +361,7 @@
             this.lblAuthor1.Location = new System.Drawing.Point(3, 16);
             this.lblAuthor1.Name = "lblAuthor1";
             this.lblAuthor1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lblAuthor1.Size = new System.Drawing.Size(476, 33);
+            this.lblAuthor1.Size = new System.Drawing.Size(498, 33);
             this.lblAuthor1.TabIndex = 6;
             this.lblAuthor1.Text = "Bryan S. Carter: Original concept, QA Testing";
             // 
@@ -492,7 +371,7 @@
             this.lblNotice.Location = new System.Drawing.Point(5, 45);
             this.lblNotice.Name = "lblNotice";
             this.lblNotice.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lblNotice.Size = new System.Drawing.Size(482, 83);
+            this.lblNotice.Size = new System.Drawing.Size(504, 83);
             this.lblNotice.TabIndex = 10;
             this.lblNotice.Text = resources.GetString("lblNotice.Text");
             // 
@@ -504,7 +383,7 @@
             this.lblVersion.Location = new System.Drawing.Point(5, 5);
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lblVersion.Size = new System.Drawing.Size(482, 40);
+            this.lblVersion.Size = new System.Drawing.Size(504, 40);
             this.lblVersion.TabIndex = 9;
             this.lblVersion.Text = "Age of Wonders Email Wrapper [{0}]";
             // 
@@ -545,11 +424,48 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "David N.T. Honess: Development, Programming";
             // 
+            // accountsConfig
+            // 
+            this.accountsConfig.Config = null;
+            this.accountsConfig.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.accountsConfig.Location = new System.Drawing.Point(5, 5);
+            this.accountsConfig.Name = "accountsConfig";
+            this.accountsConfig.Size = new System.Drawing.Size(504, 423);
+            this.accountsConfig.TabIndex = 0;
+            // 
+            // preferencesConfig
+            // 
+            preferencesConfigValues1.Autostart = false;
+            preferencesConfigValues1.CopyToEmailOut = false;
+            preferencesConfigValues1.LanguageCode = null;
+            preferencesConfigValues1.PlaySoundOnEmail = false;
+            preferencesConfigValues1.PlaySoundOnSend = false;
+            preferencesConfigValues1.SaveFolder = AowEmailWrapper.ConfigFramework.EmailSaveFolder.EmailIn;
+            this.preferencesConfig.Config = preferencesConfigValues1;
+            this.preferencesConfig.Dock = System.Windows.Forms.DockStyle.Top;
+            this.preferencesConfig.Location = new System.Drawing.Point(0, 0);
+            this.preferencesConfig.Margin = new System.Windows.Forms.Padding(2);
+            this.preferencesConfig.Name = "preferencesConfig";
+            this.preferencesConfig.Padding = new System.Windows.Forms.Padding(5);
+            this.preferencesConfig.Size = new System.Drawing.Size(514, 313);
+            this.preferencesConfig.TabIndex = 0;
+            // 
+            // activityListView
+            // 
+            this.activityListView.ActivityLog = null;
+            this.activityListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.activityListView.Location = new System.Drawing.Point(0, 0);
+            this.activityListView.Name = "activityListView";
+            this.activityListView.Padding = new System.Windows.Forms.Padding(5);
+            this.activityListView.Size = new System.Drawing.Size(514, 437);
+            this.activityListView.SmallImageList = null;
+            this.activityListView.TabIndex = 0;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(544, 469);
+            this.ClientSize = new System.Drawing.Size(522, 508);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelBottom);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -562,8 +478,6 @@
             this.panelMain.ResumeLayout(false);
             this.tabControlMain.ResumeLayout(false);
             this.tabAccounts.ResumeLayout(false);
-            this.tabIncoming.ResumeLayout(false);
-            this.tabOutgoing.ResumeLayout(false);
             this.tabPreferences.ResumeLayout(false);
             this.tabActivity.ResumeLayout(false);
             this.tabAbout.ResumeLayout(false);
@@ -583,14 +497,9 @@
         private System.Windows.Forms.Button cmdSave;
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.TabControl tabControlMain;
-        private System.Windows.Forms.TabPage tabIncoming;
-        private AowEmailWrapper.Controls.PollingConfig pollingConfig;
-        private System.Windows.Forms.TabPage tabOutgoing;
-        private AowEmailWrapper.Controls.SmtpConfig smtpConfig;
         private System.Windows.Forms.TabPage tabPreferences;
         private AowEmailWrapper.Controls.PreferencesConfig preferencesConfig;
         private System.Windows.Forms.TabPage tabAbout;
-        private System.Windows.Forms.Button cmdMessageStore;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabPage tabAccounts;
         private AowEmailWrapper.Controls.AccountsConfig accountsConfig;

@@ -231,20 +231,15 @@ namespace AowEmailWrapper
                 {
                     _wrapperConfig.AccountsList = accountConfigValuesList;
                     CreateAccountMenu(_menuAccounts, _wrapperConfig.AccountsList);
-                }
 
-                //Polling
-                PollingConfigValues pollingConfigValues = pollingConfig.Config;
-                if (pollingConfig != null)
-                {
-                    cmdMessageStore.Visible = pollingConfigValues.EmailType.Equals(EmailType.POP3);
-                }
+                    if (accountConfigValuesList.ActiveAccount != null)
+                    {
+                        AccountConfigValues theAccount = accountConfigValuesList.ActiveAccount;
+                        _gameManager.SetEmailConfigAll(AppDataHelper.CheckEmail.FullName, theAccount.SmtpConfig.EmailAddress, "localhost");
 
-                //Smtp
-                SmtpConfigValues smtpConfigValues = smtpConfig.Config;
-                if (pollingConfigValues != null && smtpConfigValues != null)
-                {
-                    _gameManager.SetEmailConfigAll(AppDataHelper.CheckEmail.FullName, smtpConfigValues.EmailAddress, "localhost");
+                        //FIX
+                        //cmdMessageStore.Visible = theAccount.PollingConfig.EmailType.Equals(EmailType.POP3);
+                    }
                 }
 
                 //Preferences
@@ -261,8 +256,6 @@ namespace AowEmailWrapper
                     }
                 }
 
-                _wrapperConfig.AccountsList.ActiveAccount.PollingConfig = pollingConfigValues;
-                _wrapperConfig.AccountsList.ActiveAccount.SmtpConfig = smtpConfigValues;
                 _wrapperConfig.PreferencesConfig = preferencesConfigValues;
 
                 DataManagerHelper.SaveConfig(_wrapperConfig);
@@ -298,8 +291,7 @@ namespace AowEmailWrapper
             accountsConfig.Account_Activated += new AccountActivatedEventHandler(Account_Activated);
             accountsConfig.Config_Changed += new EventHandler(Rebuild_Account_Menu);
             accountsConfig.Config_Changed += configNeedsSave;
-            pollingConfig.Config_Changed += configNeedsSave;
-            smtpConfig.Config_Changed += configNeedsSave;
+            
             preferencesConfig.Config_Changed += configNeedsSave;
 
             activityListView.OnDoubleClick += new ActivityListViewEventHandler(ActivityListViewDoubleClicked);
@@ -791,14 +783,13 @@ namespace AowEmailWrapper
 
                 if (account.PollingConfig != null)
                 {
-                    pollingConfig.Config = account.PollingConfig;
-                    cmdMessageStore.Visible = account.PollingConfig.EmailType.Equals(EmailType.POP3);
+                    //TO DO
+                    //cmdMessageStore.Visible = account.PollingConfig.EmailType.Equals(EmailType.POP3);
                 }
 
                 if (account.SmtpConfig != null)
                 {
                     _gameManager.SetEmailConfigAll(AppDataHelper.CheckEmail.FullName, account.SmtpConfig.EmailAddress, "localhost");
-                    smtpConfig.Config = account.SmtpConfig;
                 }
 
                 StopPolling();
@@ -814,9 +805,11 @@ namespace AowEmailWrapper
 
                 success = true;
 
-                cmdSave.BackColor = this.BackColor;
+                //this.Text = string.Format(MainFormTitleTemplate, Translator.Translate(this.Name), account.Name);
 
                 accountsConfig.Refresh();
+
+                cmdSave.BackColor = this.BackColor;
             }
 
             return success;
