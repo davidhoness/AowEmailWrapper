@@ -14,6 +14,7 @@ namespace AowEmailWrapper.Localization
 
         public const string DefaultLanguageCode = "en";
         private const string EnumLookupKeyTemplate = "enum{0}";
+        private const string FormBlockPollingSetupEvery = "_every";
         private static Language _currentLanguage;
         private static Language _defaultLanguage;
         private static List<ComboBoxItem> _comboBoxItems;
@@ -71,7 +72,13 @@ namespace AowEmailWrapper.Localization
                 else if (control is FormBlockCheckBox)
                 {
                     FormBlockCheckBox theFormBlockCheckBox = (FormBlockCheckBox)control;
-                    theFormBlockCheckBox.LabelName = Translate(theFormBlockCheckBox.Name);                
+                    theFormBlockCheckBox.LabelName = Translate(theFormBlockCheckBox.Name);
+                }
+                else if (control is FormBlockPollingSetup)
+                {
+                    FormBlockPollingSetup theFormBlockPollingSetup = (FormBlockPollingSetup)control;
+                    theFormBlockPollingSetup.CheckBoxText = Translate(theFormBlockPollingSetup.Name);
+                    theFormBlockPollingSetup.EveryText = Translate(theFormBlockPollingSetup.Name + FormBlockPollingSetupEvery);
                 }
                 else
                 {
