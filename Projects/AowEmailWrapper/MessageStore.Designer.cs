@@ -140,7 +140,7 @@
             this.Controls.Add(this.pnlButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MessageStore";
-            this.Text = "Local Message Store";
+            this.Text = "POP3 Email";
             this.pnlButton.ResumeLayout(false);
             this.panelMessage.ResumeLayout(false);
             this.panelRedownload.ResumeLayout(false);
