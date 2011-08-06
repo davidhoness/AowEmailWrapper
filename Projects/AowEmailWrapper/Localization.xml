@@ -111,12 +111,12 @@
     <lookup key="tabAccounts" value="Comptes"/>
     <lookup key="buttonActivate" value="Activer"/>
     <lookup key="buttonRename" value="Renommer"/>
-    <lookup key="buttonRemove" value="Enlever"/>
+    <lookup key="buttonRemove" value="Supprimer"/>
     <lookup key="buttonAdd" value="Créer"/>
-    <lookup key="tabIncoming" value="Mails reçus"/>
+    <lookup key="tabIncoming" value="Serveur entrant"/>
     <lookup key="cmdMessageStore" value="Afficher le stockage des messages locaux"/>
     <lookup key="groupBoxEmailSelection" value="Téléchargement des pièces jointes"/>
-    <lookup key="fbPollInterval" value="Scrutation d'arrivée de mail (en minutes) :"/>
+    <lookup key="fbPollInterval" value="Intervalle d'attente active (en minutes):"/>
     <lookup key="groupBoxAuth" value="Détails d'authentification"/>
     <lookup key="fbPassword" value="Mot-de-passe:"/>
     <lookup key="fbUserName" value="Nom d'utilisateur:"/>
@@ -124,9 +124,9 @@
     <lookup key="fbUseSSL" value="Utiliser SSL:"/>
     <lookup key="fbPort" value="Port:"/>
     <lookup key="fbServer" value="Serveur:"/>
-    <lookup key="fbEmailType" value="Type de mail:"/>
+    <lookup key="fbEmailType" value="Type de compte:"/>
     <lookup key="chkPoll" value="Utiliser la scrutation des mails (à intervalles de temps)"/>
-    <lookup key="tabOutgoing" value="Mails envoyés"/>
+    <lookup key="tabOutgoing" value="Serveur sortant"/>
     <lookup key="fbUsePolling" value="Utiliser les paramètres de scrutation:"/>
     <lookup key="groupBoxServer" value="Serveur"/>
     <lookup key="fbBccMyself" value="Cci à moi-même:"/>
@@ -167,7 +167,7 @@
     <lookup key="msgWrapperArchiveGame" value="Souhaitez-vous également archiver les parties sélectionnées ? Ceci déplacera leurs fichiers dans un dossier séparé nommé '{0}' et demeurera accessible depuis le jeu."/>
     <lookup key="msgWrapperCannotActivateAccount" value="Impossible d'activer le compte &quot;{0}&quot; pour l'instant. Merci d'attendre la fin de l'envoi de mail."/>
     <lookup key="msgAccountPrompt" value="Saisissez le nom du compte :"/>
-    <lookup key="msgAccountDuplicate" value="Un compte portant déjà ce nom existe déjà. Merci de choisir un autre nom."/>
+    <lookup key="msgAccountDuplicate" value="Un compte portant ce nom existe déjà. Merci de choisir un autre nom."/>
     <lookup key="msgWrapperEmailSentSuccess" value="Envoi vers [{0}] réussi."/>
     <lookup key="msgWrapperEmailSentFailed" value="Erreur pendant l'envoi du mail : {0}.&#xA;Vers: {1}&#xA;&#xA;{2}"/>
     <lookup key="msgEmailInSelected" value="Merci d'utiliser Scénario &gt; Email &gt; Charger"/>
@@ -191,8 +191,6 @@
     <!-- BEGIN: Enumerations -->
     <lookup key="enumChooser" value="Merci de sélectionner"/>
     <lookup key="enumNone" value="Aucun"/>
-    <lookup key="enumEmailIn" value="Mail à recevoir (EmailIn)"/>
-    <lookup key="enumSave" value="Sauvegarder (Save)"/>
     <lookup key="enumSending" value="En cours d'envoi"/>
     <lookup key="enumChecking" value="En cours de vérification"/>
     <lookup key="enumEmailWaiting" value="Mail reçu"/>
