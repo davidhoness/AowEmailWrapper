@@ -9,7 +9,7 @@
 		<lookup key="buttonRemove" value="Remove"/>
 		<lookup key="buttonAdd" value="Add New"/>
 		<lookup key="tabIncoming" value="Incoming Email"/>
-		<lookup key="cmdMessageStore" value="Show Local Message Store"/>
+		<lookup key="cmdMessageStore" value="Show POP3 emails"/>
 		<lookup key="groupBoxEmailSelection" value="Email Attachment Downloading"/>
     <lookup key="fbPollingSetup" value="Check for email"/>
     <lookup key="fbPollingSetup_every" value="every:"/>
@@ -47,7 +47,7 @@
 		<lookup key="groupAuthors" value="Authors"/>
 		<lookup key="lblNotice" value="The Age of Wonders Email Wrapper is a completely free application designed to enable play by email automation for all three AoW© games.  It is not endorsed by Triumph Studios©.  It is a personal project where the author stands to gain nothing bar saving time and the enjoyment of playing the games.  It comes without obligation for support, however support will probably be provided if you ask nicely."/>
 		<lookup key="cmdSave" value="Save Settings"/>
-		<lookup key="MessageStore" value="Local Message Store ({0} on {1})"/>
+		<lookup key="MessageStore" value="POP3 emails ({0} on {1})"/>
 		<lookup key="messageStoreListlistView0" value="From"/>
 		<lookup key="messageStoreListlistView1" value="Subject"/>
 		<lookup key="messageStoreListlistView2" value="Date"/>
@@ -115,7 +115,7 @@
     <lookup key="buttonRemove" value="Supprimer"/>
     <lookup key="buttonAdd" value="Créer"/>
     <lookup key="tabIncoming" value="Serveur entrant"/>
-    <lookup key="cmdMessageStore" value="Afficher le stockage des messages locaux"/>
+    <lookup key="cmdMessageStore" value="Montrer mail POP3"/>
     <lookup key="groupBoxEmailSelection" value="Téléchargement des pièces jointes"/>
     <lookup key="fbPollingSetup" value="Vérifiez email"/>
     <lookup key="fbPollingSetup_every" value="toutes les:"/>
@@ -153,7 +153,7 @@
     <lookup key="groupAuthors" value="Auteurs"/>
     <lookup key="lblNotice" value="Age of Wonders Email Wrapper est une application entièrement gratuite conçue pour permettre l'automatisation des parties par e-mail pour les trois jeux AoW©. Elle n'est pas validée par Triumph Studios©. Ceci est un projet personnel pour lequel l'auteur n'espère rien gagner d'autre qu'économiser du temps et améliorer le plaisir de jeu. Cette application est fournie sans aucune obligation de maintenance, mais si vous demandez gentiment, vous aurez sans doute de l'aide."/>
     <lookup key="cmdSave" value="Sauvegarder les paramètres"/>
-    <lookup key="MessageStore" value="Stockage des messages locaux ({0} sur {1})"/>
+    <lookup key="MessageStore" value="Mail POP3 ({0} sur {1})"/>
     <lookup key="messageStoreListlistView0" value="De"/>
     <lookup key="messageStoreListlistView1" value="Sujet"/>
     <lookup key="messageStoreListlistView2" value="Date"/>
@@ -214,7 +214,7 @@
     <lookup key="buttonRemove" value="Entfernen" />
     <lookup key="buttonAdd" value="Neu hinzufügen" />
     <lookup key="tabIncoming" value="Eingehende Email" />
-    <lookup key="cmdMessageStore" value="Lokalen Nachrichtenspeicher anzeigen" />
+    <lookup key="cmdMessageStore" value="Zeige POP3 Email" />
     <lookup key="groupBoxEmailSelection" value="Email Anhang herunterladen" />
     <lookup key="fbPollingSetup" value="Abrufen email"/>
     <lookup key="fbPollingSetup_every" value="alle:"/>
@@ -252,7 +252,7 @@
     <lookup key="groupAuthors" value="Autoren" />
     <lookup key="lblNotice" value="Der Age of Wonders Email Wrapper ist eine komplett kostenfreie Anwendung, entworfen um die Play-By-Email Automatisierung für alle drei AoW© Spiele zu ermöglichen. Er ist nicht von den Triumph Studios© unterstützt. Es ist ein privates Projekt in welchem der Autor nichts erhält, außer der Zeitersparnis und dem Spaß die Spiele zu spielen. Es wird ohne Verpflichtung zur Hilfeleistung zur Verfügung gestellt, wobei diese nach freundlicher Anfrage höchstwahrscheinlich gewährt wird." />
     <lookup key="cmdSave" value="Einstellungen speichern" />
-    <lookup key="MessageStore" value="Lokaler Nachrichtenspeicher ({0} auf {1})" />
+    <lookup key="MessageStore" value="POP3 Email ({0} auf {1})" />
     <lookup key="messageStoreListlistView0" value="Von" />
     <lookup key="messageStoreListlistView1" value="Betreff" />
     <lookup key="messageStoreListlistView2" value="Datum" />
@@ -314,7 +314,7 @@
 		<lookup key="buttonRemove" value="Borrar"/>
 		<lookup key="buttonAdd" value="Nueva cuenta"/>
 		<lookup key="tabIncoming" value="Email entrante"/>
-		<lookup key="cmdMessageStore" value="Mostrar mensajes guardados"/>
+		<lookup key="cmdMessageStore" value="Mostrar email POP3"/>
 		<lookup key="groupBoxEmailSelection" value="Descargando archivo adjunto"/>
     <lookup key="fbPollingSetup" value="Chequear email"/>
     <lookup key="fbPollingSetup_every" value="cada:"/>
@@ -352,7 +352,7 @@
 		<lookup key="groupAuthors" value="Autores"/>
 		<lookup key="lblNotice" value="Age of Wonders Email Wrapper es una aplicación gratuita diseñada para permitir la automatización de la modalidad play by email en los tres juegos de AoW©. No está avalado por Triumph Studios©. Es un proyecto personal donde el autor no pretende ganar nada más allá de ahorrar tiempo y disfrutar de jugar los juegos. No hay obligación ninguna de ofrecer soporte, pero el mismo puede ser ofrecido si lo piden de manera amable."/>
 		<lookup key="cmdSave" value="Guardar configuración"/>
-		<lookup key="MessageStore" value="Mensajes guardados localmente ({0} en {1})"/>
+		<lookup key="MessageStore" value="Email POP3 ({0} en {1})"/>
 		<lookup key="messageStoreListlistView0" value="De"/>
 		<lookup key="messageStoreListlistView1" value="Asunto"/>
 		<lookup key="messageStoreListlistView2" value="Fecha"/>
@@ -414,7 +414,7 @@
     <lookup key="buttonRemove" value="Verwijder"/>
     <lookup key="buttonAdd" value="Nieuw toevoegen"/>
     <lookup key="tabIncoming" value="Inkomende Email"/>
-    <lookup key="cmdMessageStore" value="Show Local Message Store"/>
+    <lookup key="cmdMessageStore" value="Tonen POP3 email"/>
     <lookup key="groupBoxEmailSelection" value="Email Attachment Downloaden"/>
     <lookup key="fbPollingSetup" value="Email controleren"/>
     <lookup key="fbPollingSetup_every" value="elke:"/>
@@ -452,7 +452,7 @@
     <lookup key="groupAuthors" value="Auteurs"/>
     <lookup key="lblNotice" value="De Age of Wonders Email Wrapper is een volkomen gratis programma om play by email te automatizeren voor alle drie AoW© games. Het is niet door Triumph Studios© ondersteund.  Het is een persoonlijk project waar de auteur geen voordeel wil halen anders dan het tijd besparen bij het versturen van turns en het vergroten van het spelplezier. Het komt zonder verzekering van technische ondersteuning, alhoewel ondersteuning waarschijnlijk wel wordt verleend als je het netjes vraagt. "/>
     <lookup key="cmdSave" value="Bewaar instellingen"/>
-    <lookup key="MessageStore" value="Local Message Store ({0} on {1})"/>
+    <lookup key="MessageStore" value="POP3 email ({0} on {1})"/>
     <lookup key="messageStoreListlistView0" value="From"/>
     <lookup key="messageStoreListlistView1" value="Subject"/>
     <lookup key="messageStoreListlistView2" value="Datum"/>
@@ -518,7 +518,7 @@
 		<lookup key="buttonRemove" value="Usuń"/>
 		<lookup key="buttonAdd" value="Dodaj Nowe"/>
 		<lookup key="tabIncoming" value="Poczta Przychodząca"/>
-		<lookup key="cmdMessageStore" value="Pokaż lokalny zapis wiadomości"/>
+		<lookup key="cmdMessageStore" value="Pokaż POP3 poczty email"/>
 		<lookup key="groupBoxEmailSelection" value="Pobieranie załączników email"/>
     <lookup key="fbPollingSetup" value="Sprawdzanie poczty"/>
     <lookup key="fbPollingSetup_every" value="co:"/>
@@ -556,7 +556,7 @@
 		<lookup key="groupAuthors" value="Autorzy"/>
 		<lookup key="lblNotice" value="Age of Wonders Email Wrapper to całkowicie darmowa aplikacja, umożliwiająca użycie automatycznego wysyłania emaili we wszystkich trzech grach z serii AoW©, powstała bez udziału Triumph Studios©. To osobisty projekt, którego autor chce uzyskać jedynie oszczędność czasu i przyjemność z gry. Nie ma obietnicy udzielenia wsparcia technicznego, ale prawdopodobnie zostanie ono udzielone, jeśli ładnie poprosisz."/>
 		<lookup key="cmdSave" value="Zapisz ustawienia"/>
-		<lookup key="MessageStore" value="Lokalny zapis wiadomości ({0} na {1})"/>
+		<lookup key="MessageStore" value="POP3 poczty email ({0} na {1})"/>
 		<lookup key="messageStoreListlistView0" value="Od"/>
 		<lookup key="messageStoreListlistView1" value="Temat"/>
 		<lookup key="messageStoreListlistView2" value="Data"/>
@@ -618,7 +618,7 @@
 		<lookup key="buttonRemove" value="Διαγραφή"/>
 		<lookup key="buttonAdd" value="Νέος Λογαριασμός"/>
 		<lookup key="tabIncoming" value="Εισερχόμενα Email"/>
-		<lookup key="cmdMessageStore" value="Τοπική αποθήκευση μηνυμάτων"/>
+		<lookup key="cmdMessageStore" value="Εμφάνιση POP3 email"/>
 		<lookup key="groupBoxEmailSelection" value="Κατέβασμα συνημμένου"/>
     <lookup key="fbPollingSetup" value="Eλεγχος email"/>
     <lookup key="fbPollingSetup_every" value="κάθε:"/>
@@ -653,7 +653,7 @@
 		<lookup key="groupAuthors" value="Συγγραφείς"/>
 		<lookup key="lblNotice" value="Το Age of Wonders Συσκευαστής Email είναι μια εντελώς δωρεάν εφαρμογή σχεδιασμένη ώστε να αυτοματοποιεί το παιχνίδι μέσω email και στα τρία AoW© παιχνίδια. Δεν υποστηρίζεται από την Triumph Studios©. Είναι προσωπική εργασία από την οποία ο συγγραφέας δεν επιδιώκει να κερδίσει τίποτα, πέραν του χρόνου παίζοντας τα παιχνίδια. Δεν φέρει χρέος υποστήριξης αλλά επικοινωνήστε ευγενικά και βλέπουμε..."/>
 		<lookup key="cmdSave" value="Σώσε παραμέτρους"/>
-		<lookup key="MessageStore" value="Αποθηκευμένα Μηνύματα ({0} στο {1})"/>
+		<lookup key="MessageStore" value="POP3 email ({0} στο {1})"/>
 		<lookup key="messageStoreListlistView0" value="Από"/>
 		<lookup key="messageStoreListlistView1" value="Θέμα"/>
 		<lookup key="messageStoreListlistView2" value="Hμερομηνία"/>
