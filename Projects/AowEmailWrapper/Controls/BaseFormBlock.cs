@@ -12,7 +12,7 @@ namespace AowEmailWrapper.Controls
     public class BaseFormBlock : UserControl
     {
         protected Control TheEditControl;
-        protected Label TheLabel;
+        protected Control TheLabel;
         protected bool resizing = false;
 
         protected override void OnResize(EventArgs e)
@@ -44,7 +44,7 @@ namespace AowEmailWrapper.Controls
             }
         }
 
-        protected void SetControls(Label theLabel, Control theEditControl)
+        protected void SetControls(Control theLabel, Control theEditControl)
         {
             TheLabel = theLabel;
             TheEditControl = theEditControl;
