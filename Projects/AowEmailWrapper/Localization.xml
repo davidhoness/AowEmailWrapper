@@ -741,7 +741,7 @@
     <lookup key="fbSentSound" value="Звук при отправке письма:"/>
     <lookup key="fbEmailSound" value="Звук при получении письма:"/>
     <lookup key="fbLocalization" value="Язык"/>
-    <lookup key="fbCopyToEmailOut" value="Скопировать в EmailOut после отправки:"/>
+    <lookup key="fbCopyToEmailOut" value="Копировать сейв в EmailOut после отправки:"/>
     <lookup key="tabActivity" value="Список событий"/>
     <lookup key="activityListViewlistView0" value="Сейв"/>
     <lookup key="activityListViewlistView1" value="Входящий"/>
@@ -750,7 +750,7 @@
     <lookup key="tabAbout" value="О программе"/>
     <lookup key="groupBetaTesters" value="Бета-тестеры"/>
     <lookup key="groupAuthors" value="Разработчики"/>
-    <lookup key="lblNotice" value="Age of Wonders Email Wrapper - абсолютно бесплатная программа, автоматизирующая игру по почте во все три части серии AoW. Программа не имеет отношения к Triumph Studios, это личный некоммерческий проект, не преследующий иных целей помимо повышения удобства игры. Wrapper предоставляется &quot;как есть&quot;; автор не гарантирует поддержку программу в будущем (хотя если вежливо попросить, то всё возможно)."/>
+    <lookup key="lblNotice" value="Age of Wonders Email Wrapper - абсолютно бесплатная программа, автоматизирующая игру по почте во все три части серии AoW. Программа не имеет отношения к Triumph Studios, это личный некоммерческий проект, не преследующий иных целей помимо повышения удобства игры. Wrapper предоставляется &quot;как есть&quot;; автор не гарантирует поддержку программы в будущем (хотя если вежливо попросить, то всё возможно)."/>
     <lookup key="cmdSave" value="Сохранить настройки"/>
     <lookup key="MessageStore" value="POP3 письма ({0}, {1})"/>
     <lookup key="messageStoreListlistView0" value="Отправитель"/>
@@ -758,7 +758,7 @@
     <lookup key="messageStoreListlistView2" value="Дата"/>
     <lookup key="messageStoreListlistView3" value="Файл"/>
     <lookup key="messageStoreListlistView4" value="Время"/>
-    <lookup key="lblLocalMessageStoreMessage" value="Пользователям таких почтовых клиентов, как Outlook Express, Outlook, Mozilla Thunderbird, Eudora: по умолчанию эти клиенты удаляют с сервера новые письма, полученные через POP3. Чтобы Wrapper мог обнаружить и скачать письма с новыми ходами, вам надо отключить это поведение в настройках клиента. Wrapper в свою очередь никогда не удаляет письма с сервера, так что ваш обычный клиент всё равно сможет их получить."/>
+    <lookup key="lblLocalMessageStoreMessage" value="Пользователям таких почтовых клиентов, как Outlook Express, Outlook, Mozilla Thunderbird, Eudora: по умолчанию эти клиенты удаляют с сервера новые письма, полученные через POP3. Чтобы Wrapper мог обнаружить и скачать письма с новыми ходами, вам надо отключить эту опцию в настройках клиента. Wrapper в свою очередь никогда не удаляет письма с сервера, так что ваш обычный клиент всё равно сможет их получить."/>
     <lookup key="cmdRedownload" value="Скачать заново"/>
     <lookup key="cmdClose" value="Закрыть"/>
     <!-- END: Main forms -->
