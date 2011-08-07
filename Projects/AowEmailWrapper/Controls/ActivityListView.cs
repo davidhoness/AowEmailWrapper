@@ -97,14 +97,13 @@ namespace AowEmailWrapper.Controls
                 foreach (Activity activity in _activityLog.Activities)
                 {
                     ListViewItem item = new ListViewItem();
+                    SetItemColour(item, activity);
                     item.Text = activity.FileName;
                     item.SubItems.Add(new ListViewItem.ListViewSubItem(item, activity.Inwards.Equals(ActivityState.None) ? string.Empty : Translator.TranslateEnum(activity.Inwards)));
                     item.SubItems.Add(new ListViewItem.ListViewSubItem(item, activity.Outwards.Equals(ActivityState.None) ? string.Empty : Translator.TranslateEnum(activity.Outwards)));
                     item.SubItems.Add(new ListViewItem.ListViewSubItem(item, activity.DateTicks));
 
                     item.Tag = activity;
-
-                    if (activity.Outwards.Equals(ActivityState.None)) item.BackColor = SystemColors.Info;
 
                     switch (activity.GameType)
                     {
@@ -214,6 +213,37 @@ namespace AowEmailWrapper.Controls
                 {
                     OnDoubleClick(this, theList);
                 }
+            }
+        }
+
+        private void SetItemColour(ListViewItem listItem, Activity activity)
+        {
+            if (activity.Outwards.Equals(ActivityState.None))
+            {
+                listItem.BackColor = SystemColors.Info;
+            }
+            else if (activity.Outwards.Equals(ActivityState.Sent))
+            {
+                long ticks = 0;
+                if (long.TryParse(activity.DateTicks, out ticks))
+                {
+                    DateTime timeStamp = new DateTime(ticks);
+
+                    TimeSpan age = DateTime.Now.Subtract(timeStamp);
+
+                    if (age.Days >= 14 && age.Days < 28)
+                    {
+                        listItem.BackColor = Color.PeachPuff;
+                    }
+                    else if (age.Days >= 28)
+                    {
+                        listItem.BackColor = Color.MistyRose;
+                    }
+                }
+            }
+            else if (activity.Outwards.Equals(ActivityState.Ended))
+            {
+                listItem.ForeColor = Color.Gray;
             }
         }
 
