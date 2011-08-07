@@ -803,7 +803,7 @@
     <!-- BEGIN: Misc -->
     <lookup key="buttonOK" value="ОК"/>
     <lookup key="buttonCancel" value="Отмена"/>
-    <lookup key="activeAccount" value="Активировать"/>
+    <lookup key="activeAccount" value="Активный"/>
     <!-- END: Misc -->
   </language>
 </languages>
