@@ -757,7 +757,7 @@
     <lookup key="messageStoreListlistView1" value="Тема"/>
     <lookup key="messageStoreListlistView2" value="Дата"/>
     <lookup key="messageStoreListlistView3" value="Файл"/>
-    <lookup key="messageStoreListlistView4" value=""/>
+    <lookup key="messageStoreListlistView4" value="Время"/>
     <lookup key="lblLocalMessageStoreMessage" value="Пользователям таких почтовых клиентов, как Outlook Express, Outlook, Mozilla Thunderbird, Eudora: по умолчанию эти клиенты удаляют с сервера новые письма, полученные через POP3. Чтобы Wrapper мог обнаружить и скачать письма с новыми ходами, вам надо отключить это поведение в настройках клиента. Wrapper в свою очередь никогда не удаляет письма с сервера, так что ваш обычный клиент всё равно сможет их получить."/>
     <lookup key="cmdRedownload" value="Скачать заново"/>
     <lookup key="cmdClose" value="Закрыть"/>
