@@ -706,4 +706,104 @@
 		<lookup key="activeAccount" value="Ενεργός"/>
 		<!-- END: Misc -->
 	</language>
+  <language code="ru" display="Русский">
+    <!-- BEGIN: Main forms -->
+    <lookup key="tabAccounts" value="Учётные записи"/>
+    <lookup key="buttonActivate" value="Активировать"/>
+    <lookup key="buttonRename" value="Переименовать"/>
+    <lookup key="buttonRemove" value="Удалить"/>
+    <lookup key="buttonAdd" value="Добавить"/>
+    <lookup key="tabIncoming" value="Получение почты"/>
+    <lookup key="cmdMessageStore" value="Показать POP3 письма"/>
+    <lookup key="groupBoxEmailSelection" value="Сохранение сейвов"/>
+    <lookup key="fbPollingSetup" value="Проверять почту"/>
+    <lookup key="fbPollingSetup_every" value="каждые:"/>
+    <lookup key="groupBoxAuth" value="Аутентификация"/>
+    <lookup key="fbPassword" value="Пароль:"/>
+    <lookup key="fbUserName" value="Логин:"/>
+    <lookup key="groupBoxServer" value="Сервер"/>
+    <lookup key="fbUseSSL" value="Использовать SSL:"/>
+    <lookup key="fbPort" value="Порт:"/>
+    <lookup key="fbServer" value="Сервер:"/>
+    <lookup key="fbEmailType" value="Протокол:"/>
+    <lookup key="tabOutgoing" value="Отправка почты"/>
+    <lookup key="fbUsePolling" value="Использовать настройки получения почты:"/>
+    <lookup key="groupBoxServer" value="Сервер"/>
+    <lookup key="fbBccMyself" value="Отправить себе копию письма:"/>
+    <lookup key="fbAuthentication" value="Требуется аутентификация:"/>
+    <lookup key="fbSSLType" value="Тип SSL:"/>
+    <lookup key="fbEmailAddress" value="E-mail:"/>
+    <lookup key="fbSmtpServer" value="SMTP-сервер:"/>
+    <lookup key="tabPreferences" value="Настройки"/>
+    <lookup key="fbSaveFolder" value="Папка с PBEM-сейвами:"/>
+    <lookup key="groupBoxPreferences" value="Настройки"/>
+    <lookup key="fbAutostart" value="Запускать Wrapper при старте системы:"/>
+    <lookup key="fbSentSound" value="Звук при отправке письма:"/>
+    <lookup key="fbEmailSound" value="Звук при получении письма:"/>
+    <lookup key="fbLocalization" value="Язык"/>
+    <lookup key="fbCopyToEmailOut" value="Скопировать в EmailOut после отправки:"/>
+    <lookup key="tabActivity" value="Список событий"/>
+    <lookup key="activityListViewlistView0" value="Сейв"/>
+    <lookup key="activityListViewlistView1" value="Входящий"/>
+    <lookup key="activityListViewlistView2" value="Исходящий"/>
+    <lookup key="activityListViewlistView3" value="Время"/>
+    <lookup key="tabAbout" value="О программе"/>
+    <lookup key="groupBetaTesters" value="Бета-тестеры"/>
+    <lookup key="groupAuthors" value="Разработчики"/>
+    <lookup key="lblNotice" value="Age of Wonders Email Wrapper - абсолютно бесплатная программа, автоматизирующая игру по почте во все три части серии AoW. Программа не имеет отношения к Triumph Studios, это личный некоммерческий проект, не преследующий иных целей помимо повышения удобства игры. Wrapper предоставляется &quot;как есть&quot;; автор не гарантирует поддержку программу в будущем (хотя если вежливо попросить, то всё возможно)."/>
+    <lookup key="cmdSave" value="Сохранить настройки"/>
+    <lookup key="MessageStore" value="POP3 письма ({0}, {1})"/>
+    <lookup key="messageStoreListlistView0" value="Отправитель"/>
+    <lookup key="messageStoreListlistView1" value="Тема"/>
+    <lookup key="messageStoreListlistView2" value="Дата"/>
+    <lookup key="messageStoreListlistView3" value="Файл"/>
+    <lookup key="messageStoreListlistView4" value=""/>
+    <lookup key="lblLocalMessageStoreMessage" value="Пользователям таких почтовых клиентов, как Outlook Express, Outlook, Mozilla Thunderbird, Eudora: по умолчанию эти клиенты удаляют с сервера новые письма, полученные через POP3. Чтобы Wrapper мог обнаружить и скачать письма с новыми ходами, вам надо отключить это поведение в настройках клиента. Wrapper в свою очередь никогда не удаляет письма с сервера, так что ваш обычный клиент всё равно сможет их получить."/>
+    <lookup key="cmdRedownload" value="Скачать заново"/>
+    <lookup key="cmdClose" value="Закрыть"/>
+    <!-- END: Main forms -->
+    <!-- BEGIN: Messages -->
+    <lookup key="msgWrapperWriteAccess" value="Нет прав на запись в папки: &#xA;{0}&#xA;&#xA; Исправьте настройки безопасности или запустите Wrapper с правами администратора."/>
+    <lookup key="msgWrapperArchiveGame" value="Сохранить архив выбранной игры? Архивирование поместит файлы игры в отдельную папку ('{0}'), где они будут по-прежнему доступны из игры."/>
+    <lookup key="msgWrapperCannotActivateAccount" value="Невозможно сделать активной учётную запись &quot;{0}&quot;. Подождите завершения отправки почты."/>
+    <lookup key="msgAccountPrompt" value="Имя учётной записи:"/>
+    <lookup key="msgAccountDuplicate" value="Учётная запись с таким именем уже существует."/>
+    <lookup key="msgWrapperEmailSentSuccess" value="Письмо успешно отправлено [{0}]."/>
+    <lookup key="msgWrapperEmailSentFailed" value="Не удалось отправить письмо {0}.&#xA;Получатель: {1}&#xA;&#xA;{2}"/>
+    <lookup key="msgEmailInSelected" value="Игру можно будет загрузить с помощью Scenario &gt; Email &gt; Load game"/>
+    <lookup key="msgSaveSelected" value="Игру можно будет загрузить с помощью Load game"/>
+    <lookup key="msgWrapperRestartRequired" value="Изменения вступят в силу после перезагрузки Wrapper'а."/>
+    <lookup key="msgWrapperPollFailed" value="Не удалось проверить почту."/>
+    <lookup key="msgWrapperGamesWaiting" value="У вас есть {0} несыгранных игр(ы)."/>
+    <!-- END: Messages -->
+    <!-- BEGIN: Context Menus -->
+    <lookup key="menuItemShow" value="Открыть Wrapper"/>
+    <lookup key="menuItemAccounts" value="Учётные записи"/>
+    <lookup key="menuItemPollNow" value="Проверить почту"/>
+    <lookup key="menuItemExit" value="Выход"/>
+    <lookup key="menuItemActivate" value="Активировать"/>
+    <lookup key="menuItemRename" value="Переименовать"/>
+    <lookup key="menuItemRemove" value="Удалить"/>
+    <lookup key="menuItemAdd" value="Создать учётную запись"/>
+    <lookup key="menuItemMarkEnded" value="Пометить как завершённый"/>
+    <lookup key="menuItemMarkSent" value="Пометить как отправленный"/>
+    <!-- END: Context Menus -->
+    <!-- BEGIN: Enumerations -->
+    <lookup key="enumChooser" value="Выбрать"/>
+    <lookup key="enumNone" value="Без шифрования"/>
+    <lookup key="enumSending" value="Отправка"/>
+    <lookup key="enumChecking" value="Проверка почты"/>
+    <lookup key="enumEmailWaiting" value="Почта получена"/>
+    <lookup key="enumNew" value="Новая игра"/>
+    <lookup key="enumReceived" value="Отправлен"/>
+    <lookup key="enumSent" value="Получен"/>
+    <lookup key="enumEnded" value="Игра завершена"/>
+    <lookup key="enumMinutes" value="мин"/>
+    <!-- END: Enumerations -->
+    <!-- BEGIN: Misc -->
+    <lookup key="buttonOK" value="ОК"/>
+    <lookup key="buttonCancel" value="Отмена"/>
+    <lookup key="activeAccount" value="Активировать"/>
+    <!-- END: Misc -->
+  </language>
 </languages>
