@@ -14,6 +14,14 @@ namespace AowEmailWrapper.Controls
 {
     public delegate void AccountActivatedEventHandler(object sender, AccountConfigValues theAccount);
 
+    public enum EmailProviderType
+    {
+        Google,
+        WindowsLive,
+        Yahoo,
+        Other
+    }
+
     public partial class AccountsConfig : UserControl
     {
         #region Private Members
@@ -32,6 +40,10 @@ namespace AowEmailWrapper.Controls
         private const string Menu_Activate_Tag = "menuItemActivate";
         private const string DefaultImageKey = "default";
 
+        public string[] GoogleDomains = new string[] { "@gmail", "@google" };
+        public string[] WindowsDomains = new string[] { "@msn", "@hotmail", "@live" };
+        public string[] YahooDomains = new string[] { "@yahoo", "@ymail", "@rocketmail" };
+        
         private bool _configChanged = false;
 
         ContextMenu _contextMenu;
@@ -295,12 +307,12 @@ namespace AowEmailWrapper.Controls
                         int imageIndex = -1;
 
                         if (account.SmtpConfig != null &&
-                            !string.IsNullOrEmpty(account.SmtpConfig.SmtpServer))
+                            !string.IsNullOrEmpty(account.SmtpConfig.EmailAddress))
                         {
-                            imageIndex = imageListLargeIcons.Images.IndexOfKey(account.SmtpConfig.SmtpServer);
+                            imageIndex = imageListLargeIcons.Images.IndexOfKey(GetEmailProviderType(account.SmtpConfig.EmailAddress));
                         }
                       
-                        item.ImageIndex = (imageIndex >= 0) ? imageIndex : imageListLargeIcons.Images.IndexOfKey(DefaultImageKey);
+                        item.ImageIndex = (imageIndex >= 0) ? imageIndex : imageListLargeIcons.Images.IndexOfKey(EmailProviderType.Other.ToString());
 
                         listViewAccounts.Items.Add(item);
                     }
@@ -317,6 +329,45 @@ namespace AowEmailWrapper.Controls
                 _accountsList.ActiveAccount.PollingConfig = pollingConfig.Config;
                 _accountsList.ActiveAccount.SmtpConfig = smtpConfig.Config;
             }
+        }
+
+        private string GetEmailProviderType(string input)
+        {
+            EmailProviderType returnVal = EmailProviderType.Other;
+
+            if (CheckDomains(input, GoogleDomains))
+            {
+                returnVal = EmailProviderType.Google;
+            }
+            else if (CheckDomains(input, WindowsDomains))
+            {
+                returnVal = EmailProviderType.WindowsLive;
+            }
+            else if (CheckDomains(input, YahooDomains))
+            {
+                returnVal = EmailProviderType.Yahoo;
+            }
+
+            return returnVal.ToString();
+        }
+
+        private bool CheckDomains(string input, string[] domains)
+        {
+            bool returnVal = false;
+
+            if (!string.IsNullOrEmpty(input))
+            {
+                foreach (string s in domains)
+                {
+                    if (input.ToLower().Contains(s))
+                    {
+                        returnVal = true;
+                        break;
+                    }
+                }
+            }
+
+            return returnVal;
         }
 
         private static DialogResult InputBox(string title, string promptText, ref string value)

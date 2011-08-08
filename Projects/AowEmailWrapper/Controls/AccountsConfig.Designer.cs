@@ -35,6 +35,7 @@
             this.panelTopHalf = new System.Windows.Forms.Panel();
             this.listViewAccounts = new System.Windows.Forms.ListView();
             this.columnHeader = new System.Windows.Forms.ColumnHeader();
+            this.imageListLargeIcons = new System.Windows.Forms.ImageList(this.components);
             this.panelButtons = new System.Windows.Forms.Panel();
             this.panelActivate = new System.Windows.Forms.Panel();
             this.buttonActivate = new System.Windows.Forms.Button();
@@ -48,7 +49,6 @@
             this.tabControlAccountEditor = new System.Windows.Forms.TabControl();
             this.tabIncoming = new System.Windows.Forms.TabPage();
             this.tabOutgoing = new System.Windows.Forms.TabPage();
-            this.imageListLargeIcons = new System.Windows.Forms.ImageList(this.components);
             this.pollingConfig = new AowEmailWrapper.Controls.PollingConfig();
             this.smtpConfig = new AowEmailWrapper.Controls.SmtpConfig();
             this.panelTopHalf.SuspendLayout();
@@ -93,6 +93,15 @@
             // 
             this.columnHeader.Text = "";
             this.columnHeader.Width = 100;
+            // 
+            // imageListLargeIcons
+            // 
+            this.imageListLargeIcons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListLargeIcons.ImageStream")));
+            this.imageListLargeIcons.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListLargeIcons.Images.SetKeyName(0, "Google");
+            this.imageListLargeIcons.Images.SetKeyName(1, "WindowsLive");
+            this.imageListLargeIcons.Images.SetKeyName(2, "Yahoo");
+            this.imageListLargeIcons.Images.SetKeyName(3, "Other");
             // 
             // panelButtons
             // 
@@ -233,15 +242,6 @@
             this.tabOutgoing.TabIndex = 1;
             this.tabOutgoing.Text = "Outgoing Email";
             this.tabOutgoing.UseVisualStyleBackColor = true;
-            // 
-            // imageListLargeIcons
-            // 
-            this.imageListLargeIcons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListLargeIcons.ImageStream")));
-            this.imageListLargeIcons.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListLargeIcons.Images.SetKeyName(0, "smtp.gmail.com");
-            this.imageListLargeIcons.Images.SetKeyName(1, "smtp.live.com");
-            this.imageListLargeIcons.Images.SetKeyName(2, "smtp.mail.yahoo.com");
-            this.imageListLargeIcons.Images.SetKeyName(3, "default");
             // 
             // pollingConfig
             // 
