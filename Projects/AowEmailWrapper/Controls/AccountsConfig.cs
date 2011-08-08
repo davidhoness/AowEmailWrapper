@@ -287,6 +287,7 @@ namespace AowEmailWrapper.Controls
                         else
                         {
                             item.Text = account.Name;
+                            item.ForeColor = Color.Gray;
                         }
 
                         item.Tag = account.Name;
