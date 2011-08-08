@@ -431,14 +431,20 @@ namespace AowEmailWrapper
 
         private void Minimized()
         {
+            this.SuspendLayout();
+
             if (this.WindowState == FormWindowState.Minimized)
             {
                 this.ShowInTaskbar = false;
             }
+
+            this.ResumeLayout();
         }
 
         private void Maximize()
         {
+            this.SuspendLayout();
+
             if (this.WindowState == FormWindowState.Minimized)
             {
                 if (_activityLog != null && 
@@ -451,6 +457,8 @@ namespace AowEmailWrapper
                 this.ShowInTaskbar = true;
                 this.Activate();
             }
+
+            this.ResumeLayout();
         }
 
         private void ShowException(Exception ex)
