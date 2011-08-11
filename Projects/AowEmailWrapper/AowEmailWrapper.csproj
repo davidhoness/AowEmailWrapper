@@ -81,6 +81,12 @@
     <Compile Include="Controls\AccountsConfig.Designer.cs">
       <DependentUpon>AccountsConfig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\AccountsCreationWizzard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AccountsCreationWizzard.Designer.cs">
+      <DependentUpon>AccountsCreationWizzard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ActivityListView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -182,6 +188,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\AccountsConfig.resx">
       <DependentUpon>AccountsConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AccountsCreationWizzard.resx">
+      <DependentUpon>AccountsCreationWizzard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ActivityListView.resx">
       <DependentUpon>ActivityListView.cs</DependentUpon>
