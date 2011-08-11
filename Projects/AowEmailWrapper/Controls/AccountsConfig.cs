@@ -159,6 +159,21 @@ namespace AowEmailWrapper.Controls
 
         private void Add()
         {
+            
+            using (Form createForm = new Form())
+            {
+                AccountsCreationWizzard wizzard = new AccountsCreationWizzard();
+                createForm.Controls.Add(wizzard);
+                wizzard.Dock = DockStyle.Fill;
+                wizzard.RadioImages = imageListLargeIcons;
+                createForm.Size = new Size(380, 275);
+                createForm.StartPosition = FormStartPosition.CenterParent;
+                createForm.Text = "Choose an email provder";
+                
+                createForm.ShowDialog();                   
+            }
+            /*
+
             if (_accountsList != null &&
                 _accountsList.Accounts != null)
             {
@@ -179,7 +194,7 @@ namespace AowEmailWrapper.Controls
                         MessageBox.Show(Translator.Translate(AccountDuplicateTextKey), Translator.Translate(AccountsTextKey), MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-            }
+            }*/
         }
 
         private void Remove()
