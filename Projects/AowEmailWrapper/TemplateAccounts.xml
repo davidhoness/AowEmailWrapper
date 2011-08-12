@@ -1,0 +1,18 @@
+<accounts>
+	<account name="Google Mail" emailprovidertype="Google" domains="@gmail, @googlemail" shortusername="true">
+		<polling_config usepolling="true" emailtype="IMAP" server="imap.gmail.com" port="993" usessl="true" pollinterval="10"/>
+		<smtp_config smtpserver="smtp.gmail.com" port="587" smtpssltype="TLS" authentication="true" usepollingcredentials="true" bccmyself="false"/>
+	</account>
+	<account name="Hotmail" emailprovidertype="WindowsLive" domains="@hotmail, @msn, @msnhotmail, @live">
+		<polling_config usepolling="true" emailtype="POP3" server="pop3.live.com" port="995" usessl="true" pollinterval="15"/>
+		<smtp_config smtpserver="smtp.live.com" port="587" smtpssltype="TLS" authentication="true" usepollingcredentials="true" bccmyself="false"/>
+	</account>
+	<account name="Yahoo Mail" emailprovidertype="Yahoo" domains="@yahoo, @ymail, @rocketmail">
+		<polling_config usepolling="true" emailtype="POP3" server="pop.mail.yahoo.com" port="995" usessl="true" pollinterval="10"/>
+		<smtp_config smtpserver="smtp.mail.yahoo.com" port="465" smtpssltype="SSL" authentication="true" usepollingcredentials="true" bccmyself="false"/>
+	</account>
+	<account name="Other" emailprovidertype="Other">
+		<polling_config usepolling="true" emailtype="POP3" port="110" usessl="false" pollinterval="10"/>
+		<smtp_config port="25" smtpssltype="None" authentication="true" usepollingcredentials="false" bccmyself="false"/>
+	</account>
+</accounts>
