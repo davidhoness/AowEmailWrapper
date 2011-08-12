@@ -85,9 +85,22 @@ namespace AowEmailWrapper.Controls
             }
         }
 
+        private void radioButton_MouseUp(object sender, MouseEventArgs e)
+        {
+            SetTextBoxFocus();
+        }
+
         private void radioButton_KeyDown(object sender, KeyEventArgs e)
         {
-            if (_chosenTemplate != null && e.KeyCode.Equals(Keys.Enter))
+            if (e.KeyCode.Equals(Keys.Enter))
+            {
+                SetTextBoxFocus();
+            }
+        }
+
+        private void SetTextBoxFocus()
+        {
+            if (_chosenTemplate != null)
             {
                 switch (_chosenTemplate.EmailProvider)
                 {
@@ -223,6 +236,7 @@ namespace AowEmailWrapper.Controls
             returnVal.UseVisualStyleBackColor = true;
             returnVal.CheckedChanged += new EventHandler(this.radioButton_CheckedChanged);
             returnVal.KeyDown += new KeyEventHandler(this.radioButton_KeyDown);
+            returnVal.MouseUp += new MouseEventHandler(radioButton_MouseUp);
 
             return returnVal;
         }
