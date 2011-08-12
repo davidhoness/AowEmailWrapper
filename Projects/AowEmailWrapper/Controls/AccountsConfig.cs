@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 using AowEmailWrapper.ConfigFramework;
 using AowEmailWrapper.Localization;
 
@@ -14,19 +15,12 @@ namespace AowEmailWrapper.Controls
 {
     public delegate void AccountActivatedEventHandler(object sender, AccountConfigValues theAccount);
 
-    public enum EmailProviderType
-    {
-        Google,
-        WindowsLive,
-        Yahoo,
-        Other
-    }
-
     public partial class AccountsConfig : UserControl
     {
         #region Private Members
 
         private AccountConfigValuesList _accountsList;
+        private AccountConfigValuesList _accountsTemplates;
         public EventHandler Config_Changed;
         public AccountActivatedEventHandler Account_Activated;
         private const string AccountsTextKey = "tabAccounts";
@@ -38,11 +32,7 @@ namespace AowEmailWrapper.Controls
         private const string Menu_Remove_Tag = "menuItemRemove";
         private const string Menu_Rename_Tag = "menuItemRename";
         private const string Menu_Activate_Tag = "menuItemActivate";
-        private const string DefaultImageKey = "default";
-
-        public string[] GoogleDomains = new string[] { "@gmail", "@google" };
-        public string[] WindowsDomains = new string[] { "@msn", "@hotmail", "@live" };
-        public string[] YahooDomains = new string[] { "@yahoo", "@ymail", "@rocketmail" };
+        private string DefaultImageKey = EmailProviderType.Other.ToString();
         
         private bool _configChanged = false;
 
@@ -69,6 +59,12 @@ namespace AowEmailWrapper.Controls
                 Populate();
                 _configChanged = false;
             }
+        }
+
+        public AccountConfigValuesList AccountsTemplates
+        {
+            get { return _accountsTemplates; }
+            set { _accountsTemplates = value; }
         }
 
         #endregion
@@ -157,44 +153,48 @@ namespace AowEmailWrapper.Controls
             }
         }
 
-        private void Add()
+        public void Add()
         {
-            
-            using (Form createForm = new Form())
-            {
-                AccountsCreationWizzard wizzard = new AccountsCreationWizzard();
-                createForm.Controls.Add(wizzard);
-                wizzard.Dock = DockStyle.Fill;
-                wizzard.RadioImages = imageListLargeIcons;
-                createForm.Size = new Size(380, 275);
-                createForm.StartPosition = FormStartPosition.CenterParent;
-                createForm.Text = "Choose an email provder";
-                
-                createForm.ShowDialog();                   
-            }
-            /*
+            AccountConfigValues theNewAccount = null;
 
-            if (_accountsList != null &&
-                _accountsList.Accounts != null)
+            using (AccountsCreationForm createForm = new AccountsCreationForm())
             {
-                string theName = null;
-                DialogResult dialogResult = InputBox(Translator.Translate(AccountsTextKey), Translator.Translate(AccountPromptTextKey), ref theName);
-
-                if (!string.IsNullOrEmpty(theName) && !dialogResult.Equals(DialogResult.Cancel))
+                createForm.Name = createForm.GetType().Name;
+                createForm.AccountTemplates = _accountsTemplates;
+                createForm.RadioImages = imageListLargeIcons;
+                if (createForm.ShowDialog().Equals(DialogResult.OK))
                 {
-                    if (!_accountsList.CheckAccountExistsByName(theName))
-                    {
-                        AccountConfigValues theNewAccount = new AccountConfigValues(true, theName);
-                        _accountsList.Accounts.Add(theNewAccount);
-                        Raise_Account_Activated(theNewAccount);
-                        Raise_Config_Changed();
-                    }
-                    else
-                    {
-                        MessageBox.Show(Translator.Translate(AccountDuplicateTextKey), Translator.Translate(AccountsTextKey), MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    theNewAccount = createForm.ChosenTemplate;
                 }
-            }*/
+            }
+
+            if (theNewAccount != null)
+            {
+                theNewAccount.Domains = null; //Don't need to save this
+
+                if (_accountsList.CheckAccountExistsByName(theNewAccount.Name))
+                {
+                    //That name does exist, make a new name
+
+                    int num = 0;
+                    bool success = false;
+                    string proposedName = null;
+
+                    do
+                    {
+                        num++;
+                        proposedName = string.Format(AccountActiveTemplate, theNewAccount.Name, num);
+                        success = !_accountsList.CheckAccountExistsByName(proposedName);
+
+                    } while (!success);
+
+                    theNewAccount.Name = proposedName;
+                }
+
+                _accountsList.Accounts.Add(theNewAccount);
+                Raise_Account_Activated(theNewAccount);
+                Raise_Config_Changed();               
+            }
         }
 
         private void Remove()
@@ -350,17 +350,33 @@ namespace AowEmailWrapper.Controls
         {
             EmailProviderType returnVal = EmailProviderType.Other;
 
-            if (CheckDomains(input, GoogleDomains))
+            if (_accountsTemplates != null &&
+                _accountsTemplates.Accounts!=null &&
+                _accountsTemplates.Accounts.Count >0)
             {
-                returnVal = EmailProviderType.Google;
-            }
-            else if (CheckDomains(input, WindowsDomains))
-            {
-                returnVal = EmailProviderType.WindowsLive;
-            }
-            else if (CheckDomains(input, YahooDomains))
-            {
-                returnVal = EmailProviderType.Yahoo;
+                bool success = false;
+
+                foreach (AccountConfigValues account in _accountsTemplates.Accounts)
+                {
+                    string[] split = account.Domains.Split(',');
+                    if (split.Length > 0)
+                    {
+                        foreach (string s in split)
+                        {
+                            if (!string.IsNullOrEmpty(s))
+                            {
+                                success = input.Contains(s.Trim());
+                                if (success)
+                                {
+                                    returnVal = account.EmailProvider;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+
+                    if (success) break;
+                }
             }
 
             return returnVal.ToString();
