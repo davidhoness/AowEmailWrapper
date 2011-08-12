@@ -81,6 +81,12 @@
     <Compile Include="Controls\AccountsConfig.Designer.cs">
       <DependentUpon>AccountsConfig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\AccountsCreationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\AccountsCreationForm.Designer.cs">
+      <DependentUpon>AccountsCreationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\AccountsCreationWizzard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -189,6 +195,9 @@
     <EmbeddedResource Include="Controls\AccountsConfig.resx">
       <DependentUpon>AccountsConfig.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AccountsCreationForm.resx">
+      <DependentUpon>AccountsCreationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\AccountsCreationWizzard.resx">
       <DependentUpon>AccountsCreationWizzard.cs</DependentUpon>
     </EmbeddedResource>
@@ -271,6 +280,9 @@
     <Content Include="online48.ico" />
     <Content Include="sent.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TemplateAccounts.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
