@@ -6,12 +6,29 @@ using System.Xml.Serialization;
 
 namespace AowEmailWrapper.ConfigFramework
 {
+    public enum EmailProviderType
+    {
+        [XmlEnum(Name = "None")]
+        None = 0,
+        [XmlEnum(Name = "Google")]
+        Google,
+        [XmlEnum(Name = "WindowsLive")]
+        WindowsLive,
+        [XmlEnum(Name = "Yahoo")]
+        Yahoo,
+        [XmlEnum(Name = "Other")]
+        Other
+    }
+
     [XmlRoot("account")]
     public class AccountConfigValues
     {
         private PollingConfigValues _pollingConfigValues;
         private SmtpConfigValues _smtpConfigValues;
         private string _name;
+        private EmailProviderType _emailProviderType; //Template property
+        private string _domains; //Template property
+        private string _shortUserName; //Template property
 
         [XmlElement("polling_config")]
         public PollingConfigValues PollingConfig
@@ -34,18 +51,31 @@ namespace AowEmailWrapper.ConfigFramework
             set { _name = value; }
         }
 
-        public AccountConfigValues()
-            : this(false, "Default")
-        { }
-
-        public AccountConfigValues(bool defaults, string name)
+        //Template property
+        [XmlAttribute("emailprovidertype")]
+        public EmailProviderType EmailProvider
         {
-            if (defaults)
-            {
-                _name = name;
-                _pollingConfigValues = new PollingConfigValues(defaults);
-                _smtpConfigValues = new SmtpConfigValues(defaults);
-            }
+            get { return _emailProviderType; }
+            set { _emailProviderType = value; }
         }
+
+        //Template property
+        [XmlAttribute("domains")]
+        public string Domains
+        {
+            get { return _domains; }
+            set { _domains = value; }
+        }
+
+        //Template property
+        [XmlAttribute("shortusername")]
+        public string ShortUserName
+        {
+            get { return _shortUserName; }
+            set { _shortUserName = value; }
+        }
+
+        public AccountConfigValues()
+        { }
     }
 }
