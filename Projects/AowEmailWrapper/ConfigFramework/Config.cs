@@ -35,7 +35,8 @@ namespace AowEmailWrapper.ConfigFramework
             if (defaults)
             {
                 _preferencesConfigValues = new PreferencesConfigValues(true);
-                _accountsList = new AccountConfigValuesList(true);
+                _accountsList = new AccountConfigValuesList();
+                _accountsList.Accounts = new List<AccountConfigValues>();
             }
         }
     }
