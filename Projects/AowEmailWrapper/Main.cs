@@ -473,10 +473,10 @@ namespace AowEmailWrapper
                 }
                 this.WindowState = FormWindowState.Normal;
                 this.ShowInTaskbar = true;
-                this.Activate();
             }
 
             this.ResumeLayout();
+            this.Activate();
         }
 
         private void ShowException(Exception ex)
