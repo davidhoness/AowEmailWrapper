@@ -30,26 +30,21 @@
         {
             this.panelWhite = new System.Windows.Forms.Panel();
             this.panelInnerRadio = new System.Windows.Forms.Panel();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.panelMessagePadder = new System.Windows.Forms.Panel();
             this.panelMessage = new System.Windows.Forms.Panel();
-            this.labelMessage = new System.Windows.Forms.Label();
+            this.labelDomainsMessage = new System.Windows.Forms.Label();
             this.panelAuthentication = new System.Windows.Forms.Panel();
-            this.groupBoxAuthentication = new System.Windows.Forms.GroupBox();
             this.panelCreateButton = new System.Windows.Forms.Panel();
             this.buttonCreate = new System.Windows.Forms.Button();
+            this.groupBoxAuth = new System.Windows.Forms.GroupBox();
             this.fbPassword = new AowEmailWrapper.Controls.FormBlockText();
             this.fbEmailAddress = new AowEmailWrapper.Controls.FormBlockText();
             this.panelWhite.SuspendLayout();
-            this.panelInnerRadio.SuspendLayout();
             this.panelMessagePadder.SuspendLayout();
             this.panelMessage.SuspendLayout();
             this.panelAuthentication.SuspendLayout();
-            this.groupBoxAuthentication.SuspendLayout();
             this.panelCreateButton.SuspendLayout();
+            this.groupBoxAuth.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelWhite
@@ -66,78 +61,11 @@
             // 
             // panelInnerRadio
             // 
-            this.panelInnerRadio.Controls.Add(this.radioButton4);
-            this.panelInnerRadio.Controls.Add(this.radioButton3);
-            this.panelInnerRadio.Controls.Add(this.radioButton2);
-            this.panelInnerRadio.Controls.Add(this.radioButton1);
             this.panelInnerRadio.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelInnerRadio.Location = new System.Drawing.Point(10, 10);
             this.panelInnerRadio.Name = "panelInnerRadio";
             this.panelInnerRadio.Size = new System.Drawing.Size(386, 72);
             this.panelInnerRadio.TabIndex = 0;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.radioButton4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.radioButton4.Location = new System.Drawing.Point(270, 0);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.radioButton4.Size = new System.Drawing.Size(71, 72);
-            this.radioButton4.TabIndex = 7;
-            this.radioButton4.Tag = "Other";
-            this.radioButton4.Text = "Other";
-            this.radioButton4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.radioButton4.UseVisualStyleBackColor = true;
-            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.radioButton3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.radioButton3.Location = new System.Drawing.Point(172, 0);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.radioButton3.Size = new System.Drawing.Size(98, 72);
-            this.radioButton3.TabIndex = 6;
-            this.radioButton3.Tag = "Yahoo";
-            this.radioButton3.Text = "Yahoo Mail";
-            this.radioButton3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.radioButton2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.radioButton2.Location = new System.Drawing.Point(72, 0);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.radioButton2.Size = new System.Drawing.Size(100, 72);
-            this.radioButton2.TabIndex = 5;
-            this.radioButton2.Tag = "WindowsLive";
-            this.radioButton2.Text = "Hotmail";
-            this.radioButton2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.radioButton1.Location = new System.Drawing.Point(0, 0);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.radioButton1.Size = new System.Drawing.Size(72, 72);
-            this.radioButton1.TabIndex = 4;
-            this.radioButton1.Tag = "Google";
-            this.radioButton1.Text = "GMail";
-            this.radioButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // panelMessagePadder
             // 
@@ -153,46 +81,32 @@
             // 
             this.panelMessage.BackColor = System.Drawing.SystemColors.Info;
             this.panelMessage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelMessage.Controls.Add(this.labelMessage);
+            this.panelMessage.Controls.Add(this.labelDomainsMessage);
             this.panelMessage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMessage.Location = new System.Drawing.Point(0, 5);
             this.panelMessage.Name = "panelMessage";
             this.panelMessage.Size = new System.Drawing.Size(437, 25);
             this.panelMessage.TabIndex = 21;
             // 
-            // labelMessage
+            // labelDomainsMessage
             // 
-            this.labelMessage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelMessage.Location = new System.Drawing.Point(0, 0);
-            this.labelMessage.Name = "labelMessage";
-            this.labelMessage.Size = new System.Drawing.Size(433, 21);
-            this.labelMessage.TabIndex = 0;
-            this.labelMessage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelDomainsMessage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelDomainsMessage.Location = new System.Drawing.Point(0, 0);
+            this.labelDomainsMessage.Name = "labelDomainsMessage";
+            this.labelDomainsMessage.Size = new System.Drawing.Size(433, 21);
+            this.labelDomainsMessage.TabIndex = 0;
+            this.labelDomainsMessage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panelAuthentication
             // 
             this.panelAuthentication.Controls.Add(this.panelCreateButton);
-            this.panelAuthentication.Controls.Add(this.groupBoxAuthentication);
+            this.panelAuthentication.Controls.Add(this.groupBoxAuth);
             this.panelAuthentication.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelAuthentication.Location = new System.Drawing.Point(0, 124);
             this.panelAuthentication.Name = "panelAuthentication";
             this.panelAuthentication.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.panelAuthentication.Size = new System.Drawing.Size(437, 109);
             this.panelAuthentication.TabIndex = 23;
-            // 
-            // groupBoxAuthentication
-            // 
-            this.groupBoxAuthentication.Controls.Add(this.fbPassword);
-            this.groupBoxAuthentication.Controls.Add(this.fbEmailAddress);
-            this.groupBoxAuthentication.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBoxAuthentication.Enabled = false;
-            this.groupBoxAuthentication.Location = new System.Drawing.Point(0, 5);
-            this.groupBoxAuthentication.Name = "groupBoxAuthentication";
-            this.groupBoxAuthentication.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.groupBoxAuthentication.Size = new System.Drawing.Size(437, 69);
-            this.groupBoxAuthentication.TabIndex = 12;
-            this.groupBoxAuthentication.TabStop = false;
-            this.groupBoxAuthentication.Text = "Authentication Details";
             // 
             // panelCreateButton
             // 
@@ -215,6 +129,20 @@
             this.buttonCreate.Text = "Create";
             this.buttonCreate.UseVisualStyleBackColor = true;
             this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
+            // 
+            // groupBoxAuth
+            // 
+            this.groupBoxAuth.Controls.Add(this.fbPassword);
+            this.groupBoxAuth.Controls.Add(this.fbEmailAddress);
+            this.groupBoxAuth.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBoxAuth.Enabled = false;
+            this.groupBoxAuth.Location = new System.Drawing.Point(0, 5);
+            this.groupBoxAuth.Name = "groupBoxAuth";
+            this.groupBoxAuth.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.groupBoxAuth.Size = new System.Drawing.Size(437, 69);
+            this.groupBoxAuth.TabIndex = 12;
+            this.groupBoxAuth.TabStop = false;
+            this.groupBoxAuth.Text = "Authentication Details";
             // 
             // fbPassword
             // 
@@ -252,13 +180,11 @@
             this.Name = "AccountsCreationWizzard";
             this.Size = new System.Drawing.Size(437, 261);
             this.panelWhite.ResumeLayout(false);
-            this.panelInnerRadio.ResumeLayout(false);
-            this.panelInnerRadio.PerformLayout();
             this.panelMessagePadder.ResumeLayout(false);
             this.panelMessage.ResumeLayout(false);
             this.panelAuthentication.ResumeLayout(false);
-            this.groupBoxAuthentication.ResumeLayout(false);
             this.panelCreateButton.ResumeLayout(false);
+            this.groupBoxAuth.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -267,15 +193,11 @@
 
         private System.Windows.Forms.Panel panelWhite;
         private System.Windows.Forms.Panel panelInnerRadio;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Panel panelMessagePadder;
         private System.Windows.Forms.Panel panelMessage;
-        private System.Windows.Forms.Label labelMessage;
+        private System.Windows.Forms.Label labelDomainsMessage;
         private System.Windows.Forms.Panel panelAuthentication;
-        private System.Windows.Forms.GroupBox groupBoxAuthentication;
+        private System.Windows.Forms.GroupBox groupBoxAuth;
         private FormBlockText fbPassword;
         private FormBlockText fbEmailAddress;
         private System.Windows.Forms.Panel panelCreateButton;

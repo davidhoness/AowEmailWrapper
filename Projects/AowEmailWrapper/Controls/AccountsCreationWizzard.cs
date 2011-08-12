@@ -8,20 +8,31 @@ using System.Text;
 using System.Windows.Forms;
 using AowEmailWrapper.Helpers;
 using AowEmailWrapper.ConfigFramework;
+using AowEmailWrapper.Localization;
 
 namespace AowEmailWrapper.Controls
 {
     public partial class AccountsCreationWizzard : UserControl
     {
-        private EmailProviderType _selectedEmailType;
         private AccountConfigValuesList _accountTemplates;
+        private AccountConfigValues _chosenTemplate;
+        private const string InputEmailSettingsManual = "msgInputEmailSettingsManual";
 
         public EventHandler CreateClicked;
+
+        public AccountConfigValues ChosenTemplate
+        {
+            get { return _chosenTemplate; }
+        }
 
         public AccountConfigValuesList AccountTemplates
         {
             get { return _accountTemplates; }
-            set { _accountTemplates = value; }
+            set
+            {
+                _accountTemplates = value;
+                CreateRadioButtons();
+            }
         }
 
         public ImageList RadioImages
@@ -36,8 +47,8 @@ namespace AowEmailWrapper.Controls
         public AccountsCreationWizzard()
         {
             InitializeComponent();
-            fbEmailAddress.InnerTextBox.KeyUp += new KeyEventHandler(textBox_Changed);
-            fbPassword.InnerTextBox.KeyUp += new KeyEventHandler(textBox_Changed);
+            fbEmailAddress.InnerTextBox.KeyDown += new KeyEventHandler(textBox_Changed);
+            fbPassword.InnerTextBox.KeyDown += new KeyEventHandler(textBox_Changed);
         }
 
         private void radioButton_CheckedChanged(object sender, EventArgs e)
@@ -45,67 +56,97 @@ namespace AowEmailWrapper.Controls
             RadioButton theButton = (RadioButton)sender;
             string buttonArg = theButton.Tag.ToString();
 
-            _selectedEmailType = ConfigHelper.ParseEnumString<EmailProviderType>(buttonArg);
-
-            switch (_selectedEmailType)
+            if (_accountTemplates != null &&
+                _accountTemplates.Accounts != null &&
+                _accountTemplates.Accounts.Count > 0)
             {
-                case EmailProviderType.Google:
-                    labelMessage.Text = "@gmail, @googlemail";
-                    break;
-                case EmailProviderType.WindowsLive:
-                    labelMessage.Text = "@hotmail, @msn, @live";
-                    break;
-                case EmailProviderType.Yahoo:
-                    labelMessage.Text = "@yahoo, @ymail, @rocketmail";
-                    break;
-                default:
-                    labelMessage.Text = "You will imput the email settings manually.";
-                    fbEmailAddress.TextValue = string.Empty;
-                    fbPassword.TextValue = string.Empty;
-                    break;
-            }
+                EmailProviderType selectedEmailType = ConfigHelper.ParseEnumString<EmailProviderType>(buttonArg);
+                AccountConfigValues selectedTemplate = _accountTemplates.Accounts.Find(account => account.EmailProvider.Equals(selectedEmailType));
 
-            CheckCreateEnabled();
+                //Create a copy of it in memory (don't modify the original)
+                _chosenTemplate = XmlHelper.Deserialize<AccountConfigValues>(XmlHelper.Serialize(selectedTemplate));
+
+                CheckCreateEnabled();
+
+                switch (_chosenTemplate.EmailProvider)
+                {
+                    case EmailProviderType.Google:
+                    case EmailProviderType.WindowsLive:
+                    case EmailProviderType.Yahoo:
+                        labelDomainsMessage.Text = _chosenTemplate.Domains;
+                        fbEmailAddress.InnerTextBox.Focus();
+                        break;
+                    default:
+                        labelDomainsMessage.Text = Translator.Translate(InputEmailSettingsManual);
+                        fbEmailAddress.TextValue = string.Empty;
+                        fbPassword.TextValue = string.Empty;
+                        buttonCreate.Focus();
+                        break;
+                }
+            }
         }
 
         private void CheckCreateEnabled()
         {
-            switch (_selectedEmailType)
+            if (_chosenTemplate != null)
             {
-                case EmailProviderType.Google:                    
-                case EmailProviderType.WindowsLive:
-                case EmailProviderType.Yahoo:
-                    buttonCreate.Enabled = fbEmailAddress.TextValue.Length > 0 && fbPassword.TextValue.Length > 0;
-                    groupBoxAuthentication.Enabled = true;
-                    break;
-                default:
-                    buttonCreate.Enabled = true;
-                    groupBoxAuthentication.Enabled = false;
-                    break;
+                switch (_chosenTemplate.EmailProvider)
+                {
+                    case EmailProviderType.Google:
+                    case EmailProviderType.WindowsLive:
+                    case EmailProviderType.Yahoo:
+                        buttonCreate.Enabled = fbEmailAddress.TextValue.Length > 0 && fbPassword.TextValue.Length > 0;
+                        groupBoxAuth.Enabled = true;
+                        break;
+                    default:
+                        buttonCreate.Enabled = true;
+                        groupBoxAuth.Enabled = false;
+                        break;
+                }
             }
         }
 
-        private void textBox_Changed(object sender, EventArgs e)
+        private void textBox_Changed(object sender, KeyEventArgs e)
         {
             CheckCreateEnabled();
+            if (e.KeyCode.Equals(Keys.Enter) && sender.Equals(fbPassword.InnerTextBox))
+            {
+                buttonCreate.Focus();
+                buttonCreate_Click(sender, e);
+            }
         }
 
         private void buttonCreate_Click(object sender, EventArgs e)
         {
+            UpdateChosenTemplate(fbEmailAddress.TextValue, fbPassword.TextValue);
             if (CreateClicked != null)
             {
-                CreateClicked(sender, e);
+                CreateClicked(this, e);
+            }
+        }
+
+        private void CreateRadioButtons()
+        {
+            if (_accountTemplates != null &&
+                _accountTemplates.Accounts != null &&
+                _accountTemplates.Accounts.Count > 0)
+            {
+                for (int i = _accountTemplates.Accounts.Count - 1; i >= 0; i--)
+                {
+                    AccountConfigValues account = _accountTemplates.Accounts[i];
+                    panelInnerRadio.Controls.Add(CreateRadioButton(account.EmailProvider, account.Name));
+                }
             }
         }
 
         private void SetIcons(ImageList images)
         {
-            if (images != null)
+            if (images != null && panelInnerRadio.Controls.Count > 0)
             {
                 foreach (Control control in panelInnerRadio.Controls)
                 {
                     if (control is RadioButton)
-                    {                        
+                    {
                         RadioButton radioButton = (RadioButton)control;
                         int imageIndex = images.Images.IndexOfKey(radioButton.Tag.ToString());
                         if (imageIndex >= 0)
@@ -115,6 +156,54 @@ namespace AowEmailWrapper.Controls
                     }
                 }
             }
+        }
+
+        private void UpdateChosenTemplate(string emailAddress, string password)
+        {
+            if (_chosenTemplate != null &&
+                !string.IsNullOrEmpty(emailAddress) &&
+                !string.IsNullOrEmpty(password))
+            {
+                string username = emailAddress;
+
+                if (!string.IsNullOrEmpty(_chosenTemplate.ShortUserName))
+                {
+                    //Take everything on the left of the @ symbol for the username
+                    bool shortUserName = false;
+                    bool.TryParse(_chosenTemplate.ShortUserName, out shortUserName);
+                    if (shortUserName)
+                    {
+                        int atPos = emailAddress.IndexOf('@');
+                        if (atPos > 0)
+                        {
+                            username = emailAddress.Substring(0, atPos);
+                        }
+                    }
+                }
+                _chosenTemplate.PollingConfig.Username = username;
+                _chosenTemplate.PollingConfig.PasswordTrue = password;
+                _chosenTemplate.SmtpConfig.EmailAddress = emailAddress;
+            }
+        }
+
+        private RadioButton CreateRadioButton(EmailProviderType type, string text)
+        {
+            RadioButton returnVal = new RadioButton();
+
+            returnVal.AutoSize = true;
+            returnVal.Dock = DockStyle.Left;
+            returnVal.ImageAlign = ContentAlignment.TopCenter;
+            returnVal.Location = new Point(0, 0);
+            returnVal.Name = "radio" + type.ToString();
+            returnVal.Padding = new Padding(0, 0, 30, 0);
+            returnVal.Size = new Size(72, 72);
+            returnVal.Tag = type.ToString();
+            returnVal.Text = text;
+            returnVal.TextAlign = ContentAlignment.BottomCenter;
+            returnVal.UseVisualStyleBackColor = true;
+            returnVal.CheckedChanged += new EventHandler(this.radioButton_CheckedChanged);
+
+            return returnVal;
         }
     }
 }
