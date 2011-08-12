@@ -56,6 +56,8 @@
 		<lookup key="lblLocalMessageStoreMessage" value="Users that have a Windows based email client such as Outlook Express, Outlook, Mozilla Thunderbird, Eudora etc. should be aware that the default behaviour for POP3 access is to remove messages from the server after they have been downloaded.  You will need to change an option to tell your client to leave the messages on the server so that the Wrapper can find them.  The Wrapper will always leave messages on the server so your usual email client will also find them."/>
 		<lookup key="cmdRedownload" value="Re-Download"/>
 		<lookup key="cmdClose" value="Close"/>
+    <lookup key="AccountsCreationForm" value="Create a new account"/>
+    <lookup key="buttonCreate" value="&amp;Create"/>
 		<!-- END: Main forms -->
 		<!-- BEGIN: Messages -->
 		<lookup key="msgWrapperWriteAccess" value="The Wrapper does not have Write access to these folders:&#xA;{0}&#xA;&#xA;Please modify your system security settings or run the Wrapper as Administrator."/>
@@ -70,11 +72,12 @@
 		<lookup key="msgWrapperRestartRequired" value="Please restart the Wrapper for these changes to take effect."/>
 		<lookup key="msgWrapperPollFailed" value="Poll failed"/>
 		<lookup key="msgWrapperGamesWaiting" value="You have {0} game(s) waiting."/>
+    <lookup key="msgInputEmailSettingsManual" value="You will enter the settings manually."/>
 		<!-- END: Messages -->
 		<!-- BEGIN: Context Menus -->
 		<lookup key="menuItemShow" value="&amp;Show"/>
 		<lookup key="menuItemAccounts" value="Accounts"/>
-		<lookup key="menuItemPollNow" value="&amp;Check now"/>
+		<lookup key="menuItemPollNow" value="&amp;Poll now"/>
 		<lookup key="menuItemExit" value="E&amp;xit"/>
 		<lookup key="menuItemActivate" value="&amp;Activate"/>
 		<lookup key="menuItemRename" value="&amp;Rename"/>
@@ -162,6 +165,8 @@
     <lookup key="lblLocalMessageStoreMessage" value="Les joueurs utilisant des logiciels Windows pour lire les mails, comme Outlook Express, Outlook, Mozilla Thunderbird, Eudora, etc… devraient être attentif au comportement par défaut de leur accès POP3 qui est de supprimer les mails du serveur à la fin de leur téléchargement. Vous devez modifier cette option pour indiquer à votre logiciel de conserver les mails sur le serveur afin que ce Wrapper puisse les lire. Quant à ce Wrapper, il laissera toujours les mails sur le serveur afin que votre logiciel habituel puisse les lire."/>
     <lookup key="cmdRedownload" value="Re-Télécharger"/>
     <lookup key="cmdClose" value="Fermer"/>
+    <lookup key="AccountsCreationForm" value="Créer un nouveau compte"/>
+    <lookup key="buttonCreate" value="&amp;Créer"/>
     <!-- END: Main forms -->
     <!-- BEGIN: Messages -->
     <lookup key="msgWrapperWriteAccess" value="Le Wrapper n'a pas les autorisations en écriture sur les répertoires suivants : &#xA;{0}&#xA;&#xA;Merci de modifier les réglages de sécurité de votre système ou d'éxécuter ce Wrapper en tant qu'Administrateur."/>
@@ -176,6 +181,7 @@
     <lookup key="msgWrapperRestartRequired" value="Merci de redémarrer le Wrapper pour que ces changements soient effectifs."/>
     <lookup key="msgWrapperPollFailed" value="Echec de scrutation"/>
     <lookup key="msgWrapperGamesWaiting" value="Vous avez {0} partie(s) en attente."/>
+    <lookup key="msgInputEmailSettingsManual" value="Vous allez entrer les paramètres manuellement."/>
     <!-- END: Messages -->
     <!-- BEGIN: Context Menus -->
     <lookup key="menuItemShow" value="Ouvrir"/>
@@ -261,6 +267,8 @@
     <lookup key="lblLocalMessageStoreMessage" value="Benutzer die einen Windows basierten E-Mail Client wie Outlook Express, Outlook, Mozilla Thunderbird, Eudora, etc. verwenden, sollten beachten, dass das Standardverhalten für den POP3 Zugriff bedeutet, dass die Nachrichten nach dem Herunterladen vom Server entfernt werden. Sie müssen eine Option ändern um den Client so zu konfigurieren, dass die Nachrichten auf dem Server verbleiben und der Wrapper diese finden kann. Der Wrapper beläßt die Nachrichten immer auf dem Server, so dass der normale E-Mail Client diese auch finden kann." />
     <lookup key="cmdRedownload" value="Erneut herunterladen" />
     <lookup key="cmdClose" value="Schließen" />
+    <lookup key="AccountsCreationForm" value="Erstellen Sie eine neue Konto"/>
+    <lookup key="buttonCreate" value="&amp;Erstellen"/>
     <!-- END: Main forms -->
     <!-- BEGIN: Messages -->
     <lookup key="msgWrapperWriteAccess" value="Der Wrapper hat keinen Schreibzugriff auf diese Verzeichnisse:&#xA;{0}&#xA;&#xA; Bitte ändern Sie Ihre System Sicherheitseinstellungen oder starten Sie den Wrapper als Administrator." />
@@ -275,6 +283,7 @@
     <lookup key="msgWrapperRestartRequired" value="Bitte starten Sie den Wrapper neu um die Änderungen zu übernehmen." />
     <lookup key="msgWrapperPollFailed" value="Abruf fehlgeschlagen" />
     <lookup key="msgWrapperGamesWaiting" value="Sie haben {0} Spiel(e) wartend." />
+    <lookup key="msgInputEmailSettingsManual" value="Sie werden die Einstellungen manuell eingeben."/>
     <!-- END: Messages -->
     <!-- BEGIN: Context Menus -->
     <lookup key="menuItemShow" value="Anzeigen" />
@@ -361,6 +370,8 @@
 		<lookup key="lblLocalMessageStoreMessage" value="Aquellos usuarios con un cliente de email basado en Windows, tal como Outlook Express, Outlook, Mozilla Thunderbird, Eudora, etc. deben tener en cuenta que el comportamiento por defecto del acceso POP3 es el de remover los mensajes del servidor una vez descargados. Estos usuarios deberán cambiar las preferencias de su cliente de manera que deje los mensajes en el servidor de manera que el Wrapper pueda acceder a ellos. El Wrapper siempre dejará los mensajes en el servidor, de manera que su cliente de email usual también los encontrará."/>
 		<lookup key="cmdRedownload" value="Volver a descargar"/>
 		<lookup key="cmdClose" value="Cerrar"/>
+    <lookup key="AccountsCreationForm" value="Crear una nueva cuenta"/>
+    <lookup key="buttonCreate" value="&amp;Crear"/>
 		<!-- END: Main forms -->
 		<!-- BEGIN: Messages -->
 		<lookup key="msgWrapperWriteAccess" value="El Wrapper no tiene acceso de escritura a las siguientes carpetas:&#xA;{0}&#xA;&#xA;Por favor, modifique las opciones de seguridad de su sistema o inicie el Wrapper en modo de Administrador."/>
@@ -375,6 +386,7 @@
 		<lookup key="msgWrapperRestartRequired" value="Por favor reinicialice el programa para que estos cambios tengan efecto."/>
 		<lookup key="msgWrapperPollFailed" value="Chequeo fallido."/>
 		<lookup key="msgWrapperGamesWaiting" value="Tienes {0} juegos esperando."/>
+    <lookup key="msgInputEmailSettingsManual" value="Usted introducir los ajustes manualmente."/>
 		<!-- END: Messages -->
 		<!-- BEGIN: Context Menus -->
 		<lookup key="menuItemShow" value="Mostrar"/>
@@ -461,6 +473,8 @@
     <lookup key="lblLocalMessageStoreMessage" value="Gebruikers die clients gebruiken die op Windows zijn gebaseerd zoals Outlook Express, Outlook, Mozilla Thunderbird, Eudora, etc… moeten weten dat het standaard gedrag voor POP3 toegang is om berichten te verwijderen van de server nadat ze gedownload zijn. Je moet een optie veranderen om je client te vertellen de verichten op de server te laten zodat de Wrapper ze kan vinden. De wrapper zal altijd berichten op de server achterlaten zodat je email client ze ook kan vinden. "/>
     <lookup key="cmdRedownload" value="Opnieuw Downloaden"/>
     <lookup key="cmdClose" value="Sluiten"/>
+    <lookup key="AccountsCreationForm" value="Maak een nieuwe account"/>
+    <lookup key="buttonCreate" value="&amp;Creëren"/>
     <!-- END: Main forms -->
     <!-- BEGIN: Messages -->
     <lookup key="msgWrapperWriteAccess" value="De wrapper heeft geen toestemming tot deze folders: &#xA;{0}&#xA;&#xA; Verander aub uw beveiligings instellingen, of run de Wrapper als Administrator. "/>
@@ -475,6 +489,7 @@
     <lookup key="msgWrapperRestartRequired" value="Herstart de Wrapper om deze veranderingen in effect te laten gaan, aub."/>
     <lookup key="msgWrapperPollFailed" value="Doorzoeken gefaald"/>
     <lookup key="msgWrapperGamesWaiting" value="Je hebt {0} game(s) wachten."/>
+    <lookup key="msgInputEmailSettingsManual" value="U zult de instellingen handmatig invoeren."/>
     <!-- END: Messages -->
     <!-- BEGIN: Context Menus -->
     <lookup key="menuItemShow" value="Show"/>
@@ -565,6 +580,8 @@
 		<lookup key="lblLocalMessageStoreMessage" value="Użytkownicy klientów email dla Windows, takich jak Outlook Express, Outlook, Mozilla Thunderbird, Eudora itp. powinni wiedzieć, że ich domyślnym zachowaniem w przypadku dostępu do konta POP3 jest usuwanie wiadomości z serwera po ich pobraniu. Należy zmienić odpowiednią opcję, żeby klient email pozostawiał wiadomości na serwerze, dzięki czemu Wrapper będzie mógł je tam znaleźć. Wrapper zawsze pozostawia wiadomości na serwerze, więc klient którego używasz również je znajdzie."/>
 		<lookup key="cmdRedownload" value="Pobierz ponownie"/>
 		<lookup key="cmdClose" value="Zamknij"/>
+    <lookup key="AccountsCreationForm" value="Utwórz nowe konto"/>
+    <lookup key="buttonCreate" value="&amp;Tworzyć"/>
 		<!-- END: Main forms -->
 		<!-- BEGIN: Messages -->
 		<lookup key="msgWrapperWriteAccess" value="Wrapper nie ma dostępu do zapisu dla następujących folderów: &#xA;{0}&#xA;&#xA; Proszę zmienić ustawienia bezpieczeństwa systemu lub uruchamiać program jako Administrator."/>
@@ -579,6 +596,7 @@
 		<lookup key="msgWrapperRestartRequired" value="Proszę ponownie uruchomić Wrappera, żeby te zmiany zaczęły obowiązywać."/>
 		<lookup key="msgWrapperPollFailed" value="Sprawdzanie nie powiodło się."/>
 		<lookup key="msgWrapperGamesWaiting" value="Liczba oczekujących gier: {0}."/>
+    <lookup key="msgInputEmailSettingsManual" value="Będzie wprowadzić ręcznie."/>
 		<!-- END: Messages -->
 		<!-- BEGIN: Context Menus -->
 		<lookup key="menuItemShow" value="Pokaż"/>
@@ -661,6 +679,8 @@
 		<lookup key="lblLocalMessageStoreMessage" value="Οι χρήστες εφαρμογών στα Windows όπως Outlook Express, Outlook, Mozilla Thunderbird, Eudora κλπ. Πρέπει να ξέρουν ότι τα μηνύματα διαγράφονται από τον server αυτομάτως και πρέπει να βρουν την επιλογή εκείνη στο πρόγραμμα διαχείρισης email για να το απενεργοποιήσουν ώστε να βρίσκονται από τον Συσκευαστή. Ο Συσκευαστής πάντα αφήνει τα μηνύματα και δεν τα διαγράφει."/>
 		<lookup key="cmdRedownload" value="Ξανά&#xA;κατέβασε"/>
 		<lookup key="cmdClose" value="Κλείσε"/>
+    <lookup key="AccountsCreationForm" value="Δημιουργία νέου λογαριασμού"/>
+    <lookup key="buttonCreate" value="&amp;Δημιουργήσουν"/>
 		<!-- END: Main forms -->
 		<!-- BEGIN: Messages -->
 		<lookup key="msgWrapperWriteAccess" value="Ο Συσκευαστής δεν έχει δικαίωμα να Γράψει σε αυτόυς τους φακέλους: &#xA;{0}&#xA;&#xA; Παρακαλώ αλλάξτε το επίπεδο ασφάλειας του συστήματος σας ή εκτελέστε το πρόγραμμα ως διαχειριστής."/>
@@ -675,6 +695,7 @@
 		<lookup key="msgWrapperRestartRequired" value="Για να ενεργοποιηθούν οι αλλαγές ξεκινήστε πάλη την εφαρμογή."/>
 		<lookup key="msgWrapperPollFailed" value="Αποτυχία ελέγχου."/>
 		<lookup key="msgWrapperGamesWaiting" value="Έχετε {0} παιχνίδια στην αναμονή."/>
+    <lookup key="msgInputEmailSettingsManual" value="Θα εισαγάγετε τις ρυθμίσεις με το χέρι."/>
 		<!-- END: Messages -->
 		<!-- BEGIN: Context Menus -->
 		<lookup key="menuItemShow" value="Δείξτε"/>
@@ -761,6 +782,8 @@
     <lookup key="lblLocalMessageStoreMessage" value="Пользователям таких почтовых клиентов, как Outlook Express, Outlook, Mozilla Thunderbird, Eudora: по умолчанию эти клиенты удаляют с сервера новые письма, полученные через POP3. Чтобы Wrapper мог обнаружить и скачать письма с новыми ходами, вам надо отключить эту опцию в настройках клиента. Wrapper в свою очередь никогда не удаляет письма с сервера, так что ваш обычный клиент всё равно сможет их получить."/>
     <lookup key="cmdRedownload" value="Скачать заново"/>
     <lookup key="cmdClose" value="Закрыть"/>
+    <lookup key="AccountsCreationForm" value="Создать новую учетную запись"/>
+    <lookup key="buttonCreate" value="&amp;Создавать"/>
     <!-- END: Main forms -->
     <!-- BEGIN: Messages -->
     <lookup key="msgWrapperWriteAccess" value="Нет прав на запись в папки: &#xA;{0}&#xA;&#xA; Исправьте настройки безопасности или запустите Wrapper с правами администратора."/>
@@ -775,6 +798,7 @@
     <lookup key="msgWrapperRestartRequired" value="Изменения вступят в силу после перезагрузки Wrapper'а."/>
     <lookup key="msgWrapperPollFailed" value="Не удалось проверить почту."/>
     <lookup key="msgWrapperGamesWaiting" value="У вас есть {0} несыгранных игр(ы)."/>
+    <lookup key="msgInputEmailSettingsManual" value="Вы войдете в настройки самостоятельно."/>
     <!-- END: Messages -->
     <!-- BEGIN: Context Menus -->
     <lookup key="menuItemShow" value="Открыть Wrapper"/>
