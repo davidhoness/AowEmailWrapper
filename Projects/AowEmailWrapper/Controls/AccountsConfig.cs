@@ -358,18 +358,21 @@ namespace AowEmailWrapper.Controls
 
                 foreach (AccountConfigValues account in _accountsTemplates.Accounts)
                 {
-                    string[] split = account.Domains.Split(',');
-                    if (split.Length > 0)
+                    if (!string.IsNullOrEmpty(account.Domains))
                     {
-                        foreach (string s in split)
+                        string[] split = account.Domains.Split(',');
+                        if (split.Length > 0)
                         {
-                            if (!string.IsNullOrEmpty(s))
+                            foreach (string s in split)
                             {
-                                success = input.Contains(s.Trim());
-                                if (success)
+                                if (!string.IsNullOrEmpty(s))
                                 {
-                                    returnVal = account.EmailProvider;
-                                    break;
+                                    success = input.Contains(s.Trim());
+                                    if (success)
+                                    {
+                                        returnVal = account.EmailProvider;
+                                        break;
+                                    }
                                 }
                             }
                         }
