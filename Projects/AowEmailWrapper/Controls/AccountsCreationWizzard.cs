@@ -17,6 +17,7 @@ namespace AowEmailWrapper.Controls
         private AccountConfigValuesList _accountTemplates;
         private AccountConfigValues _chosenTemplate;
         private const string InputEmailSettingsManual = "msgInputEmailSettingsManual";
+        private const string RadioButtonNameTemplate = "radio{0}";
 
         public EventHandler CreateClicked;
 
@@ -74,12 +75,28 @@ namespace AowEmailWrapper.Controls
                     case EmailProviderType.WindowsLive:
                     case EmailProviderType.Yahoo:
                         labelDomainsMessage.Text = _chosenTemplate.Domains;
-                        fbEmailAddress.InnerTextBox.Focus();
                         break;
                     default:
                         labelDomainsMessage.Text = Translator.Translate(InputEmailSettingsManual);
                         fbEmailAddress.TextValue = string.Empty;
                         fbPassword.TextValue = string.Empty;
+                        break;
+                }
+            }
+        }
+
+        private void radioButton_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (_chosenTemplate != null && e.KeyCode.Equals(Keys.Enter))
+            {
+                switch (_chosenTemplate.EmailProvider)
+                {
+                    case EmailProviderType.Google:
+                    case EmailProviderType.WindowsLive:
+                    case EmailProviderType.Yahoo:
+                        fbEmailAddress.InnerTextBox.Focus();
+                        break;
+                    default:
                         buttonCreate.Focus();
                         break;
                 }
@@ -131,10 +148,12 @@ namespace AowEmailWrapper.Controls
                 _accountTemplates.Accounts != null &&
                 _accountTemplates.Accounts.Count > 0)
             {
-                for (int i = _accountTemplates.Accounts.Count - 1; i >= 0; i--)
+                foreach (AccountConfigValues account in _accountTemplates.Accounts)
                 {
-                    AccountConfigValues account = _accountTemplates.Accounts[i];
-                    panelInnerRadio.Controls.Add(CreateRadioButton(account.EmailProvider, account.Name));
+                    RadioButton theButton = CreateRadioButton(account.EmailProvider, account.Name);
+                    theButton.TabIndex = panelInnerRadio.Controls.Count + 1;
+                    panelInnerRadio.Controls.Add(theButton);
+                    theButton.BringToFront();
                 }
             }
         }
@@ -194,14 +213,16 @@ namespace AowEmailWrapper.Controls
             returnVal.Dock = DockStyle.Left;
             returnVal.ImageAlign = ContentAlignment.TopCenter;
             returnVal.Location = new Point(0, 0);
-            returnVal.Name = "radio" + type.ToString();
+            returnVal.Name = string.Format(RadioButtonNameTemplate, type.ToString());
             returnVal.Padding = new Padding(0, 0, 30, 0);
             returnVal.Size = new Size(72, 72);
             returnVal.Tag = type.ToString();
-            returnVal.Text = text;
+            string translated = Translator.Translate(returnVal.Name);
+            returnVal.Text = !string.IsNullOrEmpty(translated) ? translated : text;
             returnVal.TextAlign = ContentAlignment.BottomCenter;
             returnVal.UseVisualStyleBackColor = true;
             returnVal.CheckedChanged += new EventHandler(this.radioButton_CheckedChanged);
+            returnVal.KeyDown += new KeyEventHandler(this.radioButton_KeyDown);
 
             return returnVal;
         }

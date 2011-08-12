@@ -64,7 +64,7 @@
             this.panelInnerRadio.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelInnerRadio.Location = new System.Drawing.Point(10, 10);
             this.panelInnerRadio.Name = "panelInnerRadio";
-            this.panelInnerRadio.Size = new System.Drawing.Size(386, 72);
+            this.panelInnerRadio.Size = new System.Drawing.Size(757, 72);
             this.panelInnerRadio.TabIndex = 0;
             // 
             // panelMessagePadder
