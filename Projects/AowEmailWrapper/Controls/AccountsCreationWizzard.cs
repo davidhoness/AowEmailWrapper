@@ -66,6 +66,7 @@ namespace AowEmailWrapper.Controls
 
                 //Create a copy of it in memory (don't modify the original)
                 _chosenTemplate = XmlHelper.Deserialize<AccountConfigValues>(XmlHelper.Serialize(selectedTemplate));
+                _chosenTemplate.Name = theButton.Text;
 
                 CheckCreateEnabled();
 
@@ -161,6 +162,8 @@ namespace AowEmailWrapper.Controls
                 _accountTemplates.Accounts != null &&
                 _accountTemplates.Accounts.Count > 0)
             {
+                this.SuspendLayout();
+
                 foreach (AccountConfigValues account in _accountTemplates.Accounts)
                 {
                     RadioButton theButton = CreateRadioButton(account.EmailProvider, account.Name);
@@ -168,6 +171,8 @@ namespace AowEmailWrapper.Controls
                     panelInnerRadio.Controls.Add(theButton);
                     theButton.BringToFront();
                 }
+
+                this.ResumeLayout();
             }
         }
 
@@ -175,6 +180,8 @@ namespace AowEmailWrapper.Controls
         {
             if (images != null && panelInnerRadio.Controls.Count > 0)
             {
+                this.SuspendLayout();
+
                 foreach (Control control in panelInnerRadio.Controls)
                 {
                     if (control is RadioButton)
@@ -187,6 +194,8 @@ namespace AowEmailWrapper.Controls
                         }
                     }
                 }
+
+                this.ResumeLayout();
             }
         }
 
@@ -229,6 +238,7 @@ namespace AowEmailWrapper.Controls
             returnVal.Name = string.Format(RadioButtonNameTemplate, type.ToString());
             returnVal.Padding = new Padding(0, 0, 30, 0);
             returnVal.Size = new Size(72, 72);
+            returnVal.TabStop = true;
             returnVal.Tag = type.ToString();
             string translated = Translator.Translate(returnVal.Name);
             returnVal.Text = !string.IsNullOrEmpty(translated) ? translated : text;
