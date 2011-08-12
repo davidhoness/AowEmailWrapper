@@ -101,23 +101,6 @@ namespace AowEmailWrapper.ConfigFramework
         }
 
         public SmtpConfigValues()
-            : this(false)
         { }
-
-        public SmtpConfigValues(bool defaults)
-        {
-            if (defaults)
-            {
-                _smtpServer = "smtp.gmail.com";
-                _port = 587;
-                _emailAddress = "joe.bloggs@gmail.com";
-                _authentication = true;
-                _username = string.Empty;
-                _password = string.Empty;
-                _usePollingCredentials = true;
-                _smtpSSLType = SmtpSSLType.TLS;
-                _bccMyself = false;
-            }
-        }
     }
 }
