@@ -72,11 +72,13 @@ namespace AowEmailWrapper
 
         private Config _wrapperConfig;
         private ActivityList _activityLog;
+        private AccountConfigValuesList _accountTemplates;
 
         private StartedTaskWatcher _startedGameWatcher;
         private EventHandler _shutDownEvent;
         private EventHandler _activityLogRefresh;
         private bool _closeCancel = true;
+        private bool _isNewConfig = false;
 
         private ContextMenu _contextMenu;
 
@@ -89,8 +91,7 @@ namespace AowEmailWrapper
 
         public Main()
         {
-            bool isNewConfig = false;
-            _wrapperConfig = DataManagerHelper.LoadConfig(out isNewConfig);
+            _wrapperConfig = DataManagerHelper.LoadConfig(out _isNewConfig);
 
             LoadTranslations();
 
@@ -111,10 +112,12 @@ namespace AowEmailWrapper
 
             SetIcon(IconState.Normal);
 
+            accountsConfig.AccountsTemplates = DataManagerHelper.LoadAccountTemplates();
+
             LoadActivityLog();
 
-            LoadConfig(isNewConfig);
-            
+            LoadConfig();
+
             CreateContextMenu();
 
             BindCustomEvents();
@@ -189,11 +192,11 @@ namespace AowEmailWrapper
             }
         }
 
-        private void LoadConfig(bool isNewConfig)
+        private void LoadConfig()
         {
             try
             {
-                if (!isNewConfig)
+                if (!_isNewConfig)
                 {
                     this.WindowState = FormWindowState.Minimized;
                     Minimized();
@@ -218,6 +221,21 @@ namespace AowEmailWrapper
                 Trace.TraceError(ex.ToString());
                 Trace.Flush();
                 ShowException(ex);
+            }
+        }
+
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+
+            if (_isNewConfig &&
+                _wrapperConfig != null &&
+                _wrapperConfig.AccountsList != null &&
+                _wrapperConfig.AccountsList.Accounts != null &&
+                _wrapperConfig.AccountsList.Accounts.Count.Equals(0))
+            {
+                _isNewConfig = false;
+                accountsConfig.Add();
             }
         }
 
