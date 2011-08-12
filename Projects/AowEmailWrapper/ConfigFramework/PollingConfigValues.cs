@@ -91,22 +91,6 @@ namespace AowEmailWrapper.ConfigFramework
         }
 
         public PollingConfigValues()
-            : this(false)
         { }
-
-        public PollingConfigValues(bool defaults)
-        {
-            if (defaults)
-            {
-                _usePolling = true;
-                _emailType = EmailType.IMAP;
-                _server = "imap.gmail.com";
-                _port = 993;
-                _useSSL = true;
-                _username = "joe.bloggs";
-                _password = string.Empty;
-                _pollInterval = 10;
-            }
-        }
     }
 }
