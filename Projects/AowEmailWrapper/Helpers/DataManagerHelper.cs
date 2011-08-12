@@ -14,8 +14,29 @@ namespace AowEmailWrapper.Helpers
         private const string CONFIG_FILE_NAME = "config.xml";
         private const string ACTIVITY_FILE_NAME = "activity.xml";
         private const string LOCALIZATION_FILE_NAME = "Localization.xml";
+        private const string ACCOUNT_TEMPLATES_FILE_NAME = "TemplateAccounts.xml";
         private const string MessageStoreFileTemplate = "{0}@{1}.xml";
         private const string TurnLogFilenameTemplate = "{0}.log";
+
+        #region Account Templates
+
+        public static AccountConfigValuesList LoadAccountTemplates()
+        {
+            AccountConfigValuesList returnVal = null;
+
+            string templatesFilePath = Path.Combine(Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath), ACCOUNT_TEMPLATES_FILE_NAME);
+
+            returnVal = FileHelper.LoadXmlFile<AccountConfigValuesList>(templatesFilePath);
+
+            if (returnVal == null)
+            {
+                returnVal = new AccountConfigValuesList();
+            }
+
+            return returnVal;
+        }
+
+        #endregion
 
         #region Localization
 
