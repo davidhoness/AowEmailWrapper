@@ -34,7 +34,7 @@ namespace AowEmailWrapper.ConfigFramework
 
         public AccountConfigValues GetAccountByName(string name)
         {
-            return _accounts.Find(item => !string.IsNullOrEmpty(item.Name) && item.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase));
+            return _accounts.Find(item => !string.IsNullOrEmpty(item.Name) && item.Name.Equals(name, StringComparison.InvariantCulture));
         }
 
         public bool CheckAccountExistsByName(string name)
@@ -43,18 +43,6 @@ namespace AowEmailWrapper.ConfigFramework
         }
 
         public AccountConfigValuesList()
-            : this(false)
         { }
-
-        public AccountConfigValuesList(bool defaults)
-        {
-            if (defaults)
-            {
-                string defaultName = "Default";
-                _activeAccountName = defaultName;
-                _accounts = new List<AccountConfigValues>();
-                _accounts.Add(new AccountConfigValues(true, defaultName));                
-            }
-        }
     }
 }
