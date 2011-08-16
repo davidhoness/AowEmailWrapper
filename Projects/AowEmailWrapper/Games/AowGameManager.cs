@@ -84,8 +84,36 @@ namespace AowEmailWrapper.Games
 
         public void StoreDownloadFile(ASGFileInfo theAsgFile, EmailSaveFolder saveFolder)
         {
-            AowGame theGame = null;
+            bool success = false;
 
+            AowGame theGame = GetGameByType(theAsgFile.GameType);
+            if (theGame != null && theAsgFile.IsValid)
+            {
+                DirectoryInfo saveFolderInfo = GetSaveFolder(theGame, saveFolder);
+                if (saveFolderInfo != null)
+                {
+                    theAsgFile.SaveToFolder(saveFolderInfo.FullName);
+                    success = true;
+                }
+            }
+
+            if (success)
+            {
+                RaiseOnGameSaved(
+                    theAsgFile.GameType,
+                    theAsgFile.FileNameTrue,
+                    theAsgFile.GameTitle,
+                    theAsgFile.MapTitle,
+                    theAsgFile.TurnNumber.ToString());
+            }
+            else
+            {
+                theAsgFile.SaveToFolder(_checkEmailFolder);
+                RaiseOnGameSaved(AowGameType.Unknown, theAsgFile.FileName);
+            }
+
+            //OLD CODE
+            /*
             switch (theAsgFile.FileType)
             {
                 case ASGFileType.Aow1:
@@ -124,15 +152,7 @@ namespace AowEmailWrapper.Games
                     }
                     break;
             }
-
-            if (theGame != null)
-            {
-                RaiseOnGameSaved(theGame.GameType, theAsgFile.FileName);
-            }
-            else
-            {
-                RaiseOnGameSaved(AowGameType.Unknown, theAsgFile.FileName);
-            }
+            */
         }
 
         public void SetEmailConfigAll(string attachmentDir, string localEmailAddress, string smtpServer)
@@ -151,6 +171,7 @@ namespace AowEmailWrapper.Games
             return _games.Find(game => game.GameType.Equals(theGameType));
         }
 
+        /*
         public AowGame GetGameByFile(string fileName)
         {
             AowGame returnVal = null;
@@ -182,6 +203,7 @@ namespace AowEmailWrapper.Games
 
             return returnVal;
         }
+        */ 
 
         public bool CheckWriteAccess()
         {
@@ -319,6 +341,14 @@ namespace AowEmailWrapper.Games
             if (OnGameSaved != null)
             {
                 OnGameSaved(this, new AowGameSavedEventArgs(type, fileName));
+            }
+        }
+
+        private void RaiseOnGameSaved(AowGameType type, string fileName, string gameTitle, string mapTitle, string turnNo)
+        {
+            if (OnGameSaved != null)
+            {
+                OnGameSaved(this, new AowGameSavedEventArgs(type, fileName, gameTitle, mapTitle, turnNo));
             }
         }
 
