@@ -39,9 +39,11 @@
     <lookup key="fbCopyToEmailOut" value="Copy to EmailOut after sending:"/>
 		<lookup key="tabActivity" value="Activity Log"/>
 		<lookup key="activityListViewlistView0" value="File Name"/>
-		<lookup key="activityListViewlistView1" value="In"/>
-		<lookup key="activityListViewlistView2" value="Out"/>
-		<lookup key="activityListViewlistView3" value="Ticks"/>
+		<lookup key="activityListViewlistView1" value="Map"/>
+		<lookup key="activityListViewlistView2" value="Turn"/>
+    <lookup key="activityListViewlistView3" value="Age"/>
+		<lookup key="activityListViewlistView4" value="Status"/>
+    <lookup key="activityListViewlistView5" value="Ticks"/>
 		<lookup key="tabAbout" value="About"/>
 		<lookup key="groupBetaTesters" value="Beta Testers"/>
 		<lookup key="groupAuthors" value="Authors"/>
@@ -52,7 +54,7 @@
 		<lookup key="messageStoreListlistView1" value="Subject"/>
 		<lookup key="messageStoreListlistView2" value="Date"/>
 		<lookup key="messageStoreListlistView3" value="File Name"/>
-		<lookup key="messageStoreListlistView4" value="Ticks"/>
+    <lookup key="messageStoreListlistView4" value="Ticks"/>
 		<lookup key="lblLocalMessageStoreMessage" value="Users that have a Windows based email client such as Outlook Express, Outlook, Mozilla Thunderbird, Eudora etc. should be aware that the default behaviour for POP3 access is to remove messages from the server after they have been downloaded.  You will need to change an option to tell your client to leave the messages on the server so that the Wrapper can find them.  The Wrapper will always leave messages on the server so your usual email client will also find them."/>
 		<lookup key="cmdRedownload" value="Re-Download"/>
 		<lookup key="cmdClose" value="Close"/>
