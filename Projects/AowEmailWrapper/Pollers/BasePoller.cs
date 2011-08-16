@@ -132,17 +132,15 @@ namespace AowEmailWrapper.Pollers
                         {
                             count++;
 
-                            ASGFileInfo theASG = new ASGFileInfo(attachment);
-
-                            if (theASG.Length > 0)
+                            using (ASGFileInfo theASG = new ASGFileInfo(attachment))
                             {
-                                _gameManager.StoreDownloadFile(theASG, _saveFolder);
+                                if (theASG.Length > 0)
+                                {
+                                    _gameManager.StoreDownloadFile(theASG, _saveFolder);
 
-                                TurnLogger.SaveLog(attachment.FileName, email.TextData.Text);
+                                    TurnLogger.SaveLog(attachment.FileName, email.TextData.Text);
+                                }
                             }
-
-                            theASG.Dispose();
-                            theASG = null;
                         }
                     }
                 }
@@ -156,12 +154,14 @@ namespace AowEmailWrapper.Pollers
             return count;
         }
 
+        /*
         protected IMail SpoolEmlViaDisk(string eml, out string fileName)
         {
             fileName = Path.Combine(AppDataHelper.Root.FullName, string.Format(FileSpoolTemplate, Guid.NewGuid().ToString()));
             File.WriteAllText(fileName, eml);
             return new MailBuilder().CreateFromEmlFile(fileName);
         }
+        */
 
         protected void ClearSpooledEml(string fileName)
         {
