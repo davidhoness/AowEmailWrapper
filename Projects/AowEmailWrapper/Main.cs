@@ -16,6 +16,7 @@ using System.Net.Mail;
 
 using EricDaugherty.CSES.Net;
 using EricDaugherty.CSES.SmtpServer;
+using AowEmailWrapper.ASG;
 using AowEmailWrapper.CSES;
 using AowEmailWrapper.Classes;
 using AowEmailWrapper.ConfigFramework;
@@ -72,7 +73,6 @@ namespace AowEmailWrapper
 
         private Config _wrapperConfig;
         private ActivityList _activityLog;
-        private AccountConfigValuesList _accountTemplates;
 
         private StartedTaskWatcher _startedGameWatcher;
         private EventHandler _shutDownEvent;
@@ -736,21 +736,24 @@ namespace AowEmailWrapper
                 if (theResponse.GameEmail.Attachments.Count > 0)
                 {
                     MimeData theAttachment = theResponse.GameEmail.Attachments[0];
-                    AowGame theGame = _gameManager.GetGameByFile(theAttachment.FileName);
-
-                    UpdateActivitySent(theAttachment.FileName, theGame);
-
-                    if (_wrapperConfig.PreferencesConfig != null && _wrapperConfig.PreferencesConfig.CopyToEmailOut)
+                    using (ASGFileInfo theASG = new ASGFileInfo(theAttachment))
                     {
-                        try
+                        AowGame theGame = _gameManager.GetGameByType(theASG.GameType);
+
+                        UpdateActivitySent(theASG);
+
+                        if (_wrapperConfig.PreferencesConfig != null && _wrapperConfig.PreferencesConfig.CopyToEmailOut)
                         {
-                            _gameManager.CopyToEmailOut(theAttachment, theGame);
-                        }
-                        catch (Exception ex)
-                        {
-                            Trace.TraceError(ex.ToString());
-                            Trace.Flush();
-                            ShowException(ex);
+                            try
+                            {
+                                _gameManager.CopyToEmailOut(theAttachment, theGame);
+                            }
+                            catch (Exception ex)
+                            {
+                                Trace.TraceError(ex.ToString());
+                                Trace.Flush();
+                                ShowException(ex);
+                            }
                         }
                     }
                 }
@@ -853,7 +856,7 @@ namespace AowEmailWrapper
                 _activityLog.Activities.Remove(lastActivity);
             }
 
-            Activity newActivity = new Activity(e.GameType, e.FileName, ActivityState.Received);
+            Activity newActivity = new Activity(e);
             _activityLog.Activities.Add(newActivity);
         }
 
@@ -908,24 +911,27 @@ namespace AowEmailWrapper
             }
         }
 
-        private void UpdateActivitySent(string fileName, AowGame theGame)
+        private void UpdateActivitySent(ASGFileInfo theASG)
         {
-            Activity currentActivity = _activityLog.GetLastActivityByFileName(fileName);
+            Activity currentActivity = _activityLog.GetLastActivityByFileName(theASG.FileNameTrue);
             if (currentActivity != null)
             {
-                currentActivity.Outwards = ActivityState.Sent;
+                currentActivity.Status = ActivityState.Sent;
                 if (currentActivity.GameType.Equals(AowGameType.Unknown))
                 {
-                    currentActivity.GameType = _gameManager.GetGameByFile(fileName).GameType;
+                    currentActivity.GameType = theASG.GameType;
                 }
             }
             else
-            {                
-                if (theGame != null)
-                {
-                    Activity newGame = new Activity(theGame.GameType, fileName, ActivityState.New, ActivityState.Sent);
-                    _activityLog.Activities.Add(newGame);
-                }
+            {
+                Activity newGameActivity = new Activity(
+                    ActivityState.Sent,
+                    theASG.GameType,
+                    theASG.FileNameTrue,
+                    theASG.MapTitle,
+                    theASG.TurnNumber.ToString());
+
+                _activityLog.Activities.Add(newGameActivity);
             }
 
             RaiseEvent(_activityLogRefresh, this, new EventArgs());
