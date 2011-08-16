@@ -59,6 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ASG\ASGFileInfo.cs" />
+    <Compile Include="ASG\DataCompressor.cs" />
+    <Compile Include="ASG\OffsetMap.cs" />
+    <Compile Include="ASG\OffsetMapField.cs" />
     <Compile Include="Classes\ComboBoxItem.cs" />
     <Compile Include="Classes\ListViewColumnSorter.cs" />
     <Compile Include="ConfigFramework\AccountConfigValues.cs" />
@@ -289,6 +292,10 @@
     <ProjectReference Include="..\EricDaugherty.CSES\EricDaugherty.CSES.csproj">
       <Project>{A5194231-69A6-4578-9A69-B482F8C346A1}</Project>
       <Name>EricDaugherty.CSES</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Zlib\zlib.net.csproj">
+      <Project>{0C89B7A2-A218-49E4-B545-5B044A45F977}</Project>
+      <Name>zlib.net</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
