@@ -175,48 +175,42 @@ namespace AowEmailWrapper.ASG
         {
             _gameType = AowGameType.Aow1;
 
-            using (MemoryStream attachmentMemoryStream = _theAttachment.GetMemoryStream())
+            using (BinaryReader input = new BinaryReader(_theAttachment.GetMemoryStream()))
             {
-                using (BinaryReader input = new BinaryReader(attachmentMemoryStream))
+                if (_fetch_compressed_data)
                 {
-                    if (_fetch_compressed_data)
+                    if (CheckSignature(input, compressed_part_signature))
                     {
-                        if (CheckSignature(input, compressed_part_signature))
+                        DataCompressor compressed_data = new DataCompressor(input, true);
+                        compressed_data.Compressed = false;	//	decompression happens here
+
+                        using (BinaryReader main_input = new BinaryReader(new MemoryStream(compressed_data.Data)))
                         {
-                            DataCompressor compressed_data = new DataCompressor(input, true);
-                            compressed_data.Compressed = false;	//	decompression happens here
-
-                            using (MemoryStream deCompressedData = new MemoryStream(compressed_data.Data))
+                            if (CheckSignature(main_input, aow1map_signature))
                             {
-                                using (BinaryReader main_input = new BinaryReader(deCompressedData))
-                                {
-                                    if (CheckSignature(main_input, aow1map_signature))
-                                    {
-                                        int possible_class_id = main_input.ReadInt32();
-                                        main_input.BaseStream.Position += 3;	//	skip field list of root offsetmap, moving straight to the contents
+                                int possible_class_id = main_input.ReadInt32();
+                                main_input.BaseStream.Position += 3;	//	skip field list of root offsetmap, moving straight to the contents
 
-                                        OffsetMap map_om = new OffsetMap(main_input.BaseStream);
-                                        _mapTitle = map_om.ReadShortPascalString(0x19);
-                                        _turnNumber = map_om.ReadInt32(0x13);
+                                OffsetMap map_om = new OffsetMap(main_input.BaseStream);
+                                _mapTitle = map_om.ReadShortPascalString(0x19);
+                                _turnNumber = map_om.ReadInt32(0x13);
 
-                                        OffsetMap section_15 = map_om.GetSubFieldOffsetMap(0x15);
-                                        OffsetMap s_15_1 = section_15.GetSubFieldOffsetMap(0x01);
-                                        OffsetMap s_15_1_1 = s_15_1.GetSubFieldOffsetMap(0x01, true);
-                                        OffsetMap s_15_1_1_36 = s_15_1_1.GetSubFieldOffsetMap(0x36);
-                                        OffsetMap s_15_1_1_36_15 = s_15_1_1_36.GetSubFieldOffsetMap(0x15);
-                                        _gameTitle = s_15_1_1_36_15.ReadShortPascalString(0x14);
-                                    }
-                                    else
-                                    {
-                                        _isValid = false;
-                                    }
-                                }
+                                OffsetMap section_15 = map_om.GetSubFieldOffsetMap(0x15);
+                                OffsetMap s_15_1 = section_15.GetSubFieldOffsetMap(0x01);
+                                OffsetMap s_15_1_1 = s_15_1.GetSubFieldOffsetMap(0x01, true);
+                                OffsetMap s_15_1_1_36 = s_15_1_1.GetSubFieldOffsetMap(0x36);
+                                OffsetMap s_15_1_1_36_15 = s_15_1_1_36.GetSubFieldOffsetMap(0x15);
+                                _gameTitle = s_15_1_1_36_15.ReadShortPascalString(0x14);
+                            }
+                            else
+                            {
+                                _isValid = false;
                             }
                         }
-                        else
-                        {
-                            _isValid = false;
-                        }
+                    }
+                    else
+                    {
+                        _isValid = false;
                     }
                 }
             }
@@ -224,77 +218,71 @@ namespace AowEmailWrapper.ASG
 
         private void ParseAow2Sm()
         {
-            using (MemoryStream attachmentMemoryStream = _theAttachment.GetMemoryStream())
+            using (BinaryReader input = new BinaryReader(_theAttachment.GetMemoryStream()))
             {
-                using (BinaryReader input = new BinaryReader(attachmentMemoryStream))
+                if (CheckSignature(input, aowmap_signature))
                 {
-                    if (CheckSignature(input, aowmap_signature))
+                    int header_length = input.ReadInt32() - 7;	//	хз почему, но это так
+                    _modId = input.ReadInt32();
+
+                    if (CheckSignature(input, magic_11_bytes))
                     {
-                        int header_length = input.ReadInt32() - 7;	//	хз почему, но это так
-                        _modId = input.ReadInt32();
+                        long compressed_part_start = input.BaseStream.Position + header_length;
+                        OffsetMap header_om = new OffsetMap(input.BaseStream, input.BaseStream.Position, header_length);
 
-                        if (CheckSignature(input, magic_11_bytes))
+                        _mapTitle = header_om.ReadShortPascalString(0x20);
+                        _turnNumber = header_om.ReadInt32(0x21);
+                        byte playersCount = header_om.ReadByte(0x1e);
+
+                        //	compressed info
+                        if (_fetch_compressed_data)
                         {
-                            long compressed_part_start = input.BaseStream.Position + header_length;
-                            OffsetMap header_om = new OffsetMap(input.BaseStream, input.BaseStream.Position, header_length);
-
-                            _mapTitle = header_om.ReadShortPascalString(0x20);
-                            _turnNumber = header_om.ReadInt32(0x21);
-                            byte playersCount = header_om.ReadByte(0x1e);
-
-                            //	compressed info
-                            if (_fetch_compressed_data)
+                            input.BaseStream.Position = compressed_part_start;
+                            if (CheckSignature(input, compressed_part_signature))
                             {
-                                input.BaseStream.Position = compressed_part_start;
-                                if (CheckSignature(input, compressed_part_signature))
+                                DataCompressor compressed_data = new DataCompressor(input, true);
+                                compressed_data.Compressed = false;	//	decompression happens here
+
+                                using (BinaryReader main_input = new BinaryReader(new MemoryStream(compressed_data.Data)))
                                 {
-                                    DataCompressor compressed_data = new DataCompressor(input, true);
-                                    compressed_data.Compressed = false;	//	decompression happens here
-
-                                    using (MemoryStream deCompressedData = new MemoryStream(compressed_data.Data))
+                                    //	digging up the game title
+                                    if (CheckSignature(main_input, decompressed_data_signature))
                                     {
-                                        using (BinaryReader main_input = new BinaryReader(deCompressedData))
+                                        OffsetMap map_om = new OffsetMap(main_input.BaseStream);
+                                        OffsetMap player_list_wrapper_om = map_om.GetSubFieldOffsetMap(0x1a);
+                                        OffsetMap player_list_om = player_list_wrapper_om.GetSubFieldOffsetMap(0x01);
+                                        OffsetMap player_1_om = player_list_om.GetSubFieldOffsetMap(0x01, true);
+                                        OffsetMap player_1_pbem_settings_wrapper = player_1_om.GetSubFieldOffsetMap(0x36);
+                                        OffsetMap player_1_pbem_settings = player_1_pbem_settings_wrapper.GetSubFieldOffsetMap(0x15);
+                                        _gameTitle = player_1_pbem_settings.ReadShortPascalString(0x14);
+
+                                        //	WT or SM?
+                                        OffsetMap race_list_wrapper_om = map_om.GetSubFieldOffsetMap(0x1b);
+                                        OffsetMap race_list_om = race_list_wrapper_om.GetSubFieldOffsetMap(0x01);
+                                        int race_count = race_list_om.Fields.Count;
+
+                                        switch (race_count)
                                         {
-                                            //	digging up the game title
-                                            if (CheckSignature(main_input, decompressed_data_signature))
-                                            {
-                                                OffsetMap map_om = new OffsetMap(main_input.BaseStream);
-                                                OffsetMap player_list_wrapper_om = map_om.GetSubFieldOffsetMap(0x1a);
-                                                OffsetMap player_list_om = player_list_wrapper_om.GetSubFieldOffsetMap(0x01);
-                                                OffsetMap player_1_om = player_list_om.GetSubFieldOffsetMap(0x01, true);
-                                                OffsetMap player_1_pbem_settings_wrapper = player_1_om.GetSubFieldOffsetMap(0x36);
-                                                OffsetMap player_1_pbem_settings = player_1_pbem_settings_wrapper.GetSubFieldOffsetMap(0x15);
-                                                _gameTitle = player_1_pbem_settings.ReadShortPascalString(0x14);
-
-                                                //	WT or SM?
-                                                OffsetMap race_list_wrapper_om = map_om.GetSubFieldOffsetMap(0x1b);
-                                                OffsetMap race_list_om = race_list_wrapper_om.GetSubFieldOffsetMap(0x01);
-                                                int race_count = race_list_om.Fields.Count;
-
-                                                switch (race_count)
-                                                {
-                                                    case 15:
-                                                        _gameType = AowGameType.AowSm;
-                                                        break;
-                                                    case 12:
-                                                        _gameType = AowGameType.Aow2;
-                                                        break;
-                                                    default:
-                                                        _gameType = AowGameType.Unknown;
-                                                        break;
-                                                }
-                                            }
-                                            else
-                                            {
-                                                _isValid = false;
-                                            }
+                                            case 15:
+                                                _gameType = AowGameType.AowSm;
+                                                break;
+                                            case 12:
+                                                _gameType = AowGameType.Aow2;
+                                                break;
+                                            default:
+                                                _gameType = AowGameType.Unknown;
+                                                break;
                                         }
                                     }
+                                    else
+                                    {
+                                        _isValid = false;
+                                    }
                                 }
-                                else
-                                {
-                                    _isValid = false;
-                                }
+                            }
+                            else
+                            {
+                                _isValid = false;
                             }
                         }
                     }
