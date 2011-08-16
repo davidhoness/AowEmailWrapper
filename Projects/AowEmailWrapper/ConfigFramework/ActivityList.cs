@@ -57,7 +57,7 @@ namespace AowEmailWrapper.ConfigFramework
         {
             int returnVal = 0;
 
-            List<Activity> unSentMatches = _activities.FindAll(item => item.Outwards.Equals(ActivityState.None));
+            List<Activity> unSentMatches = _activities.FindAll(item => item.Status.Equals(ActivityState.Received));
 
             if (unSentMatches != null & unSentMatches.Count > 0)
             {
@@ -72,7 +72,7 @@ namespace AowEmailWrapper.ConfigFramework
             int returnVal = 0;
 
             List<Activity> unSentMatches = _activities.FindAll(item =>
-                item.GameType.Equals(theType) && item.Outwards.Equals(ActivityState.None));
+                item.GameType.Equals(theType) && item.Status.Equals(ActivityState.Received));
 
             if (unSentMatches != null & unSentMatches.Count > 0)
             {

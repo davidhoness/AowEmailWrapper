@@ -26,9 +26,10 @@ namespace AowEmailWrapper.ConfigFramework
     {
         private AowGameType _type;
         private string _fileName;
-        private ActivityState _inwards;
-        private ActivityState _outwards;
+        private ActivityState _status;
         private string _dateTicks;
+        private string _mapTitle = string.Empty;
+        private string _turnNo = string.Empty;
 
         [XmlAttribute("game_type")]
         public AowGameType GameType
@@ -44,18 +45,57 @@ namespace AowEmailWrapper.ConfigFramework
             set { _fileName = value; }
         }
 
-        [XmlAttribute("in")]
-        public ActivityState Inwards
+        [XmlAttribute("map_title")]
+        public string MapTitle
         {
-            get { return _inwards; }
-            set { _inwards = value; }
+            get { return _mapTitle; }
+            set { _mapTitle = value; }
         }
 
-        [XmlAttribute("out")]
-        public ActivityState Outwards
+        [XmlAttribute("turn")]
+        public string TurnNumber
         {
-            get { return _outwards; }
-            set { _outwards = value; }
+            get { return _turnNo; }
+            set { _turnNo = value; }
+        }
+
+        //Depricated
+        [XmlAttribute("in")]
+        public string Inwards
+        {
+            get { return null; }
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    _status = Helpers.ConfigHelper.ParseEnumString<ActivityState>(value);
+                }
+            }
+        }
+
+        //Depricated
+        [XmlAttribute("out")]
+        public string Outwards
+        {
+            get { return null; }
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    ActivityState theState = Helpers.ConfigHelper.ParseEnumString<ActivityState>(value);
+                    if (!theState.Equals(ActivityState.None))
+                    {
+                        _status = theState;
+                    }
+                }
+            }
+        }
+
+        [XmlAttribute("status")]
+        public ActivityState Status
+        {
+            get { return _status; }
+            set { _status = value; }
         }
 
         [XmlAttribute("ticks")]
@@ -68,17 +108,17 @@ namespace AowEmailWrapper.ConfigFramework
         public Activity()
         { }
 
-        public Activity(AowGameType type, string fileName, ActivityState inwards)
-            : this(type, fileName, inwards, ActivityState.None)
+        public Activity(AowGameSavedEventArgs e)
+            : this(ActivityState.Received, e.GameType, e.FileName, e.MapTitle, e.TurnNumber)
         { }
 
-        public Activity(AowGameType type, string fileName, ActivityState inwards, ActivityState outwards)
+        public Activity(ActivityState status, AowGameType type, string fileName, string mapTitle, string turnNo)
         {
+            _status = status;
             _type = type;
             _fileName = fileName;
-            _inwards = inwards;
-            _outwards = outwards;
-
+            _mapTitle = mapTitle;
+            _turnNo = turnNo;
             _dateTicks = DateTime.Now.Ticks.ToString();
         }
     }
