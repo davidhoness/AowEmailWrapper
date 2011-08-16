@@ -30,8 +30,10 @@
         {
             this.listView = new System.Windows.Forms.ListView();
             this.colFileName = new System.Windows.Forms.ColumnHeader();
-            this.colInwards = new System.Windows.Forms.ColumnHeader();
-            this.colOutwards = new System.Windows.Forms.ColumnHeader();
+            this.colMap = new System.Windows.Forms.ColumnHeader();
+            this.colTurn = new System.Windows.Forms.ColumnHeader();
+            this.colAge = new System.Windows.Forms.ColumnHeader();
+            this.colStatus = new System.Windows.Forms.ColumnHeader();
             this.colTicks = new System.Windows.Forms.ColumnHeader();
             this.SuspendLayout();
             // 
@@ -39,8 +41,10 @@
             // 
             this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colFileName,
-            this.colInwards,
-            this.colOutwards,
+            this.colMap,
+            this.colTurn,
+            this.colAge,
+            this.colStatus,
             this.colTicks});
             this.listView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView.FullRowSelect = true;
@@ -57,19 +61,24 @@
             this.colFileName.Text = "File Name";
             this.colFileName.Width = 155;
             // 
-            // colInwards
+            // colMap
             // 
-            this.colInwards.Tag = "Inwards";
-            this.colInwards.Text = "In";
+            this.colMap.Text = "Map";
             // 
-            // colOutwards
+            // colTurn
             // 
-            this.colOutwards.Tag = "Outwards";
-            this.colOutwards.Text = "Out";
+            this.colTurn.Text = "Turn";
+            // 
+            // colAge
+            // 
+            this.colAge.Text = "Age";
+            // 
+            // colStatus
+            // 
+            this.colStatus.Text = "Status";
             // 
             // colTicks
             // 
-            this.colTicks.Tag = "Ticks";
             this.colTicks.Text = "Ticks";
             // 
             // ActivityListView
@@ -87,8 +96,10 @@
 
         private System.Windows.Forms.ListView listView;
         private System.Windows.Forms.ColumnHeader colFileName;
-        private System.Windows.Forms.ColumnHeader colInwards;
-        private System.Windows.Forms.ColumnHeader colOutwards;
+        private System.Windows.Forms.ColumnHeader colMap;
+        private System.Windows.Forms.ColumnHeader colTurn;
+        private System.Windows.Forms.ColumnHeader colAge;
+        private System.Windows.Forms.ColumnHeader colStatus;
         private System.Windows.Forms.ColumnHeader colTicks;
     }
 }

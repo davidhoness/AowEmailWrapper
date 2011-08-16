@@ -97,10 +97,14 @@ namespace AowEmailWrapper.Controls
                 foreach (Activity activity in _activityLog.Activities)
                 {
                     ListViewItem item = new ListViewItem();
-                    SetItemColour(item, activity);
+                    int age = GetAgeInDays(activity.DateTicks);                    
+                    SetItemColour(item, activity, age);
+
                     item.Text = activity.FileName;
-                    item.SubItems.Add(new ListViewItem.ListViewSubItem(item, activity.Inwards.Equals(ActivityState.None) ? string.Empty : Translator.TranslateEnum(activity.Inwards)));
-                    item.SubItems.Add(new ListViewItem.ListViewSubItem(item, activity.Outwards.Equals(ActivityState.None) ? string.Empty : Translator.TranslateEnum(activity.Outwards)));
+                    item.SubItems.Add(new ListViewItem.ListViewSubItem(item, activity.MapTitle));
+                    item.SubItems.Add(new ListViewItem.ListViewSubItem(item, activity.TurnNumber));
+                    item.SubItems.Add(new ListViewItem.ListViewSubItem(item, (age > 0) ? age.ToString() : string.Empty));
+                    item.SubItems.Add(new ListViewItem.ListViewSubItem(item, activity.Status.Equals(ActivityState.None) ? string.Empty : Translator.TranslateEnum(activity.Status)));                    
                     item.SubItems.Add(new ListViewItem.ListViewSubItem(item, activity.DateTicks));
 
                     item.Tag = activity;
@@ -124,23 +128,28 @@ namespace AowEmailWrapper.Controls
                     listView.Items.Add(item);
                 }
 
-                _lvwColumnSorter.SortColumn = 3;
+                _lvwColumnSorter.SortColumn = 5;
                 listView.Sort();
 
-                listView.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent); //In
-                listView.Columns[2].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent); //Out
-               
-                listView.Columns[3].Width = 0; //Ticks
-                
+                listView.Columns[1].Width = 120; //Map
+                listView.Columns[2].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize); //Turn
+                listView.Columns[3].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize); //Age               
+                listView.Columns[4].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent); //Status
+                listView.Columns[5].Width = 0; //Ticks
+
+                ResizeColumns();
+
                 _populating = false;
                 listView.ResumeLayout();
             }
             else
             {
                 listView.Columns[0].Width = 290;
-                listView.Columns[1].Width = 58;
-                listView.Columns[2].Width = 43;
-                listView.Columns[3].Width = 0;
+                listView.Columns[1].Width = 120;
+                listView.Columns[2].Width = 25;
+                listView.Columns[3].Width = 43;
+                listView.Columns[4].Width = 25;
+                listView.Columns[5].Width = 0;
             }
         }
 
@@ -148,9 +157,21 @@ namespace AowEmailWrapper.Controls
         {
             if (!_populating)
             {
-                int listViewRightMargin = listView.Columns[1].Width + listView.Columns[2].Width + 25;
-                listView.Columns[0].Width = listView.Width - listViewRightMargin; //File Name
+                listView.SuspendLayout();
+                ResizeColumns();
+                listView.ResumeLayout();
             }
+        }
+
+        private void ResizeColumns()
+        {
+            int listViewRightMargin =
+                listView.Columns[1].Width +
+                listView.Columns[2].Width +
+                listView.Columns[3].Width +
+                listView.Columns[4].Width + 25;
+
+            listView.Columns[0].Width = listView.Width - listViewRightMargin; //File Name
         }
 
         private void RaiseListChanged()
@@ -190,13 +211,13 @@ namespace AowEmailWrapper.Controls
             }
         }
 
-        private void MarkOutwards(ActivityState state, List<Activity> theActivities)
+        private void MarkState(ActivityState state, List<Activity> theActivities)
         {
             if (theActivities != null && theActivities.Count > 0)
             {
                 foreach (Activity activity in theActivities)
                 {
-                    activity.Outwards = state;
+                    activity.Status = state;
                 }
                 Refresh();
                 RaiseListChanged();
@@ -216,35 +237,41 @@ namespace AowEmailWrapper.Controls
             }
         }
 
-        private void SetItemColour(ListViewItem listItem, Activity activity)
+        private void SetItemColour(ListViewItem listItem, Activity activity, int age)
         {
-            if (activity.Outwards.Equals(ActivityState.None))
+            if (activity.Status.Equals(ActivityState.Received))
             {
                 listItem.BackColor = SystemColors.Info;
             }
-            else if (activity.Outwards.Equals(ActivityState.Sent))
+            else if (activity.Status.Equals(ActivityState.Sent))
             {
-                long ticks = 0;
-                if (long.TryParse(activity.DateTicks, out ticks))
+                if (age >= 14 && age < 28)
                 {
-                    DateTime timeStamp = new DateTime(ticks);
-
-                    TimeSpan age = DateTime.Now.Subtract(timeStamp);
-
-                    if (age.Days >= 14 && age.Days < 28)
-                    {
-                        listItem.BackColor = Color.PeachPuff;
-                    }
-                    else if (age.Days >= 28)
-                    {
-                        listItem.BackColor = Color.MistyRose;
-                    }
+                    listItem.BackColor = Color.PeachPuff;
+                }
+                else if (age >= 28)
+                {
+                    listItem.BackColor = Color.MistyRose;
                 }
             }
-            else if (activity.Outwards.Equals(ActivityState.Ended))
+            else if (activity.Status.Equals(ActivityState.Ended))
             {
                 listItem.ForeColor = Color.Gray;
             }
+        }
+
+        private int GetAgeInDays(string theTicks)
+        {
+            int returnVal = 0;
+            long ticks = 0;
+            if (long.TryParse(theTicks, out ticks))
+            {
+                DateTime timeStamp = new DateTime(ticks);
+
+                TimeSpan age = DateTime.Now.Subtract(timeStamp);
+                returnVal = age.Days;
+            }
+            return returnVal;
         }
 
         #endregion
@@ -298,14 +325,14 @@ namespace AowEmailWrapper.Controls
                     break;
                 case Menu_MarkEnded_Tag:
                     List<Activity> selected = GetSelectedActivities();
-                    MarkOutwards(ActivityState.Ended, selected);
+                    MarkState(ActivityState.Ended, selected);
                     if (selected != null && selected.Count > 0 && OnMarkAsEnded != null)
                     {
                         OnMarkAsEnded(this, selected);
                     }
                     break;
                 case Menu_MarkSent_Tag:
-                    MarkOutwards(ActivityState.Sent, GetSelectedActivities());
+                    MarkState(ActivityState.Sent, GetSelectedActivities());
                     break;
             }
         }
