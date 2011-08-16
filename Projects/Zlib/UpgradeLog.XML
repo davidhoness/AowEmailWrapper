@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="zlib.net">
+</Property><Property Name="Solution File" Value="C:\Users\HellBrick\Desktop\zlib.NET_104\source\zlib.net.sln">
+</Property><Property Name="Date" Value="9 декабря 2009 г.">
+</Property><Property Name="Time" Value="19:59">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="zlib.net.sln" Description="File successfully backed up as C:\Users\HellBrick\Desktop\zlib.NET_104\source\Backup\zlib.net.sln">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="zlib.net.csproj" Description="Project file successfully backed up as C:\Users\HellBrick\Desktop\zlib.NET_104\source\Backup\zlib.net.csproj">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="Adler32.cs" Description="File successfully backed up as C:\Users\HellBrick\Desktop\zlib.NET_104\source\Backup\Adler32.cs">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="AssemblyInfo.cs" Description="File successfully backed up as C:\Users\HellBrick\Desktop\zlib.NET_104\source\Backup\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="Deflate.cs" Description="File successfully backed up as C:\Users\HellBrick\Desktop\zlib.NET_104\source\Backup\Deflate.cs">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="InfBlocks.cs" Description="File successfully backed up as C:\Users\HellBrick\Desktop\zlib.NET_104\source\Backup\InfBlocks.cs">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="InfCodes.cs" Description="File successfully backed up as C:\Users\HellBrick\Desktop\zlib.NET_104\source\Backup\InfCodes.cs">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="Inflate.cs" Description="File successfully backed up as C:\Users\HellBrick\Desktop\zlib.NET_104\source\Backup\Inflate.cs">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="InfTree.cs" Description="File successfully backed up as C:\Users\HellBrick\Desktop\zlib.NET_104\source\Backup\InfTree.cs">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="StaticTree.cs" Description="File successfully backed up as C:\Users\HellBrick\Desktop\zlib.NET_104\source\Backup\StaticTree.cs">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="SupportClass.cs" Description="File successfully backed up as C:\Users\HellBrick\Desktop\zlib.NET_104\source\Backup\SupportClass.cs">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="Tree.cs" Description="File successfully backed up as C:\Users\HellBrick\Desktop\zlib.NET_104\source\Backup\Tree.cs">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="ZInputStream.cs" Description="File successfully backed up as C:\Users\HellBrick\Desktop\zlib.NET_104\source\Backup\ZInputStream.cs">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="Zlib.cs" Description="File successfully backed up as C:\Users\HellBrick\Desktop\zlib.NET_104\source\Backup\Zlib.cs">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="ZOutputStream.cs" Description="File successfully backed up as C:\Users\HellBrick\Desktop\zlib.NET_104\source\Backup\ZOutputStream.cs">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="ZStream.cs" Description="File successfully backed up as C:\Users\HellBrick\Desktop\zlib.NET_104\source\Backup\ZStream.cs">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="ZStreamException.cs" Description="File successfully backed up as C:\Users\HellBrick\Desktop\zlib.NET_104\source\Backup\ZStreamException.cs">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="zlib.net.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="zlib.net" Source="zlib.net.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="zlib.net.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="zlib.net.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="zlib.net.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>
