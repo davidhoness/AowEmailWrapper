@@ -738,24 +738,19 @@ namespace AowEmailWrapper
                 if (theResponse.GameEmail.Attachments.Count > 0)
                 {
                     MimeData theAttachment = theResponse.GameEmail.Attachments[0];
-                    using (ASGFileInfo theASG = new ASGFileInfo(theAttachment))
+                    Activity theActivity = UpdateActivitySent(theAttachment);
+
+                    if (_wrapperConfig.PreferencesConfig != null && _wrapperConfig.PreferencesConfig.CopyToEmailOut)
                     {
-                        AowGame theGame = _gameManager.GetGameByType(theASG.GameType);
-
-                        UpdateActivitySent(theASG);
-
-                        if (_wrapperConfig.PreferencesConfig != null && _wrapperConfig.PreferencesConfig.CopyToEmailOut)
+                        try
                         {
-                            try
-                            {
-                                _gameManager.CopyToEmailOut(theAttachment, theGame);
-                            }
-                            catch (Exception ex)
-                            {
-                                Trace.TraceError(ex.ToString());
-                                Trace.Flush();
-                                ShowException(ex);
-                            }
+                            _gameManager.CopyToEmailOut(theAttachment, _gameManager.GetGameByType(theActivity.GameType));
+                        }
+                        catch (Exception ex)
+                        {
+                            Trace.TraceError(ex.ToString());
+                            Trace.Flush();
+                            ShowException(ex);
                         }
                     }
                 }
@@ -913,30 +908,40 @@ namespace AowEmailWrapper
             }
         }
 
-        private void UpdateActivitySent(ASGFileInfo theASG)
+        private Activity UpdateActivitySent(MimeData theAttachment)
         {
-            Activity currentActivity = _activityLog.GetLastActivityByFileName(theASG.FileNameTrue);
-            if (currentActivity != null)
+            Activity theActivity = null;
+            theActivity = _activityLog.GetLastActivityByFileName(theAttachment.FileName);
+
+            if (theActivity != null)
             {
-                currentActivity.Status = ActivityState.Sent;
-                if (currentActivity.GameType.Equals(AowGameType.Unknown))
+                theActivity.Status = ActivityState.Sent;
+                if (theActivity.GameType.Equals(AowGameType.Unknown))
                 {
-                    currentActivity.GameType = theASG.GameType;
+                    using (ASGFileInfo theASG = new ASGFileInfo(theAttachment))
+                    {
+                        theActivity.GameType = theASG.GameType;
+                    }
                 }
             }
             else
             {
-                Activity newGameActivity = new Activity(
-                    ActivityState.Sent,
-                    theASG.GameType,
-                    theASG.FileNameTrue,
-                    theASG.MapTitle,
-                    theASG.TurnNumber.ToString());
+                using (ASGFileInfo theASG = new ASGFileInfo(theAttachment))
+                {
+                    theActivity = new Activity(
+                        ActivityState.Sent,
+                        theASG.GameType,
+                        theASG.FileNameTrue,
+                        theASG.MapTitle,
+                        theASG.TurnNumber.ToString());
+                }
 
-                _activityLog.Activities.Add(newGameActivity);
+                _activityLog.Activities.Add(theActivity);
             }
 
             RaiseEvent(_activityLogRefresh, this, new EventArgs());
+
+            return theActivity;
         }
 
         private void ActivityLogRefresh(object sender, EventArgs e)
