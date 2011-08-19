@@ -123,7 +123,7 @@
     <lookup key="tabIncoming" value="Serveur entrant"/>
     <lookup key="cmdMessageStore" value="Montrer mail POP3"/>
     <lookup key="groupBoxEmailSelection" value="Téléchargement des pièces jointes"/>
-    <lookup key="fbPollingSetup" value="Vérifiez email"/>
+    <lookup key="fbPollingSetup" value="Vérifier les e-mails"/>
     <lookup key="fbPollingSetup_every" value="toutes les:"/>
     <lookup key="groupBoxAuth" value="Détails d'authentification"/>
     <lookup key="fbPassword" value="Mot-de-passe:"/>
@@ -148,12 +148,14 @@
     <lookup key="fbSentSound" value="Son pour mail envoyé:"/>
     <lookup key="fbEmailSound" value="Son pour mail reçu:"/>
     <lookup key="fbLocalization" value="Langue:"/>
-    <lookup key="fbCopyToEmailOut" value="Copier EmailOut après l'envoi:"/>
+    <lookup key="fbCopyToEmailOut" value="Sauvegarder vers EmailOut après envoi:"/>
     <lookup key="tabActivity" value="Historique"/>
     <lookup key="activityListViewlistView0" value="Nom du fichier"/>
-    <lookup key="activityListViewlistView1" value="Reçu"/>
-    <lookup key="activityListViewlistView2" value="Envoyé"/>
-    <lookup key="activityListViewlistView3" value="Coches"/>
+    <lookup key="activityListViewlistView1" value="Carte"/>
+    <lookup key="activityListViewlistView2" value="Tour"/>
+    <lookup key="activityListViewlistView3" value="Ancienneté"/>
+    <lookup key="activityListViewlistView4" value="Statut"/>
+    <lookup key="activityListViewlistView5" value="Coches"/>
     <lookup key="tabAbout" value="A propos"/>
     <lookup key="groupBetaTesters" value="Béta Testeurs"/>
     <lookup key="groupAuthors" value="Auteurs"/>
@@ -170,7 +172,7 @@
     <lookup key="cmdClose" value="Fermer"/>
     <lookup key="AccountsCreationForm" value="Créer un nouveau compte"/>
     <lookup key="buttonCreate" value="&amp;Créer"/>
-    <lookup key="radioOther" value="Autres"/>
+    <lookup key="radioOther" value="Autre"/>
     <!-- END: Main forms -->
     <!-- BEGIN: Messages -->
     <lookup key="msgWrapperWriteAccess" value="Le Wrapper n'a pas les autorisations en écriture sur les répertoires suivants : &#xA;{0}&#xA;&#xA;Merci de modifier les réglages de sécurité de votre système ou d'éxécuter ce Wrapper en tant qu'Administrateur."/>
@@ -185,7 +187,7 @@
     <lookup key="msgWrapperRestartRequired" value="Merci de redémarrer le Wrapper pour que ces changements soient effectifs."/>
     <lookup key="msgWrapperPollFailed" value="Echec de scrutation"/>
     <lookup key="msgWrapperGamesWaiting" value="Vous avez {0} partie(s) en attente."/>
-    <lookup key="msgInputEmailSettingsManual" value="Vous allez entrer les paramètres manuellement."/>
+    <lookup key="msgInputEmailSettingsManual" value="Vous remplirez les paramètres manuellement."/>
     <!-- END: Messages -->
     <!-- BEGIN: Context Menus -->
     <lookup key="menuItemShow" value="Ouvrir"/>
@@ -254,9 +256,11 @@
     <lookup key="fbCopyToEmailOut" value="Beim Senden nach EmailOut kopieren:"/>
     <lookup key="tabActivity" value="Aktivitätsreport" />
     <lookup key="activityListViewlistView0" value="Dateiname" />
-    <lookup key="activityListViewlistView1" value="Eingang" />
-    <lookup key="activityListViewlistView2" value="Ausgang" />
-    <lookup key="activityListViewlistView3" value="Zeiteinheit" />
+    <lookup key="activityListViewlistView1" value="Karte"/>
+    <lookup key="activityListViewlistView2" value="Drehen"/>
+    <lookup key="activityListViewlistView3" value="Alter"/>
+    <lookup key="activityListViewlistView4" value="Zustand"/>
+    <lookup key="activityListViewlistView5" value="Zeiteinheit"/>
     <lookup key="tabAbout" value="Über" />
     <lookup key="groupBetaTesters" value="Beta Tester" />
     <lookup key="groupAuthors" value="Autoren" />
@@ -330,7 +334,7 @@
 		<lookup key="tabIncoming" value="Email entrante"/>
 		<lookup key="cmdMessageStore" value="Mostrar email POP3"/>
 		<lookup key="groupBoxEmailSelection" value="Descargando archivo adjunto"/>
-    <lookup key="fbPollingSetup" value="Chequear email"/>
+    <lookup key="fbPollingSetup" value="Revisar email"/>
     <lookup key="fbPollingSetup_every" value="cada:"/>
 		<lookup key="groupBoxAuth" value="Detalles de autenticación"/>
 		<lookup key="fbPassword" value="Contraseña:"/>
@@ -355,12 +359,13 @@
 		<lookup key="fbSentSound" value="Sonido de Email enviado:"/>
 		<lookup key="fbEmailSound" value="Sonido de Email descargado:"/>
 		<lookup key="fbLocalization" value="Idioma:"/>
-    <lookup key="fbCopyToEmailOut" value="Copiar EmailOut después de enviar:"/>
+    <lookup key="fbCopyToEmailOut" value="Copiar a EmailOut luego de enviado:"/>
 		<lookup key="tabActivity" value="Registro de Actividades"/>
 		<lookup key="activityListViewlistView0" value="Nombre de archivo"/>
-		<lookup key="activityListViewlistView1" value="Entrada"/>
-		<lookup key="activityListViewlistView2" value="Salida"/>
-		<lookup key="activityListViewlistView3" value="Ticks"/>
+    <lookup key="activityListViewlistView1" value="Mapa"/>
+    <lookup key="activityListViewlistView2" value="Turno"/>
+    <lookup key="activityListViewlistView3" value="Edad"/>
+    <lookup key="activityListViewlistView4" value="Estado"/>
 		<lookup key="tabAbout" value="Sobre el"/>
 		<lookup key="groupBetaTesters" value="Beta Testers"/>
 		<lookup key="groupAuthors" value="Autores"/>
@@ -392,7 +397,7 @@
 		<lookup key="msgWrapperRestartRequired" value="Por favor reinicialice el programa para que estos cambios tengan efecto."/>
 		<lookup key="msgWrapperPollFailed" value="Chequeo fallido."/>
 		<lookup key="msgWrapperGamesWaiting" value="Tienes {0} juegos esperando."/>
-    <lookup key="msgInputEmailSettingsManual" value="Usted introducir los ajustes manualmente."/>
+    <lookup key="msgInputEmailSettingsManual" value="Entrarás la configuracoón manualmente."/>
 		<!-- END: Messages -->
 		<!-- BEGIN: Context Menus -->
 		<lookup key="menuItemShow" value="Mostrar"/>
@@ -434,7 +439,7 @@
     <lookup key="tabIncoming" value="Inkomende Email"/>
     <lookup key="cmdMessageStore" value="Tonen POP3 email"/>
     <lookup key="groupBoxEmailSelection" value="Email Attachment Downloaden"/>
-    <lookup key="fbPollingSetup" value="Email controleren"/>
+    <lookup key="fbPollingSetup" value="Check voor email"/>
     <lookup key="fbPollingSetup_every" value="elke:"/>
     <lookup key="groupBoxAuth" value="Authentificatie Details"/>
     <lookup key="fbPassword" value="Paswoord:"/>
@@ -462,9 +467,10 @@
     <lookup key="fbCopyToEmailOut" value="Copieer naar Emailout folder na verzenden:"/>
     <lookup key="tabActivity" value="Activiteiten log"/>
     <lookup key="activityListViewlistView0" value="File naam"/>
-    <lookup key="activityListViewlistView1" value="In "/>
-    <lookup key="activityListViewlistView2" value="Uit"/>
-    <lookup key="activityListViewlistView3" value="Ticks"/>
+    <lookup key="activityListViewlistView1" value="Kaart"/>
+    <lookup key="activityListViewlistView2" value="Beurt"/>
+    <lookup key="activityListViewlistView3" value="Leeftijd"/>
+    <lookup key="activityListViewlistView4" value="Staat"/>
     <lookup key="tabAbout" value="Programma Informatie"/>
     <lookup key="groupBetaTesters" value="Beta testers "/>
     <lookup key="groupAuthors" value="Auteurs"/>
@@ -479,7 +485,7 @@
     <lookup key="lblLocalMessageStoreMessage" value="Gebruikers die clients gebruiken die op Windows zijn gebaseerd zoals Outlook Express, Outlook, Mozilla Thunderbird, Eudora, etc… moeten weten dat het standaard gedrag voor POP3 toegang is om berichten te verwijderen van de server nadat ze gedownload zijn. Je moet een optie veranderen om je client te vertellen de verichten op de server te laten zodat de Wrapper ze kan vinden. De wrapper zal altijd berichten op de server achterlaten zodat je email client ze ook kan vinden. "/>
     <lookup key="cmdRedownload" value="Opnieuw Downloaden"/>
     <lookup key="cmdClose" value="Sluiten"/>
-    <lookup key="AccountsCreationForm" value="Maak een nieuwe account"/>
+    <lookup key="AccountsCreationForm" value="Maak nieuw account"/>
     <lookup key="buttonCreate" value="&amp;Creëren"/>
     <lookup key="radioOther" value="Ander"/>
     <!-- END: Main forms -->
@@ -496,7 +502,7 @@
     <lookup key="msgWrapperRestartRequired" value="Herstart de Wrapper om deze veranderingen in effect te laten gaan, aub."/>
     <lookup key="msgWrapperPollFailed" value="Doorzoeken gefaald"/>
     <lookup key="msgWrapperGamesWaiting" value="Je hebt {0} game(s) wachten."/>
-    <lookup key="msgInputEmailSettingsManual" value="U zult de instellingen handmatig invoeren."/>
+    <lookup key="msgInputEmailSettingsManual" value="Instellingen zelf invoeren."/>
     <!-- END: Messages -->
     <!-- BEGIN: Context Menus -->
     <lookup key="menuItemShow" value="Show"/>
@@ -570,9 +576,11 @@
     <lookup key="fbCopyToEmailOut" value="Skopiuj do EmailOut po wysłaniu:"/>
 		<lookup key="tabActivity" value="Dziennik Aktywności"/>
 		<lookup key="activityListViewlistView0" value="Nazwa Pliku"/>
-		<lookup key="activityListViewlistView1" value="Odebr."/>
-		<lookup key="activityListViewlistView2" value="Wysł."/>
-		<lookup key="activityListViewlistView3" value="Czas"/>
+    <lookup key="activityListViewlistView1" value="Mapa"/>
+    <lookup key="activityListViewlistView2" value="Kolej"/>
+    <lookup key="activityListViewlistView3" value="Wiek"/>
+    <lookup key="activityListViewlistView4" value="Stan"/>
+    <lookup key="activityListViewlistView5" value="Czas"/>
 		<lookup key="tabAbout" value="O Programie"/>
 		<lookup key="groupBetaTesters" value="Betatesterzy"/>
 		<lookup key="groupAuthors" value="Autorzy"/>
@@ -672,8 +680,10 @@
     <lookup key="fbCopyToEmailOut" value="Αντιγραφή στο EmailOut μετά την αποστολή:"/>
 		<lookup key="tabActivity" value="Δραστηριότητα"/>
 		<lookup key="activityListViewlistView0" value="Όνομα Αρχείου"/>
-		<lookup key="activityListViewlistView1" value="Εισερχόμενα"/>
-		<lookup key="activityListViewlistView2" value="Εξερχόμενα"/>
+    <lookup key="activityListViewlistView1" value="Χάρτης"/>
+    <lookup key="activityListViewlistView2" value="Τη Σειρά"/>
+    <lookup key="activityListViewlistView3" value="Ηλικία"/>
+    <lookup key="activityListViewlistView4" value="Κατάσταση"/>
 		<lookup key="tabAbout" value="Σχετικά"/>
 		<lookup key="groupBetaTesters" value="Χρήστες BETA"/>
 		<lookup key="groupAuthors" value="Συγγραφείς"/>
@@ -774,9 +784,11 @@
     <lookup key="fbCopyToEmailOut" value="Копировать сейв в EmailOut после отправки:"/>
     <lookup key="tabActivity" value="Список событий"/>
     <lookup key="activityListViewlistView0" value="Сейв"/>
-    <lookup key="activityListViewlistView1" value="Входящий"/>
-    <lookup key="activityListViewlistView2" value="Исходящий"/>
-    <lookup key="activityListViewlistView3" value="Время"/>
+    <lookup key="activityListViewlistView1" value="Карта"/>
+    <lookup key="activityListViewlistView2" value="Ход"/>
+    <lookup key="activityListViewlistView3" value="Дней"/>
+    <lookup key="activityListViewlistView4" value="Статус"/>
+    <lookup key="activityListViewlistView5" value="Время"/>
     <lookup key="tabAbout" value="О программе"/>
     <lookup key="groupBetaTesters" value="Бета-тестеры"/>
     <lookup key="groupAuthors" value="Разработчики"/>
