@@ -538,6 +538,103 @@
     <lookup key="activeAccount" value="Actief"/>
     <!-- END: Misc -->
   </language>
+  <language code="da" display="Danske">
+    <!-- BEGIN: Main forms -->
+    <lookup key="tabAccounts" value="Konti"/>
+    <lookup key="buttonActivate" value="Aktiver"/>
+    <lookup key="buttonRename" value="Omdøb"/>
+    <lookup key="buttonRemove" value="Fjern"/>
+    <lookup key="buttonAdd" value="Tilføj"/>
+    <lookup key="tabIncoming" value="Indgående Email"/>
+    <lookup key="cmdMessageStore" value="Vis POP3 email"/>
+    <lookup key="groupBoxEmailSelection" value="Downloader vedhæftet fil"/>
+    <lookup key="fbPollingSetup" value="Emailcheck"/>
+    <lookup key="fbPollingSetup_every" value="hver:"/>
+    <lookup key="groupBoxAuth" value="Kontooplysninger"/>
+    <lookup key="fbPassword" value="Kodeord:"/>
+    <lookup key="fbUserName" value="Brugernavn:"/>
+    <lookup key="fbUseSSL" value="Brug SSL:"/>
+    <lookup key="tabOutgoing" value="Udgående Email"/>
+    <lookup key="fbUsePolling" value="Brug indgående kontooplysninger:"/>
+    <lookup key="fbBccMyself" value="BCC til mig selv:"/>
+    <lookup key="fbAuthentication" value="Kræver godkendelse:"/>
+    <lookup key="fbEmailAddress" value="Emailadresse:"/>
+    <lookup key="tabPreferences" value="Indstillinger"/>
+    <lookup key="fbSaveFolder" value="Downloadmappe:"/>
+    <lookup key="groupBoxPreferences" value="Indstillinger"/>
+    <lookup key="fbAutostart" value="Start Automatisk når Windows starter:"/>
+    <lookup key="fbSentSound" value="Lyd ved Emailafsendelse:"/>
+    <lookup key="fbEmailSound" value="Lyd ved hentet Email:"/>
+    <lookup key="fbLocalization" value="Sprog:"/>
+    <lookup key="fbCopyToEmailOut" value="Kopier til EmailOut efter afsendelse:"/>
+    <lookup key="tabActivity" value="Aktivitetsliste"/>
+    <lookup key="activityListViewlistView0" value="Filnavn"/>
+    <lookup key="activityListViewlistView1" value="Kort"/>
+    <lookup key="activityListViewlistView2" value="Tur"/>
+    <lookup key="activityListViewlistView3" value="Alder"/>
+    <lookup key="activityListViewlistView4" value="Status"/>
+    <lookup key="activityListViewlistView5" value="Tidsenheder"/>
+    <lookup key="tabAbout" value="Om"/>
+    <lookup key="groupBetaTesters" value="Betatestere"/>
+    <lookup key="groupAuthors" value="Skabere"/>
+    <lookup key="lblNotice" value="Age of Wonders Email Wrapper er et fuldstændigt gratis program, der er designet til at tillade Play by Email automatisering for alle tre AoW© spil. Det er ikke på nogen måde relateret til Triumph Studios©. Det er et perrsonligt projekt, hvor programmøren ikke ønsker nogen form for vinding udover at spare tid og øge glæden ved at spille disse spil. Ingen support er garanteret for det, men høflige forespørgsler vil sandsynligvis blive supporteret."/>
+    <lookup key="cmdSave" value="Gem indstillinger"/>
+    <lookup key="MessageStore" value="POP3 email ({0} på {1})"/>
+    <lookup key="messageStoreListlistView0" value="Fra"/>
+    <lookup key="messageStoreListlistView1" value="Emne"/>
+    <lookup key="messageStoreListlistView2" value="Dato"/>
+    <lookup key="messageStoreListlistView3" value="Filnavn"/>
+    <lookup key="messageStoreListlistView4" value="Tidsenheder"/>
+    <lookup key="lblLocalMessageStoreMessage" value="Brugere der anvender en Windows-baseret Email-klient såsom Outlook Express, Outlook, Mozilla Thunderbird, Eudora, osv. Skal være opmærksomme på at standard for POP3 adgang er at fjerne beskederne fra serveren efter de er hentet ned. Du er nødt til at ændre i indstillingerne så din klient efterlader beskederne på serveren således at Wrapper'en kan finde dem der. Wrapper'en vil altid efterlade beskeder på serveren så de også kan hentes i din normale Email-klient. "/>
+    <lookup key="cmdRedownload" value="Gendownload"/>
+    <lookup key="cmdClose" value="Luk"/>
+    <lookup key="AccountsCreationForm" value="Opret ny konto"/>
+    <lookup key="buttonCreate" value="&amp;Tilføj"/>
+    <lookup key="radioOther" value="Andet"/>
+    <!-- END: Main forms -->
+    <!-- BEGIN: Messages -->
+    <lookup key="msgWrapperWriteAccess" value="Wrapper'en har ikke skriveadgang til følgende fold(ere):&#xA;{0}&#xA;&#xA;Juster venligst dine sikkerhedsindstillinger eller kør Wrapper'en som Administrator."/>
+    <lookup key="msgWrapperArchiveGame" value="Vil du også gerne arkivere de(t) valgte spil? Det vil flytte deres filer til en separat mappe kaldet '{0}' som du stadig kan tilgå i spillet."/>
+    <lookup key="msgWrapperCannotActivateAccount" value="Kan ikke aktivere &amp;{0}&amp; kontoen lige nu. Vent venligst til email afsendingen er fuldført."/>
+    <lookup key="msgAccountPrompt" value="Skriv navnet på kontoen:"/>
+    <lookup key="msgAccountDuplicate" value="En konto med dette navn eksisterer allerede. Vælg venligst et andet navn."/>
+    <lookup key="msgWrapperEmailSentSuccess" value="Succesfuldt afsendt til [{0}]"/>
+    <lookup key="msgWrapperEmailSentFailed" value="Fejl ved afsendelse af Email: {0}. Til: {1} {2}"/>
+    <lookup key="msgEmailInSelected" value="Benyt venligst Scenario &gt; Email &gt; Load Game"/>
+    <lookup key="msgSaveSelected" value="Benyt venligst Load Game fra hovedmenuen"/>
+    <lookup key="msgWrapperRestartRequired" value="Genstart venligst Wrapper'en for at disse ændringer kan tage effekt."/>
+    <lookup key="msgWrapperPollFailed" value="Forespørgsel fejlede"/>
+    <lookup key="msgWrapperGamesWaiting" value="Du har {0} spil der venter."/>
+    <lookup key="msgInputEmailSettingsManual" value="Du vil angive indstillingerne manuelt."/>
+    <!-- END: Messages -->
+    <!-- BEGIN: Context Menus -->
+    <lookup key="menuItemShow" value="Vis"/>
+    <lookup key="menuItemAccounts" value="Konti"/>
+    <lookup key="menuItemPollNow" value="Forespørg nu"/>
+    <lookup key="menuItemActivate" value="Aktiver"/>
+    <lookup key="menuItemRename" value="Omdøb"/>
+    <lookup key="menuItemRemove" value="Fjern"/>
+    <lookup key="menuItemAdd" value="Tilføj"/>
+    <lookup key="menuItemMarkEnded" value="Marker som Afsluttet"/>
+    <lookup key="menuItemMarkSent" value="Marker som Sendt"/>
+    <!-- END: Context Menus -->
+    <!-- BEGIN: Enumerations -->
+    <lookup key="enumChooser" value="Vælg venligst"/>
+    <lookup key="enumNone" value="Ingen"/>
+    <lookup key="enumSending" value="Sender"/>
+    <lookup key="enumChecking" value="Checker"/>
+    <lookup key="enumEmailWaiting" value="Email modtaget"/>
+    <lookup key="enumNew" value="Ny"/>
+    <lookup key="enumReceived" value="Modtaget"/>
+    <lookup key="enumSent" value="Sendt"/>
+    <lookup key="enumEnded" value="Afsluttet"/>
+    <lookup key="enumMinutes" value="minutter"/>
+    <!-- END: Enumerations -->
+    <!-- BEGIN: Misc -->
+    <lookup key="buttonCancel" value="Annuller"/>
+    <lookup key="activeAccount" value="Aktiv"/>
+    <!-- END: Misc -->
+  </language>
 	<language code="pl" display="Polski">
 		<!-- BEGIN: Main forms -->
 		<lookup key="tabAccounts" value="Konta"/>
