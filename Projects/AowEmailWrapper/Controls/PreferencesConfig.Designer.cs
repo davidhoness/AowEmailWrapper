@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBoxPreferences = new System.Windows.Forms.GroupBox();
-            this.fbAutostart = new AowEmailWrapper.Controls.FormBlockCheckBox();
-            this.fbSentSound = new AowEmailWrapper.Controls.FormBlockCheckBox();
-            this.fbEmailSound = new AowEmailWrapper.Controls.FormBlockCheckBox();
-            this.fbLocalization = new AowEmailWrapper.Controls.FormBlockCombo();
             this.groupBoxEmailSelection = new System.Windows.Forms.GroupBox();
             this.panelMessage = new System.Windows.Forms.Panel();
             this.labelMessage = new System.Windows.Forms.Label();
             this.fbSaveFolder = new AowEmailWrapper.Controls.FormBlockCombo();
+            this.fbGameWrapperDataPort = new AowEmailWrapper.Controls.FormBlockText();
             this.fbCopyToEmailOut = new AowEmailWrapper.Controls.FormBlockCheckBox();
+            this.fbAutostart = new AowEmailWrapper.Controls.FormBlockCheckBox();
+            this.fbSentSound = new AowEmailWrapper.Controls.FormBlockCheckBox();
+            this.fbEmailSound = new AowEmailWrapper.Controls.FormBlockCheckBox();
+            this.fbLocalization = new AowEmailWrapper.Controls.FormBlockCombo();
             this.groupBoxPreferences.SuspendLayout();
             this.groupBoxEmailSelection.SuspendLayout();
             this.panelMessage.SuspendLayout();
@@ -46,6 +47,7 @@
             // groupBoxPreferences
             // 
             this.groupBoxPreferences.AutoSize = true;
+            this.groupBoxPreferences.Controls.Add(this.fbGameWrapperDataPort);
             this.groupBoxPreferences.Controls.Add(this.fbCopyToEmailOut);
             this.groupBoxPreferences.Controls.Add(this.fbAutostart);
             this.groupBoxPreferences.Controls.Add(this.fbSentSound);
@@ -56,10 +58,84 @@
             this.groupBoxPreferences.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxPreferences.Name = "groupBoxPreferences";
             this.groupBoxPreferences.Padding = new System.Windows.Forms.Padding(2, 2, 2, 5);
-            this.groupBoxPreferences.Size = new System.Drawing.Size(423, 140);
+            this.groupBoxPreferences.Size = new System.Drawing.Size(423, 164);
             this.groupBoxPreferences.TabIndex = 0;
             this.groupBoxPreferences.TabStop = false;
             this.groupBoxPreferences.Text = "Preferences";
+            // 
+            // groupBoxEmailSelection
+            // 
+            this.groupBoxEmailSelection.AutoSize = true;
+            this.groupBoxEmailSelection.Controls.Add(this.panelMessage);
+            this.groupBoxEmailSelection.Controls.Add(this.fbSaveFolder);
+            this.groupBoxEmailSelection.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBoxEmailSelection.Location = new System.Drawing.Point(0, 164);
+            this.groupBoxEmailSelection.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBoxEmailSelection.Name = "groupBoxEmailSelection";
+            this.groupBoxEmailSelection.Padding = new System.Windows.Forms.Padding(2, 2, 2, 5);
+            this.groupBoxEmailSelection.Size = new System.Drawing.Size(423, 65);
+            this.groupBoxEmailSelection.TabIndex = 14;
+            this.groupBoxEmailSelection.TabStop = false;
+            this.groupBoxEmailSelection.Text = "Email Attachment Downloading";
+            // 
+            // panelMessage
+            // 
+            this.panelMessage.BackColor = System.Drawing.SystemColors.Info;
+            this.panelMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelMessage.Controls.Add(this.labelMessage);
+            this.panelMessage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelMessage.Location = new System.Drawing.Point(2, 39);
+            this.panelMessage.Name = "panelMessage";
+            this.panelMessage.Size = new System.Drawing.Size(419, 21);
+            this.panelMessage.TabIndex = 19;
+            // 
+            // labelMessage
+            // 
+            this.labelMessage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelMessage.Location = new System.Drawing.Point(0, 0);
+            this.labelMessage.Name = "labelMessage";
+            this.labelMessage.Size = new System.Drawing.Size(417, 19);
+            this.labelMessage.TabIndex = 0;
+            this.labelMessage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // fbSaveFolder
+            // 
+            this.fbSaveFolder.Dock = System.Windows.Forms.DockStyle.Top;
+            this.fbSaveFolder.LabelName = "Download Folder:";
+            this.fbSaveFolder.Location = new System.Drawing.Point(2, 15);
+            this.fbSaveFolder.Margin = new System.Windows.Forms.Padding(2);
+            this.fbSaveFolder.MinimumSize = new System.Drawing.Size(0, 24);
+            this.fbSaveFolder.Name = "fbSaveFolder";
+            this.fbSaveFolder.SelectedIndex = -1;
+            this.fbSaveFolder.SelectedValue = "";
+            this.fbSaveFolder.Size = new System.Drawing.Size(419, 24);
+            this.fbSaveFolder.TabIndex = 18;
+            this.fbSaveFolder.Tag = "";
+            // 
+            // fbGameWrapperDataPort
+            // 
+            this.fbGameWrapperDataPort.Dock = System.Windows.Forms.DockStyle.Top;
+            this.fbGameWrapperDataPort.IsPassword = false;
+            this.fbGameWrapperDataPort.LabelName = "Game to Wrapper data port:";
+            this.fbGameWrapperDataPort.Location = new System.Drawing.Point(2, 135);
+            this.fbGameWrapperDataPort.Margin = new System.Windows.Forms.Padding(2);
+            this.fbGameWrapperDataPort.MinimumSize = new System.Drawing.Size(0, 24);
+            this.fbGameWrapperDataPort.Name = "fbGameWrapperDataPort";
+            this.fbGameWrapperDataPort.Size = new System.Drawing.Size(419, 24);
+            this.fbGameWrapperDataPort.TabIndex = 36;
+            this.fbGameWrapperDataPort.TextValue = "";
+            this.fbGameWrapperDataPort.ValidationRegEx = "^(0|[1-9][0-9]*)$";
+            // 
+            // fbCopyToEmailOut
+            // 
+            this.fbCopyToEmailOut.Checked = false;
+            this.fbCopyToEmailOut.Dock = System.Windows.Forms.DockStyle.Top;
+            this.fbCopyToEmailOut.LabelName = "Copy to EmailOut on send:";
+            this.fbCopyToEmailOut.Location = new System.Drawing.Point(2, 111);
+            this.fbCopyToEmailOut.MinimumSize = new System.Drawing.Size(0, 24);
+            this.fbCopyToEmailOut.Name = "fbCopyToEmailOut";
+            this.fbCopyToEmailOut.Size = new System.Drawing.Size(419, 24);
+            this.fbCopyToEmailOut.TabIndex = 35;
             // 
             // fbAutostart
             // 
@@ -108,66 +184,6 @@
             this.fbLocalization.TabIndex = 19;
             this.fbLocalization.Tag = "";
             // 
-            // groupBoxEmailSelection
-            // 
-            this.groupBoxEmailSelection.AutoSize = true;
-            this.groupBoxEmailSelection.Controls.Add(this.panelMessage);
-            this.groupBoxEmailSelection.Controls.Add(this.fbSaveFolder);
-            this.groupBoxEmailSelection.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBoxEmailSelection.Location = new System.Drawing.Point(0, 140);
-            this.groupBoxEmailSelection.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBoxEmailSelection.Name = "groupBoxEmailSelection";
-            this.groupBoxEmailSelection.Padding = new System.Windows.Forms.Padding(2, 2, 2, 5);
-            this.groupBoxEmailSelection.Size = new System.Drawing.Size(423, 65);
-            this.groupBoxEmailSelection.TabIndex = 14;
-            this.groupBoxEmailSelection.TabStop = false;
-            this.groupBoxEmailSelection.Text = "Email Attachment Downloading";
-            // 
-            // panelMessage
-            // 
-            this.panelMessage.BackColor = System.Drawing.SystemColors.Info;
-            this.panelMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelMessage.Controls.Add(this.labelMessage);
-            this.panelMessage.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelMessage.Location = new System.Drawing.Point(2, 39);
-            this.panelMessage.Name = "panelMessage";
-            this.panelMessage.Size = new System.Drawing.Size(419, 21);
-            this.panelMessage.TabIndex = 19;
-            // 
-            // labelMessage
-            // 
-            this.labelMessage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelMessage.Location = new System.Drawing.Point(0, 0);
-            this.labelMessage.Name = "labelMessage";
-            this.labelMessage.Size = new System.Drawing.Size(417, 19);
-            this.labelMessage.TabIndex = 0;
-            this.labelMessage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // fbSaveFolder
-            // 
-            this.fbSaveFolder.Dock = System.Windows.Forms.DockStyle.Top;
-            this.fbSaveFolder.LabelName = "Download Folder:";
-            this.fbSaveFolder.Location = new System.Drawing.Point(2, 15);
-            this.fbSaveFolder.Margin = new System.Windows.Forms.Padding(2);
-            this.fbSaveFolder.MinimumSize = new System.Drawing.Size(0, 24);
-            this.fbSaveFolder.Name = "fbSaveFolder";
-            this.fbSaveFolder.SelectedIndex = -1;
-            this.fbSaveFolder.SelectedValue = "";
-            this.fbSaveFolder.Size = new System.Drawing.Size(419, 24);
-            this.fbSaveFolder.TabIndex = 18;
-            this.fbSaveFolder.Tag = "";
-            // 
-            // fbCopyToEmailOut
-            // 
-            this.fbCopyToEmailOut.Checked = false;
-            this.fbCopyToEmailOut.Dock = System.Windows.Forms.DockStyle.Top;
-            this.fbCopyToEmailOut.LabelName = "Copy to EmailOut on send:";
-            this.fbCopyToEmailOut.Location = new System.Drawing.Point(2, 111);
-            this.fbCopyToEmailOut.MinimumSize = new System.Drawing.Size(0, 24);
-            this.fbCopyToEmailOut.Name = "fbCopyToEmailOut";
-            this.fbCopyToEmailOut.Size = new System.Drawing.Size(419, 24);
-            this.fbCopyToEmailOut.TabIndex = 35;
-            // 
             // PreferencesConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -197,5 +213,6 @@
         private FormBlockCheckBox fbSentSound;
         private FormBlockCheckBox fbEmailSound;
         private FormBlockCheckBox fbCopyToEmailOut;
+        private FormBlockText fbGameWrapperDataPort;
     }
 }

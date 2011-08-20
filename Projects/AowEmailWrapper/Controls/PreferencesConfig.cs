@@ -43,6 +43,7 @@ namespace AowEmailWrapper.Controls
             fbSaveFolder.InnerComboBox.SelectedIndexChanged += new EventHandler(SaveFolder_SelectedIndexChanged);
             fbCopyToEmailOut.InnerCheckBox.CheckedChanged += raiseConfigChange;
             fbLocalization.InnerComboBox.SelectedIndexChanged += raiseConfigChange;
+            fbGameWrapperDataPort.InnerTextBox.TextChanged += raiseConfigChange;
         }
 
         public string Prefix
@@ -74,6 +75,16 @@ namespace AowEmailWrapper.Controls
             _config.SaveFolder = ConfigHelper.ParseEnumString<EmailSaveFolder>(fbSaveFolder.SelectedValue);
             _config.CopyToEmailOut = fbCopyToEmailOut.Checked;
             _config.LanguageCode = !string.IsNullOrEmpty(fbLocalization.SelectedValue) ? fbLocalization.SelectedValue : Translator.CurrentLanguageCode;
+
+            int testValue = 0;
+            if (int.TryParse(fbGameWrapperDataPort.TextValue, out testValue))
+            {
+                _config.GameWrapperDataPort = IsUnassignedPortRange(testValue) ? testValue : PreferencesConfigValues.GameWrapperDataPortDefault;
+            }
+            else
+            {
+                _config.GameWrapperDataPort = PreferencesConfigValues.GameWrapperDataPortDefault;
+            }
         }
 
         private void Populate()
@@ -84,6 +95,7 @@ namespace AowEmailWrapper.Controls
             fbSaveFolder.SelectedValue = _config.SaveFolder.ToString();
             fbCopyToEmailOut.Checked = _config.CopyToEmailOut;
             fbLocalization.SelectedValue = _config.LanguageCode;
+            fbGameWrapperDataPort.TextValue = _config.GameWrapperDataPort.ToString();
         }
 
         private void Raise_Config_Changed(object sender, EventArgs e)
@@ -105,6 +117,11 @@ namespace AowEmailWrapper.Controls
                     labelMessage.Text = Translator.Translate(SaveSelectedMessageKey);
                     break;
             }
+        }
+
+        private bool IsUnassignedPortRange(int input)
+        {
+            return (input >= 49151 && input < 65535);
         }
     }
 }
