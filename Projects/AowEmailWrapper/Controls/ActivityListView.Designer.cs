@@ -58,28 +58,36 @@
             // 
             // colFileName
             // 
+            this.colFileName.Tag = "Fill";
             this.colFileName.Text = "File Name";
             this.colFileName.Width = 155;
             // 
             // colMap
             // 
+            this.colMap.Tag = "None";
             this.colMap.Text = "Map";
+            this.colMap.Width = 130;
             // 
             // colTurn
             // 
+            this.colTurn.Tag = "HeaderSize";
             this.colTurn.Text = "Turn";
             // 
             // colAge
             // 
+            this.colAge.Tag = "HeaderSize";
             this.colAge.Text = "Age";
             // 
             // colStatus
             // 
+            this.colStatus.Tag = "ContentHeaderMax";
             this.colStatus.Text = "Status";
             // 
             // colTicks
             // 
+            this.colTicks.Tag = "None";
             this.colTicks.Text = "Ticks";
+            this.colTicks.Width = 0;
             // 
             // ActivityListView
             // 

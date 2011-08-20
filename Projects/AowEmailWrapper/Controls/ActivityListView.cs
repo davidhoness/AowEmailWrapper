@@ -27,8 +27,6 @@ namespace AowEmailWrapper.Controls
         private const string Menu_MarkEnded_Tag = "menuItemMarkEnded";
         private const string Menu_MarkSent_Tag = "menuItemMarkSent";
 
-        private bool _populating = false;
-
         #endregion
 
         #region Public Properties
@@ -65,7 +63,6 @@ namespace AowEmailWrapper.Controls
             InitializeComponent();
             _lvwColumnSorter = new ListViewColumnSorter();
             _lvwColumnSorter.Order = SortOrder.Descending;
-            listView.Resize += new EventHandler(listView_Resize);
             listView.ListViewItemSorter = _lvwColumnSorter;
             
             CreateContextMenu();
@@ -87,13 +84,12 @@ namespace AowEmailWrapper.Controls
 
         private void Populate()
         {
+            listView.BeginUpdate();
+
             listView.Items.Clear();
 
             if (_activityLog != null && _activityLog.Activities != null && _activityLog.Activities.Count > 0)
             {
-                listView.SuspendLayout();
-                _populating = true;
-
                 foreach (Activity activity in _activityLog.Activities)
                 {
                     ListViewItem item = new ListViewItem();
@@ -131,47 +127,14 @@ namespace AowEmailWrapper.Controls
                 _lvwColumnSorter.SortColumn = 5;
                 listView.Sort();
 
-                listView.Columns[1].Width = 120; //Map
-                listView.Columns[2].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize); //Turn
-                listView.Columns[3].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize); //Age               
-                listView.Columns[4].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent); //Status
-                listView.Columns[5].Width = 0; //Ticks
-
-                ResizeColumns();
-
-                _populating = false;
-                listView.ResumeLayout();
+                ListViewColumnResizer.ResizeColumns(listView);
             }
             else
             {
-                listView.Columns[0].Width = 290;
-                listView.Columns[1].Width = 120;
-                listView.Columns[2].Width = 25;
-                listView.Columns[3].Width = 43;
-                listView.Columns[4].Width = 25;
-                listView.Columns[5].Width = 0;
+                ListViewColumnResizer.ResizeColumns(listView);
             }
-        }
 
-        private void listView_Resize(object sender, EventArgs e)
-        {
-            if (!_populating)
-            {
-                listView.SuspendLayout();
-                ResizeColumns();
-                listView.ResumeLayout();
-            }
-        }
-
-        private void ResizeColumns()
-        {
-            int listViewRightMargin =
-                listView.Columns[1].Width +
-                listView.Columns[2].Width +
-                listView.Columns[3].Width +
-                listView.Columns[4].Width + 25;
-
-            listView.Columns[0].Width = listView.Width - listViewRightMargin; //File Name
+            listView.EndUpdate();
         }
 
         private void RaiseListChanged()
