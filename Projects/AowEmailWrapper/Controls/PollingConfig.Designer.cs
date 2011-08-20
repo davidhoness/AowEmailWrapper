@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBoxServer = new System.Windows.Forms.GroupBox();
-            this.groupBoxAuth = new System.Windows.Forms.GroupBox();
-            this.fbPassword = new AowEmailWrapper.Controls.FormBlockText();
-            this.fbUserName = new AowEmailWrapper.Controls.FormBlockText();
             this.fbUseSSL = new AowEmailWrapper.Controls.FormBlockCheckBox();
             this.fbPort = new AowEmailWrapper.Controls.FormBlockText();
             this.fbServer = new AowEmailWrapper.Controls.FormBlockText();
             this.fbEmailType = new AowEmailWrapper.Controls.FormBlockCombo();
+            this.groupBoxAuth = new System.Windows.Forms.GroupBox();
+            this.fbPassword = new AowEmailWrapper.Controls.FormBlockText();
+            this.fbUserName = new AowEmailWrapper.Controls.FormBlockText();
             this.fbPollingSetup = new AowEmailWrapper.Controls.FormBlockPollingSetup();
             this.groupBoxServer.SuspendLayout();
             this.groupBoxAuth.SuspendLayout();
@@ -58,6 +58,61 @@
             this.groupBoxServer.TabStop = false;
             this.groupBoxServer.Text = "Server";
             this.groupBoxServer.Visible = false;
+            // 
+            // fbUseSSL
+            // 
+            this.fbUseSSL.Checked = false;
+            this.fbUseSSL.Dock = System.Windows.Forms.DockStyle.Top;
+            this.fbUseSSL.LabelName = "Use SSL:";
+            this.fbUseSSL.Location = new System.Drawing.Point(2, 87);
+            this.fbUseSSL.MinimumSize = new System.Drawing.Size(0, 24);
+            this.fbUseSSL.Name = "fbUseSSL";
+            this.fbUseSSL.Size = new System.Drawing.Size(480, 24);
+            this.fbUseSSL.TabIndex = 18;
+            // 
+            // fbPort
+            // 
+            this.fbPort.Dock = System.Windows.Forms.DockStyle.Top;
+            this.fbPort.IsPassword = false;
+            this.fbPort.LabelName = "Port:";
+            this.fbPort.Location = new System.Drawing.Point(2, 63);
+            this.fbPort.Margin = new System.Windows.Forms.Padding(2);
+            this.fbPort.MinimumSize = new System.Drawing.Size(0, 24);
+            this.fbPort.Name = "fbPort";
+            this.fbPort.Size = new System.Drawing.Size(480, 24);
+            this.fbPort.TabIndex = 17;
+            this.fbPort.Tag = "The port number to connect to the incoming email server on.";
+            this.fbPort.TextValue = "";
+            this.fbPort.ValidationRegEx = "^(0|[1-9][0-9]*)$";
+            // 
+            // fbServer
+            // 
+            this.fbServer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.fbServer.IsPassword = false;
+            this.fbServer.LabelName = "Server:";
+            this.fbServer.Location = new System.Drawing.Point(2, 39);
+            this.fbServer.Margin = new System.Windows.Forms.Padding(2);
+            this.fbServer.MinimumSize = new System.Drawing.Size(0, 24);
+            this.fbServer.Name = "fbServer";
+            this.fbServer.Size = new System.Drawing.Size(480, 24);
+            this.fbServer.TabIndex = 16;
+            this.fbServer.Tag = "The DNS name of the incoming email server.";
+            this.fbServer.TextValue = "";
+            this.fbServer.ValidationRegEx = ".";
+            // 
+            // fbEmailType
+            // 
+            this.fbEmailType.Dock = System.Windows.Forms.DockStyle.Top;
+            this.fbEmailType.LabelName = "Email Type:";
+            this.fbEmailType.Location = new System.Drawing.Point(2, 15);
+            this.fbEmailType.Margin = new System.Windows.Forms.Padding(2);
+            this.fbEmailType.MinimumSize = new System.Drawing.Size(0, 24);
+            this.fbEmailType.Name = "fbEmailType";
+            this.fbEmailType.SelectedIndex = -1;
+            this.fbEmailType.SelectedValue = "";
+            this.fbEmailType.Size = new System.Drawing.Size(480, 24);
+            this.fbEmailType.TabIndex = 15;
+            this.fbEmailType.Tag = "The email protocol to use.";
             // 
             // groupBoxAuth
             // 
@@ -88,6 +143,7 @@
             this.fbPassword.TabIndex = 6;
             this.fbPassword.Tag = "Your email sign in password.";
             this.fbPassword.TextValue = "";
+            this.fbPassword.ValidationRegEx = ".";
             // 
             // fbUserName
             // 
@@ -102,64 +158,14 @@
             this.fbUserName.TabIndex = 5;
             this.fbUserName.Tag = "Your email sign in username.";
             this.fbUserName.TextValue = "";
-            // 
-            // fbUseSSL
-            // 
-            this.fbUseSSL.Checked = false;
-            this.fbUseSSL.Dock = System.Windows.Forms.DockStyle.Top;
-            this.fbUseSSL.LabelName = "Use SSL:";
-            this.fbUseSSL.Location = new System.Drawing.Point(2, 87);
-            this.fbUseSSL.MinimumSize = new System.Drawing.Size(0, 24);
-            this.fbUseSSL.Name = "fbUseSSL";
-            this.fbUseSSL.Size = new System.Drawing.Size(480, 24);
-            this.fbUseSSL.TabIndex = 18;
-            // 
-            // fbPort
-            // 
-            this.fbPort.Dock = System.Windows.Forms.DockStyle.Top;
-            this.fbPort.IsPassword = false;
-            this.fbPort.LabelName = "Port:";
-            this.fbPort.Location = new System.Drawing.Point(2, 63);
-            this.fbPort.Margin = new System.Windows.Forms.Padding(2);
-            this.fbPort.MinimumSize = new System.Drawing.Size(0, 24);
-            this.fbPort.Name = "fbPort";
-            this.fbPort.Size = new System.Drawing.Size(480, 24);
-            this.fbPort.TabIndex = 17;
-            this.fbPort.Tag = "The port number to connect to the incoming email server on.";
-            this.fbPort.TextValue = "";
-            // 
-            // fbServer
-            // 
-            this.fbServer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.fbServer.IsPassword = false;
-            this.fbServer.LabelName = "Server:";
-            this.fbServer.Location = new System.Drawing.Point(2, 39);
-            this.fbServer.Margin = new System.Windows.Forms.Padding(2);
-            this.fbServer.MinimumSize = new System.Drawing.Size(0, 24);
-            this.fbServer.Name = "fbServer";
-            this.fbServer.Size = new System.Drawing.Size(480, 24);
-            this.fbServer.TabIndex = 16;
-            this.fbServer.Tag = "The DNS name of the incoming email server.";
-            this.fbServer.TextValue = "";
-            // 
-            // fbEmailType
-            // 
-            this.fbEmailType.Dock = System.Windows.Forms.DockStyle.Top;
-            this.fbEmailType.LabelName = "Email Type:";
-            this.fbEmailType.Location = new System.Drawing.Point(2, 15);
-            this.fbEmailType.Margin = new System.Windows.Forms.Padding(2);
-            this.fbEmailType.MinimumSize = new System.Drawing.Size(0, 24);
-            this.fbEmailType.Name = "fbEmailType";
-            this.fbEmailType.SelectedIndex = -1;
-            this.fbEmailType.SelectedValue = "";
-            this.fbEmailType.Size = new System.Drawing.Size(480, 24);
-            this.fbEmailType.TabIndex = 15;
-            this.fbEmailType.Tag = "The email protocol to use.";
+            this.fbUserName.ValidationRegEx = ".";
             // 
             // fbPollingSetup
             // 
+            this.fbPollingSetup.CheckBoxText = "Check for email";
             this.fbPollingSetup.Checked = false;
             this.fbPollingSetup.Dock = System.Windows.Forms.DockStyle.Top;
+            this.fbPollingSetup.EveryText = "every:";
             this.fbPollingSetup.Location = new System.Drawing.Point(0, 0);
             this.fbPollingSetup.MinimumSize = new System.Drawing.Size(0, 24);
             this.fbPollingSetup.Name = "fbPollingSetup";
