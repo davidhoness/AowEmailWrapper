@@ -15,19 +15,8 @@ namespace AowEmailWrapper.Helpers
         private const string AutostartPauseSecondsKey = "AutostartPauseSeconds";
         private const string EndedFolderKey = "EndedFolder";
         private const string EndedFolderDefault = "Ended";
-        private const string WrapperListenPortKey = "WrapperListenPort";
-        private const int WrapperListenPortDefault = 49252;
 
         public const string AUTOSTART_CMD_PARAM = "/autostart";
-
-        public static int WrapperListenPort
-        {
-            get
-            {
-                int returnVal = GetProperty<int>(WrapperListenPortKey, WrapperListenPortDefault);
-                return (returnVal > 0) ? returnVal : WrapperListenPortDefault;
-            }
-        }
 
         public static string BuildVersion
         {
