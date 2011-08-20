@@ -39,7 +39,12 @@ namespace EricDaugherty.CSES.Net
         {
             get { return isRunning; }
         }
-				
+
+        public int Port
+        {
+            get { return port; }
+        }
+
 		#region Constructors
 		
 		/// <summary>
