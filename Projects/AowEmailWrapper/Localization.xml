@@ -543,7 +543,7 @@
     <lookup key="activeAccount" value="Actief"/>
     <!-- END: Misc -->
   </language>
-  <language code="da" display="Danske">
+  <language code="da" display="Dansk">
     <!-- BEGIN: Main forms -->
     <lookup key="tabAccounts" value="Konti"/>
     <lookup key="buttonActivate" value="Aktiver"/>
@@ -552,7 +552,7 @@
     <lookup key="buttonAdd" value="Tilføj"/>
     <lookup key="tabIncoming" value="Indgående Email"/>
     <lookup key="cmdMessageStore" value="Vis POP3 email"/>
-    <lookup key="groupBoxEmailSelection" value="Downloader vedhæftet fil"/>
+    <lookup key="groupBoxEmailSelection" value="Downloader vedhæftet fil til"/>
     <lookup key="fbPollingSetup" value="Emailcheck"/>
     <lookup key="fbPollingSetup_every" value="hver:"/>
     <lookup key="groupBoxAuth" value="Kontooplysninger"/>
@@ -583,7 +583,7 @@
     <lookup key="tabAbout" value="Om"/>
     <lookup key="groupBetaTesters" value="Betatestere"/>
     <lookup key="groupAuthors" value="Skabere"/>
-    <lookup key="lblNotice" value="Age of Wonders Email Wrapper er et fuldstændigt gratis program, der er designet til at tillade Play by Email automatisering for alle tre AoW© spil. Det er ikke på nogen måde relateret til Triumph Studios©. Det er et perrsonligt projekt, hvor programmøren ikke ønsker nogen form for vinding udover at spare tid og øge glæden ved at spille disse spil. Ingen support er garanteret for det, men høflige forespørgsler vil sandsynligvis blive supporteret."/>
+    <lookup key="lblNotice" value="Age of Wonders Email Wrapper er et fuldstændigt gratis program, der er designet til at tillade Play by Email automatisering for alle tre AoW© spil. Det er ikke på nogen måde relateret til Triumph Studios©. Det er et personligt projekt, hvor programmøren ikke ønsker nogen form for personlig vinding udover at spare tid og øge glæden ved at spille disse spil. Der er ingen garanti for support, men høflige forespørgsler vil sandsynligvis blive supporteret."/>
     <lookup key="cmdSave" value="Gem indstillinger"/>
     <lookup key="MessageStore" value="POP3 email ({0} på {1})"/>
     <lookup key="messageStoreListlistView0" value="Fra"/>
@@ -591,7 +591,7 @@
     <lookup key="messageStoreListlistView2" value="Dato"/>
     <lookup key="messageStoreListlistView3" value="Filnavn"/>
     <lookup key="messageStoreListlistView4" value="Tidsenheder"/>
-    <lookup key="lblLocalMessageStoreMessage" value="Brugere der anvender en Windows-baseret Email-klient såsom Outlook Express, Outlook, Mozilla Thunderbird, Eudora, osv. Skal være opmærksomme på at standard for POP3 adgang er at fjerne beskederne fra serveren efter de er hentet ned. Du er nødt til at ændre i indstillingerne så din klient efterlader beskederne på serveren således at Wrapper'en kan finde dem der. Wrapper'en vil altid efterlade beskeder på serveren så de også kan hentes i din normale Email-klient. "/>
+    <lookup key="lblLocalMessageStoreMessage" value="Brugere der anvender en Windows-baseret Email-klient såsom Outlook Express, Outlook, Mozilla Thunderbird, Eudora, osv. skal være opmærksomme på at standard for POP3 adgang er at fjerne beskederne fra serveren efter de er hentet ned. Du er nødt til at ændre i indstillingerne så din klient efterlader beskederne på serveren, således at Wrapper'en kan finde dem der. Wrapper'en vil altid selv efterlade beskeder på serveren, så de også kan hentes i din normale Email-klient. "/>
     <lookup key="cmdRedownload" value="Gendownload"/>
     <lookup key="cmdClose" value="Luk"/>
     <lookup key="AccountsCreationForm" value="Opret ny konto"/>
@@ -599,13 +599,13 @@
     <lookup key="radioOther" value="Andet"/>
     <!-- END: Main forms -->
     <!-- BEGIN: Messages -->
-    <lookup key="msgWrapperWriteAccess" value="Wrapper'en har ikke skriveadgang til følgende fold(ere):&#xA;{0}&#xA;&#xA;Juster venligst dine sikkerhedsindstillinger eller kør Wrapper'en som Administrator."/>
+    <lookup key="msgWrapperWriteAccess" value="Wrapper'en har ikke skriveadgang til følgende mappe(r):&#xA;{0}&#xA;&#xA;Juster venligst dine sikkerhedsindstillinger eller kør Wrapper'en som Administrator."/>
     <lookup key="msgWrapperArchiveGame" value="Vil du også gerne arkivere de(t) valgte spil? Det vil flytte deres filer til en separat mappe kaldet '{0}' som du stadig kan tilgå i spillet."/>
-    <lookup key="msgWrapperCannotActivateAccount" value="Kan ikke aktivere &amp;{0}&amp; kontoen lige nu. Vent venligst til email afsendingen er fuldført."/>
+    <lookup key="msgWrapperCannotActivateAccount" value="Kan ikke aktivere &quot;{0}&quot; kontoen lige nu. Vent venligst til email afsendingen er fuldført."/>
     <lookup key="msgAccountPrompt" value="Skriv navnet på kontoen:"/>
     <lookup key="msgAccountDuplicate" value="En konto med dette navn eksisterer allerede. Vælg venligst et andet navn."/>
     <lookup key="msgWrapperEmailSentSuccess" value="Succesfuldt afsendt til [{0}]"/>
-    <lookup key="msgWrapperEmailSentFailed" value="Fejl ved afsendelse af Email: {0}. Til: {1} {2}"/>
+    <lookup key="msgWrapperEmailSentFailed" value="Fejl ved afsendelse af Email: {0}.&#xA;Til: {1}&#xA;&#xA;{2}"/>
     <lookup key="msgEmailInSelected" value="Benyt venligst Scenario &gt; Email &gt; Load Game"/>
     <lookup key="msgSaveSelected" value="Benyt venligst Load Game fra hovedmenuen"/>
     <lookup key="msgWrapperRestartRequired" value="Genstart venligst Wrapper'en for at disse ændringer kan tage effekt."/>
@@ -616,7 +616,7 @@
     <!-- BEGIN: Context Menus -->
     <lookup key="menuItemShow" value="Vis"/>
     <lookup key="menuItemAccounts" value="Konti"/>
-    <lookup key="menuItemPollNow" value="Forespørg nu"/>
+    <lookup key="menuItemPollNow" value="Kontroller mail"/>
     <lookup key="menuItemActivate" value="Aktiver"/>
     <lookup key="menuItemRename" value="Omdøb"/>
     <lookup key="menuItemRemove" value="Fjern"/>
@@ -887,7 +887,7 @@
     <lookup key="fbEmailSound" value="Звук при получении письма:"/>
     <lookup key="fbLocalization" value="Язык"/>
     <lookup key="fbCopyToEmailOut" value="Копировать сейв в EmailOut после отправки:"/>
-    <lookup key="fbGameWrapperDataPort" value="От игры к порту Wrapper данных:"/>
+    <lookup key="fbGameWrapperDataPort" value="Порт сообщения игры и Wrapper'а:"/>
     <lookup key="tabActivity" value="Список событий"/>
     <lookup key="activityListViewlistView0" value="Сейв"/>
     <lookup key="activityListViewlistView1" value="Карта"/>
