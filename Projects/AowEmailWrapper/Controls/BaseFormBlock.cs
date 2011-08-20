@@ -14,6 +14,7 @@ namespace AowEmailWrapper.Controls
         protected Control TheEditControl;
         protected Control TheLabel;
         protected bool resizing = false;
+        private const int Padding = 20;
 
         protected override void OnResize(EventArgs e)
         {
@@ -28,7 +29,9 @@ namespace AowEmailWrapper.Controls
                     int iThirdUnit = (int)Math.Ceiling(dThirdUnit);
                     TheEditControl.Width = (int)(iThirdUnit * 2);
 
-                    Size sz = new Size(iThirdUnit, int.MaxValue);
+                    TheEditControl.Width -= Padding;
+
+                    Size sz = new Size(iThirdUnit + Padding, int.MaxValue);
                     sz = TextRenderer.MeasureText(TheLabel.Text, TheLabel.Font, sz, TextFormatFlags.WordBreak);
                     this.Height = sz.Height;
 
