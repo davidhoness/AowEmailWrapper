@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccountsCreationWizzard));
             this.panelWhite = new System.Windows.Forms.Panel();
             this.panelInnerRadio = new System.Windows.Forms.Panel();
             this.panelMessagePadder = new System.Windows.Forms.Panel();
@@ -156,6 +157,7 @@
             this.fbPassword.Size = new System.Drawing.Size(431, 24);
             this.fbPassword.TabIndex = 1;
             this.fbPassword.TextValue = "";
+            this.fbPassword.ValidationRegEx = ".";
             // 
             // fbEmailAddress
             // 
@@ -169,6 +171,7 @@
             this.fbEmailAddress.Size = new System.Drawing.Size(431, 24);
             this.fbEmailAddress.TabIndex = 0;
             this.fbEmailAddress.TextValue = "";
+            this.fbEmailAddress.ValidationRegEx = resources.GetString("fbEmailAddress.ValidationRegEx");
             // 
             // AccountsCreationWizzard
             // 
