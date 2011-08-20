@@ -432,8 +432,8 @@ namespace AowEmailWrapper
                     theIcon = null;
                     break;
             }
-
-            notifyIcon.Text = !string.IsNullOrEmpty(status) ? string.Format("{0}: {1}", Translator.Translate(this.Name), status) : this.Text;
+            string defaultText = Translator.Translate(this.Name);
+            notifyIcon.Text = !string.IsNullOrEmpty(status) ? string.Format("{0}: {1}", defaultText, status) : defaultText;
             notifyIcon.Icon = theIcon;
         }
 
