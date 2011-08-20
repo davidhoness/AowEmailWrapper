@@ -56,6 +56,8 @@ namespace AowEmailWrapper
         private const string WrapperPollFailedKey = "msgWrapperPollFailed";
         private const string WrapperGamesWaitingKey = "msgWrapperGamesWaiting";
 
+        private const string MainFormTitleTemplate = "{0} - {1}";
+
         private const string Menu_Show_Tag = "menuItemShow";
         private const string Menu_Accounts_Tag = "menuItemAccounts";
         private const string Menu_Poll_Tag = "menuItemPollNow";
@@ -128,7 +130,7 @@ namespace AowEmailWrapper
 
             this.FormClosing += new FormClosingEventHandler(Main_FormClosing);
 
-            StartServer();
+            //StartServer();
         }
 
         #region Form Events
@@ -255,8 +257,6 @@ namespace AowEmailWrapper
                     if (accountConfigValuesList.ActiveAccount != null)
                     {
                         AccountConfigValues theAccount = accountConfigValuesList.ActiveAccount;
-                        _gameManager.SetEmailConfigAll(AppDataHelper.CheckEmail.FullName, theAccount.SmtpConfig.EmailAddress, string.Format(GameSmtpServerTemplate, ConfigHelper.WrapperListenPort));
-
                         panelLocalMessageStore.Visible = theAccount.PollingConfig.EmailType.Equals(EmailType.POP3);
                     }
                 }
@@ -381,7 +381,7 @@ namespace AowEmailWrapper
                     if (showBaloon)
                     {
                         this.Activate();
-                        notifyIcon.ShowBalloonTip(5000, this.Text, Translator.Translate(WrapperGamesWaitingKey, fileCount.ToString()), ToolTipIcon.Info);
+                        notifyIcon.ShowBalloonTip(5000, Translator.Translate(this.Name), Translator.Translate(WrapperGamesWaitingKey, fileCount.ToString()), ToolTipIcon.Info);
                     }
                 }
 
@@ -433,7 +433,7 @@ namespace AowEmailWrapper
                     break;
             }
 
-            notifyIcon.Text = !string.IsNullOrEmpty(status) ? string.Format("{0}: {1}", this.Text, status) : this.Text;
+            notifyIcon.Text = !string.IsNullOrEmpty(status) ? string.Format("{0}: {1}", Translator.Translate(this.Name), status) : this.Text;
             notifyIcon.Icon = theIcon;
         }
 
@@ -484,7 +484,6 @@ namespace AowEmailWrapper
         private void ShowException(Exception ex)
         {
             string error = string.Concat(ex.Message, "\r\n\r\n", ex.StackTrace);
-            Clipboard.SetText(error);
             MessageBox.Show(error, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
@@ -619,11 +618,11 @@ namespace AowEmailWrapper
 
         #region Outgoing Email
 
-        private void StartServer()
+        private void StartServer(int thePort)
         {
             try
             {
-                _theServer = new SimpleServer(ConfigHelper.WrapperListenPort, ProcessSMTPRequest);
+                _theServer = new SimpleServer(thePort, ProcessSMTPRequest);
                 new Thread(new ThreadStart(_theServer.Start)).Start();
             }
             catch (Exception ex)
@@ -756,7 +755,7 @@ namespace AowEmailWrapper
                 }
 
                 theResponse.Dispose();
-                
+
                 GC.Collect();
             }
             else
@@ -811,9 +810,32 @@ namespace AowEmailWrapper
                     panelLocalMessageStore.Visible = account.PollingConfig.EmailType.Equals(EmailType.POP3);
                 }
 
+                //Belt and braces for Game to Wrapper communication
+                int listenPort = PreferencesConfigValues.GameWrapperDataPortDefault;
+
+                if (_wrapperConfig.PreferencesConfig != null &&
+                    _wrapperConfig.PreferencesConfig.GameWrapperDataPort > 0)
+                {
+                    listenPort = _wrapperConfig.PreferencesConfig.GameWrapperDataPort;
+                }
+
+                if (_theServer == null)
+                {
+                    //Start Wrapper SMTP Server 
+                    StartServer(listenPort);
+                }
+                else if (_theServer != null &&
+                    _theServer.IsRunning &&
+                    !_theServer.Port.Equals(listenPort))
+                {
+                    //They changed the port, the SMTP Server needs a restart
+                    StopServer();
+                    StartServer(listenPort);
+                }
+
                 if (account.SmtpConfig != null)
                 {
-                    _gameManager.SetEmailConfigAll(AppDataHelper.CheckEmail.FullName, account.SmtpConfig.EmailAddress, string.Format(GameSmtpServerTemplate, ConfigHelper.WrapperListenPort));
+                    _gameManager.SetEmailConfigAll(AppDataHelper.CheckEmail.FullName, account.SmtpConfig.EmailAddress, string.Format(GameSmtpServerTemplate, _theServer.Port));
                 }
 
                 StopPolling();
@@ -829,7 +851,15 @@ namespace AowEmailWrapper
 
                 success = true;
 
-                //this.Text = string.Format(MainFormTitleTemplate, Translator.Translate(this.Name), account.Name);
+                if (account.SmtpConfig != null &&
+                    !string.IsNullOrEmpty(account.SmtpConfig.EmailAddress))
+                {
+                    this.Text = string.Format(MainFormTitleTemplate, Translator.Translate(this.Name), account.SmtpConfig.EmailAddress);
+                }
+                else
+                {
+                    this.Text = Translator.Translate(this.Name);
+                }
 
                 accountsConfig.Refresh();
 
