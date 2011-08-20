@@ -37,6 +37,7 @@
 		<lookup key="fbEmailSound" value="Email Downloaded sound:"/>
 		<lookup key="fbLocalization" value="Language:"/>
     <lookup key="fbCopyToEmailOut" value="Copy to EmailOut after sending:"/>
+    <lookup key="fbGameWrapperDataPort" value="Game to Wrapper data port:"/>
 		<lookup key="tabActivity" value="Activity Log"/>
 		<lookup key="activityListViewlistView0" value="File Name"/>
 		<lookup key="activityListViewlistView1" value="Map"/>
@@ -149,6 +150,7 @@
     <lookup key="fbEmailSound" value="Son pour mail reçu:"/>
     <lookup key="fbLocalization" value="Langue:"/>
     <lookup key="fbCopyToEmailOut" value="Sauvegarder vers EmailOut après envoi:"/>
+    <lookup key="fbGameWrapperDataPort" value="Jeu de Wrapper port de données:"/>
     <lookup key="tabActivity" value="Historique"/>
     <lookup key="activityListViewlistView0" value="Nom du fichier"/>
     <lookup key="activityListViewlistView1" value="Carte"/>
@@ -254,6 +256,7 @@
     <lookup key="fbEmailSound" value="Sound für Email heruntergeladen:" />
     <lookup key="fbLocalization" value="Sprache:" />
     <lookup key="fbCopyToEmailOut" value="Beim Senden nach EmailOut kopieren:"/>
+    <lookup key="fbGameWrapperDataPort" value="Spiel um Wrapper datenport:"/>
     <lookup key="tabActivity" value="Aktivitätsreport" />
     <lookup key="activityListViewlistView0" value="Dateiname" />
     <lookup key="activityListViewlistView1" value="Karte"/>
@@ -360,6 +363,7 @@
 		<lookup key="fbEmailSound" value="Sonido de Email descargado:"/>
 		<lookup key="fbLocalization" value="Idioma:"/>
     <lookup key="fbCopyToEmailOut" value="Copiar a EmailOut luego de enviado:"/>
+    <lookup key="fbGameWrapperDataPort" value="Juego a Wrapper puerto de datos:"/>
 		<lookup key="tabActivity" value="Registro de Actividades"/>
 		<lookup key="activityListViewlistView0" value="Nombre de archivo"/>
     <lookup key="activityListViewlistView1" value="Mapa"/>
@@ -465,6 +469,7 @@
     <lookup key="fbEmailSound" value="Email gedownload geluid:"/>
     <lookup key="fbLocalization" value="Taal:"/>
     <lookup key="fbCopyToEmailOut" value="Copieer naar Emailout folder na verzenden:"/>
+    <lookup key="fbGameWrapperDataPort" value="Spel om Wrapper data poort:"/>
     <lookup key="tabActivity" value="Activiteiten log"/>
     <lookup key="activityListViewlistView0" value="File naam"/>
     <lookup key="activityListViewlistView1" value="Kaart"/>
@@ -567,6 +572,7 @@
     <lookup key="fbEmailSound" value="Lyd ved hentet Email:"/>
     <lookup key="fbLocalization" value="Sprog:"/>
     <lookup key="fbCopyToEmailOut" value="Kopier til EmailOut efter afsendelse:"/>
+    <lookup key="fbGameWrapperDataPort" value="Spil til Wrapper dataport:"/>
     <lookup key="tabActivity" value="Aktivitetsliste"/>
     <lookup key="activityListViewlistView0" value="Filnavn"/>
     <lookup key="activityListViewlistView1" value="Kort"/>
@@ -671,6 +677,7 @@
 		<lookup key="fbEmailSound" value="Dźwięk pobranego emaila:"/>
 		<lookup key="fbLocalization" value="Język:"/>
     <lookup key="fbCopyToEmailOut" value="Skopiuj do EmailOut po wysłaniu:"/>
+    <lookup key="fbGameWrapperDataPort" value="Gry na Wrapper danych port:"/>
 		<lookup key="tabActivity" value="Dziennik Aktywności"/>
 		<lookup key="activityListViewlistView0" value="Nazwa Pliku"/>
     <lookup key="activityListViewlistView1" value="Mapa"/>
@@ -775,6 +782,7 @@
 		<lookup key="fbEmailSound" value="Ήχος λήψης Email:"/>
 		<lookup key="fbLocalization" value="Γλώσσα:"/>
     <lookup key="fbCopyToEmailOut" value="Αντιγραφή στο EmailOut μετά την αποστολή:"/>
+    <lookup key="fbGameWrapperDataPort" value="Παιχνίδι για Wrapper port δεδομένων:"/>
 		<lookup key="tabActivity" value="Δραστηριότητα"/>
 		<lookup key="activityListViewlistView0" value="Όνομα Αρχείου"/>
     <lookup key="activityListViewlistView1" value="Χάρτης"/>
@@ -879,6 +887,7 @@
     <lookup key="fbEmailSound" value="Звук при получении письма:"/>
     <lookup key="fbLocalization" value="Язык"/>
     <lookup key="fbCopyToEmailOut" value="Копировать сейв в EmailOut после отправки:"/>
+    <lookup key="fbGameWrapperDataPort" value="От игры к порту Wrapper данных:"/>
     <lookup key="tabActivity" value="Список событий"/>
     <lookup key="activityListViewlistView0" value="Сейв"/>
     <lookup key="activityListViewlistView1" value="Карта"/>
