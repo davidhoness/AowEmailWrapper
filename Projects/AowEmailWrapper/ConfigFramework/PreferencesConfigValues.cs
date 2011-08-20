@@ -19,12 +19,15 @@ namespace AowEmailWrapper.ConfigFramework
     [XmlRoot("preferences_config")]
     public class PreferencesConfigValues
     {
+        public const int GameWrapperDataPortDefault = 49252;
+
         private bool _playSoundOnEmail;
         private bool _playSoundOnSend;
         private bool _autostart;
         private EmailSaveFolder _saveFolder = EmailSaveFolder.EmailIn;
         private string _languageCode = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
         private bool _copyToEmailOut = false;
+        private int _gameWrapperDataPort = GameWrapperDataPortDefault;
 
         [XmlAttribute("playsoundonemail")]
         public bool PlaySoundOnEmail
@@ -68,6 +71,13 @@ namespace AowEmailWrapper.ConfigFramework
             set { _languageCode = value; }
         }
 
+        [XmlAttribute("gameWrapperDataPort")]
+        public int GameWrapperDataPort
+        {
+            get { return _gameWrapperDataPort; }
+            set { _gameWrapperDataPort = value; }
+        }
+
         public PreferencesConfigValues()
             : this(false)
         { }
@@ -82,6 +92,7 @@ namespace AowEmailWrapper.ConfigFramework
                 _saveFolder = EmailSaveFolder.EmailIn;
                 _copyToEmailOut = true;
                 _languageCode = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+                _gameWrapperDataPort = GameWrapperDataPortDefault;
             }
         }
     }
