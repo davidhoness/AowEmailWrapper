@@ -60,27 +60,29 @@
             // 
             // colFrom
             // 
-            this.colFrom.Tag = "From";
+            this.colFrom.Tag = "ColumnContent";
             this.colFrom.Text = "From";
             // 
             // colSubject
             // 
-            this.colSubject.Tag = "Subject";
+            this.colSubject.Tag = "ColumnContent";
             this.colSubject.Text = "Subject";
             // 
             // colDate
             // 
-            this.colDate.Tag = "Date";
+            this.colDate.Tag = "ColumnContent";
             this.colDate.Text = "Date";
             // 
             // colFileName
             // 
+            this.colFileName.Tag = "ColumnContent";
             this.colFileName.Text = "File Name";
             // 
             // colTicks
             // 
-            this.colTicks.Tag = "Ticks";
+            this.colTicks.Tag = "None";
             this.colTicks.Text = "Ticks";
+            this.colTicks.Width = 0;
             // 
             // imageListIcons
             // 

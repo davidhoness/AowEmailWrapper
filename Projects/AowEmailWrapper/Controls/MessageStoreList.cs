@@ -50,10 +50,11 @@ namespace AowEmailWrapper.Controls
 
         private void Populate()
         {
+            listView.BeginUpdate();
+
             if (_messageStoreCollection != null)
             {
                 listView.Items.Clear();
-                listView.SuspendLayout();
 
                 List<MessageStoreMessage> gameMessages = _messageStoreCollection.Messages.FindAll(msg => !string.IsNullOrEmpty(msg.From));
                 if (gameMessages.Count > 0)
@@ -77,11 +78,7 @@ namespace AowEmailWrapper.Controls
                     _lvwColumnSorter.Order = SortOrder.Descending;
                     listView.Sort();
 
-                    listView.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
-                    listView.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
-                    listView.Columns[2].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
-                    listView.Columns[3].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
-                    listView.Columns[4].Width = 0;
+                    ListViewColumnResizer.ResizeColumns(listView);
                 }
                 else
                 {
@@ -89,11 +86,12 @@ namespace AowEmailWrapper.Controls
                     item.Text = "No game emails";
                     item.Tag = "None";
                     listView.Items.Add(item);
-                    listView.Columns[0].Width = -1;
-                }
 
-                listView.ResumeLayout();
+                    listView.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
+                }
             }
+
+            listView.EndUpdate();
         }
 
         private void RemoveCheckedItems()
