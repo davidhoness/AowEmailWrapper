@@ -59,7 +59,6 @@
             // 
             // labelEvery
             // 
-            this.labelEvery.BackColor = System.Drawing.SystemColors.Control;
             this.labelEvery.Dock = System.Windows.Forms.DockStyle.Right;
             this.labelEvery.Location = new System.Drawing.Point(141, 0);
             this.labelEvery.Name = "labelEvery";
@@ -70,7 +69,6 @@
             // 
             // checkBox
             // 
-            this.checkBox.BackColor = System.Drawing.SystemColors.Control;
             this.checkBox.Dock = System.Windows.Forms.DockStyle.Left;
             this.checkBox.Location = new System.Drawing.Point(0, 0);
             this.checkBox.Name = "checkBox";
