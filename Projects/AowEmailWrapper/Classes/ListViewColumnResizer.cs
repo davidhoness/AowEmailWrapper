@@ -13,55 +13,79 @@ namespace AowEmailWrapper.Classes
         ColumnContent,
         HeaderSize,
         ContentHeaderMax,
+        Fixed,
         Fill
     }
 
     public static class ListViewColumnResizer
     {
+        private const char SplitChar = ';';
+
         public static void ResizeColumns(ListView theListView)
         {
-            ColumnHeader fillColumn = null;
-            int totalColumnWidth = 0;
-
-            foreach (ColumnHeader column in theListView.Columns)
+            if (theListView.Columns.Count > 0 &&
+                theListView.Items.Count > 0)
             {
-                if (column.Tag != null)
+                ColumnHeader fillColumn = null;
+                int totalColumnWidth = 0;
+
+                foreach (ColumnHeader column in theListView.Columns)
                 {
-                    ColumnHeaderResizeStyle theStyle = ConfigHelper.ParseEnumString<ColumnHeaderResizeStyle>(column.Tag.ToString());
-
-                    switch (theStyle)
+                    if (column.Tag != null)
                     {
-                        case ColumnHeaderResizeStyle.ColumnContent:
-                            column.AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
-                            totalColumnWidth += column.Width;
-                            break;
-                        case ColumnHeaderResizeStyle.HeaderSize:
-                            column.AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
-                            totalColumnWidth += column.Width;
-                            break;
-                        case ColumnHeaderResizeStyle.ContentHeaderMax:
-                            column.AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
-                            int headerSize = column.Width;
-                            column.AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
-                            int columnContentSize = column.Width;
+                        string style = column.Tag.ToString();
+                        string value = string.Empty;
 
-                            column.Width = (headerSize > columnContentSize) ? headerSize : columnContentSize;
-                            totalColumnWidth += column.Width;
-                            break;
-                        case ColumnHeaderResizeStyle.Fill:
-                            fillColumn = column;
-                            break;
-                        default:
-                            totalColumnWidth += column.Width;
-                            break;
+                        if (style.Contains(SplitChar))
+                        {
+                            string[] split = style.Split(SplitChar);
+                            style = split[0];
+                            value = split[1];
+                        }
+
+                        ColumnHeaderResizeStyle theStyle = ConfigHelper.ParseEnumString<ColumnHeaderResizeStyle>(style);
+
+                        switch (theStyle)
+                        {
+                            case ColumnHeaderResizeStyle.ColumnContent:
+                                column.AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
+                                totalColumnWidth += column.Width;
+                                break;
+                            case ColumnHeaderResizeStyle.HeaderSize:
+                                column.AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
+                                totalColumnWidth += column.Width;
+                                break;
+                            case ColumnHeaderResizeStyle.ContentHeaderMax:
+                                column.AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
+                                int headerSize = column.Width;
+                                column.AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
+                                int columnContentSize = column.Width;
+
+                                column.Width = (headerSize > columnContentSize) ? headerSize : columnContentSize;
+                                totalColumnWidth += column.Width;
+                                break;
+                            case ColumnHeaderResizeStyle.Fill:
+                                fillColumn = column;
+                                break;
+                            case ColumnHeaderResizeStyle.Fixed:
+                                int width = 0;
+                                if (int.TryParse(value, out width))
+                                {
+                                    column.Width = width;
+                                }
+                                totalColumnWidth += column.Width;
+                                break;
+                            default:
+                                totalColumnWidth += column.Width;
+                                break;
+                        }
                     }
                 }
-            }
 
-            if (fillColumn != null)
-            {
-                fillColumn.Width = theListView.Width - (totalColumnWidth + SystemInformation.VerticalScrollBarWidth);
-                fillColumn.Width -= 4;
+                if (fillColumn != null)
+                {
+                    fillColumn.Width = theListView.ClientSize.Width - totalColumnWidth;
+                }
             }
         }
     }
