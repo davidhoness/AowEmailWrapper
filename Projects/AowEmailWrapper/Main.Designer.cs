@@ -440,9 +440,10 @@
             // 
             // lblVersion
             // 
+            this.lblVersion.BackColor = System.Drawing.SystemColors.Highlight;
             this.lblVersion.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVersion.ForeColor = System.Drawing.SystemColors.Info;
+            this.lblVersion.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.lblVersion.Location = new System.Drawing.Point(5, 5);
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
