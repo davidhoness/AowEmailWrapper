@@ -64,7 +64,7 @@ namespace AowEmailWrapper.Controls
             _lvwColumnSorter = new ListViewColumnSorter();
             _lvwColumnSorter.Order = SortOrder.Descending;
             listView.ListViewItemSorter = _lvwColumnSorter;
-            
+            listView.ClientSizeChanged += new EventHandler(ActivityListView_Resize);
             CreateContextMenu();
         }
 
@@ -95,7 +95,7 @@ namespace AowEmailWrapper.Controls
                     ListViewItem item = new ListViewItem();
                     int age = GetAgeInDays(activity.DateTicks);                    
                     SetItemColour(item, activity, age);
-
+                    
                     item.Text = activity.FileName;
                     item.SubItems.Add(new ListViewItem.ListViewSubItem(item, activity.MapTitle));
                     item.SubItems.Add(new ListViewItem.ListViewSubItem(item, activity.TurnNumber));
@@ -235,6 +235,13 @@ namespace AowEmailWrapper.Controls
                 returnVal = age.Days;
             }
             return returnVal;
+        }
+
+        private void ActivityListView_Resize(object sender, EventArgs e)
+        {
+            listView.BeginUpdate();
+            ListViewColumnResizer.ResizeColumns(listView);
+            listView.EndUpdate();
         }
 
         #endregion

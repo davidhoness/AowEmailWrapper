@@ -64,7 +64,7 @@
             // 
             // colMap
             // 
-            this.colMap.Tag = "None";
+            this.colMap.Tag = "Fixed;130";
             this.colMap.Text = "Map";
             this.colMap.Width = 130;
             // 
@@ -85,7 +85,7 @@
             // 
             // colTicks
             // 
-            this.colTicks.Tag = "None";
+            this.colTicks.Tag = "Fixed;0";
             this.colTicks.Text = "Ticks";
             this.colTicks.Width = 0;
             // 
