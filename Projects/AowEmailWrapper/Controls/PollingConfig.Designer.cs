@@ -98,7 +98,9 @@
             this.fbServer.TabIndex = 16;
             this.fbServer.Tag = "The DNS name of the incoming email server.";
             this.fbServer.TextValue = "";
-            this.fbServer.ValidationRegEx = ".";
+            this.fbServer.ValidationRegEx = "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{" +
+                "2}|2[0-4][0-9]|25[0-5])$|^(([\\w]|[\\w][\\w0-9\\-]*[\\w0-9])\\.)*([\\w]|[\\w][\\w0-9\\-]*[" +
+                "\\w0-9])$";
             // 
             // fbEmailType
             // 
@@ -143,7 +145,7 @@
             this.fbPassword.TabIndex = 6;
             this.fbPassword.Tag = "Your email sign in password.";
             this.fbPassword.TextValue = "";
-            this.fbPassword.ValidationRegEx = ".";
+            this.fbPassword.ValidationRegEx = "^\\S+.*";
             // 
             // fbUserName
             // 
@@ -158,7 +160,7 @@
             this.fbUserName.TabIndex = 5;
             this.fbUserName.Tag = "Your email sign in username.";
             this.fbUserName.TextValue = "";
-            this.fbUserName.ValidationRegEx = ".";
+            this.fbUserName.ValidationRegEx = "^\\S+.*";
             // 
             // fbPollingSetup
             // 
