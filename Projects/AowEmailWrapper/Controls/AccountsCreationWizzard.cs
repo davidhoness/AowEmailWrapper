@@ -48,8 +48,14 @@ namespace AowEmailWrapper.Controls
         public AccountsCreationWizzard()
         {
             InitializeComponent();
-            fbEmailAddress.InnerTextBox.KeyDown += new KeyEventHandler(textBox_Changed);
-            fbPassword.InnerTextBox.KeyDown += new KeyEventHandler(textBox_Changed);
+            EventHandler textBoxTextChanged = new EventHandler(textBox_TextChanged);
+            KeyEventHandler textBoxKeyDown = new KeyEventHandler(textBox_KeyDown);
+            
+            fbEmailAddress.InnerTextBox.TextChanged += textBoxTextChanged;
+            fbEmailAddress.InnerTextBox.KeyDown += textBoxKeyDown;
+
+            fbPassword.InnerTextBox.TextChanged += textBoxTextChanged;
+            fbPassword.InnerTextBox.KeyDown += textBoxKeyDown;
         }
 
         private void radioButton_CheckedChanged(object sender, EventArgs e)
@@ -137,9 +143,8 @@ namespace AowEmailWrapper.Controls
             }
         }
 
-        private void textBox_Changed(object sender, KeyEventArgs e)
+        private void textBox_KeyDown(object sender, KeyEventArgs e)
         {
-            CheckCreateEnabled();
             if (e.KeyCode.Equals(Keys.Enter) && sender.Equals(fbPassword.InnerTextBox))
             {
                 buttonCreate.Focus();
@@ -147,12 +152,20 @@ namespace AowEmailWrapper.Controls
             }
         }
 
+        private void textBox_TextChanged(object sender, EventArgs e)
+        {
+            CheckCreateEnabled();
+        }
+
         private void buttonCreate_Click(object sender, EventArgs e)
         {
-            UpdateChosenTemplate(fbEmailAddress.TextValue, fbPassword.TextValue);
-            if (CreateClicked != null)
+            if (buttonCreate.Enabled)
             {
-                CreateClicked(this, e);
+                UpdateChosenTemplate(fbEmailAddress.TextValue, fbPassword.TextValue);
+                if (CreateClicked != null)
+                {
+                    CreateClicked(this, e);
+                }
             }
         }
 
