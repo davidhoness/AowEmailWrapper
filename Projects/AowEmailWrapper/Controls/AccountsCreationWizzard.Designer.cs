@@ -157,7 +157,7 @@
             this.fbPassword.Size = new System.Drawing.Size(431, 24);
             this.fbPassword.TabIndex = 1;
             this.fbPassword.TextValue = "";
-            this.fbPassword.ValidationRegEx = ".";
+            this.fbPassword.ValidationRegEx = "^\\S+.*";
             // 
             // fbEmailAddress
             // 
