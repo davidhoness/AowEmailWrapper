@@ -179,7 +179,7 @@ namespace AowEmailWrapper
 
         private void cmdSave_Click(object sender, EventArgs e)
         {
-            SaveConfig();
+            SaveConfig(true);
         }
 
         #endregion
@@ -244,7 +244,7 @@ namespace AowEmailWrapper
             }
         }
 
-        private void SaveConfig()
+        private void SaveConfig(bool reActivate)
         {
             try
             {
@@ -282,7 +282,10 @@ namespace AowEmailWrapper
 
                 DataManagerHelper.SaveConfig(_wrapperConfig);
 
-                ActivateAccount(_wrapperConfig.AccountsList.ActiveAccount);
+                if (reActivate)
+                {
+                    ActivateAccount(_wrapperConfig.AccountsList.ActiveAccount);
+                }
 
                 if (preferencesConfigValues != null &&
                     !preferencesConfigValues.LanguageCode.Equals(Translator.CurrentLanguageCode))
@@ -787,10 +790,15 @@ namespace AowEmailWrapper
 
         #region Accounts
 
-        private void Account_Activated(object sender, AccountConfigValues theAccount)
+        private void Account_Activated(object sender, AccountConfigValues theAccount, bool dirty)
         {
-            _wrapperConfig.AccountsList = accountsConfig.Config;
             ActivateAccount(theAccount);
+
+            if (dirty)
+            {
+                //We have unsaved data
+                SaveConfig(false);
+            }
         }
 
         private bool ActivateAccount(AccountConfigValues account)
