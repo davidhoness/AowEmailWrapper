@@ -13,7 +13,7 @@ using AowEmailWrapper.Localization;
 
 namespace AowEmailWrapper.Controls
 {
-    public delegate void AccountActivatedEventHandler(object sender, AccountConfigValues theAccount);
+    public delegate void AccountActivatedEventHandler(object sender, AccountConfigValues theAccount, bool dirty);
 
     public partial class AccountsConfig : UserControl
     {
@@ -147,9 +147,14 @@ namespace AowEmailWrapper.Controls
 
         private void Raise_Account_Activated(AccountConfigValues theAccount)
         {
+            Raise_Account_Activated(theAccount, false);
+        }
+
+        private void Raise_Account_Activated(AccountConfigValues theAccount, bool dirty)
+        {
             if (Account_Activated != null)
             {
-                Account_Activated(this, theAccount);
+                Account_Activated(this, theAccount, dirty);
             }
         }
 
@@ -192,8 +197,7 @@ namespace AowEmailWrapper.Controls
                 }
 
                 _accountsList.Accounts.Add(theNewAccount);
-                Raise_Account_Activated(theNewAccount);
-                Raise_Config_Changed();               
+                Raise_Account_Activated(theNewAccount, true);
             }
         }
 
