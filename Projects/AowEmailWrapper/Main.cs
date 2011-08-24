@@ -64,6 +64,7 @@ namespace AowEmailWrapper
         private const string Menu_Exit_Tag = "menuItemExit";
 
         private const string GameSmtpServerTemplate = "127.0.0.1:{0}";
+        private const string WrapperAutostartTemplate = "\"{0}\" {1}";
 
         #endregion
 
@@ -265,13 +266,15 @@ namespace AowEmailWrapper
                 PreferencesConfigValues preferencesConfigValues = preferencesConfig.Config;
                 if (preferencesConfigValues != null)
                 {
+                    string keyName = Translator.Translate(this.Name);
                     if (preferencesConfigValues.Autostart)
                     {
-                        RegistryHelper.SetValue(Registry.CurrentUser, WINDOWS_REG_STARTUP_LOCATION, this.Text, string.Format("\"{0}\" {1}", Application.ExecutablePath, ConfigHelper.AUTOSTART_CMD_PARAM));
+                        string keyValue = string.Format(WrapperAutostartTemplate, Application.ExecutablePath, ConfigHelper.AUTOSTART_CMD_PARAM);
+                        RegistryHelper.SetValue(Registry.CurrentUser, WINDOWS_REG_STARTUP_LOCATION, keyName, keyValue);
                     }
                     else
                     {
-                        RegistryHelper.DeleteValue(Registry.CurrentUser, WINDOWS_REG_STARTUP_LOCATION, this.Text);
+                        RegistryHelper.DeleteValue(Registry.CurrentUser, WINDOWS_REG_STARTUP_LOCATION, keyName);
                     }
                 }
 
