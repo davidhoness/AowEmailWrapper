@@ -106,6 +106,9 @@
     <Compile Include="Controls\BaseFormBlock.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Controls\LinkButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\FormBlockCheckBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
