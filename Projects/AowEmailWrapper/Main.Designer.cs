@@ -41,10 +41,10 @@
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabAccounts = new System.Windows.Forms.TabPage();
             this.accountsConfig = new AowEmailWrapper.Controls.AccountsConfig();
-            this.tabPreferences = new System.Windows.Forms.TabPage();
-            this.preferencesConfig = new AowEmailWrapper.Controls.PreferencesConfig();
             this.tabActivity = new System.Windows.Forms.TabPage();
             this.activityListView = new AowEmailWrapper.Controls.ActivityListView();
+            this.tabPreferences = new System.Windows.Forms.TabPage();
+            this.preferencesConfig = new AowEmailWrapper.Controls.PreferencesConfig();
             this.tabAbout = new System.Windows.Forms.TabPage();
             this.panelAbout = new System.Windows.Forms.Panel();
             this.groupBetaTesters = new System.Windows.Forms.GroupBox();
@@ -63,7 +63,9 @@
             this.lblAuthor2 = new System.Windows.Forms.Label();
             this.lblAuthor1 = new System.Windows.Forms.Label();
             this.lblNotice = new System.Windows.Forms.Label();
+            this.panelTitle = new System.Windows.Forms.Panel();
             this.lblVersion = new System.Windows.Forms.Label();
+            this.fbLink = new AowEmailWrapper.Controls.LinkButton();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -73,13 +75,14 @@
             this.panelMain.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.tabAccounts.SuspendLayout();
-            this.tabPreferences.SuspendLayout();
             this.tabActivity.SuspendLayout();
+            this.tabPreferences.SuspendLayout();
             this.tabAbout.SuspendLayout();
             this.panelAbout.SuspendLayout();
             this.groupBetaTesters.SuspendLayout();
             this.panelBetaTestersGroupBox.SuspendLayout();
             this.groupAuthors.SuspendLayout();
+            this.panelTitle.SuspendLayout();
             this.SuspendLayout();
             // 
             // notifyIcon
@@ -181,40 +184,13 @@
             // 
             // accountsConfig
             // 
+            this.accountsConfig.AccountsTemplates = null;
             this.accountsConfig.Config = null;
             this.accountsConfig.Dock = System.Windows.Forms.DockStyle.Fill;
             this.accountsConfig.Location = new System.Drawing.Point(5, 5);
             this.accountsConfig.Name = "accountsConfig";
             this.accountsConfig.Size = new System.Drawing.Size(504, 423);
             this.accountsConfig.TabIndex = 0;
-            // 
-            // tabPreferences
-            // 
-            this.tabPreferences.Controls.Add(this.preferencesConfig);
-            this.tabPreferences.Location = new System.Drawing.Point(4, 22);
-            this.tabPreferences.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPreferences.Name = "tabPreferences";
-            this.tabPreferences.Size = new System.Drawing.Size(514, 433);
-            this.tabPreferences.TabIndex = 3;
-            this.tabPreferences.Text = "Preferences";
-            this.tabPreferences.UseVisualStyleBackColor = true;
-            // 
-            // preferencesConfig
-            // 
-            preferencesConfigValues1.Autostart = false;
-            preferencesConfigValues1.CopyToEmailOut = false;
-            preferencesConfigValues1.LanguageCode = null;
-            preferencesConfigValues1.PlaySoundOnEmail = false;
-            preferencesConfigValues1.PlaySoundOnSend = false;
-            preferencesConfigValues1.SaveFolder = AowEmailWrapper.ConfigFramework.EmailSaveFolder.EmailIn;
-            this.preferencesConfig.Config = preferencesConfigValues1;
-            this.preferencesConfig.Dock = System.Windows.Forms.DockStyle.Top;
-            this.preferencesConfig.Location = new System.Drawing.Point(0, 0);
-            this.preferencesConfig.Margin = new System.Windows.Forms.Padding(2);
-            this.preferencesConfig.Name = "preferencesConfig";
-            this.preferencesConfig.Padding = new System.Windows.Forms.Padding(5);
-            this.preferencesConfig.Size = new System.Drawing.Size(514, 313);
-            this.preferencesConfig.TabIndex = 0;
             // 
             // tabActivity
             // 
@@ -237,6 +213,35 @@
             this.activityListView.SmallImageList = null;
             this.activityListView.TabIndex = 0;
             // 
+            // tabPreferences
+            // 
+            this.tabPreferences.Controls.Add(this.preferencesConfig);
+            this.tabPreferences.Location = new System.Drawing.Point(4, 22);
+            this.tabPreferences.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPreferences.Name = "tabPreferences";
+            this.tabPreferences.Size = new System.Drawing.Size(514, 433);
+            this.tabPreferences.TabIndex = 3;
+            this.tabPreferences.Text = "Preferences";
+            this.tabPreferences.UseVisualStyleBackColor = true;
+            // 
+            // preferencesConfig
+            // 
+            preferencesConfigValues1.Autostart = false;
+            preferencesConfigValues1.CopyToEmailOut = false;
+            preferencesConfigValues1.GameWrapperDataPort = 49252;
+            preferencesConfigValues1.LanguageCode = null;
+            preferencesConfigValues1.PlaySoundOnEmail = false;
+            preferencesConfigValues1.PlaySoundOnSend = false;
+            preferencesConfigValues1.SaveFolder = AowEmailWrapper.ConfigFramework.EmailSaveFolder.EmailIn;
+            this.preferencesConfig.Config = preferencesConfigValues1;
+            this.preferencesConfig.Dock = System.Windows.Forms.DockStyle.Top;
+            this.preferencesConfig.Location = new System.Drawing.Point(0, 0);
+            this.preferencesConfig.Margin = new System.Windows.Forms.Padding(2);
+            this.preferencesConfig.Name = "preferencesConfig";
+            this.preferencesConfig.Padding = new System.Windows.Forms.Padding(5);
+            this.preferencesConfig.Size = new System.Drawing.Size(514, 313);
+            this.preferencesConfig.TabIndex = 0;
+            // 
             // tabAbout
             // 
             this.tabAbout.Controls.Add(this.panelAbout);
@@ -252,7 +257,7 @@
             this.panelAbout.Controls.Add(this.groupBetaTesters);
             this.panelAbout.Controls.Add(this.groupAuthors);
             this.panelAbout.Controls.Add(this.lblNotice);
-            this.panelAbout.Controls.Add(this.lblVersion);
+            this.panelAbout.Controls.Add(this.panelTitle);
             this.panelAbout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelAbout.Location = new System.Drawing.Point(0, 0);
             this.panelAbout.Name = "panelAbout";
@@ -438,18 +443,45 @@
             this.lblNotice.TabIndex = 10;
             this.lblNotice.Text = resources.GetString("lblNotice.Text");
             // 
+            // panelTitle
+            // 
+            this.panelTitle.Controls.Add(this.lblVersion);
+            this.panelTitle.Controls.Add(this.fbLink);
+            this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTitle.Location = new System.Drawing.Point(5, 5);
+            this.panelTitle.Name = "panelTitle";
+            this.panelTitle.Size = new System.Drawing.Size(504, 40);
+            this.panelTitle.TabIndex = 13;
+            // 
             // lblVersion
             // 
             this.lblVersion.BackColor = System.Drawing.SystemColors.Highlight;
-            this.lblVersion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblVersion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVersion.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lblVersion.Location = new System.Drawing.Point(5, 5);
+            this.lblVersion.Location = new System.Drawing.Point(0, 0);
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lblVersion.Size = new System.Drawing.Size(504, 40);
-            this.lblVersion.TabIndex = 9;
+            this.lblVersion.Size = new System.Drawing.Size(464, 40);
+            this.lblVersion.TabIndex = 10;
             this.lblVersion.Text = "Age of Wonders Email Wrapper [{0}]";
+            // 
+            // fbLink
+            // 
+            this.fbLink.BackColor = System.Drawing.SystemColors.Window;
+            this.fbLink.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.fbLink.Dock = System.Windows.Forms.DockStyle.Right;
+            this.fbLink.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.fbLink.FlatAppearance.BorderSize = 5;
+            this.fbLink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.fbLink.Image = ((System.Drawing.Image)(resources.GetObject("fbLink.Image")));
+            this.fbLink.Location = new System.Drawing.Point(464, 0);
+            this.fbLink.Name = "fbLink";
+            this.fbLink.Size = new System.Drawing.Size(40, 40);
+            this.fbLink.TabIndex = 11;
+            this.fbLink.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.fbLink.Url = "http://www.facebook.com/pages/173302036046975";
+            this.fbLink.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -506,13 +538,14 @@
             this.panelMain.ResumeLayout(false);
             this.tabControlMain.ResumeLayout(false);
             this.tabAccounts.ResumeLayout(false);
-            this.tabPreferences.ResumeLayout(false);
             this.tabActivity.ResumeLayout(false);
+            this.tabPreferences.ResumeLayout(false);
             this.tabAbout.ResumeLayout(false);
             this.panelAbout.ResumeLayout(false);
             this.groupBetaTesters.ResumeLayout(false);
             this.panelBetaTestersGroupBox.ResumeLayout(false);
             this.groupAuthors.ResumeLayout(false);
+            this.panelTitle.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -538,7 +571,6 @@
         private System.Windows.Forms.Label lblAuthor2;
         private System.Windows.Forms.Label lblAuthor1;
         private System.Windows.Forms.Label lblNotice;
-        private System.Windows.Forms.Label lblVersion;
         private System.Windows.Forms.Panel panelBetaTestersGroupBox;
         private System.Windows.Forms.Label lblTester1;
         private System.Windows.Forms.Label label1;
@@ -556,6 +588,9 @@
         private System.Windows.Forms.Panel panelLocalMessageStore;
         private System.Windows.Forms.Button cmdSave;
         private System.Windows.Forms.Button cmdMessageStore;
+        private System.Windows.Forms.Panel panelTitle;
+        private System.Windows.Forms.Label lblVersion;
+        private AowEmailWrapper.Controls.LinkButton fbLink;
     }
 }
 
