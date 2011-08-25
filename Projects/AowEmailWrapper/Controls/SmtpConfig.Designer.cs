@@ -149,9 +149,9 @@
             // groupBoxAuth
             // 
             this.groupBoxAuth.AutoSize = true;
-            this.groupBoxAuth.Controls.Add(this.fbUsePolling);
             this.groupBoxAuth.Controls.Add(this.fbPassword);
             this.groupBoxAuth.Controls.Add(this.fbUserName);
+            this.groupBoxAuth.Controls.Add(this.fbUsePolling);
             this.groupBoxAuth.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBoxAuth.Location = new System.Drawing.Point(0, 164);
             this.groupBoxAuth.Margin = new System.Windows.Forms.Padding(2);
@@ -168,7 +168,7 @@
             this.fbUsePolling.Checked = false;
             this.fbUsePolling.Dock = System.Windows.Forms.DockStyle.Top;
             this.fbUsePolling.LabelName = "Use Polling Credentials:";
-            this.fbUsePolling.Location = new System.Drawing.Point(2, 63);
+            this.fbUsePolling.Location = new System.Drawing.Point(2, 15);
             this.fbUsePolling.MinimumSize = new System.Drawing.Size(0, 24);
             this.fbUsePolling.Name = "fbUsePolling";
             this.fbUsePolling.Size = new System.Drawing.Size(359, 24);
@@ -179,7 +179,7 @@
             this.fbPassword.Dock = System.Windows.Forms.DockStyle.Top;
             this.fbPassword.IsPassword = true;
             this.fbPassword.LabelName = "Password:";
-            this.fbPassword.Location = new System.Drawing.Point(2, 39);
+            this.fbPassword.Location = new System.Drawing.Point(2, 63);
             this.fbPassword.Margin = new System.Windows.Forms.Padding(2);
             this.fbPassword.MinimumSize = new System.Drawing.Size(0, 24);
             this.fbPassword.Name = "fbPassword";
@@ -194,7 +194,7 @@
             this.fbUserName.Dock = System.Windows.Forms.DockStyle.Top;
             this.fbUserName.IsPassword = false;
             this.fbUserName.LabelName = "User name:";
-            this.fbUserName.Location = new System.Drawing.Point(2, 15);
+            this.fbUserName.Location = new System.Drawing.Point(2, 39);
             this.fbUserName.Margin = new System.Windows.Forms.Padding(2);
             this.fbUserName.MinimumSize = new System.Drawing.Size(0, 24);
             this.fbUserName.Name = "fbUserName";
