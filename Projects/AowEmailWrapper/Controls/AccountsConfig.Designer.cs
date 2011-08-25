@@ -129,6 +129,7 @@
             // buttonActivate
             // 
             this.buttonActivate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonActivate.Enabled = false;
             this.buttonActivate.Location = new System.Drawing.Point(0, 0);
             this.buttonActivate.Name = "buttonActivate";
             this.buttonActivate.Size = new System.Drawing.Size(103, 25);
@@ -150,6 +151,7 @@
             // buttonRename
             // 
             this.buttonRename.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonRename.Enabled = false;
             this.buttonRename.Location = new System.Drawing.Point(0, 0);
             this.buttonRename.Name = "buttonRename";
             this.buttonRename.Size = new System.Drawing.Size(103, 25);
@@ -171,6 +173,7 @@
             // buttonRemove
             // 
             this.buttonRemove.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonRemove.Enabled = false;
             this.buttonRemove.Location = new System.Drawing.Point(0, 0);
             this.buttonRemove.Name = "buttonRemove";
             this.buttonRemove.Size = new System.Drawing.Size(103, 25);
