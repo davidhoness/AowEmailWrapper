@@ -76,9 +76,13 @@ namespace AowEmailWrapper.Controls
             InitializeComponent();
             CreateContextMenu();
             listViewAccounts.DoubleClick += new EventHandler(listViewAccounts_DoubleClick);
+            listViewAccounts.SelectedIndexChanged += new EventHandler(listViewAccounts_SelectedIndexChanged);
+
+            EventHandler clearSelected = new EventHandler(listViewAccounts_SelectedItems_Clear);
+            tabControlAccountEditor.Enter += clearSelected;
+            this.Leave += clearSelected;
 
             EventHandler raiseConfigChange = new EventHandler(Raise_Config_Changed);
-
             pollingConfig.Config_Changed += raiseConfigChange;
             smtpConfig.Config_Changed += raiseConfigChange;
         }
@@ -122,9 +126,36 @@ namespace AowEmailWrapper.Controls
             Activate();
         }
 
+        private void listViewAccounts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CheckEnabled();
+        }
+
+        private void listViewAccounts_SelectedItems_Clear(object sender, EventArgs e)
+        {
+            listViewAccounts.SelectedItems.Clear();
+        }
+
         #endregion
 
         #region Private Methods
+
+        private void CheckEnabled()
+        {
+            bool enabled = listViewAccounts.SelectedItems.Count > 0;
+
+            foreach (MenuItem menu in _contextMenu.MenuItems)
+            {
+                if (!menu.Tag.ToString().Equals(Menu_Add_Tag))
+                {
+                    menu.Enabled = enabled;
+                }
+            }
+
+            buttonRemove.Enabled = enabled;
+            buttonRename.Enabled = enabled;
+            buttonActivate.Enabled = enabled;
+        }
 
         private void Raise_Config_Changed()
         {
@@ -299,6 +330,7 @@ namespace AowEmailWrapper.Controls
             if (_accountsList != null &&
                 _accountsList.Accounts != null)
             {
+                listViewAccounts.SelectedItems.Clear();
                 listViewAccounts.Items.Clear();
                 listViewAccounts.SuspendLayout();
 
@@ -483,7 +515,7 @@ namespace AowEmailWrapper.Controls
 
             _contextMenu.MenuItems.AddRange(new MenuItem[] { add, remove, rename, activate });
 
-            _contextMenu.Popup += new EventHandler(ContextMenu_Popup);
+            //_contextMenu.Popup += new EventHandler(ContextMenu_Popup);
 
             add.Index = indexCount;
             add.Text = Translator.Translate(Menu_Add_Tag);
@@ -511,6 +543,7 @@ namespace AowEmailWrapper.Controls
             listViewAccounts.ContextMenu = _contextMenu;
         }
 
+        /*
         private void ContextMenu_Popup(object sender, EventArgs e)
         {
             bool enabled = listViewAccounts.SelectedItems.Count > 0;
@@ -522,6 +555,7 @@ namespace AowEmailWrapper.Controls
                 }
             }
         }
+        */
 
         private void ContextMenu_Click(object sender, EventArgs e)
         {
