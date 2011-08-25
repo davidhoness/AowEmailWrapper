@@ -241,6 +241,15 @@
   <data name="lblNotice.Text" xml:space="preserve">
     <value>The Age of Wonders Email Wrapper is a completely free application designed to enable play by email automation for all three AoW© games.  It is not endorsed by Triumph Studios©.  It is a personal project where the author stands to gain nothing bar saving time and the enjoyment of playing the games.  It comes without obligation for support, however support will probably be provided if you ask nicely.</value>
   </data>
+  <data name="fbLink.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAHVJREFUOE9j/P//
+        PwNFAGSAdeSMM0D8n0R8Bmw51ABSNYPVE21AQsXq/6/ffQFpAAOYS4k2AFkzWQag20yyC8g2AO5pNAbR
+        LgD5Hdn/MD7RBiApRAn9QWiAa9K8/7ktW3BiWBgiqwHpgSckig2gODOBnEIuBgBj1nO5S3S8LAAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
   <data name="label1.Text" xml:space="preserve">
     <value>The Age of Wonders Email Wrapper is a completely free application designed to enable play by email automation for all three AoW© games.  It is not endorsed by Triumph Studios©.  It is a personal project where the author stands to gain nothing bar saving time and the enjoyment of playing the games.  It comes without obligation for support, however support will probably be provided if you ask nicely.</value>
   </data>
