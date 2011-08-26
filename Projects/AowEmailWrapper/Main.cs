@@ -934,11 +934,10 @@ namespace AowEmailWrapper
                 {
                     if (MessageBox.Show(Translator.Translate(WrapperArchiveGameMessageBoxKey, ConfigHelper.EndedFolder), this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        foreach (Activity ended in list)
-                        {
-                            _gameManager.ArchiveEndedGame(ended.GameType, ended.FileName, ConfigHelper.EndedFolder);
-                        }
+                        list.ForEach(endedActivity => _gameManager.ArchiveEndedGame(endedActivity.GameType, endedActivity.FileName, ConfigHelper.EndedFolder));
                     }
+
+                    list.ForEach(endedActivity => TurnLogger.DeleteLog(endedActivity.FileName));
                 }
                 catch (Exception ex)
                 {
