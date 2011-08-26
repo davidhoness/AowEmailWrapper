@@ -16,7 +16,10 @@ namespace AowEmailWrapper.Controls
         public AccountsCreationForm()
         {
             InitializeComponent();
-            accountsCreationWizzard.CreateClicked += new EventHandler(AccountsCreationWizzard_CreateClicked);
+            this.KeyPreview = true;
+            this.KeyPress += new KeyPressEventHandler(AccountsCreationForm_KeyPress);
+
+            accountsCreationWizzard.CreateClicked += new EventHandler(AccountsCreationWizzard_CreateClicked);            
             Translator.TranslateForm(this);
         }
 
@@ -53,6 +56,15 @@ namespace AowEmailWrapper.Controls
         {
             this.DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void AccountsCreationForm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar.Equals((char)Keys.Escape))
+            {
+                this.DialogResult = DialogResult.Cancel;
+                this.Close();
+            }
         }
     }
 }
