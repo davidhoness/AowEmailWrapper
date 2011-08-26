@@ -14,7 +14,6 @@ namespace AowEmailWrapper
 {
     public partial class MessageStore : Form
     {
-        public EventHandler OnReDownload;
         private string _username;
         private string _host;
 
@@ -29,6 +28,18 @@ namespace AowEmailWrapper
 
             messageStoreList.Messages = MessageStoreManager.LoadLocalMessageStore(_username, _host);
             this.Text = Translator.Translate(this.Name, _username, _host);
+
+            this.KeyPreview = true;
+            this.KeyPress += new KeyPressEventHandler(MessageStore_KeyPress);            
+        }
+
+        private void MessageStore_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar.Equals((char)Keys.Escape))
+            {
+                this.DialogResult = DialogResult.Cancel;
+                this.Close();
+            }
         }
 
         private void cmdRedownload_Click(object sender, EventArgs e)
@@ -38,11 +49,7 @@ namespace AowEmailWrapper
             if (messageStoreList.ItemsRemoved)
             {
                 MessageStoreManager.SaveLocalMessageStore(_username, _host, theMessageStore);
-
-                if (OnReDownload != null)
-                {
-                    this.Invoke(OnReDownload);
-                }
+                this.DialogResult = DialogResult.OK;
             }
 
             this.Close();
@@ -50,6 +57,7 @@ namespace AowEmailWrapper
 
         private void cmdClose_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 
