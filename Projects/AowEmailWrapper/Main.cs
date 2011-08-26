@@ -597,25 +597,18 @@ namespace AowEmailWrapper
                     !string.IsNullOrEmpty(theAccount.PollingConfig.Server))
                 {
                     MessageStore form = new MessageStore(theAccount.PollingConfig.Username, theAccount.PollingConfig.Server);
-                    form.OnReDownload += new EventHandler(MessageStoreReDownload);
-                    form.ShowDialog(this);
-                }
-            }
-        }
 
-        private void MessageStoreReDownload(object sender, EventArgs e)
-        {
-            if (_wrapperConfig != null)
-            {
-                AccountConfigValues theAccount = _wrapperConfig.AccountsList.ActiveAccount;
-
-                if (_poller != null)
-                {
-                    _poller.PollNow();
-                }
-                else if (theAccount.PollingConfig != null)
-                {
-                    StartPolling(theAccount.PollingConfig, _wrapperConfig.PreferencesConfig);
+                    if (form.ShowDialog(this).Equals(DialogResult.OK))
+                    {
+                        if (_poller != null)
+                        {
+                            _poller.PollNow();
+                        }
+                        else if (theAccount.PollingConfig != null)
+                        {
+                            StartPolling(theAccount.PollingConfig, _wrapperConfig.PreferencesConfig);
+                        }
+                    }
                 }
             }
         }
