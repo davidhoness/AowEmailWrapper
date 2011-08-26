@@ -142,6 +142,11 @@ namespace AowEmailWrapper.Classes
             }
         }
 
+        public static bool DeleteLog(string gameFileName)
+        {
+            return DataManagerHelper.DeleteTurnLog(gameFileName);
+        }
+
         public static string TimeSpanToString(TimeSpan input)
         {
             string returnVal = string.Empty;
