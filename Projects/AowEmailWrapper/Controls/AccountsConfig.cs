@@ -198,7 +198,7 @@ namespace AowEmailWrapper.Controls
                 createForm.Name = createForm.GetType().Name;
                 createForm.AccountTemplates = _accountsTemplates;
                 createForm.RadioImages = imageListLargeIcons;
-                if (createForm.ShowDialog().Equals(DialogResult.OK))
+                if (createForm.ShowDialog(this).Equals(DialogResult.OK))
                 {
                     theNewAccount = createForm.ChosenTemplate;
                 }
