@@ -152,9 +152,9 @@ namespace AowEmailWrapper.Helpers
             return FileHelper.LoadTextFile(theFilePath, true);
         }
 
-        public static void DeleteTurnLog(string fileName)
+        public static bool DeleteTurnLog(string fileName)
         {
-            FileHelper.DeleteTextFile(GetTurnLogFilePath(fileName));
+            return FileHelper.DeleteTextFile(GetTurnLogFilePath(fileName));
         }
 
         private static string GetTurnLogFilePath(string fileName)
