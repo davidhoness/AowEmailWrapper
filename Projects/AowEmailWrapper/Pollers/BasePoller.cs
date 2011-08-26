@@ -111,7 +111,7 @@ namespace AowEmailWrapper.Pollers
             _pollQueue.Dequeue();
             if (OnEmailEvent != null)
             {
-                OnEmailEvent(this, new PollerEventArgs(PollState.End, emailDownloaded, ex));                
+                OnEmailEvent(this, new PollerEventArgs(PollState.End, emailDownloaded, ex));
             }
         }
 
@@ -138,7 +138,7 @@ namespace AowEmailWrapper.Pollers
                                 {
                                     _gameManager.StoreDownloadFile(theASG, _saveFolder);
 
-                                    TurnLogger.SaveLog(attachment.FileName, email.TextData.Text);
+                                    TurnLogger.SaveLog(theASG.FileNameTrue, email.TextData.Text);
                                 }
                             }
                         }
