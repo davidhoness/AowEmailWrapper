@@ -218,23 +218,11 @@ namespace AowEmailWrapper.Controls
                 !string.IsNullOrEmpty(emailAddress) &&
                 !string.IsNullOrEmpty(password))
             {
-                string username = emailAddress;
+                string emailUser = GetEmailUser(emailAddress);
+                bool shortUser = false;
+                bool.TryParse(_chosenTemplate.ShortUserName, out shortUser);
 
-                if (!string.IsNullOrEmpty(_chosenTemplate.ShortUserName))
-                {
-                    //Take everything on the left of the @ symbol for the username
-                    bool shortUserName = false;
-                    bool.TryParse(_chosenTemplate.ShortUserName, out shortUserName);
-                    if (shortUserName)
-                    {
-                        int atPos = emailAddress.IndexOf('@');
-                        if (atPos > 0)
-                        {
-                            username = emailAddress.Substring(0, atPos);
-                        }
-                    }
-                }
-                _chosenTemplate.PollingConfig.Username = username;
+                _chosenTemplate.PollingConfig.Username = (shortUser && !string.IsNullOrEmpty(emailUser)) ? emailUser : emailAddress;
                 _chosenTemplate.PollingConfig.PasswordTrue = password;
                 _chosenTemplate.SmtpConfig.EmailAddress = emailAddress;
             }
@@ -262,6 +250,19 @@ namespace AowEmailWrapper.Controls
             returnVal.MouseUp += new MouseEventHandler(radioButton_MouseUp);
 
             return returnVal;
+        }
+
+        private string GetEmailUser(string emailAddress)
+        {
+            string username = null;
+
+            int atPos = emailAddress.IndexOf('@');
+            if (atPos > 0)
+            {
+                username = emailAddress.Substring(0, atPos);
+            }
+
+            return username;
         }
     }
 }
