@@ -1,4 +1,4 @@
-﻿<languages>
+<languages>
 	<language code="en" display="English">
 		<!-- BEGIN: Main forms -->
 		<lookup key="Main" value="Age of Wonders Email Wrapper"/>
@@ -11,8 +11,8 @@
 		<lookup key="tabIncoming" value="Incoming Email"/>
 		<lookup key="cmdMessageStore" value="Show POP3 emails"/>
 		<lookup key="groupBoxEmailSelection" value="Email Attachment Downloading"/>
-    <lookup key="fbPollingSetup" value="Check for email"/>
-    <lookup key="fbPollingSetup_every" value="every:"/>
+		<lookup key="fbPollingSetup" value="Check for email"/>
+		<lookup key="fbPollingSetup_every" value="every:"/>
 		<lookup key="groupBoxAuth" value="Authentication Details"/>
 		<lookup key="fbPassword" value="Password:"/>
 		<lookup key="fbUserName" value="User name:"/>
@@ -36,15 +36,15 @@
 		<lookup key="fbSentSound" value="Email Sent sound:"/>
 		<lookup key="fbEmailSound" value="Email Downloaded sound:"/>
 		<lookup key="fbLocalization" value="Language:"/>
-    <lookup key="fbCopyToEmailOut" value="Copy to EmailOut after sending:"/>
-    <lookup key="fbGameWrapperDataPort" value="Game to Wrapper data port:"/>
+		<lookup key="fbCopyToEmailOut" value="Copy to EmailOut after sending:"/>
+		<lookup key="fbGameWrapperDataPort" value="Game to Wrapper data port:"/>
 		<lookup key="tabActivity" value="Activity Log"/>
 		<lookup key="activityListViewlistView0" value="File Name"/>
 		<lookup key="activityListViewlistView1" value="Map"/>
 		<lookup key="activityListViewlistView2" value="Turn"/>
-    <lookup key="activityListViewlistView3" value="Age"/>
+		<lookup key="activityListViewlistView3" value="Age"/>
 		<lookup key="activityListViewlistView4" value="Status"/>
-    <lookup key="activityListViewlistView5" value="Ticks"/>
+		<lookup key="activityListViewlistView5" value="Ticks"/>
 		<lookup key="tabAbout" value="About"/>
 		<lookup key="groupBetaTesters" value="Beta Testers"/>
 		<lookup key="groupAuthors" value="Authors"/>
@@ -55,13 +55,13 @@
 		<lookup key="messageStoreListlistView1" value="Subject"/>
 		<lookup key="messageStoreListlistView2" value="Date"/>
 		<lookup key="messageStoreListlistView3" value="File Name"/>
-    <lookup key="messageStoreListlistView4" value="Ticks"/>
+		<lookup key="messageStoreListlistView4" value="Ticks"/>
 		<lookup key="lblLocalMessageStoreMessage" value="Users that have a Windows based email client such as Outlook Express, Outlook, Mozilla Thunderbird, Eudora etc. should be aware that the default behaviour for POP3 access is to remove messages from the server after they have been downloaded.  You will need to change an option to tell your client to leave the messages on the server so that the Wrapper can find them.  The Wrapper will always leave messages on the server so your usual email client will also find them."/>
 		<lookup key="cmdRedownload" value="Re-Download"/>
 		<lookup key="cmdClose" value="Close"/>
-    <lookup key="AccountsCreationForm" value="Create a new account"/>
-    <lookup key="buttonCreate" value="&amp;Create"/>
-    <lookup key="radioOther" value="Other"/>
+		<lookup key="AccountsCreationForm" value="Create a new account"/>
+		<lookup key="buttonCreate" value="&amp;Create"/>
+		<lookup key="radioOther" value="Other"/>
 		<!-- END: Main forms -->
 		<!-- BEGIN: Messages -->
 		<lookup key="msgWrapperWriteAccess" value="The Wrapper does not have Write access to these folders:&#xA;{0}&#xA;&#xA;Please modify your system security settings or run the Wrapper as Administrator."/>
@@ -76,7 +76,7 @@
 		<lookup key="msgWrapperRestartRequired" value="Please restart the Wrapper for these changes to take effect."/>
 		<lookup key="msgWrapperPollFailed" value="Poll failed"/>
 		<lookup key="msgWrapperGamesWaiting" value="You have {0} game(s) waiting."/>
-    <lookup key="msgInputEmailSettingsManual" value="You will enter the settings manually."/>
+		<lookup key="msgInputEmailSettingsManual" value="You will enter the settings manually."/>
 		<!-- END: Messages -->
 		<!-- BEGIN: Context Menus -->
 		<lookup key="menuItemShow" value="&amp;Show"/>
@@ -106,7 +106,7 @@
 		<lookup key="enumReceived" value="Received"/>
 		<lookup key="enumSent" value="Sent"/>
 		<lookup key="enumEnded" value="Ended"/>
-    <lookup key="enumMinutes" value="minutes"/>
+		<lookup key="enumMinutes" value="minutes"/>
 		<!-- END: Enumerations -->
 		<!-- BEGIN: Misc -->
 		<lookup key="buttonOK" value="OK"/>
@@ -114,219 +114,219 @@
 		<lookup key="activeAccount" value="Active"/>
 		<!-- END: Misc -->
 	</language>
-  <language code="fr" display="Française">
-    <!-- BEGIN: Main forms -->
-    <lookup key="tabAccounts" value="Comptes"/>
-    <lookup key="buttonActivate" value="Activer"/>
-    <lookup key="buttonRename" value="Renommer"/>
-    <lookup key="buttonRemove" value="Supprimer"/>
-    <lookup key="buttonAdd" value="Créer"/>
-    <lookup key="tabIncoming" value="Serveur entrant"/>
-    <lookup key="cmdMessageStore" value="Montrer mail POP3"/>
-    <lookup key="groupBoxEmailSelection" value="Téléchargement des pièces jointes"/>
-    <lookup key="fbPollingSetup" value="Vérifier les e-mails"/>
-    <lookup key="fbPollingSetup_every" value="toutes les:"/>
-    <lookup key="groupBoxAuth" value="Détails d'authentification"/>
-    <lookup key="fbPassword" value="Mot-de-passe:"/>
-    <lookup key="fbUserName" value="Nom d'utilisateur:"/>
-    <lookup key="groupBoxServer" value="Serveur"/>
-    <lookup key="fbUseSSL" value="Utiliser SSL:"/>
-    <lookup key="fbPort" value="Port:"/>
-    <lookup key="fbServer" value="Serveur:"/>
-    <lookup key="fbEmailType" value="Type de compte:"/>
-    <lookup key="tabOutgoing" value="Serveur sortant"/>
-    <lookup key="fbUsePolling" value="Utiliser les paramètres de scrutation:"/>
-    <lookup key="groupBoxServer" value="Serveur"/>
-    <lookup key="fbBccMyself" value="Cci à moi-même:"/>
-    <lookup key="fbAuthentication" value="Authentification requise :"/>
-    <lookup key="fbSSLType" value="Type de SSL:"/>
-    <lookup key="fbEmailAddress" value="Adresse mail:"/>
-    <lookup key="fbSmtpServer" value="Serveur SMTP:"/>
-    <lookup key="tabPreferences" value="Préférences"/>
-    <lookup key="fbSaveFolder" value="Répertoire de téléchargement:"/>
-    <lookup key="groupBoxPreferences" value="Préférences"/>
-    <lookup key="fbAutostart" value="Démarrer en même temps que Windows:"/>
-    <lookup key="fbSentSound" value="Son pour mail envoyé:"/>
-    <lookup key="fbEmailSound" value="Son pour mail reçu:"/>
-    <lookup key="fbLocalization" value="Langue:"/>
-    <lookup key="fbCopyToEmailOut" value="Sauvegarder vers EmailOut après envoi:"/>
-    <lookup key="fbGameWrapperDataPort" value="Jeu de Wrapper port de données:"/>
-    <lookup key="tabActivity" value="Historique"/>
-    <lookup key="activityListViewlistView0" value="Nom du fichier"/>
-    <lookup key="activityListViewlistView1" value="Carte"/>
-    <lookup key="activityListViewlistView2" value="Tour"/>
-    <lookup key="activityListViewlistView3" value="Ancienneté"/>
-    <lookup key="activityListViewlistView4" value="Statut"/>
-    <lookup key="activityListViewlistView5" value="Coches"/>
-    <lookup key="tabAbout" value="A propos"/>
-    <lookup key="groupBetaTesters" value="Béta Testeurs"/>
-    <lookup key="groupAuthors" value="Auteurs"/>
-    <lookup key="lblNotice" value="Age of Wonders Email Wrapper est une application entièrement gratuite conçue pour permettre l'automatisation des parties par e-mail pour les trois jeux AoW©. Elle n'est pas validée par Triumph Studios©. Ceci est un projet personnel pour lequel l'auteur n'espère rien gagner d'autre qu'économiser du temps et améliorer le plaisir de jeu. Cette application est fournie sans aucune obligation de maintenance, mais si vous demandez gentiment, vous aurez sans doute de l'aide."/>
-    <lookup key="cmdSave" value="Sauvegarder les paramètres"/>
-    <lookup key="MessageStore" value="Mail POP3 ({0} sur {1})"/>
-    <lookup key="messageStoreListlistView0" value="De"/>
-    <lookup key="messageStoreListlistView1" value="Sujet"/>
-    <lookup key="messageStoreListlistView2" value="Date"/>
-    <lookup key="messageStoreListlistView3" value="Nom du fichier"/>
-    <lookup key="messageStoreListlistView4" value="Coches"/>
-    <lookup key="lblLocalMessageStoreMessage" value="Les joueurs utilisant des logiciels Windows pour lire les mails, comme Outlook Express, Outlook, Mozilla Thunderbird, Eudora, etc… devraient être attentif au comportement par défaut de leur accès POP3 qui est de supprimer les mails du serveur à la fin de leur téléchargement. Vous devez modifier cette option pour indiquer à votre logiciel de conserver les mails sur le serveur afin que ce Wrapper puisse les lire. Quant à ce Wrapper, il laissera toujours les mails sur le serveur afin que votre logiciel habituel puisse les lire."/>
-    <lookup key="cmdRedownload" value="Re-Télécharger"/>
-    <lookup key="cmdClose" value="Fermer"/>
-    <lookup key="AccountsCreationForm" value="Créer un nouveau compte"/>
-    <lookup key="buttonCreate" value="&amp;Créer"/>
-    <lookup key="radioOther" value="Autre"/>
-    <!-- END: Main forms -->
-    <!-- BEGIN: Messages -->
-    <lookup key="msgWrapperWriteAccess" value="Le Wrapper n'a pas les autorisations en écriture sur les répertoires suivants : &#xA;{0}&#xA;&#xA;Merci de modifier les réglages de sécurité de votre système ou d'éxécuter ce Wrapper en tant qu'Administrateur."/>
-    <lookup key="msgWrapperArchiveGame" value="Souhaitez-vous également archiver les parties sélectionnées ? Ceci déplacera leurs fichiers dans un dossier séparé nommé '{0}' et demeurera accessible depuis le jeu."/>
-    <lookup key="msgWrapperCannotActivateAccount" value="Impossible d'activer le compte &quot;{0}&quot; pour l'instant. Merci d'attendre la fin de l'envoi de mail."/>
-    <lookup key="msgAccountPrompt" value="Saisissez le nom du compte :"/>
-    <lookup key="msgAccountDuplicate" value="Un compte portant ce nom existe déjà. Merci de choisir un autre nom."/>
-    <lookup key="msgWrapperEmailSentSuccess" value="Envoi vers [{0}] réussi."/>
-    <lookup key="msgWrapperEmailSentFailed" value="Erreur pendant l'envoi du mail : {0}.&#xA;Vers: {1}&#xA;&#xA;{2}"/>
-    <lookup key="msgEmailInSelected" value="Merci d'utiliser Scénario &gt; Email &gt; Charger"/>
-    <lookup key="msgSaveSelected" value="Merci d'utiliser Charger depuis le menu principal"/>
-    <lookup key="msgWrapperRestartRequired" value="Merci de redémarrer le Wrapper pour que ces changements soient effectifs."/>
-    <lookup key="msgWrapperPollFailed" value="Echec de scrutation"/>
-    <lookup key="msgWrapperGamesWaiting" value="Vous avez {0} partie(s) en attente."/>
-    <lookup key="msgInputEmailSettingsManual" value="Vous remplirez les paramètres manuellement."/>
-    <!-- END: Messages -->
-    <!-- BEGIN: Context Menus -->
-    <lookup key="menuItemShow" value="Ouvrir"/>
-    <lookup key="menuItemAccounts" value="Comptes"/>
-    <lookup key="menuItemPollNow" value="Vérifier maintenant"/>
-    <lookup key="menuItemExit" value="Quitter"/>
-    <lookup key="menuItemActivate" value="Activer"/>
-    <lookup key="menuItemRename" value="Renommer"/>
-    <lookup key="menuItemRemove" value="Supprimer"/>
-    <lookup key="menuItemAdd" value="Créer"/>
-    <lookup key="menuItemMarkEnded" value="Marquer comme terminé"/>
-    <lookup key="menuItemMarkSent" value="Marquer comme envoyé"/>
-    <!-- END: Context Menus -->
-    <!-- BEGIN: Enumerations -->
-    <lookup key="enumChooser" value="Merci de sélectionner"/>
-    <lookup key="enumNone" value="Aucun"/>
-    <lookup key="enumSending" value="En cours d'envoi"/>
-    <lookup key="enumChecking" value="En cours de vérification"/>
-    <lookup key="enumEmailWaiting" value="Mail reçu"/>
-    <lookup key="enumNew" value="Nouveau"/>
-    <lookup key="enumReceived" value="Reçu"/>
-    <lookup key="enumSent" value="Envoyé"/>
-    <lookup key="enumEnded" value="Terminé"/>
-    <lookup key="enumMinutes" value="minutes"/>
-    <!-- END: Enumerations -->
-    <!-- BEGIN: Misc -->
-    <lookup key="buttonCancel" value="Annuler"/>
-    <lookup key="activeAccount" value="Actif"/>
-    <!-- END: Misc -->
-  </language>
-  <language code="de" display="Deutsch">
-    <!-- BEGIN: Main forms -->
-    <lookup key="tabAccounts" value="Konten" />
-    <lookup key="buttonActivate" value="Aktivieren" />
-    <lookup key="buttonRename" value="Umbenennen" />
-    <lookup key="buttonRemove" value="Entfernen" />
-    <lookup key="buttonAdd" value="Neu hinzufügen" />
-    <lookup key="tabIncoming" value="Eingehende Email" />
-    <lookup key="cmdMessageStore" value="Zeige POP3 Email" />
-    <lookup key="groupBoxEmailSelection" value="Email Anhang herunterladen" />
-    <lookup key="fbPollingSetup" value="Abrufen email"/>
-    <lookup key="fbPollingSetup_every" value="alle:"/>
-    <lookup key="groupBoxAuth" value="Authentifizierungsinformationen" />
-    <lookup key="fbPassword" value="Kennwort:" />
-    <lookup key="fbUserName" value="Benutzername:" />
-    <lookup key="groupBoxServer" value="Server" />
-    <lookup key="fbUseSSL" value="SSL verwenden:" />
-    <lookup key="fbPort" value="Port:" />
-    <lookup key="fbServer" value="Server:" />
-    <lookup key="fbEmailType" value="Email Typ:" />
-    <lookup key="tabOutgoing" value="Ausgehende Email" />
-    <lookup key="fbUsePolling" value="Abrufverbindungsinformationen verwenden:" />
-    <lookup key="groupBoxServer" value="Server" />
-    <lookup key="fbBccMyself" value="Sich selbst im BCC hinzufügen:" />
-    <lookup key="fbAuthentication" value="Authentifizierung benötigt:" />
-    <lookup key="fbSSLType" value="SSL Typ:" />
-    <lookup key="fbEmailAddress" value="Email Adresse:" />
-    <lookup key="fbSmtpServer" value="SMTP Server:" />
-    <lookup key="tabPreferences" value="Präferenzen" />
-    <lookup key="fbSaveFolder" value="Downloadverzeichnis:" />
-    <lookup key="groupBoxPreferences" value="Präferenzen" />
-    <lookup key="fbAutostart" value="Automatisch mit Windows starten:" />
-    <lookup key="fbSentSound" value="Sound für Email gesendet:" />
-    <lookup key="fbEmailSound" value="Sound für Email heruntergeladen:" />
-    <lookup key="fbLocalization" value="Sprache:" />
-    <lookup key="fbCopyToEmailOut" value="Beim Senden nach EmailOut kopieren:"/>
-    <lookup key="fbGameWrapperDataPort" value="Spiel um Wrapper datenport:"/>
-    <lookup key="tabActivity" value="Aktivitätsreport" />
-    <lookup key="activityListViewlistView0" value="Dateiname" />
-    <lookup key="activityListViewlistView1" value="Karte"/>
-    <lookup key="activityListViewlistView2" value="Drehen"/>
-    <lookup key="activityListViewlistView3" value="Alter"/>
-    <lookup key="activityListViewlistView4" value="Zustand"/>
-    <lookup key="activityListViewlistView5" value="Zeiteinheit"/>
-    <lookup key="tabAbout" value="Über" />
-    <lookup key="groupBetaTesters" value="Beta Tester" />
-    <lookup key="groupAuthors" value="Autoren" />
-    <lookup key="lblNotice" value="Der Age of Wonders Email Wrapper ist eine komplett kostenfreie Anwendung, entworfen um die Play-By-Email Automatisierung für alle drei AoW© Spiele zu ermöglichen. Er ist nicht von den Triumph Studios© unterstützt. Es ist ein privates Projekt in welchem der Autor nichts erhält, außer der Zeitersparnis und dem Spaß die Spiele zu spielen. Es wird ohne Verpflichtung zur Hilfeleistung zur Verfügung gestellt, wobei diese nach freundlicher Anfrage höchstwahrscheinlich gewährt wird." />
-    <lookup key="cmdSave" value="Einstellungen speichern" />
-    <lookup key="MessageStore" value="POP3 Email ({0} auf {1})" />
-    <lookup key="messageStoreListlistView0" value="Von" />
-    <lookup key="messageStoreListlistView1" value="Betreff" />
-    <lookup key="messageStoreListlistView2" value="Datum" />
-    <lookup key="messageStoreListlistView3" value="Dateiname" />
-    <lookup key="messageStoreListlistView4" value="Zeiteinheit" />
-    <lookup key="lblLocalMessageStoreMessage" value="Benutzer die einen Windows basierten E-Mail Client wie Outlook Express, Outlook, Mozilla Thunderbird, Eudora, etc. verwenden, sollten beachten, dass das Standardverhalten für den POP3 Zugriff bedeutet, dass die Nachrichten nach dem Herunterladen vom Server entfernt werden. Sie müssen eine Option ändern um den Client so zu konfigurieren, dass die Nachrichten auf dem Server verbleiben und der Wrapper diese finden kann. Der Wrapper beläßt die Nachrichten immer auf dem Server, so dass der normale E-Mail Client diese auch finden kann." />
-    <lookup key="cmdRedownload" value="Erneut herunterladen" />
-    <lookup key="cmdClose" value="Schließen" />
-    <lookup key="AccountsCreationForm" value="Erstellen Sie eine neue Konto"/>
-    <lookup key="buttonCreate" value="&amp;Erstellen"/>
-    <lookup key="radioOther" value="Andere"/>
-    <!-- END: Main forms -->
-    <!-- BEGIN: Messages -->
-    <lookup key="msgWrapperWriteAccess" value="Der Wrapper hat keinen Schreibzugriff auf diese Verzeichnisse:&#xA;{0}&#xA;&#xA; Bitte ändern Sie Ihre System Sicherheitseinstellungen oder starten Sie den Wrapper als Administrator." />
-    <lookup key="msgWrapperArchiveGame" value="Möchten Sie die gewählten Spiele archivieren? Dies verschiebt die Dateien in einen seperaten Ordner mit dem Namen '{0}' , welchen Sie auch im Spiel zur Verfügung haben." />
-    <lookup key="msgWrapperCannotActivateAccount" value="Kann das Konto &quot;{0}&quot; jetzt nicht aktivieren.  Bitte warten Sie bis der Email Versand beendet ist." />
-    <lookup key="msgAccountPrompt" value="Geben Sie den Namen des Kontos ein:" />
-    <lookup key="msgAccountDuplicate" value="Ein Konto mit diesem Namen existiert bereits. Bitte wählen Sie einen anderen Namen." />
-    <lookup key="msgWrapperEmailSentSuccess" value="An [{0}] erfolgreich versendet." />
-    <lookup key="msgWrapperEmailSentFailed" value="Fehler beim Versenden der Email: {0}.&#xA;An: {1}&#xA;&#xA;{2}" />
-    <lookup key="msgEmailInSelected" value="Bitte Szenario &gt; Email &gt; Spiel laden verwenden" />
-    <lookup key="msgSaveSelected" value="Bitte Spiel laden vom Hauptmenü verwenden" />
-    <lookup key="msgWrapperRestartRequired" value="Bitte starten Sie den Wrapper neu um die Änderungen zu übernehmen." />
-    <lookup key="msgWrapperPollFailed" value="Abruf fehlgeschlagen" />
-    <lookup key="msgWrapperGamesWaiting" value="Sie haben {0} Spiel(e) wartend." />
-    <lookup key="msgInputEmailSettingsManual" value="Sie werden die Einstellungen manuell eingeben."/>
-    <!-- END: Messages -->
-    <!-- BEGIN: Context Menus -->
-    <lookup key="menuItemShow" value="Anzeigen" />
-    <lookup key="menuItemAccounts" value="Konten" />
-    <lookup key="menuItemPollNow" value="Jetzt abrufen" />
-    <lookup key="menuItemExit" value="Beenden" />
-    <lookup key="menuItemActivate" value="Aktivieren" />
-    <lookup key="menuItemRename" value="Umbenennen" />
-    <lookup key="menuItemRemove" value="Entfernen" />
-    <lookup key="menuItemAdd" value="Neu hinzufügen" />
-    <lookup key="menuItemMarkEnded" value="Als beendet markieren" />
-    <lookup key="menuItemMarkSent" value="Als gesendet markieren" />
-    <!-- END: Context Menus -->
-    <!-- BEGIN: Enumerations -->
-    <lookup key="enumChooser" value="Bitte auswählen" />
-    <lookup key="enumNone" value="Nichts" />
-    <lookup key="enumSave" value="Speichern" />
-    <lookup key="enumSending" value="Sendet" />
-    <lookup key="enumChecking" value="Überprüft" />
-    <lookup key="enumEmailWaiting" value="Email erhalten" />
-    <lookup key="enumNew" value="Neu" />
-    <lookup key="enumReceived" value="Erhalten" />
-    <lookup key="enumSent" value="Gesendet" />
-    <lookup key="enumEnded" value="Beendet" />
-    <lookup key="enumMinutes" value="minuten"/>
-    <!-- END: Enumerations -->
-    <!-- BEGIN: Misc -->
-    <lookup key="buttonCancel" value="Abbrechen" />
-    <lookup key="activeAccount" value="Aktiv" />
-    <!-- END: Misc -->
-  </language>
+	<language code="fr" display="Française">
+		<!-- BEGIN: Main forms -->
+		<lookup key="tabAccounts" value="Comptes"/>
+		<lookup key="buttonActivate" value="Activer"/>
+		<lookup key="buttonRename" value="Renommer"/>
+		<lookup key="buttonRemove" value="Supprimer"/>
+		<lookup key="buttonAdd" value="Créer"/>
+		<lookup key="tabIncoming" value="Serveur entrant"/>
+		<lookup key="cmdMessageStore" value="Montrer mail POP3"/>
+		<lookup key="groupBoxEmailSelection" value="Téléchargement des pièces jointes"/>
+		<lookup key="fbPollingSetup" value="Vérifier les e-mails"/>
+		<lookup key="fbPollingSetup_every" value="toutes les:"/>
+		<lookup key="groupBoxAuth" value="Détails d'authentification"/>
+		<lookup key="fbPassword" value="Mot-de-passe:"/>
+		<lookup key="fbUserName" value="Nom d'utilisateur:"/>
+		<lookup key="groupBoxServer" value="Serveur"/>
+		<lookup key="fbUseSSL" value="Utiliser SSL:"/>
+		<lookup key="fbPort" value="Port:"/>
+		<lookup key="fbServer" value="Serveur:"/>
+		<lookup key="fbEmailType" value="Type de compte:"/>
+		<lookup key="tabOutgoing" value="Serveur sortant"/>
+		<lookup key="fbUsePolling" value="Utiliser les paramètres de scrutation:"/>
+		<lookup key="groupBoxServer" value="Serveur"/>
+		<lookup key="fbBccMyself" value="Cci à moi-même:"/>
+		<lookup key="fbAuthentication" value="Authentification requise :"/>
+		<lookup key="fbSSLType" value="Type de SSL:"/>
+		<lookup key="fbEmailAddress" value="Adresse mail:"/>
+		<lookup key="fbSmtpServer" value="Serveur SMTP:"/>
+		<lookup key="tabPreferences" value="Préférences"/>
+		<lookup key="fbSaveFolder" value="Répertoire de téléchargement:"/>
+		<lookup key="groupBoxPreferences" value="Préférences"/>
+		<lookup key="fbAutostart" value="Démarrer en même temps que Windows:"/>
+		<lookup key="fbSentSound" value="Son pour mail envoyé:"/>
+		<lookup key="fbEmailSound" value="Son pour mail reçu:"/>
+		<lookup key="fbLocalization" value="Langue:"/>
+		<lookup key="fbCopyToEmailOut" value="Sauvegarder vers EmailOut après envoi:"/>
+		<lookup key="fbGameWrapperDataPort" value="Jeu de Wrapper port de données:"/>
+		<lookup key="tabActivity" value="Historique"/>
+		<lookup key="activityListViewlistView0" value="Nom du fichier"/>
+		<lookup key="activityListViewlistView1" value="Carte"/>
+		<lookup key="activityListViewlistView2" value="Tour"/>
+		<lookup key="activityListViewlistView3" value="Ancienneté"/>
+		<lookup key="activityListViewlistView4" value="Statut"/>
+		<lookup key="activityListViewlistView5" value="Coches"/>
+		<lookup key="tabAbout" value="A propos"/>
+		<lookup key="groupBetaTesters" value="Béta Testeurs"/>
+		<lookup key="groupAuthors" value="Auteurs"/>
+		<lookup key="lblNotice" value="Age of Wonders Email Wrapper est une application entièrement gratuite conçue pour permettre l'automatisation des parties par e-mail pour les trois jeux AoW©. Elle n'est pas validée par Triumph Studios©. Ceci est un projet personnel pour lequel l'auteur n'espère rien gagner d'autre qu'économiser du temps et améliorer le plaisir de jeu. Cette application est fournie sans aucune obligation de maintenance, mais si vous demandez gentiment, vous aurez sans doute de l'aide."/>
+		<lookup key="cmdSave" value="Sauvegarder les paramètres"/>
+		<lookup key="MessageStore" value="Mail POP3 ({0} sur {1})"/>
+		<lookup key="messageStoreListlistView0" value="De"/>
+		<lookup key="messageStoreListlistView1" value="Sujet"/>
+		<lookup key="messageStoreListlistView2" value="Date"/>
+		<lookup key="messageStoreListlistView3" value="Nom du fichier"/>
+		<lookup key="messageStoreListlistView4" value="Coches"/>
+		<lookup key="lblLocalMessageStoreMessage" value="Les joueurs utilisant des logiciels Windows pour lire les mails, comme Outlook Express, Outlook, Mozilla Thunderbird, Eudora, etc… devraient être attentif au comportement par défaut de leur accès POP3 qui est de supprimer les mails du serveur à la fin de leur téléchargement. Vous devez modifier cette option pour indiquer à votre logiciel de conserver les mails sur le serveur afin que ce Wrapper puisse les lire. Quant à ce Wrapper, il laissera toujours les mails sur le serveur afin que votre logiciel habituel puisse les lire."/>
+		<lookup key="cmdRedownload" value="Re-Télécharger"/>
+		<lookup key="cmdClose" value="Fermer"/>
+		<lookup key="AccountsCreationForm" value="Créer un nouveau compte"/>
+		<lookup key="buttonCreate" value="&amp;Créer"/>
+		<lookup key="radioOther" value="Autre"/>
+		<!-- END: Main forms -->
+		<!-- BEGIN: Messages -->
+		<lookup key="msgWrapperWriteAccess" value="Le Wrapper n'a pas les autorisations en écriture sur les répertoires suivants : &#xA;{0}&#xA;&#xA;Merci de modifier les réglages de sécurité de votre système ou d'éxécuter ce Wrapper en tant qu'Administrateur."/>
+		<lookup key="msgWrapperArchiveGame" value="Souhaitez-vous également archiver les parties sélectionnées ? Ceci déplacera leurs fichiers dans un dossier séparé nommé '{0}' et demeurera accessible depuis le jeu."/>
+		<lookup key="msgWrapperCannotActivateAccount" value="Impossible d'activer le compte &quot;{0}&quot; pour l'instant. Merci d'attendre la fin de l'envoi de mail."/>
+		<lookup key="msgAccountPrompt" value="Saisissez le nom du compte :"/>
+		<lookup key="msgAccountDuplicate" value="Un compte portant ce nom existe déjà. Merci de choisir un autre nom."/>
+		<lookup key="msgWrapperEmailSentSuccess" value="Envoi vers [{0}] réussi."/>
+		<lookup key="msgWrapperEmailSentFailed" value="Erreur pendant l'envoi du mail : {0}.&#xA;Vers: {1}&#xA;&#xA;{2}"/>
+		<lookup key="msgEmailInSelected" value="Merci d'utiliser Scénario &gt; Email &gt; Charger"/>
+		<lookup key="msgSaveSelected" value="Merci d'utiliser Charger depuis le menu principal"/>
+		<lookup key="msgWrapperRestartRequired" value="Merci de redémarrer le Wrapper pour que ces changements soient effectifs."/>
+		<lookup key="msgWrapperPollFailed" value="Echec de scrutation"/>
+		<lookup key="msgWrapperGamesWaiting" value="Vous avez {0} partie(s) en attente."/>
+		<lookup key="msgInputEmailSettingsManual" value="Vous remplirez les paramètres manuellement."/>
+		<!-- END: Messages -->
+		<!-- BEGIN: Context Menus -->
+		<lookup key="menuItemShow" value="Ouvrir"/>
+		<lookup key="menuItemAccounts" value="Comptes"/>
+		<lookup key="menuItemPollNow" value="Vérifier maintenant"/>
+		<lookup key="menuItemExit" value="Quitter"/>
+		<lookup key="menuItemActivate" value="Activer"/>
+		<lookup key="menuItemRename" value="Renommer"/>
+		<lookup key="menuItemRemove" value="Supprimer"/>
+		<lookup key="menuItemAdd" value="Créer"/>
+		<lookup key="menuItemMarkEnded" value="Marquer comme terminé"/>
+		<lookup key="menuItemMarkSent" value="Marquer comme envoyé"/>
+		<!-- END: Context Menus -->
+		<!-- BEGIN: Enumerations -->
+		<lookup key="enumChooser" value="Merci de sélectionner"/>
+		<lookup key="enumNone" value="Aucun"/>
+		<lookup key="enumSending" value="En cours d'envoi"/>
+		<lookup key="enumChecking" value="En cours de vérification"/>
+		<lookup key="enumEmailWaiting" value="Mail reçu"/>
+		<lookup key="enumNew" value="Nouveau"/>
+		<lookup key="enumReceived" value="Reçu"/>
+		<lookup key="enumSent" value="Envoyé"/>
+		<lookup key="enumEnded" value="Terminé"/>
+		<lookup key="enumMinutes" value="minutes"/>
+		<!-- END: Enumerations -->
+		<!-- BEGIN: Misc -->
+		<lookup key="buttonCancel" value="Annuler"/>
+		<lookup key="activeAccount" value="Actif"/>
+		<!-- END: Misc -->
+	</language>
+	<language code="de" display="Deutsch">
+		<!-- BEGIN: Main forms -->
+		<lookup key="tabAccounts" value="Konten"/>
+		<lookup key="buttonActivate" value="Aktivieren"/>
+		<lookup key="buttonRename" value="Umbenennen"/>
+		<lookup key="buttonRemove" value="Entfernen"/>
+		<lookup key="buttonAdd" value="Neu hinzufügen"/>
+		<lookup key="tabIncoming" value="Eingehende E-Mail"/>
+		<lookup key="cmdMessageStore" value="Zeige POP3 E-Mail"/>
+		<lookup key="groupBoxEmailSelection" value="E-Mail Anhang herunterladen"/>
+		<lookup key="fbPollingSetup" value="Auf E-Mails überprüfen"/>
+		<lookup key="fbPollingSetup_every" value="alle:"/>
+		<lookup key="groupBoxAuth" value="Authentifizierungsinformationen"/>
+		<lookup key="fbPassword" value="Kennwort:"/>
+		<lookup key="fbUserName" value="Benutzername:"/>
+		<lookup key="groupBoxServer" value="Server"/>
+		<lookup key="fbUseSSL" value="SSL verwenden:"/>
+		<lookup key="fbPort" value="Port:"/>
+		<lookup key="fbServer" value="Server:"/>
+		<lookup key="fbEmailType" value="E-Mail Typ:"/>
+		<lookup key="tabOutgoing" value="Ausgehende E-Mail"/>
+		<lookup key="fbUsePolling" value="Abrufverbindungsinformationen verwenden:"/>
+		<lookup key="groupBoxServer" value="Server"/>
+		<lookup key="fbBccMyself" value="Sich selbst im BCC hinzufügen:"/>
+		<lookup key="fbAuthentication" value="Authentifizierung benötigt:"/>
+		<lookup key="fbSSLType" value="SSL Typ:"/>
+		<lookup key="fbEmailAddress" value="E-Mail Adresse:"/>
+		<lookup key="fbSmtpServer" value="SMTP Server:"/>
+		<lookup key="tabPreferences" value="Präferenzen"/>
+		<lookup key="fbSaveFolder" value="Downloadverzeichnis:"/>
+		<lookup key="groupBoxPreferences" value="Präferenzen"/>
+		<lookup key="fbAutostart" value="Automatisch mit Windows starten:"/>
+		<lookup key="fbSentSound" value="Sound für E-Mail gesendet:"/>
+		<lookup key="fbEmailSound" value="Sound für E-Mail heruntergeladen:"/>
+		<lookup key="fbLocalization" value="Sprache:"/>
+		<lookup key="fbCopyToEmailOut" value="Beim Senden auch zu EmailOut kopieren:"/>
+		<lookup key="fbGameWrapperDataPort" value="Spiel um Wrapper datenport:"/>
+		<lookup key="tabActivity" value="Aktivitätsreport"/>
+		<lookup key="activityListViewlistView0" value="Dateiname"/>
+		<lookup key="activityListViewlistView1" value="Karte"/>
+		<lookup key="activityListViewlistView2" value="Zug"/>
+		<lookup key="activityListViewlistView3" value="Alter"/>
+		<lookup key="activityListViewlistView4" value="Status"/>
+		<lookup key="activityListViewlistView5" value="Zeiteinheit"/>
+		<lookup key="tabAbout" value="Über"/>
+		<lookup key="groupBetaTesters" value="Beta Tester"/>
+		<lookup key="groupAuthors" value="Autoren"/>
+		<lookup key="lblNotice" value="Der Age of Wonders E-Mail Wrapper ist eine komplett kostenfreie Anwendung, entworfen um die Play-By-E-Mail Automatisierung für alle drei AoW© Spiele zu ermöglichen. Er ist nicht von den Triumph Studios© unterstützt. Es ist ein privates Projekt in welchem der Autor nichts erhält, außer der Zeitersparnis und dem Spaß die Spiele zu spielen. Es wird ohne Verpflichtung zur Hilfeleistung zur Verfügung gestellt, wobei diese nach freundlicher Anfrage höchstwahrscheinlich gewährt wird."/>
+		<lookup key="cmdSave" value="Einstellungen speichern"/>
+		<lookup key="MessageStore" value="POP3 Email ({0} auf {1})"/>
+		<lookup key="messageStoreListlistView0" value="Von"/>
+		<lookup key="messageStoreListlistView1" value="Betreff"/>
+		<lookup key="messageStoreListlistView2" value="Datum"/>
+		<lookup key="messageStoreListlistView3" value="Dateiname"/>
+		<lookup key="messageStoreListlistView4" value="Zeiteinheit"/>
+		<lookup key="lblLocalMessageStoreMessage" value="Benutzer die einen Windows basierten E-Mail Client wie Outlook Express, Outlook, Mozilla Thunderbird, Eudora, etc. verwenden, sollten beachten, dass das Standardverhalten für den POP3 Zugriff bedeutet, dass die Nachrichten nach dem Herunterladen vom Server entfernt werden. Sie müssen eine Option ändern um den Client so zu konfigurieren, dass die Nachrichten auf dem Server verbleiben und der Wrapper diese finden kann. Der Wrapper beläßt die Nachrichten immer auf dem Server, so dass der normale E-Mail Client diese auch finden kann."/>
+		<lookup key="cmdRedownload" value="Erneut herunterladen"/>
+		<lookup key="cmdClose" value="Schließen"/>
+		<lookup key="AccountsCreationForm" value="Neues Konto erstellen"/>
+		<lookup key="buttonCreate" value="&amp;Erstellen"/>
+		<lookup key="radioOther" value="Andere"/>
+		<!-- END: Main forms -->
+		<!-- BEGIN: Messages -->
+		<lookup key="msgWrapperWriteAccess" value="Der Wrapper hat keinen Schreibzugriff auf diese Verzeichnisse:&#xA;{0}&#xA;&#xA; Bitte ändern Sie Ihre System Sicherheitseinstellungen oder starten Sie den Wrapper als Administrator."/>
+		<lookup key="msgWrapperArchiveGame" value="Möchten Sie die gewählten Spiele archivieren? Dies verschiebt die Dateien in einen seperaten Ordner mit dem Namen '{0}' , welchen Sie auch im Spiel zur Verfügung haben."/>
+		<lookup key="msgWrapperCannotActivateAccount" value="Kann das Konto &quot;{0}&quot; jetzt nicht aktivieren.  Bitte warten Sie bis der E-Mail Versand beendet ist."/>
+		<lookup key="msgAccountPrompt" value="Geben Sie den Namen des Kontos ein:"/>
+		<lookup key="msgAccountDuplicate" value="Ein Konto mit diesem Namen existiert bereits. Bitte wählen Sie einen anderen Namen."/>
+		<lookup key="msgWrapperEmailSentSuccess" value="An [{0}] erfolgreich versendet."/>
+		<lookup key="msgWrapperEmailSentFailed" value="Fehler beim Versenden der E-Mail: {0}.&#xA;An: {1}&#xA;&#xA;{2}"/>
+		<lookup key="msgEmailInSelected" value="Bitte Szenario &gt; Email &gt; Spiel laden verwenden"/>
+		<lookup key="msgSaveSelected" value="Bitte Spiel laden vom Hauptmenü verwenden"/>
+		<lookup key="msgWrapperRestartRequired" value="Bitte starten Sie den Wrapper neu um die Änderungen zu übernehmen."/>
+		<lookup key="msgWrapperPollFailed" value="Abruf fehlgeschlagen"/>
+		<lookup key="msgWrapperGamesWaiting" value="Sie haben {0} Spiel(e) wartend."/>
+		<lookup key="msgInputEmailSettingsManual" value="Ich werde die Einstellungen manuell vornehmen."/>
+		<!-- END: Messages -->
+		<!-- BEGIN: Context Menus -->
+		<lookup key="menuItemShow" value="Anzeigen"/>
+		<lookup key="menuItemAccounts" value="Konten"/>
+		<lookup key="menuItemPollNow" value="Jetzt abrufen"/>
+		<lookup key="menuItemExit" value="Beenden"/>
+		<lookup key="menuItemActivate" value="Aktivieren"/>
+		<lookup key="menuItemRename" value="Umbenennen"/>
+		<lookup key="menuItemRemove" value="Entfernen"/>
+		<lookup key="menuItemAdd" value="Neu hinzufügen"/>
+		<lookup key="menuItemMarkEnded" value="Als beendet markieren"/>
+		<lookup key="menuItemMarkSent" value="Als gesendet markieren"/>
+		<!-- END: Context Menus -->
+		<!-- BEGIN: Enumerations -->
+		<lookup key="enumChooser" value="Bitte auswählen"/>
+		<lookup key="enumNone" value="Nichts"/>
+		<lookup key="enumSave" value="Speichern"/>
+		<lookup key="enumSending" value="Sendet"/>
+		<lookup key="enumChecking" value="Überprüft"/>
+		<lookup key="enumEmailWaiting" value="E-Mail erhalten"/>
+		<lookup key="enumNew" value="Neu"/>
+		<lookup key="enumReceived" value="Erhalten"/>
+		<lookup key="enumSent" value="Gesendet"/>
+		<lookup key="enumEnded" value="Beendet"/>
+		<lookup key="enumMinutes" value="minuten"/>
+		<!-- END: Enumerations -->
+		<!-- BEGIN: Misc -->
+		<lookup key="buttonCancel" value="Abbrechen"/>
+		<lookup key="activeAccount" value="Aktiv"/>
+		<!-- END: Misc -->
+	</language>
 	<language code="es" display="Español">
 		<!-- BEGIN: Main forms -->
 		<lookup key="tabAccounts" value="Cuentas"/>
@@ -337,8 +337,8 @@
 		<lookup key="tabIncoming" value="Email entrante"/>
 		<lookup key="cmdMessageStore" value="Mostrar email POP3"/>
 		<lookup key="groupBoxEmailSelection" value="Descargando archivo adjunto"/>
-    <lookup key="fbPollingSetup" value="Revisar email"/>
-    <lookup key="fbPollingSetup_every" value="cada:"/>
+		<lookup key="fbPollingSetup" value="Revisar email"/>
+		<lookup key="fbPollingSetup_every" value="cada:"/>
 		<lookup key="groupBoxAuth" value="Detalles de autenticación"/>
 		<lookup key="fbPassword" value="Contraseña:"/>
 		<lookup key="fbUserName" value="Nombre de usuario:"/>
@@ -362,14 +362,14 @@
 		<lookup key="fbSentSound" value="Sonido de Email enviado:"/>
 		<lookup key="fbEmailSound" value="Sonido de Email descargado:"/>
 		<lookup key="fbLocalization" value="Idioma:"/>
-    <lookup key="fbCopyToEmailOut" value="Copiar a EmailOut luego de enviado:"/>
-    <lookup key="fbGameWrapperDataPort" value="Juego a Wrapper puerto de datos:"/>
+		<lookup key="fbCopyToEmailOut" value="Copiar a EmailOut luego de enviado:"/>
+		<lookup key="fbGameWrapperDataPort" value="Juego a Wrapper puerto de datos:"/>
 		<lookup key="tabActivity" value="Registro de Actividades"/>
 		<lookup key="activityListViewlistView0" value="Nombre de archivo"/>
-    <lookup key="activityListViewlistView1" value="Mapa"/>
-    <lookup key="activityListViewlistView2" value="Turno"/>
-    <lookup key="activityListViewlistView3" value="Edad"/>
-    <lookup key="activityListViewlistView4" value="Estado"/>
+		<lookup key="activityListViewlistView1" value="Mapa"/>
+		<lookup key="activityListViewlistView2" value="Turno"/>
+		<lookup key="activityListViewlistView3" value="Edad"/>
+		<lookup key="activityListViewlistView4" value="Estado"/>
 		<lookup key="tabAbout" value="Sobre el"/>
 		<lookup key="groupBetaTesters" value="Beta Testers"/>
 		<lookup key="groupAuthors" value="Autores"/>
@@ -384,9 +384,9 @@
 		<lookup key="lblLocalMessageStoreMessage" value="Aquellos usuarios con un cliente de email basado en Windows, tal como Outlook Express, Outlook, Mozilla Thunderbird, Eudora, etc. deben tener en cuenta que el comportamiento por defecto del acceso POP3 es el de remover los mensajes del servidor una vez descargados. Estos usuarios deberán cambiar las preferencias de su cliente de manera que deje los mensajes en el servidor de manera que el Wrapper pueda acceder a ellos. El Wrapper siempre dejará los mensajes en el servidor, de manera que su cliente de email usual también los encontrará."/>
 		<lookup key="cmdRedownload" value="Volver a descargar"/>
 		<lookup key="cmdClose" value="Cerrar"/>
-    <lookup key="AccountsCreationForm" value="Crear una nueva cuenta"/>
-    <lookup key="buttonCreate" value="&amp;Crear"/>
-    <lookup key="radioOther" value="Otro"/>
+		<lookup key="AccountsCreationForm" value="Crear una nueva cuenta"/>
+		<lookup key="buttonCreate" value="&amp;Crear"/>
+		<lookup key="radioOther" value="Otro"/>
 		<!-- END: Main forms -->
 		<!-- BEGIN: Messages -->
 		<lookup key="msgWrapperWriteAccess" value="El Wrapper no tiene acceso de escritura a las siguientes carpetas:&#xA;{0}&#xA;&#xA;Por favor, modifique las opciones de seguridad de su sistema o inicie el Wrapper en modo de Administrador."/>
@@ -401,7 +401,7 @@
 		<lookup key="msgWrapperRestartRequired" value="Por favor reinicialice el programa para que estos cambios tengan efecto."/>
 		<lookup key="msgWrapperPollFailed" value="Chequeo fallido."/>
 		<lookup key="msgWrapperGamesWaiting" value="Tienes {0} juegos esperando."/>
-    <lookup key="msgInputEmailSettingsManual" value="Entrarás la configuracoón manualmente."/>
+		<lookup key="msgInputEmailSettingsManual" value="Entrarás la configuracoón manualmente."/>
 		<!-- END: Messages -->
 		<!-- BEGIN: Context Menus -->
 		<lookup key="menuItemShow" value="Mostrar"/>
@@ -426,221 +426,221 @@
 		<lookup key="enumReceived" value="Recibido"/>
 		<lookup key="enumSent" value="Enviado"/>
 		<lookup key="enumEnded" value="Terminado"/>
-    <lookup key="enumMinutes" value="minutos"/>
+		<lookup key="enumMinutes" value="minutos"/>
 		<!-- END: Enumerations -->
 		<!-- BEGIN: Misc -->
 		<lookup key="buttonCancel" value="Cancelar"/>
 		<lookup key="activeAccount" value="Activo"/>
 		<!-- END: Misc -->
 	</language>
-  <language code="nl" display="Nederlands">
-    <!-- BEGIN: Main forms -->
-    <lookup key="tabAccounts" value="Accounts"/>
-    <lookup key="buttonActivate" value="Activeer"/>
-    <lookup key="buttonRename" value="Hernaam"/>
-    <lookup key="buttonRemove" value="Verwijder"/>
-    <lookup key="buttonAdd" value="Nieuw toevoegen"/>
-    <lookup key="tabIncoming" value="Inkomende Email"/>
-    <lookup key="cmdMessageStore" value="Tonen POP3 email"/>
-    <lookup key="groupBoxEmailSelection" value="Email Attachment Downloaden"/>
-    <lookup key="fbPollingSetup" value="Check voor email"/>
-    <lookup key="fbPollingSetup_every" value="elke:"/>
-    <lookup key="groupBoxAuth" value="Authentificatie Details"/>
-    <lookup key="fbPassword" value="Paswoord:"/>
-    <lookup key="fbUserName" value="User naam:"/>
-    <lookup key="groupBoxServer" value="Server"/>
-    <lookup key="fbUseSSL" value="Gebruik SSL:"/>
-    <lookup key="fbPort" value="Poort:"/>
-    <lookup key="fbServer" value="Server:"/>
-    <lookup key="fbEmailType" value="Email type:"/>
-    <lookup key="tabOutgoing" value="Uitgaande Email"/>
-    <lookup key="fbUsePolling" value="Gebruik doorzoek credenties:"/>
-    <lookup key="groupBoxServer" value="Server"/>
-    <lookup key="fbBccMyself" value="BCC mezelf:"/>
-    <lookup key="fbAuthentication" value="Authentificatie Noodzakelijk:"/>
-    <lookup key="fbSSLType" value="SSL type:"/>
-    <lookup key="fbEmailAddress" value="Email adres:"/>
-    <lookup key="fbSmtpServer" value="Smtp Server:"/>
-    <lookup key="tabPreferences" value="Instellingen"/>
-    <lookup key="fbSaveFolder" value="Download Folder:"/>
-    <lookup key="groupBoxPreferences" value="Instellingen"/>
-    <lookup key="fbAutostart" value="Autostart met Windows:"/>
-    <lookup key="fbSentSound" value="Email verzonden geluid:"/>
-    <lookup key="fbEmailSound" value="Email gedownload geluid:"/>
-    <lookup key="fbLocalization" value="Taal:"/>
-    <lookup key="fbCopyToEmailOut" value="Copieer naar Emailout folder na verzenden:"/>
-    <lookup key="fbGameWrapperDataPort" value="Spel om Wrapper data poort:"/>
-    <lookup key="tabActivity" value="Activiteiten log"/>
-    <lookup key="activityListViewlistView0" value="File naam"/>
-    <lookup key="activityListViewlistView1" value="Kaart"/>
-    <lookup key="activityListViewlistView2" value="Beurt"/>
-    <lookup key="activityListViewlistView3" value="Leeftijd"/>
-    <lookup key="activityListViewlistView4" value="Staat"/>
-    <lookup key="tabAbout" value="Programma Informatie"/>
-    <lookup key="groupBetaTesters" value="Beta testers "/>
-    <lookup key="groupAuthors" value="Auteurs"/>
-    <lookup key="lblNotice" value="De Age of Wonders Email Wrapper is een volkomen gratis programma om play by email te automatizeren voor alle drie AoW© games. Het is niet door Triumph Studios© ondersteund.  Het is een persoonlijk project waar de auteur geen voordeel wil halen anders dan het tijd besparen bij het versturen van turns en het vergroten van het spelplezier. Het komt zonder verzekering van technische ondersteuning, alhoewel ondersteuning waarschijnlijk wel wordt verleend als je het netjes vraagt. "/>
-    <lookup key="cmdSave" value="Bewaar instellingen"/>
-    <lookup key="MessageStore" value="POP3 email ({0} on {1})"/>
-    <lookup key="messageStoreListlistView0" value="From"/>
-    <lookup key="messageStoreListlistView1" value="Subject"/>
-    <lookup key="messageStoreListlistView2" value="Datum"/>
-    <lookup key="messageStoreListlistView3" value="File naam"/>
-    <lookup key="messageStoreListlistView4" value="Ticks"/>
-    <lookup key="lblLocalMessageStoreMessage" value="Gebruikers die clients gebruiken die op Windows zijn gebaseerd zoals Outlook Express, Outlook, Mozilla Thunderbird, Eudora, etc… moeten weten dat het standaard gedrag voor POP3 toegang is om berichten te verwijderen van de server nadat ze gedownload zijn. Je moet een optie veranderen om je client te vertellen de verichten op de server te laten zodat de Wrapper ze kan vinden. De wrapper zal altijd berichten op de server achterlaten zodat je email client ze ook kan vinden. "/>
-    <lookup key="cmdRedownload" value="Opnieuw Downloaden"/>
-    <lookup key="cmdClose" value="Sluiten"/>
-    <lookup key="AccountsCreationForm" value="Maak nieuw account"/>
-    <lookup key="buttonCreate" value="&amp;Creëren"/>
-    <lookup key="radioOther" value="Ander"/>
-    <!-- END: Main forms -->
-    <!-- BEGIN: Messages -->
-    <lookup key="msgWrapperWriteAccess" value="De wrapper heeft geen toestemming tot deze folders: &#xA;{0}&#xA;&#xA; Verander aub uw beveiligings instellingen, of run de Wrapper als Administrator. "/>
-    <lookup key="msgWrapperArchiveGame" value="Wil je ook de geselecteerde games archiveren? Dit zal de files in een aparte folder stopen genaamd '{0}' die je nog kan bereiken in het spel."/>
-    <lookup key="msgWrapperCannotActivateAccount" value="Kan het &quot;{0}&quot; account niet activeren. Wacht aub tot het verzenden klaar is."/>
-    <lookup key="msgAccountPrompt" value="Account naam:"/>
-    <lookup key="msgAccountDuplicate" value="Een account met deze naam bestaat al. Kiest u aub een andere naam."/>
-    <lookup key="msgWrapperEmailSentSuccess" value="[{0}] succesvol verzonden."/>
-    <lookup key="msgWrapperEmailSentFailed" value="Error bij het verzenden van Email: {0}.&#xA;To: {1}&#xA;&#xA;{2}"/>
-    <lookup key="msgEmailInSelected" value="Gebruik aub Scenario &gt; Email &gt; Load Game"/>
-    <lookup key="msgSaveSelected" value="Gebruik aub Load Game van main menu"/>
-    <lookup key="msgWrapperRestartRequired" value="Herstart de Wrapper om deze veranderingen in effect te laten gaan, aub."/>
-    <lookup key="msgWrapperPollFailed" value="Doorzoeken gefaald"/>
-    <lookup key="msgWrapperGamesWaiting" value="Je hebt {0} game(s) wachten."/>
-    <lookup key="msgInputEmailSettingsManual" value="Instellingen zelf invoeren."/>
-    <!-- END: Messages -->
-    <!-- BEGIN: Context Menus -->
-    <lookup key="menuItemShow" value="Show"/>
-    <lookup key="menuItemAccounts" value="Accounts"/>
-    <lookup key="menuItemPollNow" value="Doorzoek nu"/>
-    <lookup key="menuItemExit" value="Exit"/>
-    <lookup key="menuItemActivate" value="Activeer"/>
-    <lookup key="menuItemRename" value="Hernaam"/>
-    <lookup key="menuItemRemove" value="Verwijder"/>
-    <lookup key="menuItemAdd" value="Nieuw toevoegen"/>
-    <lookup key="menuItemMarkEnded" value="Markeer als geeindigd"/>
-    <lookup key="menuItemMarkSent" value="Markeer als verzonden"/>
-    <!-- END: Context Menus -->
-    <!-- BEGIN: Enumerations -->
-    <lookup key="enumChooser" value="Selecteer Aub"/>
-    <lookup key="enumIMAP" value="IMAP"/>
-    <lookup key="enumPOP3" value="POP3"/>
-    <lookup key="enumNone" value="Geen"/>
-    <lookup key="enumSSL" value="SSL"/>
-    <lookup key="enumTLS" value="TLS"/>
-    <lookup key="enumSending" value="Zenden"/>
-    <lookup key="enumChecking" value="Checking"/>
-    <lookup key="enumEmailWaiting" value="Email ontvangen"/>
-    <lookup key="enumNew" value="Nieuw"/>
-    <lookup key="enumReceived" value="Ontvangen"/>
-    <lookup key="enumSent" value="Verzonden"/>
-    <lookup key="enumEnded" value="Geeindigd"/>
-    <lookup key="enumMinutes" value="minuten"/>
-    <!-- END: Enumerations -->
-    <!-- BEGIN: Misc -->
-    <lookup key="buttonOK" value="Ok"/>
-    <lookup key="buttonCancel" value="Cancel"/>
-    <lookup key="activeAccount" value="Actief"/>
-    <!-- END: Misc -->
-  </language>
-  <language code="da" display="Dansk">
-    <!-- BEGIN: Main forms -->
-    <lookup key="tabAccounts" value="Konti"/>
-    <lookup key="buttonActivate" value="Aktiver"/>
-    <lookup key="buttonRename" value="Omdøb"/>
-    <lookup key="buttonRemove" value="Fjern"/>
-    <lookup key="buttonAdd" value="Tilføj"/>
-    <lookup key="tabIncoming" value="Indgående Email"/>
-    <lookup key="cmdMessageStore" value="Vis POP3 email"/>
-    <lookup key="groupBoxEmailSelection" value="Downloader vedhæftet fil til"/>
-    <lookup key="fbPollingSetup" value="Emailcheck"/>
-    <lookup key="fbPollingSetup_every" value="hver:"/>
-    <lookup key="groupBoxAuth" value="Kontooplysninger"/>
-    <lookup key="fbPassword" value="Kodeord:"/>
-    <lookup key="fbUserName" value="Brugernavn:"/>
-    <lookup key="fbUseSSL" value="Brug SSL:"/>
-    <lookup key="tabOutgoing" value="Udgående Email"/>
-    <lookup key="fbUsePolling" value="Brug indgående kontooplysninger:"/>
-    <lookup key="fbBccMyself" value="BCC til mig selv:"/>
-    <lookup key="fbAuthentication" value="Kræver godkendelse:"/>
-    <lookup key="fbEmailAddress" value="Emailadresse:"/>
-    <lookup key="tabPreferences" value="Indstillinger"/>
-    <lookup key="fbSaveFolder" value="Downloadmappe:"/>
-    <lookup key="groupBoxPreferences" value="Indstillinger"/>
-    <lookup key="fbAutostart" value="Start Automatisk når Windows starter:"/>
-    <lookup key="fbSentSound" value="Lyd ved Emailafsendelse:"/>
-    <lookup key="fbEmailSound" value="Lyd ved hentet Email:"/>
-    <lookup key="fbLocalization" value="Sprog:"/>
-    <lookup key="fbCopyToEmailOut" value="Kopier til EmailOut efter afsendelse:"/>
-    <lookup key="fbGameWrapperDataPort" value="Spil til Wrapper dataport:"/>
-    <lookup key="tabActivity" value="Aktivitetsliste"/>
-    <lookup key="activityListViewlistView0" value="Filnavn"/>
-    <lookup key="activityListViewlistView1" value="Kort"/>
-    <lookup key="activityListViewlistView2" value="Tur"/>
-    <lookup key="activityListViewlistView3" value="Alder"/>
-    <lookup key="activityListViewlistView4" value="Status"/>
-    <lookup key="activityListViewlistView5" value="Tidsenheder"/>
-    <lookup key="tabAbout" value="Om"/>
-    <lookup key="groupBetaTesters" value="Betatestere"/>
-    <lookup key="groupAuthors" value="Skabere"/>
-    <lookup key="lblNotice" value="Age of Wonders Email Wrapper er et fuldstændigt gratis program, der er designet til at tillade Play by Email automatisering for alle tre AoW© spil. Det er ikke på nogen måde relateret til Triumph Studios©. Det er et personligt projekt, hvor programmøren ikke ønsker nogen form for personlig vinding udover at spare tid og øge glæden ved at spille disse spil. Der er ingen garanti for support, men høflige forespørgsler vil sandsynligvis blive supporteret."/>
-    <lookup key="cmdSave" value="Gem indstillinger"/>
-    <lookup key="MessageStore" value="POP3 email ({0} på {1})"/>
-    <lookup key="messageStoreListlistView0" value="Fra"/>
-    <lookup key="messageStoreListlistView1" value="Emne"/>
-    <lookup key="messageStoreListlistView2" value="Dato"/>
-    <lookup key="messageStoreListlistView3" value="Filnavn"/>
-    <lookup key="messageStoreListlistView4" value="Tidsenheder"/>
-    <lookup key="lblLocalMessageStoreMessage" value="Brugere der anvender en Windows-baseret Email-klient såsom Outlook Express, Outlook, Mozilla Thunderbird, Eudora, osv. skal være opmærksomme på at standard for POP3 adgang er at fjerne beskederne fra serveren efter de er hentet ned. Du er nødt til at ændre i indstillingerne så din klient efterlader beskederne på serveren, således at Wrapper'en kan finde dem der. Wrapper'en vil altid selv efterlade beskeder på serveren, så de også kan hentes i din normale Email-klient. "/>
-    <lookup key="cmdRedownload" value="Gendownload"/>
-    <lookup key="cmdClose" value="Luk"/>
-    <lookup key="AccountsCreationForm" value="Opret ny konto"/>
-    <lookup key="buttonCreate" value="&amp;Tilføj"/>
-    <lookup key="radioOther" value="Andet"/>
-    <!-- END: Main forms -->
-    <!-- BEGIN: Messages -->
-    <lookup key="msgWrapperWriteAccess" value="Wrapper'en har ikke skriveadgang til følgende mappe(r):&#xA;{0}&#xA;&#xA;Juster venligst dine sikkerhedsindstillinger eller kør Wrapper'en som Administrator."/>
-    <lookup key="msgWrapperArchiveGame" value="Vil du også gerne arkivere de(t) valgte spil? Det vil flytte deres filer til en separat mappe kaldet '{0}' som du stadig kan tilgå i spillet."/>
-    <lookup key="msgWrapperCannotActivateAccount" value="Kan ikke aktivere &quot;{0}&quot; kontoen lige nu. Vent venligst til email afsendingen er fuldført."/>
-    <lookup key="msgAccountPrompt" value="Skriv navnet på kontoen:"/>
-    <lookup key="msgAccountDuplicate" value="En konto med dette navn eksisterer allerede. Vælg venligst et andet navn."/>
-    <lookup key="msgWrapperEmailSentSuccess" value="Succesfuldt afsendt til [{0}]"/>
-    <lookup key="msgWrapperEmailSentFailed" value="Fejl ved afsendelse af Email: {0}.&#xA;Til: {1}&#xA;&#xA;{2}"/>
-    <lookup key="msgEmailInSelected" value="Benyt venligst Scenario &gt; Email &gt; Load Game"/>
-    <lookup key="msgSaveSelected" value="Benyt venligst Load Game fra hovedmenuen"/>
-    <lookup key="msgWrapperRestartRequired" value="Genstart venligst Wrapper'en for at disse ændringer kan tage effekt."/>
-    <lookup key="msgWrapperPollFailed" value="Forespørgsel fejlede"/>
-    <lookup key="msgWrapperGamesWaiting" value="Du har {0} spil der venter."/>
-    <lookup key="msgInputEmailSettingsManual" value="Du vil angive indstillingerne manuelt."/>
-    <!-- END: Messages -->
-    <!-- BEGIN: Context Menus -->
-    <lookup key="menuItemShow" value="Vis"/>
-    <lookup key="menuItemAccounts" value="Konti"/>
-    <lookup key="menuItemPollNow" value="Kontroller mail"/>
-    <lookup key="menuItemActivate" value="Aktiver"/>
-    <lookup key="menuItemRename" value="Omdøb"/>
-    <lookup key="menuItemRemove" value="Fjern"/>
-    <lookup key="menuItemAdd" value="Tilføj"/>
-    <lookup key="menuItemMarkEnded" value="Marker som Afsluttet"/>
-    <lookup key="menuItemMarkSent" value="Marker som Sendt"/>
-    <!-- END: Context Menus -->
-    <!-- BEGIN: Enumerations -->
-    <lookup key="enumChooser" value="Vælg venligst"/>
-    <lookup key="enumNone" value="Ingen"/>
-    <lookup key="enumSending" value="Sender"/>
-    <lookup key="enumChecking" value="Checker"/>
-    <lookup key="enumEmailWaiting" value="Email modtaget"/>
-    <lookup key="enumNew" value="Ny"/>
-    <lookup key="enumReceived" value="Modtaget"/>
-    <lookup key="enumSent" value="Sendt"/>
-    <lookup key="enumEnded" value="Afsluttet"/>
-    <lookup key="enumMinutes" value="minutter"/>
-    <!-- END: Enumerations -->
-    <!-- BEGIN: Misc -->
-    <lookup key="buttonCancel" value="Annuller"/>
-    <lookup key="activeAccount" value="Aktiv"/>
-    <!-- END: Misc -->
-  </language>
+	<language code="nl" display="Nederlands">
+		<!-- BEGIN: Main forms -->
+		<lookup key="tabAccounts" value="Accounts"/>
+		<lookup key="buttonActivate" value="Activeer"/>
+		<lookup key="buttonRename" value="Hernaam"/>
+		<lookup key="buttonRemove" value="Verwijder"/>
+		<lookup key="buttonAdd" value="Nieuw toevoegen"/>
+		<lookup key="tabIncoming" value="Inkomende Email"/>
+		<lookup key="cmdMessageStore" value="Tonen POP3 email"/>
+		<lookup key="groupBoxEmailSelection" value="Email Attachment Downloaden"/>
+		<lookup key="fbPollingSetup" value="Check voor email"/>
+		<lookup key="fbPollingSetup_every" value="elke:"/>
+		<lookup key="groupBoxAuth" value="Authentificatie Details"/>
+		<lookup key="fbPassword" value="Paswoord:"/>
+		<lookup key="fbUserName" value="User naam:"/>
+		<lookup key="groupBoxServer" value="Server"/>
+		<lookup key="fbUseSSL" value="Gebruik SSL:"/>
+		<lookup key="fbPort" value="Poort:"/>
+		<lookup key="fbServer" value="Server:"/>
+		<lookup key="fbEmailType" value="Email type:"/>
+		<lookup key="tabOutgoing" value="Uitgaande Email"/>
+		<lookup key="fbUsePolling" value="Gebruik doorzoek credenties:"/>
+		<lookup key="groupBoxServer" value="Server"/>
+		<lookup key="fbBccMyself" value="BCC mezelf:"/>
+		<lookup key="fbAuthentication" value="Authentificatie Noodzakelijk:"/>
+		<lookup key="fbSSLType" value="SSL type:"/>
+		<lookup key="fbEmailAddress" value="Email adres:"/>
+		<lookup key="fbSmtpServer" value="Smtp Server:"/>
+		<lookup key="tabPreferences" value="Instellingen"/>
+		<lookup key="fbSaveFolder" value="Download Folder:"/>
+		<lookup key="groupBoxPreferences" value="Instellingen"/>
+		<lookup key="fbAutostart" value="Autostart met Windows:"/>
+		<lookup key="fbSentSound" value="Email verzonden geluid:"/>
+		<lookup key="fbEmailSound" value="Email gedownload geluid:"/>
+		<lookup key="fbLocalization" value="Taal:"/>
+		<lookup key="fbCopyToEmailOut" value="Copieer naar Emailout folder na verzenden:"/>
+		<lookup key="fbGameWrapperDataPort" value="Spel om Wrapper data poort:"/>
+		<lookup key="tabActivity" value="Activiteiten log"/>
+		<lookup key="activityListViewlistView0" value="File naam"/>
+		<lookup key="activityListViewlistView1" value="Kaart"/>
+		<lookup key="activityListViewlistView2" value="Beurt"/>
+		<lookup key="activityListViewlistView3" value="Leeftijd"/>
+		<lookup key="activityListViewlistView4" value="Staat"/>
+		<lookup key="tabAbout" value="Programma Informatie"/>
+		<lookup key="groupBetaTesters" value="Beta testers "/>
+		<lookup key="groupAuthors" value="Auteurs"/>
+		<lookup key="lblNotice" value="De Age of Wonders Email Wrapper is een volkomen gratis programma om play by email te automatizeren voor alle drie AoW© games. Het is niet door Triumph Studios© ondersteund.  Het is een persoonlijk project waar de auteur geen voordeel wil halen anders dan het tijd besparen bij het versturen van turns en het vergroten van het spelplezier. Het komt zonder verzekering van technische ondersteuning, alhoewel ondersteuning waarschijnlijk wel wordt verleend als je het netjes vraagt. "/>
+		<lookup key="cmdSave" value="Bewaar instellingen"/>
+		<lookup key="MessageStore" value="POP3 email ({0} on {1})"/>
+		<lookup key="messageStoreListlistView0" value="From"/>
+		<lookup key="messageStoreListlistView1" value="Subject"/>
+		<lookup key="messageStoreListlistView2" value="Datum"/>
+		<lookup key="messageStoreListlistView3" value="File naam"/>
+		<lookup key="messageStoreListlistView4" value="Ticks"/>
+		<lookup key="lblLocalMessageStoreMessage" value="Gebruikers die clients gebruiken die op Windows zijn gebaseerd zoals Outlook Express, Outlook, Mozilla Thunderbird, Eudora, etc… moeten weten dat het standaard gedrag voor POP3 toegang is om berichten te verwijderen van de server nadat ze gedownload zijn. Je moet een optie veranderen om je client te vertellen de verichten op de server te laten zodat de Wrapper ze kan vinden. De wrapper zal altijd berichten op de server achterlaten zodat je email client ze ook kan vinden. "/>
+		<lookup key="cmdRedownload" value="Opnieuw Downloaden"/>
+		<lookup key="cmdClose" value="Sluiten"/>
+		<lookup key="AccountsCreationForm" value="Maak nieuw account"/>
+		<lookup key="buttonCreate" value="&amp;Creëren"/>
+		<lookup key="radioOther" value="Ander"/>
+		<!-- END: Main forms -->
+		<!-- BEGIN: Messages -->
+		<lookup key="msgWrapperWriteAccess" value="De wrapper heeft geen toestemming tot deze folders: &#xA;{0}&#xA;&#xA; Verander aub uw beveiligings instellingen, of run de Wrapper als Administrator. "/>
+		<lookup key="msgWrapperArchiveGame" value="Wil je ook de geselecteerde games archiveren? Dit zal de files in een aparte folder stopen genaamd '{0}' die je nog kan bereiken in het spel."/>
+		<lookup key="msgWrapperCannotActivateAccount" value="Kan het &quot;{0}&quot; account niet activeren. Wacht aub tot het verzenden klaar is."/>
+		<lookup key="msgAccountPrompt" value="Account naam:"/>
+		<lookup key="msgAccountDuplicate" value="Een account met deze naam bestaat al. Kiest u aub een andere naam."/>
+		<lookup key="msgWrapperEmailSentSuccess" value="[{0}] succesvol verzonden."/>
+		<lookup key="msgWrapperEmailSentFailed" value="Error bij het verzenden van Email: {0}.&#xA;To: {1}&#xA;&#xA;{2}"/>
+		<lookup key="msgEmailInSelected" value="Gebruik aub Scenario &gt; Email &gt; Load Game"/>
+		<lookup key="msgSaveSelected" value="Gebruik aub Load Game van main menu"/>
+		<lookup key="msgWrapperRestartRequired" value="Herstart de Wrapper om deze veranderingen in effect te laten gaan, aub."/>
+		<lookup key="msgWrapperPollFailed" value="Doorzoeken gefaald"/>
+		<lookup key="msgWrapperGamesWaiting" value="Je hebt {0} game(s) wachten."/>
+		<lookup key="msgInputEmailSettingsManual" value="Instellingen zelf invoeren."/>
+		<!-- END: Messages -->
+		<!-- BEGIN: Context Menus -->
+		<lookup key="menuItemShow" value="Show"/>
+		<lookup key="menuItemAccounts" value="Accounts"/>
+		<lookup key="menuItemPollNow" value="Doorzoek nu"/>
+		<lookup key="menuItemExit" value="Exit"/>
+		<lookup key="menuItemActivate" value="Activeer"/>
+		<lookup key="menuItemRename" value="Hernaam"/>
+		<lookup key="menuItemRemove" value="Verwijder"/>
+		<lookup key="menuItemAdd" value="Nieuw toevoegen"/>
+		<lookup key="menuItemMarkEnded" value="Markeer als geeindigd"/>
+		<lookup key="menuItemMarkSent" value="Markeer als verzonden"/>
+		<!-- END: Context Menus -->
+		<!-- BEGIN: Enumerations -->
+		<lookup key="enumChooser" value="Selecteer Aub"/>
+		<lookup key="enumIMAP" value="IMAP"/>
+		<lookup key="enumPOP3" value="POP3"/>
+		<lookup key="enumNone" value="Geen"/>
+		<lookup key="enumSSL" value="SSL"/>
+		<lookup key="enumTLS" value="TLS"/>
+		<lookup key="enumSending" value="Zenden"/>
+		<lookup key="enumChecking" value="Checking"/>
+		<lookup key="enumEmailWaiting" value="Email ontvangen"/>
+		<lookup key="enumNew" value="Nieuw"/>
+		<lookup key="enumReceived" value="Ontvangen"/>
+		<lookup key="enumSent" value="Verzonden"/>
+		<lookup key="enumEnded" value="Geeindigd"/>
+		<lookup key="enumMinutes" value="minuten"/>
+		<!-- END: Enumerations -->
+		<!-- BEGIN: Misc -->
+		<lookup key="buttonOK" value="Ok"/>
+		<lookup key="buttonCancel" value="Cancel"/>
+		<lookup key="activeAccount" value="Actief"/>
+		<!-- END: Misc -->
+	</language>
+	<language code="da" display="Dansk">
+		<!-- BEGIN: Main forms -->
+		<lookup key="tabAccounts" value="Konti"/>
+		<lookup key="buttonActivate" value="Aktiver"/>
+		<lookup key="buttonRename" value="Omdøb"/>
+		<lookup key="buttonRemove" value="Fjern"/>
+		<lookup key="buttonAdd" value="Tilføj"/>
+		<lookup key="tabIncoming" value="Indgående Email"/>
+		<lookup key="cmdMessageStore" value="Vis POP3 email"/>
+		<lookup key="groupBoxEmailSelection" value="Downloader vedhæftet fil til"/>
+		<lookup key="fbPollingSetup" value="Emailcheck"/>
+		<lookup key="fbPollingSetup_every" value="hver:"/>
+		<lookup key="groupBoxAuth" value="Kontooplysninger"/>
+		<lookup key="fbPassword" value="Kodeord:"/>
+		<lookup key="fbUserName" value="Brugernavn:"/>
+		<lookup key="fbUseSSL" value="Brug SSL:"/>
+		<lookup key="tabOutgoing" value="Udgående Email"/>
+		<lookup key="fbUsePolling" value="Brug indgående kontooplysninger:"/>
+		<lookup key="fbBccMyself" value="BCC til mig selv:"/>
+		<lookup key="fbAuthentication" value="Kræver godkendelse:"/>
+		<lookup key="fbEmailAddress" value="Emailadresse:"/>
+		<lookup key="tabPreferences" value="Indstillinger"/>
+		<lookup key="fbSaveFolder" value="Downloadmappe:"/>
+		<lookup key="groupBoxPreferences" value="Indstillinger"/>
+		<lookup key="fbAutostart" value="Start Automatisk når Windows starter:"/>
+		<lookup key="fbSentSound" value="Lyd ved Emailafsendelse:"/>
+		<lookup key="fbEmailSound" value="Lyd ved hentet Email:"/>
+		<lookup key="fbLocalization" value="Sprog:"/>
+		<lookup key="fbCopyToEmailOut" value="Kopier til EmailOut efter afsendelse:"/>
+		<lookup key="fbGameWrapperDataPort" value="Spil til Wrapper dataport:"/>
+		<lookup key="tabActivity" value="Aktivitetsliste"/>
+		<lookup key="activityListViewlistView0" value="Filnavn"/>
+		<lookup key="activityListViewlistView1" value="Kort"/>
+		<lookup key="activityListViewlistView2" value="Tur"/>
+		<lookup key="activityListViewlistView3" value="Alder"/>
+		<lookup key="activityListViewlistView4" value="Status"/>
+		<lookup key="activityListViewlistView5" value="Tidsenheder"/>
+		<lookup key="tabAbout" value="Om"/>
+		<lookup key="groupBetaTesters" value="Betatestere"/>
+		<lookup key="groupAuthors" value="Skabere"/>
+		<lookup key="lblNotice" value="Age of Wonders Email Wrapper er et fuldstændigt gratis program, der er designet til at tillade Play by Email automatisering for alle tre AoW© spil. Det er ikke på nogen måde relateret til Triumph Studios©. Det er et personligt projekt, hvor programmøren ikke ønsker nogen form for personlig vinding udover at spare tid og øge glæden ved at spille disse spil. Der er ingen garanti for support, men høflige forespørgsler vil sandsynligvis blive supporteret."/>
+		<lookup key="cmdSave" value="Gem indstillinger"/>
+		<lookup key="MessageStore" value="POP3 email ({0} på {1})"/>
+		<lookup key="messageStoreListlistView0" value="Fra"/>
+		<lookup key="messageStoreListlistView1" value="Emne"/>
+		<lookup key="messageStoreListlistView2" value="Dato"/>
+		<lookup key="messageStoreListlistView3" value="Filnavn"/>
+		<lookup key="messageStoreListlistView4" value="Tidsenheder"/>
+		<lookup key="lblLocalMessageStoreMessage" value="Brugere der anvender en Windows-baseret Email-klient såsom Outlook Express, Outlook, Mozilla Thunderbird, Eudora, osv. skal være opmærksomme på at standard for POP3 adgang er at fjerne beskederne fra serveren efter de er hentet ned. Du er nødt til at ændre i indstillingerne så din klient efterlader beskederne på serveren, således at Wrapper'en kan finde dem der. Wrapper'en vil altid selv efterlade beskeder på serveren, så de også kan hentes i din normale Email-klient. "/>
+		<lookup key="cmdRedownload" value="Gendownload"/>
+		<lookup key="cmdClose" value="Luk"/>
+		<lookup key="AccountsCreationForm" value="Opret ny konto"/>
+		<lookup key="buttonCreate" value="&amp;Tilføj"/>
+		<lookup key="radioOther" value="Andet"/>
+		<!-- END: Main forms -->
+		<!-- BEGIN: Messages -->
+		<lookup key="msgWrapperWriteAccess" value="Wrapper'en har ikke skriveadgang til følgende mappe(r):&#xA;{0}&#xA;&#xA;Juster venligst dine sikkerhedsindstillinger eller kør Wrapper'en som Administrator."/>
+		<lookup key="msgWrapperArchiveGame" value="Vil du også gerne arkivere de(t) valgte spil? Det vil flytte deres filer til en separat mappe kaldet '{0}' som du stadig kan tilgå i spillet."/>
+		<lookup key="msgWrapperCannotActivateAccount" value="Kan ikke aktivere &quot;{0}&quot; kontoen lige nu. Vent venligst til email afsendingen er fuldført."/>
+		<lookup key="msgAccountPrompt" value="Skriv navnet på kontoen:"/>
+		<lookup key="msgAccountDuplicate" value="En konto med dette navn eksisterer allerede. Vælg venligst et andet navn."/>
+		<lookup key="msgWrapperEmailSentSuccess" value="Succesfuldt afsendt til [{0}]"/>
+		<lookup key="msgWrapperEmailSentFailed" value="Fejl ved afsendelse af Email: {0}.&#xA;Til: {1}&#xA;&#xA;{2}"/>
+		<lookup key="msgEmailInSelected" value="Benyt venligst Scenario &gt; Email &gt; Load Game"/>
+		<lookup key="msgSaveSelected" value="Benyt venligst Load Game fra hovedmenuen"/>
+		<lookup key="msgWrapperRestartRequired" value="Genstart venligst Wrapper'en for at disse ændringer kan tage effekt."/>
+		<lookup key="msgWrapperPollFailed" value="Forespørgsel fejlede"/>
+		<lookup key="msgWrapperGamesWaiting" value="Du har {0} spil der venter."/>
+		<lookup key="msgInputEmailSettingsManual" value="Du vil angive indstillingerne manuelt."/>
+		<!-- END: Messages -->
+		<!-- BEGIN: Context Menus -->
+		<lookup key="menuItemShow" value="Vis"/>
+		<lookup key="menuItemAccounts" value="Konti"/>
+		<lookup key="menuItemPollNow" value="Kontroller mail"/>
+		<lookup key="menuItemActivate" value="Aktiver"/>
+		<lookup key="menuItemRename" value="Omdøb"/>
+		<lookup key="menuItemRemove" value="Fjern"/>
+		<lookup key="menuItemAdd" value="Tilføj"/>
+		<lookup key="menuItemMarkEnded" value="Marker som Afsluttet"/>
+		<lookup key="menuItemMarkSent" value="Marker som Sendt"/>
+		<!-- END: Context Menus -->
+		<!-- BEGIN: Enumerations -->
+		<lookup key="enumChooser" value="Vælg venligst"/>
+		<lookup key="enumNone" value="Ingen"/>
+		<lookup key="enumSending" value="Sender"/>
+		<lookup key="enumChecking" value="Checker"/>
+		<lookup key="enumEmailWaiting" value="Email modtaget"/>
+		<lookup key="enumNew" value="Ny"/>
+		<lookup key="enumReceived" value="Modtaget"/>
+		<lookup key="enumSent" value="Sendt"/>
+		<lookup key="enumEnded" value="Afsluttet"/>
+		<lookup key="enumMinutes" value="minutter"/>
+		<!-- END: Enumerations -->
+		<!-- BEGIN: Misc -->
+		<lookup key="buttonCancel" value="Annuller"/>
+		<lookup key="activeAccount" value="Aktiv"/>
+		<!-- END: Misc -->
+	</language>
 	<language code="pl" display="Polski">
 		<!-- BEGIN: Main forms -->
 		<lookup key="tabAccounts" value="Konta"/>
@@ -651,8 +651,8 @@
 		<lookup key="tabIncoming" value="Poczta Przychodząca"/>
 		<lookup key="cmdMessageStore" value="Pokaż POP3 poczty email"/>
 		<lookup key="groupBoxEmailSelection" value="Pobieranie załączników email"/>
-    <lookup key="fbPollingSetup" value="Sprawdzanie poczty"/>
-    <lookup key="fbPollingSetup_every" value="co:"/>
+		<lookup key="fbPollingSetup" value="Sprawdzanie poczty"/>
+		<lookup key="fbPollingSetup_every" value="co:"/>
 		<lookup key="groupBoxAuth" value="Szczegóły uwierzytelnienia"/>
 		<lookup key="fbPassword" value="Hasło:"/>
 		<lookup key="fbUserName" value="Nazwa użytkownika:"/>
@@ -676,15 +676,15 @@
 		<lookup key="fbSentSound" value="Dźwięk wysłanego emaila:"/>
 		<lookup key="fbEmailSound" value="Dźwięk pobranego emaila:"/>
 		<lookup key="fbLocalization" value="Język:"/>
-    <lookup key="fbCopyToEmailOut" value="Skopiuj do EmailOut po wysłaniu:"/>
-    <lookup key="fbGameWrapperDataPort" value="Gry na Wrapper danych port:"/>
+		<lookup key="fbCopyToEmailOut" value="Kopiuj do EmailOut po wysłaniu:"/>
+		<lookup key="fbGameWrapperDataPort" value="Gry na Wrapper danych port:"/>
 		<lookup key="tabActivity" value="Dziennik Aktywności"/>
 		<lookup key="activityListViewlistView0" value="Nazwa Pliku"/>
-    <lookup key="activityListViewlistView1" value="Mapa"/>
-    <lookup key="activityListViewlistView2" value="Kolej"/>
-    <lookup key="activityListViewlistView3" value="Wiek"/>
-    <lookup key="activityListViewlistView4" value="Stan"/>
-    <lookup key="activityListViewlistView5" value="Czas"/>
+		<lookup key="activityListViewlistView1" value="Mapa"/>
+		<lookup key="activityListViewlistView2" value="Tura"/>
+		<lookup key="activityListViewlistView3" value="Dni"/>
+		<lookup key="activityListViewlistView4" value="Stan"/>
+		<lookup key="activityListViewlistView5" value="Czas"/>
 		<lookup key="tabAbout" value="O Programie"/>
 		<lookup key="groupBetaTesters" value="Betatesterzy"/>
 		<lookup key="groupAuthors" value="Autorzy"/>
@@ -699,9 +699,9 @@
 		<lookup key="lblLocalMessageStoreMessage" value="Użytkownicy klientów email dla Windows, takich jak Outlook Express, Outlook, Mozilla Thunderbird, Eudora itp. powinni wiedzieć, że ich domyślnym zachowaniem w przypadku dostępu do konta POP3 jest usuwanie wiadomości z serwera po ich pobraniu. Należy zmienić odpowiednią opcję, żeby klient email pozostawiał wiadomości na serwerze, dzięki czemu Wrapper będzie mógł je tam znaleźć. Wrapper zawsze pozostawia wiadomości na serwerze, więc klient którego używasz również je znajdzie."/>
 		<lookup key="cmdRedownload" value="Pobierz ponownie"/>
 		<lookup key="cmdClose" value="Zamknij"/>
-    <lookup key="AccountsCreationForm" value="Utwórz nowe konto"/>
-    <lookup key="buttonCreate" value="&amp;Tworzyć"/>
-    <lookup key="radioOther" value="Inny"/>
+		<lookup key="AccountsCreationForm" value="Utwórz nowe konto"/>
+		<lookup key="buttonCreate" value="&amp;Utwórz"/>
+		<lookup key="radioOther" value="Inne"/>
 		<!-- END: Main forms -->
 		<!-- BEGIN: Messages -->
 		<lookup key="msgWrapperWriteAccess" value="Wrapper nie ma dostępu do zapisu dla następujących folderów: &#xA;{0}&#xA;&#xA; Proszę zmienić ustawienia bezpieczeństwa systemu lub uruchamiać program jako Administrator."/>
@@ -716,7 +716,7 @@
 		<lookup key="msgWrapperRestartRequired" value="Proszę ponownie uruchomić Wrappera, żeby te zmiany zaczęły obowiązywać."/>
 		<lookup key="msgWrapperPollFailed" value="Sprawdzanie nie powiodło się."/>
 		<lookup key="msgWrapperGamesWaiting" value="Liczba oczekujących gier: {0}."/>
-    <lookup key="msgInputEmailSettingsManual" value="Będzie wprowadzić ręcznie."/>
+		<lookup key="msgInputEmailSettingsManual" value="Ustawienia trzeba wprowadzić ręcznie."/>
 		<!-- END: Messages -->
 		<!-- BEGIN: Context Menus -->
 		<lookup key="menuItemShow" value="Pokaż"/>
@@ -740,7 +740,7 @@
 		<lookup key="enumReceived" value="Otrzymany"/>
 		<lookup key="enumSent" value="Wysłany"/>
 		<lookup key="enumEnded" value="Zakończony"/>
-    <lookup key="enumMinutes" value="minut"/>
+		<lookup key="enumMinutes" value="minut(y)"/>
 		<!-- END: Enumerations -->
 		<!-- BEGIN: Misc -->
 		<lookup key="buttonOK" value="OK"/>
@@ -758,8 +758,8 @@
 		<lookup key="tabIncoming" value="Εισερχόμενα Email"/>
 		<lookup key="cmdMessageStore" value="Εμφάνιση POP3 email"/>
 		<lookup key="groupBoxEmailSelection" value="Κατέβασμα συνημμένου"/>
-    <lookup key="fbPollingSetup" value="Eλεγχος email"/>
-    <lookup key="fbPollingSetup_every" value="κάθε:"/>
+		<lookup key="fbPollingSetup" value="Έλεγξε το email"/>
+		<lookup key="fbPollingSetup_every" value="κάθε:"/>
 		<lookup key="groupBoxAuth" value="Στοιχεία Λογαριασμού"/>
 		<lookup key="fbPassword" value="Κωδικός πρόσβασης:"/>
 		<lookup key="fbUserName" value="Όνομα χρήστη:"/>
@@ -781,14 +781,14 @@
 		<lookup key="fbSentSound" value="Ήχος αποστολής Email:"/>
 		<lookup key="fbEmailSound" value="Ήχος λήψης Email:"/>
 		<lookup key="fbLocalization" value="Γλώσσα:"/>
-    <lookup key="fbCopyToEmailOut" value="Αντιγραφή στο EmailOut μετά την αποστολή:"/>
-    <lookup key="fbGameWrapperDataPort" value="Παιχνίδι για Wrapper port δεδομένων:"/>
+		<lookup key="fbCopyToEmailOut" value="Αντιγραφή στο EmailOut μετά την αποστολή:"/>
+		<lookup key="fbGameWrapperDataPort" value="Παιχνίδι για Wrapper port δεδομένων:"/>
 		<lookup key="tabActivity" value="Δραστηριότητα"/>
 		<lookup key="activityListViewlistView0" value="Όνομα Αρχείου"/>
-    <lookup key="activityListViewlistView1" value="Χάρτης"/>
-    <lookup key="activityListViewlistView2" value="Τη Σειρά"/>
-    <lookup key="activityListViewlistView3" value="Ηλικία"/>
-    <lookup key="activityListViewlistView4" value="Κατάσταση"/>
+		<lookup key="activityListViewlistView1" value="Χάρτης"/>
+		<lookup key="activityListViewlistView2" value="Σειρά"/>
+		<lookup key="activityListViewlistView3" value="Ηλικία"/>
+		<lookup key="activityListViewlistView4" value="Κατάσταση"/>
 		<lookup key="tabAbout" value="Σχετικά"/>
 		<lookup key="groupBetaTesters" value="Χρήστες BETA"/>
 		<lookup key="groupAuthors" value="Συγγραφείς"/>
@@ -802,9 +802,9 @@
 		<lookup key="lblLocalMessageStoreMessage" value="Οι χρήστες εφαρμογών στα Windows όπως Outlook Express, Outlook, Mozilla Thunderbird, Eudora κλπ. Πρέπει να ξέρουν ότι τα μηνύματα διαγράφονται από τον server αυτομάτως και πρέπει να βρουν την επιλογή εκείνη στο πρόγραμμα διαχείρισης email για να το απενεργοποιήσουν ώστε να βρίσκονται από τον Συσκευαστή. Ο Συσκευαστής πάντα αφήνει τα μηνύματα και δεν τα διαγράφει."/>
 		<lookup key="cmdRedownload" value="Ξανά&#xA;κατέβασε"/>
 		<lookup key="cmdClose" value="Κλείσε"/>
-    <lookup key="AccountsCreationForm" value="Δημιουργία νέου λογαριασμού"/>
-    <lookup key="buttonCreate" value="&amp;Δημιουργήσουν"/>
-    <lookup key="radioOther" value="Άλλο"/>
+		<lookup key="AccountsCreationForm" value="Δημιουργία νέου λογαριασμού"/>
+		<lookup key="buttonCreate" value="&amp;Δημιουργία"/>
+		<lookup key="radioOther" value="Άλλο"/>
 		<!-- END: Main forms -->
 		<!-- BEGIN: Messages -->
 		<lookup key="msgWrapperWriteAccess" value="Ο Συσκευαστής δεν έχει δικαίωμα να Γράψει σε αυτόυς τους φακέλους: &#xA;{0}&#xA;&#xA; Παρακαλώ αλλάξτε το επίπεδο ασφάλειας του συστήματος σας ή εκτελέστε το πρόγραμμα ως διαχειριστής."/>
@@ -819,7 +819,7 @@
 		<lookup key="msgWrapperRestartRequired" value="Για να ενεργοποιηθούν οι αλλαγές ξεκινήστε πάλη την εφαρμογή."/>
 		<lookup key="msgWrapperPollFailed" value="Αποτυχία ελέγχου."/>
 		<lookup key="msgWrapperGamesWaiting" value="Έχετε {0} παιχνίδια στην αναμονή."/>
-    <lookup key="msgInputEmailSettingsManual" value="Θα εισαγάγετε τις ρυθμίσεις με το χέρι."/>
+		<lookup key="msgInputEmailSettingsManual" value="Θα βάλετε μόνος τις επιλογές."/>
 		<!-- END: Messages -->
 		<!-- BEGIN: Context Menus -->
 		<lookup key="menuItemShow" value="Δείξτε"/>
@@ -844,118 +844,118 @@
 		<lookup key="enumReceived" value="Παρελήφθη"/>
 		<lookup key="enumSent" value="Απεστάλη"/>
 		<lookup key="enumEnded" value="Τέλος"/>
-    <lookup key="enumMinutes" value="λεπτά"/>
+		<lookup key="enumMinutes" value="λεπτά"/>
 		<!-- END: Enumerations -->
 		<!-- BEGIN: Misc -->
 		<lookup key="buttonCancel" value="Ακύρωση"/>
 		<lookup key="activeAccount" value="Ενεργός"/>
 		<!-- END: Misc -->
 	</language>
-  <language code="ru" display="Русский">
-    <!-- BEGIN: Main forms -->
-    <lookup key="tabAccounts" value="Учётные записи"/>
-    <lookup key="buttonActivate" value="Активировать"/>
-    <lookup key="buttonRename" value="Переименовать"/>
-    <lookup key="buttonRemove" value="Удалить"/>
-    <lookup key="buttonAdd" value="Добавить"/>
-    <lookup key="tabIncoming" value="Получение почты"/>
-    <lookup key="cmdMessageStore" value="Показать POP3 письма"/>
-    <lookup key="groupBoxEmailSelection" value="Сохранение сейвов"/>
-    <lookup key="fbPollingSetup" value="Проверять почту"/>
-    <lookup key="fbPollingSetup_every" value="каждые:"/>
-    <lookup key="groupBoxAuth" value="Аутентификация"/>
-    <lookup key="fbPassword" value="Пароль:"/>
-    <lookup key="fbUserName" value="Логин:"/>
-    <lookup key="groupBoxServer" value="Сервер"/>
-    <lookup key="fbUseSSL" value="Использовать SSL:"/>
-    <lookup key="fbPort" value="Порт:"/>
-    <lookup key="fbServer" value="Сервер:"/>
-    <lookup key="fbEmailType" value="Протокол:"/>
-    <lookup key="tabOutgoing" value="Отправка почты"/>
-    <lookup key="fbUsePolling" value="Использовать настройки получения почты:"/>
-    <lookup key="groupBoxServer" value="Сервер"/>
-    <lookup key="fbBccMyself" value="Отправить себе копию письма:"/>
-    <lookup key="fbAuthentication" value="Требуется аутентификация:"/>
-    <lookup key="fbSSLType" value="Тип SSL:"/>
-    <lookup key="fbEmailAddress" value="E-mail:"/>
-    <lookup key="fbSmtpServer" value="SMTP-сервер:"/>
-    <lookup key="tabPreferences" value="Настройки"/>
-    <lookup key="fbSaveFolder" value="Папка с PBEM-сейвами:"/>
-    <lookup key="groupBoxPreferences" value="Настройки"/>
-    <lookup key="fbAutostart" value="Запускать Wrapper при старте системы:"/>
-    <lookup key="fbSentSound" value="Звук при отправке письма:"/>
-    <lookup key="fbEmailSound" value="Звук при получении письма:"/>
-    <lookup key="fbLocalization" value="Язык"/>
-    <lookup key="fbCopyToEmailOut" value="Копировать сейв в EmailOut после отправки:"/>
-    <lookup key="fbGameWrapperDataPort" value="Порт сообщения игры и Wrapper'а:"/>
-    <lookup key="tabActivity" value="Список событий"/>
-    <lookup key="activityListViewlistView0" value="Сейв"/>
-    <lookup key="activityListViewlistView1" value="Карта"/>
-    <lookup key="activityListViewlistView2" value="Ход"/>
-    <lookup key="activityListViewlistView3" value="Дней"/>
-    <lookup key="activityListViewlistView4" value="Статус"/>
-    <lookup key="activityListViewlistView5" value="Время"/>
-    <lookup key="tabAbout" value="О программе"/>
-    <lookup key="groupBetaTesters" value="Бета-тестеры"/>
-    <lookup key="groupAuthors" value="Разработчики"/>
-    <lookup key="lblNotice" value="Age of Wonders Email Wrapper - абсолютно бесплатная программа, автоматизирующая игру по почте во все три части серии AoW. Программа не имеет отношения к Triumph Studios, это личный некоммерческий проект, не преследующий иных целей помимо повышения удобства игры. Wrapper предоставляется &quot;как есть&quot;; автор не гарантирует поддержку программы в будущем (хотя если вежливо попросить, то всё возможно)."/>
-    <lookup key="cmdSave" value="Сохранить настройки"/>
-    <lookup key="MessageStore" value="POP3 письма ({0}, {1})"/>
-    <lookup key="messageStoreListlistView0" value="Отправитель"/>
-    <lookup key="messageStoreListlistView1" value="Тема"/>
-    <lookup key="messageStoreListlistView2" value="Дата"/>
-    <lookup key="messageStoreListlistView3" value="Файл"/>
-    <lookup key="messageStoreListlistView4" value="Время"/>
-    <lookup key="lblLocalMessageStoreMessage" value="Пользователям таких почтовых клиентов, как Outlook Express, Outlook, Mozilla Thunderbird, Eudora: по умолчанию эти клиенты удаляют с сервера новые письма, полученные через POP3. Чтобы Wrapper мог обнаружить и скачать письма с новыми ходами, вам надо отключить эту опцию в настройках клиента. Wrapper в свою очередь никогда не удаляет письма с сервера, так что ваш обычный клиент всё равно сможет их получить."/>
-    <lookup key="cmdRedownload" value="Скачать заново"/>
-    <lookup key="cmdClose" value="Закрыть"/>
-    <lookup key="AccountsCreationForm" value="Создать новую учетную запись"/>
-    <lookup key="buttonCreate" value="&amp;Создать"/>
-    <lookup key="radioOther" value="Другой сервис"/>
-    <!-- END: Main forms -->
-    <!-- BEGIN: Messages -->
-    <lookup key="msgWrapperWriteAccess" value="Нет прав на запись в папки: &#xA;{0}&#xA;&#xA; Исправьте настройки безопасности или запустите Wrapper с правами администратора."/>
-    <lookup key="msgWrapperArchiveGame" value="Сохранить архив выбранной игры? Архивирование поместит файлы игры в отдельную папку ('{0}'), где они будут по-прежнему доступны из игры."/>
-    <lookup key="msgWrapperCannotActivateAccount" value="Невозможно сделать активной учётную запись &quot;{0}&quot;. Подождите завершения отправки почты."/>
-    <lookup key="msgAccountPrompt" value="Имя учётной записи:"/>
-    <lookup key="msgAccountDuplicate" value="Учётная запись с таким именем уже существует."/>
-    <lookup key="msgWrapperEmailSentSuccess" value="Письмо успешно отправлено [{0}]."/>
-    <lookup key="msgWrapperEmailSentFailed" value="Не удалось отправить письмо {0}.&#xA;Получатель: {1}&#xA;&#xA;{2}"/>
-    <lookup key="msgEmailInSelected" value="Игру можно будет загрузить с помощью Scenario &gt; Email &gt; Load game"/>
-    <lookup key="msgSaveSelected" value="Игру можно будет загрузить с помощью Load game"/>
-    <lookup key="msgWrapperRestartRequired" value="Изменения вступят в силу после перезагрузки Wrapper'а."/>
-    <lookup key="msgWrapperPollFailed" value="Не удалось проверить почту."/>
-    <lookup key="msgWrapperGamesWaiting" value="У вас есть {0} несыгранных игр(ы)."/>
-    <lookup key="msgInputEmailSettingsManual" value="Настройки надо будет прописать вручную."/>
-    <!-- END: Messages -->
-    <!-- BEGIN: Context Menus -->
-    <lookup key="menuItemShow" value="Открыть Wrapper"/>
-    <lookup key="menuItemAccounts" value="Учётные записи"/>
-    <lookup key="menuItemPollNow" value="Проверить почту"/>
-    <lookup key="menuItemExit" value="Выход"/>
-    <lookup key="menuItemActivate" value="Активировать"/>
-    <lookup key="menuItemRename" value="Переименовать"/>
-    <lookup key="menuItemRemove" value="Удалить"/>
-    <lookup key="menuItemAdd" value="Создать учётную запись"/>
-    <lookup key="menuItemMarkEnded" value="Пометить как завершённый"/>
-    <lookup key="menuItemMarkSent" value="Пометить как отправленный"/>
-    <!-- END: Context Menus -->
-    <!-- BEGIN: Enumerations -->
-    <lookup key="enumChooser" value="Выбрать"/>
-    <lookup key="enumNone" value="Без шифрования"/>
-    <lookup key="enumSending" value="Отправка"/>
-    <lookup key="enumChecking" value="Проверка почты"/>
-    <lookup key="enumEmailWaiting" value="Почта получена"/>
-    <lookup key="enumNew" value="Новая игра"/>
-    <lookup key="enumReceived" value="Отправлен"/>
-    <lookup key="enumSent" value="Получен"/>
-    <lookup key="enumEnded" value="Игра завершена"/>
-    <lookup key="enumMinutes" value="мин"/>
-    <!-- END: Enumerations -->
-    <!-- BEGIN: Misc -->
-    <lookup key="buttonOK" value="ОК"/>
-    <lookup key="buttonCancel" value="Отмена"/>
-    <lookup key="activeAccount" value="Активный"/>
-    <!-- END: Misc -->
-  </language>
+	<language code="ru" display="Русский">
+		<!-- BEGIN: Main forms -->
+		<lookup key="tabAccounts" value="Учётные записи"/>
+		<lookup key="buttonActivate" value="Активировать"/>
+		<lookup key="buttonRename" value="Переименовать"/>
+		<lookup key="buttonRemove" value="Удалить"/>
+		<lookup key="buttonAdd" value="Добавить"/>
+		<lookup key="tabIncoming" value="Получение почты"/>
+		<lookup key="cmdMessageStore" value="Показать POP3 письма"/>
+		<lookup key="groupBoxEmailSelection" value="Сохранение сейвов"/>
+		<lookup key="fbPollingSetup" value="Проверять почту"/>
+		<lookup key="fbPollingSetup_every" value="каждые:"/>
+		<lookup key="groupBoxAuth" value="Аутентификация"/>
+		<lookup key="fbPassword" value="Пароль:"/>
+		<lookup key="fbUserName" value="Логин:"/>
+		<lookup key="groupBoxServer" value="Сервер"/>
+		<lookup key="fbUseSSL" value="Использовать SSL:"/>
+		<lookup key="fbPort" value="Порт:"/>
+		<lookup key="fbServer" value="Сервер:"/>
+		<lookup key="fbEmailType" value="Протокол:"/>
+		<lookup key="tabOutgoing" value="Отправка почты"/>
+		<lookup key="fbUsePolling" value="Использовать настройки получения почты:"/>
+		<lookup key="groupBoxServer" value="Сервер"/>
+		<lookup key="fbBccMyself" value="Отправить себе копию письма:"/>
+		<lookup key="fbAuthentication" value="Требуется аутентификация:"/>
+		<lookup key="fbSSLType" value="Тип SSL:"/>
+		<lookup key="fbEmailAddress" value="E-mail:"/>
+		<lookup key="fbSmtpServer" value="SMTP-сервер:"/>
+		<lookup key="tabPreferences" value="Настройки"/>
+		<lookup key="fbSaveFolder" value="Папка с PBEM-сейвами:"/>
+		<lookup key="groupBoxPreferences" value="Настройки"/>
+		<lookup key="fbAutostart" value="Запускать Wrapper при старте системы:"/>
+		<lookup key="fbSentSound" value="Звук при отправке письма:"/>
+		<lookup key="fbEmailSound" value="Звук при получении письма:"/>
+		<lookup key="fbLocalization" value="Язык"/>
+		<lookup key="fbCopyToEmailOut" value="Копировать сейв в EmailOut после отправки:"/>
+		<lookup key="fbGameWrapperDataPort" value="Порт сообщения игры и Wrapper'а:"/>
+		<lookup key="tabActivity" value="Список событий"/>
+		<lookup key="activityListViewlistView0" value="Сейв"/>
+		<lookup key="activityListViewlistView1" value="Карта"/>
+		<lookup key="activityListViewlistView2" value="Ход"/>
+		<lookup key="activityListViewlistView3" value="Дней"/>
+		<lookup key="activityListViewlistView4" value="Статус"/>
+		<lookup key="activityListViewlistView5" value="Время"/>
+		<lookup key="tabAbout" value="О программе"/>
+		<lookup key="groupBetaTesters" value="Бета-тестеры"/>
+		<lookup key="groupAuthors" value="Разработчики"/>
+		<lookup key="lblNotice" value="Age of Wonders Email Wrapper - абсолютно бесплатная программа, автоматизирующая игру по почте во все три части серии AoW. Программа не имеет отношения к Triumph Studios, это личный некоммерческий проект, не преследующий иных целей помимо повышения удобства игры. Wrapper предоставляется &quot;как есть&quot;; автор не гарантирует поддержку программы в будущем (хотя если вежливо попросить, то всё возможно)."/>
+		<lookup key="cmdSave" value="Сохранить настройки"/>
+		<lookup key="MessageStore" value="POP3 письма ({0}, {1})"/>
+		<lookup key="messageStoreListlistView0" value="Отправитель"/>
+		<lookup key="messageStoreListlistView1" value="Тема"/>
+		<lookup key="messageStoreListlistView2" value="Дата"/>
+		<lookup key="messageStoreListlistView3" value="Файл"/>
+		<lookup key="messageStoreListlistView4" value="Время"/>
+		<lookup key="lblLocalMessageStoreMessage" value="Пользователям таких почтовых клиентов, как Outlook Express, Outlook, Mozilla Thunderbird, Eudora: по умолчанию эти клиенты удаляют с сервера новые письма, полученные через POP3. Чтобы Wrapper мог обнаружить и скачать письма с новыми ходами, вам надо отключить эту опцию в настройках клиента. Wrapper в свою очередь никогда не удаляет письма с сервера, так что ваш обычный клиент всё равно сможет их получить."/>
+		<lookup key="cmdRedownload" value="Скачать заново"/>
+		<lookup key="cmdClose" value="Закрыть"/>
+		<lookup key="AccountsCreationForm" value="Создать новую учетную запись"/>
+		<lookup key="buttonCreate" value="&amp;Создать"/>
+		<lookup key="radioOther" value="Другой сервис"/>
+		<!-- END: Main forms -->
+		<!-- BEGIN: Messages -->
+		<lookup key="msgWrapperWriteAccess" value="Нет прав на запись в папки: &#xA;{0}&#xA;&#xA; Исправьте настройки безопасности или запустите Wrapper с правами администратора."/>
+		<lookup key="msgWrapperArchiveGame" value="Сохранить архив выбранной игры? Архивирование поместит файлы игры в отдельную папку ('{0}'), где они будут по-прежнему доступны из игры."/>
+		<lookup key="msgWrapperCannotActivateAccount" value="Невозможно сделать активной учётную запись &quot;{0}&quot;. Подождите завершения отправки почты."/>
+		<lookup key="msgAccountPrompt" value="Имя учётной записи:"/>
+		<lookup key="msgAccountDuplicate" value="Учётная запись с таким именем уже существует."/>
+		<lookup key="msgWrapperEmailSentSuccess" value="Письмо успешно отправлено [{0}]."/>
+		<lookup key="msgWrapperEmailSentFailed" value="Не удалось отправить письмо {0}.&#xA;Получатель: {1}&#xA;&#xA;{2}"/>
+		<lookup key="msgEmailInSelected" value="Игру можно будет загрузить с помощью Scenario &gt; Email &gt; Load game"/>
+		<lookup key="msgSaveSelected" value="Игру можно будет загрузить с помощью Load game"/>
+		<lookup key="msgWrapperRestartRequired" value="Изменения вступят в силу после перезагрузки Wrapper'а."/>
+		<lookup key="msgWrapperPollFailed" value="Не удалось проверить почту."/>
+		<lookup key="msgWrapperGamesWaiting" value="У вас есть {0} несыгранных игр(ы)."/>
+		<lookup key="msgInputEmailSettingsManual" value="Настройки надо будет прописать вручную."/>
+		<!-- END: Messages -->
+		<!-- BEGIN: Context Menus -->
+		<lookup key="menuItemShow" value="Открыть Wrapper"/>
+		<lookup key="menuItemAccounts" value="Учётные записи"/>
+		<lookup key="menuItemPollNow" value="Проверить почту"/>
+		<lookup key="menuItemExit" value="Выход"/>
+		<lookup key="menuItemActivate" value="Активировать"/>
+		<lookup key="menuItemRename" value="Переименовать"/>
+		<lookup key="menuItemRemove" value="Удалить"/>
+		<lookup key="menuItemAdd" value="Создать учётную запись"/>
+		<lookup key="menuItemMarkEnded" value="Пометить как завершённый"/>
+		<lookup key="menuItemMarkSent" value="Пометить как отправленный"/>
+		<!-- END: Context Menus -->
+		<!-- BEGIN: Enumerations -->
+		<lookup key="enumChooser" value="Выбрать"/>
+		<lookup key="enumNone" value="Без шифрования"/>
+		<lookup key="enumSending" value="Отправка"/>
+		<lookup key="enumChecking" value="Проверка почты"/>
+		<lookup key="enumEmailWaiting" value="Почта получена"/>
+		<lookup key="enumNew" value="Новая игра"/>
+		<lookup key="enumReceived" value="Отправлен"/>
+		<lookup key="enumSent" value="Получен"/>
+		<lookup key="enumEnded" value="Игра завершена"/>
+		<lookup key="enumMinutes" value="мин"/>
+		<!-- END: Enumerations -->
+		<!-- BEGIN: Misc -->
+		<lookup key="buttonOK" value="ОК"/>
+		<lookup key="buttonCancel" value="Отмена"/>
+		<lookup key="activeAccount" value="Активный"/>
+		<!-- END: Misc -->
+	</language>
 </languages>
