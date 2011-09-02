@@ -17,6 +17,7 @@ namespace AowEmailWrapper.Helpers
         private const string EndedFolderDefault = "Ended";
 
         public const string AUTOSTART_CMD_PARAM = "/autostart";
+        public const string RESTART_CMD_PARAM = "/restart";
 
         public static string BuildVersion
         {
