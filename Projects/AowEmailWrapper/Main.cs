@@ -352,6 +352,7 @@ namespace AowEmailWrapper
 
         private void Config_Needs_Save(object sender, EventArgs e)
         {
+            cmdSave.Enabled = true;
             cmdSave.BackColor = Color.IndianRed;
         }
 
@@ -883,6 +884,7 @@ namespace AowEmailWrapper
                 accountsConfig.Refresh();
 
                 cmdSave.BackColor = this.BackColor;
+                cmdSave.Enabled = false;
             }
 
             return success;
