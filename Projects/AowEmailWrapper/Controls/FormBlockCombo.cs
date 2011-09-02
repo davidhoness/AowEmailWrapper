@@ -13,8 +13,6 @@ namespace AowEmailWrapper.Controls
 {
     public partial class FormBlockCombo : BaseFormBlock
     {
-        private const string PleaseChooseTextKey = "enumChooser";
-
         public string LabelName
         {
             get { return lblName.Text; }
@@ -23,10 +21,6 @@ namespace AowEmailWrapper.Controls
 
         public void AddItem(ComboBoxItem theItem)
         {
-            if (comboBox.Items.Count.Equals(0))
-            {
-                comboBox.Items.Add(new ComboBoxItem(string.Empty, Translator.Translate(PleaseChooseTextKey)));
-            }
             comboBox.Items.Add(theItem);
         }
 
@@ -44,7 +38,7 @@ namespace AowEmailWrapper.Controls
         {
             get 
             {
-                if (comboBox.SelectedIndex > 0)
+                if (comboBox.SelectedIndex >= 0)
                 {
                     ComboBoxItem theSelectedItem = (ComboBoxItem)comboBox.SelectedItem;
                     return theSelectedItem.Value;

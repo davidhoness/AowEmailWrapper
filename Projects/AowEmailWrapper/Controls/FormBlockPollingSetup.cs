@@ -13,7 +13,6 @@ namespace AowEmailWrapper.Controls
 {
     public partial class FormBlockPollingSetup : BaseFormBlock
     {
-        private const string PleaseChooseTextKey = "enumChooser";
         private const string MinutesTextKey = "enumMinutes";
         private const string DisplayTextTemplate = "{0} {1}";
         private const int CheckBoxTickWidth = 24;
@@ -62,10 +61,6 @@ namespace AowEmailWrapper.Controls
 
         private void AddItem(ComboBoxItem theItem)
         {
-            if (comboBox.Items.Count.Equals(0))
-            {
-                comboBox.Items.Add(new ComboBoxItem(string.Empty, Translator.Translate(PleaseChooseTextKey)));
-            }
             comboBox.Items.Add(theItem);
         }
 
@@ -73,7 +68,7 @@ namespace AowEmailWrapper.Controls
         {
             get
             {
-                if (comboBox.SelectedIndex > 0)
+                if (comboBox.SelectedIndex >= 0)
                 {
                     ComboBoxItem theSelectedItem = (ComboBoxItem)comboBox.SelectedItem;
                     return theSelectedItem.Value;
