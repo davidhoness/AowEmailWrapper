@@ -15,6 +15,26 @@ namespace AowEmailWrapper
         [STAThread]
         static void Main(string[] args)
         {
+            //Is this a Restart?
+            if (args.Length.Equals(2) &&
+                args[0].Equals(ConfigHelper.RESTART_CMD_PARAM))
+            {
+                int oldProcessId = 0;
+
+                //The old process Id will be on the command line
+                if (int.TryParse(args[1], out oldProcessId))
+                {
+                    try
+                    {
+                        //Wait for it to exit
+                        Process oldProcess = Process.GetProcessById(oldProcessId);
+                        oldProcess.WaitForExit();
+                        oldProcess.Dispose();
+                    }
+                    catch { }
+                }
+            }
+
             //To avoid two process' running at once
             Process thisProcess = Process.GetCurrentProcess();
             Process[] matchingNames = Process.GetProcessesByName(thisProcess.ProcessName);
