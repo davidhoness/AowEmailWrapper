@@ -80,6 +80,7 @@ namespace AowEmailWrapper.Controls
             if (int.TryParse(fbGameWrapperDataPort.TextValue, out testValue))
             {
                 _config.GameWrapperDataPort = IsUnassignedPortRange(testValue) ? testValue : PreferencesConfigValues.GameWrapperDataPortDefault;
+                fbGameWrapperDataPort.TextValue = _config.GameWrapperDataPort.ToString();
             }
             else
             {
@@ -96,6 +97,7 @@ namespace AowEmailWrapper.Controls
             fbCopyToEmailOut.Checked = _config.CopyToEmailOut;
             fbLocalization.SelectedValue = _config.LanguageCode;
             fbGameWrapperDataPort.TextValue = _config.GameWrapperDataPort.ToString();
+            UpdateSaveFolderTip();
         }
 
         private void Raise_Config_Changed(object sender, EventArgs e)
@@ -107,6 +109,11 @@ namespace AowEmailWrapper.Controls
         }
 
         private void SaveFolder_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateSaveFolderTip();
+        }
+
+        private void UpdateSaveFolderTip()
         {
             switch (ConfigHelper.ParseEnumString<EmailSaveFolder>(fbSaveFolder.SelectedValue))
             {
