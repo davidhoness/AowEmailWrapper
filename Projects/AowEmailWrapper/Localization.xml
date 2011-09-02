@@ -91,7 +91,6 @@
 		<lookup key="menuItemMarkSent" value="Mark as &amp;Sent"/>
 		<!-- END: Context Menus -->
 		<!-- BEGIN: Enumerations -->
-		<lookup key="enumChooser" value="Please select"/>
 		<lookup key="enumIMAP" value="IMAP"/>
 		<lookup key="enumPOP3" value="POP3"/>
 		<lookup key="enumNone" value="None"/>
@@ -204,7 +203,6 @@
 		<lookup key="menuItemMarkSent" value="Marquer comme envoyé"/>
 		<!-- END: Context Menus -->
 		<!-- BEGIN: Enumerations -->
-		<lookup key="enumChooser" value="Merci de sélectionner"/>
 		<lookup key="enumNone" value="Aucun"/>
 		<lookup key="enumSending" value="En cours d'envoi"/>
 		<lookup key="enumChecking" value="En cours de vérification"/>
@@ -310,7 +308,6 @@
 		<lookup key="menuItemMarkSent" value="Als gesendet markieren"/>
 		<!-- END: Context Menus -->
 		<!-- BEGIN: Enumerations -->
-		<lookup key="enumChooser" value="Bitte auswählen"/>
 		<lookup key="enumNone" value="Nichts"/>
 		<lookup key="enumSave" value="Speichern"/>
 		<lookup key="enumSending" value="Sendet"/>
@@ -416,7 +413,6 @@
 		<lookup key="menuItemMarkSent" value="Marcar como enviado"/>
 		<!-- END: Context Menus -->
 		<!-- BEGIN: Enumerations -->
-		<lookup key="enumChooser" value="Elija por favor"/>
 		<lookup key="enumNone" value="Ninguno"/>
 		<lookup key="enumSave" value="Guardar"/>
 		<lookup key="enumSending" value="Enviando"/>
@@ -522,7 +518,6 @@
 		<lookup key="menuItemMarkSent" value="Markeer als verzonden"/>
 		<!-- END: Context Menus -->
 		<!-- BEGIN: Enumerations -->
-		<lookup key="enumChooser" value="Selecteer Aub"/>
 		<lookup key="enumIMAP" value="IMAP"/>
 		<lookup key="enumPOP3" value="POP3"/>
 		<lookup key="enumNone" value="Geen"/>
@@ -625,7 +620,6 @@
 		<lookup key="menuItemMarkSent" value="Marker som Sendt"/>
 		<!-- END: Context Menus -->
 		<!-- BEGIN: Enumerations -->
-		<lookup key="enumChooser" value="Vælg venligst"/>
 		<lookup key="enumNone" value="Ingen"/>
 		<lookup key="enumSending" value="Sender"/>
 		<lookup key="enumChecking" value="Checker"/>
@@ -731,7 +725,6 @@
 		<lookup key="menuItemMarkSent" value="Zaznacz jako Wysłany"/>
 		<!-- END: Context Menus -->
 		<!-- BEGIN: Enumerations -->
-		<lookup key="enumChooser" value="Proszę wybrać"/>
 		<lookup key="enumNone" value="Brak"/>
 		<lookup key="enumSending" value="Wysyłanie"/>
 		<lookup key="enumChecking" value="Sprawdzanie"/>
@@ -834,7 +827,6 @@
 		<lookup key="menuItemMarkSent" value="Αλλάξτε ως Απεστάλη"/>
 		<!-- END: Context Menus -->
 		<!-- BEGIN: Enumerations -->
-		<lookup key="enumChooser" value="Επιλέξτε"/>
 		<lookup key="enumNone" value="Κανένα"/>
 		<lookup key="enumSave" value="Σώσε"/>
 		<lookup key="enumSending" value="Αποστέλνεται"/>
@@ -941,7 +933,6 @@
 		<lookup key="menuItemMarkSent" value="Пометить как отправленный"/>
 		<!-- END: Context Menus -->
 		<!-- BEGIN: Enumerations -->
-		<lookup key="enumChooser" value="Выбрать"/>
 		<lookup key="enumNone" value="Без шифрования"/>
 		<lookup key="enumSending" value="Отправка"/>
 		<lookup key="enumChecking" value="Проверка почты"/>
