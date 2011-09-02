@@ -65,6 +65,7 @@ namespace AowEmailWrapper
 
         private const string GameSmtpServerTemplate = "127.0.0.1:{0}";
         private const string WrapperAutostartTemplate = "\"{0}\" {1}";
+        private const string WrapperRestartTemplate = "{0} {1}";
 
         #endregion
 
@@ -282,15 +283,21 @@ namespace AowEmailWrapper
 
                 DataManagerHelper.SaveConfig(_wrapperConfig);
 
+                bool activateSuccess = false;
+
                 if (reActivate)
                 {
-                    ActivateAccount(_wrapperConfig.AccountsList.ActiveAccount);
+                    activateSuccess = ActivateAccount(_wrapperConfig.AccountsList.ActiveAccount);
                 }
 
                 if (preferencesConfigValues != null &&
-                    !preferencesConfigValues.LanguageCode.Equals(Translator.CurrentLanguageCode))
+                    !preferencesConfigValues.LanguageCode.Equals(Translator.CurrentLanguageCode) &&
+                    activateSuccess)
                 {
-                    MessageBox.Show(Translator.Translate(WrapperRestartRequiredKey), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (MessageBox.Show(Translator.Translate(WrapperRestartRequiredKey), this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Information).Equals(DialogResult.Yes))
+                    {
+                        RestartWrapper();
+                    }
                 }
             }
             catch (Exception ex)
@@ -304,6 +311,14 @@ namespace AowEmailWrapper
         #endregion
 
         #region Custom Events
+
+        private void RestartWrapper()
+        {
+            string thisProcessId = Process.GetCurrentProcess().Id.ToString();
+            _closeCancel = false;
+            this.Close();
+            Process.Start(Application.ExecutablePath, string.Format(WrapperRestartTemplate, ConfigHelper.RESTART_CMD_PARAM, thisProcessId));
+        }
 
         private void BindCustomEvents()
         {

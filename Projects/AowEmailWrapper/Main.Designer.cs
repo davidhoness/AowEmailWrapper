@@ -110,16 +110,16 @@
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBottom.Location = new System.Drawing.Point(0, 464);
             this.panelBottom.Name = "panelBottom";
-            this.panelBottom.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.panelBottom.Padding = new System.Windows.Forms.Padding(2, 5, 2, 5);
             this.panelBottom.Size = new System.Drawing.Size(522, 44);
             this.panelBottom.TabIndex = 2;
             // 
             // cmdSave
             // 
             this.cmdSave.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmdSave.Location = new System.Drawing.Point(182, 5);
+            this.cmdSave.Location = new System.Drawing.Point(184, 5);
             this.cmdSave.Name = "cmdSave";
-            this.cmdSave.Size = new System.Drawing.Size(340, 34);
+            this.cmdSave.Size = new System.Drawing.Size(336, 34);
             this.cmdSave.TabIndex = 2;
             this.cmdSave.Text = "Save Settings";
             this.cmdSave.UseVisualStyleBackColor = true;
@@ -129,7 +129,7 @@
             // 
             this.panelLocalMessageStore.Controls.Add(this.cmdMessageStore);
             this.panelLocalMessageStore.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelLocalMessageStore.Location = new System.Drawing.Point(0, 5);
+            this.panelLocalMessageStore.Location = new System.Drawing.Point(2, 5);
             this.panelLocalMessageStore.Name = "panelLocalMessageStore";
             this.panelLocalMessageStore.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.panelLocalMessageStore.Size = new System.Drawing.Size(182, 34);
@@ -470,6 +470,7 @@
             // 
             this.fbLink.BackColor = System.Drawing.SystemColors.Window;
             this.fbLink.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.fbLink.Cursor = System.Windows.Forms.Cursors.Hand;
             this.fbLink.Dock = System.Windows.Forms.DockStyle.Right;
             this.fbLink.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
             this.fbLink.FlatAppearance.BorderSize = 5;
