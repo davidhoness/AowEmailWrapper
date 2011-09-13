@@ -6,7 +6,7 @@
 		<lookup key="accountsConfiglistViewAccounts0" value=""/>
 		<lookup key="buttonActivate" value="Activate"/>
 		<lookup key="buttonRename" value="Rename"/>
-		<lookup key="buttonRemove" value="Remove"/>
+		<lookup key="buttonRemove" value="Delete"/>
 		<lookup key="buttonAdd" value="Add New"/>
 		<lookup key="tabIncoming" value="Incoming Email"/>
 		<lookup key="cmdMessageStore" value="Show POP3 emails"/>
@@ -68,6 +68,7 @@
 		<lookup key="msgWrapperArchiveGame" value="Would you also like to archive the selected game(s)? This will move their files into a separate folder named '{0}' which you can still access in game."/>
 		<lookup key="msgWrapperCannotActivateAccount" value="Cannot activate &quot;{0}&quot; account now.  Please wait for email sending to finish."/>
 		<lookup key="msgAccountPrompt" value="Enter the name of the account:"/>
+		<lookup key="msgAccountDeletePrompt" value="Are you sure you want to delete account: {0} ?"/>
 		<lookup key="msgAccountDuplicate" value="An account with this name already exists.  Please choose another name."/>
 		<lookup key="msgWrapperEmailSentSuccess" value="Sent to [{0}] successfully."/>
 		<lookup key="msgWrapperEmailSentFailed" value="Error sending email: {0}.&#xA;To: {1}&#xA;&#xA;{2}"/>
@@ -85,7 +86,7 @@
 		<lookup key="menuItemExit" value="E&amp;xit"/>
 		<lookup key="menuItemActivate" value="&amp;Activate"/>
 		<lookup key="menuItemRename" value="&amp;Rename"/>
-		<lookup key="menuItemRemove" value="Re&amp;move"/>
+		<lookup key="menuItemRemove" value="&amp;Delete"/>
 		<lookup key="menuItemAdd" value="Add &amp;New"/>
 		<lookup key="menuItemMarkEnded" value="Mark as &amp;Ended"/>
 		<lookup key="menuItemMarkSent" value="Mark as &amp;Sent"/>
