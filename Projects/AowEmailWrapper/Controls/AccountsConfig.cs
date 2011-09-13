@@ -85,6 +85,8 @@ namespace AowEmailWrapper.Controls
             EventHandler raiseConfigChange = new EventHandler(Raise_Config_Changed);
             pollingConfig.Config_Changed += raiseConfigChange;
             smtpConfig.Config_Changed += raiseConfigChange;
+
+            listViewAccounts.KeyDown += new KeyEventHandler(listViewAccounts_KeyDown);
         }
 
         #endregion
@@ -134,6 +136,19 @@ namespace AowEmailWrapper.Controls
         private void listViewAccounts_SelectedItems_Clear(object sender, EventArgs e)
         {
             listViewAccounts.SelectedItems.Clear();
+        }
+
+        private void listViewAccounts_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.F2:
+                    Rename();
+                    break;
+                case Keys.Delete:
+                    Remove();
+                    break;
+            }
         }
 
         #endregion
@@ -245,6 +260,8 @@ namespace AowEmailWrapper.Controls
 
                     if (theAccount != null)
                     {
+                        int selectedIndex = GetSlectedIndex();
+
                         if (theAccount.Equals(_accountsList.ActiveAccount))
                         {
                             _accountsList.Accounts.Remove(theAccount);
@@ -257,6 +274,15 @@ namespace AowEmailWrapper.Controls
 
                         Populate();
                         Raise_Config_Changed();
+
+                        //Refocus selected item
+                        if (listViewAccounts.Items.Count > 0)
+                        {
+                            listViewAccounts.Focus();
+                            int maxIndex = listViewAccounts.Items.Count - 1;
+                            int newIndex = selectedIndex < maxIndex ? selectedIndex : maxIndex;
+                            listViewAccounts.Items[newIndex].Selected = true;
+                        }
                     }
                 }
             }
@@ -325,6 +351,18 @@ namespace AowEmailWrapper.Controls
             return theTag;
         }
 
+        private int GetSlectedIndex()
+        {
+            int selected = -1;
+
+            if (listViewAccounts.SelectedIndices.Count.Equals(1))
+            {
+                selected = listViewAccounts.SelectedIndices[0];
+            }
+
+            return selected;        
+        }
+
         private void Populate()
         {
             if (_accountsList != null &&
@@ -336,6 +374,8 @@ namespace AowEmailWrapper.Controls
 
                 if (_accountsList.Accounts.Count > 0)
                 {
+                    ListViewItem activeItem = null;
+
                     foreach (AccountConfigValues account in _accountsList.Accounts)
                     {
                         ListViewItem item = new ListViewItem();
@@ -346,6 +386,7 @@ namespace AowEmailWrapper.Controls
 
                             pollingConfig.Config = account.PollingConfig;
                             smtpConfig.Config = account.SmtpConfig;
+                            activeItem = item;
                         }
                         else
                         {
@@ -366,6 +407,12 @@ namespace AowEmailWrapper.Controls
                         item.ImageIndex = (imageIndex >= 0) ? imageIndex : imageListLargeIcons.Images.IndexOfKey(EmailProviderType.Other.ToString());
 
                         listViewAccounts.Items.Add(item);
+                    }
+
+                    if (activeItem != null)
+                    {
+                        activeItem.EnsureVisible();
+                        activeItem.Selected = true;
                     }
                 }
 
