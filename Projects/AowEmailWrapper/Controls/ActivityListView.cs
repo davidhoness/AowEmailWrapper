@@ -98,6 +98,7 @@ namespace AowEmailWrapper.Controls
                     SetItemColour(item, activity, age);
                     
                     item.Text = activity.FileName;
+                    item.ToolTipText = item.Text;
                     item.SubItems.Add(new ListViewItem.ListViewSubItem(item, activity.MapTitle));
                     item.SubItems.Add(new ListViewItem.ListViewSubItem(item, activity.TurnNumber));
                     item.SubItems.Add(new ListViewItem.ListViewSubItem(item, (age > 0) ? age.ToString() : string.Empty));

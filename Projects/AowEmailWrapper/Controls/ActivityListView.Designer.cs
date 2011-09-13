@@ -50,6 +50,7 @@
             this.listView.FullRowSelect = true;
             this.listView.Location = new System.Drawing.Point(0, 0);
             this.listView.Name = "listView";
+            this.listView.ShowItemToolTips = true;
             this.listView.Size = new System.Drawing.Size(412, 433);
             this.listView.TabIndex = 1;
             this.listView.UseCompatibleStateImageBehavior = false;
