@@ -25,6 +25,7 @@ namespace AowEmailWrapper.Controls
         public AccountActivatedEventHandler Account_Activated;
         private const string AccountsTextKey = "tabAccounts";
         private const string AccountPromptTextKey = "msgAccountPrompt";
+        private const string AccountDeletePromptTextKey = "msgAccountDeletePrompt";
         private const string AccountDuplicateTextKey = "msgAccountDuplicate";
         private const string AccountActiveTextKey = "activeAccount";
         private const string AccountActiveTemplate = "{0} ({1})";
@@ -260,28 +261,31 @@ namespace AowEmailWrapper.Controls
 
                     if (theAccount != null)
                     {
-                        int selectedIndex = GetSlectedIndex();
-
-                        if (theAccount.Equals(_accountsList.ActiveAccount))
+                        if (MessageBox.Show(Translator.Translate(AccountDeletePromptTextKey, theAccount.Name), Translator.Translate(AccountsTextKey), MessageBoxButtons.YesNo, MessageBoxIcon.Question).Equals(DialogResult.Yes))
                         {
-                            _accountsList.Accounts.Remove(theAccount);
-                            Raise_Account_Activated(_accountsList.Accounts[0]);
-                        }
-                        else
-                        {
-                            _accountsList.Accounts.Remove(theAccount);
-                        }
+                            int selectedIndex = GetSlectedIndex();
 
-                        Populate();
-                        Raise_Config_Changed();
+                            if (theAccount.Equals(_accountsList.ActiveAccount))
+                            {
+                                _accountsList.Accounts.Remove(theAccount);
+                                Raise_Account_Activated(_accountsList.Accounts[0]);
+                            }
+                            else
+                            {
+                                _accountsList.Accounts.Remove(theAccount);
+                            }
 
-                        //Refocus selected item
-                        if (listViewAccounts.Items.Count > 0)
-                        {
-                            listViewAccounts.Focus();
-                            int maxIndex = listViewAccounts.Items.Count - 1;
-                            int newIndex = selectedIndex < maxIndex ? selectedIndex : maxIndex;
-                            listViewAccounts.Items[newIndex].Selected = true;
+                            Populate();
+                            Raise_Config_Changed();
+
+                            //Refocus selected item
+                            if (listViewAccounts.Items.Count > 0)
+                            {
+                                listViewAccounts.Focus();
+                                int maxIndex = listViewAccounts.Items.Count - 1;
+                                int newIndex = selectedIndex < maxIndex ? selectedIndex : maxIndex;
+                                listViewAccounts.Items[newIndex].Selected = true;
+                            }
                         }
                     }
                 }
