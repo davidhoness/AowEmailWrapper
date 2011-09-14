@@ -5,6 +5,7 @@
 		<lookup key="tabAccounts" value="Accounts"/>
 		<lookup key="accountsConfiglistViewAccounts0" value=""/>
 		<lookup key="buttonActivate" value="Activate"/>
+		<lookup key="buttonSetStartUp" value="Set as Default"/>
 		<lookup key="buttonRename" value="Rename"/>
 		<lookup key="buttonRemove" value="Delete"/>
 		<lookup key="buttonAdd" value="Add New"/>
@@ -85,6 +86,7 @@
 		<lookup key="menuItemPollNow" value="&amp;Poll now"/>
 		<lookup key="menuItemExit" value="E&amp;xit"/>
 		<lookup key="menuItemActivate" value="&amp;Activate"/>
+		<lookup key="menuItemSetStartUp" value="Set as &amp;Default"/>
 		<lookup key="menuItemRename" value="&amp;Rename"/>
 		<lookup key="menuItemRemove" value="&amp;Delete"/>
 		<lookup key="menuItemAdd" value="Add &amp;New"/>
