@@ -108,7 +108,7 @@
             this.panelBottom.Controls.Add(this.cmdSave);
             this.panelBottom.Controls.Add(this.panelLocalMessageStore);
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBottom.Location = new System.Drawing.Point(0, 464);
+            this.panelBottom.Location = new System.Drawing.Point(0, 485);
             this.panelBottom.Name = "panelBottom";
             this.panelBottom.Padding = new System.Windows.Forms.Padding(2, 5, 2, 5);
             this.panelBottom.Size = new System.Drawing.Size(522, 44);
@@ -154,7 +154,7 @@
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
             this.panelMain.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panelMain.Size = new System.Drawing.Size(522, 464);
+            this.panelMain.Size = new System.Drawing.Size(522, 485);
             this.panelMain.TabIndex = 3;
             // 
             // tabControlMain
@@ -168,7 +168,7 @@
             this.tabControlMain.Margin = new System.Windows.Forms.Padding(2);
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
-            this.tabControlMain.Size = new System.Drawing.Size(522, 459);
+            this.tabControlMain.Size = new System.Drawing.Size(522, 480);
             this.tabControlMain.TabIndex = 2;
             // 
             // tabAccounts
@@ -177,7 +177,7 @@
             this.tabAccounts.Location = new System.Drawing.Point(4, 22);
             this.tabAccounts.Name = "tabAccounts";
             this.tabAccounts.Padding = new System.Windows.Forms.Padding(5);
-            this.tabAccounts.Size = new System.Drawing.Size(514, 433);
+            this.tabAccounts.Size = new System.Drawing.Size(514, 454);
             this.tabAccounts.TabIndex = 6;
             this.tabAccounts.Text = "Accounts";
             this.tabAccounts.UseVisualStyleBackColor = true;
@@ -189,7 +189,7 @@
             this.accountsConfig.Dock = System.Windows.Forms.DockStyle.Fill;
             this.accountsConfig.Location = new System.Drawing.Point(5, 5);
             this.accountsConfig.Name = "accountsConfig";
-            this.accountsConfig.Size = new System.Drawing.Size(504, 423);
+            this.accountsConfig.Size = new System.Drawing.Size(504, 444);
             this.accountsConfig.TabIndex = 0;
             // 
             // tabActivity
@@ -525,7 +525,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(522, 508);
+            this.ClientSize = new System.Drawing.Size(522, 529);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelBottom);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
