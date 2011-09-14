@@ -37,6 +37,8 @@
             this.columnHeader = new System.Windows.Forms.ColumnHeader();
             this.imageListLargeIcons = new System.Windows.Forms.ImageList(this.components);
             this.panelButtons = new System.Windows.Forms.Panel();
+            this.panelSetStartUp = new System.Windows.Forms.Panel();
+            this.buttonSetStartUp = new System.Windows.Forms.Button();
             this.panelActivate = new System.Windows.Forms.Panel();
             this.buttonActivate = new System.Windows.Forms.Button();
             this.panelRename = new System.Windows.Forms.Panel();
@@ -53,6 +55,7 @@
             this.smtpConfig = new AowEmailWrapper.Controls.SmtpConfig();
             this.panelTopHalf.SuspendLayout();
             this.panelButtons.SuspendLayout();
+            this.panelSetStartUp.SuspendLayout();
             this.panelActivate.SuspendLayout();
             this.panelRename.SuspendLayout();
             this.panelRemove.SuspendLayout();
@@ -70,7 +73,7 @@
             this.panelTopHalf.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTopHalf.Location = new System.Drawing.Point(0, 0);
             this.panelTopHalf.Name = "panelTopHalf";
-            this.panelTopHalf.Size = new System.Drawing.Size(531, 115);
+            this.panelTopHalf.Size = new System.Drawing.Size(531, 145);
             this.panelTopHalf.TabIndex = 0;
             // 
             // listViewAccounts
@@ -85,7 +88,7 @@
             this.listViewAccounts.Location = new System.Drawing.Point(0, 0);
             this.listViewAccounts.MultiSelect = false;
             this.listViewAccounts.Name = "listViewAccounts";
-            this.listViewAccounts.Size = new System.Drawing.Size(423, 115);
+            this.listViewAccounts.Size = new System.Drawing.Size(418, 145);
             this.listViewAccounts.TabIndex = 3;
             this.listViewAccounts.UseCompatibleStateImageBehavior = false;
             // 
@@ -105,16 +108,39 @@
             // 
             // panelButtons
             // 
+            this.panelButtons.Controls.Add(this.panelSetStartUp);
             this.panelButtons.Controls.Add(this.panelActivate);
             this.panelButtons.Controls.Add(this.panelRename);
             this.panelButtons.Controls.Add(this.panelRemove);
             this.panelButtons.Controls.Add(this.panelAdd);
             this.panelButtons.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelButtons.Location = new System.Drawing.Point(423, 0);
+            this.panelButtons.Location = new System.Drawing.Point(418, 0);
             this.panelButtons.Name = "panelButtons";
             this.panelButtons.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.panelButtons.Size = new System.Drawing.Size(108, 115);
+            this.panelButtons.Size = new System.Drawing.Size(113, 145);
             this.panelButtons.TabIndex = 2;
+            // 
+            // panelSetStartUp
+            // 
+            this.panelSetStartUp.Controls.Add(this.buttonSetStartUp);
+            this.panelSetStartUp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSetStartUp.Location = new System.Drawing.Point(5, 120);
+            this.panelSetStartUp.Name = "panelSetStartUp";
+            this.panelSetStartUp.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.panelSetStartUp.Size = new System.Drawing.Size(108, 30);
+            this.panelSetStartUp.TabIndex = 4;
+            // 
+            // buttonSetStartUp
+            // 
+            this.buttonSetStartUp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSetStartUp.Enabled = false;
+            this.buttonSetStartUp.Location = new System.Drawing.Point(0, 0);
+            this.buttonSetStartUp.Name = "buttonSetStartUp";
+            this.buttonSetStartUp.Size = new System.Drawing.Size(108, 25);
+            this.buttonSetStartUp.TabIndex = 1;
+            this.buttonSetStartUp.Text = "Set as StartUp";
+            this.buttonSetStartUp.UseVisualStyleBackColor = true;
+            this.buttonSetStartUp.Click += new System.EventHandler(this.buttonSetStartUp_Click);
             // 
             // panelActivate
             // 
@@ -123,7 +149,7 @@
             this.panelActivate.Location = new System.Drawing.Point(5, 90);
             this.panelActivate.Name = "panelActivate";
             this.panelActivate.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.panelActivate.Size = new System.Drawing.Size(103, 30);
+            this.panelActivate.Size = new System.Drawing.Size(108, 30);
             this.panelActivate.TabIndex = 3;
             // 
             // buttonActivate
@@ -132,7 +158,7 @@
             this.buttonActivate.Enabled = false;
             this.buttonActivate.Location = new System.Drawing.Point(0, 0);
             this.buttonActivate.Name = "buttonActivate";
-            this.buttonActivate.Size = new System.Drawing.Size(103, 25);
+            this.buttonActivate.Size = new System.Drawing.Size(108, 25);
             this.buttonActivate.TabIndex = 1;
             this.buttonActivate.Text = "Activate";
             this.buttonActivate.UseVisualStyleBackColor = true;
@@ -145,7 +171,7 @@
             this.panelRename.Location = new System.Drawing.Point(5, 60);
             this.panelRename.Name = "panelRename";
             this.panelRename.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.panelRename.Size = new System.Drawing.Size(103, 30);
+            this.panelRename.Size = new System.Drawing.Size(108, 30);
             this.panelRename.TabIndex = 2;
             // 
             // buttonRename
@@ -154,7 +180,7 @@
             this.buttonRename.Enabled = false;
             this.buttonRename.Location = new System.Drawing.Point(0, 0);
             this.buttonRename.Name = "buttonRename";
-            this.buttonRename.Size = new System.Drawing.Size(103, 25);
+            this.buttonRename.Size = new System.Drawing.Size(108, 25);
             this.buttonRename.TabIndex = 1;
             this.buttonRename.Text = "Rename";
             this.buttonRename.UseVisualStyleBackColor = true;
@@ -167,7 +193,7 @@
             this.panelRemove.Location = new System.Drawing.Point(5, 30);
             this.panelRemove.Name = "panelRemove";
             this.panelRemove.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.panelRemove.Size = new System.Drawing.Size(103, 30);
+            this.panelRemove.Size = new System.Drawing.Size(108, 30);
             this.panelRemove.TabIndex = 1;
             // 
             // buttonRemove
@@ -176,7 +202,7 @@
             this.buttonRemove.Enabled = false;
             this.buttonRemove.Location = new System.Drawing.Point(0, 0);
             this.buttonRemove.Name = "buttonRemove";
-            this.buttonRemove.Size = new System.Drawing.Size(103, 25);
+            this.buttonRemove.Size = new System.Drawing.Size(108, 25);
             this.buttonRemove.TabIndex = 1;
             this.buttonRemove.Text = "Remove";
             this.buttonRemove.UseVisualStyleBackColor = true;
@@ -189,7 +215,7 @@
             this.panelAdd.Location = new System.Drawing.Point(5, 0);
             this.panelAdd.Name = "panelAdd";
             this.panelAdd.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.panelAdd.Size = new System.Drawing.Size(103, 30);
+            this.panelAdd.Size = new System.Drawing.Size(108, 30);
             this.panelAdd.TabIndex = 0;
             // 
             // buttonAdd
@@ -197,7 +223,7 @@
             this.buttonAdd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonAdd.Location = new System.Drawing.Point(0, 0);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(103, 25);
+            this.buttonAdd.Size = new System.Drawing.Size(108, 25);
             this.buttonAdd.TabIndex = 0;
             this.buttonAdd.Text = "Add New";
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -207,10 +233,10 @@
             // 
             this.panelBottomHalf.Controls.Add(this.tabControlAccountEditor);
             this.panelBottomHalf.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBottomHalf.Location = new System.Drawing.Point(0, 115);
+            this.panelBottomHalf.Location = new System.Drawing.Point(0, 145);
             this.panelBottomHalf.Name = "panelBottomHalf";
             this.panelBottomHalf.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.panelBottomHalf.Size = new System.Drawing.Size(531, 374);
+            this.panelBottomHalf.Size = new System.Drawing.Size(531, 395);
             this.panelBottomHalf.TabIndex = 3;
             // 
             // tabControlAccountEditor
@@ -221,7 +247,7 @@
             this.tabControlAccountEditor.Location = new System.Drawing.Point(0, 10);
             this.tabControlAccountEditor.Name = "tabControlAccountEditor";
             this.tabControlAccountEditor.SelectedIndex = 0;
-            this.tabControlAccountEditor.Size = new System.Drawing.Size(531, 364);
+            this.tabControlAccountEditor.Size = new System.Drawing.Size(531, 385);
             this.tabControlAccountEditor.TabIndex = 0;
             // 
             // tabIncoming
@@ -230,7 +256,7 @@
             this.tabIncoming.Location = new System.Drawing.Point(4, 22);
             this.tabIncoming.Name = "tabIncoming";
             this.tabIncoming.Padding = new System.Windows.Forms.Padding(3);
-            this.tabIncoming.Size = new System.Drawing.Size(523, 338);
+            this.tabIncoming.Size = new System.Drawing.Size(523, 359);
             this.tabIncoming.TabIndex = 0;
             this.tabIncoming.Text = "Incoming Email";
             this.tabIncoming.UseVisualStyleBackColor = true;
@@ -240,7 +266,7 @@
             pollingConfigValues1.EmailType = AowEmailWrapper.ConfigFramework.EmailType.IMAP;
             pollingConfigValues1.Password = "";
             pollingConfigValues1.PasswordTrue = "";
-            pollingConfigValues1.PollInterval = 0;
+            pollingConfigValues1.PollInterval = 1;
             pollingConfigValues1.Port = 0;
             pollingConfigValues1.Server = "";
             pollingConfigValues1.UsePolling = false;
@@ -260,7 +286,7 @@
             this.tabOutgoing.Location = new System.Drawing.Point(4, 22);
             this.tabOutgoing.Name = "tabOutgoing";
             this.tabOutgoing.Padding = new System.Windows.Forms.Padding(3);
-            this.tabOutgoing.Size = new System.Drawing.Size(523, 338);
+            this.tabOutgoing.Size = new System.Drawing.Size(523, 359);
             this.tabOutgoing.TabIndex = 1;
             this.tabOutgoing.Text = "Outgoing Email";
             this.tabOutgoing.UseVisualStyleBackColor = true;
@@ -292,9 +318,10 @@
             this.Controls.Add(this.panelBottomHalf);
             this.Controls.Add(this.panelTopHalf);
             this.Name = "AccountsConfig";
-            this.Size = new System.Drawing.Size(531, 489);
+            this.Size = new System.Drawing.Size(531, 540);
             this.panelTopHalf.ResumeLayout(false);
             this.panelButtons.ResumeLayout(false);
+            this.panelSetStartUp.ResumeLayout(false);
             this.panelActivate.ResumeLayout(false);
             this.panelRename.ResumeLayout(false);
             this.panelRemove.ResumeLayout(false);
@@ -328,6 +355,8 @@
         private System.Windows.Forms.TabPage tabOutgoing;
         private SmtpConfig smtpConfig;
         private System.Windows.Forms.ImageList imageListLargeIcons;
+        private System.Windows.Forms.Panel panelSetStartUp;
+        private System.Windows.Forms.Button buttonSetStartUp;
 
     }
 }

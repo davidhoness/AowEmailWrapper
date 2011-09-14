@@ -33,6 +33,7 @@ namespace AowEmailWrapper.Controls
         private const string Menu_Remove_Tag = "menuItemRemove";
         private const string Menu_Rename_Tag = "menuItemRename";
         private const string Menu_Activate_Tag = "menuItemActivate";
+        private const string Menu_SetStartUp_Tag = "menuItemSetStartUp";
         private string DefaultImageKey = EmailProviderType.Other.ToString();
         
         private bool _configChanged = false;
@@ -129,6 +130,11 @@ namespace AowEmailWrapper.Controls
             Activate();
         }
 
+        private void buttonSetStartUp_Click(object sender, EventArgs e)
+        {
+            SetAsStartUp();
+        }
+
         private void listViewAccounts_SelectedIndexChanged(object sender, EventArgs e)
         {
             CheckEnabled();
@@ -171,6 +177,7 @@ namespace AowEmailWrapper.Controls
             buttonRemove.Enabled = enabled;
             buttonRename.Enabled = enabled;
             buttonActivate.Enabled = enabled;
+            buttonSetStartUp.Enabled = enabled;
         }
 
         private void Raise_Config_Changed()
@@ -263,8 +270,6 @@ namespace AowEmailWrapper.Controls
                     {
                         if (MessageBox.Show(Translator.Translate(AccountDeletePromptTextKey, theAccount.Name), Translator.Translate(AccountsTextKey), MessageBoxButtons.YesNo, MessageBoxIcon.Question).Equals(DialogResult.Yes))
                         {
-                            int selectedIndex = GetSlectedIndex();
-
                             if (theAccount.Equals(_accountsList.ActiveAccount))
                             {
                                 _accountsList.Accounts.Remove(theAccount);
@@ -277,15 +282,6 @@ namespace AowEmailWrapper.Controls
 
                             Populate();
                             Raise_Config_Changed();
-
-                            //Refocus selected item
-                            if (listViewAccounts.Items.Count > 0)
-                            {
-                                listViewAccounts.Focus();
-                                int maxIndex = listViewAccounts.Items.Count - 1;
-                                int newIndex = selectedIndex < maxIndex ? selectedIndex : maxIndex;
-                                listViewAccounts.Items[newIndex].Selected = true;
-                            }
                         }
                     }
                 }
@@ -343,6 +339,24 @@ namespace AowEmailWrapper.Controls
             }
         }
 
+        private void SetAsStartUp()
+        {
+            if (_accountsList != null &&
+                _accountsList.Accounts != null)
+            {
+                string theName = GetSelectedItem();
+
+                AccountConfigValues theAccount = _accountsList.GetAccountByName(theName);
+                if (theAccount != null)
+                {
+                    _accountsList.StartUpAccount = theAccount;
+
+                    Populate();
+                    Raise_Config_Changed();
+                }
+            }
+        }
+
         private string GetSelectedItem()
         {
             string theTag = null;
@@ -367,6 +381,7 @@ namespace AowEmailWrapper.Controls
             return selected;        
         }
 
+
         private void Populate()
         {
             if (_accountsList != null &&
@@ -383,6 +398,7 @@ namespace AowEmailWrapper.Controls
                     foreach (AccountConfigValues account in _accountsList.Accounts)
                     {
                         ListViewItem item = new ListViewItem();
+
                         if (account.Equals(_accountsList.ActiveAccount))
                         {
                             item.Text = string.Format(AccountActiveTemplate, account.Name, Translator.Translate(AccountActiveTextKey));
@@ -396,6 +412,13 @@ namespace AowEmailWrapper.Controls
                         {
                             item.Text = account.Name;
                             item.ForeColor = Color.Gray;
+                        }
+
+                        //Highlight the StartUp Account
+                        if (account.Equals(_accountsList.StartUpAccount))
+                        {
+                            item.BackColor = SystemColors.ControlDarkDark;
+                            item.ForeColor = SystemColors.ControlLightLight;
                         }
 
                         item.Tag = account.Name;
@@ -416,7 +439,6 @@ namespace AowEmailWrapper.Controls
                     if (activeItem != null)
                     {
                         activeItem.EnsureVisible();
-                        activeItem.Selected = true;
                     }
                 }
 
@@ -563,10 +585,9 @@ namespace AowEmailWrapper.Controls
             MenuItem remove = new MenuItem();
             MenuItem rename = new MenuItem();
             MenuItem activate = new MenuItem();
+            MenuItem setStartUp = new MenuItem();
 
-            _contextMenu.MenuItems.AddRange(new MenuItem[] { add, remove, rename, activate });
-
-            //_contextMenu.Popup += new EventHandler(ContextMenu_Popup);
+            _contextMenu.MenuItems.AddRange(new MenuItem[] { add, remove, rename, activate, setStartUp });
 
             add.Index = indexCount;
             add.Text = Translator.Translate(Menu_Add_Tag);
@@ -590,6 +611,12 @@ namespace AowEmailWrapper.Controls
             activate.Text = Translator.Translate(Menu_Activate_Tag);
             activate.Tag = Menu_Activate_Tag;
             activate.Click += menuItemClickEvent;
+
+            indexCount++;
+            setStartUp.Index = indexCount;
+            setStartUp.Text = Translator.Translate(Menu_SetStartUp_Tag);
+            setStartUp.Tag = Menu_SetStartUp_Tag;
+            setStartUp.Click += menuItemClickEvent;
 
             listViewAccounts.ContextMenu = _contextMenu;
         }
@@ -623,6 +650,9 @@ namespace AowEmailWrapper.Controls
                     break;
                 case Menu_Activate_Tag:
                     Activate();
+                    break;
+                case Menu_SetStartUp_Tag:
+                    SetAsStartUp();
                     break;
             }
         }
