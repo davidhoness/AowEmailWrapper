@@ -26,6 +26,7 @@ namespace AowEmailWrapper.ConfigFramework
         private PollingConfigValues _pollingConfigValues;
         private SmtpConfigValues _smtpConfigValues;
         private string _name;
+        private bool _isStartUpAccount;
         private EmailProviderType _emailProviderType; //Template property
         private string _domains; //Template property
         private string _shortUserName; //Template property
@@ -49,6 +50,13 @@ namespace AowEmailWrapper.ConfigFramework
         {
             get { return _name; }
             set { _name = value; }
+        }
+
+        [XmlAttribute("is_startup_account")]
+        public bool IsStartUpAccount
+        {
+            get { return _isStartUpAccount; }
+            set { _isStartUpAccount = value; }
         }
 
         //Template property
