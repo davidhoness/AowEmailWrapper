@@ -254,7 +254,7 @@ namespace AowEmailWrapper
                     if (_wrapperConfig.AccountsList != null)
                     {
                         accountsConfig.Config = _wrapperConfig.AccountsList;
-                        ActivateAccount(_wrapperConfig.AccountsList.ActiveAccount); //This will turn on Config Change Tracking
+                        ActivateAccount(_wrapperConfig.AccountsList.StartUpAccount); //This will turn on Config Change Tracking
                     }
                 }
             }
