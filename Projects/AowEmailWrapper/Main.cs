@@ -85,6 +85,8 @@ namespace AowEmailWrapper
         private EventHandler _activityLogRefresh;
         private bool _closeCancel = true;
         private bool _isNewConfig = false;
+        private bool _configNeedsSave = false;
+        private bool _configChangeTracking = false;
 
         private ContextMenu _contextMenu;
 
@@ -92,6 +94,42 @@ namespace AowEmailWrapper
         private MenuItem _menuShow;
         private MenuItem _menuPoll;
         private MenuItem _menuExit;
+
+        #endregion
+
+        #region Properties
+
+        protected bool ConfigNeedsSave
+        {
+            get { return _configNeedsSave; }
+            set
+            {
+                _configNeedsSave = value;
+                cmdSave.Enabled = _configNeedsSave;
+                cmdSave.BackColor = cmdSave.Enabled ? Color.IndianRed : this.BackColor;
+            }
+        }
+
+        protected bool ConfigChangeTracking
+        {
+            get { return _configChangeTracking; }
+            set
+            {
+                _configChangeTracking = value;
+                EventHandler configNeedsSave = new EventHandler(OnConfigNeedsSave);
+
+                if (_configChangeTracking)
+                {
+                    accountsConfig.Config_Changed += configNeedsSave;
+                    preferencesConfig.Config_Changed += configNeedsSave;
+                }
+                else
+                {
+                    accountsConfig.Config_Changed -= configNeedsSave;
+                    preferencesConfig.Config_Changed -= configNeedsSave;
+                }
+            }
+        }
 
         #endregion
 
@@ -131,8 +169,6 @@ namespace AowEmailWrapper
             CheckNotifyIconState(true);
 
             this.FormClosing += new FormClosingEventHandler(Main_FormClosing);
-
-            //StartServer();
         }
 
         #region Form Events
@@ -210,15 +246,15 @@ namespace AowEmailWrapper
 
                 if (_wrapperConfig != null)
                 {
-                    if (_wrapperConfig.AccountsList != null)
-                    {
-                        accountsConfig.Config = _wrapperConfig.AccountsList;
-                        ActivateAccount(_wrapperConfig.AccountsList.ActiveAccount);
-                    }
-
                     if (_wrapperConfig.PreferencesConfig != null)
                     {
                         preferencesConfig.Config = _wrapperConfig.PreferencesConfig;
+                    }
+
+                    if (_wrapperConfig.AccountsList != null)
+                    {
+                        accountsConfig.Config = _wrapperConfig.AccountsList;
+                        ActivateAccount(_wrapperConfig.AccountsList.ActiveAccount); //This will turn on Config Change Tracking
                     }
                 }
             }
@@ -282,6 +318,7 @@ namespace AowEmailWrapper
                 _wrapperConfig.PreferencesConfig = preferencesConfigValues;
 
                 DataManagerHelper.SaveConfig(_wrapperConfig);
+                ConfigNeedsSave = false;
 
                 bool activateSuccess = false;
 
@@ -326,13 +363,8 @@ namespace AowEmailWrapper
             _activityLogRefresh += new EventHandler(ActivityLogRefresh);
             _gameManager.OnGameSaved += new AowGameSavedEventHandler(OnAowGameSaved);
 
-            EventHandler configNeedsSave = new EventHandler(Config_Needs_Save);
-
             accountsConfig.Account_Activated += new AccountActivatedEventHandler(Account_Activated);
             accountsConfig.Config_Changed += new EventHandler(Rebuild_Account_Menu);
-            accountsConfig.Config_Changed += configNeedsSave;
-            
-            preferencesConfig.Config_Changed += configNeedsSave;
 
             activityListView.OnDoubleClick += new ActivityListViewEventHandler(ActivityListViewDoubleClicked);
             activityListView.OnListChanged += new EventHandler(ActivityLogChanged);
@@ -350,10 +382,9 @@ namespace AowEmailWrapper
             _startedGameWatcher = null;
         }
 
-        private void Config_Needs_Save(object sender, EventArgs e)
+        private void OnConfigNeedsSave(object sender, EventArgs e)
         {
-            cmdSave.Enabled = true;
-            cmdSave.BackColor = Color.IndianRed;
+            ConfigNeedsSave = true;
         }
 
         #endregion
@@ -823,6 +854,8 @@ namespace AowEmailWrapper
             else if (account != null &&
                 !string.IsNullOrEmpty(account.Name))
             {
+                ConfigChangeTracking = false;
+
                 _wrapperConfig.AccountsList.ActiveAccountName = account.Name;
 
                 if (account.PollingConfig != null)
@@ -883,8 +916,7 @@ namespace AowEmailWrapper
 
                 accountsConfig.Refresh();
 
-                cmdSave.BackColor = this.BackColor;
-                cmdSave.Enabled = false;
+                ConfigChangeTracking = true;
             }
 
             return success;
