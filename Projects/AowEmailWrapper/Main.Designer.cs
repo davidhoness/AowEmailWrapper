@@ -481,7 +481,7 @@
             this.fbLink.Size = new System.Drawing.Size(40, 40);
             this.fbLink.TabIndex = 11;
             this.fbLink.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.fbLink.Url = "http://www.facebook.com/pages/173302036046975";
+            this.fbLink.Url = "http://www.facebook.com/pages/Age-of-Wonders-Email-Wrapper/173302036046975";
             this.fbLink.UseVisualStyleBackColor = false;
             // 
             // button1
