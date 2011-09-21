@@ -52,13 +52,6 @@ namespace AowEmailWrapper.ConfigFramework
             set { _name = value; }
         }
 
-        [XmlAttribute("is_startup_account")]
-        public bool IsStartUpAccount
-        {
-            get { return _isStartUpAccount; }
-            set { _isStartUpAccount = value; }
-        }
-
         //Template property
         [XmlAttribute("emailprovidertype")]
         public EmailProviderType EmailProvider
