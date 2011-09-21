@@ -358,7 +358,7 @@ namespace AowEmailWrapper.Controls
                 AccountConfigValues theAccount = _accountsList.GetAccountByName(theName);
                 if (theAccount != null)
                 {
-                    _accountsList.StartUpAccount = theAccount;
+                    _accountsList.StartUpAccountName = theAccount.Name;
 
                     Populate();
                     Raise_Config_Changed();
