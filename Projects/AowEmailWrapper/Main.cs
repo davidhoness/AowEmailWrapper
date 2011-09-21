@@ -147,7 +147,7 @@ namespace AowEmailWrapper
 
             if (!_gameManager.CheckWriteAccess())
             {
-                MessageBox.Show(Translator.Translate(WrapperWriteAccessMessageBoxKey, _gameManager.GetEmailInFolderList()), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Translator.Translate(WrapperWriteAccessMessageBoxKey, _gameManager.GetEmailInFolderList()), Translator.Translate(this.Name), MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             lblVersion.Text = string.Format(lblVersion.Text, ConfigHelper.BuildVersion);
@@ -331,7 +331,7 @@ namespace AowEmailWrapper
                     !preferencesConfigValues.LanguageCode.Equals(Translator.CurrentLanguageCode) &&
                     activateSuccess)
                 {
-                    if (MessageBox.Show(Translator.Translate(WrapperRestartRequiredKey), this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Information).Equals(DialogResult.Yes))
+                    if (MessageBox.Show(Translator.Translate(WrapperRestartRequiredKey), Translator.Translate(this.Name), MessageBoxButtons.YesNo, MessageBoxIcon.Information).Equals(DialogResult.Yes))
                     {
                         RestartWrapper();
                     }
@@ -537,7 +537,7 @@ namespace AowEmailWrapper
         private void ShowException(Exception ex)
         {
             string error = string.Concat(ex.Message, "\r\n\r\n", ex.StackTrace);
-            MessageBox.Show(error, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(error, Translator.Translate(this.Name), MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void StartGame(AowGame theGame)
@@ -811,7 +811,7 @@ namespace AowEmailWrapper
                     theResponse.GameEmail.Subject,
                     theResponse.GameEmail.To.ToString(),
                     theResponse.Error),
-                    this.Text, MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                    Translator.Translate(this.Name), MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
 
                 if (theResult.Equals(DialogResult.Retry) && _smtpSender != null)
                 {
@@ -849,7 +849,7 @@ namespace AowEmailWrapper
             if ((_smtpSender != null && _smtpSender.IsSending))
             {
                 success = false;
-                MessageBox.Show(Translator.Translate(WrapperCannotActivateAccountMessageBoxKey, account.Name), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Translator.Translate(WrapperCannotActivateAccountMessageBoxKey, account.Name), Translator.Translate(this.Name), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (account != null &&
                 !string.IsNullOrEmpty(account.Name))
@@ -974,7 +974,7 @@ namespace AowEmailWrapper
             {
                 try
                 {
-                    if (MessageBox.Show(Translator.Translate(WrapperArchiveGameMessageBoxKey, ConfigHelper.EndedFolder), this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show(Translator.Translate(WrapperArchiveGameMessageBoxKey, ConfigHelper.EndedFolder), Translator.Translate(this.Name), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         list.ForEach(endedActivity => _gameManager.ArchiveEndedGame(endedActivity.GameType, endedActivity.FileName, ConfigHelper.EndedFolder));
                     }
