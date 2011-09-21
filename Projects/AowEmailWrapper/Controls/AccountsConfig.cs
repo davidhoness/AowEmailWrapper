@@ -274,15 +274,20 @@ namespace AowEmailWrapper.Controls
                     string theName = GetSelectedItem();
 
                     AccountConfigValues theAccount = _accountsList.GetAccountByName(theName);
+                    AccountConfigValues fallBackAccount = _accountsList.Accounts[0];
 
                     if (theAccount != null)
                     {
                         if (MessageBox.Show(Translator.Translate(AccountDeletePromptTextKey, theAccount.Name), Translator.Translate(AccountsTextKey), MessageBoxButtons.YesNo, MessageBoxIcon.Question).Equals(DialogResult.Yes))
                         {
+                            if (theAccount.Equals(_accountsList.StartUpAccount))
+                            {
+                                _accountsList.StartUpAccountName = fallBackAccount.Name;
+                            }
                             if (theAccount.Equals(_accountsList.ActiveAccount))
                             {
                                 _accountsList.Accounts.Remove(theAccount);
-                                Raise_Account_Activated(_accountsList.Accounts[0]);
+                                Raise_Account_Activated(fallBackAccount);
                             }
                             else
                             {
@@ -320,12 +325,12 @@ namespace AowEmailWrapper.Controls
                             if (theAccount.Equals(_accountsList.ActiveAccount))
                             {
                                 _accountsList.ActiveAccountName = theName;
-                                theAccount.Name = theName;
                             }
-                            else
+                            if (theAccount.Equals(_accountsList.StartUpAccount))
                             {
-                                theAccount.Name = theName;
+                                _accountsList.StartUpAccountName = theName;
                             }
+                            theAccount.Name = theName;
 
                             Populate();
                             Raise_Config_Changed();
