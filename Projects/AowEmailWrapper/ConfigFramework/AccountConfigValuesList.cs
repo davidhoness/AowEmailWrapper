@@ -11,6 +11,7 @@ namespace AowEmailWrapper.ConfigFramework
     {
         private List<AccountConfigValues> _accounts;
         private string _activeAccountName;
+        private string _startUpAccountName;
 
         [XmlElement("account")]
         public List<AccountConfigValues> Accounts
@@ -26,6 +27,13 @@ namespace AowEmailWrapper.ConfigFramework
             set { _activeAccountName = value; }
         }
 
+        [XmlAttribute("startup_account")]
+        public string StartUpAccountName
+        {
+            get { return _startUpAccountName; }
+            set { _startUpAccountName = value; }
+        }
+
         [XmlIgnore]
         public AccountConfigValues ActiveAccount
         {
@@ -35,28 +43,8 @@ namespace AowEmailWrapper.ConfigFramework
         [XmlIgnore]
         public AccountConfigValues StartUpAccount
         {
-            get 
-            {
-                AccountConfigValues startUpAccount = _accounts.Find(account => account.IsStartUpAccount);
-                if (startUpAccount == null)
-                {
-                    //To handle old config data from previous versions of the Wrapper
-                    startUpAccount = ActiveAccount;
-                    if (startUpAccount != null)
-                    {
-                        startUpAccount.IsStartUpAccount = true;
-                    }
-                }
-                return startUpAccount;
-            }
-            set 
-            {
-                if (value != null)
-                {
-                    _accounts.ForEach(account => account.IsStartUpAccount = false);
-                    value.IsStartUpAccount = true;
-                }
-            }
+            //Falls back onto the active account name should this be a config from a previous build of the Wrapper
+            get { return GetAccountByName(!string.IsNullOrEmpty(_startUpAccountName) ? _startUpAccountName : _activeAccountName); }
         }
 
         public AccountConfigValues GetAccountByName(string name)
