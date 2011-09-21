@@ -114,6 +114,7 @@
 		<lookup key="buttonOK" value="OK"/>
 		<lookup key="buttonCancel" value="Cancel"/>
 		<lookup key="activeAccount" value="Active"/>
+    <lookup key="startUpAccount" value="Default"/>
 		<!-- END: Misc -->
 	</language>
 	<language code="fr" display="Française">
