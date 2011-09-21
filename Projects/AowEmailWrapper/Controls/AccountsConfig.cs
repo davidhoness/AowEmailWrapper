@@ -28,13 +28,18 @@ namespace AowEmailWrapper.Controls
         private const string AccountDeletePromptTextKey = "msgAccountDeletePrompt";
         private const string AccountDuplicateTextKey = "msgAccountDuplicate";
         private const string AccountActiveTextKey = "activeAccount";
-        private const string AccountActiveTemplate = "{0} ({1})";
+        private const string AccountStartUpTextKey = "startUpAccount";
+        private const string AccountStatusTemplate = "{0} ({1})";
+        private const string AccountTwinStatusTemplate = "{0} ({1} {2})";
         private const string Menu_Add_Tag = "menuItemAdd";
         private const string Menu_Remove_Tag = "menuItemRemove";
         private const string Menu_Rename_Tag = "menuItemRename";
         private const string Menu_Activate_Tag = "menuItemActivate";
         private const string Menu_SetStartUp_Tag = "menuItemSetStartUp";
         private string DefaultImageKey = EmailProviderType.Other.ToString();
+
+        private Font ActiveFont = null;
+        private Font NormalFont = null;
         
         private bool _configChanged = false;
 
@@ -76,6 +81,10 @@ namespace AowEmailWrapper.Controls
         public AccountsConfig()
         {
             InitializeComponent();
+
+            ActiveFont = new Font(this.Font, FontStyle.Bold);
+            NormalFont = new Font(this.Font, FontStyle.Regular);
+
             CreateContextMenu();
             listViewAccounts.DoubleClick += new EventHandler(listViewAccounts_DoubleClick);
             listViewAccounts.SelectedIndexChanged += new EventHandler(listViewAccounts_SelectedIndexChanged);
@@ -242,7 +251,7 @@ namespace AowEmailWrapper.Controls
                     do
                     {
                         num++;
-                        proposedName = string.Format(AccountActiveTemplate, theNewAccount.Name, num);
+                        proposedName = string.Format(AccountStatusTemplate, theNewAccount.Name, num);
                         success = !_accountsList.CheckAccountExistsByName(proposedName);
 
                     } while (!success);
@@ -378,9 +387,8 @@ namespace AowEmailWrapper.Controls
                 selected = listViewAccounts.SelectedIndices[0];
             }
 
-            return selected;        
+            return selected;
         }
-
 
         private void Populate()
         {
@@ -389,61 +397,73 @@ namespace AowEmailWrapper.Controls
             {
                 listViewAccounts.SelectedItems.Clear();
                 listViewAccounts.Items.Clear();
-                listViewAccounts.SuspendLayout();
+                listViewAccounts.BeginUpdate();
 
                 if (_accountsList.Accounts.Count > 0)
                 {
-                    ListViewItem activeItem = null;
-
                     foreach (AccountConfigValues account in _accountsList.Accounts)
                     {
-                        ListViewItem item = new ListViewItem();
+                        ListViewItem item = CreateListItem(account);
+
+                        listViewAccounts.Items.Add(item);
 
                         if (account.Equals(_accountsList.ActiveAccount))
                         {
-                            item.Text = string.Format(AccountActiveTemplate, account.Name, Translator.Translate(AccountActiveTextKey));
-                            item.Font = new Font(item.Font, FontStyle.Bold);
-
                             pollingConfig.Config = account.PollingConfig;
                             smtpConfig.Config = account.SmtpConfig;
-                            activeItem = item;
+                            item.EnsureVisible();
                         }
-                        else
-                        {
-                            item.Text = account.Name;
-                            item.ForeColor = Color.Gray;
-                        }
-
-                        //Highlight the StartUp Account
-                        if (account.Equals(_accountsList.StartUpAccount))
-                        {
-                            item.BackColor = SystemColors.ControlDarkDark;
-                            item.ForeColor = SystemColors.ControlLightLight;
-                        }
-
-                        item.Tag = account.Name;
-
-                        int imageIndex = -1;
-
-                        if (account.SmtpConfig != null &&
-                            !string.IsNullOrEmpty(account.SmtpConfig.EmailAddress))
-                        {
-                            imageIndex = imageListLargeIcons.Images.IndexOfKey(GetEmailProviderType(account.SmtpConfig.EmailAddress));
-                        }
-                      
-                        item.ImageIndex = (imageIndex >= 0) ? imageIndex : imageListLargeIcons.Images.IndexOfKey(EmailProviderType.Other.ToString());
-
-                        listViewAccounts.Items.Add(item);
-                    }
-
-                    if (activeItem != null)
-                    {
-                        activeItem.EnsureVisible();
                     }
                 }
 
-                listViewAccounts.ResumeLayout();
+                listViewAccounts.EndUpdate();
             }
+        }
+
+        private ListViewItem CreateListItem(AccountConfigValues account)
+        {
+            ListViewItem item = new ListViewItem();
+
+            if (account.Equals(_accountsList.ActiveAccount))
+            {
+                if (account.Equals(_accountsList.StartUpAccount))
+                {
+                    item.Text = string.Format(AccountTwinStatusTemplate, account.Name, Translator.Translate(AccountActiveTextKey), Translator.Translate(AccountStartUpTextKey));
+                }
+                else
+                {
+                    item.Text = string.Format(AccountStatusTemplate, account.Name, Translator.Translate(AccountActiveTextKey));
+                }
+
+                item.Font = ActiveFont;
+            }
+            else
+            {
+                if (account.Equals(_accountsList.StartUpAccount))
+                {
+                    item.Text = string.Format(AccountStatusTemplate, account.Name, Translator.Translate(AccountStartUpTextKey));
+                }
+                else
+                {
+                    item.Text = account.Name;
+                }
+
+                item.ForeColor = Color.Gray;
+                item.Font = NormalFont;
+            }
+
+            item.Tag = account.Name;
+
+            int imageIndex = -1;
+            if (account.SmtpConfig != null &&
+                !string.IsNullOrEmpty(account.SmtpConfig.EmailAddress))
+            {
+                imageIndex = imageListLargeIcons.Images.IndexOfKey(GetEmailProviderType(account.SmtpConfig.EmailAddress));
+            }
+
+            item.ImageIndex = (imageIndex >= 0) ? imageIndex : imageListLargeIcons.Images.IndexOfKey(EmailProviderType.Other.ToString());
+
+            return item;
         }
 
         private void Scrape()
