@@ -73,7 +73,7 @@
             this.panelTopHalf.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTopHalf.Location = new System.Drawing.Point(0, 0);
             this.panelTopHalf.Name = "panelTopHalf";
-            this.panelTopHalf.Size = new System.Drawing.Size(531, 145);
+            this.panelTopHalf.Size = new System.Drawing.Size(531, 205);
             this.panelTopHalf.TabIndex = 0;
             // 
             // listViewAccounts
@@ -88,7 +88,7 @@
             this.listViewAccounts.Location = new System.Drawing.Point(0, 0);
             this.listViewAccounts.MultiSelect = false;
             this.listViewAccounts.Name = "listViewAccounts";
-            this.listViewAccounts.Size = new System.Drawing.Size(418, 145);
+            this.listViewAccounts.Size = new System.Drawing.Size(418, 205);
             this.listViewAccounts.TabIndex = 3;
             this.listViewAccounts.UseCompatibleStateImageBehavior = false;
             // 
@@ -117,17 +117,17 @@
             this.panelButtons.Location = new System.Drawing.Point(418, 0);
             this.panelButtons.Name = "panelButtons";
             this.panelButtons.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.panelButtons.Size = new System.Drawing.Size(113, 145);
+            this.panelButtons.Size = new System.Drawing.Size(113, 205);
             this.panelButtons.TabIndex = 2;
             // 
             // panelSetStartUp
             // 
             this.panelSetStartUp.Controls.Add(this.buttonSetStartUp);
             this.panelSetStartUp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSetStartUp.Location = new System.Drawing.Point(5, 120);
+            this.panelSetStartUp.Location = new System.Drawing.Point(5, 168);
             this.panelSetStartUp.Name = "panelSetStartUp";
             this.panelSetStartUp.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.panelSetStartUp.Size = new System.Drawing.Size(108, 30);
+            this.panelSetStartUp.Size = new System.Drawing.Size(108, 42);
             this.panelSetStartUp.TabIndex = 4;
             // 
             // buttonSetStartUp
@@ -136,7 +136,7 @@
             this.buttonSetStartUp.Enabled = false;
             this.buttonSetStartUp.Location = new System.Drawing.Point(0, 0);
             this.buttonSetStartUp.Name = "buttonSetStartUp";
-            this.buttonSetStartUp.Size = new System.Drawing.Size(108, 25);
+            this.buttonSetStartUp.Size = new System.Drawing.Size(108, 37);
             this.buttonSetStartUp.TabIndex = 1;
             this.buttonSetStartUp.Text = "Set as StartUp";
             this.buttonSetStartUp.UseVisualStyleBackColor = true;
@@ -146,10 +146,10 @@
             // 
             this.panelActivate.Controls.Add(this.buttonActivate);
             this.panelActivate.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelActivate.Location = new System.Drawing.Point(5, 90);
+            this.panelActivate.Location = new System.Drawing.Point(5, 126);
             this.panelActivate.Name = "panelActivate";
             this.panelActivate.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.panelActivate.Size = new System.Drawing.Size(108, 30);
+            this.panelActivate.Size = new System.Drawing.Size(108, 42);
             this.panelActivate.TabIndex = 3;
             // 
             // buttonActivate
@@ -158,7 +158,7 @@
             this.buttonActivate.Enabled = false;
             this.buttonActivate.Location = new System.Drawing.Point(0, 0);
             this.buttonActivate.Name = "buttonActivate";
-            this.buttonActivate.Size = new System.Drawing.Size(108, 25);
+            this.buttonActivate.Size = new System.Drawing.Size(108, 37);
             this.buttonActivate.TabIndex = 1;
             this.buttonActivate.Text = "Activate";
             this.buttonActivate.UseVisualStyleBackColor = true;
@@ -168,10 +168,10 @@
             // 
             this.panelRename.Controls.Add(this.buttonRename);
             this.panelRename.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelRename.Location = new System.Drawing.Point(5, 60);
+            this.panelRename.Location = new System.Drawing.Point(5, 84);
             this.panelRename.Name = "panelRename";
             this.panelRename.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.panelRename.Size = new System.Drawing.Size(108, 30);
+            this.panelRename.Size = new System.Drawing.Size(108, 42);
             this.panelRename.TabIndex = 2;
             // 
             // buttonRename
@@ -180,7 +180,7 @@
             this.buttonRename.Enabled = false;
             this.buttonRename.Location = new System.Drawing.Point(0, 0);
             this.buttonRename.Name = "buttonRename";
-            this.buttonRename.Size = new System.Drawing.Size(108, 25);
+            this.buttonRename.Size = new System.Drawing.Size(108, 37);
             this.buttonRename.TabIndex = 1;
             this.buttonRename.Text = "Rename";
             this.buttonRename.UseVisualStyleBackColor = true;
@@ -190,10 +190,10 @@
             // 
             this.panelRemove.Controls.Add(this.buttonRemove);
             this.panelRemove.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelRemove.Location = new System.Drawing.Point(5, 30);
+            this.panelRemove.Location = new System.Drawing.Point(5, 42);
             this.panelRemove.Name = "panelRemove";
             this.panelRemove.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.panelRemove.Size = new System.Drawing.Size(108, 30);
+            this.panelRemove.Size = new System.Drawing.Size(108, 42);
             this.panelRemove.TabIndex = 1;
             // 
             // buttonRemove
@@ -202,7 +202,7 @@
             this.buttonRemove.Enabled = false;
             this.buttonRemove.Location = new System.Drawing.Point(0, 0);
             this.buttonRemove.Name = "buttonRemove";
-            this.buttonRemove.Size = new System.Drawing.Size(108, 25);
+            this.buttonRemove.Size = new System.Drawing.Size(108, 37);
             this.buttonRemove.TabIndex = 1;
             this.buttonRemove.Text = "Remove";
             this.buttonRemove.UseVisualStyleBackColor = true;
@@ -215,7 +215,7 @@
             this.panelAdd.Location = new System.Drawing.Point(5, 0);
             this.panelAdd.Name = "panelAdd";
             this.panelAdd.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.panelAdd.Size = new System.Drawing.Size(108, 30);
+            this.panelAdd.Size = new System.Drawing.Size(108, 42);
             this.panelAdd.TabIndex = 0;
             // 
             // buttonAdd
@@ -223,7 +223,7 @@
             this.buttonAdd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonAdd.Location = new System.Drawing.Point(0, 0);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(108, 25);
+            this.buttonAdd.Size = new System.Drawing.Size(108, 37);
             this.buttonAdd.TabIndex = 0;
             this.buttonAdd.Text = "Add New";
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -233,10 +233,10 @@
             // 
             this.panelBottomHalf.Controls.Add(this.tabControlAccountEditor);
             this.panelBottomHalf.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBottomHalf.Location = new System.Drawing.Point(0, 145);
+            this.panelBottomHalf.Location = new System.Drawing.Point(0, 205);
             this.panelBottomHalf.Name = "panelBottomHalf";
             this.panelBottomHalf.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.panelBottomHalf.Size = new System.Drawing.Size(531, 395);
+            this.panelBottomHalf.Size = new System.Drawing.Size(531, 376);
             this.panelBottomHalf.TabIndex = 3;
             // 
             // tabControlAccountEditor
@@ -247,7 +247,7 @@
             this.tabControlAccountEditor.Location = new System.Drawing.Point(0, 10);
             this.tabControlAccountEditor.Name = "tabControlAccountEditor";
             this.tabControlAccountEditor.SelectedIndex = 0;
-            this.tabControlAccountEditor.Size = new System.Drawing.Size(531, 385);
+            this.tabControlAccountEditor.Size = new System.Drawing.Size(531, 366);
             this.tabControlAccountEditor.TabIndex = 0;
             // 
             // tabIncoming
@@ -256,7 +256,7 @@
             this.tabIncoming.Location = new System.Drawing.Point(4, 22);
             this.tabIncoming.Name = "tabIncoming";
             this.tabIncoming.Padding = new System.Windows.Forms.Padding(3);
-            this.tabIncoming.Size = new System.Drawing.Size(523, 359);
+            this.tabIncoming.Size = new System.Drawing.Size(523, 340);
             this.tabIncoming.TabIndex = 0;
             this.tabIncoming.Text = "Incoming Email";
             this.tabIncoming.UseVisualStyleBackColor = true;
@@ -286,7 +286,7 @@
             this.tabOutgoing.Location = new System.Drawing.Point(4, 22);
             this.tabOutgoing.Name = "tabOutgoing";
             this.tabOutgoing.Padding = new System.Windows.Forms.Padding(3);
-            this.tabOutgoing.Size = new System.Drawing.Size(523, 359);
+            this.tabOutgoing.Size = new System.Drawing.Size(523, 320);
             this.tabOutgoing.TabIndex = 1;
             this.tabOutgoing.Text = "Outgoing Email";
             this.tabOutgoing.UseVisualStyleBackColor = true;
@@ -318,7 +318,7 @@
             this.Controls.Add(this.panelBottomHalf);
             this.Controls.Add(this.panelTopHalf);
             this.Name = "AccountsConfig";
-            this.Size = new System.Drawing.Size(531, 540);
+            this.Size = new System.Drawing.Size(531, 581);
             this.panelTopHalf.ResumeLayout(false);
             this.panelButtons.ResumeLayout(false);
             this.panelSetStartUp.ResumeLayout(false);
