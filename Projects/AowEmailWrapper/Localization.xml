@@ -121,6 +121,7 @@
 		<!-- BEGIN: Main forms -->
 		<lookup key="tabAccounts" value="Comptes"/>
 		<lookup key="buttonActivate" value="Activer"/>
+		<lookup key="buttonSetStartUp" value="Utiliser par Défaut"/>
 		<lookup key="buttonRename" value="Renommer"/>
 		<lookup key="buttonRemove" value="Supprimer"/>
 		<lookup key="buttonAdd" value="Créer"/>
@@ -184,6 +185,7 @@
 		<lookup key="msgWrapperArchiveGame" value="Souhaitez-vous également archiver les parties sélectionnées ? Ceci déplacera leurs fichiers dans un dossier séparé nommé '{0}' et demeurera accessible depuis le jeu."/>
 		<lookup key="msgWrapperCannotActivateAccount" value="Impossible d'activer le compte &quot;{0}&quot; pour l'instant. Merci d'attendre la fin de l'envoi de mail."/>
 		<lookup key="msgAccountPrompt" value="Saisissez le nom du compte :"/>
+		<lookup key="msgAccountDeletePrompt" value="Etes-vous sûr de vouloir supprimer le compte: {0} ?"/>
 		<lookup key="msgAccountDuplicate" value="Un compte portant ce nom existe déjà. Merci de choisir un autre nom."/>
 		<lookup key="msgWrapperEmailSentSuccess" value="Envoi vers [{0}] réussi."/>
 		<lookup key="msgWrapperEmailSentFailed" value="Erreur pendant l'envoi du mail : {0}.&#xA;Vers: {1}&#xA;&#xA;{2}"/>
@@ -200,6 +202,7 @@
 		<lookup key="menuItemPollNow" value="Vérifier maintenant"/>
 		<lookup key="menuItemExit" value="Quitter"/>
 		<lookup key="menuItemActivate" value="Activer"/>
+		<lookup key="menuItemSetStartUp" value="Utiliser par &amp;Défaut"/>
 		<lookup key="menuItemRename" value="Renommer"/>
 		<lookup key="menuItemRemove" value="Supprimer"/>
 		<lookup key="menuItemAdd" value="Créer"/>
@@ -220,12 +223,14 @@
 		<!-- BEGIN: Misc -->
 		<lookup key="buttonCancel" value="Annuler"/>
 		<lookup key="activeAccount" value="Actif"/>
+		<lookup key="startUpAccount" value="Défaut"/>
 		<!-- END: Misc -->
 	</language>
 	<language code="de" display="Deutsch">
 		<!-- BEGIN: Main forms -->
 		<lookup key="tabAccounts" value="Konten"/>
 		<lookup key="buttonActivate" value="Aktivieren"/>
+		<lookup key="buttonSetStartUp" value="Als default festlegen"/>
 		<lookup key="buttonRename" value="Umbenennen"/>
 		<lookup key="buttonRemove" value="Entfernen"/>
 		<lookup key="buttonAdd" value="Neu hinzufügen"/>
@@ -289,6 +294,7 @@
 		<lookup key="msgWrapperArchiveGame" value="Möchten Sie die gewählten Spiele archivieren? Dies verschiebt die Dateien in einen seperaten Ordner mit dem Namen '{0}' , welchen Sie auch im Spiel zur Verfügung haben."/>
 		<lookup key="msgWrapperCannotActivateAccount" value="Kann das Konto &quot;{0}&quot; jetzt nicht aktivieren.  Bitte warten Sie bis der E-Mail Versand beendet ist."/>
 		<lookup key="msgAccountPrompt" value="Geben Sie den Namen des Kontos ein:"/>
+		<lookup key="msgAccountDeletePrompt" value="Sind Sie sicher, dass Sie das Konto löschen: {0} ?"/>
 		<lookup key="msgAccountDuplicate" value="Ein Konto mit diesem Namen existiert bereits. Bitte wählen Sie einen anderen Namen."/>
 		<lookup key="msgWrapperEmailSentSuccess" value="An [{0}] erfolgreich versendet."/>
 		<lookup key="msgWrapperEmailSentFailed" value="Fehler beim Versenden der E-Mail: {0}.&#xA;An: {1}&#xA;&#xA;{2}"/>
@@ -305,6 +311,7 @@
 		<lookup key="menuItemPollNow" value="Jetzt abrufen"/>
 		<lookup key="menuItemExit" value="Beenden"/>
 		<lookup key="menuItemActivate" value="Aktivieren"/>
+		<lookup key="menuItemSetStartUp" value="Als &amp;default festlegen"/>
 		<lookup key="menuItemRename" value="Umbenennen"/>
 		<lookup key="menuItemRemove" value="Entfernen"/>
 		<lookup key="menuItemAdd" value="Neu hinzufügen"/>
@@ -326,12 +333,14 @@
 		<!-- BEGIN: Misc -->
 		<lookup key="buttonCancel" value="Abbrechen"/>
 		<lookup key="activeAccount" value="Aktiv"/>
+		<lookup key="startUpAccount" value="Default"/>
 		<!-- END: Misc -->
 	</language>
 	<language code="es" display="Español">
 		<!-- BEGIN: Main forms -->
 		<lookup key="tabAccounts" value="Cuentas"/>
 		<lookup key="buttonActivate" value="Activar"/>
+		<lookup key="buttonSetStartUp" value="Uso por defecto"/>
 		<lookup key="buttonRename" value="Renombrar"/>
 		<lookup key="buttonRemove" value="Borrar"/>
 		<lookup key="buttonAdd" value="Nueva cuenta"/>
@@ -394,6 +403,7 @@
 		<lookup key="msgWrapperArchiveGame" value="Desea también archivar el/los juego(s) seleccionados? Esto moverá los archivos a una carpeta por separado llamada '{0}' a la cual todavía puede acceder dentro del juego."/>
 		<lookup key="msgWrapperCannotActivateAccount" value="No se puede activar la cuenta &quot;{0}&quot; en este momento. Por favor espere a que se termine de enviar los emails."/>
 		<lookup key="msgAccountPrompt" value="Ingrese el nombre de la cuenta:"/>
+		<lookup key="msgAccountDeletePrompt" value="¿Está seguro que desea borrar la cuenta de: {0} ?"/>
 		<lookup key="msgAccountDuplicate" value="Ya existe una cuenta con este nombre. Por favor elija otro nombre."/>
 		<lookup key="msgWrapperEmailSentSuccess" value="Enviado satisfactoriamente a [{0}]."/>
 		<lookup key="msgWrapperEmailSentFailed" value="Error enviando el email: {0}.&#xA;Para: {1}&#xA;&#xA;{2}"/>
@@ -410,6 +420,7 @@
 		<lookup key="menuItemPollNow" value="Chequear ahora"/>
 		<lookup key="menuItemExit" value="Salir"/>
 		<lookup key="menuItemActivate" value="Activar"/>
+		<lookup key="menuItemSetStartUp" value="Uso por &amp;defecto"/>
 		<lookup key="menuItemRename" value="Renombrar"/>
 		<lookup key="menuItemRemove" value="Borrar"/>
 		<lookup key="menuItemAdd" value="Nueva cuenta"/>
@@ -431,12 +442,14 @@
 		<!-- BEGIN: Misc -->
 		<lookup key="buttonCancel" value="Cancelar"/>
 		<lookup key="activeAccount" value="Activo"/>
+		<lookup key="startUpAccount" value="Defecto"/>
 		<!-- END: Misc -->
 	</language>
 	<language code="nl" display="Nederlands">
 		<!-- BEGIN: Main forms -->
 		<lookup key="tabAccounts" value="Accounts"/>
 		<lookup key="buttonActivate" value="Activeer"/>
+		<lookup key="buttonSetStartUp" value="Gebruik als Default"/>
 		<lookup key="buttonRename" value="Hernaam"/>
 		<lookup key="buttonRemove" value="Verwijder"/>
 		<lookup key="buttonAdd" value="Nieuw toevoegen"/>
@@ -499,6 +512,7 @@
 		<lookup key="msgWrapperArchiveGame" value="Wil je ook de geselecteerde games archiveren? Dit zal de files in een aparte folder stopen genaamd '{0}' die je nog kan bereiken in het spel."/>
 		<lookup key="msgWrapperCannotActivateAccount" value="Kan het &quot;{0}&quot; account niet activeren. Wacht aub tot het verzenden klaar is."/>
 		<lookup key="msgAccountPrompt" value="Account naam:"/>
+		<lookup key="msgAccountDeletePrompt" value="Ben je zeker dat je de account wilt verwijderen: {0} ?"/>
 		<lookup key="msgAccountDuplicate" value="Een account met deze naam bestaat al. Kiest u aub een andere naam."/>
 		<lookup key="msgWrapperEmailSentSuccess" value="[{0}] succesvol verzonden."/>
 		<lookup key="msgWrapperEmailSentFailed" value="Error bij het verzenden van Email: {0}.&#xA;To: {1}&#xA;&#xA;{2}"/>
@@ -515,6 +529,7 @@
 		<lookup key="menuItemPollNow" value="Doorzoek nu"/>
 		<lookup key="menuItemExit" value="Exit"/>
 		<lookup key="menuItemActivate" value="Activeer"/>
+		<lookup key="menuItemSetStartUp" value="Gebruik als &amp;Default"/>
 		<lookup key="menuItemRename" value="Hernaam"/>
 		<lookup key="menuItemRemove" value="Verwijder"/>
 		<lookup key="menuItemAdd" value="Nieuw toevoegen"/>
@@ -540,12 +555,14 @@
 		<lookup key="buttonOK" value="Ok"/>
 		<lookup key="buttonCancel" value="Cancel"/>
 		<lookup key="activeAccount" value="Actief"/>
+		<lookup key="startUpAccount" value="Default"/>
 		<!-- END: Misc -->
 	</language>
 	<language code="da" display="Dansk">
 		<!-- BEGIN: Main forms -->
 		<lookup key="tabAccounts" value="Konti"/>
 		<lookup key="buttonActivate" value="Aktiver"/>
+		<lookup key="buttonSetStartUp" value="Sæt som standard"/>
 		<lookup key="buttonRename" value="Omdøb"/>
 		<lookup key="buttonRemove" value="Fjern"/>
 		<lookup key="buttonAdd" value="Tilføj"/>
@@ -602,6 +619,7 @@
 		<lookup key="msgWrapperArchiveGame" value="Vil du også gerne arkivere de(t) valgte spil? Det vil flytte deres filer til en separat mappe kaldet '{0}' som du stadig kan tilgå i spillet."/>
 		<lookup key="msgWrapperCannotActivateAccount" value="Kan ikke aktivere &quot;{0}&quot; kontoen lige nu. Vent venligst til email afsendingen er fuldført."/>
 		<lookup key="msgAccountPrompt" value="Skriv navnet på kontoen:"/>
+		<lookup key="msgAccountDeletePrompt" value="Er du sikker på du vil slette kontoen: {0} ?"/>
 		<lookup key="msgAccountDuplicate" value="En konto med dette navn eksisterer allerede. Vælg venligst et andet navn."/>
 		<lookup key="msgWrapperEmailSentSuccess" value="Succesfuldt afsendt til [{0}]"/>
 		<lookup key="msgWrapperEmailSentFailed" value="Fejl ved afsendelse af Email: {0}.&#xA;Til: {1}&#xA;&#xA;{2}"/>
@@ -617,6 +635,7 @@
 		<lookup key="menuItemAccounts" value="Konti"/>
 		<lookup key="menuItemPollNow" value="Kontroller mail"/>
 		<lookup key="menuItemActivate" value="Aktiver"/>
+		<lookup key="menuItemSetStartUp" value="Sæt som standard"/>
 		<lookup key="menuItemRename" value="Omdøb"/>
 		<lookup key="menuItemRemove" value="Fjern"/>
 		<lookup key="menuItemAdd" value="Tilføj"/>
@@ -637,12 +656,14 @@
 		<!-- BEGIN: Misc -->
 		<lookup key="buttonCancel" value="Annuller"/>
 		<lookup key="activeAccount" value="Aktiv"/>
+		<lookup key="startUpAccount" value="Standard"/>
 		<!-- END: Misc -->
 	</language>
 	<language code="pl" display="Polski">
 		<!-- BEGIN: Main forms -->
 		<lookup key="tabAccounts" value="Konta"/>
 		<lookup key="buttonActivate" value="Aktywuj"/>
+		<lookup key="buttonSetStartUp" value="Użyj jako domyślny"/>
 		<lookup key="buttonRename" value="Zmień Nazwę"/>
 		<lookup key="buttonRemove" value="Usuń"/>
 		<lookup key="buttonAdd" value="Dodaj Nowe"/>
@@ -706,6 +727,7 @@
 		<lookup key="msgWrapperArchiveGame" value="Czy chcesz również zarchiwizować wybraną grę (gry)? To przeniesie ich pliki do osobnego folderu o nawie '{0}', do którego będzie możliwy dostęp w grze."/>
 		<lookup key="msgWrapperCannotActivateAccount" value="Nie można teraz aktywować konta &quot;{0}&quot;. Proszę czekać na zakończenie wysyłania emaila."/>
 		<lookup key="msgAccountPrompt" value="Wprowadź nazwę konta:"/>
+		<lookup key="msgAccountDeletePrompt" value="Czy na pewno chcesz usunąć konto: {0} ?"/>
 		<lookup key="msgAccountDuplicate" value="Konto o tej nazwie już istnieje. Proszę wybrać inną nazwę."/>
 		<lookup key="msgWrapperEmailSentSuccess" value="Wysyłanie do [{0}] zakończone pomyślnie."/>
 		<lookup key="msgWrapperEmailSentFailed" value="Błąd wysyłania emaila: {0}.&#xA;Do: {1}&#xA;&#xA;{2}"/>
@@ -722,6 +744,7 @@
 		<lookup key="menuItemPollNow" value="Sprawdź teraz"/>
 		<lookup key="menuItemExit" value="Wyjdź"/>
 		<lookup key="menuItemActivate" value="Aktywuj"/>
+		<lookup key="menuItemSetStartUp" value="Użyj jako &amp;domyślny"/>
 		<lookup key="menuItemRename" value="Zmień Nazwę"/>
 		<lookup key="menuItemRemove" value="Usuń"/>
 		<lookup key="menuItemAdd" value="Dodaj Nowe"/>
@@ -743,12 +766,14 @@
 		<lookup key="buttonOK" value="OK"/>
 		<lookup key="buttonCancel" value="Anuluj"/>
 		<lookup key="activeAccount" value="Aktywne"/>
+		<lookup key="startUpAccount" value="Domyślny"/>
 		<!-- END: Misc -->
 	</language>
 	<language code="el" display="Eλληνικά">
 		<!-- BEGIN: Main forms -->
 		<lookup key="tabAccounts" value="Λογαριασμοί"/>
 		<lookup key="buttonActivate" value="Ενεργοποίηση"/>
+		<lookup key="buttonSetStartUp" value="Χρήση ως προεπιλογή"/>
 		<lookup key="buttonRename" value="Μετονομασία"/>
 		<lookup key="buttonRemove" value="Διαγραφή"/>
 		<lookup key="buttonAdd" value="Νέος Λογαριασμός"/>
@@ -808,6 +833,7 @@
 		<lookup key="msgWrapperArchiveGame" value="Επιθυμείτε την αρχειοθέτηση των επιλεγμένων παιχνιδιών; Τα αρχεία θα μεταφερθούν στο '{0}' το οποίο φαίνεται από το παιχνίδι."/>
 		<lookup key="msgWrapperCannotActivateAccount" value="Ο λογαριασμός &quot;{0}&quot; δεν είναι διαθέσιμος τώρα. Περιμένετε να ολοκληρώσει την αποστολή του email."/>
 		<lookup key="msgAccountPrompt" value="Δώστε το όνομα του λογαριασμού:"/>
+		<lookup key="msgAccountDeletePrompt" value="Είστε σίγουροι ότι θέλετε να διαγράψετε το λογαριασμό: {0} ?"/>
 		<lookup key="msgAccountDuplicate" value="Αυτό το όνομα λογαριασμού υπάρχει είδη. Επιλέξτε ένα άλλο όνομα."/>
 		<lookup key="msgWrapperEmailSentSuccess" value="Αποστολή στο [{0}] επιτυχής."/>
 		<lookup key="msgWrapperEmailSentFailed" value="Λάθος κατά την αποστολή: {0}.&#xA;Στο: {1}&#xA;&#xA;{2}"/>
@@ -824,7 +850,8 @@
 		<lookup key="menuItemPollNow" value="Ελέγξτε αμέσως"/>
 		<lookup key="menuItemExit" value="Έξοδος"/>
 		<lookup key="menuItemActivate" value="Ενεργοποιήστε"/>
-		<lookup key="menuItemRename" value="μετονομάστε"/>
+		<lookup key="menuItemSetStartUp" value="Χρήση ως προεπιλογή"/>
+		<lookup key="menuItemRename" value="Μετονομάστε"/>
 		<lookup key="menuItemRemove" value="Αφαιρέστε"/>
 		<lookup key="menuItemAdd" value="Νέος Λογαριασμός"/>
 		<lookup key="menuItemMarkEnded" value="Αλλάξτε ως Τέλος"/>
@@ -845,6 +872,7 @@
 		<!-- BEGIN: Misc -->
 		<lookup key="buttonCancel" value="Ακύρωση"/>
 		<lookup key="activeAccount" value="Ενεργός"/>
+		<lookup key="startUpAccount" value="Προεπιλογή"/>
 		<!-- END: Misc -->
 	</language>
 	<language code="ru" display="Русский">
@@ -932,6 +960,7 @@
 		<lookup key="menuItemPollNow" value="Проверить почту"/>
 		<lookup key="menuItemExit" value="Выход"/>
 		<lookup key="menuItemActivate" value="Активировать"/>
+		<lookup key="menuItemSetStartUp" value="Использовать по умолчанию"/>
 		<lookup key="menuItemRename" value="Переименовать"/>
 		<lookup key="menuItemRemove" value="Удалить"/>
 		<lookup key="menuItemAdd" value="Создать учётную запись"/>
