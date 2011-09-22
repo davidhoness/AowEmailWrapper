@@ -43,8 +43,15 @@ namespace AowEmailWrapper.ConfigFramework
         [XmlIgnore]
         public AccountConfigValues StartUpAccount
         {
-            //Falls back onto the active account name should this be a config from a previous build of the Wrapper
-            get { return GetAccountByName(!string.IsNullOrEmpty(_startUpAccountName) ? _startUpAccountName : _activeAccountName); }
+            //Falls back onto the active account name should this be a new config or one from a previous build of the Wrapper
+            get
+            {
+                if (string.IsNullOrEmpty(_startUpAccountName))
+                {
+                    _startUpAccountName = _activeAccountName;
+                }
+                return GetAccountByName(_startUpAccountName);
+            }
         }
 
         public AccountConfigValues GetAccountByName(string name)
