@@ -114,7 +114,7 @@
 		<lookup key="buttonOK" value="OK"/>
 		<lookup key="buttonCancel" value="Cancel"/>
 		<lookup key="activeAccount" value="Active"/>
-    <lookup key="startUpAccount" value="Default"/>
+		<lookup key="startUpAccount" value="Default"/>
 		<!-- END: Misc -->
 	</language>
 	<language code="fr" display="Française">
@@ -851,6 +851,7 @@
 		<!-- BEGIN: Main forms -->
 		<lookup key="tabAccounts" value="Учётные записи"/>
 		<lookup key="buttonActivate" value="Активировать"/>
+		<lookup key="buttonSetStartUp" value="Использовать по умолчанию"/>
 		<lookup key="buttonRename" value="Переименовать"/>
 		<lookup key="buttonRemove" value="Удалить"/>
 		<lookup key="buttonAdd" value="Добавить"/>
@@ -914,6 +915,7 @@
 		<lookup key="msgWrapperArchiveGame" value="Сохранить архив выбранной игры? Архивирование поместит файлы игры в отдельную папку ('{0}'), где они будут по-прежнему доступны из игры."/>
 		<lookup key="msgWrapperCannotActivateAccount" value="Невозможно сделать активной учётную запись &quot;{0}&quot;. Подождите завершения отправки почты."/>
 		<lookup key="msgAccountPrompt" value="Имя учётной записи:"/>
+		<lookup key="msgAccountDeletePrompt" value="Вы действительно хотите удалить аккаунт: {0} ?"/>
 		<lookup key="msgAccountDuplicate" value="Учётная запись с таким именем уже существует."/>
 		<lookup key="msgWrapperEmailSentSuccess" value="Письмо успешно отправлено [{0}]."/>
 		<lookup key="msgWrapperEmailSentFailed" value="Не удалось отправить письмо {0}.&#xA;Получатель: {1}&#xA;&#xA;{2}"/>
@@ -951,6 +953,7 @@
 		<lookup key="buttonOK" value="ОК"/>
 		<lookup key="buttonCancel" value="Отмена"/>
 		<lookup key="activeAccount" value="Активный"/>
+		<lookup key="startUpAccount" value="По умолчанию"/>
 		<!-- END: Misc -->
 	</language>
 </languages>
