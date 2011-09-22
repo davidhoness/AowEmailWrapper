@@ -282,7 +282,7 @@ namespace AowEmailWrapper.Controls
                         {
                             if (theAccount.Equals(_accountsList.StartUpAccount))
                             {
-                                _accountsList.StartUpAccountName = fallBackAccount.Name;
+                                _accountsList.StartUpAccountName = !theAccount.Equals(_accountsList.ActiveAccount) ? _accountsList.ActiveAccount.Name : fallBackAccount.Name;
                             }
                             if (theAccount.Equals(_accountsList.ActiveAccount))
                             {
