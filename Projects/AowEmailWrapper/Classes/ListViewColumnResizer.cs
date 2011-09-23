@@ -48,17 +48,17 @@ namespace AowEmailWrapper.Classes
                         switch (theStyle)
                         {
                             case ColumnHeaderResizeStyle.ColumnContent:
-                                column.AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
+                                AutoResizeColumn(column, ColumnHeaderAutoResizeStyle.ColumnContent);
                                 totalColumnWidth += column.Width;
                                 break;
                             case ColumnHeaderResizeStyle.HeaderSize:
-                                column.AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
+                                AutoResizeColumn(column, ColumnHeaderAutoResizeStyle.HeaderSize);
                                 totalColumnWidth += column.Width;
                                 break;
                             case ColumnHeaderResizeStyle.ContentHeaderMax:
-                                column.AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
+                                AutoResizeColumn(column, ColumnHeaderAutoResizeStyle.HeaderSize);
                                 int headerSize = column.Width;
-                                column.AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
+                                AutoResizeColumn(column, ColumnHeaderAutoResizeStyle.ColumnContent);
                                 int columnContentSize = column.Width;
 
                                 column.Width = (headerSize > columnContentSize) ? headerSize : columnContentSize;
@@ -87,6 +87,16 @@ namespace AowEmailWrapper.Classes
                     fillColumn.Width = theListView.ClientSize.Width - totalColumnWidth;
                 }
             }
+        }
+        
+        private static void AutoResizeColumn(ColumnHeader theColumn, ColumnHeaderAutoResizeStyle style)
+        {
+            try
+            {
+                //This method seems to sometimes throw a random null ref exception
+                theColumn.AutoResize(style);
+            }
+            catch { }
         }
     }
 }
