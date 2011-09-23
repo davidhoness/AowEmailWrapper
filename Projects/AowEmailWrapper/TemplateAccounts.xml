@@ -1,15 +1,340 @@
 <accounts>
-	<account name="Google Mail" emailprovidertype="Google" domains="@gmail, @googlemail" shortusername="true">
+	<account name="Google Mail" emailprovidertype="Google">
 		<polling_config usepolling="true" emailtype="IMAP" server="imap.gmail.com" port="993" usessl="true" pollinterval="10"/>
 		<smtp_config smtpserver="smtp.gmail.com" port="587" smtpssltype="TLS" authentication="true" usepollingcredentials="true" bccmyself="false"/>
+		<domain>@gmail</domain>
+		<domain>@googlemail</domain>
 	</account>
-	<account name="Hotmail" emailprovidertype="WindowsLive" domains="@hotmail, @msn, @msnhotmail, @live">
+	<account name="Hotmail" emailprovidertype="WindowsLive">
 		<polling_config usepolling="true" emailtype="POP3" server="pop3.live.com" port="995" usessl="true" pollinterval="15"/>
 		<smtp_config smtpserver="smtp.live.com" port="587" smtpssltype="TLS" authentication="true" usepollingcredentials="true" bccmyself="false"/>
+		<domain>@hotmail</domain>
+		<domain>@msn</domain>
+		<domain>@msnhotmail</domain>
+		<domain>@live</domain>
 	</account>
-	<account name="Yahoo Mail" emailprovidertype="Yahoo" domains="@yahoo, @ymail, @rocketmail">
+	<account name="Yahoo Mail" emailprovidertype="Yahoo">
 		<polling_config usepolling="true" emailtype="POP3" server="pop.mail.yahoo.com" port="995" usessl="true" pollinterval="10"/>
 		<smtp_config smtpserver="smtp.mail.yahoo.com" port="465" smtpssltype="SSL" authentication="true" usepollingcredentials="true" bccmyself="false"/>
+		<domain>@yahoo</domain>
+		<domain>@ymail</domain>
+		<domain>@rocketmail</domain>
+	</account>
+	<account name="Inbox.com" emailprovidertype="Inbox.com">
+		<polling_config usepolling="true" emailtype="POP3" server="my.inbox.com" port="110" usessl="false" pollinterval="10"/>
+		<smtp_config smtpserver="my.inbox.com" port="587" smtpssltype="None" authentication="true" usepollingcredentials="true" bccmyself="false"/>
+		<domain>@inbox.com</domain>
+	</account>
+	<account name="GMX" emailprovidertype="GMX">
+		<polling_config usepolling="true" emailtype="IMAP" server="imap.gmx.com" port="143" usessl="false" pollinterval="10"/>
+		<smtp_config smtpserver="smtp.gmx.com" port="587" smtpssltype="None" authentication="true" usepollingcredentials="true" bccmyself="false"/>
+		<domain>@gmx</domain>
+	</account>
+	<account name="Mail.com" emailprovidertype="Mail.com">
+		<polling_config usepolling="true" emailtype="IMAP" server="imap.mail.com" port="993" usessl="true" pollinterval="10"/>
+		<smtp_config smtpserver="smtp.mail.com" port="587" smtpssltype="TLS" authentication="true" usepollingcredentials="true" bccmyself="false"/>
+		<domain>@mail.com</domain>
+		<domain>@email.com</domain>
+		<domain>@usa.com</domain>
+		<domain>@myself.com</domain>
+		<domain>@consultant.com</domain>
+		<domain>@post.com</domain>
+		<domain>@europe.com</domain>
+		<domain>@london.com</domain>
+		<domain>@asia.com</domain>
+		<domain>@iname.com</domain>
+		<domain>@writeme.com</domain>
+		<domain>@dr.com</domain>
+		<domain>@engineer.com</domain>
+		<domain>@cheerful.com</domain>
+		<domain>@accountant.com</domain>
+		<domain>@techie.com</domain>
+		<domain>@linuxmail.org</domain>
+		<domain>@lawyer.com</domain>
+		<domain>@uymail.com</domain>
+		<domain>@contractor.net</domain>
+		<domain>@accountant.com</domain>
+		<domain>@activist.com</domain>
+		<domain>@adexec.com</domain>
+		<domain>@allergist.com</domain>
+		<domain>@alumni.com</domain>
+		<domain>@alumnidirector.com</domain>
+		<domain>@angelic.com</domain>
+		<domain>@appraiser.net</domain>
+		<domain>@archaeologist.com</domain>
+		<domain>@arcticmail.com</domain>
+		<domain>@artlover.com</domain>
+		<domain>@asia.com</domain>
+		<domain>@auctioneer.net</domain>
+		<domain>@bartender.net</domain>
+		<domain>@bikerider.com</domain>
+		<domain>@birdlover.com</domain>
+		<domain>@brew-meister.com</domain>
+		<domain>@cash4u.com</domain>
+		<domain>@chef.net</domain>
+		<domain>@chemist.com</domain>
+		<domain>@clerk.com</domain>
+		<domain>@clubmember.org</domain>
+		<domain>@collector.org</domain>
+		<domain>@columnist.com</domain>
+		<domain>@comic.com</domain>
+		<domain>@computer4u.com</domain>
+		<domain>@consultant.com</domain>
+		<domain>@contractor.net</domain>
+		<domain>@coolsite.net</domain>
+		<domain>@counsellor.com</domain>
+		<domain>@cyberservices.com</domain>
+		<domain>@deliveryman.com</domain>
+		<domain>@diplomats.com</domain>
+		<domain>@disposable.com</domain>
+		<domain>@doctor.com</domain>
+		<domain>@dr.com</domain>
+		<domain>@engineer.com</domain>
+		<domain>@execs.com</domain>
+		<domain>@fastservice.com</domain>
+		<domain>@financier.com</domain>
+		<domain>@fireman.net</domain>
+		<domain>@gardener.com</domain>
+		<domain>@geologist.com</domain>
+		<domain>@graduate.org</domain>
+		<domain>@graphic-designer.com</domain>
+		<domain>@groupmail.com</domain>
+		<domain>@hairdresser.net</domain>
+		<domain>@homemail.com</domain>
+		<domain>@hot-shot.com</domain>
+		<domain>@instruction.com</domain>
+		<domain>@instructor.net</domain>
+		<domain>@insurer.com</domain>
+		<domain>@job4u.com</domain>
+		<domain>@journalist.com</domain>
+		<domain>@lawyer.com</domain>
+		<domain>@legislator.com</domain>
+		<domain>@lobbyist.com</domain>
+		<domain>@minister.com</domain>
+		<domain>@musician.org</domain>
+		<domain>@myself.com</domain>
+		<domain>@net-shopping.com</domain>
+		<domain>@optician.com</domain>
+		<domain>@orthodontist.net</domain>
+		<domain>@pediatrician.com</domain>
+		<domain>@photographer.net</domain>
+		<domain>@physicist.net</domain>
+		<domain>@planetmail.com</domain>
+		<domain>@planetmail.net</domain>
+		<domain>@politician.com</domain>
+		<domain>@post.com</domain>
+		<domain>@presidency.com</domain>
+		<domain>@priest.com</domain>
+		<domain>@programmer.net</domain>
+		<domain>@publicist.com</domain>
+		<domain>@qualityservice.com</domain>
+		<domain>@radiologist.net</domain>
+		<domain>@realtyagent.com</domain>
+		<domain>@registerednurses.com</domain>
+		<domain>@repairman.com</domain>
+		<domain>@representative.com</domain>
+		<domain>@rescueteam.com</domain>
+		<domain>@revenue.com</domain>
+		<domain>@salesperson.net</domain>
+		<domain>@scientist.com</domain>
+		<domain>@secretary.net</domain>
+		<domain>@socialworker.net</domain>
+		<domain>@sociologist.com</domain>
+		<domain>@solution4u.com</domain>
+		<domain>@songwriter.net</domain>
+		<domain>@surgical.net</domain>
+		<domain>@teachers.org</domain>
+		<domain>@tech-center.com</domain>
+		<domain>@techie.com</domain>
+		<domain>@technologist.com</domain>
+		<domain>@theplate.com</domain>
+		<domain>@therapist.net</domain>
+		<domain>@toothfairy.com</domain>
+		<domain>@tvstar.com</domain>
+		<domain>@umpire.com</domain>
+		<domain>@webname.com</domain>
+		<domain>@worker.com</domain>
+		<domain>@workmail.com</domain>
+		<domain>@writeme.com</domain>
+		<domain>@activist.com</domain>
+		<domain>@aircraftmail.com</domain>
+		<domain>@artlover.com</domain>
+		<domain>@atheist.com</domain>
+		<domain>@bikerider.com</domain>
+		<domain>@birdlover.com</domain>
+		<domain>@blader.com</domain>
+		<domain>@boardermail.com</domain>
+		<domain>@brew-master.com</domain>
+		<domain>@brew-meister.com</domain>
+		<domain>@bsdmail.com</domain>
+		<domain>@catlover.com</domain>
+		<domain>@chef.net</domain>
+		<domain>@clubmember.org</domain>
+		<domain>@collector.org</domain>
+		<domain>@cutey.com</domain>
+		<domain>@dbzmail.com</domain>
+		<domain>@doglover.com</domain>
+		<domain>@doramail.com</domain>
+		<domain>@gardener.com</domain>
+		<domain>@greenmail.net</domain>
+		<domain>@hackermail.com</domain>
+		<domain>@hilarious.com</domain>
+		<domain>@keromail.com</domain>
+		<domain>@kittymail.com</domain>
+		<domain>@linuxmail.org</domain>
+		<domain>@lovecat.com</domain>
+		<domain>@marchmail.com</domain>
+		<domain>@musician.org</domain>
+		<domain>@nonpartisan.com</domain>
+		<domain>@petlover.com</domain>
+		<domain>@photographer.net</domain>
+		<domain>@snakebite.com</domain>
+		<domain>@songwriter.net</domain>
+		<domain>@techie.com</domain>
+		<domain>@theplate.com</domain>
+		<domain>@toke.com</domain>
+		<domain>@uymail.com</domain>
+		<domain>@computer4u.com</domain>
+		<domain>@consultant.com</domain>
+		<domain>@contractor.net</domain>
+		<domain>@coolsite.net</domain>
+		<domain>@cyberdude.com</domain>
+		<domain>@cybergal.com</domain>
+		<domain>@cyberservices.com</domain>
+		<domain>@cyber-wizard.com</domain>
+		<domain>@engineer.com</domain>
+		<domain>@fastservice.com</domain>
+		<domain>@graphic-designer.com</domain>
+		<domain>@groupmail.com</domain>
+		<domain>@homemail.com</domain>
+		<domain>@hot-shot.com</domain>
+		<domain>@housemail.com</domain>
+		<domain>@humanoid.net</domain>
+		<domain>@iname.com</domain>
+		<domain>@inorbit.com</domain>
+		<domain>@mail-me.com</domain>
+		<domain>@myself.com</domain>
+		<domain>@net-shopping.com</domain>
+		<domain>@null.net</domain>
+		<domain>@physicist.net</domain>
+		<domain>@planetmail.com</domain>
+		<domain>@planetmail.net</domain>
+		<domain>@post.com</domain>
+		<domain>@programmer.net</domain>
+		<domain>@qualityservice.com</domain>
+		<domain>@rocketship.com</domain>
+		<domain>@scientist.com</domain>
+		<domain>@solution4u.com</domain>
+		<domain>@tech-center.com</domain>
+		<domain>@techie.com</domain>
+		<domain>@technologist.com</domain>
+		<domain>@webname.com</domain>
+		<domain>@workmail.com</domain>
+		<domain>@writeme.com</domain>
+		<domain>@acdcfan.com</domain>
+		<domain>@angelic.com</domain>
+		<domain>@artlover.com</domain>
+		<domain>@atheist.com</domain>
+		<domain>@chemist.com</domain>
+		<domain>@diplomats.com</domain>
+		<domain>@discofan.com</domain>
+		<domain>@elvisfan.com</domain>
+		<domain>@execs.com</domain>
+		<domain>@hiphopfan.com</domain>
+		<domain>@housemail.com</domain>
+		<domain>@kissfans.com</domain>
+		<domain>@madonnafan.com</domain>
+		<domain>@metalfan.com</domain>
+		<domain>@minister.com</domain>
+		<domain>@musician.org</domain>
+		<domain>@ninfan.com</domain>
+		<domain>@oath.com</domain>
+		<domain>@ravemail.com</domain>
+		<domain>@reborn.com</domain>
+		<domain>@reggaefan.com</domain>
+		<domain>@snakebite.com</domain>
+		<domain>@songwriter.net</domain>
+		<domain>@bellair.net</domain>
+		<domain>@californiamail.com</domain>
+		<domain>@dallasmail.com</domain>
+		<domain>@nycmail.com</domain>
+		<domain>@pacific-ocean.com</domain>
+		<domain>@pacificwest.com</domain>
+		<domain>@sanfranmail.com</domain>
+		<domain>@usa.com</domain>
+		<domain>@africamail.com</domain>
+		<domain>@arcticmail.com</domain>
+		<domain>@asia.com</domain>
+		<domain>@asia-mail.com</domain>
+		<domain>@australiamail.com</domain>
+		<domain>@berlin.com</domain>
+		<domain>@brazilmail.com</domain>
+		<domain>@chinamail.com</domain>
+		<domain>@dublin.com</domain>
+		<domain>@dutchmail.com</domain>
+		<domain>@englandmail.com</domain>
+		<domain>@europe.com</domain>
+		<domain>@europemail.com</domain>
+		<domain>@germanymail.com</domain>
+		<domain>@irelandmail.com</domain>
+		<domain>@israelmail.com</domain>
+		<domain>@italymail.com</domain>
+		<domain>@japan.com</domain>
+		<domain>@koreamail.com</domain>
+		<domain>@london.com</domain>
+		<domain>@madrid.com</domain>
+		<domain>@mexicomail.com</domain>
+		<domain>@moscowmail.com</domain>
+		<domain>@munich.com</domain>
+		<domain>@polandmail.com</domain>
+		<domain>@rome.com</domain>
+		<domain>@safrica.com</domain>
+		<domain>@samerica.com</domain>
+		<domain>@scotlandmail.com</domain>
+		<domain>@singapore.com</domain>
+		<domain>@spainmail.com</domain>
+		<domain>@swedenmail.com</domain>
+		<domain>@swissmail.com</domain>
+		<domain>@tokyo.com</domain>
+		<domain>@torontomail.com</domain>
+		<domain>@angelic.com</domain>
+		<domain>@atheist.com</domain>
+		<domain>@disciples.com</domain>
+		<domain>@innocent.com</domain>
+		<domain>@minister.com</domain>
+		<domain>@muslim.com</domain>
+		<domain>@oath.com</domain>
+		<domain>@priest.com</domain>
+		<domain>@protestant.com</domain>
+		<domain>@reborn.com</domain>
+		<domain>@reincarnate.com</domain>
+		<domain>@religious.com</domain>
+		<domain>@saintly.com</domain>
+	</account>
+	<account name="Mail.ru" emailprovidertype="Mail.ru">
+		<polling_config usepolling="true" emailtype="POP3" server="pop.mail.ru" port="995" usessl="true" pollinterval="10"/>
+		<smtp_config smtpserver="smtp.mail.ru" port="465" smtpssltype="SSL" authentication="true" usepollingcredentials="true" bccmyself="false"/>
+		<domain>@mail.ru</domain>
+		<domain>@bk.ru</domain>
+		<domain>@inbox.ru</domain>
+		<domain>@list.ru</domain>
+	</account>
+	<account name="Yandex.ru" emailprovidertype="Yandex.ru">
+		<polling_config usepolling="true" emailtype="POP3" server="pop.yandex.ru" port="995" usessl="true" pollinterval="10"/>
+		<smtp_config smtpserver="smtp.yandex.ru" port="587" smtpssltype="TLS" authentication="true" usepollingcredentials="true" bccmyself="false"/>
+		<domain>@yandex</domain>
+		<domain>@narod.ru</domain>
+		<domain>@ya.ru</domain>
+	</account>
+	<account name="Rambler.ru" emailprovidertype="Rambler.ru">
+		<polling_config usepolling="true" emailtype="POP3" server="mail.rambler.ru" port="995" usessl="true" pollinterval="10"/>
+		<smtp_config smtpserver="mail.rambler.ru" port="587" smtpssltype="TLS" authentication="true" usepollingcredentials="true" bccmyself="false"/>
+		<domain>@rambler.ru</domain>
+		<domain>@lenta.ru</domain>
+		<domain>@myrambler.ru</domain>
+		<domain>@autorambler.ru</domain>
+		<domain>@ro.ru</domain>
+		<domain>@r0.ru</domain>
 	</account>
 	<account name="Other" emailprovidertype="Other">
 		<polling_config usepolling="true" emailtype="POP3" port="110" usessl="false" pollinterval="10"/>
