@@ -30,7 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccountsCreationWizzard));
             this.panelWhite = new System.Windows.Forms.Panel();
-            this.panelInnerRadio = new System.Windows.Forms.Panel();
+            this.listViewTemplates = new System.Windows.Forms.ListView();
+            this.colName = new System.Windows.Forms.ColumnHeader();
             this.panelMessagePadder = new System.Windows.Forms.Panel();
             this.panelMessage = new System.Windows.Forms.Panel();
             this.labelDomainsMessage = new System.Windows.Forms.Label();
@@ -51,28 +52,40 @@
             // panelWhite
             // 
             this.panelWhite.BackColor = System.Drawing.Color.White;
-            this.panelWhite.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelWhite.Controls.Add(this.panelInnerRadio);
+            this.panelWhite.Controls.Add(this.listViewTemplates);
             this.panelWhite.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelWhite.Location = new System.Drawing.Point(0, 0);
             this.panelWhite.Name = "panelWhite";
-            this.panelWhite.Padding = new System.Windows.Forms.Padding(10);
-            this.panelWhite.Size = new System.Drawing.Size(437, 94);
+            this.panelWhite.Size = new System.Drawing.Size(437, 90);
             this.panelWhite.TabIndex = 10;
             // 
-            // panelInnerRadio
+            // listViewTemplates
             // 
-            this.panelInnerRadio.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelInnerRadio.Location = new System.Drawing.Point(10, 10);
-            this.panelInnerRadio.Name = "panelInnerRadio";
-            this.panelInnerRadio.Size = new System.Drawing.Size(757, 72);
-            this.panelInnerRadio.TabIndex = 0;
+            this.listViewTemplates.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.colName});
+            this.listViewTemplates.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewTemplates.FullRowSelect = true;
+            this.listViewTemplates.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.listViewTemplates.HideSelection = false;
+            this.listViewTemplates.Location = new System.Drawing.Point(0, 0);
+            this.listViewTemplates.MultiSelect = false;
+            this.listViewTemplates.Name = "listViewTemplates";
+            this.listViewTemplates.Size = new System.Drawing.Size(437, 90);
+            this.listViewTemplates.TabIndex = 0;
+            this.listViewTemplates.UseCompatibleStateImageBehavior = false;
+            this.listViewTemplates.View = System.Windows.Forms.View.Details;
+            // 
+            // colName
+            // 
+            this.colName.Tag = "Fill";
+            this.colName.Text = "";
+            this.colName.Width = 300;
             // 
             // panelMessagePadder
             // 
             this.panelMessagePadder.Controls.Add(this.panelMessage);
             this.panelMessagePadder.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelMessagePadder.Location = new System.Drawing.Point(0, 94);
+            this.panelMessagePadder.Location = new System.Drawing.Point(0, 90);
             this.panelMessagePadder.Name = "panelMessagePadder";
             this.panelMessagePadder.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.panelMessagePadder.Size = new System.Drawing.Size(437, 30);
@@ -103,7 +116,7 @@
             this.panelAuthentication.Controls.Add(this.panelCreateButton);
             this.panelAuthentication.Controls.Add(this.groupBoxAuth);
             this.panelAuthentication.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAuthentication.Location = new System.Drawing.Point(0, 124);
+            this.panelAuthentication.Location = new System.Drawing.Point(0, 120);
             this.panelAuthentication.Name = "panelAuthentication";
             this.panelAuthentication.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.panelAuthentication.Size = new System.Drawing.Size(437, 109);
@@ -136,7 +149,6 @@
             this.groupBoxAuth.Controls.Add(this.fbPassword);
             this.groupBoxAuth.Controls.Add(this.fbEmailAddress);
             this.groupBoxAuth.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBoxAuth.Enabled = false;
             this.groupBoxAuth.Location = new System.Drawing.Point(0, 5);
             this.groupBoxAuth.Name = "groupBoxAuth";
             this.groupBoxAuth.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
@@ -195,7 +207,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panelWhite;
-        private System.Windows.Forms.Panel panelInnerRadio;
         private System.Windows.Forms.Panel panelMessagePadder;
         private System.Windows.Forms.Panel panelMessage;
         private System.Windows.Forms.Label labelDomainsMessage;
@@ -205,5 +216,7 @@
         private FormBlockText fbEmailAddress;
         private System.Windows.Forms.Panel panelCreateButton;
         private System.Windows.Forms.Button buttonCreate;
+        private System.Windows.Forms.ListView listViewTemplates;
+        private System.Windows.Forms.ColumnHeader colName;
     }
 }

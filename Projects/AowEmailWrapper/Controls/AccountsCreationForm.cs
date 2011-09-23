@@ -40,14 +40,14 @@ namespace AowEmailWrapper.Controls
             }
         }
 
-        public ImageList RadioImages
+        public ImageList TemplateIcons
         {
-            get { return (accountsCreationWizzard != null) ? accountsCreationWizzard.RadioImages : null; }
+            get { return (accountsCreationWizzard != null) ? accountsCreationWizzard.TemplateIcons : null; }
             set
             {
                 if (accountsCreationWizzard != null)
                 {
-                    accountsCreationWizzard.RadioImages = value;
+                    accountsCreationWizzard.TemplateIcons = value;
                 }
             }
         }

@@ -38,15 +38,15 @@
             this.accountsCreationWizzard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.accountsCreationWizzard.Location = new System.Drawing.Point(0, 0);
             this.accountsCreationWizzard.Name = "accountsCreationWizzard";
-            this.accountsCreationWizzard.RadioImages = null;
-            this.accountsCreationWizzard.Size = new System.Drawing.Size(442, 234);
+            this.accountsCreationWizzard.Size = new System.Drawing.Size(421, 231);
             this.accountsCreationWizzard.TabIndex = 0;
+            this.accountsCreationWizzard.TemplateIcons = null;
             // 
             // AccountsCreationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 234);
+            this.ClientSize = new System.Drawing.Size(421, 231);
             this.Controls.Add(this.accountsCreationWizzard);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Xml.Serialization;
 using AowEmailWrapper.ConfigFramework;
 using AowEmailWrapper.Localization;
+using AowEmailWrapper.Classes;
 
 
 namespace AowEmailWrapper.Controls
@@ -36,7 +37,6 @@ namespace AowEmailWrapper.Controls
         private const string Menu_Rename_Tag = "menuItemRename";
         private const string Menu_Activate_Tag = "menuItemActivate";
         private const string Menu_SetStartUp_Tag = "menuItemSetStartUp";
-        private string DefaultImageKey = EmailProviderType.Other.ToString();
 
         private Font ActiveFont = null;
         private Font NormalFont = null;
@@ -88,6 +88,8 @@ namespace AowEmailWrapper.Controls
             CreateContextMenu();
             listViewAccounts.DoubleClick += new EventHandler(listViewAccounts_DoubleClick);
             listViewAccounts.SelectedIndexChanged += new EventHandler(listViewAccounts_SelectedIndexChanged);
+            listViewAccounts.ClientSizeChanged += new EventHandler(listViewAccounts_Resize);
+            listViewAccounts.ColumnWidthChanging += new ColumnWidthChangingEventHandler(listViewAccounts_ColumnWidthChanging);
 
             EventHandler clearSelected = new EventHandler(listViewAccounts_SelectedItems_Clear);
             tabControlAccountEditor.Enter += clearSelected;
@@ -167,6 +169,19 @@ namespace AowEmailWrapper.Controls
             }
         }
 
+        private void listViewAccounts_Resize(object sender, EventArgs e)
+        {
+            listViewAccounts.BeginUpdate();
+            ListViewColumnResizer.ResizeColumns(listViewAccounts);
+            listViewAccounts.EndUpdate();
+        }
+
+        private void listViewAccounts_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
+            e.Cancel = true;
+            e.NewWidth = listViewAccounts.Columns[e.ColumnIndex].Width;
+        }
+
         #endregion
 
         #region Private Methods
@@ -228,8 +243,9 @@ namespace AowEmailWrapper.Controls
             using (AccountsCreationForm createForm = new AccountsCreationForm())
             {
                 createForm.Name = createForm.GetType().Name;
+                createForm.TemplateIcons = imageListIcons;
                 createForm.AccountTemplates = _accountsTemplates;
-                createForm.RadioImages = imageListLargeIcons;
+                
                 if (createForm.ShowDialog(this).Equals(DialogResult.OK))
                 {
                     theNewAccount = createForm.ChosenTemplate;
@@ -238,7 +254,7 @@ namespace AowEmailWrapper.Controls
 
             if (theNewAccount != null)
             {
-                theNewAccount.Domains = null; //Don't need to save this
+                theNewAccount.TemplateDomains = null; //Don't need to save this
 
                 if (_accountsList.CheckAccountExistsByName(theNewAccount.Name))
                 {
@@ -421,6 +437,8 @@ namespace AowEmailWrapper.Controls
                     }
                 }
 
+                ListViewColumnResizer.ResizeColumns(listViewAccounts);
+
                 listViewAccounts.EndUpdate();
             }
         }
@@ -428,45 +446,37 @@ namespace AowEmailWrapper.Controls
         private ListViewItem CreateListItem(AccountConfigValues account)
         {
             ListViewItem item = new ListViewItem();
+            ListViewItem.ListViewSubItem startUpItem = new ListViewItem.ListViewSubItem();
+
+            item.Text = account.Name;
+            item.SubItems.Add(new ListViewItem.ListViewSubItem(item, account.SmtpConfig.EmailAddress));
+            item.SubItems.Add(startUpItem);
+            startUpItem.Text = account.Equals(_accountsList.StartUpAccount) ? Translator.Translate(AccountStartUpTextKey) : string.Empty;
 
             if (account.Equals(_accountsList.ActiveAccount))
             {
-                if (account.Equals(_accountsList.StartUpAccount))
-                {
-                    item.Text = string.Format(AccountTwinStatusTemplate, account.Name, Translator.Translate(AccountActiveTextKey), Translator.Translate(AccountStartUpTextKey));
-                }
-                else
-                {
-                    item.Text = string.Format(AccountStatusTemplate, account.Name, Translator.Translate(AccountActiveTextKey));
-                }
-
                 item.Font = ActiveFont;
             }
             else
             {
-                if (account.Equals(_accountsList.StartUpAccount))
-                {
-                    item.Text = string.Format(AccountStatusTemplate, account.Name, Translator.Translate(AccountStartUpTextKey));
-                }
-                else
-                {
-                    item.Text = account.Name;
-                }
-
                 item.ForeColor = Color.Gray;
                 item.Font = NormalFont;
             }
 
             item.Tag = account.Name;
 
-            int imageIndex = -1;
+            int imageIndex = 0;
             if (account.SmtpConfig != null &&
                 !string.IsNullOrEmpty(account.SmtpConfig.EmailAddress))
             {
-                imageIndex = imageListLargeIcons.Images.IndexOfKey(GetEmailProviderType(account.SmtpConfig.EmailAddress));
+                string emailProvider = _accountsTemplates.GetEmailProviderType(account.SmtpConfig.EmailAddress);
+                if (!string.IsNullOrEmpty(emailProvider))
+                {
+                    imageIndex = imageListIcons.Images.IndexOfKey(emailProvider);
+                }
             }
 
-            item.ImageIndex = (imageIndex >= 0) ? imageIndex : imageListLargeIcons.Images.IndexOfKey(EmailProviderType.Other.ToString());
+            item.ImageIndex = imageIndex;
 
             return item;
         }
@@ -478,45 +488,6 @@ namespace AowEmailWrapper.Controls
                 _accountsList.ActiveAccount.PollingConfig = pollingConfig.Config;
                 _accountsList.ActiveAccount.SmtpConfig = smtpConfig.Config;
             }
-        }
-
-        private string GetEmailProviderType(string input)
-        {
-            EmailProviderType returnVal = EmailProviderType.Other;
-
-            if (_accountsTemplates != null &&
-                _accountsTemplates.Accounts!=null &&
-                _accountsTemplates.Accounts.Count >0)
-            {
-                bool success = false;
-
-                foreach (AccountConfigValues account in _accountsTemplates.Accounts)
-                {
-                    if (!string.IsNullOrEmpty(account.Domains))
-                    {
-                        string[] split = account.Domains.Split(',');
-                        if (split.Length > 0)
-                        {
-                            foreach (string s in split)
-                            {
-                                if (!string.IsNullOrEmpty(s))
-                                {
-                                    success = input.Contains(s.Trim());
-                                    if (success)
-                                    {
-                                        returnVal = account.EmailProvider;
-                                        break;
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    if (success) break;
-                }
-            }
-
-            return returnVal.ToString();
         }
 
         private bool CheckDomains(string input, string[] domains)

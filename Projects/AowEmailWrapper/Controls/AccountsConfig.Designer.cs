@@ -34,8 +34,11 @@
             AowEmailWrapper.ConfigFramework.SmtpConfigValues smtpConfigValues1 = new AowEmailWrapper.ConfigFramework.SmtpConfigValues();
             this.panelTopHalf = new System.Windows.Forms.Panel();
             this.listViewAccounts = new System.Windows.Forms.ListView();
-            this.columnHeader = new System.Windows.Forms.ColumnHeader();
-            this.imageListLargeIcons = new System.Windows.Forms.ImageList(this.components);
+            this.colName = new System.Windows.Forms.ColumnHeader();
+            this.colAddress = new System.Windows.Forms.ColumnHeader();
+            this.colDefault = new System.Windows.Forms.ColumnHeader();
+            this.colHidden = new System.Windows.Forms.ColumnHeader();
+            this.imageListIcons = new System.Windows.Forms.ImageList(this.components);
             this.panelButtons = new System.Windows.Forms.Panel();
             this.panelSetStartUp = new System.Windows.Forms.Panel();
             this.buttonSetStartUp = new System.Windows.Forms.Button();
@@ -79,32 +82,59 @@
             // listViewAccounts
             // 
             this.listViewAccounts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader});
+            this.colName,
+            this.colAddress,
+            this.colDefault,
+            this.colHidden});
             this.listViewAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listViewAccounts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewAccounts.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewAccounts.FullRowSelect = true;
-            this.listViewAccounts.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.listViewAccounts.LargeImageList = this.imageListLargeIcons;
+            this.listViewAccounts.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listViewAccounts.Location = new System.Drawing.Point(0, 0);
             this.listViewAccounts.MultiSelect = false;
             this.listViewAccounts.Name = "listViewAccounts";
             this.listViewAccounts.Size = new System.Drawing.Size(418, 205);
+            this.listViewAccounts.SmallImageList = this.imageListIcons;
             this.listViewAccounts.TabIndex = 3;
             this.listViewAccounts.UseCompatibleStateImageBehavior = false;
+            this.listViewAccounts.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader
+            // colName
             // 
-            this.columnHeader.Text = "";
-            this.columnHeader.Width = 100;
+            this.colName.Tag = "ContentHeaderMax";
+            this.colName.Text = "Account";
+            this.colName.Width = 100;
             // 
-            // imageListLargeIcons
+            // colAddress
             // 
-            this.imageListLargeIcons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListLargeIcons.ImageStream")));
-            this.imageListLargeIcons.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListLargeIcons.Images.SetKeyName(0, "Google");
-            this.imageListLargeIcons.Images.SetKeyName(1, "WindowsLive");
-            this.imageListLargeIcons.Images.SetKeyName(2, "Yahoo");
-            this.imageListLargeIcons.Images.SetKeyName(3, "Other");
+            this.colAddress.Tag = "Fill";
+            this.colAddress.Text = "Address";
+            // 
+            // colDefault
+            // 
+            this.colDefault.Tag = "ContentHeaderMax";
+            this.colDefault.Text = "Default";
+            // 
+            // colHidden
+            // 
+            this.colHidden.Tag = "Fixed;0";
+            this.colHidden.Text = "";
+            this.colHidden.Width = 25;
+            // 
+            // imageListIcons
+            // 
+            this.imageListIcons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListIcons.ImageStream")));
+            this.imageListIcons.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListIcons.Images.SetKeyName(0, "Other");
+            this.imageListIcons.Images.SetKeyName(1, "Google");
+            this.imageListIcons.Images.SetKeyName(2, "WindowsLive");
+            this.imageListIcons.Images.SetKeyName(3, "Yahoo");
+            this.imageListIcons.Images.SetKeyName(4, "Mail.ru");
+            this.imageListIcons.Images.SetKeyName(5, "Yandex.ru");
+            this.imageListIcons.Images.SetKeyName(6, "Rambler.ru");
+            this.imageListIcons.Images.SetKeyName(7, "Inbox.com");
+            this.imageListIcons.Images.SetKeyName(8, "Mail.com");
+            this.imageListIcons.Images.SetKeyName(9, "GMX");
             // 
             // panelButtons
             // 
@@ -286,7 +316,7 @@
             this.tabOutgoing.Location = new System.Drawing.Point(4, 22);
             this.tabOutgoing.Name = "tabOutgoing";
             this.tabOutgoing.Padding = new System.Windows.Forms.Padding(3);
-            this.tabOutgoing.Size = new System.Drawing.Size(523, 320);
+            this.tabOutgoing.Size = new System.Drawing.Size(523, 340);
             this.tabOutgoing.TabIndex = 1;
             this.tabOutgoing.Text = "Outgoing Email";
             this.tabOutgoing.UseVisualStyleBackColor = true;
@@ -338,7 +368,7 @@
 
         private System.Windows.Forms.Panel panelTopHalf;
         private System.Windows.Forms.ListView listViewAccounts;
-        private System.Windows.Forms.ColumnHeader columnHeader;
+        private System.Windows.Forms.ColumnHeader colName;
         private System.Windows.Forms.Panel panelButtons;
         private System.Windows.Forms.Panel panelActivate;
         private System.Windows.Forms.Button buttonActivate;
@@ -354,9 +384,12 @@
         private PollingConfig pollingConfig;
         private System.Windows.Forms.TabPage tabOutgoing;
         private SmtpConfig smtpConfig;
-        private System.Windows.Forms.ImageList imageListLargeIcons;
         private System.Windows.Forms.Panel panelSetStartUp;
         private System.Windows.Forms.Button buttonSetStartUp;
+        private System.Windows.Forms.ColumnHeader colAddress;
+        private System.Windows.Forms.ColumnHeader colDefault;
+        private System.Windows.Forms.ColumnHeader colHidden;
+        private System.Windows.Forms.ImageList imageListIcons;
 
     }
 }

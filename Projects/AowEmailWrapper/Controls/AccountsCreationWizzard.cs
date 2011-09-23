@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using AowEmailWrapper.Helpers;
 using AowEmailWrapper.ConfigFramework;
 using AowEmailWrapper.Localization;
+using AowEmailWrapper.Classes;
 
 namespace AowEmailWrapper.Controls
 {
@@ -17,7 +18,10 @@ namespace AowEmailWrapper.Controls
         private AccountConfigValuesList _accountTemplates;
         private AccountConfigValues _chosenTemplate;
         private const string InputEmailSettingsManual = "msgInputEmailSettingsManual";
-        private const string RadioButtonNameTemplate = "radio{0}";
+        private const string OtherAccountTranslationKey = "accountOther";
+        private const string OtherAccountType = "Other";
+
+        private ImageList _templateIcons;
 
         public EventHandler CreateClicked;
 
@@ -32,16 +36,17 @@ namespace AowEmailWrapper.Controls
             set
             {
                 _accountTemplates = value;
-                CreateRadioButtons();
+                Populate();
             }
         }
 
-        public ImageList RadioImages
+        public ImageList TemplateIcons
         {
-            get { return null; }
+            get { return _templateIcons; }
             set
             {
-                SetIcons(value);
+                _templateIcons = value;
+                listViewTemplates.SmallImageList = _templateIcons;
             }
         }
 
@@ -50,75 +55,52 @@ namespace AowEmailWrapper.Controls
             InitializeComponent();
             EventHandler textBoxTextChanged = new EventHandler(textBox_TextChanged);
             KeyEventHandler textBoxKeyDown = new KeyEventHandler(textBox_KeyDown);
-            
+
             fbEmailAddress.InnerTextBox.TextChanged += textBoxTextChanged;
+            fbEmailAddress.InnerTextBox.Validated += new EventHandler(textBox_Validated);
             fbEmailAddress.InnerTextBox.KeyDown += textBoxKeyDown;
 
             fbPassword.InnerTextBox.TextChanged += textBoxTextChanged;
             fbPassword.InnerTextBox.KeyDown += textBoxKeyDown;
+
+            listViewTemplates.SelectedIndexChanged += new EventHandler(listViewTemplates_SelectedIndexChanged);
+            listViewTemplates.ClientSizeChanged += new EventHandler(listViewTemplates_Resize);
         }
 
-        private void radioButton_CheckedChanged(object sender, EventArgs e)
-        {            
-            RadioButton theButton = (RadioButton)sender;
-            string buttonArg = theButton.Tag.ToString();
+        private void listViewTemplates_Resize(object sender, EventArgs e)
+        {
+            listViewTemplates.BeginUpdate();
+            ListViewColumnResizer.ResizeColumns(listViewTemplates);
+            listViewTemplates.EndUpdate();
+        }
 
+        private void listViewTemplates_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateSelectedTemplate();
+        }
+
+        private void UpdateSelectedTemplate()
+        {
             if (_accountTemplates != null &&
                 _accountTemplates.Accounts != null &&
-                _accountTemplates.Accounts.Count > 0)
+                _accountTemplates.Accounts.Count > 0 &&
+                listViewTemplates.SelectedIndices.Count.Equals(1))
             {
-                EmailProviderType selectedEmailType = ConfigHelper.ParseEnumString<EmailProviderType>(buttonArg);
+                string selectedEmailType = listViewTemplates.SelectedItems[0].Tag.ToString();
                 AccountConfigValues selectedTemplate = _accountTemplates.Accounts.Find(account => account.EmailProvider.Equals(selectedEmailType));
+
+                labelDomainsMessage.Text = GetDomains(selectedTemplate.TemplateDomains);
 
                 //Create a copy of it in memory (don't modify the original)
                 _chosenTemplate = XmlHelper.Deserialize<AccountConfigValues>(XmlHelper.Serialize(selectedTemplate));
-                _chosenTemplate.Name = theButton.Text;
+                _chosenTemplate.Name = selectedTemplate.Name;
 
                 CheckCreateEnabled();
 
-                switch (_chosenTemplate.EmailProvider)
+                if (_chosenTemplate.EmailProvider.Equals(OtherAccountType, StringComparison.InvariantCultureIgnoreCase))
                 {
-                    case EmailProviderType.Google:
-                    case EmailProviderType.WindowsLive:
-                    case EmailProviderType.Yahoo:
-                        labelDomainsMessage.Text = _chosenTemplate.Domains;
-                        break;
-                    default:
-                        labelDomainsMessage.Text = Translator.Translate(InputEmailSettingsManual);
-                        fbEmailAddress.TextValue = string.Empty;
-                        fbPassword.TextValue = string.Empty;
-                        break;
-                }
-            }
-        }
-
-        private void radioButton_MouseUp(object sender, MouseEventArgs e)
-        {
-            SetTextBoxFocus();
-        }
-
-        private void radioButton_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode.Equals(Keys.Enter))
-            {
-                SetTextBoxFocus();
-            }
-        }
-
-        private void SetTextBoxFocus()
-        {
-            if (_chosenTemplate != null)
-            {
-                switch (_chosenTemplate.EmailProvider)
-                {
-                    case EmailProviderType.Google:
-                    case EmailProviderType.WindowsLive:
-                    case EmailProviderType.Yahoo:
-                        fbEmailAddress.InnerTextBox.Focus();
-                        break;
-                    default:
-                        buttonCreate.Focus();
-                        break;
+                    labelDomainsMessage.Text = Translator.Translate(InputEmailSettingsManual);
+                    _chosenTemplate.Name = Translator.Translate(OtherAccountTranslationKey);
                 }
             }
         }
@@ -127,19 +109,7 @@ namespace AowEmailWrapper.Controls
         {
             if (_chosenTemplate != null)
             {
-                switch (_chosenTemplate.EmailProvider)
-                {
-                    case EmailProviderType.Google:
-                    case EmailProviderType.WindowsLive:
-                    case EmailProviderType.Yahoo:
-                        buttonCreate.Enabled = fbEmailAddress.TextValue.Length > 0 && fbPassword.TextValue.Length > 0;
-                        groupBoxAuth.Enabled = true;
-                        break;
-                    default:
-                        buttonCreate.Enabled = true;
-                        groupBoxAuth.Enabled = false;
-                        break;
-                }
+                buttonCreate.Enabled = fbEmailAddress.TextValue.Length > 0 && fbPassword.TextValue.Length > 0;
             }
         }
 
@@ -153,63 +123,85 @@ namespace AowEmailWrapper.Controls
         }
 
         private void textBox_TextChanged(object sender, EventArgs e)
-        {
+        {            
             CheckCreateEnabled();
+        }
+
+        private void textBox_Validated(object sender, EventArgs e)
+        {
+            SelectCorrectEmailProvider();
+        }
+
+        private void SelectCorrectEmailProvider()
+        {
+            string theType = _accountTemplates.GetEmailProviderType(fbEmailAddress.TextValue);
+
+            if (string.IsNullOrEmpty(theType))
+            {
+                theType = OtherAccountType;
+            }
+
+            AccountConfigValues theAccountType = _accountTemplates.Accounts.Find(item => item.EmailProvider.Equals(theType, StringComparison.InvariantCultureIgnoreCase));
+
+            ListViewItem[] theItems = listViewTemplates.Items.Find(theAccountType.EmailProvider, true);
+
+            //Only change the selection if it's incorrect
+            if (theItems != null &&
+                theItems.Length > 0)
+            {
+                listViewTemplates.SelectedItems.Clear();
+                theItems[0].Selected = true;
+                theItems[0].EnsureVisible();
+            }
         }
 
         private void buttonCreate_Click(object sender, EventArgs e)
         {
-            if (buttonCreate.Enabled)
+            UpdateChosenTemplate(fbEmailAddress.TextValue, fbPassword.TextValue);
+            if (CreateClicked != null)
             {
-                UpdateChosenTemplate(fbEmailAddress.TextValue, fbPassword.TextValue);
-                if (CreateClicked != null)
-                {
-                    CreateClicked(this, e);
-                }
+                CreateClicked(this, e);
             }
         }
 
-        private void CreateRadioButtons()
+        private void Populate()
         {
             if (_accountTemplates != null &&
                 _accountTemplates.Accounts != null &&
                 _accountTemplates.Accounts.Count > 0)
             {
-                this.SuspendLayout();
+                listViewTemplates.BeginUpdate();
 
                 foreach (AccountConfigValues account in _accountTemplates.Accounts)
                 {
-                    RadioButton theButton = CreateRadioButton(account.EmailProvider, account.Name);
-                    theButton.TabIndex = panelInnerRadio.Controls.Count + 1;
-                    panelInnerRadio.Controls.Add(theButton);
-                    theButton.BringToFront();
+                    bool isTypeOther = account.EmailProvider.Equals(OtherAccountType, StringComparison.InvariantCultureIgnoreCase);
+                    string name = isTypeOther ? Translator.Translate(OtherAccountTranslationKey) : account.Name;
+
+                    int imageIndex = _templateIcons.Images.IndexOfKey(account.EmailProvider);
+
+                    listViewTemplates.Items.Add(account.EmailProvider, name, imageIndex > 0 ? imageIndex : 0);
+                    listViewTemplates.Items[listViewTemplates.Items.Count-1].Tag = account.EmailProvider;
                 }
 
-                this.ResumeLayout();
+                ListViewColumnResizer.ResizeColumns(listViewTemplates);
+
+                listViewTemplates.EndUpdate();
             }
         }
 
-        private void SetIcons(ImageList images)
+        private string GetDomains(List<string> domains)
         {
-            if (images != null && panelInnerRadio.Controls.Count > 0)
+            StringBuilder sb = new StringBuilder();
+            for(int i = 0; i<domains.Count;i++)
             {
-                this.SuspendLayout();
-
-                foreach (Control control in panelInnerRadio.Controls)
+                sb.Append(domains[i]);
+                if (i < domains.Count - 1)
                 {
-                    if (control is RadioButton)
-                    {
-                        RadioButton radioButton = (RadioButton)control;
-                        int imageIndex = images.Images.IndexOfKey(radioButton.Tag.ToString());
-                        if (imageIndex >= 0)
-                        {
-                            radioButton.Image = images.Images[imageIndex];
-                        }
-                    }
+                    sb.Append(", ");
                 }
-
-                this.ResumeLayout();
             }
+
+            return sb.ToString();
         }
 
         private void UpdateChosenTemplate(string emailAddress, string password)
@@ -226,30 +218,6 @@ namespace AowEmailWrapper.Controls
                 _chosenTemplate.PollingConfig.PasswordTrue = password;
                 _chosenTemplate.SmtpConfig.EmailAddress = emailAddress;
             }
-        }
-
-        private RadioButton CreateRadioButton(EmailProviderType type, string text)
-        {
-            RadioButton returnVal = new RadioButton();
-
-            returnVal.AutoSize = true;
-            returnVal.Dock = DockStyle.Left;
-            returnVal.ImageAlign = ContentAlignment.TopCenter;
-            returnVal.Location = new Point(0, 0);
-            returnVal.Name = string.Format(RadioButtonNameTemplate, type.ToString());
-            returnVal.Padding = new Padding(0, 0, 30, 0);
-            returnVal.Size = new Size(72, 72);
-            returnVal.TabStop = true;
-            returnVal.Tag = type.ToString();
-            string translated = Translator.Translate(returnVal.Name);
-            returnVal.Text = !string.IsNullOrEmpty(translated) ? translated : text;
-            returnVal.TextAlign = ContentAlignment.BottomCenter;
-            returnVal.UseVisualStyleBackColor = true;
-            returnVal.CheckedChanged += new EventHandler(this.radioButton_CheckedChanged);
-            returnVal.KeyDown += new KeyEventHandler(this.radioButton_KeyDown);
-            returnVal.MouseUp += new MouseEventHandler(radioButton_MouseUp);
-
-            return returnVal;
         }
 
         private string GetEmailUser(string emailAddress)
