@@ -897,7 +897,8 @@ namespace AowEmailWrapper
 
                 if (account.PollingConfig.UsePolling &&
                     !string.IsNullOrEmpty(account.PollingConfig.Username) &&
-                    !string.IsNullOrEmpty(account.PollingConfig.Password))
+                    !string.IsNullOrEmpty(account.PollingConfig.Password) &&
+                    !string.IsNullOrEmpty(account.PollingConfig.Server))
                 {
                     StartPolling(account.PollingConfig, _wrapperConfig.PreferencesConfig);
                 }
