@@ -3,7 +3,9 @@
 		<!-- BEGIN: Main forms -->
 		<lookup key="Main" value="Age of Wonders Email Wrapper"/>
 		<lookup key="tabAccounts" value="Accounts"/>
-		<lookup key="accountsConfiglistViewAccounts0" value=""/>
+		<lookup key="panelTopHalflistViewAccounts0" value="Account"/>
+		<lookup key="panelTopHalflistViewAccounts1" value="Email Address"/>
+		<lookup key="panelTopHalflistViewAccounts2" value="Default"/>
 		<lookup key="buttonActivate" value="Activate"/>
 		<lookup key="buttonSetStartUp" value="Set as Default"/>
 		<lookup key="buttonRename" value="Rename"/>
@@ -62,7 +64,7 @@
 		<lookup key="cmdClose" value="Close"/>
 		<lookup key="AccountsCreationForm" value="Create a new account"/>
 		<lookup key="buttonCreate" value="&amp;Create"/>
-		<lookup key="radioOther" value="Other"/>
+		<lookup key="accountOther" value="Other"/>
 		<!-- END: Main forms -->
 		<!-- BEGIN: Messages -->
 		<lookup key="msgWrapperWriteAccess" value="The Wrapper does not have Write access to these folders:&#xA;{0}&#xA;&#xA;Please modify your system security settings or run the Wrapper as Administrator."/>
@@ -178,7 +180,7 @@
 		<lookup key="cmdClose" value="Fermer"/>
 		<lookup key="AccountsCreationForm" value="Créer un nouveau compte"/>
 		<lookup key="buttonCreate" value="&amp;Créer"/>
-		<lookup key="radioOther" value="Autre"/>
+		<lookup key="accountOther" value="Autre"/>
 		<!-- END: Main forms -->
 		<!-- BEGIN: Messages -->
 		<lookup key="msgWrapperWriteAccess" value="Le Wrapper n'a pas les autorisations en écriture sur les répertoires suivants : &#xA;{0}&#xA;&#xA;Merci de modifier les réglages de sécurité de votre système ou d'éxécuter ce Wrapper en tant qu'Administrateur."/>
@@ -287,7 +289,7 @@
 		<lookup key="cmdClose" value="Schließen"/>
 		<lookup key="AccountsCreationForm" value="Neues Konto erstellen"/>
 		<lookup key="buttonCreate" value="&amp;Erstellen"/>
-		<lookup key="radioOther" value="Andere"/>
+		<lookup key="accountOther" value="Andere"/>
 		<!-- END: Main forms -->
 		<!-- BEGIN: Messages -->
 		<lookup key="msgWrapperWriteAccess" value="Der Wrapper hat keinen Schreibzugriff auf diese Verzeichnisse:&#xA;{0}&#xA;&#xA; Bitte ändern Sie Ihre System Sicherheitseinstellungen oder starten Sie den Wrapper als Administrator."/>
@@ -396,7 +398,7 @@
 		<lookup key="cmdClose" value="Cerrar"/>
 		<lookup key="AccountsCreationForm" value="Crear una nueva cuenta"/>
 		<lookup key="buttonCreate" value="&amp;Crear"/>
-		<lookup key="radioOther" value="Otro"/>
+		<lookup key="accountOther" value="Otro"/>
 		<!-- END: Main forms -->
 		<!-- BEGIN: Messages -->
 		<lookup key="msgWrapperWriteAccess" value="El Wrapper no tiene acceso de escritura a las siguientes carpetas:&#xA;{0}&#xA;&#xA;Por favor, modifique las opciones de seguridad de su sistema o inicie el Wrapper en modo de Administrador."/>
@@ -505,7 +507,7 @@
 		<lookup key="cmdClose" value="Sluiten"/>
 		<lookup key="AccountsCreationForm" value="Maak nieuw account"/>
 		<lookup key="buttonCreate" value="&amp;Creëren"/>
-		<lookup key="radioOther" value="Ander"/>
+		<lookup key="accountOther" value="Ander"/>
 		<!-- END: Main forms -->
 		<!-- BEGIN: Messages -->
 		<lookup key="msgWrapperWriteAccess" value="De wrapper heeft geen toestemming tot deze folders: &#xA;{0}&#xA;&#xA; Verander aub uw beveiligings instellingen, of run de Wrapper als Administrator. "/>
@@ -612,7 +614,7 @@
 		<lookup key="cmdClose" value="Luk"/>
 		<lookup key="AccountsCreationForm" value="Opret ny konto"/>
 		<lookup key="buttonCreate" value="&amp;Tilføj"/>
-		<lookup key="radioOther" value="Andet"/>
+		<lookup key="accountOther" value="Andet"/>
 		<!-- END: Main forms -->
 		<!-- BEGIN: Messages -->
 		<lookup key="msgWrapperWriteAccess" value="Wrapper'en har ikke skriveadgang til følgende mappe(r):&#xA;{0}&#xA;&#xA;Juster venligst dine sikkerhedsindstillinger eller kør Wrapper'en som Administrator."/>
@@ -720,7 +722,7 @@
 		<lookup key="cmdClose" value="Zamknij"/>
 		<lookup key="AccountsCreationForm" value="Utwórz nowe konto"/>
 		<lookup key="buttonCreate" value="&amp;Utwórz"/>
-		<lookup key="radioOther" value="Inne"/>
+		<lookup key="accountOther" value="Inne"/>
 		<!-- END: Main forms -->
 		<!-- BEGIN: Messages -->
 		<lookup key="msgWrapperWriteAccess" value="Wrapper nie ma dostępu do zapisu dla następujących folderów: &#xA;{0}&#xA;&#xA; Proszę zmienić ustawienia bezpieczeństwa systemu lub uruchamiać program jako Administrator."/>
@@ -826,7 +828,7 @@
 		<lookup key="cmdClose" value="Κλείσε"/>
 		<lookup key="AccountsCreationForm" value="Δημιουργία νέου λογαριασμού"/>
 		<lookup key="buttonCreate" value="&amp;Δημιουργία"/>
-		<lookup key="radioOther" value="Άλλο"/>
+		<lookup key="accountOther" value="Άλλο"/>
 		<!-- END: Main forms -->
 		<!-- BEGIN: Messages -->
 		<lookup key="msgWrapperWriteAccess" value="Ο Συσκευαστής δεν έχει δικαίωμα να Γράψει σε αυτόυς τους φακέλους: &#xA;{0}&#xA;&#xA; Παρακαλώ αλλάξτε το επίπεδο ασφάλειας του συστήματος σας ή εκτελέστε το πρόγραμμα ως διαχειριστής."/>
@@ -878,6 +880,9 @@
 	<language code="ru" display="Русский">
 		<!-- BEGIN: Main forms -->
 		<lookup key="tabAccounts" value="Учётные записи"/>
+		<lookup key="panelTopHalflistViewAccounts0" value="Учётная запись"/>
+		 <lookup key="panelTopHalflistViewAccounts1" value="E-mail"/>
+		<lookup key="panelTopHalflistViewAccounts2" value="По умолчанию"/>
 		<lookup key="buttonActivate" value="Активировать"/>
 		<lookup key="buttonSetStartUp" value="Использовать по умолчанию"/>
 		<lookup key="buttonRename" value="Переименовать"/>
@@ -936,7 +941,7 @@
 		<lookup key="cmdClose" value="Закрыть"/>
 		<lookup key="AccountsCreationForm" value="Создать новую учетную запись"/>
 		<lookup key="buttonCreate" value="&amp;Создать"/>
-		<lookup key="radioOther" value="Другой сервис"/>
+		<lookup key="accountOther" value="Другой сервис"/>
 		<!-- END: Main forms -->
 		<!-- BEGIN: Messages -->
 		<lookup key="msgWrapperWriteAccess" value="Нет прав на запись в папки: &#xA;{0}&#xA;&#xA; Исправьте настройки безопасности или запустите Wrapper с правами администратора."/>
