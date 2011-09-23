@@ -6,30 +6,15 @@ using System.Xml.Serialization;
 
 namespace AowEmailWrapper.ConfigFramework
 {
-    public enum EmailProviderType
-    {
-        [XmlEnum(Name = "None")]
-        None = 0,
-        [XmlEnum(Name = "Google")]
-        Google,
-        [XmlEnum(Name = "WindowsLive")]
-        WindowsLive,
-        [XmlEnum(Name = "Yahoo")]
-        Yahoo,
-        [XmlEnum(Name = "Other")]
-        Other
-    }
-
     [XmlRoot("account")]
     public class AccountConfigValues
     {
         private PollingConfigValues _pollingConfigValues;
         private SmtpConfigValues _smtpConfigValues;
         private string _name;
-        private bool _isStartUpAccount;
-        private EmailProviderType _emailProviderType; //Template property
-        private string _domains; //Template property
+        private string _emailProviderType; //Template property
         private string _shortUserName; //Template property
+        private List<string> _templateDomains; //Template property
 
         [XmlElement("polling_config")]
         public PollingConfigValues PollingConfig
@@ -54,18 +39,18 @@ namespace AowEmailWrapper.ConfigFramework
 
         //Template property
         [XmlAttribute("emailprovidertype")]
-        public EmailProviderType EmailProvider
+        public string EmailProvider
         {
             get { return _emailProviderType; }
             set { _emailProviderType = value; }
         }
 
         //Template property
-        [XmlAttribute("domains")]
-        public string Domains
+        [XmlElement("domain")]
+        public List<string> TemplateDomains
         {
-            get { return _domains; }
-            set { _domains = value; }
+            get { return _templateDomains; }
+            set { _templateDomains = value; }
         }
 
         //Template property
@@ -78,5 +63,19 @@ namespace AowEmailWrapper.ConfigFramework
 
         public AccountConfigValues()
         { }
+
+        public bool IsDomainMatch(string emailAddress)
+        {
+            bool returnVal = false;
+
+            if (_templateDomains != null && _templateDomains.Count > 0 & !string.IsNullOrEmpty(emailAddress))
+            {
+                string emailAddressTrimmed = emailAddress.ToLower().Trim();
+                returnVal = _templateDomains.Find(domain => emailAddressTrimmed.Contains(domain)) != null;
+            }
+
+            return returnVal;
+        }
+
     }
 }

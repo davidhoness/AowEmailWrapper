@@ -64,6 +64,24 @@ namespace AowEmailWrapper.ConfigFramework
             return (GetAccountByName(name) != null);
         }
 
+        public string GetEmailProviderType(string input)
+        {
+            string returnVal = null;
+
+            if (_accounts != null &&
+                _accounts.Count > 0 &&
+                _accounts.Find(account => account.TemplateDomains != null) != null)
+            {
+                AccountConfigValues templateMatch = _accounts.Find(item => item.IsDomainMatch(input));
+                if (templateMatch != null)
+                {
+                    returnVal = templateMatch.EmailProvider;
+                }
+            }
+
+            return returnVal;
+        }
+
         public AccountConfigValuesList()
         { }
     }
