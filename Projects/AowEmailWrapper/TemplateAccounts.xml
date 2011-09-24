@@ -20,6 +20,11 @@
 		<domain>@ymail</domain>
 		<domain>@rocketmail</domain>
 	</account>
+	<account name="AOL" emailprovidertype="AOL">
+		<polling_config usepolling="true" emailtype="IMAP" server="imap.aol.com" port="993" usessl="true" pollinterval="10" />
+		<smtp_config smtpserver="smtp.aol.com" port="465" smtpssltype="SSL" authentication="true" usepollingcredentials="true" bccmyself="false" />
+		<domain>@aol</domain>
+	</account>
 	<account name="Inbox.com" emailprovidertype="Inbox.com">
 		<polling_config usepolling="true" emailtype="POP3" server="my.inbox.com" port="110" usessl="false" pollinterval="10"/>
 		<smtp_config smtpserver="my.inbox.com" port="587" smtpssltype="None" authentication="true" usepollingcredentials="true" bccmyself="false"/>
