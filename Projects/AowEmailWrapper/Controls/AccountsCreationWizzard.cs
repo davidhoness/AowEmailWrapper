@@ -64,14 +64,6 @@ namespace AowEmailWrapper.Controls
             fbPassword.InnerTextBox.KeyDown += textBoxKeyDown;
 
             listViewTemplates.SelectedIndexChanged += new EventHandler(listViewTemplates_SelectedIndexChanged);
-            listViewTemplates.ClientSizeChanged += new EventHandler(listViewTemplates_Resize);
-        }
-
-        private void listViewTemplates_Resize(object sender, EventArgs e)
-        {
-            listViewTemplates.BeginUpdate();
-            ListViewColumnResizer.ResizeColumns(listViewTemplates);
-            listViewTemplates.EndUpdate();
         }
 
         private void listViewTemplates_SelectedIndexChanged(object sender, EventArgs e)
@@ -182,8 +174,6 @@ namespace AowEmailWrapper.Controls
                     listViewTemplates.Items.Add(account.EmailProvider, name, imageIndex > 0 ? imageIndex : 0);
                     listViewTemplates.Items[listViewTemplates.Items.Count-1].Tag = account.EmailProvider;
                 }
-
-                ListViewColumnResizer.ResizeColumns(listViewTemplates);
 
                 listViewTemplates.EndUpdate();
             }
