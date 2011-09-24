@@ -129,12 +129,13 @@
             this.imageListIcons.Images.SetKeyName(1, "Google");
             this.imageListIcons.Images.SetKeyName(2, "WindowsLive");
             this.imageListIcons.Images.SetKeyName(3, "Yahoo");
-            this.imageListIcons.Images.SetKeyName(4, "Mail.ru");
-            this.imageListIcons.Images.SetKeyName(5, "Yandex.ru");
-            this.imageListIcons.Images.SetKeyName(6, "Rambler.ru");
-            this.imageListIcons.Images.SetKeyName(7, "Inbox.com");
-            this.imageListIcons.Images.SetKeyName(8, "Mail.com");
-            this.imageListIcons.Images.SetKeyName(9, "GMX");
+            this.imageListIcons.Images.SetKeyName(4, "AOL");
+            this.imageListIcons.Images.SetKeyName(5, "Mail.ru");
+            this.imageListIcons.Images.SetKeyName(6, "Yandex.ru");
+            this.imageListIcons.Images.SetKeyName(7, "Rambler.ru");
+            this.imageListIcons.Images.SetKeyName(8, "Inbox.com");
+            this.imageListIcons.Images.SetKeyName(9, "Mail.com");
+            this.imageListIcons.Images.SetKeyName(10, "GMX");
             // 
             // panelButtons
             // 
