@@ -73,13 +73,13 @@
             this.listViewTemplates.Size = new System.Drawing.Size(437, 90);
             this.listViewTemplates.TabIndex = 0;
             this.listViewTemplates.UseCompatibleStateImageBehavior = false;
-            this.listViewTemplates.View = System.Windows.Forms.View.Details;
+            this.listViewTemplates.View = System.Windows.Forms.View.List;
             // 
             // colName
             // 
-            this.colName.Tag = "Fill";
+            this.colName.Tag = "";
             this.colName.Text = "";
-            this.colName.Width = 300;
+            this.colName.Width = 100;
             // 
             // panelMessagePadder
             // 
