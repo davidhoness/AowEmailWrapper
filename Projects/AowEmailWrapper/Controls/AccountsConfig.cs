@@ -290,7 +290,6 @@ namespace AowEmailWrapper.Controls
                     string theName = GetSelectedItem();
 
                     AccountConfigValues theAccount = _accountsList.GetAccountByName(theName);
-                    AccountConfigValues fallBackAccount = _accountsList.Accounts[0];
 
                     if (theAccount != null)
                     {
@@ -298,12 +297,12 @@ namespace AowEmailWrapper.Controls
                         {
                             if (theAccount.Equals(_accountsList.StartUpAccount))
                             {
-                                _accountsList.StartUpAccountName = !theAccount.Equals(_accountsList.ActiveAccount) ? _accountsList.ActiveAccount.Name : fallBackAccount.Name;
+                                _accountsList.StartUpAccountName = !theAccount.Equals(_accountsList.ActiveAccount) ? _accountsList.ActiveAccount.Name : _accountsList.Accounts[0].Name;
                             }
                             if (theAccount.Equals(_accountsList.ActiveAccount))
                             {
                                 _accountsList.Accounts.Remove(theAccount);
-                                Raise_Account_Activated(fallBackAccount);
+                                Raise_Account_Activated(_accountsList.StartUpAccount);
                             }
                             else
                             {
