@@ -1,0 +1,3 @@
+<domain>web.de</domain>
+<domain>email.de</domain>
+<domain>freemail.de</domain>

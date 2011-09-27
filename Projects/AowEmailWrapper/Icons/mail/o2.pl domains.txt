@@ -1,0 +1,4 @@
+<domain>@o2.pl</domain>
+<domain>@tlen.pl</domain>
+<domain>@go2.pl</domain>
+<domain>@prokonto.pl</domain>

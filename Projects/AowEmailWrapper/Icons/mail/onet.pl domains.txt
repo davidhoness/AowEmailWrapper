@@ -1,0 +1,10 @@
+<domain>@onet.pl</domain>
+<domain>@op.pl</domain>
+<domain>@poczta.onet.pl</domain>
+<domain>@onet.eu</domain>
+<domain>@vp.pl</domain>
+<domain>@autograf.pl</domain>
+<domain>@vip.onet.pl</domain>
+<domain>@spoko.pl</domain>
+<domain>@opoczta.pl</domain>
+<domain>@onet.com.pl</domain>
