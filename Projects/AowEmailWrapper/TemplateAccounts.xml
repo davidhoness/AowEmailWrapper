@@ -333,6 +333,15 @@
 		<smtp_config smtpserver="securesmtp.t-online.de" port="587" smtpssltype="TLS" authentication="true" usepollingcredentials="true" bccmyself="false"/>
 		<domain>@t-online.de</domain>
 	</account>
+	<account name="Wippies" emailprovidertype="Wippies">
+		<polling_config usepolling="true" emailtype="IMAP" server="imap.wippies.com" port="993" usessl="true" pollinterval="10"/>
+		<smtp_config smtpserver="smtp.wippies.com" port="465" smtpssltype="SSL" authentication="true" usepollingcredentials="true" bccmyself="false"/>
+		<domain>@wippies.com</domain>
+		<domain>@wippies.dk</domain>
+		<domain>@wippies.ee</domain>
+		<domain>@wippies.fi</domain>
+		<domain>@wippies.se</domain>
+	</account>
 	<account name="Onet.pl" emailprovidertype="Onet.pl">
 		<polling_config usepolling="true" emailtype="POP3" server="pop3.poczta.onet.pl" port="995" usessl="true" pollinterval="10"/>
 		<smtp_config smtpserver="smtp.poczta.onet.pl" port="465" smtpssltype="SSL" authentication="true" usepollingcredentials="true" bccmyself="false"/>
