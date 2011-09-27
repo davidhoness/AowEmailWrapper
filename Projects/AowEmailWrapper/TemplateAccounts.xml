@@ -21,8 +21,8 @@
 		<domain>@rocketmail</domain>
 	</account>
 	<account name="AOL" emailprovidertype="AOL">
-		<polling_config usepolling="true" emailtype="IMAP" server="imap.aol.com" port="993" usessl="true" pollinterval="10" />
-		<smtp_config smtpserver="smtp.aol.com" port="465" smtpssltype="SSL" authentication="true" usepollingcredentials="true" bccmyself="false" />
+		<polling_config usepolling="true" emailtype="IMAP" server="imap.aol.com" port="993" usessl="true" pollinterval="10"/>
+		<smtp_config smtpserver="smtp.aol.com" port="465" smtpssltype="SSL" authentication="true" usepollingcredentials="true" bccmyself="false"/>
 		<domain>@aol</domain>
 	</account>
 	<account name="Inbox.com" emailprovidertype="Inbox.com">
@@ -315,6 +315,50 @@
 		<domain>@reincarnate.com</domain>
 		<domain>@religious.com</domain>
 		<domain>@saintly.com</domain>
+	</account>
+	<account name="Web.de" emailprovidertype="Web.de">
+		<polling_config usepolling="true" emailtype="IMAP" server="imap.web.de" port="143" usessl="false" pollinterval="10"/>
+		<smtp_config smtpserver="smtp.web.de" port="587" smtpssltype="None" authentication="true" usepollingcredentials="true" bccmyself="false"/>
+		<domain>@web.de</domain>
+		<domain>@email.de</domain>
+		<domain>@freemail.de</domain>
+	</account>
+	<account name="Freenet.de" emailprovidertype="Freenet.de">
+		<polling_config usepolling="true" emailtype="IMAP" server="mx.freenet.de" port="993" usessl="true" pollinterval="10"/>
+		<smtp_config smtpserver="mx.freenet.de" port="465" smtpssltype="SSL" authentication="true" usepollingcredentials="true" bccmyself="false"/>
+		<domain>@freenet.de</domain>
+	</account>
+	<account name="t-online.de" emailprovidertype="t-online.de">
+		<polling_config usepolling="true" emailtype="IMAP" server="secureimap.t-online.de" port="993" usessl="true" pollinterval="10"/>
+		<smtp_config smtpserver="securesmtp.t-online.de" port="587" smtpssltype="TLS" authentication="true" usepollingcredentials="true" bccmyself="false"/>
+		<domain>@t-online.de</domain>
+	</account>
+	<account name="Onet.pl" emailprovidertype="Onet.pl">
+		<polling_config usepolling="true" emailtype="POP3" server="pop3.poczta.onet.pl" port="995" usessl="true" pollinterval="10"/>
+		<smtp_config smtpserver="smtp.poczta.onet.pl" port="465" smtpssltype="SSL" authentication="true" usepollingcredentials="true" bccmyself="false"/>
+		<domain>@onet.pl</domain>
+		<domain>@op.pl</domain>
+		<domain>@poczta.onet.pl</domain>
+		<domain>@onet.eu</domain>
+		<domain>@vp.pl</domain>
+		<domain>@autograf.pl</domain>
+		<domain>@vip.onet.pl</domain>
+		<domain>@spoko.pl</domain>
+		<domain>@opoczta.pl</domain>
+		<domain>@onet.com.pl</domain>
+	</account>
+	<account name="Wp.pl" emailprovidertype="Wp.pl">
+		<polling_config usepolling="true" emailtype="POP3" server="pop3.wp.pl" port="995" usessl="true" pollinterval="10"/>
+		<smtp_config smtpserver="smtp.wp.pl" port="587" smtpssltype="TLS" authentication="true" usepollingcredentials="true" bccmyself="false"/>
+		<domain>@wp.pl</domain>
+	</account>
+	<account name="o2.pl" emailprovidertype="o2.pl">
+		<polling_config usepolling="true" emailtype="POP3" server="poczta.o2.pl" port="995" usessl="true" pollinterval="10"/>
+		<smtp_config smtpserver="poczta.o2.pl" port="465" smtpssltype="SSL" authentication="true" usepollingcredentials="true" bccmyself="false"/>
+		<domain>@o2.pl</domain>
+		<domain>@tlen.pl</domain>
+		<domain>@go2.pl</domain>
+		<domain>@prokonto.pl</domain>
 	</account>
 	<account name="Mail.ru" emailprovidertype="Mail.ru">
 		<polling_config usepolling="true" emailtype="POP3" server="pop.mail.ru" port="995" usessl="true" pollinterval="10"/>
