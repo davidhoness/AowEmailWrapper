@@ -136,6 +136,12 @@
             this.imageListIcons.Images.SetKeyName(8, "Inbox.com");
             this.imageListIcons.Images.SetKeyName(9, "Mail.com");
             this.imageListIcons.Images.SetKeyName(10, "GMX");
+            this.imageListIcons.Images.SetKeyName(11, "Web.de");
+            this.imageListIcons.Images.SetKeyName(12, "Freenet.de");
+            this.imageListIcons.Images.SetKeyName(13, "t-online.de");
+            this.imageListIcons.Images.SetKeyName(14, "Onet.pl");
+            this.imageListIcons.Images.SetKeyName(15, "Wp.pl");
+            this.imageListIcons.Images.SetKeyName(16, "o2.pl");
             // 
             // panelButtons
             // 
