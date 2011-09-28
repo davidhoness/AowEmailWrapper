@@ -15,6 +15,7 @@ namespace AowEmailWrapper.Helpers
         private const string APPDATA_Wrapper_TurnLogs = "TurnLogs";
         private const string APPDATA_Wrapper_Config = "Config";
         private const string APPDATA_Wrapper_ActivityLog = "ActivityLog";
+        private const string APPDATA_Wrapper_Resend = "Resend";
 
         private static DirectoryInfo _wrapperRoot;
         private static DirectoryInfo _wrapperMessageStore;
@@ -22,6 +23,7 @@ namespace AowEmailWrapper.Helpers
         private static DirectoryInfo _wrapperTurnLogs;
         private static DirectoryInfo _wrapperConfig;
         private static DirectoryInfo _wrapperActivityLog;
+        private static DirectoryInfo _wrapperResend;
 
         public static DirectoryInfo AppDataFolder
         {
@@ -97,6 +99,18 @@ namespace AowEmailWrapper.Helpers
                     _wrapperActivityLog = GetFolder(Root, APPDATA_Wrapper_ActivityLog);
                 }
                 return _wrapperActivityLog;
+            }
+        }
+
+        public static DirectoryInfo Resend
+        {
+            get
+            {
+                if (_wrapperResend == null)
+                {
+                    _wrapperResend = GetFolder(Root, APPDATA_Wrapper_Resend);
+                }
+                return _wrapperResend;
             }
         }
 
