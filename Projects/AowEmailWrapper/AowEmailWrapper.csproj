@@ -63,6 +63,7 @@
     <Compile Include="ASG\OffsetMap.cs" />
     <Compile Include="ASG\OffsetMapField.cs" />
     <Compile Include="Classes\ComboBoxItem.cs" />
+    <Compile Include="Classes\InputBox.cs" />
     <Compile Include="Classes\ListViewColumnResizer.cs" />
     <Compile Include="Classes\ListViewColumnSorter.cs" />
     <Compile Include="ConfigFramework\AccountConfigValues.cs" />
@@ -173,6 +174,7 @@
     <Compile Include="Helpers\DataManagerHelper.cs" />
     <Compile Include="Helpers\FileHelper.cs" />
     <Compile Include="Helpers\FileVirtualizationHelper.cs" />
+    <Compile Include="Helpers\ResendHelper.cs" />
     <Compile Include="Helpers\XmlHelper.cs" />
     <Compile Include="Localization\Framework\Language.cs" />
     <Compile Include="Localization\Framework\Languages.cs" />
