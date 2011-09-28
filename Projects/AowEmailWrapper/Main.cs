@@ -934,6 +934,8 @@ namespace AowEmailWrapper
         //Raised by the AowGameManager class
         private void OnAowGameSaved(object sender, AowGameSavedEventArgs e)
         {
+            ResendHelper.Delete(e.FileName); //Avoids the user resending the previous turn by mistake
+
             Activity lastActivity = _activityLog.GetLastActivityByFileName(e.FileName);
 
             if (lastActivity != null)
@@ -1011,8 +1013,8 @@ namespace AowEmailWrapper
                         if (theEmail != null)
                         {
                             string newToAddress = theEmail.To[0].Address;
-                            
-                            if (InputBox.Show(Translator.Translate(this.Name), Translator.Translate(WrapperResendToKey), ref newToAddress).Equals(DialogResult.OK))
+
+                            if (InputBox.Show(activity.FileName, Translator.Translate(WrapperResendToKey), ref newToAddress).Equals(DialogResult.OK))
                             {
                                 if (!newToAddress.Equals(theEmail.To[0].Address, StringComparison.InvariantCultureIgnoreCase))
                                 {
