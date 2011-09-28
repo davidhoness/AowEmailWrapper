@@ -55,6 +55,7 @@ namespace AowEmailWrapper
         private const string WrapperRestartRequiredKey = "msgWrapperRestartRequired";
         private const string WrapperPollFailedKey = "msgWrapperPollFailed";
         private const string WrapperGamesWaitingKey = "msgWrapperGamesWaiting";
+        private const string WrapperResendToKey = "msgWrapperResendTo";
 
         private const string MainFormTitleTemplate = "{0} - {1}";
 
@@ -369,6 +370,7 @@ namespace AowEmailWrapper
             activityListView.OnDoubleClick += new ActivityListViewEventHandler(ActivityListViewDoubleClicked);
             activityListView.OnListChanged += new EventHandler(ActivityLogChanged);
             activityListView.OnMarkAsEnded += new ActivityListViewEventHandler(ActivityListViewGamesMarkedAsEnded);
+            activityListView.OnResendClick += new ActivityListViewEventHandler(ActivityListViewResend);
         }
 
         private void ShutDown(object sender, EventArgs e)
@@ -709,6 +711,8 @@ namespace AowEmailWrapper
                     _smtpSender.SendMessage(theEmail);
                 }
 
+                ResendHelper.Save(theEmail);
+
                 theSmtpProcessor.Dispose();
                 theSmtpProcessor = null;
 
@@ -980,7 +984,49 @@ namespace AowEmailWrapper
                         list.ForEach(endedActivity => _gameManager.ArchiveEndedGame(endedActivity.GameType, endedActivity.FileName, ConfigHelper.EndedFolder));
                     }
 
-                    list.ForEach(endedActivity => TurnLogger.DeleteLog(endedActivity.FileName));
+                    list.ForEach(endedActivity =>
+                    {
+                        TurnLogger.DeleteLog(endedActivity.FileName);
+                        ResendHelper.Delete(endedActivity.FileName);
+                    });
+                }
+                catch (Exception ex)
+                {
+                    Trace.TraceError(ex.ToString());
+                    Trace.Flush();
+                    ShowException(ex);
+                }
+            }
+        }
+
+        private void ActivityListViewResend(object sender, List<Activity> list)
+        {
+            if (list != null && list.Count > 0 && _smtpSender!=null)
+            {
+                try
+                {
+                    foreach (Activity activity in list)
+                    {
+                        IMail theEmail = ResendHelper.Load(activity.FileName);
+                        if (theEmail != null)
+                        {
+                            string newToAddress = theEmail.To[0].Address;
+                            
+                            if (InputBox.Show(Translator.Translate(this.Name), Translator.Translate(WrapperResendToKey), ref newToAddress).Equals(DialogResult.OK))
+                            {
+                                if (!newToAddress.Equals(theEmail.To[0].Address, StringComparison.InvariantCultureIgnoreCase))
+                                {
+                                    theEmail.To.Clear();
+                                    theEmail.To.Add(new Lesnikowski.Mail.Headers.MailBox(newToAddress));
+                                }
+
+                                _smtpSender.SendMessage(theEmail);
+
+                                CheckNotifyIconState();
+                                ResendHelper.Save(theEmail);
+                            }
+                        }
+                    }
                 }
                 catch (Exception ex)
                 {
