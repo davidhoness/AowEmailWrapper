@@ -171,9 +171,8 @@ namespace AowEmailWrapper.Controls
             return returnVal;
         }
 
-        private void RemoveSelected()
+        private void RemoveSelected(List<Activity> theActivities)
         {
-            List<Activity> theActivities = GetSelectedActivities();
             if (theActivities != null && theActivities.Count > 0)
             {
                 foreach (Activity activity in theActivities)
@@ -273,14 +272,14 @@ namespace AowEmailWrapper.Controls
             MenuItem markSent = new MenuItem();
             _resendMenuItem = new MenuItem();
 
-            _contextMenu.MenuItems.AddRange(new MenuItem[] { remove, markEnded, markSent, _resendMenuItem });
+            _contextMenu.MenuItems.AddRange(new MenuItem[] { _resendMenuItem, markEnded, markSent, remove });
 
             _contextMenu.Popup += new EventHandler(ContextMenu_Popup);
 
-            remove.Index = indexCount;
-            remove.Text = Translator.Translate(Menu_Remove_Tag);
-            remove.Tag = Menu_Remove_Tag;
-            remove.Click += menuItemClickEvent;
+            _resendMenuItem.Index = indexCount;
+            _resendMenuItem.Text = Translator.Translate(Menu_Resend_Tag);
+            _resendMenuItem.Tag = Menu_Resend_Tag;
+            _resendMenuItem.Click += menuItemClickEvent;
 
             indexCount++;
             markEnded.Index = indexCount;
@@ -295,40 +294,44 @@ namespace AowEmailWrapper.Controls
             markSent.Click += menuItemClickEvent;
 
             indexCount++;
-            _resendMenuItem.Index = indexCount;
-            _resendMenuItem.Text = Translator.Translate(Menu_Resend_Tag);
-            _resendMenuItem.Tag = Menu_Resend_Tag;
-            _resendMenuItem.Click += menuItemClickEvent;
+            remove.Index = indexCount;
+            remove.Text = Translator.Translate(Menu_Remove_Tag);
+            remove.Tag = Menu_Remove_Tag;
+            remove.Click += menuItemClickEvent;
 
             listView.ContextMenu = _contextMenu;
         }
 
         private void ContextMenu_Click(object sender, EventArgs e)
         {
-            List<Activity> selected = null;
-            switch (((MenuItem)sender).Tag.ToString())
+            List<Activity> selected = GetSelectedActivities();
+
+            if (selected != null && selected.Count > 0)
             {
-                case Menu_Remove_Tag:
-                    RemoveSelected();
-                    break;
-                case Menu_MarkEnded_Tag:
-                    selected = GetSelectedActivities();
-                    MarkState(ActivityState.Ended, selected);
-                    if (selected != null && selected.Count > 0 && OnMarkAsEnded != null)
-                    {
-                        OnMarkAsEnded(this, selected);
-                    }
-                    break;
-                case Menu_MarkSent_Tag:
-                    MarkState(ActivityState.Sent, GetSelectedActivities());
-                    break;
-                case Menu_Resend_Tag:
-                    selected = GetSelectedActivities();
-                    if (selected != null && selected.Count > 0 && OnResendClick != null)
-                    {
-                        OnResendClick(this, selected);
-                    }
-                    break;
+                string senderTag = ((MenuItem)sender).Tag.ToString();
+
+                switch (senderTag)
+                {
+                    case Menu_Remove_Tag:
+                        RemoveSelected(selected);
+                        break;
+                    case Menu_MarkEnded_Tag:
+                        MarkState(ActivityState.Ended, selected);
+                        if (OnMarkAsEnded != null)
+                        {
+                            OnMarkAsEnded(this, selected);
+                        }
+                        break;
+                    case Menu_MarkSent_Tag:
+                        MarkState(ActivityState.Sent, selected);
+                        break;
+                    case Menu_Resend_Tag:
+                        if (OnResendClick != null)
+                        {
+                            OnResendClick(this, selected);
+                        }
+                        break;
+                }
             }
         }
 
