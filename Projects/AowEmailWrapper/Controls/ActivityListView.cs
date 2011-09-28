@@ -22,10 +22,12 @@ namespace AowEmailWrapper.Controls
         private ActivityList _activityLog;
         private ListViewColumnSorter _lvwColumnSorter;
         private ContextMenu _contextMenu;
+        private MenuItem _resendMenuItem;
 
         private const string Menu_Remove_Tag = "menuItemRemove";
         private const string Menu_MarkEnded_Tag = "menuItemMarkEnded";
         private const string Menu_MarkSent_Tag = "menuItemMarkSent";
+        private const string Menu_Resend_Tag = "menuItemResend";
 
         #endregion
 
@@ -33,6 +35,7 @@ namespace AowEmailWrapper.Controls
 
         new public ActivityListViewEventHandler OnDoubleClick;
         public ActivityListViewEventHandler OnMarkAsEnded;
+        public ActivityListViewEventHandler OnResendClick;
         public EventHandler OnListChanged;
 
         public ActivityList ActivityLog
@@ -268,8 +271,9 @@ namespace AowEmailWrapper.Controls
             MenuItem remove = new MenuItem();
             MenuItem markEnded = new MenuItem();
             MenuItem markSent = new MenuItem();
+            _resendMenuItem = new MenuItem();
 
-            _contextMenu.MenuItems.AddRange(new MenuItem[] { remove, markEnded, markSent });
+            _contextMenu.MenuItems.AddRange(new MenuItem[] { remove, markEnded, markSent, _resendMenuItem });
 
             _contextMenu.Popup += new EventHandler(ContextMenu_Popup);
 
@@ -290,19 +294,25 @@ namespace AowEmailWrapper.Controls
             markSent.Tag = Menu_MarkSent_Tag;
             markSent.Click += menuItemClickEvent;
 
+            indexCount++;
+            _resendMenuItem.Index = indexCount;
+            _resendMenuItem.Text = Translator.Translate(Menu_Resend_Tag);
+            _resendMenuItem.Tag = Menu_Resend_Tag;
+            _resendMenuItem.Click += menuItemClickEvent;
+
             listView.ContextMenu = _contextMenu;
         }
 
         private void ContextMenu_Click(object sender, EventArgs e)
         {
-            GetSelectedActivities();
+            List<Activity> selected = null;
             switch (((MenuItem)sender).Tag.ToString())
             {
                 case Menu_Remove_Tag:
                     RemoveSelected();
                     break;
                 case Menu_MarkEnded_Tag:
-                    List<Activity> selected = GetSelectedActivities();
+                    selected = GetSelectedActivities();
                     MarkState(ActivityState.Ended, selected);
                     if (selected != null && selected.Count > 0 && OnMarkAsEnded != null)
                     {
@@ -311,6 +321,13 @@ namespace AowEmailWrapper.Controls
                     break;
                 case Menu_MarkSent_Tag:
                     MarkState(ActivityState.Sent, GetSelectedActivities());
+                    break;
+                case Menu_Resend_Tag:
+                    selected = GetSelectedActivities();
+                    if (selected != null && selected.Count > 0 && OnResendClick != null)
+                    {
+                        OnResendClick(this, selected);
+                    }
                     break;
             }
         }
@@ -322,6 +339,18 @@ namespace AowEmailWrapper.Controls
             {
                 menu.Enabled = enabled;
             }
+
+            bool resend = false;
+            foreach (Activity activity in GetSelectedActivities())
+            {
+                resend = !activity.Status.Equals(ActivityState.Ended) && AowEmailWrapper.Helpers.ResendHelper.CanResend(activity.FileName);
+                if (!resend)
+                {
+                    break;
+                }
+            }
+
+            _resendMenuItem.Enabled = resend;
         }
 
         #endregion
