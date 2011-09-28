@@ -81,6 +81,7 @@
 		<lookup key="msgWrapperPollFailed" value="Poll failed"/>
 		<lookup key="msgWrapperGamesWaiting" value="You have {0} game(s) waiting."/>
 		<lookup key="msgInputEmailSettingsManual" value="You will enter the settings manually."/>
+		<lookup key="msgWrapperResendTo" value="Resend To:"/>
 		<!-- END: Messages -->
 		<!-- BEGIN: Context Menus -->
 		<lookup key="menuItemShow" value="&amp;Show"/>
@@ -94,6 +95,7 @@
 		<lookup key="menuItemAdd" value="Add &amp;New"/>
 		<lookup key="menuItemMarkEnded" value="Mark as &amp;Ended"/>
 		<lookup key="menuItemMarkSent" value="Mark as &amp;Sent"/>
+		<lookup key="menuItemResend" value="Resend"/>
 		<!-- END: Context Menus -->
 		<!-- BEGIN: Enumerations -->
 		<lookup key="enumIMAP" value="IMAP"/>
@@ -958,6 +960,7 @@
 		<lookup key="msgWrapperPollFailed" value="Не удалось проверить почту."/>
 		<lookup key="msgWrapperGamesWaiting" value="У вас есть {0} несыгранных игр(ы)."/>
 		<lookup key="msgInputEmailSettingsManual" value="Настройки надо будет прописать вручную."/>
+		<lookup key="msgWrapperResendTo" value="Отправить заново:"/>
 		<!-- END: Messages -->
 		<!-- BEGIN: Context Menus -->
 		<lookup key="menuItemShow" value="Открыть Wrapper"/>
@@ -971,6 +974,7 @@
 		<lookup key="menuItemAdd" value="Создать учётную запись"/>
 		<lookup key="menuItemMarkEnded" value="Пометить как завершённый"/>
 		<lookup key="menuItemMarkSent" value="Пометить как отправленный"/>
+		<lookup key="menuItemResend" value="Отправить заново"/>
 		<!-- END: Context Menus -->
 		<!-- BEGIN: Enumerations -->
 		<lookup key="enumNone" value="Без шифрования"/>
