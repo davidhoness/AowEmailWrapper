@@ -14,10 +14,31 @@ namespace AowEmailWrapper.Classes
     {
         public static DialogResult Show(string title, string promptText, ref string value)
         {
+            return ShowInput(title, promptText, ref value, null);
+        }
+
+        public static DialogResult Show(string title, string promptText, ref string value, Image iconImage)
+        {
+            Icon theIcon = Icon.FromHandle(((Bitmap)iconImage).GetHicon());
+            return ShowInput(title, promptText, ref value, theIcon);
+        }
+
+        public static DialogResult Show(string title, string promptText, ref string value, Icon icon)
+        {
+            return ShowInput(title, promptText, ref value, icon);
+        }
+
+        private static DialogResult ShowInput(string title, string promptText, ref string value, Icon icon)
+        {
             DialogResult dialogResult;
 
             using (Form form = new Form())
             {
+                if (icon != null)
+                {
+                    form.Icon = icon;
+                }
+
                 Label label = new Label();
                 TextBox textBox = new TextBox();
                 Button buttonOk = new Button();
