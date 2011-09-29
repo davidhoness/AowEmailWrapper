@@ -329,10 +329,11 @@ namespace AowEmailWrapper.Controls
                 if (theAccount != null)
                 {
                     Image accountImage = imageListIcons.Images[0];
+                    string emailProviderType = _accountsTemplates.GetEmailProviderType(theAccount.SmtpConfig.EmailAddress);
 
-                    if (imageListIcons.Images.IndexOfKey(theAccount.EmailProvider) >= 0)
+                    if (imageListIcons.Images.IndexOfKey(emailProviderType) >= 0)
                     {
-                        accountImage = imageListIcons.Images[theAccount.EmailProvider];
+                        accountImage = imageListIcons.Images[emailProviderType];
                     }
 
                     DialogResult dialogResult = InputBox.Show(theAccount.Name, Translator.Translate(AccountPromptTextKey), ref theName, accountImage);
