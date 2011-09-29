@@ -43,7 +43,7 @@ namespace AowEmailWrapper.Classes
                 TextBox textBox = new TextBox();
                 Button buttonOk = new Button();
                 Button buttonCancel = new Button();
-
+                
                 form.Text = title;
                 label.Text = promptText;
                 textBox.Text = value;
@@ -63,6 +63,7 @@ namespace AowEmailWrapper.Classes
                 buttonOk.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
                 buttonCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
 
+                form.ShowInTaskbar = false;
                 form.ClientSize = new Size(396, 107);
                 form.Controls.AddRange(new Control[] { label, textBox, buttonOk, buttonCancel });
                 form.ClientSize = new Size(Math.Max(300, label.Right + 10), form.ClientSize.Height);
