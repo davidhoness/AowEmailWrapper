@@ -1010,11 +1010,18 @@ namespace AowEmailWrapper
                     foreach (Activity activity in list)
                     {
                         IMail theEmail = ResendHelper.Load(activity.FileName);
-                        if (theEmail != null)
+                        if (theEmail != null && theEmail.To.Count > 0)
                         {
                             string newToAddress = theEmail.To[0].Address;
 
-                            if (InputBox.Show(activity.FileName, Translator.Translate(WrapperResendToKey), ref newToAddress).Equals(DialogResult.OK))
+                            Image gameTypeImage = null;
+                            string gameType = activity.GameType.ToString();
+                            if (imageListIcons.Images.IndexOfKey(gameType) >= 0)
+                            {
+                                gameTypeImage = imageListIcons.Images[gameType];
+                            }
+
+                            if (InputBox.Show(activity.FileName, Translator.Translate(WrapperResendToKey), ref newToAddress, gameTypeImage).Equals(DialogResult.OK))
                             {
                                 if (!newToAddress.Equals(theEmail.To[0].Address, StringComparison.InvariantCultureIgnoreCase))
                                 {
