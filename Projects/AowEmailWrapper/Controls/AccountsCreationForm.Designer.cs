@@ -53,6 +53,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AccountsCreationForm";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Create new account";
             this.ResumeLayout(false);
