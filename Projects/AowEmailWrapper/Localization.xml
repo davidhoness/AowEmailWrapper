@@ -124,6 +124,9 @@
 	<language code="fr" display="Française">
 		<!-- BEGIN: Main forms -->
 		<lookup key="tabAccounts" value="Comptes"/>
+		<lookup key="panelTopHalflistViewAccounts0" value="Compte"/>
+		<lookup key="panelTopHalflistViewAccounts1" value="Adresse mail"/>
+		<lookup key="panelTopHalflistViewAccounts2" value="Défaut"/>
 		<lookup key="buttonActivate" value="Activer"/>
 		<lookup key="buttonSetStartUp" value="Utiliser par Défaut"/>
 		<lookup key="buttonRename" value="Renommer"/>
@@ -199,6 +202,7 @@
 		<lookup key="msgWrapperPollFailed" value="Echec de scrutation"/>
 		<lookup key="msgWrapperGamesWaiting" value="Vous avez {0} partie(s) en attente."/>
 		<lookup key="msgInputEmailSettingsManual" value="Vous remplirez les paramètres manuellement."/>
+		<lookup key="msgWrapperResendTo" value="Renvoyer à:"/>
 		<!-- END: Messages -->
 		<!-- BEGIN: Context Menus -->
 		<lookup key="menuItemShow" value="Ouvrir"/>
@@ -212,6 +216,7 @@
 		<lookup key="menuItemAdd" value="Créer"/>
 		<lookup key="menuItemMarkEnded" value="Marquer comme terminé"/>
 		<lookup key="menuItemMarkSent" value="Marquer comme envoyé"/>
+		<lookup key="menuItemResend" value="Renvoyer"/>
 		<!-- END: Context Menus -->
 		<!-- BEGIN: Enumerations -->
 		<lookup key="enumNone" value="Aucun"/>
@@ -233,6 +238,9 @@
 	<language code="de" display="Deutsch">
 		<!-- BEGIN: Main forms -->
 		<lookup key="tabAccounts" value="Konten"/>
+		<lookup key="panelTopHalflistViewAccounts0" value="Konto"/>
+		<lookup key="panelTopHalflistViewAccounts1" value="E-Mail Adresse"/>
+		<lookup key="panelTopHalflistViewAccounts2" value="Default"/>
 		<lookup key="buttonActivate" value="Aktivieren"/>
 		<lookup key="buttonSetStartUp" value="Als default festlegen"/>
 		<lookup key="buttonRename" value="Umbenennen"/>
@@ -308,6 +316,7 @@
 		<lookup key="msgWrapperPollFailed" value="Abruf fehlgeschlagen"/>
 		<lookup key="msgWrapperGamesWaiting" value="Sie haben {0} Spiel(e) wartend."/>
 		<lookup key="msgInputEmailSettingsManual" value="Ich werde die Einstellungen manuell vornehmen."/>
+		<lookup key="msgWrapperResendTo" value="Erneut senden:"/>
 		<!-- END: Messages -->
 		<!-- BEGIN: Context Menus -->
 		<lookup key="menuItemShow" value="Anzeigen"/>
@@ -321,6 +330,7 @@
 		<lookup key="menuItemAdd" value="Neu hinzufügen"/>
 		<lookup key="menuItemMarkEnded" value="Als beendet markieren"/>
 		<lookup key="menuItemMarkSent" value="Als gesendet markieren"/>
+		<lookup key="menuItemResend" value="Erneut senden"/>
 		<!-- END: Context Menus -->
 		<!-- BEGIN: Enumerations -->
 		<lookup key="enumNone" value="Nichts"/>
@@ -343,6 +353,9 @@
 	<language code="es" display="Español">
 		<!-- BEGIN: Main forms -->
 		<lookup key="tabAccounts" value="Cuentas"/>
+		<lookup key="panelTopHalflistViewAccounts0" value="Cuenta"/>
+		<lookup key="panelTopHalflistViewAccounts1" value="Dirección de Email"/>
+		<lookup key="panelTopHalflistViewAccounts2" value="Defecto"/>
 		<lookup key="buttonActivate" value="Activar"/>
 		<lookup key="buttonSetStartUp" value="Uso por defecto"/>
 		<lookup key="buttonRename" value="Renombrar"/>
@@ -417,6 +430,7 @@
 		<lookup key="msgWrapperPollFailed" value="Chequeo fallido."/>
 		<lookup key="msgWrapperGamesWaiting" value="Tienes {0} juegos esperando."/>
 		<lookup key="msgInputEmailSettingsManual" value="Entrarás la configuracoón manualmente."/>
+		<lookup key="msgWrapperResendTo" value="Reenviar a:"/>
 		<!-- END: Messages -->
 		<!-- BEGIN: Context Menus -->
 		<lookup key="menuItemShow" value="Mostrar"/>
@@ -430,6 +444,7 @@
 		<lookup key="menuItemAdd" value="Nueva cuenta"/>
 		<lookup key="menuItemMarkEnded" value="Marcar como terminado"/>
 		<lookup key="menuItemMarkSent" value="Marcar como enviado"/>
+		<lookup key="menuItemResend" value="Reenviar"/>
 		<!-- END: Context Menus -->
 		<!-- BEGIN: Enumerations -->
 		<lookup key="enumNone" value="Ninguno"/>
@@ -452,6 +467,9 @@
 	<language code="nl" display="Nederlands">
 		<!-- BEGIN: Main forms -->
 		<lookup key="tabAccounts" value="Accounts"/>
+		<lookup key="panelTopHalflistViewAccounts0" value="Account"/>
+		<lookup key="panelTopHalflistViewAccounts1" value="Email adres"/>
+		<lookup key="panelTopHalflistViewAccounts2" value="Default"/>
 		<lookup key="buttonActivate" value="Activeer"/>
 		<lookup key="buttonSetStartUp" value="Gebruik als Default"/>
 		<lookup key="buttonRename" value="Hernaam"/>
@@ -526,6 +544,7 @@
 		<lookup key="msgWrapperPollFailed" value="Doorzoeken gefaald"/>
 		<lookup key="msgWrapperGamesWaiting" value="Je hebt {0} game(s) wachten."/>
 		<lookup key="msgInputEmailSettingsManual" value="Instellingen zelf invoeren."/>
+		<lookup key="msgWrapperResendTo" value="Verzend opnieuw:"/>
 		<!-- END: Messages -->
 		<!-- BEGIN: Context Menus -->
 		<lookup key="menuItemShow" value="Show"/>
@@ -539,6 +558,7 @@
 		<lookup key="menuItemAdd" value="Nieuw toevoegen"/>
 		<lookup key="menuItemMarkEnded" value="Markeer als geeindigd"/>
 		<lookup key="menuItemMarkSent" value="Markeer als verzonden"/>
+		<lookup key="menuItemResend" value="Verzend opnieuw"/>
 		<!-- END: Context Menus -->
 		<!-- BEGIN: Enumerations -->
 		<lookup key="enumIMAP" value="IMAP"/>
@@ -565,6 +585,9 @@
 	<language code="da" display="Dansk">
 		<!-- BEGIN: Main forms -->
 		<lookup key="tabAccounts" value="Konti"/>
+		<lookup key="panelTopHalflistViewAccounts0" value="Konto"/>
+		<lookup key="panelTopHalflistViewAccounts1" value="Emailadresse"/>
+		<lookup key="panelTopHalflistViewAccounts2" value="Standard"/>
 		<lookup key="buttonActivate" value="Aktiver"/>
 		<lookup key="buttonSetStartUp" value="Sæt som standard"/>
 		<lookup key="buttonRename" value="Omdøb"/>
@@ -633,6 +656,7 @@
 		<lookup key="msgWrapperPollFailed" value="Forespørgsel fejlede"/>
 		<lookup key="msgWrapperGamesWaiting" value="Du har {0} spil der venter."/>
 		<lookup key="msgInputEmailSettingsManual" value="Du vil angive indstillingerne manuelt."/>
+		<lookup key="msgWrapperResendTo" value="Gensend:"/>
 		<!-- END: Messages -->
 		<!-- BEGIN: Context Menus -->
 		<lookup key="menuItemShow" value="Vis"/>
@@ -645,6 +669,7 @@
 		<lookup key="menuItemAdd" value="Tilføj"/>
 		<lookup key="menuItemMarkEnded" value="Marker som Afsluttet"/>
 		<lookup key="menuItemMarkSent" value="Marker som Sendt"/>
+		<lookup key="menuItemResend" value="Gensend"/>
 		<!-- END: Context Menus -->
 		<!-- BEGIN: Enumerations -->
 		<lookup key="enumNone" value="Ingen"/>
@@ -666,6 +691,9 @@
 	<language code="pl" display="Polski">
 		<!-- BEGIN: Main forms -->
 		<lookup key="tabAccounts" value="Konta"/>
+		<lookup key="panelTopHalflistViewAccounts0" value="Konto"/>
+		<lookup key="panelTopHalflistViewAccounts1" value="Adres email"/>
+		<lookup key="panelTopHalflistViewAccounts2" value="Domyślny"/>
 		<lookup key="buttonActivate" value="Aktywuj"/>
 		<lookup key="buttonSetStartUp" value="Użyj jako domyślny"/>
 		<lookup key="buttonRename" value="Zmień Nazwę"/>
@@ -741,6 +769,7 @@
 		<lookup key="msgWrapperPollFailed" value="Sprawdzanie nie powiodło się."/>
 		<lookup key="msgWrapperGamesWaiting" value="Liczba oczekujących gier: {0}."/>
 		<lookup key="msgInputEmailSettingsManual" value="Ustawienia trzeba wprowadzić ręcznie."/>
+		<lookup key="msgWrapperResendTo" value="Wyślij ponownie do:"/>
 		<!-- END: Messages -->
 		<!-- BEGIN: Context Menus -->
 		<lookup key="menuItemShow" value="Pokaż"/>
@@ -754,6 +783,7 @@
 		<lookup key="menuItemAdd" value="Dodaj Nowe"/>
 		<lookup key="menuItemMarkEnded" value="Zaznacz jako Zakończony"/>
 		<lookup key="menuItemMarkSent" value="Zaznacz jako Wysłany"/>
+		<lookup key="menuItemResend" value="Wyślij ponownie"/>
 		<!-- END: Context Menus -->
 		<!-- BEGIN: Enumerations -->
 		<lookup key="enumNone" value="Brak"/>
@@ -776,6 +806,9 @@
 	<language code="el" display="Eλληνικά">
 		<!-- BEGIN: Main forms -->
 		<lookup key="tabAccounts" value="Λογαριασμοί"/>
+		<lookup key="panelTopHalflistViewAccounts0" value="Λογαριασμός"/>
+		<lookup key="panelTopHalflistViewAccounts1" value="Διεύθυνση Email"/>
+		<lookup key="panelTopHalflistViewAccounts2" value="Προεπιλογή"/>
 		<lookup key="buttonActivate" value="Ενεργοποίηση"/>
 		<lookup key="buttonSetStartUp" value="Χρήση ως προεπιλογή"/>
 		<lookup key="buttonRename" value="Μετονομασία"/>
@@ -847,6 +880,7 @@
 		<lookup key="msgWrapperPollFailed" value="Αποτυχία ελέγχου."/>
 		<lookup key="msgWrapperGamesWaiting" value="Έχετε {0} παιχνίδια στην αναμονή."/>
 		<lookup key="msgInputEmailSettingsManual" value="Θα βάλετε μόνος τις επιλογές."/>
+		<lookup key="msgWrapperResendTo" value="Νέα αποστολή:"/>
 		<!-- END: Messages -->
 		<!-- BEGIN: Context Menus -->
 		<lookup key="menuItemShow" value="Δείξτε"/>
@@ -860,6 +894,7 @@
 		<lookup key="menuItemAdd" value="Νέος Λογαριασμός"/>
 		<lookup key="menuItemMarkEnded" value="Αλλάξτε ως Τέλος"/>
 		<lookup key="menuItemMarkSent" value="Αλλάξτε ως Απεστάλη"/>
+		<lookup key="menuItemResend" value="Νέα αποστολή"/>
 		<!-- END: Context Menus -->
 		<!-- BEGIN: Enumerations -->
 		<lookup key="enumNone" value="Κανένα"/>
@@ -883,7 +918,7 @@
 		<!-- BEGIN: Main forms -->
 		<lookup key="tabAccounts" value="Учётные записи"/>
 		<lookup key="panelTopHalflistViewAccounts0" value="Учётная запись"/>
-		 <lookup key="panelTopHalflistViewAccounts1" value="E-mail"/>
+		<lookup key="panelTopHalflistViewAccounts1" value="E-mail"/>
 		<lookup key="panelTopHalflistViewAccounts2" value="По умолчанию"/>
 		<lookup key="buttonActivate" value="Активировать"/>
 		<lookup key="buttonSetStartUp" value="Использовать по умолчанию"/>
