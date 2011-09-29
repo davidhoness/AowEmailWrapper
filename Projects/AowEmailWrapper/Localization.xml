@@ -803,6 +803,123 @@
 		<lookup key="startUpAccount" value="Domyślny"/>
 		<!-- END: Misc -->
 	</language>
+  <language code="fi" display="Suomi">
+    <!-- BEGIN: Main forms -->
+    <lookup key="tabAccounts" value="Käyttäjätilit"/>
+    <lookup key="panelTopHalflistViewAccounts0" value="Käyttäjätili"/>
+    <lookup key="panelTopHalflistViewAccounts1" value="Sähköpostiosoite"/>
+    <lookup key="panelTopHalflistViewAccounts2" value="Oletus"/>
+    <lookup key="buttonActivate" value="Aktivoi"/>
+    <lookup key="buttonSetStartUp" value="Aseta oletukseksi"/>
+    <lookup key="buttonRename" value="Nimeä uudelleen"/>
+    <lookup key="buttonRemove" value="Poista"/>
+    <lookup key="buttonAdd" value="Lisää"/>
+    <lookup key="tabIncoming" value="Saapuvat"/>
+    <lookup key="cmdMessageStore" value="Näytä POP3 viestit"/>
+    <lookup key="groupBoxEmailSelection" value="Sähköpstin liitteen lataus"/>
+    <lookup key="fbPollingSetup" value="Sähköpostin tarkistus"/>
+    <lookup key="fbPollingSetup_every" value="kaikki:"/>
+    <lookup key="groupBoxAuth" value="Tunnistetiedot"/>
+    <lookup key="fbPassword" value="Salasana:"/>
+    <lookup key="fbUserName" value="Käyttäjänimi:"/>
+    <lookup key="groupBoxServer" value="Palvelin"/>
+    <lookup key="fbUseSSL" value="Käytä SSL:"/>
+    <lookup key="fbPort" value="Portti:"/>
+    <lookup key="fbServer" value="Palvelin:"/>
+    <lookup key="fbEmailType" value="Sähköpstin tyyppi:"/>
+    <lookup key="tabOutgoing" value="Lähtevät"/>
+    <lookup key="fbUsePolling" value="Käytä kyselyn suosituksia:"/>
+    <lookup key="groupBoxServer" value="Palvelin"/>
+    <lookup key="fbBccMyself" value="BCC minulle:"/>
+    <lookup key="fbAuthentication" value="Tunnistaminen"/>
+    <lookup key="fbSSLType" value="SSL-tyyppi:"/>
+    <lookup key="fbEmailAddress" value="Sähköpostiosoite:"/>
+    <lookup key="fbSmtpServer" value="Smtp-palvelin"/>
+    <lookup key="tabPreferences" value="Suosikit"/>
+    <lookup key="fbSaveFolder" value="Lataukset"/>
+    <lookup key="groupBoxPreferences" value="Suosikit"/>
+    <lookup key="fbAutostart" value="Windowsin uudelleenkäynnistys:"/>
+    <lookup key="fbSentSound" value="Sähköposti lähetetty -ääni:"/>
+    <lookup key="fbEmailSound" value="Sähköposti ladattu -ääni:"/>
+    <lookup key="fbLocalization" value="Kieli:"/>
+    <lookup key="fbCopyToEmailOut" value="Kopioi Lähetetyt-kansioon viestin lähetyksen jälkeen:"/>
+    <lookup key="fbGameWrapperDataPort" value="Pelin Wrapper Data portti:"/>
+    <lookup key="tabActivity" value="Aktiivisuus -loki"/>
+    <lookup key="activityListViewlistView0" value="Tiedoston nimi"/>
+    <lookup key="activityListViewlistView1" value="Kartta"/>
+    <lookup key="activityListViewlistView2" value="Vuoro"/>
+    <lookup key="activityListViewlistView3" value="Ikä"/>
+    <lookup key="activityListViewlistView4" value="Tila"/>
+    <lookup key="activityListViewlistView5" value="Liitteet"/>
+    <lookup key="tabAbout" value="Tietoa"/>
+    <lookup key="groupBetaTesters" value="Beta-testaajat"/>
+    <lookup key="groupAuthors" value="Tekijät"/>
+    <lookup key="lblNotice" value="Age of Wonders Email Wrapper -palvelu on kokonaan ilmainen käyttöjärjestelmä, joka on suunniteltu mahdollistamaan automaattisen pelaamisen sähköpostin kautta kaikille kolmelle AoW©-pelille. Se on henkilökohtainen projekti jossa tekijän ainoa tarkoitus on helpottaa ajankäyttöä ja lisäämään pelaamisen nautinnollisuutta. Palvelu tulee ilman tukipalvelua mutta tuen saaminen on mahdollista kohteliaasti pyydettäessä."/>
+    <lookup key="cmdSave" value="Tallennustiedot"/>
+    <lookup key="MessageStore" value="POP3 viestejä ({0} on {1})"/>
+    <lookup key="messageStoreListlistView0" value="Keneltä"/>
+    <lookup key="messageStoreListlistView1" value="Aihe"/>
+    <lookup key="messageStoreListlistView2" value="Päiväys"/>
+    <lookup key="messageStoreListlistView3" value="Tiedoston nimi"/>
+    <lookup key="messageStoreListlistView4" value="Liiteet"/>
+    <lookup key="lblLocalMessageStoreMessage" value="Käyttäjät joilla on Windowsin sähköpostipalvelin, kuten Outlook Express, Outlook, Mozilla, Thunderbird ,Eudora jne. tulisi olla selvillä siitä, että palvelin poistaa oletuksena POP3 tapauksissa viestit, kun ne on ladattu. Käyttäjän täytyy vaihtaa asetuksensa, jotta Wrapper-palvelu löytäisi viestit. Wrapper jättää viestejä palvelimelle, joten käyttäjän oma sähköpostipalvelin voi myös löytää ne."/>
+    <lookup key="cmdRedownload" value="Käynnistä lataus uudelleen"/>
+    <lookup key="cmdClose" value="Sulje"/>
+    <lookup key="AccountsCreationForm" value="Luo uusi tili"/>
+    <lookup key="buttonCreate" value="Luo"/>
+    <lookup key="accountOther" value="Muut"/>
+    <!-- END: Main forms -->
+    <!-- BEGIN: Messages -->
+    <lookup key="msgWrapperWriteAccess" value="Wrapperilla ei ole pääsyä näihin kansioihin: &#xA;{0}&#xA;&#xA; Muuta palvelun turvallisuus asetuksia tai muuta Wrapper järjestelmävalvojaksi."/>
+    <lookup key="msgWrapperArchiveGame" value="Haluatko arkistoida valitut kohteet? Tällöin kohteet siirtyvät kansioon  '{0}' johon pääset käsiksi myös pelin aikana."/>
+    <lookup key="msgWrapperCannotActivateAccount" value="Ei voi aktivoida &quot;{0}&quot; tiliä juuri nyt. Odota kunnes viestin lähetys loppuu."/>
+    <lookup key="msgAccountPrompt" value="Lisää käyttäjätilin nimi:"/>
+    <lookup key="msgAccountDeletePrompt" value="Oletko varma, että haluat poistaa tilin:"/>
+    <lookup key="msgAccountDuplicate" value="Tämän niminen tunnus on jo käytössä. Valitse toinen nimi."/>
+    <lookup key="msgWrapperEmailSentSuccess" value="Lähetetty [{0}] onnistuneesti."/>
+    <lookup key="msgWrapperEmailSentFailed" value="Virhe lähetettäessä sähköpostia: {0}.&#xA;{1}&#xA;&#xA;{2}"/>
+    <lookup key="msgEmailInSelected" value="Käytä Scenario &gt; Email &gt; Load Game"/>
+    <lookup key="msgSaveSelected" value="Käytä Load Game vaihtoehtoa päävalikosta"/>
+    <lookup key="msgWrapperRestartRequired" value="Käynnistä Wrapper uudelleen, jotta muutokset astuvat voimaan."/>
+    <lookup key="msgWrapperPollFailed" value="Kysely epäonnistui"/>
+    <lookup key="msgWrapperGamesWaiting" value="Sinulla on {0} peliä odottamassa."/>
+    <lookup key="msgInputEmailSettingsManual" value="Lisää asetukset manuaalisesti."/>
+    <lookup key="msgWrapperResendTo" value="Lähetä uudelleen:"/>
+    <!-- END: Messages -->
+    <!-- BEGIN: Context Menus -->
+    <lookup key="menuItemShow" value="Näytä"/>
+    <lookup key="menuItemAccounts" value="Käyttäjätilit"/>
+    <lookup key="menuItemPollNow" value="Nykyinen kysely"/>
+    <lookup key="menuItemExit" value="Poistu"/>
+    <lookup key="menuItemActivate" value="Aktivoi"/>
+    <lookup key="menuItemSetStartUp" value="Aseta Oletukseksi"/>
+    <lookup key="menuItemRename" value="Nimeä uudelleen"/>
+    <lookup key="menuItemRemove" value="Poistu"/>
+    <lookup key="menuItemAdd" value="Uusi"/>
+    <lookup key="menuItemMarkEnded" value="Lopetettu"/>
+    <lookup key="menuItemMarkSent" value="Lähetetty"/>
+    <lookup key="menuItemResend" value="Lähetä uudelleen"/>
+    <!-- END: Context Menus -->
+    <!-- BEGIN: Enumerations -->
+    <lookup key="enumNone" value="Ei mitään"/>
+    <lookup key="enumEmailIn" value="Vastaanotetut"/>
+    <lookup key="enumSave" value="Tallenna"/>
+    <lookup key="enumSending" value="Lähettää"/>
+    <lookup key="enumChecking" value="Varmistaa"/>
+    <lookup key="enumEmailWaiting" value="Vastaanotetut viestit"/>
+    <lookup key="enumNew" value="Uusi"/>
+    <lookup key="enumReceived" value="Vastaanotettu"/>
+    <lookup key="enumSent" value="Lähetetty"/>
+    <lookup key="enumEnded" value="Lopetettu"/>
+    <lookup key="enumMinutes" value="minuuttia"/>
+    <!-- END: Enumerations -->
+    <!-- BEGIN: Misc -->
+    <lookup key="buttonOK" value="OK"/>
+    <lookup key="buttonCancel" value="Lopeta"/>
+    <lookup key="activeAccount" value="Aktiivinen"/>
+    <lookup key="startUpAccount" value="Oletus"/>
+    <!-- END: Misc -->
+  </language>
 	<language code="el" display="Eλληνικά">
 		<!-- BEGIN: Main forms -->
 		<lookup key="tabAccounts" value="Λογαριασμοί"/>
