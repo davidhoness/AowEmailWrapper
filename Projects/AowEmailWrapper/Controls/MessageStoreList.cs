@@ -9,6 +9,7 @@ using System.Text;
 using System.Windows.Forms;
 using AowEmailWrapper.Classes;
 using AowEmailWrapper.Pollers.MessageStore;
+using AowEmailWrapper.Localization;
 
 namespace AowEmailWrapper.Controls
 {
@@ -33,7 +34,7 @@ namespace AowEmailWrapper.Controls
             }
             set
             { 
-                _messageStoreCollection = value;                
+                _messageStoreCollection = value;
                 _itemsRemoved = false;
                 Populate();
             }
@@ -82,12 +83,10 @@ namespace AowEmailWrapper.Controls
                 }
                 else
                 {
-                    ListViewItem item = new ListViewItem();
-                    item.Text = "No game emails";
-                    item.Tag = "None";
-                    listView.Items.Add(item);
-
-                    listView.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
+                    listView.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
+                    listView.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
+                    listView.Columns[2].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
+                    listView.Columns[3].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
                 }
             }
 
