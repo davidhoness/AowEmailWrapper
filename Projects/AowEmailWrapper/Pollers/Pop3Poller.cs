@@ -96,6 +96,13 @@ namespace AowEmailWrapper.Pollers
                                     theMessage.Date = email.Date.Value.ToString();
                                     theMessage.DateTicks = email.Date.Value.Ticks.ToString();
                                 }
+                                //In case the email doesn't come down with a good date
+                                if (string.IsNullOrEmpty(theMessage.Date))
+                                { 
+                                    DateTime stamp = DateTime.Now;
+                                    theMessage.Date = stamp.ToString();
+                                    theMessage.DateTicks = stamp.Ticks.ToString();
+                                }
 
                                 theMessage.FileName = GetAttachmentsString(email);
                             }
