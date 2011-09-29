@@ -316,11 +316,6 @@
 		<domain>@religious.com</domain>
 		<domain>@saintly.com</domain>
 	</account>
-	<account name="АБВ Поща" emailprovidertype="Abv.bg">
-		<polling_config usepolling="true" emailtype="POP3" server="pop3.abv.bg" port="995" usessl="true" pollinterval="10"/>
-		<smtp_config smtpserver="smtp.abv.bg" port="465" smtpssltype="SSL" authentication="true" usepollingcredentials="true" bccmyself="false"/>
-		<domain>@abv.bg</domain>
-	</account>
 	<account name="Web.de" emailprovidertype="Web.de">
 		<polling_config usepolling="true" emailtype="IMAP" server="imap.web.de" port="143" usessl="false" pollinterval="10"/>
 		<smtp_config smtpserver="smtp.web.de" port="587" smtpssltype="None" authentication="true" usepollingcredentials="true" bccmyself="false"/>
@@ -373,6 +368,11 @@
 		<domain>@tlen.pl</domain>
 		<domain>@go2.pl</domain>
 		<domain>@prokonto.pl</domain>
+	</account>
+	<account name="АБВ Поща" emailprovidertype="Abv.bg">
+		<polling_config usepolling="true" emailtype="POP3" server="pop3.abv.bg" port="995" usessl="true" pollinterval="10"/>
+		<smtp_config smtpserver="smtp.abv.bg" port="465" smtpssltype="SSL" authentication="true" usepollingcredentials="true" bccmyself="false"/>
+		<domain>@abv.bg</domain>
 	</account>
 	<account name="Mail.ru" emailprovidertype="Mail.ru">
 		<polling_config usepolling="true" emailtype="POP3" server="pop.mail.ru" port="995" usessl="true" pollinterval="10"/>
