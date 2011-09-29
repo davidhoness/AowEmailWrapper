@@ -79,7 +79,7 @@
             // 
             this.colName.Tag = "";
             this.colName.Text = "";
-            this.colName.Width = 100;
+            this.colName.Width = 105;
             // 
             // panelMessagePadder
             // 
