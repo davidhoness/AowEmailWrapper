@@ -328,7 +328,14 @@ namespace AowEmailWrapper.Controls
 
                 if (theAccount != null)
                 {
-                    DialogResult dialogResult = InputBox.Show(Translator.Translate(AccountsTextKey), Translator.Translate(AccountPromptTextKey), ref theName);
+                    Image accountImage = imageListIcons.Images[0];
+
+                    if (imageListIcons.Images.IndexOfKey(theAccount.EmailProvider) >= 0)
+                    {
+                        accountImage = imageListIcons.Images[theAccount.EmailProvider];
+                    }
+
+                    DialogResult dialogResult = InputBox.Show(theAccount.Name, Translator.Translate(AccountPromptTextKey), ref theName, accountImage);
 
                     if (!dialogResult.Equals(DialogResult.Cancel) &&
                         !string.IsNullOrEmpty(theName) &&
