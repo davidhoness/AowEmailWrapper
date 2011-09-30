@@ -68,6 +68,10 @@ namespace AowEmailWrapper
         private const string WrapperAutostartTemplate = "\"{0}\" {1}";
         private const string WrapperRestartTemplate = "{0} {1}";
 
+        private const string ButtonKeyOK = "buttonOK";
+        private const string ButtonKeyCancel = "buttonCancel";
+        private const string ButtonKeyResend = "buttonResend";
+
         #endregion
 
         #region Private Members
@@ -544,9 +548,16 @@ namespace AowEmailWrapper
         private void ShowException(Exception ex)
         {
             this.Invoke(new EventHandler(this.Maximize));
-            ExceptionMessageBox exceptionMessageBox = new ExceptionMessageBox(ex, ExceptionMessageBoxButtons.OK, ExceptionMessageBoxSymbol.Error);
-            exceptionMessageBox.Caption = Translator.Translate(this.Name);
-            exceptionMessageBox.Show(this);
+
+            ExceptionMessageBox box = new ExceptionMessageBox(ex);
+
+            box.Caption = Translator.Translate(this.Name);
+            box.SetButtonText(Translator.Translate(ButtonKeyOK));
+            box.DefaultButton = ExceptionMessageBoxDefaultButton.Button1;
+            box.Symbol = ExceptionMessageBoxSymbol.Question;
+            box.Buttons = ExceptionMessageBoxButtons.Custom;
+
+            box.Show(this);
         }
 
         private void StartGame(AowGame theGame)
@@ -822,12 +833,18 @@ namespace AowEmailWrapper
                 string errorMessage = Translator.Translate(WrapperEmailSentFailedKey, theResponse.GameEmail.Subject, theResponse.GameEmail.To[0].Address);
                 ApplicationException showException = new ApplicationException(errorMessage, theResponse.Exception);
 
-                ExceptionMessageBox box = new ExceptionMessageBox(showException, ExceptionMessageBoxButtons.RetryCancel, ExceptionMessageBoxSymbol.Question);
+                ExceptionMessageBox box = new ExceptionMessageBox(showException);
                 box.Caption = Translator.Translate(this.Name);
-                
-                DialogResult theResult = box.Show(this);
 
-                if (theResult.Equals(DialogResult.Retry) && _smtpSender != null)
+                box.SetButtonText(Translator.Translate(ButtonKeyResend), Translator.Translate(ButtonKeyCancel));
+                box.DefaultButton = ExceptionMessageBoxDefaultButton.Button1;
+
+                box.Symbol = ExceptionMessageBoxSymbol.Question;
+                box.Buttons = ExceptionMessageBoxButtons.Custom;
+
+                box.Show(this);
+
+                if (box.CustomDialogResult.Equals(ExceptionMessageBoxDialogResult.Button1) && _smtpSender != null)
                 {
                     _smtpSender.SendMessage(theResponse.GameEmail);
                 }
