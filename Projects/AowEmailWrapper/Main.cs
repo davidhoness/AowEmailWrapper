@@ -13,7 +13,7 @@ using System.Threading;
 using System.Diagnostics;
 using System.IO;
 using System.Net.Mail;
-
+using Microsoft.SqlServer.MessageBox;
 using EricDaugherty.CSES.Net;
 using EricDaugherty.CSES.SmtpServer;
 using AowEmailWrapper.ASG;
@@ -516,6 +516,11 @@ namespace AowEmailWrapper
             this.ResumeLayout();
         }
 
+        private void Maximize(object sender, EventArgs e)
+        {
+            Maximize();
+        }
+
         private void Maximize()
         {
             this.SuspendLayout();
@@ -538,8 +543,10 @@ namespace AowEmailWrapper
 
         private void ShowException(Exception ex)
         {
-            string error = string.Concat(ex.Message, "\r\n\r\n", ex.StackTrace);
-            MessageBox.Show(error, Translator.Translate(this.Name), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            this.Invoke(new EventHandler(this.Maximize));
+            ExceptionMessageBox exceptionMessageBox = new ExceptionMessageBox(ex, ExceptionMessageBoxButtons.OK, ExceptionMessageBoxSymbol.Error);
+            exceptionMessageBox.Caption = Translator.Translate(this.Name);
+            exceptionMessageBox.Show(this);
         }
 
         private void StartGame(AowGame theGame)
@@ -810,12 +817,15 @@ namespace AowEmailWrapper
             }
             else
             {
-                DialogResult theResult = MessageBox.Show(
-                    Translator.Translate(WrapperEmailSentFailedKey,
-                    theResponse.GameEmail.Subject,
-                    theResponse.GameEmail.To.ToString(),
-                    theResponse.Error),
-                    Translator.Translate(this.Name), MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                this.Invoke(new EventHandler(this.Maximize));
+
+                string errorMessage = Translator.Translate(WrapperEmailSentFailedKey, theResponse.GameEmail.Subject, theResponse.GameEmail.To[0].Address);
+                ApplicationException showException = new ApplicationException(errorMessage, theResponse.Exception);
+
+                ExceptionMessageBox box = new ExceptionMessageBox(showException, ExceptionMessageBoxButtons.RetryCancel, ExceptionMessageBoxSymbol.Question);
+                box.Caption = Translator.Translate(this.Name);
+                
+                DialogResult theResult = box.Show(this);
 
                 if (theResult.Equals(DialogResult.Retry) && _smtpSender != null)
                 {
