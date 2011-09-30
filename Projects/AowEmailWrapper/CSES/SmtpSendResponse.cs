@@ -16,7 +16,7 @@ namespace AowEmailWrapper.CSES
 
         private IMail _theGameEmail;
         private bool _isSuccess;
-        private string _errorMessage;
+        private Exception _ex;
 
         #endregion
 
@@ -34,10 +34,10 @@ namespace AowEmailWrapper.CSES
             set { _isSuccess = value; }
         }
 
-        public string Error
+        public Exception Exception
         {
-            get { return _errorMessage; }
-            set { _errorMessage = value; }
+            get { return _ex; }
+            set { _ex = value; }
         }
 
         #endregion
@@ -48,11 +48,11 @@ namespace AowEmailWrapper.CSES
             : this(theGameEmail, isSuccess, null)
         { }
 
-        public SmtpSendResponse(IMail theGameEmail, bool isSuccess, string errorMessage)
+        public SmtpSendResponse(IMail theGameEmail, bool isSuccess, Exception ex)
         {
             _theGameEmail = theGameEmail;
             _isSuccess = isSuccess;
-            _errorMessage = errorMessage;
+            _ex = ex;
         }
 
         #endregion
@@ -65,7 +65,7 @@ namespace AowEmailWrapper.CSES
             {
                 _theGameEmail = null;
             }
-            _errorMessage = null;
+            _ex = null;
         }
 
         #endregion
