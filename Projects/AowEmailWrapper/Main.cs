@@ -72,6 +72,8 @@ namespace AowEmailWrapper
         private const string ButtonKeyCancel = "buttonCancel";
         private const string ButtonKeyResend = "buttonResend";
 
+        private int _showingExceptionCount = 0;
+
         #endregion
 
         #region Private Members
@@ -180,7 +182,11 @@ namespace AowEmailWrapper
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (_closeCancel && e.CloseReason == CloseReason.UserClosing)
+            if (!_showingExceptionCount.Equals(0))
+            {
+                e.Cancel = true;
+            }
+            else if (_closeCancel && e.CloseReason == CloseReason.UserClosing)
             {
                 e.Cancel = true;
                 this.WindowState = FormWindowState.Minimized;
@@ -556,8 +562,10 @@ namespace AowEmailWrapper
             box.DefaultButton = ExceptionMessageBoxDefaultButton.Button1;
             box.Symbol = ExceptionMessageBoxSymbol.Error;
             box.Buttons = ExceptionMessageBoxButtons.Custom;
-
+            _showingExceptionCount++;
             box.Show(this);
+            box = null;
+            _showingExceptionCount--;
         }
 
         private void StartGame(AowGame theGame)
@@ -842,6 +850,7 @@ namespace AowEmailWrapper
                 box.Symbol = ExceptionMessageBoxSymbol.Question;
                 box.Buttons = ExceptionMessageBoxButtons.Custom;
 
+                _showingExceptionCount++;
                 box.Show(this);
 
                 if (box.CustomDialogResult.Equals(ExceptionMessageBoxDialogResult.Button1) && _smtpSender != null)
@@ -852,6 +861,9 @@ namespace AowEmailWrapper
                 {
                     theResponse.Dispose();
                 }
+
+                box = null;
+                _showingExceptionCount--;
             }
 
             CheckNotifyIconState();
