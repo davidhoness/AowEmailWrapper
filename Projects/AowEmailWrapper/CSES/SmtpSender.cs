@@ -71,7 +71,11 @@ namespace AowEmailWrapper.CSES
         public void SendMessage(IMail theGameEmail)
         {
             _messageQueue.Enqueue(theGameEmail);
-            new System.Threading.Thread(new System.Threading.ThreadStart(this.ProcessMessageQueue)).Start();
+            //new System.Threading.Thread(new System.Threading.ThreadStart(this.ProcessMessageQueue)).Start();
+
+            System.Threading.Thread newThread = new System.Threading.Thread(new System.Threading.ThreadStart(this.ProcessMessageQueue));
+            newThread.SetApartmentState(System.Threading.ApartmentState.STA);
+            newThread.Start();
         }
 
         #endregion
@@ -99,7 +103,7 @@ namespace AowEmailWrapper.CSES
                 Trace.WriteLine(string.Format("ProcessMessageQueue Error: {0}", ex.ToString()));
                 if (theGameEmail != null)
                 {
-                    RaiseOnEmailSentEvent(new SmtpSendResponse(theGameEmail, false, ex.ToString()));
+                    RaiseOnEmailSentEvent(new SmtpSendResponse(theGameEmail, false, ex));
                 }
             }
         }
@@ -158,7 +162,7 @@ namespace AowEmailWrapper.CSES
                 else
                 {
                     //Send FAILED
-                    RaiseOnEmailSentEvent(new SmtpSendResponse(theGameEmail, false, ex.ToString()));                    
+                    RaiseOnEmailSentEvent(new SmtpSendResponse(theGameEmail, false, ex));
                 }
             }
             ProcessMessageQueue();
