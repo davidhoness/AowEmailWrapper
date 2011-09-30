@@ -72,8 +72,6 @@ namespace AowEmailWrapper
         private const string ButtonKeyCancel = "buttonCancel";
         private const string ButtonKeyResend = "buttonResend";
 
-        private int _showingExceptionCount = 0;
-
         #endregion
 
         #region Private Members
@@ -94,6 +92,7 @@ namespace AowEmailWrapper
         private bool _isNewConfig = false;
         private bool _configNeedsSave = false;
         private bool _configChangeTracking = false;
+        private int _showingExceptionCount = 0;
 
         private ContextMenu _contextMenu;
 
@@ -136,6 +135,12 @@ namespace AowEmailWrapper
                     preferencesConfig.Config_Changed -= configNeedsSave;
                 }
             }
+        }
+
+        //The Wrapper Exe is left in memory if we shut down while an ExceptionMessageBox is up
+        protected bool OkayToShutDown
+        {
+            get { return _showingExceptionCount.Equals(0); }
         }
 
         #endregion
@@ -182,11 +187,7 @@ namespace AowEmailWrapper
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!_showingExceptionCount.Equals(0))
-            {
-                e.Cancel = true;
-            }
-            else if (_closeCancel && e.CloseReason == CloseReason.UserClosing)
+            if (_closeCancel && e.CloseReason == CloseReason.UserClosing)
             {
                 e.Cancel = true;
                 this.WindowState = FormWindowState.Minimized;
@@ -385,8 +386,11 @@ namespace AowEmailWrapper
 
         private void ShutDown(object sender, EventArgs e)
         {
-            _closeCancel = false;
-            this.Close();
+            if (OkayToShutDown)
+            {
+                _closeCancel = false;
+                this.Close();
+            }
         }
 
         private void StartedGameWatchCompleted(StartedTaskWatcher sender, Process theProcess)
@@ -562,9 +566,15 @@ namespace AowEmailWrapper
             box.DefaultButton = ExceptionMessageBoxDefaultButton.Button1;
             box.Symbol = ExceptionMessageBoxSymbol.Error;
             box.Buttons = ExceptionMessageBoxButtons.Custom;
+
+            ShowExceptionMessageBox(ref box);
+            box = null;
+        }
+
+        private void ShowExceptionMessageBox(ref ExceptionMessageBox box)
+        {
             _showingExceptionCount++;
             box.Show(this);
-            box = null;
             _showingExceptionCount--;
         }
 
@@ -800,73 +810,74 @@ namespace AowEmailWrapper
 
         private void SmtpSenderSent(object sender, SmtpSendResponse theResponse)
         {
-            this.Activate();
-
-            if (theResponse.IsSuccess)
+            if (_closeCancel)
             {
-                notifyIcon.ShowBalloonTip(15000, theResponse.GameEmail.Subject, Translator.Translate(WrapperEmailSentSuccessKey, theResponse.GameEmail.To[0].Address), ToolTipIcon.Info);
-                if (_wrapperConfig.PreferencesConfig != null && _wrapperConfig.PreferencesConfig.PlaySoundOnSend)
-                {
-                    PlaySound(ConfigHelper.SentSound);
-                }
+                this.Activate();
 
-                if (theResponse.GameEmail.Attachments.Count > 0)
+                if (theResponse.IsSuccess)
                 {
-                    MimeData theAttachment = theResponse.GameEmail.Attachments[0];
-                    Activity theActivity = UpdateActivitySent(theAttachment);
-
-                    if (_wrapperConfig.PreferencesConfig != null && _wrapperConfig.PreferencesConfig.CopyToEmailOut)
+                    notifyIcon.ShowBalloonTip(15000, theResponse.GameEmail.Subject, Translator.Translate(WrapperEmailSentSuccessKey, theResponse.GameEmail.To[0].Address), ToolTipIcon.Info);
+                    if (_wrapperConfig.PreferencesConfig != null && _wrapperConfig.PreferencesConfig.PlaySoundOnSend)
                     {
-                        try
+                        PlaySound(ConfigHelper.SentSound);
+                    }
+
+                    if (theResponse.GameEmail.Attachments.Count > 0)
+                    {
+                        MimeData theAttachment = theResponse.GameEmail.Attachments[0];
+                        Activity theActivity = UpdateActivitySent(theAttachment);
+
+                        if (_wrapperConfig.PreferencesConfig != null && _wrapperConfig.PreferencesConfig.CopyToEmailOut)
                         {
-                            _gameManager.CopyToEmailOut(theAttachment, _gameManager.GetGameByType(theActivity.GameType));
-                        }
-                        catch (Exception ex)
-                        {
-                            Trace.TraceError(ex.ToString());
-                            Trace.Flush();
-                            ShowException(ex);
+                            try
+                            {
+                                _gameManager.CopyToEmailOut(theAttachment, _gameManager.GetGameByType(theActivity.GameType));
+                            }
+                            catch (Exception ex)
+                            {
+                                Trace.TraceError(ex.ToString());
+                                Trace.Flush();
+                                ShowException(ex);
+                            }
                         }
                     }
-                }
 
-                theResponse.Dispose();
+                    theResponse.Dispose();
 
-                GC.Collect();
-            }
-            else
-            {
-                this.Invoke(new EventHandler(this.Maximize));
-
-                string errorMessage = Translator.Translate(WrapperEmailSentFailedKey, theResponse.GameEmail.Subject, theResponse.GameEmail.To[0].Address);
-                ApplicationException showException = new ApplicationException(errorMessage, theResponse.Exception);
-
-                ExceptionMessageBox box = new ExceptionMessageBox(showException);
-                box.Caption = Translator.Translate(this.Name);
-
-                box.SetButtonText(Translator.Translate(ButtonKeyResend), Translator.Translate(ButtonKeyCancel));
-                box.DefaultButton = ExceptionMessageBoxDefaultButton.Button1;
-
-                box.Symbol = ExceptionMessageBoxSymbol.Question;
-                box.Buttons = ExceptionMessageBoxButtons.Custom;
-
-                _showingExceptionCount++;
-                box.Show(this);
-
-                if (box.CustomDialogResult.Equals(ExceptionMessageBoxDialogResult.Button1) && _smtpSender != null)
-                {
-                    _smtpSender.SendMessage(theResponse.GameEmail);
+                    GC.Collect();
                 }
                 else
                 {
-                    theResponse.Dispose();
+                    this.Invoke(new EventHandler(this.Maximize));
+
+                    string errorMessage = Translator.Translate(WrapperEmailSentFailedKey, theResponse.GameEmail.Subject, theResponse.GameEmail.To[0].Address);
+                    ApplicationException showException = new ApplicationException(errorMessage, theResponse.Exception);
+
+                    ExceptionMessageBox box = new ExceptionMessageBox(showException);
+                    box.Caption = Translator.Translate(this.Name);
+
+                    box.SetButtonText(Translator.Translate(ButtonKeyResend), Translator.Translate(ButtonKeyCancel));
+                    box.DefaultButton = ExceptionMessageBoxDefaultButton.Button1;
+
+                    box.Symbol = ExceptionMessageBoxSymbol.Question;
+                    box.Buttons = ExceptionMessageBoxButtons.Custom;
+
+                    ShowExceptionMessageBox(ref box);
+
+                    if (box.CustomDialogResult.Equals(ExceptionMessageBoxDialogResult.Button1) && _smtpSender != null)
+                    {
+                        _smtpSender.SendMessage(theResponse.GameEmail);
+                    }
+                    else
+                    {
+                        theResponse.Dispose();
+                    }
+
+                    box = null;
                 }
 
-                box = null;
-                _showingExceptionCount--;
+                CheckNotifyIconState();
             }
-
-            CheckNotifyIconState();
         }
 
         #endregion
