@@ -554,7 +554,7 @@ namespace AowEmailWrapper
             box.Caption = Translator.Translate(this.Name);
             box.SetButtonText(Translator.Translate(ButtonKeyOK));
             box.DefaultButton = ExceptionMessageBoxDefaultButton.Button1;
-            box.Symbol = ExceptionMessageBoxSymbol.Question;
+            box.Symbol = ExceptionMessageBoxSymbol.Error;
             box.Buttons = ExceptionMessageBoxButtons.Custom;
 
             box.Show(this);
