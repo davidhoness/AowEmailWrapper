@@ -12,6 +12,9 @@ namespace AowEmailWrapper.Classes
 {
     public class InputBox
     {
+        private const string ButtonKeyOK = "buttonOK";
+        private const string ButtonKeyCancel = "buttonCancel";
+
         public static DialogResult Show(string title, string promptText, ref string value)
         {
             return ShowInput(title, promptText, ref value, null);
@@ -48,8 +51,8 @@ namespace AowEmailWrapper.Classes
                 label.Text = promptText;
                 textBox.Text = value;
 
-                buttonOk.Text = Translator.Translate("buttonOK");
-                buttonCancel.Text = Translator.Translate("buttonCancel");
+                buttonOk.Text = Translator.Translate(ButtonKeyOK);
+                buttonCancel.Text = Translator.Translate(ButtonKeyCancel);
                 buttonOk.DialogResult = DialogResult.OK;
                 buttonCancel.DialogResult = DialogResult.Cancel;
 
