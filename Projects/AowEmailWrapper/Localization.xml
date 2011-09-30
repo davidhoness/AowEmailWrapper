@@ -117,6 +117,7 @@
 		<!-- BEGIN: Misc -->
 		<lookup key="buttonOK" value="OK"/>
 		<lookup key="buttonCancel" value="Cancel"/>
+    <lookup key="buttonResend" value="Resend"/>
 		<lookup key="activeAccount" value="Active"/>
 		<lookup key="startUpAccount" value="Default"/>
 		<!-- END: Misc -->
@@ -231,6 +232,7 @@
 		<!-- END: Enumerations -->
 		<!-- BEGIN: Misc -->
 		<lookup key="buttonCancel" value="Annuler"/>
+    <lookup key="buttonResend" value="Renvoyer"/>
 		<lookup key="activeAccount" value="Actif"/>
 		<lookup key="startUpAccount" value="Défaut"/>
 		<!-- END: Misc -->
@@ -346,6 +348,7 @@
 		<!-- END: Enumerations -->
 		<!-- BEGIN: Misc -->
 		<lookup key="buttonCancel" value="Abbrechen"/>
+    <lookup key="buttonResend" value="Erneut senden"/>
 		<lookup key="activeAccount" value="Aktiv"/>
 		<lookup key="startUpAccount" value="Default"/>
 		<!-- END: Misc -->
@@ -460,6 +463,7 @@
 		<!-- END: Enumerations -->
 		<!-- BEGIN: Misc -->
 		<lookup key="buttonCancel" value="Cancelar"/>
+    <lookup key="buttonResend" value="Reenviar"/>
 		<lookup key="activeAccount" value="Activo"/>
 		<lookup key="startUpAccount" value="Defecto"/>
 		<!-- END: Misc -->
@@ -578,6 +582,7 @@
 		<!-- BEGIN: Misc -->
 		<lookup key="buttonOK" value="Ok"/>
 		<lookup key="buttonCancel" value="Cancel"/>
+    <lookup key="buttonResend" value="Verzend opnieuw"/>
 		<lookup key="activeAccount" value="Actief"/>
 		<lookup key="startUpAccount" value="Default"/>
 		<!-- END: Misc -->
@@ -684,6 +689,7 @@
 		<!-- END: Enumerations -->
 		<!-- BEGIN: Misc -->
 		<lookup key="buttonCancel" value="Annuller"/>
+    <lookup key="buttonResend" value="Gensend"/>
 		<lookup key="activeAccount" value="Aktiv"/>
 		<lookup key="startUpAccount" value="Standard"/>
 		<!-- END: Misc -->
@@ -799,6 +805,7 @@
 		<!-- BEGIN: Misc -->
 		<lookup key="buttonOK" value="OK"/>
 		<lookup key="buttonCancel" value="Anuluj"/>
+    <lookup key="buttonResend" value="Wyślij ponownie"/>
 		<lookup key="activeAccount" value="Aktywne"/>
 		<lookup key="startUpAccount" value="Domyślny"/>
 		<!-- END: Misc -->
@@ -916,6 +923,7 @@
     <!-- BEGIN: Misc -->
     <lookup key="buttonOK" value="OK"/>
     <lookup key="buttonCancel" value="Lopeta"/>
+    <lookup key="buttonResend" value="Lähetä uudelleen"/>
     <lookup key="activeAccount" value="Aktiivinen"/>
     <lookup key="startUpAccount" value="Oletus"/>
     <!-- END: Misc -->
@@ -1027,6 +1035,7 @@
 		<!-- END: Enumerations -->
 		<!-- BEGIN: Misc -->
 		<lookup key="buttonCancel" value="Ακύρωση"/>
+    <lookup key="buttonResend" value="Νέα αποστολή"/>
 		<lookup key="activeAccount" value="Ενεργός"/>
 		<lookup key="startUpAccount" value="Προεπιλογή"/>
 		<!-- END: Misc -->
@@ -1142,6 +1151,7 @@
 		<!-- BEGIN: Misc -->
 		<lookup key="buttonOK" value="ОК"/>
 		<lookup key="buttonCancel" value="Отмена"/>
+    <lookup key="buttonResend" value="Отправить заново"/>
 		<lookup key="activeAccount" value="Активный"/>
 		<lookup key="startUpAccount" value="По умолчанию"/>
 		<!-- END: Misc -->
