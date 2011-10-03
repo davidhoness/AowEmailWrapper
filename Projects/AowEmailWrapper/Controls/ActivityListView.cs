@@ -212,24 +212,27 @@ namespace AowEmailWrapper.Controls
 
         private void SetItemColour(ListViewItem listItem, Activity activity, int age)
         {
-            if (activity.Status.Equals(ActivityState.Received))
-            {
-                listItem.BackColor = SystemColors.Info;
-            }
-            else if (activity.Status.Equals(ActivityState.Sent))
-            {
-                if (age >= 14 && age < 28)
-                {
-                    listItem.BackColor = Color.PeachPuff;
-                }
-                else if (age >= 28)
-                {
-                    listItem.BackColor = Color.MistyRose;
-                }
-            }
-            else if (activity.Status.Equals(ActivityState.Ended))
-            {
-                listItem.ForeColor = Color.Gray;
+            switch (activity.Status)
+            { 
+                case ActivityState.Received:
+                    listItem.BackColor = SystemColors.Info;
+                    break;
+                case ActivityState.Sent:
+                    if (age >= 14 && age < 28)
+                    {
+                        listItem.BackColor = Color.PeachPuff;
+                    }
+                    else if (age >= 28)
+                    {
+                        listItem.BackColor = Color.MistyRose;
+                    }
+                    break;
+                case ActivityState.Error:
+                    listItem.ForeColor = Color.Red;
+                    break;
+                case ActivityState.Ended:
+                    listItem.ForeColor = Color.Gray;
+                    break;
             }
         }
 
