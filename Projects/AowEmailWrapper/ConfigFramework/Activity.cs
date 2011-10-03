@@ -18,7 +18,9 @@ namespace AowEmailWrapper.ConfigFramework
         [XmlEnum(Name = "Sent")]
         Sent,
         [XmlEnum(Name = "Ended")]
-        Ended
+        Ended,
+        [XmlEnum(Name = "Error")]
+        Error
     }
 
     [XmlRoot("activity")]
