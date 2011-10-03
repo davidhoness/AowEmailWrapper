@@ -65,6 +65,7 @@ namespace AowEmailWrapper.Controls
         private void Scrape()
         {
             _config = new SmtpConfigValues();
+            _config.Verified = false;
 
             _config.SmtpServer = fbSmtpServer.TextValue;
 
