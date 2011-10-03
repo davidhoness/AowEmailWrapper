@@ -87,6 +87,7 @@ namespace AowEmailWrapper
 
         private StartedTaskWatcher _startedGameWatcher;
         private EventHandler _shutDownEvent;
+        private EventHandler _maximizeEvent;
         private EventHandler _activityLogRefresh;
         private bool _closeCancel = true;
         private bool _isNewConfig = false;
@@ -372,6 +373,7 @@ namespace AowEmailWrapper
         private void BindCustomEvents()
         {
             _shutDownEvent += new EventHandler(ShutDown);
+            _maximizeEvent += new EventHandler(Maximize);
             _activityLogRefresh += new EventHandler(ActivityLogRefresh);
             _gameManager.OnGameSaved += new AowGameSavedEventHandler(OnAowGameSaved);
 
@@ -665,6 +667,11 @@ namespace AowEmailWrapper
                         {
                             notifyIcon.ShowBalloonTip(15000, Translator.Translate(WrapperPollFailedKey), e.Exception.Message, ToolTipIcon.Error);
                         }
+                        else
+                        {
+                            //The connection should be good
+                            RetrySendFailures();
+                        }
                         CheckNotifyIconState();
                         break;
                 }
@@ -744,10 +751,9 @@ namespace AowEmailWrapper
 
                 if (theEmail != null)
                 {
+                    ResendHelper.Save(theEmail);
                     _smtpSender.SendMessage(theEmail);
                 }
-
-                ResendHelper.Save(theEmail);
 
                 theSmtpProcessor.Dispose();
                 theSmtpProcessor = null;
@@ -816,67 +822,126 @@ namespace AowEmailWrapper
 
                 if (theResponse.IsSuccess)
                 {
-                    notifyIcon.ShowBalloonTip(15000, theResponse.GameEmail.Subject, Translator.Translate(WrapperEmailSentSuccessKey, theResponse.GameEmail.To[0].Address), ToolTipIcon.Info);
-                    if (_wrapperConfig.PreferencesConfig != null && _wrapperConfig.PreferencesConfig.PlaySoundOnSend)
-                    {
-                        PlaySound(ConfigHelper.SentSound);
-                    }
-
-                    if (theResponse.GameEmail.Attachments.Count > 0)
-                    {
-                        MimeData theAttachment = theResponse.GameEmail.Attachments[0];
-                        Activity theActivity = UpdateActivitySent(theAttachment);
-
-                        if (_wrapperConfig.PreferencesConfig != null && _wrapperConfig.PreferencesConfig.CopyToEmailOut)
-                        {
-                            try
-                            {
-                                _gameManager.CopyToEmailOut(theAttachment, _gameManager.GetGameByType(theActivity.GameType));
-                            }
-                            catch (Exception ex)
-                            {
-                                Trace.TraceError(ex.ToString());
-                                Trace.Flush();
-                                ShowException(ex);
-                            }
-                        }
-                    }
-
-                    theResponse.Dispose();
-
-                    GC.Collect();
+                    SmtpSendSuccess(theResponse);
                 }
                 else
                 {
-                    this.Invoke(new EventHandler(this.Maximize));
-
-                    string errorMessage = Translator.Translate(WrapperEmailSentFailedKey, theResponse.GameEmail.Subject, theResponse.GameEmail.To[0].Address);
-                    ApplicationException showException = new ApplicationException(errorMessage, theResponse.Exception);
-
-                    ExceptionMessageBox box = new ExceptionMessageBox(showException);
-                    box.Caption = Translator.Translate(this.Name);
-
-                    box.SetButtonText(Translator.Translate(ButtonKeyResend), Translator.Translate(ButtonKeyCancel));
-                    box.DefaultButton = ExceptionMessageBoxDefaultButton.Button1;
-
-                    box.Symbol = ExceptionMessageBoxSymbol.Question;
-                    box.Buttons = ExceptionMessageBoxButtons.Custom;
-
-                    ShowExceptionMessageBox(ref box);
-
-                    if (box.CustomDialogResult.Equals(ExceptionMessageBoxDialogResult.Button1) && _smtpSender != null)
-                    {
-                        _smtpSender.SendMessage(theResponse.GameEmail);
-                    }
-                    else
-                    {
-                        theResponse.Dispose();
-                    }
-
-                    box = null;
+                    SmtpSendFailure(theResponse);
                 }
 
+                GC.Collect();
+
                 CheckNotifyIconState();
+            }
+        }
+
+        private void SmtpSendSuccess(SmtpSendResponse theResponse)
+        {
+            if (theResponse.IsSuccess)
+            {
+                if (_wrapperConfig.AccountsList.ActiveAccount != null &&
+                    _wrapperConfig.AccountsList.ActiveAccount.SmtpConfig != null &&
+                    !_wrapperConfig.AccountsList.ActiveAccount.SmtpConfig.Verified)
+                {
+                    _wrapperConfig.AccountsList.ActiveAccount.SmtpConfig.Verified = true;
+                    DataManagerHelper.SaveConfig(_wrapperConfig);
+                }
+
+                notifyIcon.ShowBalloonTip(15000, theResponse.GameEmail.Subject, Translator.Translate(WrapperEmailSentSuccessKey, theResponse.GameEmail.To[0].Address), ToolTipIcon.Info);
+                if (_wrapperConfig.PreferencesConfig != null && _wrapperConfig.PreferencesConfig.PlaySoundOnSend)
+                {
+                    PlaySound(ConfigHelper.SentSound);
+                }
+
+                if (theResponse.GameEmail.Attachments.Count > 0)
+                {
+                    MimeData theAttachment = theResponse.GameEmail.Attachments[0];
+                    Activity theActivity = UpdateActivitySent(theAttachment);
+
+                    if (_wrapperConfig.PreferencesConfig != null && _wrapperConfig.PreferencesConfig.CopyToEmailOut)
+                    {
+                        try
+                        {
+                            _gameManager.CopyToEmailOut(theAttachment, _gameManager.GetGameByType(theActivity.GameType));
+                        }
+                        catch (Exception ex)
+                        {
+                            Trace.TraceError(ex.ToString());
+                            Trace.Flush();
+                            ShowException(ex);
+                        }
+                    }
+                }
+
+                theResponse.Dispose();
+            }
+        }
+
+        private void SmtpSendFailure(SmtpSendResponse theResponse)
+        {
+            if (!theResponse.IsSuccess)
+            {
+                MimeData theAttachment = theResponse.GameEmail.Attachments[0];
+                UpdateActivitySendError(theAttachment);
+
+                if (_wrapperConfig.AccountsList.ActiveAccount != null &&
+                    _wrapperConfig.AccountsList.ActiveAccount.SmtpConfig != null &&
+                    _wrapperConfig.AccountsList.ActiveAccount.SmtpConfig.Verified)
+                {
+                    //Just show Baloon error
+                    notifyIcon.ShowBalloonTip(15000, theResponse.GameEmail.Subject, theResponse.Exception.Message, ToolTipIcon.Error);
+                    theResponse.Dispose();
+                }
+                else
+                {
+                    //Show full Message Box error
+                    ShowSmtpExceptionMessageBox(theResponse);
+                }
+            }
+        }
+
+        private void ShowSmtpExceptionMessageBox(SmtpSendResponse theResponse)
+        {
+            RaiseEvent(_maximizeEvent, this, new EventArgs());
+
+            string errorMessage = Translator.Translate(WrapperEmailSentFailedKey, theResponse.GameEmail.Subject, theResponse.GameEmail.To[0].Address);
+            ApplicationException showException = new ApplicationException(errorMessage, theResponse.Exception);
+
+            ExceptionMessageBox box = new ExceptionMessageBox(showException);
+            box.Caption = Translator.Translate(this.Name);
+
+            box.SetButtonText(Translator.Translate(ButtonKeyResend), Translator.Translate(ButtonKeyCancel));
+            box.DefaultButton = ExceptionMessageBoxDefaultButton.Button1;
+
+            box.Symbol = ExceptionMessageBoxSymbol.Question;
+            box.Buttons = ExceptionMessageBoxButtons.Custom;
+
+            ShowExceptionMessageBox(ref box);
+
+            if (box.CustomDialogResult.Equals(ExceptionMessageBoxDialogResult.Button1) && _smtpSender != null)
+            {
+                _smtpSender.SendMessage(theResponse.GameEmail);
+            }
+            else
+            {
+                theResponse.Dispose();
+            }
+
+            box = null;
+        }
+
+        private void RetrySendFailures()
+        {
+            List<Activity> toRetry = _activityLog.GetRetryActivities();
+            if (toRetry.Count > 0 && _smtpSender != null)
+            {
+                foreach (Activity activity in toRetry)
+                {
+                    if (ResendHelper.CanResend(activity.FileName))
+                    {
+                        _smtpSender.SendMessage(ResendHelper.Load(activity.FileName));
+                    }
+                }
             }
         }
 
@@ -1130,6 +1195,33 @@ namespace AowEmailWrapper
             RaiseEvent(_activityLogRefresh, this, new EventArgs());
 
             return theActivity;
+        }
+
+        private void UpdateActivitySendError(MimeData theAttachment)
+        {
+            Activity theActivity = null;
+            theActivity = _activityLog.GetLastActivityByFileName(theAttachment.FileName);
+
+            if (theActivity != null)
+            {
+                theActivity.Status = ActivityState.Error;
+            }
+            else
+            {
+                using (ASGFileInfo theASG = new ASGFileInfo(theAttachment))
+                {
+                    theActivity = new Activity(
+                        ActivityState.Error,
+                        theASG.GameType,
+                        theASG.FileNameTrue,
+                        theASG.MapTitle,
+                        theASG.TurnNumber.ToString());
+                }
+
+                _activityLog.Activities.Add(theActivity);
+            }
+
+            RaiseEvent(_activityLogRefresh, this, new EventArgs());
         }
 
         private void ActivityLogRefresh(object sender, EventArgs e)
