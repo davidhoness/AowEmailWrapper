@@ -87,5 +87,10 @@ namespace AowEmailWrapper.ConfigFramework
             List<Activity> unknownMatches = _activities.FindAll(item => item.GameType.Equals(AowGameType.Unknown));
             return unknownMatches.Count;
         }
+
+        public List<Activity> GetRetryActivities()
+        {
+            return _activities.FindAll(item => item.Status.Equals(ActivityState.Error));
+        }
     }
 }
