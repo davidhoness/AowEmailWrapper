@@ -29,6 +29,7 @@ namespace AowEmailWrapper.ConfigFramework
         private bool _usePollingCredentials;
         private SmtpSSLType _smtpSSLType;
         private bool _bccMyself;
+        private bool _verified = false;
 
         [XmlAttribute("smtpserver")]
         public string SmtpServer
@@ -98,6 +99,13 @@ namespace AowEmailWrapper.ConfigFramework
         {
             get { return _bccMyself; }
             set { _bccMyself = value; }
+        }
+
+        [XmlAttribute("verified")]
+        public bool Verified
+        {
+            get { return _verified; }
+            set { _verified = value; }
         }
 
         public SmtpConfigValues()
