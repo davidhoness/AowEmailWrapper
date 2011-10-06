@@ -34,6 +34,7 @@ namespace AowEmailWrapper.Controls
                     Size sz = new Size(iThirdUnit + hackPadding, int.MaxValue);
                     sz = TextRenderer.MeasureText(TheLabel.Text, TheLabel.Font, sz, TextFormatFlags.WordBreak);
                     this.Height = sz.Height;
+                    TheLabel.Height = sz.Height;
 
                     base.OnResize(e);
                     this.ResumeLayout();

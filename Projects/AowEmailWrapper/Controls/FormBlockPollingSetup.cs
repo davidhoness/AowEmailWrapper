@@ -43,7 +43,7 @@ namespace AowEmailWrapper.Controls
             //This must always be on one line
             Size szEvery = new Size(int.MaxValue, int.MaxValue);
             szEvery = TextRenderer.MeasureText(labelEvery.Text, labelEvery.Font, szEvery, TextFormatFlags.SingleLine);
-            labelEvery.Size = szEvery;
+            panelEvery.Size = szEvery;
 
             int spareWidth = panelLabel.Width - labelEvery.Width;
 

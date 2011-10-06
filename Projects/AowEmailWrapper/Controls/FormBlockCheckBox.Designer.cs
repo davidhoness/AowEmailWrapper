@@ -42,16 +42,17 @@
             this.panelLabel.Location = new System.Drawing.Point(0, 0);
             this.panelLabel.Margin = new System.Windows.Forms.Padding(2);
             this.panelLabel.Name = "panelLabel";
-            this.panelLabel.Size = new System.Drawing.Size(270, 27);
+            this.panelLabel.Size = new System.Drawing.Size(270, 24);
             this.panelLabel.TabIndex = 4;
             // 
             // lblName
             // 
-            this.lblName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblName.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblName.Location = new System.Drawing.Point(0, 0);
             this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblName.MinimumSize = new System.Drawing.Size(0, 20);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(82, 27);
+            this.lblName.Size = new System.Drawing.Size(82, 20);
             this.lblName.TabIndex = 3;
             this.lblName.Text = "Name";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -62,7 +63,7 @@
             this.checkBox.Dock = System.Windows.Forms.DockStyle.Right;
             this.checkBox.Location = new System.Drawing.Point(82, 0);
             this.checkBox.Name = "checkBox";
-            this.checkBox.Size = new System.Drawing.Size(188, 27);
+            this.checkBox.Size = new System.Drawing.Size(188, 24);
             this.checkBox.TabIndex = 2;
             this.checkBox.UseVisualStyleBackColor = true;
             // 
@@ -72,7 +73,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelLabel);
             this.Name = "FormBlockCheckBox";
-            this.Size = new System.Drawing.Size(270, 27);
+            this.Size = new System.Drawing.Size(270, 24);
             this.panelLabel.ResumeLayout(false);
             this.ResumeLayout(false);
 

@@ -30,9 +30,11 @@
         {
             this.comboBox = new System.Windows.Forms.ComboBox();
             this.panelLabel = new System.Windows.Forms.Panel();
-            this.labelEvery = new System.Windows.Forms.Label();
             this.checkBox = new System.Windows.Forms.CheckBox();
+            this.panelEvery = new System.Windows.Forms.Panel();
+            this.labelEvery = new System.Windows.Forms.Label();
             this.panelLabel.SuspendLayout();
+            this.panelEvery.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBox
@@ -48,34 +50,45 @@
             // panelLabel
             // 
             this.panelLabel.AutoSize = true;
-            this.panelLabel.Controls.Add(this.labelEvery);
             this.panelLabel.Controls.Add(this.checkBox);
+            this.panelLabel.Controls.Add(this.panelEvery);
             this.panelLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelLabel.Location = new System.Drawing.Point(0, 0);
             this.panelLabel.Margin = new System.Windows.Forms.Padding(2);
             this.panelLabel.Name = "panelLabel";
-            this.panelLabel.Size = new System.Drawing.Size(191, 29);
+            this.panelLabel.Size = new System.Drawing.Size(191, 24);
             this.panelLabel.TabIndex = 10;
-            // 
-            // labelEvery
-            // 
-            this.labelEvery.Dock = System.Windows.Forms.DockStyle.Right;
-            this.labelEvery.Location = new System.Drawing.Point(141, 0);
-            this.labelEvery.Name = "labelEvery";
-            this.labelEvery.Size = new System.Drawing.Size(50, 29);
-            this.labelEvery.TabIndex = 3;
-            this.labelEvery.Text = "every:";
-            this.labelEvery.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // checkBox
             // 
-            this.checkBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.checkBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.checkBox.Location = new System.Drawing.Point(0, 0);
+            this.checkBox.MinimumSize = new System.Drawing.Size(0, 21);
             this.checkBox.Name = "checkBox";
-            this.checkBox.Size = new System.Drawing.Size(109, 29);
+            this.checkBox.Size = new System.Drawing.Size(131, 21);
             this.checkBox.TabIndex = 2;
             this.checkBox.Text = "Check for email";
             this.checkBox.UseVisualStyleBackColor = false;
+            // 
+            // panelEvery
+            // 
+            this.panelEvery.Controls.Add(this.labelEvery);
+            this.panelEvery.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelEvery.Location = new System.Drawing.Point(131, 0);
+            this.panelEvery.Name = "panelEvery";
+            this.panelEvery.Size = new System.Drawing.Size(60, 24);
+            this.panelEvery.TabIndex = 3;
+            // 
+            // labelEvery
+            // 
+            this.labelEvery.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelEvery.Location = new System.Drawing.Point(0, 0);
+            this.labelEvery.MinimumSize = new System.Drawing.Size(0, 20);
+            this.labelEvery.Name = "labelEvery";
+            this.labelEvery.Size = new System.Drawing.Size(60, 20);
+            this.labelEvery.TabIndex = 4;
+            this.labelEvery.Text = "every:";
+            this.labelEvery.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // FormBlockPollingSetup
             // 
@@ -84,8 +97,9 @@
             this.Controls.Add(this.panelLabel);
             this.Controls.Add(this.comboBox);
             this.Name = "FormBlockPollingSetup";
-            this.Size = new System.Drawing.Size(407, 29);
+            this.Size = new System.Drawing.Size(407, 24);
             this.panelLabel.ResumeLayout(false);
+            this.panelEvery.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -96,6 +110,7 @@
         private System.Windows.Forms.ComboBox comboBox;
         private System.Windows.Forms.Panel panelLabel;
         private System.Windows.Forms.CheckBox checkBox;
+        private System.Windows.Forms.Panel panelEvery;
         private System.Windows.Forms.Label labelEvery;
 
     }

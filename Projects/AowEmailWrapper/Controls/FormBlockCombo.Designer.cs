@@ -39,7 +39,7 @@
             this.comboBox.Dock = System.Windows.Forms.DockStyle.Right;
             this.comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox.FormattingEnabled = true;
-            this.comboBox.Location = new System.Drawing.Point(94, 0);
+            this.comboBox.Location = new System.Drawing.Point(135, 0);
             this.comboBox.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox.Name = "comboBox";
             this.comboBox.Size = new System.Drawing.Size(224, 21);
@@ -52,16 +52,17 @@
             this.panelLabel.Location = new System.Drawing.Point(0, 0);
             this.panelLabel.Margin = new System.Windows.Forms.Padding(2);
             this.panelLabel.Name = "panelLabel";
-            this.panelLabel.Size = new System.Drawing.Size(94, 24);
+            this.panelLabel.Size = new System.Drawing.Size(135, 24);
             this.panelLabel.TabIndex = 3;
             // 
             // lblName
             // 
-            this.lblName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblName.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblName.Location = new System.Drawing.Point(0, 0);
             this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblName.MinimumSize = new System.Drawing.Size(0, 20);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(94, 24);
+            this.lblName.Size = new System.Drawing.Size(135, 20);
             this.lblName.TabIndex = 1;
             this.lblName.Text = "Name";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -74,7 +75,7 @@
             this.Controls.Add(this.comboBox);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormBlockCombo";
-            this.Size = new System.Drawing.Size(318, 24);
+            this.Size = new System.Drawing.Size(359, 24);
             this.panelLabel.ResumeLayout(false);
             this.ResumeLayout(false);
 

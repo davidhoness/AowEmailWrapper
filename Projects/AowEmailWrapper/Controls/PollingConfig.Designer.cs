@@ -49,7 +49,7 @@
             this.groupBoxServer.Controls.Add(this.fbServer);
             this.groupBoxServer.Controls.Add(this.fbEmailType);
             this.groupBoxServer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBoxServer.Location = new System.Drawing.Point(0, 24);
+            this.groupBoxServer.Location = new System.Drawing.Point(0, 22);
             this.groupBoxServer.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxServer.Name = "groupBoxServer";
             this.groupBoxServer.Padding = new System.Windows.Forms.Padding(2, 2, 2, 5);
@@ -122,7 +122,7 @@
             this.groupBoxAuth.Controls.Add(this.fbPassword);
             this.groupBoxAuth.Controls.Add(this.fbUserName);
             this.groupBoxAuth.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBoxAuth.Location = new System.Drawing.Point(0, 140);
+            this.groupBoxAuth.Location = new System.Drawing.Point(0, 138);
             this.groupBoxAuth.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxAuth.Name = "groupBoxAuth";
             this.groupBoxAuth.Padding = new System.Windows.Forms.Padding(2, 2, 2, 5);
@@ -169,11 +169,11 @@
             this.fbPollingSetup.Dock = System.Windows.Forms.DockStyle.Top;
             this.fbPollingSetup.EveryText = "every:";
             this.fbPollingSetup.Location = new System.Drawing.Point(0, 0);
-            this.fbPollingSetup.MinimumSize = new System.Drawing.Size(0, 24);
+            this.fbPollingSetup.MinimumSize = new System.Drawing.Size(0, 22);
             this.fbPollingSetup.Name = "fbPollingSetup";
             this.fbPollingSetup.SelectedIndex = -1;
             this.fbPollingSetup.SelectedValue = "";
-            this.fbPollingSetup.Size = new System.Drawing.Size(484, 24);
+            this.fbPollingSetup.Size = new System.Drawing.Size(484, 22);
             this.fbPollingSetup.TabIndex = 24;
             // 
             // PollingConfig

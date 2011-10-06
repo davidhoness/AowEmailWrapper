@@ -37,7 +37,7 @@
             // txtValue
             // 
             this.txtValue.Dock = System.Windows.Forms.DockStyle.Right;
-            this.txtValue.Location = new System.Drawing.Point(62, 0);
+            this.txtValue.Location = new System.Drawing.Point(90, 0);
             this.txtValue.Margin = new System.Windows.Forms.Padding(2);
             this.txtValue.Name = "txtValue";
             this.txtValue.Size = new System.Drawing.Size(193, 20);
@@ -50,16 +50,17 @@
             this.panelLabel.Location = new System.Drawing.Point(0, 0);
             this.panelLabel.Margin = new System.Windows.Forms.Padding(2);
             this.panelLabel.Name = "panelLabel";
-            this.panelLabel.Size = new System.Drawing.Size(62, 23);
+            this.panelLabel.Size = new System.Drawing.Size(90, 24);
             this.panelLabel.TabIndex = 2;
             // 
             // lblName
             // 
-            this.lblName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblName.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblName.Location = new System.Drawing.Point(0, 0);
             this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblName.MinimumSize = new System.Drawing.Size(0, 18);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(62, 23);
+            this.lblName.Size = new System.Drawing.Size(90, 18);
             this.lblName.TabIndex = 1;
             this.lblName.Text = "Name";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -72,7 +73,7 @@
             this.Controls.Add(this.txtValue);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormBlockText";
-            this.Size = new System.Drawing.Size(255, 23);
+            this.Size = new System.Drawing.Size(283, 24);
             this.panelLabel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
