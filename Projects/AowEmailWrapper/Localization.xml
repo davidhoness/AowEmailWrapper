@@ -902,7 +902,7 @@
     <!-- END: Messages -->
     <!-- BEGIN: Context Menus -->
     <lookup key="menuItemShow" value="&amp;Näytä"/>
-    <lookup key="menuItemAccounts" value="Sähköpostitilit"/>
+    <lookup key="menuItemAccounts" value="Sähköpostit"/>
     <lookup key="menuItemPollNow" value="&amp;Tarkista uudet viestit"/>
     <lookup key="menuItemExit" value="&amp;Poistu"/>
     <lookup key="menuItemActivate" value="&amp;Aktivoi"/>
