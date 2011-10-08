@@ -30,7 +30,11 @@ namespace AowEmailWrapper.Helpers
             {
                 if (theEmail.Attachments.Count > 0)
                 {
-                    theEmail.Save(GetEmlFilePath(theEmail.Attachments[0].FileName));
+                    string[] parameters = new string[] { theEmail.Attachments[0].FileName, theEmail.RenderEml() };
+
+                    //Starting new thread so that the main ProcessSMTPRequest thread can return to the game asap
+                    System.Threading.Thread saveThread = new System.Threading.Thread(new System.Threading.ParameterizedThreadStart(SaveEmail));
+                    saveThread.Start(parameters);
                 }
             }
             catch (Exception ex)
@@ -83,6 +87,28 @@ namespace AowEmailWrapper.Helpers
         #endregion
 
         #region Private Methods
+
+        private static void SaveEmail(object obj)
+        {
+            try
+            {
+                string[] parameters = (string[])obj;
+                if (parameters != null && parameters.Length.Equals(2))
+                {
+                    File.WriteAllText(GetEmlFilePath(parameters[0]), parameters[1]);
+                    parameters = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Trace.TraceError(ex.ToString());
+                Trace.Flush();
+            }
+            finally
+            {
+                obj = null;
+            }
+        }
 
         private static string GetEmlFilePath(string fileName)
         {
