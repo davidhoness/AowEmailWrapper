@@ -242,6 +242,40 @@ namespace AowEmailWrapper.Games
             return sb.ToString().Trim();
         }
 
+        public void DeleteGame(AowGameType theGameType, string fileName)
+        {
+            if (!theGameType.Equals(AowGameType.Unknown))
+            {
+                AowGame theGame = GetGameByType(theGameType);
+
+                if (theGame != null && theGame.IsInstalled)
+                {
+                    DirectoryInfo[] theFolders = new DirectoryInfo[] { theGame.EmailIn, theGame.EmailOut, theGame.Save };
+                    string searchPattern = GetSearchPattern(fileName);
+
+                    foreach (DirectoryInfo folder in theFolders)
+                    {
+                        FileInfo[] matchingFiles = GetAllGameFiles(fileName, folder, searchPattern);
+                        if (matchingFiles.Length > 0)
+                        {
+                            foreach (FileInfo file in matchingFiles)
+                            {
+                                if (File.Exists(file.FullName))
+                                {
+                                    File.Delete(file.FullName);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                //If it's an unknown game just delete
+                ClearCheckEmailFolder(fileName);
+            }
+        }
+
         public void ArchiveEndedGame(AowGameType theGameType, string fileName, string endedFolderName)
         {
             if (!theGameType.Equals(AowGameType.Unknown))
@@ -289,11 +323,7 @@ namespace AowEmailWrapper.Games
             else
             {
                 //If it's an unknown game just delete
-                string filePath = Path.Combine(_checkEmailFolder, fileName);
-                if (File.Exists(filePath))
-                {
-                    File.Delete(filePath);
-                }
+                ClearCheckEmailFolder(fileName);
             }
         }
 
@@ -320,6 +350,15 @@ namespace AowEmailWrapper.Games
         #endregion
 
         #region Private Methods
+
+        private void ClearCheckEmailFolder(string fileName)
+        {
+            string filePath = Path.Combine(_checkEmailFolder, fileName);
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+            }
+        }
 
         private string GetSearchPattern(string fileName)
         {
