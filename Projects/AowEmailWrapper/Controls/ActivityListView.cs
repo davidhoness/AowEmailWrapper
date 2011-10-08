@@ -36,6 +36,7 @@ namespace AowEmailWrapper.Controls
         new public ActivityListViewEventHandler OnDoubleClick;
         public ActivityListViewEventHandler OnMarkAsEnded;
         public ActivityListViewEventHandler OnResendClick;
+        public ActivityListViewEventHandler OnDeleteClick;
         public EventHandler OnListChanged;
 
         public ActivityList ActivityLog
@@ -317,6 +318,10 @@ namespace AowEmailWrapper.Controls
                 {
                     case Menu_Remove_Tag:
                         RemoveSelected(selected);
+                        if (OnDeleteClick != null)
+                        {
+                            OnDeleteClick(this, selected);
+                        }
                         break;
                     case Menu_MarkEnded_Tag:
                         MarkState(ActivityState.Ended, selected);
