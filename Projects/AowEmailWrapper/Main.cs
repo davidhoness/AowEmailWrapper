@@ -147,7 +147,16 @@ namespace AowEmailWrapper
         #endregion
 
         public Main()
+            : this(true)
+        { }
+
+        public Main(bool showSplash)
         {
+            if (showSplash)
+            {
+                Splash.ShowSplashScreen();
+            }
+
             _wrapperConfig = DataManagerHelper.LoadConfig(out _isNewConfig);
 
             LoadTranslations();
@@ -182,6 +191,11 @@ namespace AowEmailWrapper
             CheckNotifyIconState(true);
 
             this.FormClosing += new FormClosingEventHandler(Main_FormClosing);
+
+            if (showSplash)
+            {
+                Splash.CloseForm();
+            }
         }
 
         #region Form Events

@@ -57,7 +57,8 @@ namespace AowEmailWrapper
                 }
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new Main());
+                Main mainForm = new Main(args.Length.Equals(0));
+                Application.Run(mainForm);
             }
         }
     }

@@ -40,8 +40,11 @@
             this.panelMain = new System.Windows.Forms.Panel();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabAccounts = new System.Windows.Forms.TabPage();
+            this.accountsConfig = new AowEmailWrapper.Controls.AccountsConfig();
             this.tabActivity = new System.Windows.Forms.TabPage();
+            this.activityListView = new AowEmailWrapper.Controls.ActivityListView();
             this.tabPreferences = new System.Windows.Forms.TabPage();
+            this.preferencesConfig = new AowEmailWrapper.Controls.PreferencesConfig();
             this.tabAbout = new System.Windows.Forms.TabPage();
             this.panelAbout = new System.Windows.Forms.Panel();
             this.groupBetaTesters = new System.Windows.Forms.GroupBox();
@@ -62,14 +65,11 @@
             this.lblNotice = new System.Windows.Forms.Label();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.lblVersion = new System.Windows.Forms.Label();
+            this.fbLink = new AowEmailWrapper.Controls.LinkButton();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.accountsConfig = new AowEmailWrapper.Controls.AccountsConfig();
-            this.activityListView = new AowEmailWrapper.Controls.ActivityListView();
-            this.preferencesConfig = new AowEmailWrapper.Controls.PreferencesConfig();
-            this.fbLink = new AowEmailWrapper.Controls.LinkButton();
             this.panelBottom.SuspendLayout();
             this.panelLocalMessageStore.SuspendLayout();
             this.panelMain.SuspendLayout();
@@ -117,6 +117,7 @@
             // cmdSave
             // 
             this.cmdSave.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmdSave.Enabled = false;
             this.cmdSave.Location = new System.Drawing.Point(184, 5);
             this.cmdSave.Name = "cmdSave";
             this.cmdSave.Size = new System.Drawing.Size(336, 34);
@@ -182,15 +183,36 @@
             this.tabAccounts.Text = "Accounts";
             this.tabAccounts.UseVisualStyleBackColor = true;
             // 
+            // accountsConfig
+            // 
+            this.accountsConfig.AccountsTemplates = null;
+            this.accountsConfig.Config = null;
+            this.accountsConfig.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.accountsConfig.Location = new System.Drawing.Point(5, 5);
+            this.accountsConfig.Name = "accountsConfig";
+            this.accountsConfig.Size = new System.Drawing.Size(504, 508);
+            this.accountsConfig.TabIndex = 0;
+            // 
             // tabActivity
             // 
             this.tabActivity.Controls.Add(this.activityListView);
             this.tabActivity.Location = new System.Drawing.Point(4, 22);
             this.tabActivity.Name = "tabActivity";
-            this.tabActivity.Size = new System.Drawing.Size(514, 521);
+            this.tabActivity.Size = new System.Drawing.Size(514, 518);
             this.tabActivity.TabIndex = 7;
             this.tabActivity.Text = "Activity Log";
             this.tabActivity.UseVisualStyleBackColor = true;
+            // 
+            // activityListView
+            // 
+            this.activityListView.ActivityLog = null;
+            this.activityListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.activityListView.Location = new System.Drawing.Point(0, 0);
+            this.activityListView.Name = "activityListView";
+            this.activityListView.Padding = new System.Windows.Forms.Padding(5);
+            this.activityListView.Size = new System.Drawing.Size(514, 518);
+            this.activityListView.SmallImageList = null;
+            this.activityListView.TabIndex = 0;
             // 
             // tabPreferences
             // 
@@ -198,17 +220,35 @@
             this.tabPreferences.Location = new System.Drawing.Point(4, 22);
             this.tabPreferences.Margin = new System.Windows.Forms.Padding(2);
             this.tabPreferences.Name = "tabPreferences";
-            this.tabPreferences.Size = new System.Drawing.Size(514, 521);
+            this.tabPreferences.Size = new System.Drawing.Size(514, 518);
             this.tabPreferences.TabIndex = 3;
             this.tabPreferences.Text = "Preferences";
             this.tabPreferences.UseVisualStyleBackColor = true;
+            // 
+            // preferencesConfig
+            // 
+            preferencesConfigValues1.Autostart = false;
+            preferencesConfigValues1.CopyToEmailOut = false;
+            preferencesConfigValues1.GameWrapperDataPort = 49252;
+            preferencesConfigValues1.LanguageCode = null;
+            preferencesConfigValues1.PlaySoundOnEmail = false;
+            preferencesConfigValues1.PlaySoundOnSend = false;
+            preferencesConfigValues1.SaveFolder = AowEmailWrapper.ConfigFramework.EmailSaveFolder.EmailIn;
+            this.preferencesConfig.Config = preferencesConfigValues1;
+            this.preferencesConfig.Dock = System.Windows.Forms.DockStyle.Top;
+            this.preferencesConfig.Location = new System.Drawing.Point(0, 0);
+            this.preferencesConfig.Margin = new System.Windows.Forms.Padding(2);
+            this.preferencesConfig.Name = "preferencesConfig";
+            this.preferencesConfig.Padding = new System.Windows.Forms.Padding(5);
+            this.preferencesConfig.Size = new System.Drawing.Size(514, 313);
+            this.preferencesConfig.TabIndex = 0;
             // 
             // tabAbout
             // 
             this.tabAbout.Controls.Add(this.panelAbout);
             this.tabAbout.Location = new System.Drawing.Point(4, 22);
             this.tabAbout.Name = "tabAbout";
-            this.tabAbout.Size = new System.Drawing.Size(514, 521);
+            this.tabAbout.Size = new System.Drawing.Size(514, 518);
             this.tabAbout.TabIndex = 5;
             this.tabAbout.Text = "About";
             this.tabAbout.UseVisualStyleBackColor = true;
@@ -223,7 +263,7 @@
             this.panelAbout.Location = new System.Drawing.Point(0, 0);
             this.panelAbout.Name = "panelAbout";
             this.panelAbout.Padding = new System.Windows.Forms.Padding(5);
-            this.panelAbout.Size = new System.Drawing.Size(514, 521);
+            this.panelAbout.Size = new System.Drawing.Size(514, 518);
             this.panelAbout.TabIndex = 0;
             // 
             // groupBetaTesters
@@ -232,7 +272,7 @@
             this.groupBetaTesters.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBetaTesters.Location = new System.Drawing.Point(5, 219);
             this.groupBetaTesters.Name = "groupBetaTesters";
-            this.groupBetaTesters.Size = new System.Drawing.Size(504, 297);
+            this.groupBetaTesters.Size = new System.Drawing.Size(504, 294);
             this.groupBetaTesters.TabIndex = 12;
             this.groupBetaTesters.TabStop = false;
             this.groupBetaTesters.Text = "Beta Testers";
@@ -253,7 +293,7 @@
             this.panelBetaTestersGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBetaTestersGroupBox.Location = new System.Drawing.Point(3, 16);
             this.panelBetaTestersGroupBox.Name = "panelBetaTestersGroupBox";
-            this.panelBetaTestersGroupBox.Size = new System.Drawing.Size(498, 278);
+            this.panelBetaTestersGroupBox.Size = new System.Drawing.Size(498, 275);
             this.panelBetaTestersGroupBox.TabIndex = 0;
             // 
             // lblTester10
@@ -427,6 +467,24 @@
             this.lblVersion.TabIndex = 10;
             this.lblVersion.Text = "Age of Wonders Email Wrapper [{0}]";
             // 
+            // fbLink
+            // 
+            this.fbLink.BackColor = System.Drawing.SystemColors.Window;
+            this.fbLink.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.fbLink.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.fbLink.Dock = System.Windows.Forms.DockStyle.Right;
+            this.fbLink.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.fbLink.FlatAppearance.BorderSize = 5;
+            this.fbLink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.fbLink.Image = ((System.Drawing.Image)(resources.GetObject("fbLink.Image")));
+            this.fbLink.Location = new System.Drawing.Point(464, 0);
+            this.fbLink.Name = "fbLink";
+            this.fbLink.Size = new System.Drawing.Size(40, 40);
+            this.fbLink.TabIndex = 11;
+            this.fbLink.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.fbLink.Url = "http://www.facebook.com/pages/Age-of-Wonders-Email-Wrapper/173302036046975";
+            this.fbLink.UseVisualStyleBackColor = false;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(0, 0);
@@ -463,63 +521,6 @@
             this.label5.Size = new System.Drawing.Size(408, 33);
             this.label5.TabIndex = 7;
             this.label5.Text = "David N.T. Honess: Development, Programming";
-            // 
-            // accountsConfig
-            // 
-            this.accountsConfig.AccountsTemplates = null;
-            this.accountsConfig.Config = null;
-            this.accountsConfig.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.accountsConfig.Location = new System.Drawing.Point(5, 5);
-            this.accountsConfig.Name = "accountsConfig";
-            this.accountsConfig.Size = new System.Drawing.Size(504, 508);
-            this.accountsConfig.TabIndex = 0;
-            // 
-            // activityListView
-            // 
-            this.activityListView.ActivityLog = null;
-            this.activityListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.activityListView.Location = new System.Drawing.Point(0, 0);
-            this.activityListView.Name = "activityListView";
-            this.activityListView.Padding = new System.Windows.Forms.Padding(5);
-            this.activityListView.Size = new System.Drawing.Size(514, 521);
-            this.activityListView.SmallImageList = null;
-            this.activityListView.TabIndex = 0;
-            // 
-            // preferencesConfig
-            // 
-            preferencesConfigValues1.Autostart = false;
-            preferencesConfigValues1.CopyToEmailOut = false;
-            preferencesConfigValues1.GameWrapperDataPort = 49252;
-            preferencesConfigValues1.LanguageCode = null;
-            preferencesConfigValues1.PlaySoundOnEmail = false;
-            preferencesConfigValues1.PlaySoundOnSend = false;
-            preferencesConfigValues1.SaveFolder = AowEmailWrapper.ConfigFramework.EmailSaveFolder.EmailIn;
-            this.preferencesConfig.Config = preferencesConfigValues1;
-            this.preferencesConfig.Dock = System.Windows.Forms.DockStyle.Top;
-            this.preferencesConfig.Location = new System.Drawing.Point(0, 0);
-            this.preferencesConfig.Margin = new System.Windows.Forms.Padding(2);
-            this.preferencesConfig.Name = "preferencesConfig";
-            this.preferencesConfig.Padding = new System.Windows.Forms.Padding(5);
-            this.preferencesConfig.Size = new System.Drawing.Size(514, 313);
-            this.preferencesConfig.TabIndex = 0;
-            // 
-            // fbLink
-            // 
-            this.fbLink.BackColor = System.Drawing.SystemColors.Window;
-            this.fbLink.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.fbLink.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.fbLink.Dock = System.Windows.Forms.DockStyle.Right;
-            this.fbLink.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
-            this.fbLink.FlatAppearance.BorderSize = 5;
-            this.fbLink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fbLink.Image = ((System.Drawing.Image)(resources.GetObject("fbLink.Image")));
-            this.fbLink.Location = new System.Drawing.Point(464, 0);
-            this.fbLink.Name = "fbLink";
-            this.fbLink.Size = new System.Drawing.Size(40, 40);
-            this.fbLink.TabIndex = 11;
-            this.fbLink.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.fbLink.Url = "http://www.facebook.com/pages/Age-of-Wonders-Email-Wrapper/173302036046975";
-            this.fbLink.UseVisualStyleBackColor = false;
             // 
             // Main
             // 
