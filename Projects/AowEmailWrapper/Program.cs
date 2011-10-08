@@ -55,10 +55,13 @@ namespace AowEmailWrapper
                         System.Threading.Thread.Sleep(pauseMilliseconds);
                     }
                 }
+                if (args.Length.Equals(0))
+                {
+                    Splash.ShowSplashScreen();
+                }
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Main mainForm = new Main(args.Length.Equals(0));
-                Application.Run(mainForm);
+                Application.Run(new Main());
             }
         }
     }
