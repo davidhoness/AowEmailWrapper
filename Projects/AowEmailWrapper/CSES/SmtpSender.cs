@@ -196,7 +196,7 @@ namespace AowEmailWrapper.CSES
             {
                 _messageIDsBeingSent.Remove(theResponse.GameEmail.MessageID);
             }
-            if (_messageQueue.Peek().Equals(theResponse.GameEmail))
+            if (_messageQueue.Count > 0 && _messageQueue.Peek().Equals(theResponse.GameEmail))
             {
                 _messageQueue.Dequeue();
             }
