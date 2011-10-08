@@ -384,6 +384,7 @@ namespace AowEmailWrapper
 
             activityListView.OnDoubleClick += new ActivityListViewEventHandler(ActivityListViewDoubleClicked);
             activityListView.OnListChanged += new EventHandler(ActivityLogChanged);
+            activityListView.OnDeleteClick += new ActivityListViewEventHandler(ActivityListViewGamesDeleted);
             activityListView.OnMarkAsEnded += new ActivityListViewEventHandler(ActivityListViewGamesMarkedAsEnded);
             activityListView.OnResendClick += new ActivityListViewEventHandler(ActivityListViewResend);
         }
@@ -1092,6 +1093,28 @@ namespace AowEmailWrapper
             }
         }
 
+        private void ActivityListViewGamesDeleted(object sender, List<Activity> list)
+        {
+            if (list != null && list.Count > 0)
+            {
+                try
+                {
+                    list.ForEach(deletedActivity =>
+                    {
+                        TurnLogger.DeleteLog(deletedActivity.FileName);
+                        ResendHelper.Delete(deletedActivity.FileName);
+                        _gameManager.DeleteGame(deletedActivity.GameType, deletedActivity.FileName);
+                    });
+                }
+                catch (Exception ex)
+                {
+                    Trace.TraceError(ex.ToString());
+                    Trace.Flush();
+                    ShowException(ex);
+                }
+            }
+        }
+
         private void ActivityListViewGamesMarkedAsEnded(object sender, List<Activity> list)
         {
             if (list != null && list.Count > 0)
@@ -1367,7 +1390,12 @@ namespace AowEmailWrapper
 
         private void ContextMenu_Popup(object sender, EventArgs e)
         {
-            _menuPoll.Enabled = (_poller != null);
+            _menuPoll.Enabled = (_poller != null &&
+                _wrapperConfig != null &&
+                _wrapperConfig.AccountsList != null &&
+                _wrapperConfig.AccountsList.ActiveAccount != null &&
+                _wrapperConfig.AccountsList.ActiveAccount.PollingConfig != null &&
+                _wrapperConfig.AccountsList.ActiveAccount.PollingConfig.UsePolling);
 
             foreach (AowGame game in _gameManager.Games)
             {
