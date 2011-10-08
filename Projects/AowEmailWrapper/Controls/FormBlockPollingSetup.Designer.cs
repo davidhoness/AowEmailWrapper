@@ -63,9 +63,9 @@
             // 
             this.checkBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.checkBox.Location = new System.Drawing.Point(0, 0);
-            this.checkBox.MinimumSize = new System.Drawing.Size(0, 22);
+            this.checkBox.MinimumSize = new System.Drawing.Size(0, 23);
             this.checkBox.Name = "checkBox";
-            this.checkBox.Size = new System.Drawing.Size(131, 22);
+            this.checkBox.Size = new System.Drawing.Size(131, 23);
             this.checkBox.TabIndex = 2;
             this.checkBox.Text = "Check for email";
             this.checkBox.UseVisualStyleBackColor = false;
