@@ -50,9 +50,9 @@
             this.lblName.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblName.Location = new System.Drawing.Point(0, 0);
             this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblName.MinimumSize = new System.Drawing.Size(0, 20);
+            this.lblName.MinimumSize = new System.Drawing.Size(0, 22);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(82, 20);
+            this.lblName.Size = new System.Drawing.Size(82, 22);
             this.lblName.TabIndex = 3;
             this.lblName.Text = "Name";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
