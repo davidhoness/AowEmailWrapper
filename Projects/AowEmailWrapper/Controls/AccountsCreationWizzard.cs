@@ -81,7 +81,7 @@ namespace AowEmailWrapper.Controls
                 string selectedEmailType = listViewTemplates.SelectedItems[0].Tag.ToString();
                 AccountConfigValues selectedTemplate = _accountTemplates.Accounts.Find(account => account.EmailProvider.Equals(selectedEmailType));
 
-                labelDomainsMessage.Text = GetDomains(selectedTemplate.TemplateDomains);
+                txtDomainInfo.Text = GetDomains(selectedTemplate.TemplateDomains);
 
                 //Create a copy of it in memory (don't modify the original)
                 _chosenTemplate = XmlHelper.Deserialize<AccountConfigValues>(XmlHelper.Serialize(selectedTemplate));
@@ -91,7 +91,7 @@ namespace AowEmailWrapper.Controls
 
                 if (_chosenTemplate.EmailProvider.Equals(OtherAccountType, StringComparison.InvariantCultureIgnoreCase))
                 {
-                    labelDomainsMessage.Text = Translator.Translate(InputEmailSettingsManual);
+                    txtDomainInfo.Text = Translator.Translate(InputEmailSettingsManual);
                     _chosenTemplate.Name = Translator.Translate(OtherAccountTranslationKey);
                 }
             }

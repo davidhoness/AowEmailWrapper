@@ -32,21 +32,19 @@
             this.panelWhite = new System.Windows.Forms.Panel();
             this.listViewTemplates = new System.Windows.Forms.ListView();
             this.colName = new System.Windows.Forms.ColumnHeader();
-            this.panelMessagePadder = new System.Windows.Forms.Panel();
-            this.panelMessage = new System.Windows.Forms.Panel();
-            this.labelDomainsMessage = new System.Windows.Forms.Label();
             this.panelAuthentication = new System.Windows.Forms.Panel();
             this.panelCreateButton = new System.Windows.Forms.Panel();
             this.buttonCreate = new System.Windows.Forms.Button();
             this.groupBoxAuth = new System.Windows.Forms.GroupBox();
+            this.panelMessagePadder = new System.Windows.Forms.Panel();
+            this.txtDomainInfo = new System.Windows.Forms.TextBox();
             this.fbPassword = new AowEmailWrapper.Controls.FormBlockText();
             this.fbEmailAddress = new AowEmailWrapper.Controls.FormBlockText();
             this.panelWhite.SuspendLayout();
-            this.panelMessagePadder.SuspendLayout();
-            this.panelMessage.SuspendLayout();
             this.panelAuthentication.SuspendLayout();
             this.panelCreateButton.SuspendLayout();
             this.groupBoxAuth.SuspendLayout();
+            this.panelMessagePadder.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelWhite
@@ -81,42 +79,12 @@
             this.colName.Text = "";
             this.colName.Width = 105;
             // 
-            // panelMessagePadder
-            // 
-            this.panelMessagePadder.Controls.Add(this.panelMessage);
-            this.panelMessagePadder.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelMessagePadder.Location = new System.Drawing.Point(0, 90);
-            this.panelMessagePadder.Name = "panelMessagePadder";
-            this.panelMessagePadder.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panelMessagePadder.Size = new System.Drawing.Size(437, 30);
-            this.panelMessagePadder.TabIndex = 22;
-            // 
-            // panelMessage
-            // 
-            this.panelMessage.BackColor = System.Drawing.SystemColors.Info;
-            this.panelMessage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelMessage.Controls.Add(this.labelDomainsMessage);
-            this.panelMessage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMessage.Location = new System.Drawing.Point(0, 5);
-            this.panelMessage.Name = "panelMessage";
-            this.panelMessage.Size = new System.Drawing.Size(437, 25);
-            this.panelMessage.TabIndex = 21;
-            // 
-            // labelDomainsMessage
-            // 
-            this.labelDomainsMessage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelDomainsMessage.Location = new System.Drawing.Point(0, 0);
-            this.labelDomainsMessage.Name = "labelDomainsMessage";
-            this.labelDomainsMessage.Size = new System.Drawing.Size(433, 21);
-            this.labelDomainsMessage.TabIndex = 0;
-            this.labelDomainsMessage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // panelAuthentication
             // 
             this.panelAuthentication.Controls.Add(this.panelCreateButton);
             this.panelAuthentication.Controls.Add(this.groupBoxAuth);
             this.panelAuthentication.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAuthentication.Location = new System.Drawing.Point(0, 120);
+            this.panelAuthentication.Location = new System.Drawing.Point(0, 127);
             this.panelAuthentication.Name = "panelAuthentication";
             this.panelAuthentication.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.panelAuthentication.Size = new System.Drawing.Size(437, 109);
@@ -157,6 +125,30 @@
             this.groupBoxAuth.TabStop = false;
             this.groupBoxAuth.Text = "Authentication Details";
             // 
+            // panelMessagePadder
+            // 
+            this.panelMessagePadder.Controls.Add(this.txtDomainInfo);
+            this.panelMessagePadder.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelMessagePadder.Location = new System.Drawing.Point(0, 90);
+            this.panelMessagePadder.Name = "panelMessagePadder";
+            this.panelMessagePadder.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.panelMessagePadder.Size = new System.Drawing.Size(437, 37);
+            this.panelMessagePadder.TabIndex = 22;
+            // 
+            // txtDomainInfo
+            // 
+            this.txtDomainInfo.BackColor = System.Drawing.SystemColors.Info;
+            this.txtDomainInfo.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtDomainInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDomainInfo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txtDomainInfo.Location = new System.Drawing.Point(0, 5);
+            this.txtDomainInfo.Multiline = true;
+            this.txtDomainInfo.Name = "txtDomainInfo";
+            this.txtDomainInfo.ReadOnly = true;
+            this.txtDomainInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtDomainInfo.Size = new System.Drawing.Size(437, 32);
+            this.txtDomainInfo.TabIndex = 2;
+            // 
             // fbPassword
             // 
             this.fbPassword.Dock = System.Windows.Forms.DockStyle.Top;
@@ -195,11 +187,11 @@
             this.Name = "AccountsCreationWizzard";
             this.Size = new System.Drawing.Size(437, 261);
             this.panelWhite.ResumeLayout(false);
-            this.panelMessagePadder.ResumeLayout(false);
-            this.panelMessage.ResumeLayout(false);
             this.panelAuthentication.ResumeLayout(false);
             this.panelCreateButton.ResumeLayout(false);
             this.groupBoxAuth.ResumeLayout(false);
+            this.panelMessagePadder.ResumeLayout(false);
+            this.panelMessagePadder.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -207,9 +199,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panelWhite;
-        private System.Windows.Forms.Panel panelMessagePadder;
-        private System.Windows.Forms.Panel panelMessage;
-        private System.Windows.Forms.Label labelDomainsMessage;
         private System.Windows.Forms.Panel panelAuthentication;
         private System.Windows.Forms.GroupBox groupBoxAuth;
         private FormBlockText fbPassword;
@@ -218,5 +207,7 @@
         private System.Windows.Forms.Button buttonCreate;
         private System.Windows.Forms.ListView listViewTemplates;
         private System.Windows.Forms.ColumnHeader colName;
+        private System.Windows.Forms.Panel panelMessagePadder;
+        private System.Windows.Forms.TextBox txtDomainInfo;
     }
 }
