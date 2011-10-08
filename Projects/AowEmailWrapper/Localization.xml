@@ -1087,7 +1087,7 @@
 		<lookup key="fbAutostart" value="Запускать Wrapper при старте системы:"/>
 		<lookup key="fbSentSound" value="Звук при отправке письма:"/>
 		<lookup key="fbEmailSound" value="Звук при получении письма:"/>
-		<lookup key="fbLocalization" value="Язык"/>
+		<lookup key="fbLocalization" value="Язык:"/>
 		<lookup key="fbCopyToEmailOut" value="Копировать сейв в EmailOut после отправки:"/>
 		<lookup key="fbGameWrapperDataPort" value="Порт сообщения игры и Wrapper'а:"/>
 		<lookup key="tabActivity" value="Список событий"/>
