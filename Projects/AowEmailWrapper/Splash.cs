@@ -32,6 +32,17 @@ namespace AowEmailWrapper
             _timer.Start();
         }
 
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                // Turn on WS_EX_TOOLWINDOW style bit
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x80;
+                return cp;
+            }
+        }
+
         private void timer_Tick(object sender, System.EventArgs e)
         {
             if (_opacityIncrement > 0)
