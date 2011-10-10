@@ -530,6 +530,8 @@ namespace AowEmailWrapper
             if (this.WindowState == FormWindowState.Minimized)
             {
                 this.ShowInTaskbar = false;
+                this.Visible = false;
+                this.Hide();
             }
 
             this.ResumeLayout();
@@ -554,10 +556,12 @@ namespace AowEmailWrapper
                 }
                 this.WindowState = FormWindowState.Normal;
                 this.ShowInTaskbar = true;
+                this.Visible = true;
+                this.Show();
             }
-
-            this.ResumeLayout();
+            
             this.Activate();
+            this.ResumeLayout();
         }
 
         private void ShowException(Exception ex)
