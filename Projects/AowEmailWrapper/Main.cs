@@ -106,6 +106,17 @@ namespace AowEmailWrapper
 
         #region Properties
 
+        //To hide from alt-tab when minimized
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle = (int)0x00000008; //WS_EX_TOPMOST
+                return cp;
+            }
+        }
+
         protected bool ConfigNeedsSave
         {
             get { return _configNeedsSave; }
@@ -531,7 +542,6 @@ namespace AowEmailWrapper
             {
                 this.ShowInTaskbar = false;
                 this.Visible = false;
-                this.Hide();
             }
 
             this.ResumeLayout();
@@ -557,7 +567,6 @@ namespace AowEmailWrapper
                 this.WindowState = FormWindowState.Normal;
                 this.ShowInTaskbar = true;
                 this.Visible = true;
-                this.Show();
             }
             
             this.Activate();
