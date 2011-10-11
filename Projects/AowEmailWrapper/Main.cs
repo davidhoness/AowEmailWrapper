@@ -76,6 +76,8 @@ namespace AowEmailWrapper
 
         #region Private Members
 
+        private const int WS_EX_APPWINDOW = 0x00040000;
+
         private Icon _baseIcon = null;
         private SimpleServer _theServer;
         private BasePoller _poller;
@@ -105,14 +107,14 @@ namespace AowEmailWrapper
         #endregion
 
         #region Properties
-
+        
         //To hide from alt-tab when minimized
         protected override CreateParams CreateParams
         {
             get
             {
                 CreateParams cp = base.CreateParams;
-                cp.ExStyle = (int)0x00000008; //WS_EX_TOPMOST
+                cp.ExStyle &= WS_EX_APPWINDOW;
                 return cp;
             }
         }
