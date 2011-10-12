@@ -76,8 +76,6 @@ namespace AowEmailWrapper
 
         #region Private Members
 
-        private const int WS_EX_APPWINDOW = 0x00040000;
-
         private Icon _baseIcon = null;
         private SimpleServer _theServer;
         private BasePoller _poller;
@@ -113,8 +111,14 @@ namespace AowEmailWrapper
         {
             get
             {
+                //Turn off WS_EX_CONTROLPARENT style bit
                 CreateParams cp = base.CreateParams;
-                cp.ExStyle &= WS_EX_APPWINDOW;
+                int bit = ExtendedWindowStyles.WS_EX_CONTROLPARENT;
+                int test = cp.ExStyle & bit;
+                if (test.Equals(bit))
+                {
+                    cp.ExStyle ^= bit;
+                }
                 return cp;
             }
         }
