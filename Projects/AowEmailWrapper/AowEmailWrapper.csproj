@@ -68,6 +68,7 @@
     <Compile Include="ASG\OffsetMap.cs" />
     <Compile Include="ASG\OffsetMapField.cs" />
     <Compile Include="Classes\ComboBoxItem.cs" />
+    <Compile Include="Classes\ExtendedWindowStyles.cs" />
     <Compile Include="Classes\InputBox.cs" />
     <Compile Include="Classes\ListViewColumnResizer.cs" />
     <Compile Include="Classes\ListViewColumnSorter.cs" />
