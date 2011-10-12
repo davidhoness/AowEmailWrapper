@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Threading;
+using AowEmailWrapper.Classes;
 
 namespace AowEmailWrapper
 {
@@ -38,7 +39,7 @@ namespace AowEmailWrapper
             {
                 // Turn on WS_EX_TOOLWINDOW style bit
                 CreateParams cp = base.CreateParams;
-                cp.ExStyle |= 0x80;
+                cp.ExStyle |= ExtendedWindowStyles.WS_EX_TOOLWINDOW;
                 return cp;
             }
         }
