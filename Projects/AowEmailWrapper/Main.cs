@@ -626,28 +626,26 @@ namespace AowEmailWrapper
 
         private void StartGame(AowGame theGame)
         {
-            StartedTaskCompleteEventHandler callBack = new StartedTaskCompleteEventHandler(StartedGameWatchCompleted);
-
             switch (theGame.GameType)
             {
                 case AowGameType.Aow1:
                     if (_aow1GameWatcher == null)
                     {
-                        _aow1GameWatcher = new StartedTaskWatcher(theGame, callBack);
+                        _aow1GameWatcher = new StartedTaskWatcher(theGame, new StartedTaskCompleteEventHandler(StartedGameWatchCompleted));
                         _aow1GameWatcher.Start();
                     }
                     break;
                 case AowGameType.Aow2:
                     if (_aow2GameWatcher == null)
                     {
-                        _aow2GameWatcher = new StartedTaskWatcher(theGame, callBack);
+                        _aow2GameWatcher = new StartedTaskWatcher(theGame, new StartedTaskCompleteEventHandler(StartedGameWatchCompleted));
                         _aow2GameWatcher.Start();
                     }
                     break;
                 case AowGameType.AowSm:
                     if (_aowSmGameWatcher == null)
                     {
-                        _aowSmGameWatcher = new StartedTaskWatcher(theGame, callBack);
+                        _aowSmGameWatcher = new StartedTaskWatcher(theGame, new StartedTaskCompleteEventHandler(StartedGameWatchCompleted));
                         _aowSmGameWatcher.Start();
                     }
                     break;
