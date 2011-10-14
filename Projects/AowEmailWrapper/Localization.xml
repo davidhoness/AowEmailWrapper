@@ -123,12 +123,12 @@
 		<lookup key="startUpAccount" value="Default"/>
 		<!-- END: Misc -->
 	</language>
-	<language code="fr" display="Française">
+	<language code="fr" display="Français">
 		<!-- BEGIN: Main forms -->
 		<lookup key="tabAccounts" value="Comptes"/>
 		<lookup key="panelTopHalflistViewAccounts0" value="Compte"/>
 		<lookup key="panelTopHalflistViewAccounts1" value="Adresse mail"/>
-		<lookup key="panelTopHalflistViewAccounts2" value="Défaut"/>
+		<lookup key="panelTopHalflistViewAccounts2" value="Défault"/>
 		<lookup key="buttonActivate" value="Activer"/>
 		<lookup key="buttonSetStartUp" value="Utiliser par Défaut"/>
 		<lookup key="buttonRename" value="Renommer"/>
@@ -140,7 +140,7 @@
 		<lookup key="fbPollingSetup" value="Vérifier les e-mails"/>
 		<lookup key="fbPollingSetup_every" value="toutes les:"/>
 		<lookup key="groupBoxAuth" value="Détails d'authentification"/>
-		<lookup key="fbPassword" value="Mot-de-passe:"/>
+		<lookup key="fbPassword" value="Mot de passe:"/>
 		<lookup key="fbUserName" value="Nom d'utilisateur:"/>
 		<lookup key="groupBoxServer" value="Serveur"/>
 		<lookup key="fbUseSSL" value="Utiliser SSL:"/>
@@ -158,7 +158,7 @@
 		<lookup key="tabPreferences" value="Préférences"/>
 		<lookup key="fbSaveFolder" value="Répertoire de téléchargement:"/>
 		<lookup key="groupBoxPreferences" value="Préférences"/>
-		<lookup key="fbAutostart" value="Démarrer en même temps que Windows:"/>
+		<lookup key="fbAutostart" value="Lancer au démarrage:"/>
 		<lookup key="fbSentSound" value="Son pour mail envoyé:"/>
 		<lookup key="fbEmailSound" value="Son pour mail reçu:"/>
 		<lookup key="fbLocalization" value="Langue:"/>
@@ -200,7 +200,7 @@
 		<lookup key="msgWrapperEmailSentFailed" value="Erreur pendant l'envoi du mail: {0}.&#xA;Vers: {1}"/>
 		<lookup key="msgEmailInSelected" value="Merci d'utiliser Scénario &gt; Email &gt; Charger"/>
 		<lookup key="msgSaveSelected" value="Merci d'utiliser Charger depuis le menu principal"/>
-		<lookup key="msgWrapperRestartRequired" value="Merci de redémarrer le Wrapper pour que ces changements soient effectifs."/>
+		<lookup key="msgWrapperRestartRequired" value="Voulez-vous redémarrer maintenant?"/>
 		<lookup key="msgWrapperPollFailed" value="Echec de scrutation"/>
 		<lookup key="msgWrapperGamesWaiting" value="Vous avez {0} partie(s) en attente."/>
 		<lookup key="msgInputEmailSettingsManual" value="Vous remplirez les paramètres manuellement."/>
@@ -236,7 +236,7 @@
 		<lookup key="buttonCancel" value="Annuler"/>
 		<lookup key="buttonResend" value="Renvoyer"/>
 		<lookup key="activeAccount" value="Actif"/>
-		<lookup key="startUpAccount" value="Défaut"/>
+		<lookup key="startUpAccount" value="Défault"/>
 		<!-- END: Misc -->
 	</language>
 	<language code="de" display="Deutsch">
