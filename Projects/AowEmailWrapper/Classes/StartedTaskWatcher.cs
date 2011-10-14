@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Diagnostics;
+using System.Threading;
 using System.Runtime.InteropServices;
+using AowEmailWrapper.Games;
 
 namespace AowEmailWrapper.Classes
 {
-    public delegate void StartedTaskCompleteEventHandler(StartedTaskWatcher sender, Process theProcess);
+    public delegate void StartedTaskCompleteEventHandler(object sender, AowGameType gameType);
 
     public class StartedTaskWatcher
     {
         private Process _process;
-        private StartedTaskCompleteEventHandler _taskCompleteEventHandler;
+        private StartedTaskCompleteEventHandler _callBack;
+        private AowGame _theGame;
         private bool _stop = false;
 
         public Process Process
@@ -26,15 +29,26 @@ namespace AowEmailWrapper.Classes
             _stop = true;
         }
 
-        public StartedTaskWatcher(Process process, StartedTaskCompleteEventHandler taskCompleteEventHandler)
+        public StartedTaskWatcher(AowGame theGame, StartedTaskCompleteEventHandler callBack)
         {
-            _process = process;
-            _taskCompleteEventHandler = taskCompleteEventHandler;
+            _theGame = theGame;
+            _callBack = callBack;
         }
 
         public void Start()
         {
-            if (_taskCompleteEventHandler != null)
+            _process = new Process();
+            _process.StartInfo.FileName = _theGame.ExeFile;
+            _process.StartInfo.WorkingDirectory = _theGame.Root.FullName;
+
+            _process.Start();
+            
+            new Thread(new ThreadStart(this.Watch)).Start();
+        }
+
+        private void Watch()
+        {
+            if (_callBack != null)
             {
                 do
                 {
@@ -47,7 +61,7 @@ namespace AowEmailWrapper.Classes
 
                 if (!_stop)
                 {
-                    _taskCompleteEventHandler(this, _process);
+                    _callBack(this, _theGame.GameType);
                 }
 
                 _process.Dispose();
