@@ -85,7 +85,10 @@ namespace AowEmailWrapper
         private Config _wrapperConfig;
         private ActivityList _activityLog;
 
-        private StartedTaskWatcher _startedGameWatcher;
+        private StartedTaskWatcher _aow1GameWatcher;
+        private StartedTaskWatcher _aow2GameWatcher;
+        private StartedTaskWatcher _aowSmGameWatcher;
+
         private EventHandler _shutDownEvent;
         private EventHandler _maximizeEvent;
         private EventHandler _activityLogRefresh;
@@ -226,9 +229,17 @@ namespace AowEmailWrapper
                     _poller.Stop();
                 }
 
-                if (_startedGameWatcher != null)
+                if (_aow1GameWatcher != null)
                 {
-                    _startedGameWatcher.Stop();
+                    _aow1GameWatcher.Stop();
+                }
+                if (_aow2GameWatcher != null)
+                {
+                    _aow2GameWatcher.Stop();
+                }
+                if (_aowSmGameWatcher != null)
+                {
+                    _aowSmGameWatcher.Stop();
                 }
 
                 SetIcon(IconState.None);
@@ -415,9 +426,20 @@ namespace AowEmailWrapper
             }
         }
 
-        private void StartedGameWatchCompleted(StartedTaskWatcher sender, Process theProcess)
+        private void StartedGameWatchCompleted(object sender, AowGameType gameType)
         {
-            _startedGameWatcher = null;
+            switch (gameType)
+            {
+                case AowGameType.Aow1:
+                    _aow1GameWatcher = null;
+                    break;
+                case AowGameType.Aow2:
+                    _aow2GameWatcher = null;
+                    break;
+                case AowGameType.AowSm:
+                    _aowSmGameWatcher = null;
+                    break;
+            }
         }
 
         private void OnConfigNeedsSave(object sender, EventArgs e)
@@ -604,20 +626,31 @@ namespace AowEmailWrapper
 
         private void StartGame(AowGame theGame)
         {
-            if (_startedGameWatcher == null)
-            {
-                Process proc = new Process();
-                proc.StartInfo.FileName = theGame.ExeFile;
-                proc.StartInfo.WorkingDirectory = theGame.Root.FullName;
+            StartedTaskCompleteEventHandler callBack = new StartedTaskCompleteEventHandler(StartedGameWatchCompleted);
 
-                proc.Start();
-
-                _startedGameWatcher = new StartedTaskWatcher(proc, new StartedTaskCompleteEventHandler(StartedGameWatchCompleted));
-                new Thread(new ThreadStart(_startedGameWatcher.Start)).Start();
-            }
-            else
+            switch (theGame.GameType)
             {
-                //already running
+                case AowGameType.Aow1:
+                    if (_aow1GameWatcher == null)
+                    {
+                        _aow1GameWatcher = new StartedTaskWatcher(theGame, callBack);
+                        _aow1GameWatcher.Start();
+                    }
+                    break;
+                case AowGameType.Aow2:
+                    if (_aow2GameWatcher == null)
+                    {
+                        _aow2GameWatcher = new StartedTaskWatcher(theGame, callBack);
+                        _aow2GameWatcher.Start();
+                    }
+                    break;
+                case AowGameType.AowSm:
+                    if (_aowSmGameWatcher == null)
+                    {
+                        _aowSmGameWatcher = new StartedTaskWatcher(theGame, callBack);
+                        _aowSmGameWatcher.Start();
+                    }
+                    break;
             }
         }
 
