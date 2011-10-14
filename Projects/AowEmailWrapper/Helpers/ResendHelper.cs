@@ -28,14 +28,8 @@ namespace AowEmailWrapper.Helpers
         {
             try
             {
-                if (theEmail.Attachments.Count > 0)
-                {
-                    string[] parameters = new string[] { theEmail.Attachments[0].FileName, theEmail.RenderEml() };
-
-                    //Starting new thread so that the main ProcessSMTPRequest thread can return to the game asap
-                    System.Threading.Thread saveThread = new System.Threading.Thread(new System.Threading.ParameterizedThreadStart(SaveEmail));
-                    saveThread.Start(parameters);
-                }
+                System.Threading.Thread saveThread = new System.Threading.Thread(new System.Threading.ParameterizedThreadStart(SaveEmail));
+                saveThread.Start(theEmail);
             }
             catch (Exception ex)
             {
@@ -92,12 +86,12 @@ namespace AowEmailWrapper.Helpers
         {
             try
             {
-                string[] parameters = (string[])obj;
-                if (parameters != null && parameters.Length.Equals(2))
+                IMail theEmail = (IMail)obj;
+                if (theEmail.Attachments.Count > 0)
                 {
-                    File.WriteAllText(GetEmlFilePath(parameters[0]), parameters[1]);
-                    parameters = null;
+                    theEmail.Save(GetEmlFilePath(theEmail.Attachments[0].FileName));
                 }
+                theEmail = null;
             }
             catch (Exception ex)
             {
