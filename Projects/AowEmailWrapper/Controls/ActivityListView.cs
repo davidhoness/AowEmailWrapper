@@ -228,8 +228,8 @@ namespace AowEmailWrapper.Controls
                         listItem.BackColor = Color.MistyRose;
                     }
                     break;
-                case ActivityState.Error:
-                    listItem.ForeColor = Color.Red;
+                case ActivityState.Pending:
+                    listItem.ForeColor = Color.Blue;
                     break;
                 case ActivityState.Ended:
                     listItem.ForeColor = Color.Gray;
