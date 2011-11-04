@@ -90,7 +90,7 @@ namespace AowEmailWrapper.ConfigFramework
 
         public List<Activity> GetRetryActivities()
         {
-            return _activities.FindAll(item => item.Status.Equals(ActivityState.Error));
+            return _activities.FindAll(item => item.Status.Equals(ActivityState.Pending));
         }
     }
 }
