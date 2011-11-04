@@ -1279,14 +1279,14 @@ namespace AowEmailWrapper
 
             if (theActivity != null)
             {
-                theActivity.Status = ActivityState.Error;
+                theActivity.Status = ActivityState.Pending;
             }
             else
             {
                 using (ASGFileInfo theASG = new ASGFileInfo(theAttachment))
                 {
                     theActivity = new Activity(
-                        ActivityState.Error,
+                        ActivityState.Pending,
                         theASG.GameType,
                         theASG.FileNameTrue,
                         theASG.MapTitle,
