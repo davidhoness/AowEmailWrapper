@@ -111,7 +111,7 @@
 		<lookup key="enumNew" value="New"/>
 		<lookup key="enumReceived" value="Received"/>
 		<lookup key="enumSent" value="Sent"/>
-		<lookup key="enumError" value="Error"/>
+		<lookup key="enumPending" value="Outbox"/>
 		<lookup key="enumEnded" value="Ended"/>
 		<lookup key="enumMinutes" value="minutes"/>
 		<!-- END: Enumerations -->
@@ -228,7 +228,7 @@
 		<lookup key="enumNew" value="Nouveau"/>
 		<lookup key="enumReceived" value="Reçu"/>
 		<lookup key="enumSent" value="Envoyé"/>
-		<lookup key="enumError" value="Erreur"/>
+		<lookup key="enumPending" value="Boîte d'envoi"/>
 		<lookup key="enumEnded" value="Terminé"/>
 		<lookup key="enumMinutes" value="minutes"/>
 		<!-- END: Enumerations -->
@@ -345,7 +345,7 @@
 		<lookup key="enumNew" value="Neu"/>
 		<lookup key="enumReceived" value="Erhalten"/>
 		<lookup key="enumSent" value="Gesendet"/>
-		<lookup key="enumError" value="Fehler"/>
+		<lookup key="enumPending" value="Warten"/>
 		<lookup key="enumEnded" value="Beendet"/>
 		<lookup key="enumMinutes" value="minuten"/>
 		<!-- END: Enumerations -->
@@ -461,7 +461,7 @@
 		<lookup key="enumNew" value="Nuevo"/>
 		<lookup key="enumReceived" value="Recibido"/>
 		<lookup key="enumSent" value="Enviado"/>
-		<lookup key="enumError" value="Error"/>
+		<lookup key="enumPending" value="Espera"/>
 		<lookup key="enumEnded" value="Terminado"/>
 		<lookup key="enumMinutes" value="minutos"/>
 		<!-- END: Enumerations -->
@@ -580,7 +580,7 @@
 		<lookup key="enumNew" value="Nieuw"/>
 		<lookup key="enumReceived" value="Ontvangen"/>
 		<lookup key="enumSent" value="Verzonden"/>
-		<lookup key="enumError" value="Fout"/>
+		<lookup key="enumPending" value="Wachten"/>
 		<lookup key="enumEnded" value="Geeindigd"/>
 		<lookup key="enumMinutes" value="minuten"/>
 		<!-- END: Enumerations -->
@@ -689,7 +689,7 @@
 		<lookup key="enumNew" value="Ny"/>
 		<lookup key="enumReceived" value="Modtaget"/>
 		<lookup key="enumSent" value="Sendt"/>
-		<lookup key="enumError" value="Fejl"/>
+		<lookup key="enumPending" value="Udbakke"/>
 		<lookup key="enumEnded" value="Afsluttet"/>
 		<lookup key="enumMinutes" value="minutter"/>
 		<!-- END: Enumerations -->
@@ -805,7 +805,7 @@
 		<lookup key="enumNew" value="Nowy"/>
 		<lookup key="enumReceived" value="Otrzymany"/>
 		<lookup key="enumSent" value="Wysłany"/>
-		<lookup key="enumError" value="Błąd"/>
+		<lookup key="enumPending" value="Czeka"/>
 		<lookup key="enumEnded" value="Zakończony"/>
 		<lookup key="enumMinutes" value="minut(y)"/>
 		<!-- END: Enumerations -->
@@ -924,7 +924,7 @@
 		<lookup key="enumNew" value="Uusi"/>
 		<lookup key="enumReceived" value="Vastaanotettu"/>
 		<lookup key="enumSent" value="Lähetetty"/>
-		<lookup key="enumError" value="Virhe"/>
+		<lookup key="enumPending" value="Lähtevät"/>
 		<lookup key="enumEnded" value="Lopetettu"/>
 		<lookup key="enumMinutes" value="minuutti"/>
 		<!-- END: Enumerations -->
@@ -1041,6 +1041,7 @@
 		<lookup key="enumNew" value="Nou"/>
 		<lookup key="enumReceived" value="Primit"/>
 		<lookup key="enumSent" value="Trimis"/>
+    <lookup key="enumPending" value="Aşteptare"/>
 		<lookup key="enumEnded" value="Terminat"/>
 		<lookup key="enumMinutes" value="minute"/>
 		<!-- END: Enumerations -->
@@ -1154,7 +1155,7 @@
 		<lookup key="enumNew" value="Νέο"/>
 		<lookup key="enumReceived" value="Παρελήφθη"/>
 		<lookup key="enumSent" value="Απεστάλη"/>
-		<lookup key="enumError" value="Σφάλμα"/>
+		<lookup key="enumPending" value="Εξερχόμενα"/>
 		<lookup key="enumEnded" value="Τέλος"/>
 		<lookup key="enumMinutes" value="λεπτά"/>
 		<!-- END: Enumerations -->
@@ -1270,7 +1271,7 @@
 		<lookup key="enumNew" value="Новая игра"/>
 		<lookup key="enumReceived" value="Отправлен"/>
 		<lookup key="enumSent" value="Получен"/>
-		<lookup key="enumError" value="Ошибка"/>
+		<lookup key="enumPending" value="в ожидании"/>
 		<lookup key="enumEnded" value="Игра завершена"/>
 		<lookup key="enumMinutes" value="мин"/>
 		<!-- END: Enumerations -->
