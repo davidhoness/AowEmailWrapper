@@ -1271,7 +1271,7 @@
 		<lookup key="enumNew" value="Новая игра"/>
 		<lookup key="enumReceived" value="Отправлен"/>
 		<lookup key="enumSent" value="Получен"/>
-		<lookup key="enumPending" value="В Ожидании"/>
+		<lookup key="enumPending" value="Отправка"/>
 		<lookup key="enumEnded" value="Игра завершена"/>
 		<lookup key="enumMinutes" value="мин"/>
 		<!-- END: Enumerations -->
