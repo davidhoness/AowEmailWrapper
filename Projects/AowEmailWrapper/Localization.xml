@@ -345,7 +345,7 @@
 		<lookup key="enumNew" value="Neu"/>
 		<lookup key="enumReceived" value="Erhalten"/>
 		<lookup key="enumSent" value="Gesendet"/>
-		<lookup key="enumPending" value="Warten"/>
+		<lookup key="enumPending" value="Anstehend"/>
 		<lookup key="enumEnded" value="Beendet"/>
 		<lookup key="enumMinutes" value="minuten"/>
 		<!-- END: Enumerations -->
@@ -1041,7 +1041,7 @@
 		<lookup key="enumNew" value="Nou"/>
 		<lookup key="enumReceived" value="Primit"/>
 		<lookup key="enumSent" value="Trimis"/>
-    <lookup key="enumPending" value="Aşteptare"/>
+		<lookup key="enumPending" value="Aşteptare"/>
 		<lookup key="enumEnded" value="Terminat"/>
 		<lookup key="enumMinutes" value="minute"/>
 		<!-- END: Enumerations -->
