@@ -705,14 +705,14 @@
 		<lookup key="tabAccounts" value="Konta"/>
 		<lookup key="panelTopHalflistViewAccounts0" value="Konto"/>
 		<lookup key="panelTopHalflistViewAccounts1" value="Adres email"/>
-		<lookup key="panelTopHalflistViewAccounts2" value="Domyślny"/>
+		<lookup key="panelTopHalflistViewAccounts2" value="Domyślne"/>
 		<lookup key="buttonActivate" value="Aktywuj"/>
-		<lookup key="buttonSetStartUp" value="Użyj jako domyślny"/>
+		<lookup key="buttonSetStartUp" value="Użyj jako domyślne"/>
 		<lookup key="buttonRename" value="Zmień Nazwę"/>
 		<lookup key="buttonRemove" value="Usuń"/>
 		<lookup key="buttonAdd" value="Dodaj Nowe"/>
 		<lookup key="tabIncoming" value="Poczta Przychodząca"/>
-		<lookup key="cmdMessageStore" value="Pokaż POP3 poczty email"/>
+		<lookup key="cmdMessageStore" value="Pokaż pocztę POP3"/>
 		<lookup key="groupBoxEmailSelection" value="Pobieranie załączników email"/>
 		<lookup key="fbPollingSetup" value="Sprawdzanie poczty"/>
 		<lookup key="fbPollingSetup_every" value="co:"/>
@@ -740,7 +740,7 @@
 		<lookup key="fbEmailSound" value="Dźwięk pobranego emaila:"/>
 		<lookup key="fbLocalization" value="Język:"/>
 		<lookup key="fbCopyToEmailOut" value="Kopiuj do EmailOut po wysłaniu:"/>
-		<lookup key="fbGameWrapperDataPort" value="Gry na Wrapper danych port:"/>
+		<lookup key="fbGameWrapperDataPort" value="Port danych przesyłanych z gry do Wrappera:"/>
 		<lookup key="tabActivity" value="Dziennik Aktywności"/>
 		<lookup key="activityListViewlistView0" value="Nazwa Pliku"/>
 		<lookup key="activityListViewlistView1" value="Mapa"/>
@@ -753,7 +753,7 @@
 		<lookup key="groupAuthors" value="Autorzy"/>
 		<lookup key="lblNotice" value="Age of Wonders Email Wrapper to całkowicie darmowa aplikacja, umożliwiająca użycie automatycznego wysyłania emaili we wszystkich trzech grach z serii AoW©, powstała bez udziału Triumph Studios©. To osobisty projekt, którego autor chce uzyskać jedynie oszczędność czasu i przyjemność z gry. Nie ma obietnicy udzielenia wsparcia technicznego, ale prawdopodobnie zostanie ono udzielone, jeśli ładnie poprosisz."/>
 		<lookup key="cmdSave" value="Zapisz ustawienia"/>
-		<lookup key="MessageStore" value="POP3 poczty email ({0} na {1})"/>
+		<lookup key="MessageStore" value="Wiadomości POP3 ({0} na {1})"/>
 		<lookup key="messageStoreListlistView0" value="Od"/>
 		<lookup key="messageStoreListlistView1" value="Temat"/>
 		<lookup key="messageStoreListlistView2" value="Data"/>
@@ -789,7 +789,7 @@
 		<lookup key="menuItemPollNow" value="Sprawdź teraz"/>
 		<lookup key="menuItemExit" value="Wyjdź"/>
 		<lookup key="menuItemActivate" value="Aktywuj"/>
-		<lookup key="menuItemSetStartUp" value="Użyj jako &amp;domyślny"/>
+		<lookup key="menuItemSetStartUp" value="Użyj jako &amp;domyślne"/>
 		<lookup key="menuItemRename" value="Zmień Nazwę"/>
 		<lookup key="menuItemRemove" value="Usuń"/>
 		<lookup key="menuItemAdd" value="Dodaj Nowe"/>
@@ -814,7 +814,7 @@
 		<lookup key="buttonCancel" value="Anuluj"/>
 		<lookup key="buttonResend" value="Wyślij ponownie"/>
 		<lookup key="activeAccount" value="Aktywne"/>
-		<lookup key="startUpAccount" value="Domyślny"/>
+		<lookup key="startUpAccount" value="Domyślne"/>
 		<!-- END: Misc -->
 	</language>
 	<language code="fi" display="Suomi">
