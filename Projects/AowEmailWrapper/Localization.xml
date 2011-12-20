@@ -480,11 +480,11 @@
 		<lookup key="panelTopHalflistViewAccounts2" value="Default"/>
 		<lookup key="buttonActivate" value="Activeer"/>
 		<lookup key="buttonSetStartUp" value="Gebruik als Default"/>
-		<lookup key="buttonRename" value="Hernaam"/>
+		<lookup key="buttonRename" value="Hernoem"/>
 		<lookup key="buttonRemove" value="Verwijder"/>
 		<lookup key="buttonAdd" value="Nieuw toevoegen"/>
 		<lookup key="tabIncoming" value="Inkomende Email"/>
-		<lookup key="cmdMessageStore" value="Tonen POP3 email"/>
+		<lookup key="cmdMessageStore" value="Toon POP3 email"/>
 		<lookup key="groupBoxEmailSelection" value="Email Attachment Downloaden"/>
 		<lookup key="fbPollingSetup" value="Check voor email"/>
 		<lookup key="fbPollingSetup_every" value="elke:"/>
@@ -522,7 +522,7 @@
 		<lookup key="tabAbout" value="Programma Informatie"/>
 		<lookup key="groupBetaTesters" value="Beta testers "/>
 		<lookup key="groupAuthors" value="Auteurs"/>
-		<lookup key="lblNotice" value="De Age of Wonders Email Wrapper is een volkomen gratis programma om play by email te automatizeren voor alle drie AoW© games. Het is niet door Triumph Studios© ondersteund.  Het is een persoonlijk project waar de auteur geen voordeel wil halen anders dan het tijd besparen bij het versturen van turns en het vergroten van het spelplezier. Het komt zonder verzekering van technische ondersteuning, alhoewel ondersteuning waarschijnlijk wel wordt verleend als je het netjes vraagt. "/>
+		<lookup key="lblNotice" value="De Age of Wonders Email Wrapper is een gratis programma om play by email voor alle drie AoW© games te automatiseren. Het wordt niet door Triumph Studios© ondersteund.  Het is een persoonlijk project waar de auteur geen voordeel mee wil behalen anders dan het besparen van tijd bij het versturen van turns en het vergroten van speelplezier. Het komt zonder verzekering van technische ondersteuning, alhoewel dit waarschijnlijk wel wordt verleend als je het netjes vraagt."/>
 		<lookup key="cmdSave" value="Bewaar instellingen"/>
 		<lookup key="MessageStore" value="POP3 email ({0} on {1})"/>
 		<lookup key="messageStoreListlistView0" value="From"/>
