@@ -1,9 +1,10 @@
-<accounts>
+﻿<accounts>
 	<account name="Google Mail" emailprovidertype="Google">
 		<polling_config usepolling="true" emailtype="IMAP" server="imap.gmail.com" port="993" usessl="true" pollinterval="10"/>
 		<smtp_config smtpserver="smtp.gmail.com" port="587" smtpssltype="TLS" authentication="true" usepollingcredentials="true" bccmyself="false"/>
 		<domain>@gmail</domain>
 		<domain>@googlemail</domain>
+		<domain>@clearwire</domain>
 	</account>
 	<account name="Hotmail" emailprovidertype="WindowsLive">
 		<polling_config usepolling="true" emailtype="POP3" server="pop3.live.com" port="995" usessl="true" pollinterval="15"/>
@@ -14,7 +15,7 @@
 		<domain>@live</domain>
 	</account>
 	<account name="Yahoo Mail" emailprovidertype="Yahoo">
-		<polling_config usepolling="true" emailtype="POP3" server="pop.mail.yahoo.com" port="995" usessl="true" pollinterval="10"/>
+		<polling_config usepolling="true" emailtype="IMAP" server="imap.mail.yahoo.com" port="993" usessl="true" pollinterval="10"/>
 		<smtp_config smtpserver="smtp.mail.yahoo.com" port="465" smtpssltype="SSL" authentication="true" usepollingcredentials="true" bccmyself="false"/>
 		<domain>@yahoo</domain>
 		<domain>@ymail</domain>
