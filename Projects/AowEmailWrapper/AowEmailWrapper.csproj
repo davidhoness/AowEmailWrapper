@@ -316,6 +316,10 @@
       <Project>{A5194231-69A6-4578-9A69-B482F8C346A1}</Project>
       <Name>EricDaugherty.CSES</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FlimFlan.IconEncoder\FlimFlan.IconEncoder.csproj">
+      <Project>{D8DC3A53-7A97-4A94-ABC0-44BCDE32657F}</Project>
+      <Name>FlimFlan.IconEncoder</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Zlib\zlib.net.csproj">
       <Project>{0C89B7A2-A218-49E4-B545-5B044A45F977}</Project>
       <Name>zlib.net</Name>
