@@ -22,7 +22,7 @@ namespace AowEmailWrapper.Classes
 
         public static DialogResult Show(string title, string promptText, ref string value, Image iconImage)
         {
-            Icon theIcon = Icon.FromHandle(((Bitmap)iconImage).GetHicon());
+            Icon theIcon = FlimFlan.IconEncoder.Converter.BitmapToIcon(iconImage as Bitmap);
             return ShowInput(title, promptText, ref value, theIcon);
         }
 
