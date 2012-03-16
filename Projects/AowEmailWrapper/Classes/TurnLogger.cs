@@ -20,7 +20,8 @@ namespace AowEmailWrapper.Classes
         private const string TIME_DAYS_TEMPLATE = "{0} days {1} hours {2} minutes";
         private const string TIME_TOTAL_PLAYER_TEMPLATE = "{0} = {1}. Turns: {2}. Average: {3}";
         private const string TIME_TOTAL_GAME_TEMPLATE = "Total game time: {0}";
-        private const string TurnNumberRegExp = "Turn: [0-9]{1,9}";
+        private const string TurnNumberRegExp = @"(?:[^\r]*\r){4}[^\d]*(\d+)"; //Match a decimal number after the 4th CR (on the 5th line), use the second group matched
+        private const string TurnNumberTemplate = "Turn: {0}";
         
         private const string NEGATIVE_TIME = "Negative time";
         
@@ -179,9 +180,11 @@ namespace AowEmailWrapper.Classes
             string returnVal = string.Empty;
             Regex regEx = new Regex(TurnNumberRegExp);
             Match theTurnMatch = regEx.Match(input);
-            if (theTurnMatch != null)
+            if (theTurnMatch != null &&
+                theTurnMatch.Groups != null &&
+                theTurnMatch.Groups.Count.Equals(2))
             {
-                returnVal = theTurnMatch.ToString();
+                returnVal = string.Format(TurnNumberTemplate, theTurnMatch.Groups[1].Value);
             }
             return returnVal;
         }
