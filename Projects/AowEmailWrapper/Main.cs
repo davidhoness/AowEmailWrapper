@@ -556,7 +556,11 @@ namespace AowEmailWrapper
 
             if (imageListIcons.Images.ContainsKey(theKey))
             {
-                returnVal = Icon.FromHandle(((Bitmap)imageListIcons.Images[theKey]).GetHicon());
+                //System.Drawing.Bitmap.GetHicon() can throw a System.Runtime.InteropServices.ExternalException: A generic error occurred in GDI+.
+                //returnVal = Icon.FromHandle(((Bitmap)imageListIcons.Images[theKey]).GetHicon());
+
+                //FIX
+                returnVal = FlimFlan.IconEncoder.Converter.BitmapToIcon(imageListIcons.Images[theKey] as Bitmap);
             }
 
             return returnVal;
