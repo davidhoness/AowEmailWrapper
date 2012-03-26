@@ -92,17 +92,23 @@ namespace AowEmailWrapper.Helpers
 
             if (!string.IsNullOrEmpty(input))
             {
-                returnVal = input;
-
-                foreach (char chr in System.IO.Path.GetInvalidPathChars())
-                {
-                    returnVal = returnVal.Replace(chr.ToString(), string.Empty);
-                }
+                returnVal = RemoveChars(input, System.IO.Path.GetInvalidPathChars());
+                returnVal = RemoveChars(returnVal, System.IO.Path.GetInvalidFileNameChars());
             }
 
             return returnVal.Trim();
         }
 
-        
+        private static string RemoveChars(string input, char[] toRemove)
+        {
+            string returnVal = input;
+
+            foreach (char chr in toRemove)
+            {
+                returnVal = returnVal.Replace(chr.ToString(), string.Empty);
+            }
+
+            return returnVal;
+        }
     }
 }
