@@ -50,6 +50,8 @@
 		<lookup key="activityListViewlistView5" value="Ticks"/>
 		<lookup key="tabAbout" value="About"/>
 		<lookup key="groupBetaTesters" value="Beta Testers"/>
+		<lookup key="groupTranslators" value="Translators"/>
+		<lookup key="groupCodeContributors" value="Code Contributors"/>
 		<lookup key="groupAuthors" value="Authors"/>
 		<lookup key="lblNotice" value="The Age of Wonders Email Wrapper is a completely free application designed to enable play by email automation for all three AoW© games.  It is not endorsed by Triumph Studios©.  It is a personal project where the author stands to gain nothing bar saving time and the enjoyment of playing the games.  It comes without obligation for support, however support will probably be provided if you ask nicely."/>
 		<lookup key="cmdSave" value="Save Settings"/>
@@ -173,6 +175,8 @@
 		<lookup key="activityListViewlistView5" value="Coches"/>
 		<lookup key="tabAbout" value="A propos"/>
 		<lookup key="groupBetaTesters" value="Béta Testeurs"/>
+		<lookup key="groupTranslators" value="Traducteurs"/>
+		<lookup key="groupCodeContributors" value="Contributeurs"/>
 		<lookup key="groupAuthors" value="Auteurs"/>
 		<lookup key="lblNotice" value="Age of Wonders Email Wrapper est une application entièrement gratuite conçue pour permettre l'automatisation des parties par e-mail pour les trois jeux AoW©. Elle n'est pas validée par Triumph Studios©. Ceci est un projet personnel pour lequel l'auteur n'espère rien gagner d'autre qu'économiser du temps et améliorer le plaisir de jeu. Cette application est fournie sans aucune obligation de maintenance, mais si vous demandez gentiment, vous aurez sans doute de l'aide."/>
 		<lookup key="cmdSave" value="Sauvegarder les paramètres"/>
@@ -289,6 +293,8 @@
 		<lookup key="activityListViewlistView5" value="Zeiteinheit"/>
 		<lookup key="tabAbout" value="Über"/>
 		<lookup key="groupBetaTesters" value="Beta Tester"/>
+		<lookup key="groupTranslators" value="Übersetzer"/>
+		<lookup key="groupCodeContributors" value="Die Beiträge"/>
 		<lookup key="groupAuthors" value="Autoren"/>
 		<lookup key="lblNotice" value="Der Age of Wonders E-Mail Wrapper ist eine komplett kostenfreie Anwendung, entworfen um die Play-By-E-Mail Automatisierung für alle drei AoW© Spiele zu ermöglichen. Er ist nicht von den Triumph Studios© unterstützt. Es ist ein privates Projekt in welchem der Autor nichts erhält, außer der Zeitersparnis und dem Spaß die Spiele zu spielen. Es wird ohne Verpflichtung zur Hilfeleistung zur Verfügung gestellt, wobei diese nach freundlicher Anfrage höchstwahrscheinlich gewährt wird."/>
 		<lookup key="cmdSave" value="Einstellungen speichern"/>
@@ -405,6 +411,8 @@
 		<lookup key="activityListViewlistView4" value="Estado"/>
 		<lookup key="tabAbout" value="Sobre el"/>
 		<lookup key="groupBetaTesters" value="Beta Testers"/>
+		<lookup key="groupTranslators" value="Traductores"/>
+		<lookup key="groupCodeContributors" value="Colaboradores"/>
 		<lookup key="groupAuthors" value="Autores"/>
 		<lookup key="lblNotice" value="Age of Wonders Email Wrapper es una aplicación gratuita diseñada para permitir la automatización de la modalidad play by email en los tres juegos de AoW©. No está avalado por Triumph Studios©. Es un proyecto personal donde el autor no pretende ganar nada más allá de ahorrar tiempo y disfrutar de jugar los juegos. No hay obligación ninguna de ofrecer soporte, pero el mismo puede ser ofrecido si lo piden de manera amable."/>
 		<lookup key="cmdSave" value="Guardar configuración"/>
@@ -521,6 +529,8 @@
 		<lookup key="activityListViewlistView4" value="Staat"/>
 		<lookup key="tabAbout" value="Programma Informatie"/>
 		<lookup key="groupBetaTesters" value="Beta testers "/>
+		<lookup key="groupTranslators" value="Vertalers"/>
+		<lookup key="groupCodeContributors" value="Bijdragen"/>
 		<lookup key="groupAuthors" value="Auteurs"/>
 		<lookup key="lblNotice" value="De Age of Wonders Email Wrapper is een gratis programma om play by email voor alle drie AoW© games te automatiseren. Het wordt niet door Triumph Studios© ondersteund.  Het is een persoonlijk project waar de auteur geen voordeel mee wil behalen anders dan het besparen van tijd bij het versturen van turns en het vergroten van speelplezier. Het komt zonder verzekering van technische ondersteuning, alhoewel dit waarschijnlijk wel wordt verleend als je het netjes vraagt."/>
 		<lookup key="cmdSave" value="Bewaar instellingen"/>
@@ -635,6 +645,8 @@
 		<lookup key="activityListViewlistView5" value="Tidsenheder"/>
 		<lookup key="tabAbout" value="Om"/>
 		<lookup key="groupBetaTesters" value="Betatestere"/>
+		<lookup key="groupTranslators" value="Oversættere"/>
+		<lookup key="groupCodeContributors" value="Bidragydere"/>
 		<lookup key="groupAuthors" value="Skabere"/>
 		<lookup key="lblNotice" value="Age of Wonders Email Wrapper er et fuldstændigt gratis program, der er designet til at tillade Play by Email automatisering for alle tre AoW© spil. Det er ikke på nogen måde relateret til Triumph Studios©. Det er et personligt projekt, hvor programmøren ikke ønsker nogen form for personlig vinding udover at spare tid og øge glæden ved at spille disse spil. Der er ingen garanti for support, men høflige forespørgsler vil sandsynligvis blive supporteret."/>
 		<lookup key="cmdSave" value="Gem indstillinger"/>
@@ -750,6 +762,8 @@
 		<lookup key="activityListViewlistView5" value="Czas"/>
 		<lookup key="tabAbout" value="O Programie"/>
 		<lookup key="groupBetaTesters" value="Betatesterzy"/>
+		<lookup key="groupTranslators" value="Tłumacze"/>
+		<lookup key="groupCodeContributors" value="Składki"/>
 		<lookup key="groupAuthors" value="Autorzy"/>
 		<lookup key="lblNotice" value="Age of Wonders Email Wrapper to całkowicie darmowa aplikacja, umożliwiająca użycie automatycznego wysyłania emaili we wszystkich trzech grach z serii AoW©, powstała bez udziału Triumph Studios©. To osobisty projekt, którego autor chce uzyskać jedynie oszczędność czasu i przyjemność z gry. Nie ma obietnicy udzielenia wsparcia technicznego, ale prawdopodobnie zostanie ono udzielone, jeśli ładnie poprosisz."/>
 		<lookup key="cmdSave" value="Zapisz ustawienia"/>
@@ -867,6 +881,8 @@
 		<lookup key="activityListViewlistView5" value="Ticks"/>
 		<lookup key="tabAbout" value="Tietoa Wrapperista"/>
 		<lookup key="groupBetaTesters" value="Beta-testaajat"/>
+		<lookup key="groupTranslators" value="Kääntäjät"/>
+		<lookup key="groupCodeContributors" value="Osallistujat"/>
 		<lookup key="groupAuthors" value="Tekijät"/>
 		<lookup key="lblNotice" value="Age of Wonders Email Wrapper -palvelu on kokonaan ilmainen käyttöjärjestelmä, joka on suunniteltu mahdollistamaan automaattisen pelaamisen sähköpostin kautta kaikille kolmelle AoW©-pelille. Se on henkilökohtainen projekti jossa tekijän ainoa tarkoitus on helpottaa ajankäyttöä ja lisäämään pelaamisen nautinnollisuutta. Palvelu tulee ilman tukipalvelua mutta tuen saaminen on mahdollista kohteliaasti pyydettäessä."/>
 		<lookup key="cmdSave" value="Tallennustiedot"/>
@@ -986,6 +1002,8 @@
 		<lookup key="activityListViewlistView5" value="Bătăi"/>
 		<lookup key="tabAbout" value="Despre"/>
 		<lookup key="groupBetaTesters" value="Beta Testeri"/>
+		<lookup key="groupTranslators" value="Traducători"/>
+		<lookup key="groupCodeContributors" value="Contribuitori"/>
 		<lookup key="groupAuthors" value="Autori"/>
 		<lookup key="lblNotice" value="Age of Wonders Email Wrapper-ul este o aplicaţie gratuită menită să permită automatizarea jocului prin email pentru cele trei jocuri AoW©. Nu este un proiect susţinut de catre Triumph Studios©. Proiectul este personal, autorul câştigând numai timp şi plăcerea de a juca jocurile. Acest software vă este prezentat fără nicio obligaţie pentru suport, dar va fi aproape sigur oferit cât timp este cerut respectuos."/>
 		<lookup key="cmdSave" value="Salvare Setări"/>
@@ -1100,6 +1118,8 @@
 		<lookup key="activityListViewlistView4" value="Κατάσταση"/>
 		<lookup key="tabAbout" value="Σχετικά"/>
 		<lookup key="groupBetaTesters" value="Χρήστες BETA"/>
+		<lookup key="groupTranslators" value="Μεταφραστές"/>
+		<lookup key="groupCodeContributors" value="Εισφορές"/>
 		<lookup key="groupAuthors" value="Συγγραφείς"/>
 		<lookup key="lblNotice" value="Το Age of Wonders Συσκευαστής Email είναι μια εντελώς δωρεάν εφαρμογή σχεδιασμένη ώστε να αυτοματοποιεί το παιχνίδι μέσω email και στα τρία AoW© παιχνίδια. Δεν υποστηρίζεται από την Triumph Studios©. Είναι προσωπική εργασία από την οποία ο συγγραφέας δεν επιδιώκει να κερδίσει τίποτα, πέραν του χρόνου παίζοντας τα παιχνίδια. Δεν φέρει χρέος υποστήριξης αλλά επικοινωνήστε ευγενικά και βλέπουμε..."/>
 		<lookup key="cmdSave" value="Σώσε παραμέτρους"/>
@@ -1216,6 +1236,8 @@
 		<lookup key="activityListViewlistView5" value="Время"/>
 		<lookup key="tabAbout" value="О программе"/>
 		<lookup key="groupBetaTesters" value="Бета-тестеры"/>
+		<lookup key="groupTranslators" value="Переводчики"/>
+		<lookup key="groupCodeContributors" value="Взносы"/>
 		<lookup key="groupAuthors" value="Разработчики"/>
 		<lookup key="lblNotice" value="Age of Wonders Email Wrapper - абсолютно бесплатная программа, автоматизирующая игру по почте во все три части серии AoW. Программа не имеет отношения к Triumph Studios, это личный некоммерческий проект, не преследующий иных целей помимо повышения удобства игры. Wrapper предоставляется &quot;как есть&quot;; автор не гарантирует поддержку программы в будущем (хотя если вежливо попросить, то всё возможно)."/>
 		<lookup key="cmdSave" value="Сохранить настройки"/>
