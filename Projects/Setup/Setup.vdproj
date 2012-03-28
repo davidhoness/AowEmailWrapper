@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_234B1A32BFA29A3D0184B43D91336E57"
+        "OwnerKey" = "8:_3AC22820FDA8473EB4AC75A661CFD886"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_3AC22820FDA8473EB4AC75A661CFD886"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -136,6 +142,12 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_234B1A32BFA29A3D0184B43D91336E57"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_C4F7388EBA0116AABF4994A9CDE0EA07"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -250,11 +262,42 @@
         }
         "File"
         {
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_234B1A32BFA29A3D0184B43D91336E57"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:FlimFlan.IconEncoder, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_234B1A32BFA29A3D0184B43D91336E57"
+                    {
+                    "Name" = "8:FlimFlan.IconEncoder.DLL"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:FlimFlan.IconEncoder.DLL"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_505D1BE4ED4B4A60B5FAAC4AF24A2246"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3AC22820FDA8473EB4AC75A661CFD886"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:AowEmailWrapper, Version=1.0.1.1, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:AowEmailWrapper, Version=1.0.1.3, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_3AC22820FDA8473EB4AC75A661CFD886"
@@ -692,14 +735,14 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Age of Wonders Email Wrapper"
-        "ProductCode" = "8:{E428F53E-C81A-4AFA-B6A0-BF494FCFD81D}"
-        "PackageCode" = "8:{030BD2BD-942A-4F33-B0C9-3B9B68AE5DD7}"
-        "UpgradeCode" = "8:{097F3952-3578-4C7A-8BE8-2709B56C23B9}"
+        "ProductCode" = "8:{05FF507D-E405-42FC-A8AE-0DBE7E8DA462}"
+        "PackageCode" = "8:{1CBFA94A-0EBC-49EB-9524-C917C9D97E85}"
+        "UpgradeCode" = "8:{B2FCAA45-3BA8-43CA-9568-FA211E64A7AA}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:2.0.0"
+        "ProductVersion" = "8:3.0.0"
         "Manufacturer" = "8:David Honess"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
