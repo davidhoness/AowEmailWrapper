@@ -367,15 +367,15 @@
 		<lookup key="tabAccounts" value="Cuentas"/>
 		<lookup key="panelTopHalflistViewAccounts0" value="Cuenta"/>
 		<lookup key="panelTopHalflistViewAccounts1" value="Dirección de Email"/>
-		<lookup key="panelTopHalflistViewAccounts2" value="Defecto"/>
+		<lookup key="panelTopHalflistViewAccounts2" value="Por omisión"/>
 		<lookup key="buttonActivate" value="Activar"/>
-		<lookup key="buttonSetStartUp" value="Uso por defecto"/>
+		<lookup key="buttonSetStartUp" value="Uso por omisión"/>
 		<lookup key="buttonRename" value="Renombrar"/>
 		<lookup key="buttonRemove" value="Borrar"/>
 		<lookup key="buttonAdd" value="Nueva cuenta"/>
 		<lookup key="tabIncoming" value="Email entrante"/>
 		<lookup key="cmdMessageStore" value="Mostrar email POP3"/>
-		<lookup key="groupBoxEmailSelection" value="Descargando archivo adjunto"/>
+		<lookup key="groupBoxEmailSelection" value="Descarga de archivos adjuntos"/>
 		<lookup key="fbPollingSetup" value="Revisar email"/>
 		<lookup key="fbPollingSetup_every" value="cada:"/>
 		<lookup key="groupBoxAuth" value="Detalles de autenticación"/>
@@ -402,14 +402,14 @@
 		<lookup key="fbEmailSound" value="Sonido de Email descargado:"/>
 		<lookup key="fbLocalization" value="Idioma:"/>
 		<lookup key="fbCopyToEmailOut" value="Copiar a EmailOut luego de enviado:"/>
-		<lookup key="fbGameWrapperDataPort" value="Juego a Wrapper puerto de datos:"/>
+		<lookup key="fbGameWrapperDataPort" value="Puerto de datos del Juego al Wrapper:"/>
 		<lookup key="tabActivity" value="Registro de Actividades"/>
 		<lookup key="activityListViewlistView0" value="Nombre de archivo"/>
 		<lookup key="activityListViewlistView1" value="Mapa"/>
 		<lookup key="activityListViewlistView2" value="Turno"/>
 		<lookup key="activityListViewlistView3" value="Edad"/>
 		<lookup key="activityListViewlistView4" value="Estado"/>
-		<lookup key="tabAbout" value="Sobre el"/>
+		<lookup key="tabAbout" value="Acerca de"/>
 		<lookup key="groupBetaTesters" value="Beta Testers"/>
 		<lookup key="groupTranslators" value="Traductores"/>
 		<lookup key="groupCodeContributors" value="Colaboradores"/>
@@ -452,7 +452,7 @@
 		<lookup key="menuItemPollNow" value="Chequear ahora"/>
 		<lookup key="menuItemExit" value="Salir"/>
 		<lookup key="menuItemActivate" value="Activar"/>
-		<lookup key="menuItemSetStartUp" value="Uso por &amp;defecto"/>
+		<lookup key="menuItemSetStartUp" value="Uso por &amp;omisión"/>
 		<lookup key="menuItemRename" value="Renombrar"/>
 		<lookup key="menuItemRemove" value="Borrar"/>
 		<lookup key="menuItemAdd" value="Nueva cuenta"/>
@@ -477,7 +477,7 @@
 		<lookup key="buttonCancel" value="Cancelar"/>
 		<lookup key="buttonResend" value="Reenviar"/>
 		<lookup key="activeAccount" value="Activo"/>
-		<lookup key="startUpAccount" value="Defecto"/>
+		<lookup key="startUpAccount" value="Por omisión"/>
 		<!-- END: Misc -->
 	</language>
 	<language code="nl" display="Nederlands">
