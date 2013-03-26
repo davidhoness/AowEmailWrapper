@@ -19,7 +19,7 @@ namespace AowEmailWrapper.Helpers
         private const string TurnLogFilenameTemplate = "{0}.log";
 
         #region Account Templates
-
+        /*
         public static AccountConfigValuesList LoadAccountTemplates()
         {
             AccountConfigValuesList returnVal = null;
@@ -35,7 +35,7 @@ namespace AowEmailWrapper.Helpers
 
             return returnVal;
         }
-
+        */
         #endregion
 
         #region Localization
