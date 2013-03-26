@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBoxServer = new System.Windows.Forms.GroupBox();
-            this.fbUseSSL = new AowEmailWrapper.Controls.FormBlockCheckBox();
             this.fbPort = new AowEmailWrapper.Controls.FormBlockText();
             this.fbServer = new AowEmailWrapper.Controls.FormBlockText();
             this.fbEmailType = new AowEmailWrapper.Controls.FormBlockCombo();
@@ -37,6 +36,7 @@
             this.fbPassword = new AowEmailWrapper.Controls.FormBlockText();
             this.fbUserName = new AowEmailWrapper.Controls.FormBlockText();
             this.fbPollingSetup = new AowEmailWrapper.Controls.FormBlockPollingSetup();
+            this.fbSSLType = new AowEmailWrapper.Controls.FormBlockCombo();
             this.groupBoxServer.SuspendLayout();
             this.groupBoxAuth.SuspendLayout();
             this.SuspendLayout();
@@ -44,7 +44,7 @@
             // groupBoxServer
             // 
             this.groupBoxServer.AutoSize = true;
-            this.groupBoxServer.Controls.Add(this.fbUseSSL);
+            this.groupBoxServer.Controls.Add(this.fbSSLType);
             this.groupBoxServer.Controls.Add(this.fbPort);
             this.groupBoxServer.Controls.Add(this.fbServer);
             this.groupBoxServer.Controls.Add(this.fbEmailType);
@@ -58,17 +58,6 @@
             this.groupBoxServer.TabStop = false;
             this.groupBoxServer.Text = "Server";
             this.groupBoxServer.Visible = false;
-            // 
-            // fbUseSSL
-            // 
-            this.fbUseSSL.Checked = false;
-            this.fbUseSSL.Dock = System.Windows.Forms.DockStyle.Top;
-            this.fbUseSSL.LabelName = "Use SSL:";
-            this.fbUseSSL.Location = new System.Drawing.Point(2, 87);
-            this.fbUseSSL.MinimumSize = new System.Drawing.Size(0, 24);
-            this.fbUseSSL.Name = "fbUseSSL";
-            this.fbUseSSL.Size = new System.Drawing.Size(480, 24);
-            this.fbUseSSL.TabIndex = 18;
             // 
             // fbPort
             // 
@@ -176,6 +165,20 @@
             this.fbPollingSetup.Size = new System.Drawing.Size(484, 22);
             this.fbPollingSetup.TabIndex = 24;
             // 
+            // fbSSLType
+            // 
+            this.fbSSLType.Dock = System.Windows.Forms.DockStyle.Top;
+            this.fbSSLType.LabelName = "SSL Type:";
+            this.fbSSLType.Location = new System.Drawing.Point(2, 87);
+            this.fbSSLType.Margin = new System.Windows.Forms.Padding(2);
+            this.fbSSLType.MinimumSize = new System.Drawing.Size(0, 24);
+            this.fbSSLType.Name = "fbSSLType";
+            this.fbSSLType.SelectedIndex = -1;
+            this.fbSSLType.SelectedValue = "";
+            this.fbSSLType.Size = new System.Drawing.Size(480, 24);
+            this.fbSSLType.TabIndex = 18;
+            this.fbSSLType.Tag = "The SSL socket type.";
+            // 
             // PollingConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -197,13 +200,13 @@
 
         private FormBlockPollingSetup fbPollingSetup;
         private System.Windows.Forms.GroupBox groupBoxServer;
-        private FormBlockCheckBox fbUseSSL;
         private FormBlockText fbPort;
         private FormBlockText fbServer;
         private FormBlockCombo fbEmailType;
         private System.Windows.Forms.GroupBox groupBoxAuth;
         private FormBlockText fbPassword;
         private FormBlockText fbUserName;
+        private FormBlockCombo fbSSLType;
 
 
     }

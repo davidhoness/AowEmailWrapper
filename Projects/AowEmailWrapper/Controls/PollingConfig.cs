@@ -35,6 +35,13 @@ namespace AowEmailWrapper.Controls
 
             fbPollingSetup.SelectedIndex = 0;
 
+            foreach (SSLType value in Enum.GetValues(typeof(SSLType)))
+            {
+                fbSSLType.AddItem(value.ToString(), Translator.TranslateEnum(value));
+            }
+
+            fbSSLType.SelectedIndex = 0;
+
             EventHandler raiseConfigChange = new EventHandler(Raise_Config_Changed);
 
             fbEmailType.InnerComboBox.SelectedIndexChanged += raiseConfigChange;
@@ -46,7 +53,7 @@ namespace AowEmailWrapper.Controls
 
             fbPollingSetup.InnerCheckBox.CheckedChanged += raiseConfigChange;
             fbPollingSetup.InnerCheckBox.CheckedChanged += new EventHandler(fbPollingSetup_CheckedChanged);
-            fbUseSSL.InnerCheckBox.CheckedChanged += raiseConfigChange;
+            fbSSLType.InnerComboBox.SelectedIndexChanged += raiseConfigChange;
         }
 
         public string Prefix
@@ -84,7 +91,7 @@ namespace AowEmailWrapper.Controls
                 _config.Port = port;
             }
 
-            _config.UseSSL = fbUseSSL.Checked;
+            _config.SSLType = ConfigHelper.ParseEnumString<SSLType>(fbSSLType.SelectedValue);
             _config.Username = fbUserName.TextValue;
             _config.PasswordTrue = fbPassword.TextValue;
 
@@ -101,7 +108,7 @@ namespace AowEmailWrapper.Controls
             fbEmailType.SelectedValue = _config.EmailType.ToString();
             fbServer.TextValue = _config.Server;
             fbPort.TextValue = _config.Port.ToString();
-            fbUseSSL.Checked = _config.UseSSL;
+            fbSSLType.SelectedValue = _config.SSLType.ToString();
             fbUserName.TextValue = _config.Username;
             fbPassword.TextValue = _config.PasswordTrue;
             fbPollingSetup.SelectedValue = _config.PollInterval.ToString();
