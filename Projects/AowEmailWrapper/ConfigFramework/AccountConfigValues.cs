@@ -15,6 +15,7 @@ namespace AowEmailWrapper.ConfigFramework
         private string _emailProviderType; //Template property
         private string _shortUserName; //Template property
         private List<string> _templateDomains; //Template property
+        private bool _isGuess;
 
         [XmlElement("polling_config")]
         public PollingConfigValues PollingConfig
@@ -59,6 +60,13 @@ namespace AowEmailWrapper.ConfigFramework
         {
             get { return _shortUserName; }
             set { _shortUserName = value; }
+        }
+
+        [XmlIgnore]
+        public bool IsGuess
+        {
+            get { return _isGuess; }
+            set { _isGuess = value; }
         }
 
         public AccountConfigValues()
