@@ -72,6 +72,7 @@
     <Compile Include="Classes\InputBox.cs" />
     <Compile Include="Classes\ListViewColumnResizer.cs" />
     <Compile Include="Classes\ListViewColumnSorter.cs" />
+    <Compile Include="Classes\TimeOutServerTest.cs" />
     <Compile Include="ConfigFramework\AccountConfigValues.cs" />
     <Compile Include="ConfigFramework\AccountConfigValuesList.cs" />
     <Compile Include="ConfigFramework\Activity.cs" />
@@ -141,6 +142,7 @@
     <Compile Include="CSES\SmtpSendResponse.cs" />
     <Compile Include="Games\AowGameSavedEventArgs.cs" />
     <Compile Include="Helpers\AppDataHelper.cs" />
+    <Compile Include="Helpers\AutoconfigurationHelper.cs" />
     <Compile Include="Helpers\ConfigHelper.cs" />
     <Compile Include="Controls\FormBlockText.cs">
       <SubType>UserControl</SubType>
@@ -304,11 +306,9 @@
     </Content>
     <Content Include="online48.ico" />
     <None Include="Resources\splash.jpg" />
+    <None Include="Resources\thunder.png" />
     <Content Include="sent.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TemplateAccounts.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
@@ -319,6 +319,10 @@
     <ProjectReference Include="..\FlimFlan.IconEncoder\FlimFlan.IconEncoder.csproj">
       <Project>{D8DC3A53-7A97-4A94-ABC0-44BCDE32657F}</Project>
       <Name>FlimFlan.IconEncoder</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mozilla.Autoconfig\Mozilla.Autoconfig.csproj">
+      <Project>{5236BB1E-1C86-4F2A-AE0F-540651445B9B}</Project>
+      <Name>Mozilla.Autoconfig</Name>
     </ProjectReference>
     <ProjectReference Include="..\Zlib\zlib.net.csproj">
       <Project>{0C89B7A2-A218-49E4-B545-5B044A45F977}</Project>
