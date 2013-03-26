@@ -189,7 +189,7 @@ namespace AowEmailWrapper
 
             SetIcon(IconState.Normal);
 
-            accountsConfig.AccountsTemplates = DataManagerHelper.LoadAccountTemplates();
+            //accountsConfig.AccountsTemplates = DataManagerHelper.LoadAccountTemplates();
 
             LoadActivityLog();
 
@@ -668,7 +668,7 @@ namespace AowEmailWrapper
                     _poller = new ImapPoller(
                         pollingConfigValues.Server,
                         pollingConfigValues.Port,
-                        pollingConfigValues.UseSSL,
+                        pollingConfigValues.SSLType,
                         pollingConfigValues.Username,
                         pollingConfigValues.PasswordTrue,
                         pollingConfigValues.PollInterval,
@@ -679,7 +679,7 @@ namespace AowEmailWrapper
                     _poller = new Pop3Poller(
                         pollingConfigValues.Server,
                         pollingConfigValues.Port,
-                        pollingConfigValues.UseSSL,
+                        pollingConfigValues.SSLType,
                         pollingConfigValues.Username,
                         pollingConfigValues.PasswordTrue,
                         pollingConfigValues.PollInterval,

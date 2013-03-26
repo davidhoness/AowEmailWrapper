@@ -200,7 +200,7 @@
             // 
             // accountsConfig
             // 
-            this.accountsConfig.AccountsTemplates = null;
+            //this.accountsConfig.AccountsTemplates = null;
             this.accountsConfig.Config = null;
             this.accountsConfig.Dock = System.Windows.Forms.DockStyle.Fill;
             this.accountsConfig.Location = new System.Drawing.Point(5, 5);
