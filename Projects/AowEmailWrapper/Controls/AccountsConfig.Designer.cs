@@ -53,8 +53,8 @@
             this.panelBottomHalf = new System.Windows.Forms.Panel();
             this.tabControlAccountEditor = new System.Windows.Forms.TabControl();
             this.tabIncoming = new System.Windows.Forms.TabPage();
-            this.tabOutgoing = new System.Windows.Forms.TabPage();
             this.pollingConfig = new AowEmailWrapper.Controls.PollingConfig();
+            this.tabOutgoing = new System.Windows.Forms.TabPage();
             this.smtpConfig = new AowEmailWrapper.Controls.SmtpConfig();
             this.panelTopHalf.SuspendLayout();
             this.panelButtons.SuspendLayout();
@@ -126,24 +126,24 @@
             this.imageListIcons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListIcons.ImageStream")));
             this.imageListIcons.TransparentColor = System.Drawing.Color.Transparent;
             this.imageListIcons.Images.SetKeyName(0, "Other");
-            this.imageListIcons.Images.SetKeyName(1, "Google");
-            this.imageListIcons.Images.SetKeyName(2, "WindowsLive");
-            this.imageListIcons.Images.SetKeyName(3, "Yahoo");
-            this.imageListIcons.Images.SetKeyName(4, "AOL");
-            this.imageListIcons.Images.SetKeyName(5, "Mail.ru");
-            this.imageListIcons.Images.SetKeyName(6, "Yandex.ru");
-            this.imageListIcons.Images.SetKeyName(7, "Rambler.ru");
-            this.imageListIcons.Images.SetKeyName(8, "Inbox.com");
-            this.imageListIcons.Images.SetKeyName(9, "Mail.com");
-            this.imageListIcons.Images.SetKeyName(10, "GMX");
-            this.imageListIcons.Images.SetKeyName(11, "Web.de");
-            this.imageListIcons.Images.SetKeyName(12, "Freenet.de");
+            this.imageListIcons.Images.SetKeyName(1, "googlemail.com");
+            this.imageListIcons.Images.SetKeyName(2, "hotmail.com");
+            this.imageListIcons.Images.SetKeyName(3, "yahoo.com");
+            this.imageListIcons.Images.SetKeyName(4, "aol.com");
+            this.imageListIcons.Images.SetKeyName(5, "mail.ru");
+            this.imageListIcons.Images.SetKeyName(6, "yandex.ru");
+            this.imageListIcons.Images.SetKeyName(7, "rambler.ru");
+            this.imageListIcons.Images.SetKeyName(8, "inbox.com");
+            this.imageListIcons.Images.SetKeyName(9, "mail.com");
+            this.imageListIcons.Images.SetKeyName(10, "gmx.com");
+            this.imageListIcons.Images.SetKeyName(11, "web.de");
+            this.imageListIcons.Images.SetKeyName(12, "freenet.de");
             this.imageListIcons.Images.SetKeyName(13, "t-online.de");
             this.imageListIcons.Images.SetKeyName(14, "Wippies");
-            this.imageListIcons.Images.SetKeyName(15, "Onet.pl");
-            this.imageListIcons.Images.SetKeyName(16, "Wp.pl");
+            this.imageListIcons.Images.SetKeyName(15, "onet.pl");
+            this.imageListIcons.Images.SetKeyName(16, "wp.pl");
             this.imageListIcons.Images.SetKeyName(17, "o2.pl");
-            this.imageListIcons.Images.SetKeyName(18, "Abv.bg");
+            this.imageListIcons.Images.SetKeyName(18, "abv.bg");
             // 
             // panelButtons
             // 
@@ -300,6 +300,24 @@
             this.tabIncoming.Text = "Incoming Email";
             this.tabIncoming.UseVisualStyleBackColor = true;
             // 
+            // pollingConfig
+            // 
+            pollingConfigValues1.EmailType = AowEmailWrapper.ConfigFramework.EmailType.IMAP;
+            pollingConfigValues1.Password = "";
+            pollingConfigValues1.PasswordTrue = "";
+            pollingConfigValues1.PollInterval = 1;
+            pollingConfigValues1.Port = 0;
+            pollingConfigValues1.Server = "";
+            pollingConfigValues1.UsePolling = false;
+            pollingConfigValues1.Username = "";            
+            this.pollingConfig.Config = pollingConfigValues1;
+            this.pollingConfig.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pollingConfig.Location = new System.Drawing.Point(3, 3);
+            this.pollingConfig.Margin = new System.Windows.Forms.Padding(2);
+            this.pollingConfig.Name = "pollingConfig";
+            this.pollingConfig.Size = new System.Drawing.Size(517, 322);
+            this.pollingConfig.TabIndex = 1;
+            // 
             // tabOutgoing
             // 
             this.tabOutgoing.Controls.Add(this.smtpConfig);
@@ -311,25 +329,6 @@
             this.tabOutgoing.Text = "Outgoing Email";
             this.tabOutgoing.UseVisualStyleBackColor = true;
             // 
-            // pollingConfig
-            // 
-            pollingConfigValues1.EmailType = AowEmailWrapper.ConfigFramework.EmailType.IMAP;
-            pollingConfigValues1.Password = "";
-            pollingConfigValues1.PasswordTrue = "";
-            pollingConfigValues1.PollInterval = 1;
-            pollingConfigValues1.Port = 0;
-            pollingConfigValues1.Server = "";
-            pollingConfigValues1.UsePolling = false;
-            pollingConfigValues1.Username = "";
-            pollingConfigValues1.UseSSL = false;
-            this.pollingConfig.Config = pollingConfigValues1;
-            this.pollingConfig.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pollingConfig.Location = new System.Drawing.Point(3, 3);
-            this.pollingConfig.Margin = new System.Windows.Forms.Padding(2);
-            this.pollingConfig.Name = "pollingConfig";
-            this.pollingConfig.Size = new System.Drawing.Size(517, 322);
-            this.pollingConfig.TabIndex = 1;
-            // 
             // smtpConfig
             // 
             smtpConfigValues1.Authentication = false;
@@ -339,9 +338,10 @@
             smtpConfigValues1.PasswordTrue = "";
             smtpConfigValues1.Port = 0;
             smtpConfigValues1.SmtpServer = "";
-            smtpConfigValues1.SmtpSSLType = AowEmailWrapper.ConfigFramework.SmtpSSLType.None;
+            smtpConfigValues1.SmtpSSLType = AowEmailWrapper.ConfigFramework.SSLType.None;
             smtpConfigValues1.UsePollingCredentials = false;
             smtpConfigValues1.Username = "";
+            smtpConfigValues1.Verified = false;
             this.smtpConfig.Config = smtpConfigValues1;
             this.smtpConfig.Dock = System.Windows.Forms.DockStyle.Top;
             this.smtpConfig.Location = new System.Drawing.Point(3, 3);

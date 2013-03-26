@@ -20,7 +20,7 @@ namespace AowEmailWrapper.Controls
         #region Private Members
 
         private AccountConfigValuesList _accountsList;
-        private AccountConfigValuesList _accountsTemplates;
+        //private AccountConfigValuesList _accountsTemplates;
         public EventHandler Config_Changed;
         public AccountActivatedEventHandler Account_Activated;
         private const string AccountsTextKey = "tabAccounts";
@@ -66,13 +66,13 @@ namespace AowEmailWrapper.Controls
                 _configChanged = false;
             }
         }
-
+        /*
         public AccountConfigValuesList AccountsTemplates
         {
             get { return _accountsTemplates; }
             set { _accountsTemplates = value; }
         }
-
+        */
         #endregion
 
         #region Constructors
@@ -242,8 +242,8 @@ namespace AowEmailWrapper.Controls
             using (AccountsCreationForm createForm = new AccountsCreationForm())
             {
                 createForm.Name = createForm.GetType().Name;
-                createForm.TemplateIcons = imageListIcons;
-                createForm.AccountTemplates = _accountsTemplates;
+                //createForm.TemplateIcons = imageListIcons;
+                //createForm.AccountTemplates = _accountsTemplates;
                 
                 if (createForm.ShowDialog(this).Equals(DialogResult.OK))
                 {
@@ -329,7 +329,7 @@ namespace AowEmailWrapper.Controls
                 if (theAccount != null)
                 {
                     Image accountImage = imageListIcons.Images[0];
-                    string emailProviderType = _accountsTemplates.GetEmailProviderType(theAccount.SmtpConfig.EmailAddress);
+                    string emailProviderType = !string.IsNullOrEmpty(theAccount.EmailProvider) ? theAccount.EmailProvider.ToLower() : string.Empty;
 
                     if (imageListIcons.Images.IndexOfKey(emailProviderType) >= 0)
                     {
@@ -472,17 +472,18 @@ namespace AowEmailWrapper.Controls
             item.Tag = account.Name;
 
             int imageIndex = 0;
+
             if (account.SmtpConfig != null &&
                 !string.IsNullOrEmpty(account.SmtpConfig.EmailAddress))
             {
-                string emailProvider = _accountsTemplates.GetEmailProviderType(account.SmtpConfig.EmailAddress);
-                if (!string.IsNullOrEmpty(emailProvider))
+                string emailProviderType = !string.IsNullOrEmpty(account.EmailProvider) ? account.EmailProvider.ToLower() : string.Empty;
+                if (!string.IsNullOrEmpty(emailProviderType))
                 {
-                    imageIndex = imageListIcons.Images.IndexOfKey(emailProvider);
+                    imageIndex = imageListIcons.Images.IndexOfKey(emailProviderType);
                 }
             }
 
-            item.ImageIndex = imageIndex;
+            item.ImageIndex = imageIndex >= 0 ? imageIndex : 0;
 
             return item;
         }
