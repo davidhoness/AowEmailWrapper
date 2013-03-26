@@ -22,7 +22,7 @@ namespace AowEmailWrapper.Controls
         {
             InitializeComponent();
 
-            foreach (SmtpSSLType value in Enum.GetValues(typeof(SmtpSSLType)))
+            foreach (SSLType value in Enum.GetValues(typeof(SSLType)))
             {
                 fbSSLType.AddItem(value.ToString(), Translator.TranslateEnum(value));
             }
@@ -80,7 +80,7 @@ namespace AowEmailWrapper.Controls
             _config.UsePollingCredentials = fbUsePolling.Checked;
             _config.BCCMyself = fbBccMyself.Checked;
 
-            _config.SmtpSSLType = ConfigHelper.ParseEnumString<SmtpSSLType>(fbSSLType.SelectedValue);
+            _config.SmtpSSLType = ConfigHelper.ParseEnumString<SSLType>(fbSSLType.SelectedValue);
 
             if (_config.Authentication && !_config.UsePollingCredentials)
             {
