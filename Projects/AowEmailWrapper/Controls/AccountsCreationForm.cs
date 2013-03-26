@@ -18,38 +18,20 @@ namespace AowEmailWrapper.Controls
             InitializeComponent();
             this.KeyPreview = true;
             this.KeyPress += new KeyPressEventHandler(AccountsCreationForm_KeyPress);
-
+            
             accountsCreationWizzard.CreateClicked += new EventHandler(AccountsCreationWizzard_CreateClicked);            
             Translator.TranslateForm(this);
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            accountsCreationWizzard.AbortRequest();
+            base.OnClosed(e);
         }
 
         public AccountConfigValues ChosenTemplate
         {
             get { return (accountsCreationWizzard != null) ? accountsCreationWizzard.ChosenTemplate : null; }
-        }
-
-        public AccountConfigValuesList AccountTemplates
-        {
-            get { return (accountsCreationWizzard != null) ? accountsCreationWizzard.AccountTemplates : null; }
-            set
-            {
-                if (accountsCreationWizzard != null)
-                {
-                    accountsCreationWizzard.AccountTemplates = value;
-                }
-            }
-        }
-
-        public ImageList TemplateIcons
-        {
-            get { return (accountsCreationWizzard != null) ? accountsCreationWizzard.TemplateIcons : null; }
-            set
-            {
-                if (accountsCreationWizzard != null)
-                {
-                    accountsCreationWizzard.TemplateIcons = value;
-                }
-            }
         }
 
         private void AccountsCreationWizzard_CreateClicked(object sender, EventArgs e)
@@ -65,6 +47,6 @@ namespace AowEmailWrapper.Controls
                 this.DialogResult = DialogResult.Cancel;
                 this.Close();
             }
-        }
+        }   
     }
 }
