@@ -26,7 +26,7 @@ namespace AowEmailWrapper.Pollers
         protected Timer _timer;
         protected string _host;
         protected int _port;
-        protected bool _enableSsl;
+        protected SSLType _sslType;
         protected string _username;
         protected string _password;
         protected string _outputPath;
@@ -42,8 +42,8 @@ namespace AowEmailWrapper.Pollers
 
         protected BasePoller(
             string host, 
-            int port, 
-            bool enableSsl, 
+            int port,
+            SSLType sslType, 
             string username, 
             string password, 
             int pollInterval,            
@@ -52,7 +52,7 @@ namespace AowEmailWrapper.Pollers
         {
             _host = host;
             _port = port;
-            _enableSsl = enableSsl;
+            _sslType = sslType;
             _username = username;
             _password = password;
             _pollInterval = pollInterval;
