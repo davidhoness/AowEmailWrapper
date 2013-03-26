@@ -24,7 +24,7 @@ namespace AowEmailWrapper.Pollers
         public ImapPoller(
             string host,
             int port,
-            bool enableSsl,
+            SSLType sslType,
             string username,
             string password,
             int pollInterval,            
@@ -33,7 +33,7 @@ namespace AowEmailWrapper.Pollers
             : base(
             host,
             port,
-            enableSsl,
+            sslType,
             username,
             password,
             pollInterval,
@@ -52,13 +52,18 @@ namespace AowEmailWrapper.Pollers
 
                 using (Imap imap = new Imap())
                 {
-                    if (_enableSsl)
-                    {
-                        imap.ConnectSSL(_host, _port);
-                    }
-                    else
-                    {
-                        imap.Connect(_host, _port);
+                    switch (_sslType)
+                    { 
+                        case SSLType.None:
+                            imap.Connect(_host, _port);
+                            break;
+                        case SSLType.SSL:
+                            imap.ConnectSSL(_host, _port);
+                            break;
+                        case SSLType.TLS:
+                            imap.Connect(_host, _port);
+                            imap.StartTLS();
+                            break;
                     }
 
                     imap.UseBestLogin(_username, _password);

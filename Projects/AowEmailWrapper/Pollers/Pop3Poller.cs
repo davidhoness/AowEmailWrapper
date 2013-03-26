@@ -21,7 +21,7 @@ namespace AowEmailWrapper.Pollers
         public Pop3Poller(
             string host,
             int port,
-            bool enableSsl,
+            SSLType sslType,
             string username,
             string password,
             int pollInterval,
@@ -30,7 +30,7 @@ namespace AowEmailWrapper.Pollers
             : base(
             host,
             port,
-            enableSsl,
+            sslType,
             username,
             password,
             pollInterval,
@@ -49,13 +49,18 @@ namespace AowEmailWrapper.Pollers
 
                 using (Pop3 pop3 = new Pop3())
                 {
-                    if (_enableSsl)
+                    switch (_sslType)
                     {
-                        pop3.ConnectSSL(_host, _port);
-                    }
-                    else
-                    {
-                        pop3.Connect(_host, _port);
+                        case SSLType.None:
+                            pop3.Connect(_host, _port);
+                            break;
+                        case SSLType.SSL:
+                            pop3.ConnectSSL(_host, _port);
+                            break;
+                        case SSLType.TLS:
+                            pop3.Connect(_host, _port);
+                            pop3.STLS();
+                            break;
                     }
 
                     pop3.UseBestLogin(_username, _password);
