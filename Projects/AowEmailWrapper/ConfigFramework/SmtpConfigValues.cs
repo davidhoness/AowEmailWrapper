@@ -7,7 +7,7 @@ using AowEmailWrapper.Helpers;
 
 namespace AowEmailWrapper.ConfigFramework
 {
-    public enum SmtpSSLType
+    public enum SSLType
     {
         [XmlEnum(Name = "None")]
         None = 0,
@@ -27,7 +27,7 @@ namespace AowEmailWrapper.ConfigFramework
         private string _username;
         private string _password;
         private bool _usePollingCredentials;
-        private SmtpSSLType _smtpSSLType;
+        private SSLType _sslType;
         private bool _bccMyself;
         private bool _verified = false;
 
@@ -53,10 +53,10 @@ namespace AowEmailWrapper.ConfigFramework
         }
 
         [XmlAttribute("smtpssltype")]
-        public SmtpSSLType SmtpSSLType
+        public SSLType SmtpSSLType
         {
-            get { return _smtpSSLType; }
-            set { _smtpSSLType = value; }
+            get { return _sslType; }
+            set { _sslType = value; }
         }
 
         [XmlAttribute("authentication")]
