@@ -22,7 +22,7 @@ namespace AowEmailWrapper.ConfigFramework
         private EmailType _emailType;
         private string _server;
         private int _port;
-        private bool _useSSL;
+        private SSLType _sslType;
         private string _username;
         private string _password;
         private int _pollInterval;
@@ -56,10 +56,24 @@ namespace AowEmailWrapper.ConfigFramework
         }
 
         [XmlAttribute("usessl")]
-        public bool UseSSL
+        public string UseSSL
         {
-            get { return _useSSL; }
-            set { _useSSL = value; }
+            get { return null; }
+            set
+            {
+                bool useSSL = false;
+                if (bool.TryParse(value, out useSSL))
+                {
+                    _sslType = useSSL ? SSLType.SSL : SSLType.None;
+                }
+            }
+        }
+
+        [XmlAttribute("ssltype")]
+        public SSLType SSLType
+        {
+            get { return _sslType; }
+            set { _sslType = value; }
         }
 
         [XmlAttribute("username")]
