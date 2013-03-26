@@ -64,6 +64,7 @@ namespace AowEmailWrapper.ConfigFramework
             return (GetAccountByName(name) != null);
         }
 
+        /*
         public string GetEmailProviderType(string input)
         {
             string returnVal = null;
@@ -81,6 +82,7 @@ namespace AowEmailWrapper.ConfigFramework
 
             return returnVal;
         }
+        */
 
         public AccountConfigValuesList()
         { }
