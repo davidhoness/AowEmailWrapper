@@ -29,75 +29,43 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccountsCreationWizzard));
-            this.panelWhite = new System.Windows.Forms.Panel();
-            this.listViewTemplates = new System.Windows.Forms.ListView();
-            this.colName = new System.Windows.Forms.ColumnHeader();
             this.panelAuthentication = new System.Windows.Forms.Panel();
             this.panelCreateButton = new System.Windows.Forms.Panel();
             this.buttonCreate = new System.Windows.Forms.Button();
             this.groupBoxAuth = new System.Windows.Forms.GroupBox();
-            this.panelMessagePadder = new System.Windows.Forms.Panel();
-            this.txtDomainInfo = new System.Windows.Forms.TextBox();
+            this.fbServerPreference = new AowEmailWrapper.Controls.FormBlockCombo();
             this.fbPassword = new AowEmailWrapper.Controls.FormBlockText();
             this.fbEmailAddress = new AowEmailWrapper.Controls.FormBlockText();
-            this.panelWhite.SuspendLayout();
+            this.panelHeader = new System.Windows.Forms.Panel();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.pictureBoxMoz = new System.Windows.Forms.PictureBox();
             this.panelAuthentication.SuspendLayout();
             this.panelCreateButton.SuspendLayout();
             this.groupBoxAuth.SuspendLayout();
-            this.panelMessagePadder.SuspendLayout();
+            this.panelHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMoz)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panelWhite
-            // 
-            this.panelWhite.BackColor = System.Drawing.Color.White;
-            this.panelWhite.Controls.Add(this.listViewTemplates);
-            this.panelWhite.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelWhite.Location = new System.Drawing.Point(0, 0);
-            this.panelWhite.Name = "panelWhite";
-            this.panelWhite.Size = new System.Drawing.Size(437, 90);
-            this.panelWhite.TabIndex = 10;
-            // 
-            // listViewTemplates
-            // 
-            this.listViewTemplates.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colName});
-            this.listViewTemplates.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listViewTemplates.FullRowSelect = true;
-            this.listViewTemplates.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.listViewTemplates.HideSelection = false;
-            this.listViewTemplates.Location = new System.Drawing.Point(0, 0);
-            this.listViewTemplates.MultiSelect = false;
-            this.listViewTemplates.Name = "listViewTemplates";
-            this.listViewTemplates.Size = new System.Drawing.Size(437, 90);
-            this.listViewTemplates.TabIndex = 0;
-            this.listViewTemplates.UseCompatibleStateImageBehavior = false;
-            this.listViewTemplates.View = System.Windows.Forms.View.List;
-            // 
-            // colName
-            // 
-            this.colName.Tag = "";
-            this.colName.Text = "";
-            this.colName.Width = 105;
             // 
             // panelAuthentication
             // 
+            this.panelAuthentication.Controls.Add(this.pictureBoxMoz);
             this.panelAuthentication.Controls.Add(this.panelCreateButton);
             this.panelAuthentication.Controls.Add(this.groupBoxAuth);
             this.panelAuthentication.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAuthentication.Location = new System.Drawing.Point(0, 127);
+            this.panelAuthentication.Location = new System.Drawing.Point(0, 25);
             this.panelAuthentication.Name = "panelAuthentication";
             this.panelAuthentication.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panelAuthentication.Size = new System.Drawing.Size(437, 109);
+            this.panelAuthentication.Size = new System.Drawing.Size(437, 144);
             this.panelAuthentication.TabIndex = 23;
             // 
             // panelCreateButton
             // 
             this.panelCreateButton.Controls.Add(this.buttonCreate);
             this.panelCreateButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelCreateButton.Location = new System.Drawing.Point(322, 74);
+            this.panelCreateButton.Location = new System.Drawing.Point(322, 97);
             this.panelCreateButton.Name = "panelCreateButton";
             this.panelCreateButton.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panelCreateButton.Size = new System.Drawing.Size(115, 35);
+            this.panelCreateButton.Size = new System.Drawing.Size(115, 47);
             this.panelCreateButton.TabIndex = 14;
             // 
             // buttonCreate
@@ -106,7 +74,7 @@
             this.buttonCreate.Enabled = false;
             this.buttonCreate.Location = new System.Drawing.Point(0, 5);
             this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(115, 30);
+            this.buttonCreate.Size = new System.Drawing.Size(115, 42);
             this.buttonCreate.TabIndex = 14;
             this.buttonCreate.Text = "Create";
             this.buttonCreate.UseVisualStyleBackColor = true;
@@ -114,40 +82,30 @@
             // 
             // groupBoxAuth
             // 
+            this.groupBoxAuth.Controls.Add(this.fbServerPreference);
             this.groupBoxAuth.Controls.Add(this.fbPassword);
             this.groupBoxAuth.Controls.Add(this.fbEmailAddress);
             this.groupBoxAuth.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBoxAuth.Location = new System.Drawing.Point(0, 5);
             this.groupBoxAuth.Name = "groupBoxAuth";
             this.groupBoxAuth.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.groupBoxAuth.Size = new System.Drawing.Size(437, 69);
+            this.groupBoxAuth.Size = new System.Drawing.Size(437, 92);
             this.groupBoxAuth.TabIndex = 12;
             this.groupBoxAuth.TabStop = false;
             this.groupBoxAuth.Text = "Authentication Details";
             // 
-            // panelMessagePadder
+            // fbServerPreference
             // 
-            this.panelMessagePadder.Controls.Add(this.txtDomainInfo);
-            this.panelMessagePadder.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelMessagePadder.Location = new System.Drawing.Point(0, 90);
-            this.panelMessagePadder.Name = "panelMessagePadder";
-            this.panelMessagePadder.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panelMessagePadder.Size = new System.Drawing.Size(437, 37);
-            this.panelMessagePadder.TabIndex = 22;
-            // 
-            // txtDomainInfo
-            // 
-            this.txtDomainInfo.BackColor = System.Drawing.SystemColors.Info;
-            this.txtDomainInfo.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtDomainInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDomainInfo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtDomainInfo.Location = new System.Drawing.Point(0, 5);
-            this.txtDomainInfo.Multiline = true;
-            this.txtDomainInfo.Name = "txtDomainInfo";
-            this.txtDomainInfo.ReadOnly = true;
-            this.txtDomainInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtDomainInfo.Size = new System.Drawing.Size(437, 32);
-            this.txtDomainInfo.TabIndex = 2;
+            this.fbServerPreference.Dock = System.Windows.Forms.DockStyle.Top;
+            this.fbServerPreference.LabelName = "Incoming Server Preference:";
+            this.fbServerPreference.Location = new System.Drawing.Point(3, 61);
+            this.fbServerPreference.Margin = new System.Windows.Forms.Padding(2);
+            this.fbServerPreference.MinimumSize = new System.Drawing.Size(0, 24);
+            this.fbServerPreference.Name = "fbServerPreference";
+            this.fbServerPreference.SelectedIndex = -1;
+            this.fbServerPreference.SelectedValue = "";
+            this.fbServerPreference.Size = new System.Drawing.Size(431, 24);
+            this.fbServerPreference.TabIndex = 2;
             // 
             // fbPassword
             // 
@@ -177,37 +135,64 @@
             this.fbEmailAddress.TextValue = "";
             this.fbEmailAddress.ValidationRegEx = resources.GetString("fbEmailAddress.ValidationRegEx");
             // 
+            // panelHeader
+            // 
+            this.panelHeader.Controls.Add(this.progressBar);
+            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Location = new System.Drawing.Point(0, 0);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(437, 25);
+            this.panelHeader.TabIndex = 24;
+            // 
+            // progressBar
+            // 
+            this.progressBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.progressBar.Location = new System.Drawing.Point(0, 0);
+            this.progressBar.MarqueeAnimationSpeed = 150;
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(437, 22);
+            this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.progressBar.TabIndex = 0;
+            this.progressBar.Visible = false;
+            // 
+            // pictureBoxMoz
+            // 
+            this.pictureBoxMoz.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBoxMoz.Image = global::AowEmailWrapper.Properties.Resources.thunder;
+            this.pictureBoxMoz.Location = new System.Drawing.Point(0, 97);
+            this.pictureBoxMoz.Name = "pictureBoxMoz";
+            this.pictureBoxMoz.Size = new System.Drawing.Size(56, 47);
+            this.pictureBoxMoz.TabIndex = 15;
+            this.pictureBoxMoz.TabStop = false;
+            // 
             // AccountsCreationWizzard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelAuthentication);
-            this.Controls.Add(this.panelMessagePadder);
-            this.Controls.Add(this.panelWhite);
+            this.Controls.Add(this.panelHeader);
             this.Name = "AccountsCreationWizzard";
-            this.Size = new System.Drawing.Size(437, 261);
-            this.panelWhite.ResumeLayout(false);
+            this.Size = new System.Drawing.Size(437, 189);
             this.panelAuthentication.ResumeLayout(false);
             this.panelCreateButton.ResumeLayout(false);
             this.groupBoxAuth.ResumeLayout(false);
-            this.panelMessagePadder.ResumeLayout(false);
-            this.panelMessagePadder.PerformLayout();
+            this.panelHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMoz)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panelWhite;
         private System.Windows.Forms.Panel panelAuthentication;
         private System.Windows.Forms.GroupBox groupBoxAuth;
         private FormBlockText fbPassword;
         private FormBlockText fbEmailAddress;
         private System.Windows.Forms.Panel panelCreateButton;
         private System.Windows.Forms.Button buttonCreate;
-        private System.Windows.Forms.ListView listViewTemplates;
-        private System.Windows.Forms.ColumnHeader colName;
-        private System.Windows.Forms.Panel panelMessagePadder;
-        private System.Windows.Forms.TextBox txtDomainInfo;
+        private System.Windows.Forms.Panel panelHeader;
+        private System.Windows.Forms.ProgressBar progressBar;
+        private FormBlockCombo fbServerPreference;
+        private System.Windows.Forms.PictureBox pictureBoxMoz;
     }
 }

@@ -10,51 +10,51 @@ using AowEmailWrapper.Helpers;
 using AowEmailWrapper.ConfigFramework;
 using AowEmailWrapper.Localization;
 using AowEmailWrapper.Classes;
+using Mozilla.Autoconfig;
 
 namespace AowEmailWrapper.Controls
 {
     public partial class AccountsCreationWizzard : UserControl
     {
-        private AccountConfigValuesList _accountTemplates;
         private AccountConfigValues _chosenTemplate;
+        private EventHandler _autoConfigFinishEvent;
+        private System.Threading.Thread _autoConfigThread;
+        private bool _abortRequest;
+
         private const string InputEmailSettingsManual = "msgInputEmailSettingsManual";
         private const string OtherAccountTranslationKey = "accountOther";
         private const string OtherAccountType = "Other";
-
-        private ImageList _templateIcons;
+        private const string ServerPreferenceNoPreferenceKey = "serverPreferenceNoPreference";
 
         public EventHandler CreateClicked;
+        
 
         public AccountConfigValues ChosenTemplate
         {
             get { return _chosenTemplate; }
         }
 
-        public AccountConfigValuesList AccountTemplates
+        public void AbortRequest()
         {
-            get { return _accountTemplates; }
-            set
-            {
-                _accountTemplates = value;
-                Populate();
-            }
-        }
+            _abortRequest = true;
 
-        public ImageList TemplateIcons
-        {
-            get { return _templateIcons; }
-            set
+            if (_autoConfigThread != null)
             {
-                _templateIcons = value;
-                listViewTemplates.SmallImageList = _templateIcons;
+                _autoConfigThread.Abort();
+                _autoConfigThread = null;
             }
         }
 
         public AccountsCreationWizzard()
         {
             InitializeComponent();
+
             EventHandler textBoxTextChanged = new EventHandler(textBox_TextChanged);
             KeyEventHandler textBoxKeyDown = new KeyEventHandler(textBox_KeyDown);
+
+            _autoConfigFinishEvent = new EventHandler(Finish_AutoConfig);
+
+            EnableForm(true);
 
             fbEmailAddress.InnerTextBox.TextChanged += textBoxTextChanged;
             fbEmailAddress.InnerTextBox.Validated += new EventHandler(textBox_Validated);
@@ -63,46 +63,15 @@ namespace AowEmailWrapper.Controls
             fbPassword.InnerTextBox.TextChanged += textBoxTextChanged;
             fbPassword.InnerTextBox.KeyDown += textBoxKeyDown;
 
-            listViewTemplates.SelectedIndexChanged += new EventHandler(listViewTemplates_SelectedIndexChanged);
-        }
-
-        private void listViewTemplates_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            UpdateSelectedTemplate();
-        }
-
-        private void UpdateSelectedTemplate()
-        {
-            if (_accountTemplates != null &&
-                _accountTemplates.Accounts != null &&
-                _accountTemplates.Accounts.Count > 0 &&
-                listViewTemplates.SelectedIndices.Count.Equals(1))
-            {
-                string selectedEmailType = listViewTemplates.SelectedItems[0].Tag.ToString();
-                AccountConfigValues selectedTemplate = _accountTemplates.Accounts.Find(account => account.EmailProvider.Equals(selectedEmailType));
-
-                txtDomainInfo.Text = GetDomains(selectedTemplate.TemplateDomains);
-
-                //Create a copy of it in memory (don't modify the original)
-                _chosenTemplate = XmlHelper.Deserialize<AccountConfigValues>(XmlHelper.Serialize(selectedTemplate));
-                _chosenTemplate.Name = selectedTemplate.Name;
-
-                CheckCreateEnabled();
-
-                if (_chosenTemplate.EmailProvider.Equals(OtherAccountType, StringComparison.InvariantCultureIgnoreCase))
-                {
-                    txtDomainInfo.Text = Translator.Translate(InputEmailSettingsManual);
-                    _chosenTemplate.Name = Translator.Translate(OtherAccountTranslationKey);
-                }
-            }
+            fbServerPreference.AddItem(ServerType.Unknown.ToString(), Translator.Translate(ServerPreferenceNoPreferenceKey));
+            fbServerPreference.AddItem(ServerType.IMAP.ToString(), Translator.TranslateEnum(ServerType.IMAP));
+            fbServerPreference.AddItem(ServerType.POP3.ToString(), Translator.TranslateEnum(ServerType.POP3));
+            fbServerPreference.SelectedIndex = 0;
         }
 
         private void CheckCreateEnabled()
         {
-            if (_chosenTemplate != null)
-            {
-                buttonCreate.Enabled = fbEmailAddress.TextValue.Length > 0 && fbPassword.TextValue.Length > 0;
-            }
+            buttonCreate.Enabled = fbEmailAddress.TextValue.Length > 0 && fbPassword.TextValue.Length > 0;
         }
 
         private void textBox_KeyDown(object sender, KeyEventArgs e)
@@ -121,106 +90,126 @@ namespace AowEmailWrapper.Controls
 
         private void textBox_Validated(object sender, EventArgs e)
         {
-            SelectCorrectEmailProvider();
-        }
-
-        private void SelectCorrectEmailProvider()
-        {
-            string theType = _accountTemplates.GetEmailProviderType(fbEmailAddress.TextValue);
-
-            if (string.IsNullOrEmpty(theType))
-            {
-                theType = OtherAccountType;
-            }
-
-            AccountConfigValues theAccountType = _accountTemplates.Accounts.Find(item => item.EmailProvider.Equals(theType, StringComparison.InvariantCultureIgnoreCase));
-
-            ListViewItem[] theItems = listViewTemplates.Items.Find(theAccountType.EmailProvider, true);
-
-            //Only change the selection if it's incorrect
-            if (theItems != null &&
-                theItems.Length > 0)
-            {
-                listViewTemplates.SelectedItems.Clear();
-                theItems[0].Selected = true;
-                theItems[0].EnsureVisible();
-            }
+            //SelectCorrectEmailProvider();
         }
 
         private void buttonCreate_Click(object sender, EventArgs e)
         {
-            UpdateChosenTemplate(fbEmailAddress.TextValue, fbPassword.TextValue);
-            if (CreateClicked != null)
+            EnableForm(false);
+            
+            _autoConfigThread = new System.Threading.Thread(new System.Threading.ParameterizedThreadStart(Start_AutoConfig));
+            string[] args = new string[] { fbEmailAddress.TextValue, fbPassword.TextValue, fbServerPreference.SelectedValue };
+
+            _autoConfigThread.Start(args);
+        }
+
+        private void Start_AutoConfig(object obj)
+        {
+            try
             {
-                CreateClicked(this, e);
+                _abortRequest = false;
+                string[] args = obj as string[];
+                HandleResponse(IspDbHandler.GetAutoconfig(args[0], true), args);
+            }
+            catch (System.Threading.ThreadAbortException ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
 
-        private void Populate()
-        {
-            if (_accountTemplates != null &&
-                _accountTemplates.Accounts != null &&
-                _accountTemplates.Accounts.Count > 0)
+        public void HandleResponse(MechanismResponse mozillaResponse, string[] args)
+        {            
+            if (!_abortRequest)
             {
-                listViewTemplates.BeginUpdate();
-
-                foreach (AccountConfigValues account in _accountTemplates.Accounts)
+                if (mozillaResponse != null && mozillaResponse.IsSuccess)
                 {
-                    bool isTypeOther = account.EmailProvider.Equals(OtherAccountType, StringComparison.InvariantCultureIgnoreCase);
-                    string name = isTypeOther ? Translator.Translate(OtherAccountTranslationKey) : account.Name;
-
-                    int imageIndex = _templateIcons.Images.IndexOfKey(account.EmailProvider);
-
-                    listViewTemplates.Items.Add(account.EmailProvider, name, imageIndex > 0 ? imageIndex : 0);
-                    listViewTemplates.Items[listViewTemplates.Items.Count-1].Tag = account.EmailProvider;
+                    EmailProvider provider = mozillaResponse.ClientConfig.EmailProvider;
+                    _chosenTemplate = AutoconfigurationHelper.MapMechanismResponse(mozillaResponse, args[0], args[1], ConfigHelper.ParseEnumString<ServerType>(args[2]));
+                }
+                else
+                {
+                    _chosenTemplate = null;
                 }
 
-                listViewTemplates.EndUpdate();
+                this.Invoke(_autoConfigFinishEvent);
             }
         }
 
-        private string GetDomains(List<string> domains)
+        private void Finish_AutoConfig(object sender, EventArgs e)
         {
-            StringBuilder sb = new StringBuilder();
-            for(int i = 0; i<domains.Count;i++)
+            EnableForm(true);
+
+            bool raiseEvent = false;
+
+            if (_chosenTemplate != null)
             {
-                sb.Append(domains[i]);
-                if (i < domains.Count - 1)
+                if (_chosenTemplate.IsGuess)
                 {
-                    sb.Append(", ");
+                    DialogResult dialogResult = MessageBox.Show(
+                        "Email settings have been guessed, you may need to manually edit the settings before they will work.",
+                        this.Parent.Text,
+                        MessageBoxButtons.OKCancel,
+                        MessageBoxIcon.Warning);
+
+                    raiseEvent = dialogResult == DialogResult.OK;
+                }
+                else
+                {
+                    raiseEvent = true;
+                }
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show(
+                    Translator.Translate(InputEmailSettingsManual),
+                    this.Parent.Text,
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Warning);
+
+                if (dialogResult == DialogResult.OK)
+                {
+                    _chosenTemplate = CreateOther(fbEmailAddress.TextValue, fbPassword.TextValue);
+                    raiseEvent = true;
                 }
             }
 
-            return sb.ToString();
-        }
-
-        private void UpdateChosenTemplate(string emailAddress, string password)
-        {
-            if (_chosenTemplate != null &&
-                !string.IsNullOrEmpty(emailAddress) &&
-                !string.IsNullOrEmpty(password))
+            if (raiseEvent && CreateClicked != null)
             {
-                string emailUser = GetEmailUser(emailAddress);
-                bool shortUser = false;
-                bool.TryParse(_chosenTemplate.ShortUserName, out shortUser);
-
-                _chosenTemplate.PollingConfig.Username = (shortUser && !string.IsNullOrEmpty(emailUser)) ? emailUser : emailAddress;
-                _chosenTemplate.PollingConfig.PasswordTrue = password;
-                _chosenTemplate.SmtpConfig.EmailAddress = emailAddress;
-            }
-        }
-
-        private string GetEmailUser(string emailAddress)
-        {
-            string username = null;
-
-            int atPos = emailAddress.IndexOf('@');
-            if (atPos > 0)
-            {
-                username = emailAddress.Substring(0, atPos);
+                CreateClicked(this, new EventArgs());
             }
 
-            return username;
+            _autoConfigThread = null;
+        }
+
+        private AccountConfigValues CreateOther(string emailAddress, string password)
+        {
+            AccountConfigValues other = new AccountConfigValues();
+
+            other.Name = Translator.Translate(OtherAccountTranslationKey);
+            other.PollingConfig = new PollingConfigValues();
+            other.PollingConfig.UsePolling = true;
+            other.PollingConfig.Username = emailAddress;
+            other.PollingConfig.PasswordTrue = password;
+            other.PollingConfig.EmailType = EmailType.POP3;
+            other.PollingConfig.Port = 110;
+
+            other.SmtpConfig = new SmtpConfigValues();
+            other.SmtpConfig.Authentication = true;
+            other.SmtpConfig.EmailAddress = emailAddress;
+            other.SmtpConfig.Port = 25;
+            other.SmtpConfig.SmtpSSLType = SSLType.None;
+            other.SmtpConfig.UsePollingCredentials = true;
+
+            return other;
+        }
+
+        private void EnableForm(bool enabled)
+        {
+            fbEmailAddress.Enabled = enabled;
+            fbPassword.Enabled = enabled;
+            fbServerPreference.Enabled = enabled;
+            buttonCreate.Enabled = enabled;
+            progressBar.Visible = !enabled;
         }
     }
 }
