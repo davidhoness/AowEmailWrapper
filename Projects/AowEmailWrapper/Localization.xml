@@ -31,6 +31,7 @@
 		<lookup key="fbAuthentication" value="Authentication Required:"/>
 		<lookup key="fbSSLType" value="SSL Type:"/>
 		<lookup key="fbEmailAddress" value="Email Address:"/>
+		<lookup key="fbServerPreference" value="Incoming Server Preference:" />
 		<lookup key="fbSmtpServer" value="Smtp Server:"/>
 		<lookup key="tabPreferences" value="Preferences"/>
 		<lookup key="fbSaveFolder" value="Download Folder:"/>
@@ -67,6 +68,7 @@
 		<lookup key="AccountsCreationForm" value="Create a new account"/>
 		<lookup key="buttonCreate" value="&amp;Create"/>
 		<lookup key="accountOther" value="Other"/>
+		<lookup key="serverPreferenceNoPreference" value="No preference" />
 		<!-- END: Main forms -->
 		<!-- BEGIN: Messages -->
 		<lookup key="msgWrapperWriteAccess" value="The Wrapper does not have Write access to these folders:&#xA;{0}&#xA;&#xA;Please modify your system security settings or run the Wrapper as Administrator."/>
