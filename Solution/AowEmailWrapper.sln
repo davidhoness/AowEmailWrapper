@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zlib.net", "..\Projects\Zli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlimFlan.IconEncoder", "..\Projects\FlimFlan.IconEncoder\FlimFlan.IconEncoder.csproj", "{D8DC3A53-7A97-4A94-ABC0-44BCDE32657F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozilla.Autoconfig", "..\Projects\Mozilla.Autoconfig\Mozilla.Autoconfig.csproj", "{5236BB1E-1C86-4F2A-AE0F-540651445B9B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{D8DC3A53-7A97-4A94-ABC0-44BCDE32657F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8DC3A53-7A97-4A94-ABC0-44BCDE32657F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8DC3A53-7A97-4A94-ABC0-44BCDE32657F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5236BB1E-1C86-4F2A-AE0F-540651445B9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5236BB1E-1C86-4F2A-AE0F-540651445B9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5236BB1E-1C86-4F2A-AE0F-540651445B9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5236BB1E-1C86-4F2A-AE0F-540651445B9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,5 +49,6 @@ Global
 		{A5194231-69A6-4578-9A69-B482F8C346A1} = {0AF14720-7178-4673-9875-DAA7ACD51074}
 		{0C89B7A2-A218-49E4-B545-5B044A45F977} = {0AF14720-7178-4673-9875-DAA7ACD51074}
 		{D8DC3A53-7A97-4A94-ABC0-44BCDE32657F} = {0AF14720-7178-4673-9875-DAA7ACD51074}
+		{5236BB1E-1C86-4F2A-AE0F-540651445B9B} = {0AF14720-7178-4673-9875-DAA7ACD51074}
 	EndGlobalSection
 EndGlobal
