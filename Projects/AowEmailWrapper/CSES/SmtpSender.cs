@@ -26,7 +26,7 @@ namespace AowEmailWrapper.CSES
         private Dictionary<string, int> _messageSendAttemptCount;
         private string _host;
         private int _port;
-        private SmtpSSLType _sslType;
+        private SSLType _sslType;
         private string _username;
         private string _password;
         private bool _bccMyself;
@@ -46,11 +46,11 @@ namespace AowEmailWrapper.CSES
 
         #region Constructors
 
-        public SmtpSender(string host, int port, SmtpSSLType sslType, bool bccMyself)
+        public SmtpSender(string host, int port, SSLType sslType, bool bccMyself)
             : this(host, port, null, null, sslType, bccMyself)
         { }
 
-        public SmtpSender(string host, int port, string username, string password, SmtpSSLType sslType, bool bccMyself)
+        public SmtpSender(string host, int port, string username, string password, SSLType sslType, bool bccMyself)
         {
             _host = host;
             _port = port;
@@ -112,19 +112,19 @@ namespace AowEmailWrapper.CSES
         {
             try
             {
-                using (Smtp smtp = new Smtp())      
+                using (Smtp smtp = new Smtp())
                 {
                     switch (_sslType)
                     {
-                        case SmtpSSLType.None:
+                        case SSLType.None:
                             smtp.Connect(_host, _port);
                             smtp.Ehlo();
                             break;
-                        case SmtpSSLType.SSL:
+                        case SSLType.SSL:
                             smtp.ConnectSSL(_host, _port);
                             smtp.Ehlo();
                             break;
-                        case SmtpSSLType.TLS:
+                        case SSLType.TLS:
                             smtp.Connect(_host, _port);
                             smtp.Ehlo();
                             smtp.StartTLS();
