@@ -31,7 +31,7 @@
 		<lookup key="fbAuthentication" value="Authentication Required:"/>
 		<lookup key="fbSSLType" value="SSL Type:"/>
 		<lookup key="fbEmailAddress" value="Email Address:"/>
-		<lookup key="fbServerPreference" value="Incoming Server Preference:" />
+		<lookup key="fbServerPreference" value="Preference:" />
 		<lookup key="fbSmtpServer" value="Smtp Server:"/>
 		<lookup key="tabPreferences" value="Preferences"/>
 		<lookup key="fbSaveFolder" value="Download Folder:"/>

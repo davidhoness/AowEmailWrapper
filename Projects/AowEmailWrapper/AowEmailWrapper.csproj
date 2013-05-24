@@ -111,6 +111,30 @@
     <Compile Include="Controls\ActivityListView.Designer.cs">
       <DependentUpon>ActivityListView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\AutoconfigPage1Welcome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AutoconfigPage1Welcome.Designer.cs">
+      <DependentUpon>AutoconfigPage1Welcome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AutoconfigPage2Search.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AutoconfigPage2Search.Designer.cs">
+      <DependentUpon>AutoconfigPage2Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AutoconfigPage3Select.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AutoconfigPage3Select.Designer.cs">
+      <DependentUpon>AutoconfigPage3Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AutoconfigWizardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AutoconfigWizardControl.Designer.cs">
+      <DependentUpon>AutoconfigWizardControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\BaseFormBlock.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -137,6 +161,24 @@
     </Compile>
     <Compile Include="Controls\MessageStoreList.Designer.cs">
       <DependentUpon>MessageStoreList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ServerChoiceCheckBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ServerChoiceCheckBox.Designer.cs">
+      <DependentUpon>ServerChoiceCheckBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ServerChoiceControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ServerChoiceControl.Designer.cs">
+      <DependentUpon>ServerChoiceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ServerChoiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ServerChoiceForm.Designer.cs">
+      <DependentUpon>ServerChoiceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CSES\SmtpSender.cs" />
     <Compile Include="CSES\SmtpSendResponse.cs" />
@@ -221,6 +263,18 @@
     <EmbeddedResource Include="Controls\ActivityListView.resx">
       <DependentUpon>ActivityListView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AutoconfigPage1Welcome.resx">
+      <DependentUpon>AutoconfigPage1Welcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AutoconfigPage2Search.resx">
+      <DependentUpon>AutoconfigPage2Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AutoconfigPage3Select.resx">
+      <DependentUpon>AutoconfigPage3Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AutoconfigWizardControl.resx">
+      <DependentUpon>AutoconfigWizardControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\BaseFormBlock.resx">
       <DependentUpon>BaseFormBlock.cs</DependentUpon>
     </EmbeddedResource>
@@ -248,6 +302,15 @@
     <EmbeddedResource Include="Controls\PreferencesConfig.resx">
       <DependentUpon>PreferencesConfig.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ServerChoiceCheckBox.resx">
+      <DependentUpon>ServerChoiceCheckBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ServerChoiceControl.resx">
+      <DependentUpon>ServerChoiceControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ServerChoiceForm.resx">
+      <DependentUpon>ServerChoiceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\SmtpConfig.resx">
       <DependentUpon>SmtpConfig.cs</DependentUpon>
@@ -306,7 +369,12 @@
     </Content>
     <Content Include="online48.ico" />
     <None Include="Resources\splash.jpg" />
-    <None Include="Resources\thunder.png" />
+    <None Include="Resources\thunder logo.png" />
+    <None Include="Resources\cross.png" />
+    <None Include="Resources\tick.png" />
+    <None Include="Resources\imap-server.png" />
+    <None Include="Resources\pop3-server.png" />
+    <None Include="Resources\smtp_server.png" />
     <Content Include="sent.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

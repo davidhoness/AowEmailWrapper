@@ -60,6 +60,34 @@ namespace AowEmailWrapper.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap cross {
+            get {
+                object obj = ResourceManager.GetObject("cross", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap imap_server {
+            get {
+                object obj = ResourceManager.GetObject("imap_server", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap pop3_server {
+            get {
+                object obj = ResourceManager.GetObject("pop3_server", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap smtp_server {
+            get {
+                object obj = ResourceManager.GetObject("smtp_server", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap splash {
             get {
                 object obj = ResourceManager.GetObject("splash", resourceCulture);
@@ -67,9 +95,16 @@ namespace AowEmailWrapper.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap thunder {
+        internal static System.Drawing.Bitmap thunderbird {
             get {
-                object obj = ResourceManager.GetObject("thunder", resourceCulture);
+                object obj = ResourceManager.GetObject("thunderbird", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap tick {
+            get {
+                object obj = ResourceManager.GetObject("tick", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

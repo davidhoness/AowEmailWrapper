@@ -189,8 +189,6 @@ namespace AowEmailWrapper
 
             SetIcon(IconState.Normal);
 
-            //accountsConfig.AccountsTemplates = DataManagerHelper.LoadAccountTemplates();
-
             LoadActivityLog();
 
             LoadConfig();

@@ -30,12 +30,6 @@ namespace AowEmailWrapper.Helpers
 
                 EmailProvider provider = response.ClientConfig.EmailProvider;
 
-                if (response.IsGuess)
-                {
-                    mappedAccount.IsGuess = true;
-                    TestAllEmailServers(provider, 5000); //Excludes servers that fail and determines socket type for Plain/TLS ports
-                }
-
                 if (provider.IncomingServers.Count > 0 &&
                     provider.OutgoingServers.Count > 0)
                 {
@@ -50,13 +44,46 @@ namespace AowEmailWrapper.Helpers
                     {
                         mappedAccount.SmtpConfig.PasswordTrue = password;
                     }
-                }
-                else
-                {
-                    mappedAccount = null;
+
+                    mappedAccount.IsGuess = response.IsGuess;
                 }
             }
             catch(Exception ex)
+            {
+                mappedAccount = null;
+            }
+
+            return mappedAccount;
+        }
+
+        public static AccountConfigValues MapManualChoice(
+            EmailProvider provider,
+            string emailAddress,
+            string password)
+        {
+            AccountConfigValues mappedAccount;
+
+            try
+            {
+                mappedAccount = new AccountConfigValues();
+
+                if (provider.IncomingServers.Count > 0 &&
+                    provider.OutgoingServers.Count > 0)
+                {
+                    mappedAccount.EmailProvider = provider.ID;
+                    mappedAccount.Name = provider.DisplayName;
+                    mappedAccount.PollingConfig = MapIncomingServer(provider.IncomingServers[0], emailAddress);
+                    mappedAccount.PollingConfig.PasswordTrue = password;
+                    mappedAccount.SmtpConfig = MapOutgoingServer(provider.OutgoingServers[0], emailAddress);
+                    mappedAccount.SmtpConfig.UsePollingCredentials = mappedAccount.PollingConfig.Username == mappedAccount.SmtpConfig.Username;
+
+                    if (!mappedAccount.SmtpConfig.UsePollingCredentials)
+                    {
+                        mappedAccount.SmtpConfig.PasswordTrue = password;
+                    }
+                }
+            }
+            catch (Exception ex)
             {
                 mappedAccount = null;
             }
@@ -208,7 +235,7 @@ namespace AowEmailWrapper.Helpers
             return returnVal;
         }
 
-        private static void TestAllEmailServers(EmailProvider provider, int timeOutMs)
+        public static void TestAllEmailServers(EmailProvider provider, int timeOutMs)
         {
             List<TimeOutServerTest> incomingServerTests = new List<TimeOutServerTest>();
             List<TimeOutServerTest> outgoingServerTests = new List<TimeOutServerTest>();
