@@ -242,9 +242,7 @@ namespace AowEmailWrapper.Controls
             using (AccountsCreationForm createForm = new AccountsCreationForm())
             {
                 createForm.Name = createForm.GetType().Name;
-                //createForm.TemplateIcons = imageListIcons;
-                //createForm.AccountTemplates = _accountsTemplates;
-                
+
                 if (createForm.ShowDialog(this).Equals(DialogResult.OK))
                 {
                     theNewAccount = createForm.ChosenTemplate;

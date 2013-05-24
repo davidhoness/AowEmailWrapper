@@ -109,7 +109,7 @@ namespace AowEmailWrapper.Controls
             {
                 _abortRequest = false;
                 string[] args = obj as string[];
-                HandleResponse(IspDbHandler.GetAutoconfig(args[0], true), args);
+                HandleResponse(IspDbHandler.GetAutoconfig(args[0], RequestType.Standard), args);
             }
             catch (System.Threading.ThreadAbortException ex)
             {

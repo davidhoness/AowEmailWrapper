@@ -38,17 +38,14 @@
             this.fbEmailAddress = new AowEmailWrapper.Controls.FormBlockText();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.pictureBoxMoz = new System.Windows.Forms.PictureBox();
             this.panelAuthentication.SuspendLayout();
             this.panelCreateButton.SuspendLayout();
             this.groupBoxAuth.SuspendLayout();
             this.panelHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMoz)).BeginInit();
             this.SuspendLayout();
             // 
             // panelAuthentication
             // 
-            this.panelAuthentication.Controls.Add(this.pictureBoxMoz);
             this.panelAuthentication.Controls.Add(this.panelCreateButton);
             this.panelAuthentication.Controls.Add(this.groupBoxAuth);
             this.panelAuthentication.Dock = System.Windows.Forms.DockStyle.Top;
@@ -155,16 +152,6 @@
             this.progressBar.TabIndex = 0;
             this.progressBar.Visible = false;
             // 
-            // pictureBoxMoz
-            // 
-            this.pictureBoxMoz.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBoxMoz.Image = global::AowEmailWrapper.Properties.Resources.thunder;
-            this.pictureBoxMoz.Location = new System.Drawing.Point(0, 97);
-            this.pictureBoxMoz.Name = "pictureBoxMoz";
-            this.pictureBoxMoz.Size = new System.Drawing.Size(56, 47);
-            this.pictureBoxMoz.TabIndex = 15;
-            this.pictureBoxMoz.TabStop = false;
-            // 
             // AccountsCreationWizzard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -177,7 +164,6 @@
             this.panelCreateButton.ResumeLayout(false);
             this.groupBoxAuth.ResumeLayout(false);
             this.panelHeader.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMoz)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -193,6 +179,5 @@
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.ProgressBar progressBar;
         private FormBlockCombo fbServerPreference;
-        private System.Windows.Forms.PictureBox pictureBoxMoz;
     }
 }

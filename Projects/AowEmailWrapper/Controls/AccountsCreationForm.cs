@@ -17,26 +17,40 @@ namespace AowEmailWrapper.Controls
         {
             InitializeComponent();
             this.KeyPreview = true;
+
+            autoconfigWizardControl.Cancelled += new EventHandler(autoconfigWizardControl_Cancelled);
             this.KeyPress += new KeyPressEventHandler(AccountsCreationForm_KeyPress);
-            
-            accountsCreationWizzard.CreateClicked += new EventHandler(AccountsCreationWizzard_CreateClicked);            
+
+            autoconfigWizardControl.ConfigChosen += new EventHandler(autoconfigWizardControl_ConfigChosen);
             Translator.TranslateForm(this);
+        }
+
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            autoconfigWizardControl.Reset();
         }
 
         protected override void OnClosed(EventArgs e)
         {
-            accountsCreationWizzard.AbortRequest();
+            autoconfigWizardControl.AbortSearchThread();
             base.OnClosed(e);
         }
 
         public AccountConfigValues ChosenTemplate
         {
-            get { return (accountsCreationWizzard != null) ? accountsCreationWizzard.ChosenTemplate : null; }
+            get { return (autoconfigWizardControl != null) ? autoconfigWizardControl.ChosenTemplate : null; }
         }
 
-        private void AccountsCreationWizzard_CreateClicked(object sender, EventArgs e)
+        private void autoconfigWizardControl_ConfigChosen(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void autoconfigWizardControl_Cancelled(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 
@@ -44,8 +58,7 @@ namespace AowEmailWrapper.Controls
         {
             if (e.KeyChar.Equals((char)Keys.Escape))
             {
-                this.DialogResult = DialogResult.Cancel;
-                this.Close();
+                autoconfigWizardControl_Cancelled(sender, e);
             }
         }   
     }
