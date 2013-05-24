@@ -36,8 +36,11 @@ namespace Mozilla.Autoconfig
         /// <param name="emailAddress">The email address.</param>
         /// <param name="guess">if set to <c>true</c> [guess the config if all other mechanisms fail].</param>
         /// <returns></returns>
-        public static MechanismResponse GetAutoconfig(string emailAddress, bool guess)
+        public static MechanismResponse GetAutoconfig(string emailAddress, RequestType requestType)
         {
+            //Ignore SSL certificate errors
+            ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicyErrors) => true;
+
             MechanismResponse returnVal = new MechanismResponse();
 
             if (!string.IsNullOrEmpty(emailAddress))
@@ -47,61 +50,62 @@ namespace Mozilla.Autoconfig
                 if (atIndex > 0)
                 {
                     string domain = emailAddress.Substring(atIndex + 1);
-                    returnVal = GetAutoconfigByDomain(domain, guess);
+                    returnVal = GetAutoconfigByDomain(domain, requestType);
                 }
             }
+
+            ServicePointManager.ServerCertificateValidationCallback = null;
 
             return returnVal;
         }
 
-        private static MechanismResponse GetAutoconfigByDomain(string domain, bool guess)
+        private static MechanismResponse GetAutoconfigByDomain(string domain, RequestType requestType)
         {
             MechanismResponse returnVal = new MechanismResponse();
 
             if (!string.IsNullOrEmpty(domain))
             {
-                List<Mechanism> mechanisms = GetMechanisms();                
-                returnVal = AttemptAll(mechanisms, domain);
+                List<Mechanism> mechanisms = GetMechanisms();
 
-                bool found = returnVal != null && returnVal.IsSuccess;
+                switch (requestType)
+                { 
+                    case RequestType.Standard:
+                        returnVal = AttemptAll(mechanisms, domain);
+                        break;
+                    case RequestType.MxLookup:
+                        bool found = false;
+                        string[] mxRecords = MxLookupHandler.GetMXRecordsTrimDistinct(domain);
 
-                if (!found)
-                {
-                    string[] mxRecords = MxLookupHandler.GetMXRecordsTrimDistinct(domain);
-
-                    if (mxRecords != null && mxRecords.Length > 0)
-                    {
-                        foreach (string mx in mxRecords)
-                        {
-                            returnVal = AttemptAll(mechanisms, mx);
-                            found = returnVal != null && returnVal.IsSuccess;
-                            if (found)
-                            {
-                                returnVal.MxLookup = true;
-                                break;
-                            }
-                        }
-
-                        if (!found && guess)
+                        if (mxRecords != null && mxRecords.Length > 0)
                         {
                             foreach (string mx in mxRecords)
                             {
-                                returnVal = MxGuessHandler.GuessConfig(mx);
+                                returnVal = AttemptAll(mechanisms, mx);
                                 found = returnVal != null && returnVal.IsSuccess;
-                                if (found)
+                                if (found) break;
+                            }
+
+                            if (!found) //Guess from the mx record
+                            {
+                                foreach (string mx in mxRecords)
                                 {
-                                    returnVal.MxLookup = true;
-                                    break;
+                                    returnVal = MxGuessHandler.GuessConfig(mx);
+                                    found = returnVal != null && returnVal.IsSuccess;
+                                    if (found) break;
                                 }
                             }
                         }
-                    }
-
-                    if (!found && guess)
-                    {
+                        break;
+                    case RequestType.Guess:
                         returnVal = MxGuessHandler.GuessConfig(domain);
-                    }
+                        break;
+              
                 }
+            }
+
+            if (returnVal != null)
+            {
+                returnVal.RequestType = requestType;
             }
 
             return returnVal;

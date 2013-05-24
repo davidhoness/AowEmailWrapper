@@ -10,7 +10,7 @@ namespace Mozilla.Autoconfig
         private MechanismResponseType _responseType;
         private ClientConfig _clientConfig = null;
         private Exception _exception = null;
-        private bool _mxLookup = false;
+        private RequestType _requestType;
         private MechanismOriginType _origin;
 
         public MechanismResponse()
@@ -28,16 +28,16 @@ namespace Mozilla.Autoconfig
             get { return _origin.Equals(MechanismOriginType.Guess); }
         }
 
-        public bool MxLookup
-        {
-            get { return _mxLookup; }
-            set { _mxLookup = value; }
-        }
-
         public MechanismOriginType Origin
         {
             get { return _origin; }
             set { _origin = value; }
+        }
+
+        public RequestType RequestType
+        {
+            get { return _requestType; }
+            set { _requestType = value; }
         }
 
         public MechanismResponseType ResponseType
