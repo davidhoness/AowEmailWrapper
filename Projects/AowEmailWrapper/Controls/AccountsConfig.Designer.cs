@@ -127,23 +127,25 @@
             this.imageListIcons.TransparentColor = System.Drawing.Color.Transparent;
             this.imageListIcons.Images.SetKeyName(0, "Other");
             this.imageListIcons.Images.SetKeyName(1, "googlemail.com");
-            this.imageListIcons.Images.SetKeyName(2, "hotmail.com");
-            this.imageListIcons.Images.SetKeyName(3, "yahoo.com");
-            this.imageListIcons.Images.SetKeyName(4, "aol.com");
-            this.imageListIcons.Images.SetKeyName(5, "mail.ru");
-            this.imageListIcons.Images.SetKeyName(6, "yandex.ru");
-            this.imageListIcons.Images.SetKeyName(7, "rambler.ru");
-            this.imageListIcons.Images.SetKeyName(8, "inbox.com");
-            this.imageListIcons.Images.SetKeyName(9, "mail.com");
-            this.imageListIcons.Images.SetKeyName(10, "gmx.com");
-            this.imageListIcons.Images.SetKeyName(11, "web.de");
-            this.imageListIcons.Images.SetKeyName(12, "freenet.de");
-            this.imageListIcons.Images.SetKeyName(13, "t-online.de");
-            this.imageListIcons.Images.SetKeyName(14, "Wippies");
-            this.imageListIcons.Images.SetKeyName(15, "onet.pl");
-            this.imageListIcons.Images.SetKeyName(16, "wp.pl");
-            this.imageListIcons.Images.SetKeyName(17, "o2.pl");
-            this.imageListIcons.Images.SetKeyName(18, "abv.bg");
+            this.imageListIcons.Images.SetKeyName(2, "gmail.com");
+            this.imageListIcons.Images.SetKeyName(3, "hotmail.com");
+            this.imageListIcons.Images.SetKeyName(4, "yahoo.com");
+            this.imageListIcons.Images.SetKeyName(5, "aol.com");
+            this.imageListIcons.Images.SetKeyName(6, "mail.ru");
+            this.imageListIcons.Images.SetKeyName(7, "yandex.ru");
+            this.imageListIcons.Images.SetKeyName(8, "rambler.ru");
+            this.imageListIcons.Images.SetKeyName(9, "inbox.com");
+            this.imageListIcons.Images.SetKeyName(10, "mail.com");
+            this.imageListIcons.Images.SetKeyName(11, "gmx.com");
+            this.imageListIcons.Images.SetKeyName(12, "gmx.net");
+            this.imageListIcons.Images.SetKeyName(13, "web.de");
+            this.imageListIcons.Images.SetKeyName(14, "freenet.de");
+            this.imageListIcons.Images.SetKeyName(15, "t-online.de");
+            this.imageListIcons.Images.SetKeyName(16, "Wippies");
+            this.imageListIcons.Images.SetKeyName(17, "onet.pl");
+            this.imageListIcons.Images.SetKeyName(18, "wp.pl");
+            this.imageListIcons.Images.SetKeyName(19, "o2.pl");
+            this.imageListIcons.Images.SetKeyName(20, "abv.bg");
             // 
             // panelButtons
             // 
@@ -308,8 +310,10 @@
             pollingConfigValues1.PollInterval = 1;
             pollingConfigValues1.Port = 0;
             pollingConfigValues1.Server = "";
+            pollingConfigValues1.SSLType = AowEmailWrapper.ConfigFramework.SSLType.None;
             pollingConfigValues1.UsePolling = false;
-            pollingConfigValues1.Username = "";            
+            pollingConfigValues1.Username = "";
+            pollingConfigValues1.UseSSL = null;
             this.pollingConfig.Config = pollingConfigValues1;
             this.pollingConfig.Dock = System.Windows.Forms.DockStyle.Top;
             this.pollingConfig.Location = new System.Drawing.Point(3, 3);

@@ -29,6 +29,7 @@ namespace AowEmailWrapper.Controls
         {
             base.OnShown(e);
             autoconfigWizardControl.Reset();
+            this.Activate();
         }
 
         protected override void OnClosed(EventArgs e)
@@ -60,6 +61,6 @@ namespace AowEmailWrapper.Controls
             {
                 autoconfigWizardControl_Cancelled(sender, e);
             }
-        }   
+        }
     }
 }
