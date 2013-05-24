@@ -61,4 +61,11 @@ namespace Mozilla.Autoconfig
         LocalWellKnown,
         Guess
     }
+
+    public enum RequestType
+    {
+        Standard,
+        MxLookup,
+        Guess
+    }
 }
