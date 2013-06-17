@@ -19,7 +19,7 @@ namespace AowEmailWrapper.Controls
         private IncomingServer _incomingServer;
         private OutgoingServer _outgoingServer;
         private Color _defaultBackColor;
-        private Label[] _labels;
+        private List<Label> _labels;
         private bool _suspendChecked;
 
         public ServerChoiceCheckBox()
@@ -29,16 +29,17 @@ namespace AowEmailWrapper.Controls
 
             radioButton.CheckedChanged += new EventHandler(radioButton_CheckedChanged);
 
-            EventHandler pictureBoxClick = new EventHandler(pictureBox_Click);
+            EventHandler setCheckedClick = new EventHandler(setChecked_Click);
 
-            pictureBoxImap.Click += pictureBoxClick;
-            pictureBoxPop.Click += pictureBoxClick;
-            pictureBoxSmtp.Click += pictureBoxClick;
+            pictureBoxImap.Click += setCheckedClick;
+            pictureBoxPop.Click += setCheckedClick;
+            pictureBoxSmtp.Click += setCheckedClick;
 
-            _labels = new Label[] { labelServer, labelPort, labelSocket, labelHostValue, labelPortValue, labelSocketValue };
+            _labels = new List<Label>() { labelServer, labelPort, labelSocket, labelHostValue, labelPortValue, labelSocketValue };
+            _labels.ForEach(label => label.Click += setCheckedClick);
         }
 
-        private void pictureBox_Click(object sender, EventArgs e)
+        private void setChecked_Click(object sender, EventArgs e)
         {
             this.Checked = true;
         }
@@ -120,10 +121,7 @@ namespace AowEmailWrapper.Controls
 
         private void SetLabelColor(Color theColor)
         {
-            foreach (Label label in _labels)
-            {
-                label.ForeColor = theColor;
-            }
+            _labels.ForEach(label => label.ForeColor = theColor);
         }
     }
 }
