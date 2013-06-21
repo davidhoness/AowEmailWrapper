@@ -15,7 +15,8 @@ namespace AowEmailWrapper.ASG
     {
         Unknown = 0,
         Aow1,
-        Aow2Sm
+        Aow2Sm,
+        AowMpe
     }
 
     public class ASGFileInfo : IDisposable
@@ -121,7 +122,7 @@ namespace AowEmailWrapper.ASG
 
         public ASGFileInfo(MimeData theAttachment)
         {
-            _theAttachment = theAttachment;            
+            _theAttachment = theAttachment;
             ParseProperties();
         }
 
@@ -141,12 +142,15 @@ namespace AowEmailWrapper.ASG
                         ParseAow1();
                         break;
                     case ASGFileType.Aow2Sm:
-                        ParseAow2Sm();
+                        ParseAow2(aowmap_signature);
+                        break;
+                    case ASGFileType.AowMpe:
+                        ParseAow2(mpe_signature);
                         break;
                 }
             }
             catch (Exception ex)
-            {                
+            {
                 Trace.TraceError(ex.ToString());
                 Trace.Flush();
 
@@ -160,10 +164,21 @@ namespace AowEmailWrapper.ASG
             switch (_theAttachment.Data[0])
             {
                 case 0x43:
-                    _fileType = ASGFileType.Aow1;                    
+                    _fileType = ASGFileType.Aow1;
                     break;
                 case 0x18:
-                    _fileType = ASGFileType.Aow2Sm;
+                    switch (_theAttachment.Data[6])
+                    {
+                        case 0x58:
+                            _fileType = ASGFileType.AowMpe;
+                            break;
+                        case 0x00:
+                            _fileType = ASGFileType.Aow2Sm;
+                            break;
+                        default:
+                            _fileType = ASGFileType.Unknown;
+                            break;
+                    }
                     break;
                 default:
                     _fileType = ASGFileType.Unknown;
@@ -216,11 +231,11 @@ namespace AowEmailWrapper.ASG
             }
         }
 
-        private void ParseAow2Sm()
+        private void ParseAow2(byte[] signature)
         {
             using (BinaryReader input = new BinaryReader(_theAttachment.GetMemoryStream()))
             {
-                if (CheckSignature(input, aowmap_signature))
+                if (CheckSignature(input, signature))
                 {
                     int header_length = input.ReadInt32() - 7;	//	хз почему, но это так
                     _modId = input.ReadInt32();
@@ -299,7 +314,7 @@ namespace AowEmailWrapper.ASG
         #endregion
 
         #region Public Methods
-       
+
         public static bool IsAsg(string path)
         {
             return Regex.IsMatch(path, ASG_REGEX);
@@ -343,6 +358,7 @@ namespace AowEmailWrapper.ASG
         #region Magic numbers
 
         private static readonly byte[] aowmap_signature = { 0x18, 0x00, 0x00, 0x00, 0x48, 0x4d, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+        private static readonly byte[] mpe_signature = { 0x18, 0x00, 0x00, 0x00, 0x48, 0x4d, 0x58, 0x00, 0x00, 0x00, 0x00, 0x00 };
         private static readonly byte[] aow1map_signature = { 0x10, 0x00, 0x00, 0x00, 0x48, 0x53, 0x4d, 0x00, 0x00, 0x00, 0x00, 0x00 };
         private static readonly byte[] magic_11_bytes = { 0x01, 0x00, 0x10, 0x01, 0x01, 0x00, 0x00, 0xed, 0x01, 0x10, 0x01 };
         private static readonly byte[] magic_7_bytes_2 = { 0x01, 0x1e, 0x00, 0x01, 0x01, 0x00, 0x00 };
