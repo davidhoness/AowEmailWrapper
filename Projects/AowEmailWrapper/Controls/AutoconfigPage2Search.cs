@@ -12,11 +12,17 @@ namespace AowEmailWrapper.Controls
 {
     public partial class AutoconfigPage2Search : UserControl
     {
-        public EventHandler MxLookupClick;
-        public EventHandler GuessClick;
-        public EventHandler ManualClick;
+        public enum AutoconfigPage2Outcome
+        {
+            Unknown,
+            DoMxLookup,
+            DoGuess,
+            Manual,
+            Success
+        }
 
         private RequestType _lastRequestType;
+        private AutoconfigPage2Outcome _outcome = AutoconfigPage2Outcome.Unknown;
 
         public RequestType LastRequestType
         {
@@ -24,37 +30,20 @@ namespace AowEmailWrapper.Controls
             set { _lastRequestType = value; }
         }
 
+        public AutoconfigPage2Outcome Outcome
+        {
+            get { return _outcome; }
+        }
+
         public AutoconfigPage2Search()
         {
             InitializeComponent();
 
-            cmdMxLookup.Click += new EventHandler(cmdMxLookup_Click);
-            cmdGuess.Click += new EventHandler(cmdGuess_Click);
-            cmdManual.Click += new EventHandler(cmdManual_Click);
-        }
+            EventHandler allCheckedChangedEvent = new EventHandler(allCheckedChanged);
 
-        private void cmdMxLookup_Click(object sender, EventArgs e)
-        {
-            if (MxLookupClick != null)
-            {
-                MxLookupClick(this, e);
-            }
-        }
-
-        private void cmdGuess_Click(object sender, EventArgs e)
-        {
-            if (GuessClick != null)
-            {
-                GuessClick(this, e);
-            }
-        }
-
-        private void cmdManual_Click(object sender, EventArgs e)
-        {
-            if (ManualClick != null)
-            {
-                ManualClick(this, e);
-            }
+            radioAutoconfigPage2Search1.CheckedChanged += allCheckedChangedEvent;
+            radioAutoconfigPage2Search2.CheckedChanged += allCheckedChangedEvent;
+            radioAutoconfigPage2Search3.CheckedChanged += allCheckedChangedEvent;
         }
 
         public void Reset()
@@ -69,10 +58,18 @@ namespace AowEmailWrapper.Controls
             pictureBoxFailed.Visible = false;
 
             labelResultMessage.Text = string.Empty;
+
+            radioAutoconfigPage2Search1.Checked = false;
+            radioAutoconfigPage2Search2.Checked = false;
+            radioAutoconfigPage2Search3.Checked = false;
+
+            radioAutoconfigPage2Search1.Checked = true;
         }
 
         public void Success()
         {
+            _outcome = AutoconfigPage2Outcome.Success;
+
             progressBar.Visible = false;
             groupBoxResult.Visible = true;
 
@@ -87,7 +84,6 @@ namespace AowEmailWrapper.Controls
             panelManual.Visible = true;
             groupBoxNext.Visible = true;
             groupBoxResult.Visible = true;
-            cmdManual.Visible = true;
 
             pictureBoxSuccess.Visible = false;
             pictureBoxFailed.Visible = true;
@@ -99,16 +95,41 @@ namespace AowEmailWrapper.Controls
         private void SetButtonFocus()
         {
             switch (LastRequestType)
-            { 
+            {
                 case RequestType.Standard:
-                    cmdMxLookup.Focus();
+                    radioAutoconfigPage2Search1.Checked = true;
                     break;
                 case RequestType.MxLookup:
-                    cmdGuess.Focus();
+                    radioAutoconfigPage2Search2.Checked = true;
                     break;
                 case RequestType.Guess:
-                    cmdManual.Focus();
+                    radioAutoconfigPage2Search3.Checked = true;
                     break;
+            }
+        }
+
+        private void radioAutoconfigPage2Search1_CheckedChanged(object sender, EventArgs e)
+        {
+            if ((sender as RadioButton).Checked) _outcome = AutoconfigPage2Outcome.DoMxLookup;
+        }
+
+        private void radioAutoconfigPage2Search2_CheckedChanged(object sender, EventArgs e)
+        {
+            if ((sender as RadioButton).Checked) _outcome = AutoconfigPage2Outcome.DoGuess;
+        }
+
+        private void radioAutoconfigPage2Search3_CheckedChanged(object sender, EventArgs e)
+        {
+            if ((sender as RadioButton).Checked) _outcome = AutoconfigPage2Outcome.Manual;
+        }
+
+        private void allCheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton senderCast = sender as RadioButton;
+            if (senderCast != null)
+            {
+                AutoconfigWizardControl.SetChecked(senderCast, radioAutoconfigPage2Search1, radioAutoconfigPage2Search2, radioAutoconfigPage2Search3);
+                AutoconfigWizardControl.SetHighlight(senderCast);
             }
         }
     }

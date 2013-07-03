@@ -33,11 +33,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelRight = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmdUserDecides = new System.Windows.Forms.Button();
+            this.radioAutoconfigPage3Select2 = new System.Windows.Forms.RadioButton();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.fbServerPreference = new AowEmailWrapper.Controls.FormBlockCombo();
-            this.cmdWrapperDecides = new System.Windows.Forms.Button();
+            this.radioAutoconfigPage3Select1 = new System.Windows.Forms.RadioButton();
             this.labelServerMessage = new System.Windows.Forms.Label();
             this.groupBoxOptions.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -69,7 +69,7 @@
             // panelRight
             // 
             this.panelRight.Controls.Add(this.label2);
-            this.panelRight.Controls.Add(this.cmdUserDecides);
+            this.panelRight.Controls.Add(this.radioAutoconfigPage3Select2);
             this.panelRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelRight.Location = new System.Drawing.Point(249, 0);
             this.panelRight.Name = "panelRight";
@@ -87,22 +87,22 @@
             this.label2.Text = "Use this option if you want to have precise control over which auto detected sett" +
                 "ings the Wrapper should use.";
             // 
-            // cmdUserDecides
+            // radioAutoconfigPage3Select2
             // 
-            this.cmdUserDecides.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cmdUserDecides.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdUserDecides.Location = new System.Drawing.Point(0, 0);
-            this.cmdUserDecides.Name = "cmdUserDecides";
-            this.cmdUserDecides.Size = new System.Drawing.Size(200, 38);
-            this.cmdUserDecides.TabIndex = 1;
-            this.cmdUserDecides.Text = "Manual override, show the settings so that I can choose";
-            this.cmdUserDecides.UseVisualStyleBackColor = true;
+            this.radioAutoconfigPage3Select2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radioAutoconfigPage3Select2.Location = new System.Drawing.Point(0, 0);
+            this.radioAutoconfigPage3Select2.Name = "radioAutoconfigPage3Select2";
+            this.radioAutoconfigPage3Select2.Size = new System.Drawing.Size(200, 38);
+            this.radioAutoconfigPage3Select2.TabIndex = 6;
+            this.radioAutoconfigPage3Select2.TabStop = true;
+            this.radioAutoconfigPage3Select2.Text = "Manual override, show the settings so that I can choose";
+            this.radioAutoconfigPage3Select2.UseVisualStyleBackColor = true;
             // 
             // panelLeft
             // 
             this.panelLeft.Controls.Add(this.label1);
             this.panelLeft.Controls.Add(this.fbServerPreference);
-            this.panelLeft.Controls.Add(this.cmdWrapperDecides);
+            this.panelLeft.Controls.Add(this.radioAutoconfigPage3Select1);
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 0);
             this.panelLeft.Name = "panelLeft";
@@ -133,16 +133,15 @@
             this.fbServerPreference.Size = new System.Drawing.Size(200, 24);
             this.fbServerPreference.TabIndex = 3;
             // 
-            // cmdWrapperDecides
+            // radioAutoconfigPage3Select1
             // 
-            this.cmdWrapperDecides.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cmdWrapperDecides.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdWrapperDecides.Location = new System.Drawing.Point(0, 0);
-            this.cmdWrapperDecides.Name = "cmdWrapperDecides";
-            this.cmdWrapperDecides.Size = new System.Drawing.Size(200, 38);
-            this.cmdWrapperDecides.TabIndex = 0;
-            this.cmdWrapperDecides.Text = "Let the Wrapper decide (default)";
-            this.cmdWrapperDecides.UseVisualStyleBackColor = true;
+            this.radioAutoconfigPage3Select1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radioAutoconfigPage3Select1.Location = new System.Drawing.Point(0, 0);
+            this.radioAutoconfigPage3Select1.Name = "radioAutoconfigPage3Select1";
+            this.radioAutoconfigPage3Select1.Size = new System.Drawing.Size(200, 38);
+            this.radioAutoconfigPage3Select1.TabIndex = 5;
+            this.radioAutoconfigPage3Select1.Text = "Let the Wrapper decide (default)";
+            this.radioAutoconfigPage3Select1.UseVisualStyleBackColor = true;
             // 
             // labelServerMessage
             // 
@@ -175,12 +174,12 @@
         private System.Windows.Forms.GroupBox groupBoxOptions;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelRight;
-        private System.Windows.Forms.Button cmdUserDecides;
         private System.Windows.Forms.Panel panelLeft;
-        private System.Windows.Forms.Button cmdWrapperDecides;
         private FormBlockCombo fbServerPreference;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelServerMessage;
+        private System.Windows.Forms.RadioButton radioAutoconfigPage3Select2;
+        private System.Windows.Forms.RadioButton radioAutoconfigPage3Select1;
     }
 }

@@ -38,12 +38,12 @@
             this.groupBoxNext = new System.Windows.Forms.GroupBox();
             this.panelRight = new System.Windows.Forms.Panel();
             this.labelGuess = new System.Windows.Forms.Label();
-            this.cmdGuess = new System.Windows.Forms.Button();
+            this.radioAutoconfigPage2Search2 = new System.Windows.Forms.RadioButton();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.labelMxLookup = new System.Windows.Forms.Label();
-            this.cmdMxLookup = new System.Windows.Forms.Button();
+            this.radioAutoconfigPage2Search1 = new System.Windows.Forms.RadioButton();
             this.panelManual = new System.Windows.Forms.Panel();
-            this.cmdManual = new System.Windows.Forms.Button();
+            this.radioAutoconfigPage2Search3 = new System.Windows.Forms.RadioButton();
             this.groupBoxResult.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFailed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSuccess)).BeginInit();
@@ -132,7 +132,7 @@
             // panelRight
             // 
             this.panelRight.Controls.Add(this.labelGuess);
-            this.panelRight.Controls.Add(this.cmdGuess);
+            this.panelRight.Controls.Add(this.radioAutoconfigPage2Search2);
             this.panelRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelRight.Location = new System.Drawing.Point(210, 16);
             this.panelRight.Name = "panelRight";
@@ -149,21 +149,22 @@
             this.labelGuess.TabIndex = 1;
             this.labelGuess.Text = resources.GetString("labelGuess.Text");
             // 
-            // cmdGuess
+            // radioAutoconfigPage2Search2
             // 
-            this.cmdGuess.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cmdGuess.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmdGuess.Location = new System.Drawing.Point(0, 0);
-            this.cmdGuess.Name = "cmdGuess";
-            this.cmdGuess.Size = new System.Drawing.Size(200, 38);
-            this.cmdGuess.TabIndex = 0;
-            this.cmdGuess.Text = "Try to guess";
-            this.cmdGuess.UseVisualStyleBackColor = true;
+            this.radioAutoconfigPage2Search2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radioAutoconfigPage2Search2.Location = new System.Drawing.Point(0, 0);
+            this.radioAutoconfigPage2Search2.Name = "radioAutoconfigPage2Search2";
+            this.radioAutoconfigPage2Search2.Size = new System.Drawing.Size(200, 38);
+            this.radioAutoconfigPage2Search2.TabIndex = 3;
+            this.radioAutoconfigPage2Search2.TabStop = true;
+            this.radioAutoconfigPage2Search2.Text = "Try to guess";
+            this.radioAutoconfigPage2Search2.UseVisualStyleBackColor = true;
+            this.radioAutoconfigPage2Search2.CheckedChanged += new System.EventHandler(this.radioAutoconfigPage2Search2_CheckedChanged);
             // 
             // panelLeft
             // 
             this.panelLeft.Controls.Add(this.labelMxLookup);
-            this.panelLeft.Controls.Add(this.cmdMxLookup);
+            this.panelLeft.Controls.Add(this.radioAutoconfigPage2Search1);
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(3, 16);
             this.panelLeft.Name = "panelLeft";
@@ -180,20 +181,20 @@
             this.labelMxLookup.TabIndex = 1;
             this.labelMxLookup.Text = resources.GetString("labelMxLookup.Text");
             // 
-            // cmdMxLookup
+            // radioAutoconfigPage2Search1
             // 
-            this.cmdMxLookup.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cmdMxLookup.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmdMxLookup.Location = new System.Drawing.Point(0, 0);
-            this.cmdMxLookup.Name = "cmdMxLookup";
-            this.cmdMxLookup.Size = new System.Drawing.Size(200, 38);
-            this.cmdMxLookup.TabIndex = 0;
-            this.cmdMxLookup.Text = "Try Mx Lookup";
-            this.cmdMxLookup.UseVisualStyleBackColor = true;
+            this.radioAutoconfigPage2Search1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radioAutoconfigPage2Search1.Location = new System.Drawing.Point(0, 0);
+            this.radioAutoconfigPage2Search1.Name = "radioAutoconfigPage2Search1";
+            this.radioAutoconfigPage2Search1.Size = new System.Drawing.Size(200, 38);
+            this.radioAutoconfigPage2Search1.TabIndex = 2;
+            this.radioAutoconfigPage2Search1.Text = "Try Mx Lookup";
+            this.radioAutoconfigPage2Search1.UseVisualStyleBackColor = true;
+            this.radioAutoconfigPage2Search1.CheckedChanged += new System.EventHandler(this.radioAutoconfigPage2Search1_CheckedChanged);
             // 
             // panelManual
             // 
-            this.panelManual.Controls.Add(this.cmdManual);
+            this.panelManual.Controls.Add(this.radioAutoconfigPage2Search3);
             this.panelManual.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelManual.Location = new System.Drawing.Point(0, 269);
             this.panelManual.Name = "panelManual";
@@ -201,17 +202,17 @@
             this.panelManual.Size = new System.Drawing.Size(413, 44);
             this.panelManual.TabIndex = 5;
             // 
-            // cmdManual
+            // radioAutoconfigPage2Search3
             // 
-            this.cmdManual.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cmdManual.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmdManual.Location = new System.Drawing.Point(0, 3);
-            this.cmdManual.Name = "cmdManual";
-            this.cmdManual.Size = new System.Drawing.Size(413, 38);
-            this.cmdManual.TabIndex = 4;
-            this.cmdManual.Text = "Manual override, let me enter the settings myself";
-            this.cmdManual.UseVisualStyleBackColor = true;
-            this.cmdManual.Visible = false;
+            this.radioAutoconfigPage2Search3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radioAutoconfigPage2Search3.Location = new System.Drawing.Point(0, 3);
+            this.radioAutoconfigPage2Search3.Name = "radioAutoconfigPage2Search3";
+            this.radioAutoconfigPage2Search3.Size = new System.Drawing.Size(413, 38);
+            this.radioAutoconfigPage2Search3.TabIndex = 0;
+            this.radioAutoconfigPage2Search3.TabStop = true;
+            this.radioAutoconfigPage2Search3.Text = "Manual override, let me enter the settings myself";
+            this.radioAutoconfigPage2Search3.UseVisualStyleBackColor = true;
+            this.radioAutoconfigPage2Search3.CheckedChanged += new System.EventHandler(this.radioAutoconfigPage2Search3_CheckedChanged);
             // 
             // AutoconfigPage2Search
             // 
@@ -243,15 +244,15 @@
         private System.Windows.Forms.GroupBox groupBoxResult;
         private System.Windows.Forms.GroupBox groupBoxNext;
         private System.Windows.Forms.Panel panelRight;
-        private System.Windows.Forms.Button cmdGuess;
         private System.Windows.Forms.Panel panelLeft;
-        private System.Windows.Forms.Button cmdMxLookup;
         private System.Windows.Forms.Label labelGuess;
         private System.Windows.Forms.Label labelMxLookup;
         private System.Windows.Forms.PictureBox pictureBoxSuccess;
         private System.Windows.Forms.Label labelResultMessage;
         private System.Windows.Forms.PictureBox pictureBoxFailed;
         private System.Windows.Forms.Panel panelManual;
-        private System.Windows.Forms.Button cmdManual;
+        private System.Windows.Forms.RadioButton radioAutoconfigPage2Search3;
+        private System.Windows.Forms.RadioButton radioAutoconfigPage2Search2;
+        private System.Windows.Forms.RadioButton radioAutoconfigPage2Search1;
     }
 }

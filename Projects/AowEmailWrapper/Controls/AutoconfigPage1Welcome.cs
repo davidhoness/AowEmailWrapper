@@ -16,6 +16,12 @@ namespace AowEmailWrapper.Controls
 {
     public partial class AutoconfigPage1Welcome : UserControl
     {
+        public enum AutoconfigPage1Outcome
+        {
+            Unknown,
+            Success
+        }
+
         private const string ServerPreferenceNoPreferenceKey = "serverPreferenceNoPreference";
 
         public KeyEventHandler TextKeyDown;
@@ -23,12 +29,25 @@ namespace AowEmailWrapper.Controls
 
         public AutoconfigPage1Welcome()
         {
-            InitializeComponent();            
+            InitializeComponent();
 
             KeyEventHandler textBoxKeyDown = new KeyEventHandler(textBox_KeyDown);
 
             fbEmailAddress.InnerTextBox.KeyDown += textBoxKeyDown;
             fbPassword.InnerTextBox.KeyDown += textBoxKeyDown;
+        }
+
+        public AutoconfigPage1Outcome Outcome
+        {
+            get
+            {
+                AutoconfigPage1Outcome returnVal = AutoconfigPage1Outcome.Unknown;
+                if (fbEmailAddress.TextValue.Length > 0 && fbPassword.TextValue.Length > 0)
+                {
+                    returnVal = AutoconfigPage1Outcome.Success;
+                }
+                return returnVal;
+            }
         }
 
         private void textBox_KeyDown(object sender, KeyEventArgs e)
@@ -59,11 +78,6 @@ namespace AowEmailWrapper.Controls
         public void Reset()
         {
             fbEmailAddress.InnerTextBox.Focus();
-        }
-
-        public bool IsValid()
-        {
-            return fbEmailAddress.TextValue.Length > 0 && fbPassword.TextValue.Length > 0;
         }
     }
 }

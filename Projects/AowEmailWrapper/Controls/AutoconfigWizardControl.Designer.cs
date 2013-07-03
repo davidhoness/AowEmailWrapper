@@ -36,14 +36,14 @@
             this.panelTop = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelMainContent = new System.Windows.Forms.Panel();
-            this.panelMainHeader = new System.Windows.Forms.Panel();
-            this.labelHeaderMessage = new System.Windows.Forms.Label();
-            this.panelLeft = new System.Windows.Forms.Panel();
-            this.labelThunderbirdTitle = new System.Windows.Forms.Label();
-            this.pictureBoxThunderbird = new System.Windows.Forms.PictureBox();
             this.contentPage1 = new AowEmailWrapper.Controls.AutoconfigPage1Welcome();
             this.contentPage2 = new AowEmailWrapper.Controls.AutoconfigPage2Search();
             this.contentPage3 = new AowEmailWrapper.Controls.AutoconfigPage3Select();
+            this.panelMainHeader = new System.Windows.Forms.Panel();
+            this.lblAutoconfigHeaderMessage = new System.Windows.Forms.Label();
+            this.panelLeft = new System.Windows.Forms.Panel();
+            this.lblThunderbirdTitle = new System.Windows.Forms.Label();
+            this.pictureBoxThunderbird = new System.Windows.Forms.PictureBox();
             this.panelBottom.SuspendLayout();
             this.panelButtons.SuspendLayout();
             this.panelTop.SuspendLayout();
@@ -138,60 +138,6 @@
             this.panelMainContent.Size = new System.Drawing.Size(420, 292);
             this.panelMainContent.TabIndex = 1;
             // 
-            // panelMainHeader
-            // 
-            this.panelMainHeader.BackColor = System.Drawing.Color.Transparent;
-            this.panelMainHeader.Controls.Add(this.labelHeaderMessage);
-            this.panelMainHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelMainHeader.Location = new System.Drawing.Point(0, 0);
-            this.panelMainHeader.Name = "panelMainHeader";
-            this.panelMainHeader.Size = new System.Drawing.Size(420, 46);
-            this.panelMainHeader.TabIndex = 0;
-            // 
-            // labelHeaderMessage
-            // 
-            this.labelHeaderMessage.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelHeaderMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHeaderMessage.Location = new System.Drawing.Point(0, 14);
-            this.labelHeaderMessage.Name = "labelHeaderMessage";
-            this.labelHeaderMessage.Size = new System.Drawing.Size(420, 32);
-            this.labelHeaderMessage.TabIndex = 0;
-            this.labelHeaderMessage.Text = "Autoconfig Wizard";
-            // 
-            // panelLeft
-            // 
-            this.panelLeft.BackColor = System.Drawing.Color.Transparent;
-            this.panelLeft.Controls.Add(this.labelThunderbirdTitle);
-            this.panelLeft.Controls.Add(this.pictureBoxThunderbird);
-            this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelLeft.Location = new System.Drawing.Point(0, 0);
-            this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Padding = new System.Windows.Forms.Padding(3, 70, 3, 3);
-            this.panelLeft.Size = new System.Drawing.Size(160, 338);
-            this.panelLeft.TabIndex = 2;
-            // 
-            // labelThunderbirdTitle
-            // 
-            this.labelThunderbirdTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelThunderbirdTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelThunderbirdTitle.Location = new System.Drawing.Point(3, 237);
-            this.labelThunderbirdTitle.Name = "labelThunderbirdTitle";
-            this.labelThunderbirdTitle.Size = new System.Drawing.Size(154, 79);
-            this.labelThunderbirdTitle.TabIndex = 1;
-            this.labelThunderbirdTitle.Text = "Thunderbird Database";
-            this.labelThunderbirdTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // pictureBoxThunderbird
-            // 
-            this.pictureBoxThunderbird.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBoxThunderbird.Image = global::AowEmailWrapper.Properties.Resources.thunderbird;
-            this.pictureBoxThunderbird.Location = new System.Drawing.Point(3, 70);
-            this.pictureBoxThunderbird.Name = "pictureBoxThunderbird";
-            this.pictureBoxThunderbird.Size = new System.Drawing.Size(154, 167);
-            this.pictureBoxThunderbird.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxThunderbird.TabIndex = 0;
-            this.pictureBoxThunderbird.TabStop = false;
-            // 
             // contentPage1
             // 
             this.contentPage1.BackColor = System.Drawing.Color.Transparent;
@@ -221,6 +167,60 @@
             this.contentPage3.Size = new System.Drawing.Size(410, 282);
             this.contentPage3.TabIndex = 2;
             this.contentPage3.TabStop = false;
+            // 
+            // panelMainHeader
+            // 
+            this.panelMainHeader.BackColor = System.Drawing.Color.Transparent;
+            this.panelMainHeader.Controls.Add(this.lblAutoconfigHeaderMessage);
+            this.panelMainHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelMainHeader.Location = new System.Drawing.Point(0, 0);
+            this.panelMainHeader.Name = "panelMainHeader";
+            this.panelMainHeader.Size = new System.Drawing.Size(420, 46);
+            this.panelMainHeader.TabIndex = 0;
+            // 
+            // lblAutoconfigHeaderMessage
+            // 
+            this.lblAutoconfigHeaderMessage.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblAutoconfigHeaderMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAutoconfigHeaderMessage.Location = new System.Drawing.Point(0, 14);
+            this.lblAutoconfigHeaderMessage.Name = "lblAutoconfigHeaderMessage";
+            this.lblAutoconfigHeaderMessage.Size = new System.Drawing.Size(420, 32);
+            this.lblAutoconfigHeaderMessage.TabIndex = 0;
+            this.lblAutoconfigHeaderMessage.Text = "Autoconfig Wizard";
+            // 
+            // panelLeft
+            // 
+            this.panelLeft.BackColor = System.Drawing.Color.Transparent;
+            this.panelLeft.Controls.Add(this.lblThunderbirdTitle);
+            this.panelLeft.Controls.Add(this.pictureBoxThunderbird);
+            this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelLeft.Location = new System.Drawing.Point(0, 0);
+            this.panelLeft.Name = "panelLeft";
+            this.panelLeft.Padding = new System.Windows.Forms.Padding(3, 70, 3, 3);
+            this.panelLeft.Size = new System.Drawing.Size(160, 338);
+            this.panelLeft.TabIndex = 2;
+            // 
+            // lblThunderbirdTitle
+            // 
+            this.lblThunderbirdTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblThunderbirdTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblThunderbirdTitle.Location = new System.Drawing.Point(3, 237);
+            this.lblThunderbirdTitle.Name = "lblThunderbirdTitle";
+            this.lblThunderbirdTitle.Size = new System.Drawing.Size(154, 79);
+            this.lblThunderbirdTitle.TabIndex = 1;
+            this.lblThunderbirdTitle.Text = "Thunderbird Database";
+            this.lblThunderbirdTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // pictureBoxThunderbird
+            // 
+            this.pictureBoxThunderbird.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBoxThunderbird.Image = global::AowEmailWrapper.Properties.Resources.thunderbird;
+            this.pictureBoxThunderbird.Location = new System.Drawing.Point(3, 70);
+            this.pictureBoxThunderbird.Name = "pictureBoxThunderbird";
+            this.pictureBoxThunderbird.Size = new System.Drawing.Size(154, 167);
+            this.pictureBoxThunderbird.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxThunderbird.TabIndex = 0;
+            this.pictureBoxThunderbird.TabStop = false;
             // 
             // AutoconfigWizardControl
             // 
@@ -256,9 +256,9 @@
         private AutoconfigPage2Search contentPage2;
         private AutoconfigPage3Select contentPage3;
         private System.Windows.Forms.Panel panelMainHeader;
-        private System.Windows.Forms.Label labelHeaderMessage;
+        private System.Windows.Forms.Label lblAutoconfigHeaderMessage;
         private System.Windows.Forms.Panel panelLeft;
-        private System.Windows.Forms.Label labelThunderbirdTitle;
+        private System.Windows.Forms.Label lblThunderbirdTitle;
         private System.Windows.Forms.PictureBox pictureBoxThunderbird;
     }
 }

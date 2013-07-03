@@ -44,13 +44,6 @@ namespace AowEmailWrapper.Controls
             contentPage1.TextKeyDown += new KeyEventHandler(contentPage1_KeyDown);
             contentPage1.Next += new EventHandler(contentPage1_Next);
 
-            contentPage2.MxLookupClick += new EventHandler(contentPage2_MxLookupClick);
-            contentPage2.GuessClick += new EventHandler(contentPage2_GuessClick);
-            contentPage2.ManualClick += new EventHandler(contentPage2_ManualClick);
-
-            contentPage3.WrapperDecides += new EventHandler(contentPage3_WrapperDecides);
-            contentPage3.UserDecides += new EventHandler(contentPage3_UserDecides);
-
             _stages = new UserControl[] { contentPage1, contentPage2, contentPage3 };
         }
 
@@ -90,34 +83,124 @@ namespace AowEmailWrapper.Controls
             }
         }
 
+        public static void SetHighlight(RadioButton control)
+        {
+            if (control.Checked)
+            {
+                control.BackColor = SystemColors.Highlight;
+                control.ForeColor = SystemColors.HighlightText;
+            }
+            else
+            {
+                control.BackColor = Color.Transparent;
+                control.ForeColor = SystemColors.ControlText;
+            }
+        }
+
+        public static void SetChecked(RadioButton control, params RadioButton[] group)
+        {
+            if (control.Checked)
+            {
+                foreach (RadioButton rb in group)
+                {
+                    if (!control.Equals(rb))
+                    {
+                        rb.Checked = false;
+                    }
+                }
+            }
+        }
+
         #region Event Handlers 
 
         private void cmdNext_Click(object sender, EventArgs e)
         {
-            if (_stage < _stages.GetUpperBound(0))
+            if (_stage <= _stages.GetUpperBound(0))
+            {
+                switch (_stage)
+                {
+                    case 0:
+                        HandleAutoconfigPage1Welcome();
+                        break;
+                    case 1:
+                        HandleAutoconfigPage2Search();
+                        break;
+                    case 2:
+                        HandleAutoconfigPage3Select();
+                        break;
+                }
+            }
+        }
+
+        private void HandleAutoconfigPage1Welcome()
+        {
+            if (contentPage1.Outcome == AutoconfigPage1Welcome.AutoconfigPage1Outcome.Success)
             {
                 ShowControl(_stages[_stage + 1]);
                 HideControl(_stages[_stage]);
+                _emailAddress = contentPage1.EmailAddress;
+                _password = contentPage1.Password;
+                cmdNext.Enabled = false;
+                TryAutoConfig(RequestType.Standard);
                 _stage++;
+            }    
+        }
 
-                switch (_stage)
-                {
-                    case 1:
-                        if (contentPage1.IsValid())
+        private void HandleAutoconfigPage2Search()
+        {
+            switch (contentPage2.Outcome)
+            {
+                case AutoconfigPage2Search.AutoconfigPage2Outcome.DoMxLookup:
+                    cmdNext.Enabled = false;
+                    TryAutoConfig(RequestType.MxLookup);
+                    break;
+                case AutoconfigPage2Search.AutoconfigPage2Outcome.DoGuess:
+                    cmdNext.Enabled = false;
+                    TryAutoConfig(RequestType.Guess);
+                    break;
+                case AutoconfigPage2Search.AutoconfigPage2Outcome.Manual:
+                    _chosenTemplate = CreateOther(_emailAddress, _password);
+                    if (ConfigChosen != null)
+                    {
+                        ConfigChosen(this, new EventArgs());
+                    }
+                    break;
+                case AutoconfigPage2Search.AutoconfigPage2Outcome.Success:
+                    ShowControl(_stages[_stage + 1]);
+                    HideControl(_stages[_stage]);
+                    contentPage3.Reset();
+                    _stage++;
+                    break;
+            }
+        }
+
+        private void HandleAutoconfigPage3Select()
+        {
+            switch (contentPage3.Outcome)
+            {
+                case AutoconfigPage3Select.AutoconfigPage3Outcome.WrapperDecides:
+                    EmailProvider provider = _mechanismSuccess.ClientConfig.EmailProvider;
+                    _chosenTemplate = AutoconfigurationHelper.MapMechanismResponse(_mechanismSuccess, _emailAddress, _password, contentPage3.IncomingPreference);
+                    if (ConfigChosen != null)
+                    {
+                        ConfigChosen(this, new EventArgs());
+                    }
+                    break;
+                case AutoconfigPage3Select.AutoconfigPage3Outcome.UserDecides:
+                    ServerChoiceForm form = new ServerChoiceForm();
+
+                    form.EmailProvider = _mechanismSuccess.ClientConfig.EmailProvider;
+
+                    if (form.ShowDialog(this).Equals(DialogResult.OK))
+                    {
+                        _chosenTemplate = AutoconfigurationHelper.MapManualChoice(form.EmailProvider, _emailAddress, _password);
+
+                        if (ConfigChosen != null)
                         {
-                            _emailAddress = contentPage1.EmailAddress;
-                            _password = contentPage1.Password;
-
-                            cmdNext.Enabled = false;
-
-                            TryAutoConfig(RequestType.Standard);
+                            ConfigChosen(this, new EventArgs());
                         }
-                        break;
-                    case 2:
-                        cmdNext.Enabled = false;
-                        contentPage3.Reset();
-                        break;
-                }
+                    }
+                    break;
             }
         }
 
@@ -133,7 +216,7 @@ namespace AowEmailWrapper.Controls
                 {
                     case 0:
                         AbortSearchThread();
-                        cmdNext.Enabled = contentPage1.IsValid();
+                        cmdNext.Enabled = contentPage1.Outcome == AutoconfigPage1Welcome.AutoconfigPage1Outcome.Success;
                         break;
                     case 1:
                         cmdNext.Enabled = true;
@@ -154,58 +237,12 @@ namespace AowEmailWrapper.Controls
 
         private void contentPage1_KeyDown(object sender, KeyEventArgs e)
         {
-            cmdNext.Enabled = contentPage1.IsValid();
+            cmdNext.Enabled = contentPage1.Outcome == AutoconfigPage1Welcome.AutoconfigPage1Outcome.Success;
         }
 
         private void contentPage1_Next(object sender, EventArgs e)
         {
             cmdNext_Click(sender, e);
-        }
-
-        private void contentPage2_MxLookupClick(object sender, EventArgs e)
-        {
-            TryAutoConfig(RequestType.MxLookup);
-        }
-
-        private void contentPage2_GuessClick(object sender, EventArgs e)
-        {
-            TryAutoConfig(RequestType.Guess);
-        }
-
-        private void contentPage2_ManualClick(object sender, EventArgs e)
-        {
-            _chosenTemplate = CreateOther(_emailAddress, _password);
-            if (ConfigChosen != null)
-            {
-                ConfigChosen(this, e);
-            }
-        }
-
-        private void contentPage3_WrapperDecides(object sender, EventArgs e)
-        {
-            EmailProvider provider = _mechanismSuccess.ClientConfig.EmailProvider;
-            _chosenTemplate = AutoconfigurationHelper.MapMechanismResponse(_mechanismSuccess, _emailAddress, _password, contentPage3.IncomingPreference);
-            if (ConfigChosen != null)
-            {
-                ConfigChosen(this, e);
-            }
-        }
-
-        private void contentPage3_UserDecides(object sender, EventArgs e)
-        {
-            ServerChoiceForm form = new ServerChoiceForm();
-
-            form.EmailProvider = _mechanismSuccess.ClientConfig.EmailProvider;
-
-            if (form.ShowDialog(this).Equals(DialogResult.OK))
-            {
-                _chosenTemplate = AutoconfigurationHelper.MapManualChoice(form.EmailProvider,_emailAddress, _password);
-
-                if (ConfigChosen != null)
-                {
-                    ConfigChosen(this, e);
-                }
-            }
         }
 
         #endregion
@@ -253,13 +290,13 @@ namespace AowEmailWrapper.Controls
                     {
                         _mechanismSuccess = resp;
                         contentPage2.Success();
-                        cmdNext.Enabled = true;
-                        cmdNext.Focus();
                     }
                     else
                     {
                         contentPage2.Failed();
                     }
+                    cmdNext.Enabled = true;
+                    cmdNext.Focus();
                 }));
             }
             catch
