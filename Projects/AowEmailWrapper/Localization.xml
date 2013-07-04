@@ -31,7 +31,6 @@
 		<lookup key="fbAuthentication" value="Authentication Required:"/>
 		<lookup key="fbSSLType" value="SSL Type:"/>
 		<lookup key="fbEmailAddress" value="Email Address:"/>
-		<lookup key="fbServerPreference" value="Preference:" />
 		<lookup key="fbSmtpServer" value="Smtp Server:"/>
 		<lookup key="tabPreferences" value="Preferences"/>
 		<lookup key="fbSaveFolder" value="Download Folder:"/>
@@ -68,7 +67,32 @@
 		<lookup key="AccountsCreationForm" value="Create a new account"/>
 		<lookup key="buttonCreate" value="&amp;Create"/>
 		<lookup key="accountOther" value="Other"/>
-		<lookup key="serverPreferenceNoPreference" value="No preference" />
+		<lookup key="lblThunderbirdTitle" value="Thunderbird Database"/>
+		<lookup key="lblAutoconfigHeaderMessage" value="Autoconfig Wizard"/>
+		<lookup key="lblAutoconfigPage1WrapperMessage" value="The Wrapper is a specialised email client and it uses the same server settings that you would use for programs like Outlook Express.  It uses an online database to find these settings for your email account.  The database is maintained by the Mozilla Foundation who use it for their own email client called Thunderbird.  They keep the database up to date, this endows the Wrapper with a great deal of future proofing and an excellent chance to auto detect your email settings."/>
+		<lookup key="lblAutoconfigPage1AuthMessage" value="Please provide the authentication details for your email account."/>
+		<lookup key="lblAutoconfigPage2SearchMessage" value="Searching for your email settings online…"/>
+		<lookup key="groupBoxResult" value="Result"/>
+		<lookup key="groupBoxNext" value="What next?"/>
+		<lookup key="radioAutoconfigPage2Search1" value="Try Mx Lookup"/>
+		<lookup key="radioAutoconfigPage2Search2" value="Try to guess"/>
+		<lookup key="radioAutoconfigPage2Search3" value="Manual override, let me enter the settings myself"/>
+		<lookup key="lblAutoconfigPage2MxLookup" value="Sometimes your email server is listed in the online database under a different name to your email address.  If we do an Mx Lookup on your email address and then run the database search again this can often find the correct settings."/>
+		<lookup key="lblAutoconfigPage2Guess" value="Use this option as a last resort.  This will predict the name of your email server by attempting to contact them directly over the Internet, this is not guaranteed to work.  If this fails you may need to enter the settings manually."/>
+		<lookup key="lblAutoconfigPage3ServerMessage" value="Please specify which server settings should be used."/>
+		<lookup key="groupBoxOptions" value="Options"/>
+		<lookup key="radioAutoconfigPage3Select1" value="Let the Wrapper decide (default)"/>
+		<lookup key="radioAutoconfigPage3Select2" value="Manual override, show the settings so that I can choose"/>
+		<lookup key="fbServerPreference" value="Preference:"/>
+		<lookup key="serverPreferenceNoPreference" value="No preference"/>
+		<lookup key="lblAutoconfigPage3WrapperDecidesMessage" value="This is the safest option for most users.  It will instruct the Wrapper to choose the most secure servers based on the preference above.  If no preference is given the Wrapper will pick IMAP servers over POP3 ones when choosing."/>
+		<lookup key="lblAutoconfigPage3UserDecidesMessage" value="Use this option if you want to have precise control over which auto detected settings the Wrapper should use."/>
+		<lookup key="ServerChoiceForm" value="Manual override"/>
+		<lookup key="groupBoxIncoming" value="Incoming Email"/>
+		<lookup key="groupBoxOutgoing" value="Outgoing Email"/>
+		<lookup key="lblServerChoiceCheckBoxServer" value="Server:"/>
+		<lookup key="lblServerChoiceCheckBoxPort" value="Port:"/>
+		<lookup key="lblServerChoiceCheckBoxSocket" value="SSL Type:"/>
 		<!-- END: Main forms -->
 		<!-- BEGIN: Messages -->
 		<lookup key="msgWrapperWriteAccess" value="The Wrapper does not have Write access to these folders:&#xA;{0}&#xA;&#xA;Please modify your system security settings or run the Wrapper as Administrator."/>
@@ -86,6 +110,8 @@
 		<lookup key="msgWrapperGamesWaiting" value="You have {0} game(s) waiting."/>
 		<lookup key="msgInputEmailSettingsManual" value="You will enter the settings manually."/>
 		<lookup key="msgWrapperResendTo" value="Resend To:"/>
+		<lookup key="msgAutoconfigPage2Success" value="Success, email settings found.  Click Next to continue."/>
+		<lookup key="msgAutoconfigPage2Failed" value="Unsuccessful, no email settings were found in the online database.  Please choose one of the options below."/>
 		<!-- END: Messages -->
 		<!-- BEGIN: Context Menus -->
 		<lookup key="menuItemShow" value="&amp;Show"/>
@@ -123,6 +149,10 @@
 		<lookup key="buttonOK" value="OK"/>
 		<lookup key="buttonCancel" value="Cancel"/>
 		<lookup key="buttonResend" value="Resend"/>
+		<lookup key="cmdBack" value="&lt; Back"/>
+		<lookup key="cmdNext" value="Next &gt;"/>
+		<lookup key="cmdCancel" value="Cancel"/>
+		<lookup key="cmdFinish" value="Finish"/>
 		<lookup key="activeAccount" value="Active"/>
 		<lookup key="startUpAccount" value="Default"/>
 		<!-- END: Misc -->
