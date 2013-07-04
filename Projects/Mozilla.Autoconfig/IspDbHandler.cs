@@ -14,7 +14,7 @@ namespace Mozilla.Autoconfig
 {
     public class IspDbHandler
     {
-        private const char At = '@';        
+        private const char At = '@';
         private const char Bk = '\\';
         private const char Fw = '/';
 
@@ -22,7 +22,9 @@ namespace Mozilla.Autoconfig
         private const string LocalDiskTemplateDefault = "file:///{0}/isp/{{0}}.xml"; //Must use double curly bracket notation here
 
         private const string IspDbKey = "Mozilla.Autoconfig.IspDbTemplate";
-        private const string IspDbTemplateDefault = "https://autoconfig-live.mozillamessaging.com/autoconfig/v1.1/{0}";
+
+        private const string IspDbTemplateDefault = "https://autoconfig.thunderbird.net/autoconfig/v1.1/{0}";
+        //"https://autoconfig-live.mozillamessaging.com/autoconfig/v1.1/{0}";
 
         private const string LocalDomainKey = "Mozilla.Autoconfig.LocalDomainTemplate";
         private const string LocalDomainTemplateDefault = "http://autoconfig.{0}/mail/config-v1.1.xml";
