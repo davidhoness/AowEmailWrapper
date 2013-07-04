@@ -74,6 +74,11 @@ namespace AowEmailWrapper.Localization
                     FormBlockCheckBox theFormBlockCheckBox = (FormBlockCheckBox)control;
                     theFormBlockCheckBox.LabelName = Translate(theFormBlockCheckBox.Name);
                 }
+                else if (control is RadioButton)
+                {
+                    RadioButton theRadioButton = (RadioButton)control;
+                    theRadioButton.Text = Translate(theRadioButton.Name);
+                }
                 else if (control is FormBlockPollingSetup)
                 {
                     FormBlockPollingSetup theFormBlockPollingSetup = (FormBlockPollingSetup)control;
