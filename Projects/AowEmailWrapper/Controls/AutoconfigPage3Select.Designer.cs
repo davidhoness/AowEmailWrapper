@@ -32,13 +32,13 @@
             this.groupBoxOptions = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelRight = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblAutoconfigPage3UserDecidesMessage = new System.Windows.Forms.Label();
             this.radioAutoconfigPage3Select2 = new System.Windows.Forms.RadioButton();
             this.panelLeft = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblAutoconfigPage3WrapperDecidesMessage = new System.Windows.Forms.Label();
             this.fbServerPreference = new AowEmailWrapper.Controls.FormBlockCombo();
             this.radioAutoconfigPage3Select1 = new System.Windows.Forms.RadioButton();
-            this.labelServerMessage = new System.Windows.Forms.Label();
+            this.lblAutoconfigPage3ServerMessage = new System.Windows.Forms.Label();
             this.groupBoxOptions.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelRight.SuspendLayout();
@@ -63,28 +63,28 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 16);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(449, 169);
+            this.panel1.Size = new System.Drawing.Size(449, 181);
             this.panel1.TabIndex = 0;
             // 
             // panelRight
             // 
-            this.panelRight.Controls.Add(this.label2);
+            this.panelRight.Controls.Add(this.lblAutoconfigPage3UserDecidesMessage);
             this.panelRight.Controls.Add(this.radioAutoconfigPage3Select2);
             this.panelRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelRight.Location = new System.Drawing.Point(249, 0);
             this.panelRight.Name = "panelRight";
-            this.panelRight.Size = new System.Drawing.Size(200, 169);
+            this.panelRight.Size = new System.Drawing.Size(200, 181);
             this.panelRight.TabIndex = 3;
             // 
-            // label2
+            // lblAutoconfigPage3UserDecidesMessage
             // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Location = new System.Drawing.Point(0, 38);
-            this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.label2.Size = new System.Drawing.Size(200, 68);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Use this option if you want to have precise control over which auto detected sett" +
+            this.lblAutoconfigPage3UserDecidesMessage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblAutoconfigPage3UserDecidesMessage.Location = new System.Drawing.Point(0, 38);
+            this.lblAutoconfigPage3UserDecidesMessage.Name = "lblAutoconfigPage3UserDecidesMessage";
+            this.lblAutoconfigPage3UserDecidesMessage.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.lblAutoconfigPage3UserDecidesMessage.Size = new System.Drawing.Size(200, 131);
+            this.lblAutoconfigPage3UserDecidesMessage.TabIndex = 2;
+            this.lblAutoconfigPage3UserDecidesMessage.Text = "Use this option if you want to have precise control over which auto detected sett" +
                 "ings the Wrapper should use.";
             // 
             // radioAutoconfigPage3Select2
@@ -100,24 +100,24 @@
             // 
             // panelLeft
             // 
-            this.panelLeft.Controls.Add(this.label1);
+            this.panelLeft.Controls.Add(this.lblAutoconfigPage3WrapperDecidesMessage);
             this.panelLeft.Controls.Add(this.fbServerPreference);
             this.panelLeft.Controls.Add(this.radioAutoconfigPage3Select1);
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 0);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(200, 169);
+            this.panelLeft.Size = new System.Drawing.Size(200, 181);
             this.panelLeft.TabIndex = 2;
             // 
-            // label1
+            // lblAutoconfigPage3WrapperDecidesMessage
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Location = new System.Drawing.Point(0, 62);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.label1.Size = new System.Drawing.Size(200, 83);
-            this.label1.TabIndex = 4;
-            this.label1.Text = resources.GetString("label1.Text");
+            this.lblAutoconfigPage3WrapperDecidesMessage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblAutoconfigPage3WrapperDecidesMessage.Location = new System.Drawing.Point(0, 62);
+            this.lblAutoconfigPage3WrapperDecidesMessage.Name = "lblAutoconfigPage3WrapperDecidesMessage";
+            this.lblAutoconfigPage3WrapperDecidesMessage.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.lblAutoconfigPage3WrapperDecidesMessage.Size = new System.Drawing.Size(200, 107);
+            this.lblAutoconfigPage3WrapperDecidesMessage.TabIndex = 4;
+            this.lblAutoconfigPage3WrapperDecidesMessage.Text = resources.GetString("lblAutoconfigPage3WrapperDecidesMessage.Text");
             // 
             // fbServerPreference
             // 
@@ -143,14 +143,14 @@
             this.radioAutoconfigPage3Select1.Text = "Let the Wrapper decide (default)";
             this.radioAutoconfigPage3Select1.UseVisualStyleBackColor = true;
             // 
-            // labelServerMessage
+            // lblAutoconfigPage3ServerMessage
             // 
-            this.labelServerMessage.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelServerMessage.Location = new System.Drawing.Point(0, 0);
-            this.labelServerMessage.Name = "labelServerMessage";
-            this.labelServerMessage.Size = new System.Drawing.Size(455, 20);
-            this.labelServerMessage.TabIndex = 2;
-            this.labelServerMessage.Text = "Please specify which server settings should be used.";
+            this.lblAutoconfigPage3ServerMessage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblAutoconfigPage3ServerMessage.Location = new System.Drawing.Point(0, 0);
+            this.lblAutoconfigPage3ServerMessage.Name = "lblAutoconfigPage3ServerMessage";
+            this.lblAutoconfigPage3ServerMessage.Size = new System.Drawing.Size(455, 20);
+            this.lblAutoconfigPage3ServerMessage.TabIndex = 2;
+            this.lblAutoconfigPage3ServerMessage.Text = "Please specify which server settings should be used.";
             // 
             // AutoconfigPage3Select
             // 
@@ -158,7 +158,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.groupBoxOptions);
-            this.Controls.Add(this.labelServerMessage);
+            this.Controls.Add(this.lblAutoconfigPage3ServerMessage);
             this.Name = "AutoconfigPage3Select";
             this.Size = new System.Drawing.Size(455, 396);
             this.groupBoxOptions.ResumeLayout(false);
@@ -176,9 +176,9 @@
         private System.Windows.Forms.Panel panelRight;
         private System.Windows.Forms.Panel panelLeft;
         private FormBlockCombo fbServerPreference;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label labelServerMessage;
+        private System.Windows.Forms.Label lblAutoconfigPage3UserDecidesMessage;
+        private System.Windows.Forms.Label lblAutoconfigPage3WrapperDecidesMessage;
+        private System.Windows.Forms.Label lblAutoconfigPage3ServerMessage;
         private System.Windows.Forms.RadioButton radioAutoconfigPage3Select2;
         private System.Windows.Forms.RadioButton radioAutoconfigPage3Select1;
     }

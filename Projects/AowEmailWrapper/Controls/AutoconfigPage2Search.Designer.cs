@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AutoconfigPage2Search));
-            this.labelSearchMessage = new System.Windows.Forms.Label();
+            this.lblAutoconfigPage2SearchMessage = new System.Windows.Forms.Label();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.groupBoxResult = new System.Windows.Forms.GroupBox();
             this.labelResultMessage = new System.Windows.Forms.Label();
@@ -37,10 +37,10 @@
             this.pictureBoxSuccess = new System.Windows.Forms.PictureBox();
             this.groupBoxNext = new System.Windows.Forms.GroupBox();
             this.panelRight = new System.Windows.Forms.Panel();
-            this.labelGuess = new System.Windows.Forms.Label();
+            this.lblAutoconfigPage2Guess = new System.Windows.Forms.Label();
             this.radioAutoconfigPage2Search2 = new System.Windows.Forms.RadioButton();
             this.panelLeft = new System.Windows.Forms.Panel();
-            this.labelMxLookup = new System.Windows.Forms.Label();
+            this.lblAutoconfigPage2MxLookup = new System.Windows.Forms.Label();
             this.radioAutoconfigPage2Search1 = new System.Windows.Forms.RadioButton();
             this.panelManual = new System.Windows.Forms.Panel();
             this.radioAutoconfigPage2Search3 = new System.Windows.Forms.RadioButton();
@@ -53,14 +53,14 @@
             this.panelManual.SuspendLayout();
             this.SuspendLayout();
             // 
-            // labelSearchMessage
+            // lblAutoconfigPage2SearchMessage
             // 
-            this.labelSearchMessage.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelSearchMessage.Location = new System.Drawing.Point(0, 0);
-            this.labelSearchMessage.Name = "labelSearchMessage";
-            this.labelSearchMessage.Size = new System.Drawing.Size(413, 20);
-            this.labelSearchMessage.TabIndex = 0;
-            this.labelSearchMessage.Text = "Searching for your email settings online…";
+            this.lblAutoconfigPage2SearchMessage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblAutoconfigPage2SearchMessage.Location = new System.Drawing.Point(0, 0);
+            this.lblAutoconfigPage2SearchMessage.Name = "lblAutoconfigPage2SearchMessage";
+            this.lblAutoconfigPage2SearchMessage.Size = new System.Drawing.Size(413, 20);
+            this.lblAutoconfigPage2SearchMessage.TabIndex = 0;
+            this.lblAutoconfigPage2SearchMessage.Text = "Searching for your email settings online…";
             // 
             // progressBar
             // 
@@ -131,7 +131,7 @@
             // 
             // panelRight
             // 
-            this.panelRight.Controls.Add(this.labelGuess);
+            this.panelRight.Controls.Add(this.lblAutoconfigPage2Guess);
             this.panelRight.Controls.Add(this.radioAutoconfigPage2Search2);
             this.panelRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelRight.Location = new System.Drawing.Point(210, 16);
@@ -139,15 +139,15 @@
             this.panelRight.Size = new System.Drawing.Size(200, 145);
             this.panelRight.TabIndex = 1;
             // 
-            // labelGuess
+            // lblAutoconfigPage2Guess
             // 
-            this.labelGuess.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelGuess.Location = new System.Drawing.Point(0, 38);
-            this.labelGuess.Name = "labelGuess";
-            this.labelGuess.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.labelGuess.Size = new System.Drawing.Size(200, 107);
-            this.labelGuess.TabIndex = 1;
-            this.labelGuess.Text = resources.GetString("labelGuess.Text");
+            this.lblAutoconfigPage2Guess.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblAutoconfigPage2Guess.Location = new System.Drawing.Point(0, 38);
+            this.lblAutoconfigPage2Guess.Name = "lblAutoconfigPage2Guess";
+            this.lblAutoconfigPage2Guess.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.lblAutoconfigPage2Guess.Size = new System.Drawing.Size(200, 107);
+            this.lblAutoconfigPage2Guess.TabIndex = 1;
+            this.lblAutoconfigPage2Guess.Text = resources.GetString("lblAutoconfigPage2Guess.Text");
             // 
             // radioAutoconfigPage2Search2
             // 
@@ -163,7 +163,7 @@
             // 
             // panelLeft
             // 
-            this.panelLeft.Controls.Add(this.labelMxLookup);
+            this.panelLeft.Controls.Add(this.lblAutoconfigPage2MxLookup);
             this.panelLeft.Controls.Add(this.radioAutoconfigPage2Search1);
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(3, 16);
@@ -171,15 +171,15 @@
             this.panelLeft.Size = new System.Drawing.Size(200, 145);
             this.panelLeft.TabIndex = 0;
             // 
-            // labelMxLookup
+            // lblAutoconfigPage2MxLookup
             // 
-            this.labelMxLookup.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelMxLookup.Location = new System.Drawing.Point(0, 38);
-            this.labelMxLookup.Name = "labelMxLookup";
-            this.labelMxLookup.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.labelMxLookup.Size = new System.Drawing.Size(200, 107);
-            this.labelMxLookup.TabIndex = 1;
-            this.labelMxLookup.Text = resources.GetString("labelMxLookup.Text");
+            this.lblAutoconfigPage2MxLookup.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblAutoconfigPage2MxLookup.Location = new System.Drawing.Point(0, 38);
+            this.lblAutoconfigPage2MxLookup.Name = "lblAutoconfigPage2MxLookup";
+            this.lblAutoconfigPage2MxLookup.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.lblAutoconfigPage2MxLookup.Size = new System.Drawing.Size(200, 107);
+            this.lblAutoconfigPage2MxLookup.TabIndex = 1;
+            this.lblAutoconfigPage2MxLookup.Text = resources.GetString("lblAutoconfigPage2MxLookup.Text");
             // 
             // radioAutoconfigPage2Search1
             // 
@@ -223,7 +223,7 @@
             this.Controls.Add(this.groupBoxNext);
             this.Controls.Add(this.groupBoxResult);
             this.Controls.Add(this.progressBar);
-            this.Controls.Add(this.labelSearchMessage);
+            this.Controls.Add(this.lblAutoconfigPage2SearchMessage);
             this.Name = "AutoconfigPage2Search";
             this.Size = new System.Drawing.Size(413, 343);
             this.groupBoxResult.ResumeLayout(false);
@@ -239,14 +239,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Label labelSearchMessage;
+        private System.Windows.Forms.Label lblAutoconfigPage2SearchMessage;
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.GroupBox groupBoxResult;
         private System.Windows.Forms.GroupBox groupBoxNext;
         private System.Windows.Forms.Panel panelRight;
         private System.Windows.Forms.Panel panelLeft;
-        private System.Windows.Forms.Label labelGuess;
-        private System.Windows.Forms.Label labelMxLookup;
+        private System.Windows.Forms.Label lblAutoconfigPage2Guess;
+        private System.Windows.Forms.Label lblAutoconfigPage2MxLookup;
         private System.Windows.Forms.PictureBox pictureBoxSuccess;
         private System.Windows.Forms.Label labelResultMessage;
         private System.Windows.Forms.PictureBox pictureBoxFailed;

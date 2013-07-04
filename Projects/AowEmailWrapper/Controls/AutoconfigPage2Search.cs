@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Mozilla.Autoconfig;
+using AowEmailWrapper.Localization;
 
 namespace AowEmailWrapper.Controls
 {
@@ -20,6 +21,9 @@ namespace AowEmailWrapper.Controls
             Manual,
             Success
         }
+
+        private const string AutoconfigPage2SuccessKey = "msgAutoconfigPage2Success";
+        private const string AutoconfigPage2FailedKey = "msgAutoconfigPage2Failed";
 
         private RequestType _lastRequestType;
         private AutoconfigPage2Outcome _outcome = AutoconfigPage2Outcome.Unknown;
@@ -75,7 +79,8 @@ namespace AowEmailWrapper.Controls
 
             pictureBoxSuccess.Visible = true;
             pictureBoxFailed.Visible = false;
-            labelResultMessage.Text = "Success, email settings found.  Click Next to continue.";
+
+            labelResultMessage.Text = Translator.Translate(AutoconfigPage2SuccessKey);
         }
 
         public void Failed()
@@ -87,7 +92,7 @@ namespace AowEmailWrapper.Controls
 
             pictureBoxSuccess.Visible = false;
             pictureBoxFailed.Visible = true;
-            labelResultMessage.Text = "Unsuccessful, no email settings were found in the online database.  Please choose one of the options below.";
+            labelResultMessage.Text = Translator.Translate(AutoconfigPage2FailedKey);
             
             SetButtonFocus();
         }

@@ -38,14 +38,14 @@
             this.serverChoiceControl.EmailProvider = null;
             this.serverChoiceControl.Location = new System.Drawing.Point(3, 3);
             this.serverChoiceControl.Name = "serverChoiceControl";
-            this.serverChoiceControl.Size = new System.Drawing.Size(609, 478);
+            this.serverChoiceControl.Size = new System.Drawing.Size(708, 478);
             this.serverChoiceControl.TabIndex = 0;
             // 
             // ServerChoiceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(615, 481);
+            this.ClientSize = new System.Drawing.Size(714, 481);
             this.Controls.Add(this.serverChoiceControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

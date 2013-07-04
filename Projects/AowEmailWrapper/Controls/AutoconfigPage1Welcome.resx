@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="labelWrapperMessage.Text" xml:space="preserve">
+  <data name="lblAutoconfigPage1WrapperMessage.Text" xml:space="preserve">
     <value>The Wrapper is a specialised email client and it uses the same server settings that you would use for programs like Outlook Express.  It uses an online database to find these settings for your email account.  The database is maintained by the Mozilla Foundation who use it for their own email client called Thunderbird.  They keep the database up to date, this endows the Wrapper with a great deal of future proofing and an excellent chance to auto detect your email settings.</value>
   </data>
   <data name="fbEmailAddress.ValidationRegEx" xml:space="preserve">

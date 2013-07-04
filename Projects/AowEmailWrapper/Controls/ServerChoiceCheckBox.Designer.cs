@@ -40,9 +40,9 @@
             this.labelPortValue = new System.Windows.Forms.Label();
             this.labelHostValue = new System.Windows.Forms.Label();
             this.panelLabels = new System.Windows.Forms.Panel();
-            this.labelSocket = new System.Windows.Forms.Label();
-            this.labelPort = new System.Windows.Forms.Label();
-            this.labelServer = new System.Windows.Forms.Label();
+            this.lblServerChoiceCheckBoxSocket = new System.Windows.Forms.Label();
+            this.lblServerChoiceCheckBoxPort = new System.Windows.Forms.Label();
+            this.lblServerChoiceCheckBoxServer = new System.Windows.Forms.Label();
             this.panelLeft.SuspendLayout();
             this.panelImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSmtp)).BeginInit();
@@ -141,9 +141,9 @@
             this.panelValues.Controls.Add(this.labelPortValue);
             this.panelValues.Controls.Add(this.labelHostValue);
             this.panelValues.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelValues.Location = new System.Drawing.Point(66, 6);
+            this.panelValues.Location = new System.Drawing.Point(80, 6);
             this.panelValues.Name = "panelValues";
-            this.panelValues.Size = new System.Drawing.Size(206, 59);
+            this.panelValues.Size = new System.Drawing.Size(192, 59);
             this.panelValues.TabIndex = 1;
             // 
             // labelSocketValue
@@ -152,7 +152,7 @@
             this.labelSocketValue.Dock = System.Windows.Forms.DockStyle.Top;
             this.labelSocketValue.Location = new System.Drawing.Point(0, 40);
             this.labelSocketValue.Name = "labelSocketValue";
-            this.labelSocketValue.Size = new System.Drawing.Size(206, 20);
+            this.labelSocketValue.Size = new System.Drawing.Size(192, 20);
             this.labelSocketValue.TabIndex = 6;
             this.labelSocketValue.Text = "TLS";
             // 
@@ -162,7 +162,7 @@
             this.labelPortValue.Dock = System.Windows.Forms.DockStyle.Top;
             this.labelPortValue.Location = new System.Drawing.Point(0, 20);
             this.labelPortValue.Name = "labelPortValue";
-            this.labelPortValue.Size = new System.Drawing.Size(206, 20);
+            this.labelPortValue.Size = new System.Drawing.Size(192, 20);
             this.labelPortValue.TabIndex = 5;
             this.labelPortValue.Text = "587";
             // 
@@ -172,54 +172,54 @@
             this.labelHostValue.Dock = System.Windows.Forms.DockStyle.Top;
             this.labelHostValue.Location = new System.Drawing.Point(0, 0);
             this.labelHostValue.Name = "labelHostValue";
-            this.labelHostValue.Size = new System.Drawing.Size(206, 20);
+            this.labelHostValue.Size = new System.Drawing.Size(192, 20);
             this.labelHostValue.TabIndex = 4;
             this.labelHostValue.Text = "mail.myserver.com";
             // 
             // panelLabels
             // 
             this.panelLabels.BackColor = System.Drawing.Color.Transparent;
-            this.panelLabels.Controls.Add(this.labelSocket);
-            this.panelLabels.Controls.Add(this.labelPort);
-            this.panelLabels.Controls.Add(this.labelServer);
+            this.panelLabels.Controls.Add(this.lblServerChoiceCheckBoxSocket);
+            this.panelLabels.Controls.Add(this.lblServerChoiceCheckBoxPort);
+            this.panelLabels.Controls.Add(this.lblServerChoiceCheckBoxServer);
             this.panelLabels.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLabels.Location = new System.Drawing.Point(0, 6);
             this.panelLabels.Name = "panelLabels";
-            this.panelLabels.Size = new System.Drawing.Size(66, 59);
+            this.panelLabels.Size = new System.Drawing.Size(80, 59);
             this.panelLabels.TabIndex = 0;
             // 
-            // labelSocket
+            // lblServerChoiceCheckBoxSocket
             // 
-            this.labelSocket.BackColor = System.Drawing.Color.Transparent;
-            this.labelSocket.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelSocket.Location = new System.Drawing.Point(0, 40);
-            this.labelSocket.Name = "labelSocket";
-            this.labelSocket.Size = new System.Drawing.Size(66, 20);
-            this.labelSocket.TabIndex = 2;
-            this.labelSocket.Text = "Socket:";
-            this.labelSocket.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblServerChoiceCheckBoxSocket.BackColor = System.Drawing.Color.Transparent;
+            this.lblServerChoiceCheckBoxSocket.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblServerChoiceCheckBoxSocket.Location = new System.Drawing.Point(0, 40);
+            this.lblServerChoiceCheckBoxSocket.Name = "lblServerChoiceCheckBoxSocket";
+            this.lblServerChoiceCheckBoxSocket.Size = new System.Drawing.Size(80, 20);
+            this.lblServerChoiceCheckBoxSocket.TabIndex = 2;
+            this.lblServerChoiceCheckBoxSocket.Text = "Socket:";
+            this.lblServerChoiceCheckBoxSocket.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // labelPort
+            // lblServerChoiceCheckBoxPort
             // 
-            this.labelPort.BackColor = System.Drawing.Color.Transparent;
-            this.labelPort.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelPort.Location = new System.Drawing.Point(0, 20);
-            this.labelPort.Name = "labelPort";
-            this.labelPort.Size = new System.Drawing.Size(66, 20);
-            this.labelPort.TabIndex = 1;
-            this.labelPort.Text = "Port:";
-            this.labelPort.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblServerChoiceCheckBoxPort.BackColor = System.Drawing.Color.Transparent;
+            this.lblServerChoiceCheckBoxPort.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblServerChoiceCheckBoxPort.Location = new System.Drawing.Point(0, 20);
+            this.lblServerChoiceCheckBoxPort.Name = "lblServerChoiceCheckBoxPort";
+            this.lblServerChoiceCheckBoxPort.Size = new System.Drawing.Size(80, 20);
+            this.lblServerChoiceCheckBoxPort.TabIndex = 1;
+            this.lblServerChoiceCheckBoxPort.Text = "Port:";
+            this.lblServerChoiceCheckBoxPort.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // labelServer
+            // lblServerChoiceCheckBoxServer
             // 
-            this.labelServer.BackColor = System.Drawing.Color.Transparent;
-            this.labelServer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelServer.Location = new System.Drawing.Point(0, 0);
-            this.labelServer.Name = "labelServer";
-            this.labelServer.Size = new System.Drawing.Size(66, 20);
-            this.labelServer.TabIndex = 0;
-            this.labelServer.Text = "Server:";
-            this.labelServer.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblServerChoiceCheckBoxServer.BackColor = System.Drawing.Color.Transparent;
+            this.lblServerChoiceCheckBoxServer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblServerChoiceCheckBoxServer.Location = new System.Drawing.Point(0, 0);
+            this.lblServerChoiceCheckBoxServer.Name = "lblServerChoiceCheckBoxServer";
+            this.lblServerChoiceCheckBoxServer.Size = new System.Drawing.Size(80, 20);
+            this.lblServerChoiceCheckBoxServer.TabIndex = 0;
+            this.lblServerChoiceCheckBoxServer.Text = "Server:";
+            this.lblServerChoiceCheckBoxServer.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // ServerChoiceCheckBox
             // 
@@ -252,9 +252,9 @@
         private System.Windows.Forms.PictureBox pictureBoxPop;
         private System.Windows.Forms.Panel panelRight;
         private System.Windows.Forms.Panel panelLabels;
-        private System.Windows.Forms.Label labelSocket;
-        private System.Windows.Forms.Label labelPort;
-        private System.Windows.Forms.Label labelServer;
+        private System.Windows.Forms.Label lblServerChoiceCheckBoxSocket;
+        private System.Windows.Forms.Label lblServerChoiceCheckBoxPort;
+        private System.Windows.Forms.Label lblServerChoiceCheckBoxServer;
         private System.Windows.Forms.PictureBox pictureBoxSmtp;
         private System.Windows.Forms.RadioButton radioButton;
         private System.Windows.Forms.Panel panelValues;

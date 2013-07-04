@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label1.Text" xml:space="preserve">
+  <data name="lblAutoconfigPage3WrapperDecidesMessage.Text" xml:space="preserve">
     <value>This is the safest option for most users.  It will instruct the Wrapper to choose the most secure servers based on the preference above.  If no preference is given the Wrapper will pick IMAP servers over POP3 ones when choosing.</value>
   </data>
 </root>

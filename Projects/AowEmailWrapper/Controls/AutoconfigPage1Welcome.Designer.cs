@@ -29,31 +29,31 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AutoconfigPage1Welcome));
-            this.labelWrapperMessage = new System.Windows.Forms.Label();
-            this.labelAuthMessage = new System.Windows.Forms.Label();
+            this.lblAutoconfigPage1WrapperMessage = new System.Windows.Forms.Label();
+            this.lblAutoconfigPage1AuthMessage = new System.Windows.Forms.Label();
             this.groupBoxAuth = new System.Windows.Forms.GroupBox();
             this.fbPassword = new AowEmailWrapper.Controls.FormBlockText();
             this.fbEmailAddress = new AowEmailWrapper.Controls.FormBlockText();
             this.groupBoxAuth.SuspendLayout();
             this.SuspendLayout();
             // 
-            // labelWrapperMessage
+            // lblAutoconfigPage1WrapperMessage
             // 
-            this.labelWrapperMessage.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelWrapperMessage.Location = new System.Drawing.Point(0, 0);
-            this.labelWrapperMessage.Name = "labelWrapperMessage";
-            this.labelWrapperMessage.Size = new System.Drawing.Size(431, 100);
-            this.labelWrapperMessage.TabIndex = 0;
-            this.labelWrapperMessage.Text = resources.GetString("labelWrapperMessage.Text");
+            this.lblAutoconfigPage1WrapperMessage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblAutoconfigPage1WrapperMessage.Location = new System.Drawing.Point(0, 0);
+            this.lblAutoconfigPage1WrapperMessage.Name = "lblAutoconfigPage1WrapperMessage";
+            this.lblAutoconfigPage1WrapperMessage.Size = new System.Drawing.Size(431, 100);
+            this.lblAutoconfigPage1WrapperMessage.TabIndex = 0;
+            this.lblAutoconfigPage1WrapperMessage.Text = resources.GetString("lblAutoconfigPage1WrapperMessage.Text");
             // 
-            // labelAuthMessage
+            // lblAutoconfigPage1AuthMessage
             // 
-            this.labelAuthMessage.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelAuthMessage.Location = new System.Drawing.Point(0, 100);
-            this.labelAuthMessage.Name = "labelAuthMessage";
-            this.labelAuthMessage.Size = new System.Drawing.Size(431, 20);
-            this.labelAuthMessage.TabIndex = 1;
-            this.labelAuthMessage.Text = "Please provide the authentication details for your email account.";
+            this.lblAutoconfigPage1AuthMessage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblAutoconfigPage1AuthMessage.Location = new System.Drawing.Point(0, 100);
+            this.lblAutoconfigPage1AuthMessage.Name = "lblAutoconfigPage1AuthMessage";
+            this.lblAutoconfigPage1AuthMessage.Size = new System.Drawing.Size(431, 20);
+            this.lblAutoconfigPage1AuthMessage.TabIndex = 1;
+            this.lblAutoconfigPage1AuthMessage.Text = "Please provide the authentication details for your email account.";
             // 
             // groupBoxAuth
             // 
@@ -102,8 +102,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.groupBoxAuth);
-            this.Controls.Add(this.labelAuthMessage);
-            this.Controls.Add(this.labelWrapperMessage);
+            this.Controls.Add(this.lblAutoconfigPage1AuthMessage);
+            this.Controls.Add(this.lblAutoconfigPage1WrapperMessage);
             this.Name = "AutoconfigPage1Welcome";
             this.Size = new System.Drawing.Size(431, 253);
             this.groupBoxAuth.ResumeLayout(false);
@@ -113,8 +113,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label labelWrapperMessage;
-        private System.Windows.Forms.Label labelAuthMessage;
+        private System.Windows.Forms.Label lblAutoconfigPage1WrapperMessage;
+        private System.Windows.Forms.Label lblAutoconfigPage1AuthMessage;
         private System.Windows.Forms.GroupBox groupBoxAuth;
         private FormBlockText fbPassword;
         private FormBlockText fbEmailAddress;

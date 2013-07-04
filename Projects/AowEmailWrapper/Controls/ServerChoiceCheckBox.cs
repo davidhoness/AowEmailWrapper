@@ -35,8 +35,10 @@ namespace AowEmailWrapper.Controls
             pictureBoxPop.Click += setCheckedClick;
             pictureBoxSmtp.Click += setCheckedClick;
 
-            _labels = new List<Label>() { labelServer, labelPort, labelSocket, labelHostValue, labelPortValue, labelSocketValue };
+            _labels = new List<Label>() { lblServerChoiceCheckBoxServer, lblServerChoiceCheckBoxPort, lblServerChoiceCheckBoxSocket, labelHostValue, labelPortValue, labelSocketValue };
             _labels.ForEach(label => label.Click += setCheckedClick);
+
+            _labels.ForEach(label => label.Text = Translator.Translate(label.Name));
         }
 
         private void setChecked_Click(object sender, EventArgs e)
