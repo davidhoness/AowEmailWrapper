@@ -122,8 +122,11 @@ namespace AowEmailWrapper.Controls
                         case AowGameType.AowSm:
                             item.ImageIndex = 5;
                             break;
-                        case AowGameType.Unknown:
+                        case AowGameType.AowMpe:
                             item.ImageIndex = 6;
+                            break;
+                        case AowGameType.Unknown:
+                            item.ImageIndex = 7;
                             break;
                     }
 
