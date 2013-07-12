@@ -279,7 +279,7 @@ namespace AowEmailWrapper.ASG
                                         switch (race_count)
                                         {
                                             case 15:
-                                                _gameType = AowGameType.AowSm;
+                                                _gameType = _fileType == ASGFileType.AowMpe ? AowGameType.AowMpe : AowGameType.AowSm;
                                                 break;
                                             case 12:
                                                 _gameType = AowGameType.Aow2;
