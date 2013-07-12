@@ -435,6 +435,7 @@ namespace AowEmailWrapper
                     _aow2GameWatcher = null;
                     break;
                 case AowGameType.AowSm:
+                case AowGameType.AowMpe:
                     _aowSmGameWatcher = null;
                     break;
             }
@@ -645,6 +646,7 @@ namespace AowEmailWrapper
                     }
                     break;
                 case AowGameType.AowSm:
+                case AowGameType.AowMpe:
                     if (_aowSmGameWatcher == null)
                     {
                         _aowSmGameWatcher = new StartedTaskWatcher(theGame, new StartedTaskCompleteEventHandler(StartedGameWatchCompleted));
@@ -1338,7 +1340,7 @@ namespace AowEmailWrapper
                 {
                     string gameType = game.GameType.ToString();
 
-                    IconMenuItem menuItem = new IconMenuItem(game.GameName, imageListIcons.Images[gameType], emailImage);
+                    IconMenuItem menuItem = new IconMenuItem(game.DisplayName, imageListIcons.Images[gameType], emailImage);
                     
                     menuItem.Name = gameType;
                     menuItem.Tag = menuItem.Name;
@@ -1379,6 +1381,7 @@ namespace AowEmailWrapper
                 case "Aow1":
                 case "Aow2":
                 case "AowSm":
+                case "AowMpe":
                     AowGame theGame = _gameManager.Games.Find(game => game.GameType.ToString().Equals(((MenuItem)sender).Tag.ToString()));
                     StartGame(theGame);
                     break;

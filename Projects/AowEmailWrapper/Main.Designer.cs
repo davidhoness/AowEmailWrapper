@@ -40,11 +40,8 @@
             this.panelMain = new System.Windows.Forms.Panel();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabAccounts = new System.Windows.Forms.TabPage();
-            this.accountsConfig = new AowEmailWrapper.Controls.AccountsConfig();
             this.tabActivity = new System.Windows.Forms.TabPage();
-            this.activityListView = new AowEmailWrapper.Controls.ActivityListView();
             this.tabPreferences = new System.Windows.Forms.TabPage();
-            this.preferencesConfig = new AowEmailWrapper.Controls.PreferencesConfig();
             this.tabAbout = new System.Windows.Forms.TabPage();
             this.panelAbout = new System.Windows.Forms.Panel();
             this.panelCredits = new System.Windows.Forms.Panel();
@@ -82,6 +79,9 @@
             this.lblNotice = new System.Windows.Forms.Label();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.lblVersion = new System.Windows.Forms.Label();
+            this.accountsConfig = new AowEmailWrapper.Controls.AccountsConfig();
+            this.activityListView = new AowEmailWrapper.Controls.ActivityListView();
+            this.preferencesConfig = new AowEmailWrapper.Controls.PreferencesConfig();
             this.fbLink = new AowEmailWrapper.Controls.LinkButton();
             this.panelBottom.SuspendLayout();
             this.panelLocalMessageStore.SuspendLayout();
@@ -116,7 +116,8 @@
             this.imageListIcons.Images.SetKeyName(3, "AoW1");
             this.imageListIcons.Images.SetKeyName(4, "AoW2");
             this.imageListIcons.Images.SetKeyName(5, "AoWSM");
-            this.imageListIcons.Images.SetKeyName(6, "CheckEmail");
+            this.imageListIcons.Images.SetKeyName(6, "AoWMpe");
+            this.imageListIcons.Images.SetKeyName(7, "CheckEmail");
             // 
             // panelBottom
             // 
@@ -198,16 +199,6 @@
             this.tabAccounts.Text = "Accounts";
             this.tabAccounts.UseVisualStyleBackColor = true;
             // 
-            // accountsConfig
-            // 
-            //this.accountsConfig.AccountsTemplates = null;
-            this.accountsConfig.Config = null;
-            this.accountsConfig.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.accountsConfig.Location = new System.Drawing.Point(5, 5);
-            this.accountsConfig.Name = "accountsConfig";
-            this.accountsConfig.Size = new System.Drawing.Size(504, 508);
-            this.accountsConfig.TabIndex = 0;
-            // 
             // tabActivity
             // 
             this.tabActivity.Controls.Add(this.activityListView);
@@ -217,17 +208,6 @@
             this.tabActivity.TabIndex = 7;
             this.tabActivity.Text = "Activity Log";
             this.tabActivity.UseVisualStyleBackColor = true;
-            // 
-            // activityListView
-            // 
-            this.activityListView.ActivityLog = null;
-            this.activityListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.activityListView.Location = new System.Drawing.Point(0, 0);
-            this.activityListView.Name = "activityListView";
-            this.activityListView.Padding = new System.Windows.Forms.Padding(5);
-            this.activityListView.Size = new System.Drawing.Size(514, 518);
-            this.activityListView.SmallImageList = null;
-            this.activityListView.TabIndex = 0;
             // 
             // tabPreferences
             // 
@@ -239,24 +219,6 @@
             this.tabPreferences.TabIndex = 3;
             this.tabPreferences.Text = "Preferences";
             this.tabPreferences.UseVisualStyleBackColor = true;
-            // 
-            // preferencesConfig
-            // 
-            preferencesConfigValues1.Autostart = false;
-            preferencesConfigValues1.CopyToEmailOut = false;
-            preferencesConfigValues1.GameWrapperDataPort = 49252;
-            preferencesConfigValues1.LanguageCode = null;
-            preferencesConfigValues1.PlaySoundOnEmail = false;
-            preferencesConfigValues1.PlaySoundOnSend = false;
-            preferencesConfigValues1.SaveFolder = AowEmailWrapper.ConfigFramework.EmailSaveFolder.EmailIn;
-            this.preferencesConfig.Config = preferencesConfigValues1;
-            this.preferencesConfig.Dock = System.Windows.Forms.DockStyle.Top;
-            this.preferencesConfig.Location = new System.Drawing.Point(0, 0);
-            this.preferencesConfig.Margin = new System.Windows.Forms.Padding(2);
-            this.preferencesConfig.Name = "preferencesConfig";
-            this.preferencesConfig.Padding = new System.Windows.Forms.Padding(5);
-            this.preferencesConfig.Size = new System.Drawing.Size(514, 313);
-            this.preferencesConfig.TabIndex = 0;
             // 
             // tabAbout
             // 
@@ -669,6 +631,44 @@
             this.lblVersion.Size = new System.Drawing.Size(464, 40);
             this.lblVersion.TabIndex = 10;
             this.lblVersion.Text = "Age of Wonders Email Wrapper [{0}]";
+            // 
+            // accountsConfig
+            // 
+            this.accountsConfig.Config = null;
+            this.accountsConfig.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.accountsConfig.Location = new System.Drawing.Point(5, 5);
+            this.accountsConfig.Name = "accountsConfig";
+            this.accountsConfig.Size = new System.Drawing.Size(504, 508);
+            this.accountsConfig.TabIndex = 0;
+            // 
+            // activityListView
+            // 
+            this.activityListView.ActivityLog = null;
+            this.activityListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.activityListView.Location = new System.Drawing.Point(0, 0);
+            this.activityListView.Name = "activityListView";
+            this.activityListView.Padding = new System.Windows.Forms.Padding(5);
+            this.activityListView.Size = new System.Drawing.Size(514, 518);
+            this.activityListView.SmallImageList = null;
+            this.activityListView.TabIndex = 0;
+            // 
+            // preferencesConfig
+            // 
+            preferencesConfigValues1.Autostart = false;
+            preferencesConfigValues1.CopyToEmailOut = false;
+            preferencesConfigValues1.GameWrapperDataPort = 49252;
+            preferencesConfigValues1.LanguageCode = null;
+            preferencesConfigValues1.PlaySoundOnEmail = false;
+            preferencesConfigValues1.PlaySoundOnSend = false;
+            preferencesConfigValues1.SaveFolder = AowEmailWrapper.ConfigFramework.EmailSaveFolder.EmailIn;
+            this.preferencesConfig.Config = preferencesConfigValues1;
+            this.preferencesConfig.Dock = System.Windows.Forms.DockStyle.Top;
+            this.preferencesConfig.Location = new System.Drawing.Point(0, 0);
+            this.preferencesConfig.Margin = new System.Windows.Forms.Padding(2);
+            this.preferencesConfig.Name = "preferencesConfig";
+            this.preferencesConfig.Padding = new System.Windows.Forms.Padding(5);
+            this.preferencesConfig.Size = new System.Drawing.Size(514, 313);
+            this.preferencesConfig.TabIndex = 0;
             // 
             // fbLink
             // 
