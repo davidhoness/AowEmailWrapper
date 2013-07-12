@@ -45,6 +45,7 @@ namespace AowEmailWrapper.Games
             _games.Add(new AowGame(AowGameType.Aow1));
             _games.Add(new AowGame(AowGameType.Aow2));
             _games.Add(new AowGame(AowGameType.AowSm));
+            _games.Add(new AowGame(AowGameType.AowMpe));
         }
 
         #endregion
