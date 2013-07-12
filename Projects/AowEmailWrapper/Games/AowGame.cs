@@ -17,6 +17,8 @@ namespace AowEmailWrapper.Games
         Aow2,
         [XmlEnum(Name = "AowSm")]
         AowSm,
+        [XmlEnum(Name = "AowMpe")]
+        AowMpe,
         [XmlEnum(Name = "Unknown")]
         Unknown
     }
@@ -29,6 +31,7 @@ namespace AowEmailWrapper.Games
         private const string Aow1GameName = "Age of Wonders";
         private const string Aow2GameName = "Age of Wonders II";
         private const string AowSmGameName = "Age of Wonders Shadow Magic";
+        private const string AowMpeGameName = "AoW - MP Evolution";
 
         private const string GeneralPath = "General";
         private const string RootDirKeyName = "Root Directory";
@@ -42,6 +45,7 @@ namespace AowEmailWrapper.Games
         private const string Aow1ExeName = "AoW.exe";
         private const string Aow2ExeName = "AoW2.exe";
         private const string AowSmExeName = "AoWSM.exe";
+        private const string AowMpeExeName = "AoW - MP Evolution.exe";
 
         private const string SteamRegPath = "Software\\Valve\\Steam";
         private const string SteamDirKeyName = "SteamPath";
@@ -65,6 +69,7 @@ namespace AowEmailWrapper.Games
         private RegistryKey _rootRegKey = null;
         private string _exeFile = null;
         private string _gameName = null;
+        private string _displayName = null;
         private bool _writeAccess = false;
 
         #endregion
@@ -111,6 +116,11 @@ namespace AowEmailWrapper.Games
             get { return _gameName; }
         }
 
+        public string DisplayName
+        {
+            get { return _displayName; }
+        }
+
         public bool WriteAccess
         {
             get { return _writeAccess; }
@@ -128,15 +138,21 @@ namespace AowEmailWrapper.Games
             {
                 case AowGameType.Aow1:
                     _exeFile = Aow1ExeName;
-                    _gameName = Aow1GameName;
+                    _gameName = _displayName = Aow1GameName;
                     break;
                 case AowGameType.Aow2:
                     _exeFile = Aow2ExeName;
-                    _gameName = Aow2GameName;
+                    _gameName = _displayName = Aow2GameName;
                     break;
-                case AowGameType.AowSm:                    
+                case AowGameType.AowSm:
                     _exeFile = AowSmExeName;
+                    _gameName = _displayName = AowSmGameName;
+                    break;
+                case AowGameType.AowMpe:
+                    //This is a patch for Shadow Magic with a different game exe; it uses the same registry locations as SM
+                    _exeFile = AowMpeExeName;
                     _gameName = AowSmGameName;
+                    _displayName = AowMpeGameName;
                     break;
             }
 
