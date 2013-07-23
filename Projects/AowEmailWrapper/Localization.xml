@@ -808,7 +808,7 @@
 		<lookup key="startUpAccount" value="Standard"/>
 		<!-- END: Misc -->
 	</language>
-	<language code="se" display="Svensk">
+	<language code="se" display="Svenska">
 		<!-- BEGIN: Main forms -->
 		<lookup key="tabAccounts" value="Konton"/>
 		<lookup key="panelTopHalflistViewAccounts0" value="Konto"/>
@@ -861,7 +861,7 @@
 		<lookup key="groupTranslators" value="Översättare"/>
 		<lookup key="groupCodeContributors" value="Kod Bidragande"/>
 		<lookup key="groupAuthors" value="Författare"/>
-		<lookup key="lblNotice" value="The Age of Wonders Email Wrapper är ett helt gratis program som är utformat för att möjliggöra automation av Play By Email (PBEM) för samtliga tre AOW © spel. Det är inte godkänt av Triumph Studios © utan är ett personligt projekt där skaparen inte står att vinna någonting annat än tidsparande samt nöjet av att spela spel. Det saknar skyldighet att ge support, men om du ber snällt får du antagligen hjälp ändå."/>
+		<lookup key="lblNotice" value="Age of Wonders Email Wrapper är ett helt gratis program som är utformat för att möjliggöra automation av Play By Email (PBEM) för samtliga tre AOW © spel. Det är inte godkänt av Triumph Studios © utan är ett personligt projekt där skaparen inte står att vinna någonting annat än tidsparande samt nöjet av att spela spel. Det saknar skyldighet att ge support, men om du ber snällt får du antagligen hjälp ändå."/>
 		<lookup key="cmdSave" value="Spara Inställningarna"/>
 		<lookup key="MessageStore" value="POP3 emails ({0} on {1})"/>
 		<lookup key="messageStoreListlistView0" value="Från"/>
@@ -1151,6 +1151,32 @@
 		<lookup key="AccountsCreationForm" value="Luo uusi tili"/>
 		<lookup key="buttonCreate" value="Luo"/>
 		<lookup key="accountOther" value="Muut"/>
+		<lookup key="lblThunderbirdTitle" value="Thunderbird Database"/>
+		<lookup key="lblAutoconfigHeaderMessage" value="Autoconfig Wizard"/>
+		<lookup key="lblAutoconfigPage1WrapperMessage" value="Wrapper on erikoistunut sähköpostipalvelu ja se käyttää samanlaisia palvelinasetuksia, joita jotkut käyttävät esimerkiksi Outlook Expressin kaltasiin ohjelmiin. Wrapper käyttää verkkotietokantaa löytääkseen nämä asetukset sähköpostiasi varten. Tietokantaa ylläpitää Mozilla Foundation, joka käyttää sitä omaa sähköpostiohjelmaansa Thunderbirdiä varten. He päivittävät tietokantaa ajan tasalle ja tämä lisää Wrapperin turvallisuutta tulevaisuudessa ja antaa erittäin hyvät mahdollisuudet sähköpostisi asetusten automaattiseen havaitsemiseen."/>
+		<lookup key="lblAutoconfigPage1AuthMessage" value="Anna sähkopostisi tunnistetiedot."/>
+		<lookup key="lblAutoconfigPage2SearchMessage" value="Etsii sähköpostisi asetuksia..."/>
+		<lookup key="groupBoxResult" value="Tulos"/>
+		<lookup key="groupBoxNext" value="Mitä seuraavaksi?"/>
+		<lookup key="radioAutoconfigPage2Search1" value="Yritä Mx Lookup-toimintoa"/>
+		<lookup key="radioAutoconfigPage2Search2" value="Arvaa"/>
+		<lookup key="radioAutoconfigPage2Search3" value="Ohita, haluan kirjoittaa asetukseni itse"/>
+		<lookup key="lblAutoconfigPage2MxLookup" value="Joskus sähköpostisi on listattu verkkotietokantaan väärällä nimellä. Jos toteutamme Mx Lookup -tominnon sähköpostillesi ja teemme tietokannassa uuden etsinnän, voimme usein löytää oikeat tiedot sähköpostillesi."/>
+		<lookup key="lblAutoconfigPage2Guess" value="Käytä tätä vaihtoehtoa vain viimeisenä keinona. Tämä arvaa sähköpostiosoitteesi palvelimen yrittämällä ottaa siihen yhteyttä internetin välityksellä eikä sen toimivuudesta ole takeita. Jos tämä epäonnistuu, voit joutua lisäämään tiedot manuaalisesti."/>
+		<lookup key="lblAutoconfigPage3ServerMessage" value="Anna tarkemmat tiedot siitä, mitä palvelimia tulisi käyttää."/>
+		<lookup key="groupBoxOptions" value="Valikko"/>
+		<lookup key="radioAutoconfigPage3Select1" value="Anna Wrapperin päättää (oletusasteus)"/>
+		<lookup key="radioAutoconfigPage3Select2" value="Manuaaliset asetukset, näytä vaihtoehdot valintaa varten"/>
+		<lookup key="fbServerPreference" value="Oma valinta:"/>
+		<lookup key="serverPreferenceNoPreference" value="Ei valintaa"/>
+		<lookup key="lblAutoconfigPage3WrapperDecidesMessage" value="Tämä on käyttäjäturvallisin vaihtoehto. Se käskee Wrapperia valitsemaan vain turvallisimmat palvelimet ylhäällä olevien valintojen mukaisesti. Jos valintaa ei ole tehty Wrapper valitsee POP3 palvelimien sijaan IMAP-palvelimen."/>
+		<lookup key="lblAutoconfigPage3UserDecidesMessage" value="Käytä tätä vaihtoehtoa, jos haluat täyden kontrollin siitä, mitä automaattisesti havaittavia asetuksia Wrapperin tulisi käyttää."/>
+		<lookup key="ServerChoiceForm" value="Manuaaliset asetukset"/>
+		<lookup key="groupBoxIncoming" value="Saapuvat"/>
+		<lookup key="groupBoxOutgoing" value="Lähtevät"/>
+		<lookup key="lblServerChoiceCheckBoxServer" value="Palvelin:"/>
+		<lookup key="lblServerChoiceCheckBoxPort" value="Portti:"/>
+		<lookup key="lblServerChoiceCheckBoxSocket" value="SSL -tyyppi:"/>
 		<!-- END: Main forms -->
 		<!-- BEGIN: Messages -->
 		<lookup key="msgWrapperWriteAccess" value="Wrapperilla ei ole pääsyä näihin kansioihin:&#xA;{0}&#xA;&#xA;Muuta palvelun turvallisuusasetuksia tai muuta Wrapper järjestelmävalvojaksi."/>
@@ -1168,6 +1194,8 @@
 		<lookup key="msgWrapperGamesWaiting" value="Sinulla on {0} peliä odottamassa."/>
 		<lookup key="msgInputEmailSettingsManual" value="Lisää asetukset manuaalisesti."/>
 		<lookup key="msgWrapperResendTo" value="Lähetä:"/>
+		<lookup key="msgAutoconfigPage2Success" value="Onnistui, sähköpostin tiedot löydetty. Paina seuraavaa jatkaaksesi."/>
+		<lookup key="msgAutoconfigPage2Failed" value="Epäonnistui, sähköpostin tietoja ei löytynyt. Valitse jokin alla olevista vaihtoehdoista."/>
 		<!-- END: Messages -->
 		<!-- BEGIN: Context Menus -->
 		<lookup key="menuItemShow" value="&amp;Näytä"/>
@@ -1201,6 +1229,10 @@
 		<lookup key="buttonOK" value="OK"/>
 		<lookup key="buttonCancel" value="Lopeta"/>
 		<lookup key="buttonResend" value="Lähetä"/>
+		<lookup key="cmdBack" value="&lt; Takaisin"/>
+		<lookup key="cmdNext" value="Seuraava &gt;"/>
+		<lookup key="cmdCancel" value="Lopeta"/>
+		<lookup key="cmdFinish" value="Valmis"/>
 		<lookup key="activeAccount" value="Aktiivinen"/>
 		<lookup key="startUpAccount" value="Oletus"/>
 		<!-- END: Misc -->
