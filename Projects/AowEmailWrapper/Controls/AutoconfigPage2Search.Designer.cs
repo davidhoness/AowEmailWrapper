@@ -123,7 +123,7 @@
             this.groupBoxNext.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBoxNext.Location = new System.Drawing.Point(0, 105);
             this.groupBoxNext.Name = "groupBoxNext";
-            this.groupBoxNext.Size = new System.Drawing.Size(413, 164);
+            this.groupBoxNext.Size = new System.Drawing.Size(413, 180);
             this.groupBoxNext.TabIndex = 3;
             this.groupBoxNext.TabStop = false;
             this.groupBoxNext.Text = "What next?";
@@ -136,7 +136,7 @@
             this.panelRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelRight.Location = new System.Drawing.Point(210, 16);
             this.panelRight.Name = "panelRight";
-            this.panelRight.Size = new System.Drawing.Size(200, 145);
+            this.panelRight.Size = new System.Drawing.Size(200, 161);
             this.panelRight.TabIndex = 1;
             // 
             // lblAutoconfigPage2Guess
@@ -145,7 +145,7 @@
             this.lblAutoconfigPage2Guess.Location = new System.Drawing.Point(0, 38);
             this.lblAutoconfigPage2Guess.Name = "lblAutoconfigPage2Guess";
             this.lblAutoconfigPage2Guess.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.lblAutoconfigPage2Guess.Size = new System.Drawing.Size(200, 107);
+            this.lblAutoconfigPage2Guess.Size = new System.Drawing.Size(200, 123);
             this.lblAutoconfigPage2Guess.TabIndex = 1;
             this.lblAutoconfigPage2Guess.Text = resources.GetString("lblAutoconfigPage2Guess.Text");
             // 
@@ -168,7 +168,7 @@
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(3, 16);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(200, 145);
+            this.panelLeft.Size = new System.Drawing.Size(200, 161);
             this.panelLeft.TabIndex = 0;
             // 
             // lblAutoconfigPage2MxLookup
@@ -177,7 +177,7 @@
             this.lblAutoconfigPage2MxLookup.Location = new System.Drawing.Point(0, 38);
             this.lblAutoconfigPage2MxLookup.Name = "lblAutoconfigPage2MxLookup";
             this.lblAutoconfigPage2MxLookup.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.lblAutoconfigPage2MxLookup.Size = new System.Drawing.Size(200, 107);
+            this.lblAutoconfigPage2MxLookup.Size = new System.Drawing.Size(200, 123);
             this.lblAutoconfigPage2MxLookup.TabIndex = 1;
             this.lblAutoconfigPage2MxLookup.Text = resources.GetString("lblAutoconfigPage2MxLookup.Text");
             // 
@@ -196,7 +196,7 @@
             // 
             this.panelManual.Controls.Add(this.radioAutoconfigPage2Search3);
             this.panelManual.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelManual.Location = new System.Drawing.Point(0, 269);
+            this.panelManual.Location = new System.Drawing.Point(0, 285);
             this.panelManual.Name = "panelManual";
             this.panelManual.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.panelManual.Size = new System.Drawing.Size(413, 44);
