@@ -33,6 +33,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_2F4003A57A8B4981924A8A179A7031CE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_3AC22820FDA8473EB4AC75A661CFD886"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -81,8 +87,20 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_79D672AD94294C1A94BE576D1C3D9FCE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_91D14D1227B0CA8C3F3AD6FA6647BA24"
         "OwnerKey" = "8:_3AC22820FDA8473EB4AC75A661CFD886"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_987DDA8DBC524785AAAA6E10DE11046C"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -101,12 +119,6 @@
         {
         "MsmKey" = "8:_C4F7388EBA0116AABF4994A9CDE0EA07"
         "OwnerKey" = "8:_3AC22820FDA8473EB4AC75A661CFD886"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_DFDBF93C8BB6490AAB1DBC596B5A282E"
-        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -142,7 +154,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_DFDBF93C8BB6490AAB1DBC596B5A282E"
+        "OwnerKey" = "8:_987DDA8DBC524785AAAA6E10DE11046C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -263,6 +275,20 @@
     {
         "CustomAction"
         {
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_8A3CB6B6F1FA45519F73C6CB82578B73"
+            {
+            "Name" = "8:WrapperUninstallActions.dll"
+            "Condition" = "8:"
+            "Object" = "8:_987DDA8DBC524785AAAA6E10DE11046C"
+            "FileType" = "3:1"
+            "InstallAction" = "3:4"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_F0302EB3_1931_4D24_AE04_66EFF84E70CD"
+            "InstallerClass" = "11:TRUE"
+            "CustomActionData" = "8:"
+            }
         }
         "DefaultFeature"
         {
@@ -366,6 +392,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2F4003A57A8B4981924A8A179A7031CE"
+            {
+            "SourcePath" = "8:..\\AowEmailWrapper\\bin\\Release\\WrapperUninstallActions.pdb"
+            "TargetName" = "8:WrapperUninstallActions.pdb"
+            "Tag" = "8:"
+            "Folder" = "8:_505D1BE4ED4B4A60B5FAAC4AF24A2246"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3AC22820FDA8473EB4AC75A661CFD886"
@@ -530,6 +576,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_79D672AD94294C1A94BE576D1C3D9FCE"
+            {
+            "SourcePath" = "8:..\\AowEmailWrapper\\Icons\\cog.ico"
+            "TargetName" = "8:cog.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_505D1BE4ED4B4A60B5FAAC4AF24A2246"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_91D14D1227B0CA8C3F3AD6FA6647BA24"
             {
             "AssemblyRegister" = "3:1"
@@ -559,6 +625,37 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_987DDA8DBC524785AAAA6E10DE11046C"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:WrapperUninstallActions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_987DDA8DBC524785AAAA6E10DE11046C"
+                    {
+                    "Name" = "8:WrapperUninstallActions.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\AowEmailWrapper\\bin\\Release\\WrapperUninstallActions.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_505D1BE4ED4B4A60B5FAAC4AF24A2246"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AEB9F8056ED948ADB97F66AFB7932B70"
@@ -630,37 +727,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DFDBF93C8BB6490AAB1DBC596B5A282E"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:WrapperRegistryUninstall, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_DFDBF93C8BB6490AAB1DBC596B5A282E"
-                    {
-                    "Name" = "8:WrapperRegistryUninstall.exe"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\WrapperRegistryUninstall\\bin\\Release\\WrapperRegistryUninstall.exe"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_505D1BE4ED4B4A60B5FAAC4AF24A2246"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E2D7D8C6BD4B73A52424F9FBDCF5FE1B"
@@ -822,7 +888,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Age of Wonders Email Wrapper"
         "ProductCode" = "8:{05FF507D-E405-42FC-A8AE-0DBE7E8DA462}"
-        "PackageCode" = "8:{EC37785F-722E-46C5-9139-79D41077ACC9}"
+        "PackageCode" = "8:{807D4C57-F335-47C4-8C59-FEDE1F9217E2}"
         "UpgradeCode" = "8:{B2FCAA45-3BA8-43CA-9568-FA211E64A7AA}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
@@ -966,7 +1032,7 @@
             "Target" = "8:_0BC8DDC819B14E2191FB21B1062ED2AB"
             "Folder" = "8:_D8815BAF35674180A812E946F52079CF"
             "WorkingFolder" = "8:_505D1BE4ED4B4A60B5FAAC4AF24A2246"
-            "Icon" = "8:_F9289FA66390465FB2F37C73D15473EF"
+            "Icon" = "8:_79D672AD94294C1A94BE576D1C3D9FCE"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_980C7F8EB7184734A1BCA9F4197E17BA"
