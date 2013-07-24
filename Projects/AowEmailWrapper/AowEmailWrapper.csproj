@@ -375,6 +375,9 @@
     <None Include="Resources\imap-server.png" />
     <None Include="Resources\pop3-server.png" />
     <None Include="Resources\smtp_server.png" />
+    <None Include="uninstall.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Content Include="sent.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
