@@ -6,6 +6,7 @@ using System.Configuration.Install;
 using System.Linq;
 using System.IO;
 using Microsoft.Win32;
+using System.Windows.Forms;
 
 namespace WrapperUninstallActions
 {
@@ -24,6 +25,7 @@ namespace WrapperUninstallActions
         private const string AttachmentDirKeyName = "Attachment Directory";
         private const string SMTPServerKeyName = "SMTP Server";
         private const string StartupKeyName = "Age of Wonders Email Wrapper";
+        private const string RemoveWrapperConfigMessage = "Remove the Wrapper config files?";
 
         public Installer()
         {
@@ -66,11 +68,15 @@ namespace WrapperUninstallActions
                 }
             }
 
-            //Delete app data folder
-            DirectoryInfo AppDataFolder = new DirectoryInfo(Path.Combine(Environment.GetEnvironmentVariable(APPDATA_ENVIRONMENT_VARIABLE), APPDATA_Wrapper_Root));
-            if (AppDataFolder != null && AppDataFolder.Exists)
+            DialogResult removeConfig = MessageBox.Show(RemoveWrapperConfigMessage, StartupKeyName, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (removeConfig == DialogResult.Yes)
             {
-                AppDataFolder.Delete(true);
+                //Delete app data folder
+                DirectoryInfo AppDataFolder = new DirectoryInfo(Path.Combine(Environment.GetEnvironmentVariable(APPDATA_ENVIRONMENT_VARIABLE), APPDATA_Wrapper_Root));
+                if (AppDataFolder != null && AppDataFolder.Exists)
+                {
+                    AppDataFolder.Delete(true);
+                }
             }
 
             base.Uninstall(savedState);
