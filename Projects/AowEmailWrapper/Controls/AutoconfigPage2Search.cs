@@ -52,6 +52,8 @@ namespace AowEmailWrapper.Controls
 
         public void Reset()
         {
+            EnsureControlSequence();
+
             progressBar.Visible = true;
 
             groupBoxResult.Visible = false;
@@ -136,6 +138,17 @@ namespace AowEmailWrapper.Controls
                 AutoconfigWizardControl.SetChecked(senderCast, radioAutoconfigPage2Search1, radioAutoconfigPage2Search2, radioAutoconfigPage2Search3);
                 AutoconfigWizardControl.SetHighlight(senderCast);
             }
+        }
+
+        private void EnsureControlSequence()
+        {
+            this.SuspendLayout();
+            lblAutoconfigPage2SearchMessage.BringToFront();
+            progressBar.BringToFront();
+            groupBoxNext.BringToFront();
+            groupBoxResult.BringToFront();
+            panelManual.BringToFront();
+            this.ResumeLayout();
         }
     }
 }

@@ -66,6 +66,8 @@ namespace AowEmailWrapper.Controls
 
         public void Reset()
         {
+            EnsureControlSequence();
+
             radioAutoconfigPage3Select1.Checked = false;
             radioAutoconfigPage3Select2.Checked = false;
 
@@ -80,6 +82,12 @@ namespace AowEmailWrapper.Controls
                 AutoconfigWizardControl.SetChecked(senderCast, radioAutoconfigPage3Select1, radioAutoconfigPage3Select2);
                 AutoconfigWizardControl.SetHighlight(senderCast);
             }
+        }
+
+        private void EnsureControlSequence()
+        {
+            lblAutoconfigPage3ServerMessage.SendToBack();
+            groupBoxOptions.BringToFront();
         }
     }
 }

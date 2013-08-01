@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AutoconfigPage3Select));
             this.groupBoxOptions = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelOptionsInner = new System.Windows.Forms.Panel();
             this.panelRight = new System.Windows.Forms.Panel();
             this.lblAutoconfigPage3UserDecidesMessage = new System.Windows.Forms.Label();
             this.radioAutoconfigPage3Select2 = new System.Windows.Forms.RadioButton();
@@ -40,14 +40,14 @@
             this.radioAutoconfigPage3Select1 = new System.Windows.Forms.RadioButton();
             this.lblAutoconfigPage3ServerMessage = new System.Windows.Forms.Label();
             this.groupBoxOptions.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panelOptionsInner.SuspendLayout();
             this.panelRight.SuspendLayout();
             this.panelLeft.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxOptions
             // 
-            this.groupBoxOptions.Controls.Add(this.panel1);
+            this.groupBoxOptions.Controls.Add(this.panelOptionsInner);
             this.groupBoxOptions.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBoxOptions.Location = new System.Drawing.Point(0, 20);
             this.groupBoxOptions.Name = "groupBoxOptions";
@@ -56,15 +56,15 @@
             this.groupBoxOptions.TabStop = false;
             this.groupBoxOptions.Text = "Options";
             // 
-            // panel1
+            // panelOptionsInner
             // 
-            this.panel1.Controls.Add(this.panelRight);
-            this.panel1.Controls.Add(this.panelLeft);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(3, 16);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(449, 181);
-            this.panel1.TabIndex = 0;
+            this.panelOptionsInner.Controls.Add(this.panelRight);
+            this.panelOptionsInner.Controls.Add(this.panelLeft);
+            this.panelOptionsInner.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelOptionsInner.Location = new System.Drawing.Point(3, 16);
+            this.panelOptionsInner.Name = "panelOptionsInner";
+            this.panelOptionsInner.Size = new System.Drawing.Size(449, 181);
+            this.panelOptionsInner.TabIndex = 0;
             // 
             // panelRight
             // 
@@ -162,7 +162,7 @@
             this.Name = "AutoconfigPage3Select";
             this.Size = new System.Drawing.Size(455, 396);
             this.groupBoxOptions.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.panelOptionsInner.ResumeLayout(false);
             this.panelRight.ResumeLayout(false);
             this.panelLeft.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -172,7 +172,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBoxOptions;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelOptionsInner;
         private System.Windows.Forms.Panel panelRight;
         private System.Windows.Forms.Panel panelLeft;
         private FormBlockCombo fbServerPreference;
