@@ -1301,9 +1301,35 @@
 		<lookup key="lblLocalMessageStoreMessage" value="Utilizatorii clienţilor de email pentru Windows precum Outlook Express, Outlook, Mozilla Thunderbird, Eudora etc. trebuie să ţină cont că modul de operare implicit al protocolului POP3 este de a şterge mesajele de pe server odată cu descărcarea lor. Acest comportament va trebui modificat manual din cadrul clientului, astfel dând posibilitatea Wrapper-ului de a găsi mesajele pe server. Wrapper-ul nu va şterge niciodată mesajele de pe server."/>
 		<lookup key="cmdRedownload" value="Re-descărcare"/>
 		<lookup key="cmdClose" value="Închidere"/>
-		<lookup key="AccountsCreationForm" value="Creere cont nou"/>
+		<lookup key="AccountsCreationForm" value="Creare cont nou"/>
 		<lookup key="buttonCreate" value="&amp;Creere"/>
 		<lookup key="accountOther" value="Alte"/>
+		<lookup key="lblThunderbirdTitle" value="Baza de date Thunderbird"/>
+		<lookup key="lblAutoconfigHeaderMessage" value="Wizard-ul de autoconfigurare"/>
+		<lookup key="lblAutoconfigPage1WrapperMessage" value="Wrapper-ul este un client de email specializat și folosește aceleași setări de server pe care le folosesc alți clienți precum Outlook Express. Setările vor fi căutate într-o bază de date online, întreținută de Mozilla Foundation pentru clientul lor de email, Thunderbird. Baza de date este menținută la zi, ceea ce va asigura viitorul Wrapper-ului si îi oferă o precizie sporită în detectarea automată a propriilor dvs. setări de email."/>
+		<lookup key="lblAutoconfigPage1AuthMessage" value="Introduceți vă rog detaliile de autentificare ale contului de email."/>
+		<lookup key="lblAutoconfigPage2SearchMessage" value="Se caută setările online..."/>
+		<lookup key="groupBoxResult" value="Rezultat"/>
+		<lookup key="groupBoxNext" value="Ce urmează?"/>
+		<lookup key="radioAutoconfigPage2Search1" value="Incearcă Mx Lookup"/>
+		<lookup key="radioAutoconfigPage2Search2" value="Ghicire"/>
+		<lookup key="radioAutoconfigPage2Search3" value="Doresc să introduc manual setările"/>
+		<lookup key="lblAutoconfigPage2MxLookup" value="E posibil ca uneori serverul de email sa fie trecut in baza de date online sub un nume diferit adresei dvs de email. Dacă inițiem un Mx Lookup pe adresa dvs de email și apoi rulăm iar căutarea în baza de date, este foarte probabil să fie găsite setările corecte."/>
+		<lookup key="lblAutoconfigPage2Guess" value="Această variantă ar fi ultima opțiune. Aceasta va prezice numele serverului de email încercând să-l contacteze direct pe Internet, dar nu e garantat să funcționeze. Dacă nu funcționează, va fi nevoie să introduceți manual setările."/>
+		<lookup key="lblAutoconfigPage3ServerMessage" value="Vă rog specificați setările de server care urmează a fi folosite."/>
+		<lookup key="groupBoxOptions" value="Opțiuni"/>
+		<lookup key="radioAutoconfigPage3Select1" value="Permiteți Wrapper-ului să decidă (implicit)"/>
+		<lookup key="radioAutoconfigPage3Select2" value="Mod manual, doresc să aleg eu setările"/>
+		<lookup key="fbServerPreference" value="Preferință:"/>
+		<lookup key="serverPreferenceNoPreference" value="Fără preferință"/>
+		<lookup key="lblAutoconfigPage3WrapperDecidesMessage" value="Aceasta e cea mai sigură variantă pentru majoritatea utilizatorilor. Wrapper-ul va alege cele mai sigure servere bazat pe preferința de mai sus. Daca nu e setată nicio preferință, Wrapper-ul va alege IMAP mai degrabă decât POP3."/>
+		<lookup key="lblAutoconfigPage3UserDecidesMessage" value="Folosiți această opțiune dacă doriți control precis asupra căror setări autodetectate să fie utilizate."/>
+		<lookup key="ServerChoiceForm" value="Override manual"/>
+		<lookup key="groupBoxIncoming" value="Primire Email"/>
+		<lookup key="groupBoxOutgoing" value="Trimitere Email"/>
+		<lookup key="lblServerChoiceCheckBoxServer" value="Server:"/>
+		<lookup key="lblServerChoiceCheckBoxPort" value="Port:"/>
+		<lookup key="lblServerChoiceCheckBoxSocket" value="Tip SSL:"/>
 		<!-- END: Main forms -->
 		<!-- BEGIN: Messages -->
 		<lookup key="msgWrapperWriteAccess" value="Wrapper-ul nu are Write Access pentru următoarele directoare:&#xA;{0}&#xA;&#xA;Este necesară modificarea setărilor de securitate ale sistemului ori rularea Wrapper-ului ca Administrator."/>
@@ -1321,6 +1347,8 @@
 		<lookup key="msgWrapperGamesWaiting" value="Aveţi {0} jocuri în aşteptare."/>
 		<lookup key="msgInputEmailSettingsManual" value="Veţi introduce manual setările."/>
 		<lookup key="msgWrapperResendTo" value="Retrimiteţi:"/>
+		<lookup key="msgAutoconfigPage2Success" value="Setările au fost depistate. Dati click pe Inainte pentru continuare."/>
+		<lookup key="msgAutoconfigPage2Failed" value="Din păcate setările nu au fost găsite automat în baza de date. Alegeți vă rog una din variantele de mai jos."/>
 		<!-- END: Messages -->
 		<!-- BEGIN: Context Menus -->
 		<lookup key="menuItemShow" value="Afişare"/>
@@ -1352,6 +1380,10 @@
 		<lookup key="buttonOK" value="OK"/>
 		<lookup key="buttonCancel" value="Cancel"/>
 		<lookup key="buttonResend" value="Retrimiteţi"/>
+		<lookup key="cmdBack" value="&lt; Inapoi"/>
+		<lookup key="cmdNext" value="Inainte &gt;"/>
+		<lookup key="cmdCancel" value="Renunțare"/>
+		<lookup key="cmdFinish" value="Terminare"/>
 		<lookup key="activeAccount" value="Activ"/>
 		<lookup key="startUpAccount" value="Implicit"/>
 		<!-- END: Misc -->
