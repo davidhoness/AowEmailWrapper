@@ -758,6 +758,32 @@
 		<lookup key="AccountsCreationForm" value="Opret ny konto"/>
 		<lookup key="buttonCreate" value="&amp;Tilføj"/>
 		<lookup key="accountOther" value="Andet"/>
+		<lookup key="lblThunderbirdTitle" value="Thunderbird Database"/>
+		<lookup key="lblAutoconfigHeaderMessage" value="Autoconfig Wizard"/>
+		<lookup key="lblAutoconfigPage1WrapperMessage" value="Wrapper'en er en specialiseret email-klient, og den bruger de samme server-indstillinger, som du ville bruge i programmer som Outlook Express. Den bruger en online-database til at finde disse indstillinger til din email-konto. Databasen vedligeholdes af Mozilla Foundation, som bruger den til deres email-klient kaldet Thunderbird. De holder databasen opdateret, og dette forsyner Wrapper'en med en betydelig langtidsholdbarhed og rigtig gode chancer for automatisk at finde dine email-indstillinger."/>
+		<lookup key="lblAutoconfigPage1AuthMessage" value="Indtast venligst autentificeringsdetaljerne for din email-konto."/>
+		<lookup key="lblAutoconfigPage2SearchMessage" value="Søger online efter dine email-indstillinger..."/>
+		<lookup key="groupBoxResult" value="Resultat"/>
+		<lookup key="groupBoxNext" value="Og så hvad?"/>
+		<lookup key="radioAutoconfigPage2Search1" value="Prøv Mx Lookup"/>
+		<lookup key="radioAutoconfigPage2Search2" value="Prøv at gætte"/>
+		<lookup key="radioAutoconfigPage2Search3" value="Manuel tilsidesættelse. Lad mig selv indtaste indstillingerne"/>
+		<lookup key="lblAutoconfigPage2MxLookup" value="Nogle gange er din email-server opført i online-databasen under et andet server-navn end din email-adresse. Hvis vi udfører en Mx Lookup på din email-adresse og så udfører databasesøgningen igen, så kan det ofte finde de korrekte indstillinger."/>
+		<lookup key="lblAutoconfigPage2Guess" value="Brug dette som sidste mulighed. Det vil forudsige navnet på din email-server ved at forsøge at kontakte dem direkte over Internettet. Der er ikke nogen garanti for, at det virker. Hvis det mislykkes, så kan du blive nødt til at indtaste indstillingerne manuelt."/>
+		<lookup key="lblAutoconfigPage3ServerMessage" value="Angiv venligst hvilke server-indstillinger der skal bruges."/>
+		<lookup key="groupBoxOptions" value="Indstillinger"/>
+		<lookup key="radioAutoconfigPage3Select1" value="Lad Wrapper'en afgøre det (standard)"/>
+		<lookup key="radioAutoconfigPage3Select2" value="Manuel tilsidesættelse. Vis indstillingerne så jeg kan vælge"/>
+		<lookup key="fbServerPreference" value="Indstilling:"/>
+		<lookup key="serverPreferenceNoPreference" value="Ingen indstilling"/>
+		<lookup key="lblAutoconfigPage3WrapperDecidesMessage" value="Dette er det sikreste valg for de fleste brugere. Det vil instruere Wrapper'en om at vælge de mest sikre servere baseret på indstillingerne ovenfor. Hvis der ikke forefindes nogen indstilling, så vil Wrapper'en i valgsituationer vælge IMAP-servere fremfor POP3."/>
+		<lookup key="lblAutoconfigPage3UserDecidesMessage" value="Brug denne indstilling hvis du vil have præcis kontrol over hvilke automatisk opfangede indstillinger, Wrapper'en skal bruge."/>
+		<lookup key="ServerChoiceForm" value="Manuel tilsidesættelse"/>
+		<lookup key="groupBoxIncoming" value="Indgående email"/>
+		<lookup key="groupBoxOutgoing" value="Udgående email"/>
+		<lookup key="lblServerChoiceCheckBoxServer" value="Server:"/>
+		<lookup key="lblServerChoiceCheckBoxPort" value="Port:"/>
+		<lookup key="lblServerChoiceCheckBoxSocket" value="SSL-type:"/>
 		<!-- END: Main forms -->
 		<!-- BEGIN: Messages -->
 		<lookup key="msgWrapperWriteAccess" value="Wrapper'en har ikke skriveadgang til følgende mappe(r):&#xA;{0}&#xA;&#xA;Juster venligst dine sikkerhedsindstillinger eller kør Wrapper'en som Administrator."/>
@@ -775,6 +801,8 @@
 		<lookup key="msgWrapperGamesWaiting" value="Du har {0} spil der venter."/>
 		<lookup key="msgInputEmailSettingsManual" value="Du vil angive indstillingerne manuelt."/>
 		<lookup key="msgWrapperResendTo" value="Gensend:"/>
+		<lookup key="msgAutoconfigPage2Success" value="Succes. Email-indstillinger fundet. Vælg “Næste” for at fortsætte."/>
+		<lookup key="msgAutoconfigPage2Failed" value="Ingen succes. Der blev ikke fundet nogen email-indstillinger i online-databasen. Vælg venligst en af nedenstående muligheder."/>
 		<!-- END: Messages -->
 		<!-- BEGIN: Context Menus -->
 		<lookup key="menuItemShow" value="Vis"/>
@@ -804,6 +832,10 @@
 		<!-- BEGIN: Misc -->
 		<lookup key="buttonCancel" value="Annuller"/>
 		<lookup key="buttonResend" value="Gensend"/>
+		<lookup key="cmdBack" value="&lt; Tilbage"/>
+		<lookup key="cmdNext" value="Næste &gt;"/>
+		<lookup key="cmdCancel" value="Afbryd"/>
+		<lookup key="cmdFinish" value="Afslut"/>
 		<lookup key="activeAccount" value="Aktiv"/>
 		<lookup key="startUpAccount" value="Standard"/>
 		<!-- END: Misc -->
