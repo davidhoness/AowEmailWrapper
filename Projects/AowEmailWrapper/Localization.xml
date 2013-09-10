@@ -642,6 +642,32 @@
 		<lookup key="AccountsCreationForm" value="Maak nieuw account"/>
 		<lookup key="buttonCreate" value="&amp;Creëren"/>
 		<lookup key="accountOther" value="Ander"/>
+		<lookup key="lblThunderbirdTitle" value="Thunderbird Database"/>
+		<lookup key="lblAutoconfigHeaderMessage" value="Autoconfiguratie Wizard"/>
+		<lookup key="lblAutoconfigPage1WrapperMessage" value="De 'Wrapper' is een email client die dezelfde server instellingen gebruikt als voor programma's zoals Outlook Express. Een online database wordt gebruikt om deze instellingen te vinden voor jouw email account. Deze database is beheerd door de Mozilla Foundation die het ook gebruiken voor de bekende 'Thunderbird' email client.  Ze houden deze database up to date en dit heeft het enorme voordeel dat de Wrapper flexibel kan inspelen op veranderingen en daardoor altijd automatisch de email instellingen kan bepalen."/>
+		<lookup key="lblAutoconfigPage1AuthMessage" value="Verleen hier aub de details voor toegang tot uw email account."/>
+		<lookup key="lblAutoconfigPage2SearchMessage" value="Uw email instellingen worden online gezocht..."/>
+		<lookup key="groupBoxResult" value="Resultaat"/>
+		<lookup key="groupBoxNext" value="Wat volgt?"/>
+		<lookup key="radioAutoconfigPage2Search1" value="Probeer Mx Lookup"/>
+		<lookup key="radioAutoconfigPage2Search2" value="Waag een gok"/>
+		<lookup key="radioAutoconfigPage2Search3" value="Laat me de instellingen zelf doen"/>
+		<lookup key="lblAutoconfigPage2MxLookup" value="Soms is uw email server geregistreerd in de online database onder een andere naam dan uw email address. Een oplossing is nogmaals een Mx Lookup uitvoeren op uw email address."/>
+		<lookup key="lblAutoconfigPage2Guess" value="Gebruik deze optie als laatste. Dit zal de naam van uw email server voorspellen door deze direct to bereiken via het internet. Als dit niet werkt, dan zal u de instellingen zelf moeten doen."/>
+		<lookup key="lblAutoconfigPage3ServerMessage" value="Specificeer Server instellingen."/>
+		<lookup key="groupBoxOptions" value="Opties"/>
+		<lookup key="radioAutoconfigPage3Select1" value="Laat de 'Wrapper' beslissen (Standaard)"/>
+		<lookup key="radioAutoconfigPage3Select2" value="Laat de instellingen zien zodat ik zelf kan kiezen"/>
+		<lookup key="fbServerPreference" value="Voorkeur:"/>
+		<lookup key="serverPreferenceNoPreference" value="Geen voorkeur"/>
+		<lookup key="lblAutoconfigPage3WrapperDecidesMessage" value="Dit is de veiligste optie voor de meeste gebruikers. De Wrapper zal de meest  veilige servers kiezen gebaseerd op de voorkeur hierboven. Als geen voorkeur is gegeven, de 'Wrapper' zal IMAP servers gebruiken in plaats van POP3."/>
+		<lookup key="lblAutoconfigPage3UserDecidesMessage" value="Gebruik deze optie als je volledige controle wilt over de auto-detect instellingen voor de 'Wrapper'."/>
+		<lookup key="ServerChoiceForm" value="Manual override"/>
+		<lookup key="groupBoxIncoming" value="Inkomende email"/>
+		<lookup key="groupBoxOutgoing" value="Uitgaande email"/>
+		<lookup key="lblServerChoiceCheckBoxServer" value="Server:"/>
+		<lookup key="lblServerChoiceCheckBoxPort" value="Poort:"/>
+		<lookup key="lblServerChoiceCheckBoxSocket" value="SSL Type:"/>
 		<!-- END: Main forms -->
 		<!-- BEGIN: Messages -->
 		<lookup key="msgWrapperWriteAccess" value="De wrapper heeft geen toestemming tot deze folders: &#xA;{0}&#xA;&#xA; Verander aub uw beveiligings instellingen, of run de Wrapper als Administrator. "/>
@@ -659,6 +685,8 @@
 		<lookup key="msgWrapperGamesWaiting" value="Je hebt {0} game(s) wachten."/>
 		<lookup key="msgInputEmailSettingsManual" value="Instellingen zelf invoeren."/>
 		<lookup key="msgWrapperResendTo" value="Verzend opnieuw:"/>
+		<lookup key="msgAutoconfigPage2Success" value="Success, email instellingen gevonden. Klik 'volgende' om verder te gaan."/>
+		<lookup key="msgAutoconfigPage2Failed" value="Onsuccessvol, geen email instellingen gevonden in de online databases. Kies aub uit de opties hieronder."/>
 		<!-- END: Messages -->
 		<!-- BEGIN: Context Menus -->
 		<lookup key="menuItemShow" value="Show"/>
@@ -694,6 +722,10 @@
 		<lookup key="buttonOK" value="Ok"/>
 		<lookup key="buttonCancel" value="Cancel"/>
 		<lookup key="buttonResend" value="Verzend opnieuw"/>
+		<lookup key="cmdBack" value="&lt; Terug"/>
+		<lookup key="cmdNext" value="Volgend &gt;"/>
+		<lookup key="cmdCancel" value="Cancel"/>
+		<lookup key="cmdFinish" value="Klaar"/>
 		<lookup key="activeAccount" value="Actief"/>
 		<lookup key="startUpAccount" value="Default"/>
 		<!-- END: Misc -->
