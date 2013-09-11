@@ -580,40 +580,40 @@
 		<!-- BEGIN: Main forms -->
 		<lookup key="tabAccounts" value="Accounts"/>
 		<lookup key="panelTopHalflistViewAccounts0" value="Account"/>
-		<lookup key="panelTopHalflistViewAccounts1" value="Email adres"/>
+		<lookup key="panelTopHalflistViewAccounts1" value="E-mailadres"/>
 		<lookup key="panelTopHalflistViewAccounts2" value="Default"/>
 		<lookup key="buttonActivate" value="Activeer"/>
 		<lookup key="buttonSetStartUp" value="Gebruik als Default"/>
 		<lookup key="buttonRename" value="Hernoem"/>
 		<lookup key="buttonRemove" value="Verwijder"/>
 		<lookup key="buttonAdd" value="Nieuw toevoegen"/>
-		<lookup key="tabIncoming" value="Inkomende Email"/>
-		<lookup key="cmdMessageStore" value="Toon POP3 email"/>
-		<lookup key="groupBoxEmailSelection" value="Email Attachment Downloaden"/>
-		<lookup key="fbPollingSetup" value="Check voor email"/>
+		<lookup key="tabIncoming" value="Inkomende E-mail"/>
+		<lookup key="cmdMessageStore" value="Toon POP3 e-mail"/>
+		<lookup key="groupBoxEmailSelection" value="E-mail Attachment Downloaden"/>
+		<lookup key="fbPollingSetup" value="Check voor e-mail"/>
 		<lookup key="fbPollingSetup_every" value="elke:"/>
 		<lookup key="groupBoxAuth" value="Authentificatie Details"/>
-		<lookup key="fbPassword" value="Paswoord:"/>
+		<lookup key="fbPassword" value="Wachtwoord:"/>
 		<lookup key="fbUserName" value="User naam:"/>
 		<lookup key="groupBoxServer" value="Server"/>
 		<lookup key="fbUseSSL" value="Gebruik SSL:"/>
 		<lookup key="fbPort" value="Poort:"/>
 		<lookup key="fbServer" value="Server:"/>
-		<lookup key="fbEmailType" value="Email type:"/>
-		<lookup key="tabOutgoing" value="Uitgaande Email"/>
+		<lookup key="fbEmailType" value="E-mail type:"/>
+		<lookup key="tabOutgoing" value="Uitgaande E-mail"/>
 		<lookup key="fbUsePolling" value="Gebruik doorzoek credenties:"/>
 		<lookup key="groupBoxServer" value="Server"/>
 		<lookup key="fbBccMyself" value="BCC mezelf:"/>
 		<lookup key="fbAuthentication" value="Authentificatie Noodzakelijk:"/>
 		<lookup key="fbSSLType" value="SSL type:"/>
-		<lookup key="fbEmailAddress" value="Email adres:"/>
+		<lookup key="fbEmailAddress" value="E-mailadres:"/>
 		<lookup key="fbSmtpServer" value="Smtp Server:"/>
 		<lookup key="tabPreferences" value="Instellingen"/>
 		<lookup key="fbSaveFolder" value="Download Folder:"/>
 		<lookup key="groupBoxPreferences" value="Instellingen"/>
 		<lookup key="fbAutostart" value="Autostart met Windows:"/>
-		<lookup key="fbSentSound" value="Email verzonden geluid:"/>
-		<lookup key="fbEmailSound" value="Email gedownload geluid:"/>
+		<lookup key="fbSentSound" value="E-mail verzonden geluid:"/>
+		<lookup key="fbEmailSound" value="E-mail gedownload geluid:"/>
 		<lookup key="fbLocalization" value="Taal:"/>
 		<lookup key="fbCopyToEmailOut" value="Copieer naar Emailout folder na verzenden:"/>
 		<lookup key="fbGameWrapperDataPort" value="Spel om Wrapper data poort:"/>
@@ -628,43 +628,43 @@
 		<lookup key="groupTranslators" value="Vertalers"/>
 		<lookup key="groupCodeContributors" value="Bijdragen"/>
 		<lookup key="groupAuthors" value="Auteurs"/>
-		<lookup key="lblNotice" value="De Age of Wonders Email Wrapper is een gratis programma om play by email voor alle drie AoW© games te automatiseren. Het wordt niet door Triumph Studios© ondersteund.  Het is een persoonlijk project waar de auteur geen voordeel mee wil behalen anders dan het besparen van tijd bij het versturen van turns en het vergroten van speelplezier. Het komt zonder verzekering van technische ondersteuning, alhoewel dit waarschijnlijk wel wordt verleend als je het netjes vraagt."/>
+		<lookup key="lblNotice" value="De Age of Wonders Email Wrapper is een gratis programma om play by e-mail voor alle drie AoW© games te automatiseren. Het wordt niet door Triumph Studios© ondersteund.  Het is een persoonlijk project waar de auteur geen voordeel mee wil behalen anders dan het besparen van tijd bij het versturen van turns en het vergroten van speelplezier. Het komt zonder verzekering van technische ondersteuning, alhoewel dit waarschijnlijk wel wordt verleend als je het netjes vraagt."/>
 		<lookup key="cmdSave" value="Bewaar instellingen"/>
-		<lookup key="MessageStore" value="POP3 email ({0} on {1})"/>
+		<lookup key="MessageStore" value="POP3 e-mail ({0} on {1})"/>
 		<lookup key="messageStoreListlistView0" value="From"/>
 		<lookup key="messageStoreListlistView1" value="Subject"/>
 		<lookup key="messageStoreListlistView2" value="Datum"/>
 		<lookup key="messageStoreListlistView3" value="File naam"/>
 		<lookup key="messageStoreListlistView4" value="Ticks"/>
-		<lookup key="lblLocalMessageStoreMessage" value="Gebruikers die clients gebruiken die op Windows zijn gebaseerd zoals Outlook Express, Outlook, Mozilla Thunderbird, Eudora, etc… moeten weten dat het standaard gedrag voor POP3 toegang is om berichten te verwijderen van de server nadat ze gedownload zijn. Je moet een optie veranderen om je client te vertellen de verichten op de server te laten zodat de Wrapper ze kan vinden. De wrapper zal altijd berichten op de server achterlaten zodat je email client ze ook kan vinden. "/>
+		<lookup key="lblLocalMessageStoreMessage" value="Gebruikers die clients gebruiken die op Windows zijn gebaseerd zoals Outlook Express, Outlook, Mozilla Thunderbird, Eudora, etc… moeten weten dat het standaard gedrag voor POP3 toegang is om berichten te verwijderen van de server nadat ze gedownload zijn. Je moet een optie veranderen om je client te vertellen de verichten op de server te laten zodat de Wrapper ze kan vinden. De wrapper zal altijd berichten op de server achterlaten zodat je e-mail client ze ook kan vinden. "/>
 		<lookup key="cmdRedownload" value="Opnieuw Downloaden"/>
 		<lookup key="cmdClose" value="Sluiten"/>
-		<lookup key="AccountsCreationForm" value="Maak nieuw account"/>
+		<lookup key="AccountsCreationForm" value="Creëer een nieuw account"/>
 		<lookup key="buttonCreate" value="&amp;Creëren"/>
 		<lookup key="accountOther" value="Ander"/>
 		<lookup key="lblThunderbirdTitle" value="Thunderbird Database"/>
 		<lookup key="lblAutoconfigHeaderMessage" value="Autoconfiguratie Wizard"/>
-		<lookup key="lblAutoconfigPage1WrapperMessage" value="De 'Wrapper' is een email client die dezelfde server instellingen gebruikt als voor programma's zoals Outlook Express. Een online database wordt gebruikt om deze instellingen te vinden voor jouw email account. Deze database is beheerd door de Mozilla Foundation die het ook gebruiken voor de bekende 'Thunderbird' email client.  Ze houden deze database up to date en dit heeft het enorme voordeel dat de Wrapper flexibel kan inspelen op veranderingen en daardoor altijd automatisch de email instellingen kan bepalen."/>
-		<lookup key="lblAutoconfigPage1AuthMessage" value="Verleen hier aub de details voor toegang tot uw email account."/>
-		<lookup key="lblAutoconfigPage2SearchMessage" value="Uw email instellingen worden online gezocht..."/>
+		<lookup key="lblAutoconfigPage1WrapperMessage" value="De 'Wrapper' is een e-mail client die dezelfde server instellingen gebruikt als voor programma's zoals Outlook Express. Een online database wordt gebruikt om deze instellingen te vinden voor jouw e-mail account. Deze database wordt beheerd door de Mozilla Foundation die het ook gebruikt voor de bekende 'Thunderbird' e-mail client.  Ze houden deze database up to date en dit heeft als enorm voordeel dat de Wrapper flexibel kan inspelen op veranderingen en daardoor altijd automatisch de e-mail instellingen kan bepalen."/>
+		<lookup key="lblAutoconfigPage1AuthMessage" value="Verleen hier alstublieft de details voor toegang tot uw e-mail account."/>
+		<lookup key="lblAutoconfigPage2SearchMessage" value="Uw e-mail instellingen worden online gezocht..."/>
 		<lookup key="groupBoxResult" value="Resultaat"/>
-		<lookup key="groupBoxNext" value="Wat volgt?"/>
+		<lookup key="groupBoxNext" value="Wat nu?"/>
 		<lookup key="radioAutoconfigPage2Search1" value="Probeer Mx Lookup"/>
 		<lookup key="radioAutoconfigPage2Search2" value="Waag een gok"/>
-		<lookup key="radioAutoconfigPage2Search3" value="Laat me de instellingen zelf doen"/>
-		<lookup key="lblAutoconfigPage2MxLookup" value="Soms is uw email server geregistreerd in de online database onder een andere naam dan uw email address. Een oplossing is nogmaals een Mx Lookup uitvoeren op uw email address."/>
-		<lookup key="lblAutoconfigPage2Guess" value="Gebruik deze optie als laatste. Dit zal de naam van uw email server voorspellen door deze direct to bereiken via het internet. Als dit niet werkt, dan zal u de instellingen zelf moeten doen."/>
+		<lookup key="radioAutoconfigPage2Search3" value="Laat me de instellingen handmatig invoeren"/>
+		<lookup key="lblAutoconfigPage2MxLookup" value="Soms is uw e-mail server geregistreerd in de online database onder een andere naam dan uw e-mail address. Een oplossing is een Mx Lookup uitvoeren op uw e-mail address."/>
+		<lookup key="lblAutoconfigPage2Guess" value="Gebruik deze optie als laatste. Deze zal de naam van uw e-mail server voorspellen door deze direct to bereiken via het internet. Als dit niet werkt, dan zult u de instellingen handmatig moeten invoeren."/>
 		<lookup key="lblAutoconfigPage3ServerMessage" value="Specificeer Server instellingen."/>
 		<lookup key="groupBoxOptions" value="Opties"/>
 		<lookup key="radioAutoconfigPage3Select1" value="Laat de 'Wrapper' beslissen (Standaard)"/>
 		<lookup key="radioAutoconfigPage3Select2" value="Laat de instellingen zien zodat ik zelf kan kiezen"/>
 		<lookup key="fbServerPreference" value="Voorkeur:"/>
 		<lookup key="serverPreferenceNoPreference" value="Geen voorkeur"/>
-		<lookup key="lblAutoconfigPage3WrapperDecidesMessage" value="Dit is de veiligste optie voor de meeste gebruikers. De Wrapper zal de meest  veilige servers kiezen gebaseerd op de voorkeur hierboven. Als geen voorkeur is gegeven, de 'Wrapper' zal IMAP servers gebruiken in plaats van POP3."/>
-		<lookup key="lblAutoconfigPage3UserDecidesMessage" value="Gebruik deze optie als je volledige controle wilt over de auto-detect instellingen voor de 'Wrapper'."/>
+		<lookup key="lblAutoconfigPage3WrapperDecidesMessage" value="Dit is de veiligste optie voor de meeste gebruikers. De Wrapper zal de meest  veilige servers kiezen gebaseerd op de hierboven aangegeven voorkeur. De wrapper zal IMAP servers gebruiken in plaats van POP3 als er geen voorkeur is opgegeven."/>
+		<lookup key="lblAutoconfigPage3UserDecidesMessage" value="Gebruik deze optie als je volledige controle wilt hebben over de automatische detectie instellingen voor de 'Wrapper'."/>
 		<lookup key="ServerChoiceForm" value="Manual override"/>
-		<lookup key="groupBoxIncoming" value="Inkomende email"/>
-		<lookup key="groupBoxOutgoing" value="Uitgaande email"/>
+		<lookup key="groupBoxIncoming" value="Inkomende e-mail"/>
+		<lookup key="groupBoxOutgoing" value="Uitgaande e-mail"/>
 		<lookup key="lblServerChoiceCheckBoxServer" value="Server:"/>
 		<lookup key="lblServerChoiceCheckBoxPort" value="Poort:"/>
 		<lookup key="lblServerChoiceCheckBoxSocket" value="SSL Type:"/>
@@ -677,7 +677,7 @@
 		<lookup key="msgAccountDeletePrompt" value="Ben je zeker dat je de account wilt verwijderen: {0} ?"/>
 		<lookup key="msgAccountDuplicate" value="Een account met deze naam bestaat al. Kiest u aub een andere naam."/>
 		<lookup key="msgWrapperEmailSentSuccess" value="[{0}] succesvol verzonden."/>
-		<lookup key="msgWrapperEmailSentFailed" value="Error bij het verzenden van Email: {0}.&#xA;To: {1}"/>
+		<lookup key="msgWrapperEmailSentFailed" value="Error bij het verzenden van E-mail: {0}.&#xA;To: {1}"/>
 		<lookup key="msgEmailInSelected" value="Gebruik aub Scenario &gt; Email &gt; Load Game"/>
 		<lookup key="msgSaveSelected" value="Gebruik aub Load Game van main menu"/>
 		<lookup key="msgWrapperRestartRequired" value="Herstart de Wrapper om deze veranderingen in effect te laten gaan, aub."/>
@@ -685,8 +685,8 @@
 		<lookup key="msgWrapperGamesWaiting" value="Je hebt {0} game(s) wachten."/>
 		<lookup key="msgInputEmailSettingsManual" value="Instellingen zelf invoeren."/>
 		<lookup key="msgWrapperResendTo" value="Verzend opnieuw:"/>
-		<lookup key="msgAutoconfigPage2Success" value="Success, email instellingen gevonden. Klik 'volgende' om verder te gaan."/>
-		<lookup key="msgAutoconfigPage2Failed" value="Onsuccessvol, geen email instellingen gevonden in de online databases. Kies aub uit de opties hieronder."/>
+		<lookup key="msgAutoconfigPage2Success" value="Success, e-mail instellingen gevonden. Klik op volgende om verder te gaan."/>
+		<lookup key="msgAutoconfigPage2Failed" value="Mislukt, geen e-mail instellingen gevonden in de online databases. Kies aub uit de opties hieronder."/>
 		<!-- END: Messages -->
 		<!-- BEGIN: Context Menus -->
 		<lookup key="menuItemShow" value="Show"/>
@@ -710,7 +710,7 @@
 		<lookup key="enumTLS" value="TLS"/>
 		<lookup key="enumSending" value="Zenden"/>
 		<lookup key="enumChecking" value="Checking"/>
-		<lookup key="enumEmailWaiting" value="Email ontvangen"/>
+		<lookup key="enumEmailWaiting" value="E-mail ontvangen"/>
 		<lookup key="enumNew" value="Nieuw"/>
 		<lookup key="enumReceived" value="Ontvangen"/>
 		<lookup key="enumSent" value="Verzonden"/>
@@ -720,11 +720,11 @@
 		<!-- END: Enumerations -->
 		<!-- BEGIN: Misc -->
 		<lookup key="buttonOK" value="Ok"/>
-		<lookup key="buttonCancel" value="Cancel"/>
+		<lookup key="buttonCancel" value="Annuleren"/>
 		<lookup key="buttonResend" value="Verzend opnieuw"/>
 		<lookup key="cmdBack" value="&lt; Terug"/>
-		<lookup key="cmdNext" value="Volgend &gt;"/>
-		<lookup key="cmdCancel" value="Cancel"/>
+		<lookup key="cmdNext" value="Volgende &gt;"/>
+		<lookup key="cmdCancel" value="Annuleren"/>
 		<lookup key="cmdFinish" value="Klaar"/>
 		<lookup key="activeAccount" value="Actief"/>
 		<lookup key="startUpAccount" value="Default"/>
