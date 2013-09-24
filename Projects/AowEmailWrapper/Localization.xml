@@ -722,7 +722,7 @@
 		<lookup key="buttonOK" value="Ok"/>
 		<lookup key="buttonCancel" value="Annuleren"/>
 		<lookup key="buttonResend" value="Verzend opnieuw"/>
-		<lookup key="cmdBack" value="&lt; Terug"/>
+		<lookup key="cmdBack" value="&lt; Vorige"/>
 		<lookup key="cmdNext" value="Volgende &gt;"/>
 		<lookup key="cmdCancel" value="Annuleren"/>
 		<lookup key="cmdFinish" value="Klaar"/>
@@ -1096,6 +1096,32 @@
 		<lookup key="AccountsCreationForm" value="Utwórz nowe konto"/>
 		<lookup key="buttonCreate" value="&amp;Utwórz"/>
 		<lookup key="accountOther" value="Inne"/>
+		<lookup key="lblThunderbirdTitle" value="Baza danych Thunderbird"/>
+		<lookup key="lblAutoconfigHeaderMessage" value="Kreator autokonfiguracji"/>
+		<lookup key="lblAutoconfigPage1WrapperMessage" value="Wrapper jest specjalistycznym klientem poczty, który używa tych samych ustawień serwera, których używa się dla programów takich jak Outlook Express. Baza danych do apliakcji utoworzona jest przez Fundację Mozilla, która używa jej we własnym kliencie poczty - Thunderbird. Baza ta jest stale aktualizowana, co pozwala aplikacji Wrapper na skuteczne automatyczne wykrywanie ustawień poczty."/>
+		<lookup key="lblAutoconfigPage1AuthMessage" value="Proszę podać dane identyfikacyjne dla konta e-mail."/>
+		<lookup key="lblAutoconfigPage2SearchMessage" value="Wyszukiwanie ustawień poczty w trybie online..."/>
+		<lookup key="groupBoxResult" value="Rezultat"/>
+		<lookup key="groupBoxNext" value="Co dalej?"/>
+		<lookup key="radioAutoconfigPage2Search1" value="Spróbuj wyszukiwania MX"/>
+		<lookup key="radioAutoconfigPage2Search2" value="Spróbuj zgadnąć"/>
+		<lookup key="radioAutoconfigPage2Search3" value="Ręczne wprowadzanie, pozwól mi samodzielnie wprowadzić ustawienia"/>
+		<lookup key="lblAutoconfigPage2MxLookup" value="Czasami serwer poczty figuruje w internetowej bazie danych pod inną nazwą, niż twój adres e-mail. Jeśli użyjemy wyszukiwania MX i następnie uruchomimy jeszcze raz wyszukiwanie bazy danych to mogą być znalezione wtedy  poprawne ustawienia."/>
+		<lookup key="lblAutoconfigPage2Guess" value="Użyj tej opcji tylko w ostateczności. Pozwoli to odnaleźć nazwę serwera poczty e-mail, poprzez probę połączenia się  bezpośrednio przez Internet. Na to jednak nie ma gwarancji sukcesu. Jeśli to się nie uda może trzeba będzie wprowadzić ustawienia ręcznie."/>
+		<lookup key="lblAutoconfigPage3ServerMessage" value="Sprecyzuj, które ustawienia serwera powinny być użyte."/>
+		<lookup key="groupBoxOptions" value="Opcje"/>
+		<lookup key="radioAutoconfigPage3Select1" value="Pozwól aplikacji Wrapper zdecydować (domyślne)"/>
+		<lookup key="radioAutoconfigPage3Select2" value="Ręczne wprowadzanie, pokaż ustawienia, żebym mógł wybrać"/>
+		<lookup key="fbServerPreference" value="Preferencje:"/>
+		<lookup key="serverPreferenceNoPreference" value="Brak preferencji"/>
+		<lookup key="lblAutoconfigPage3WrapperDecidesMessage" value="To jest najbezpieczniejsza opcja dla większości użytkowników. Poleci ona aplikacji Wrapper wybrać najlepiej zabezpieczone serwery bazując na powyższych preferencjach. Jeśli nie ma ustawionych preferencji Wrapper wybierze serwery IMAP nad serwerami POP3."/>
+		<lookup key="lblAutoconfigPage3UserDecidesMessage" value="Użyj tej opcji jeśli chcesz kontrolować to, które automatycznie wykryte ustawienia powinny być użyte przez aplikację Wrapper."/>
+		<lookup key="ServerChoiceForm" value="Ręczne wprowadzanie"/>
+		<lookup key="groupBoxIncoming" value="Poczta wchodząca"/>
+		<lookup key="groupBoxOutgoing" value="Poczta wychodząca"/>
+		<lookup key="lblServerChoiceCheckBoxServer" value="Serwer:"/>
+		<lookup key="lblServerChoiceCheckBoxPort" value="Port:"/>
+		<lookup key="lblServerChoiceCheckBoxSocket" value="Rodzaj SSL:"/>
 		<!-- END: Main forms -->
 		<!-- BEGIN: Messages -->
 		<lookup key="msgWrapperWriteAccess" value="Wrapper nie ma dostępu do zapisu dla następujących folderów: &#xA;{0}&#xA;&#xA; Proszę zmienić ustawienia bezpieczeństwa systemu lub uruchamiać program jako Administrator."/>
@@ -1113,6 +1139,8 @@
 		<lookup key="msgWrapperGamesWaiting" value="Liczba oczekujących gier: {0}."/>
 		<lookup key="msgInputEmailSettingsManual" value="Ustawienia trzeba wprowadzić ręcznie."/>
 		<lookup key="msgWrapperResendTo" value="Wyślij ponownie do:"/>
+		<lookup key="msgAutoconfigPage2Success" value="Sukces, znaleziono ustawienia poczty. Wciśnij 'Dalej', żeby kontynuować."/>
+		<lookup key="msgAutoconfigPage2Failed" value="Nie znaleziono ustawień poczty w internetowej bazie danych. Wybierz jedną z poniższych opcji."/>
 		<!-- END: Messages -->
 		<!-- BEGIN: Context Menus -->
 		<lookup key="menuItemShow" value="Pokaż"/>
@@ -1144,6 +1172,10 @@
 		<lookup key="buttonOK" value="OK"/>
 		<lookup key="buttonCancel" value="Anuluj"/>
 		<lookup key="buttonResend" value="Wyślij ponownie"/>
+		<lookup key="cmdBack" value="&lt; Cofnij"/>
+		<lookup key="cmdNext" value="Dalej &gt;"/>
+		<lookup key="cmdCancel" value="Anuluj"/>
+		<lookup key="cmdFinish" value="Zakończ"/>
 		<lookup key="activeAccount" value="Aktywne"/>
 		<lookup key="startUpAccount" value="Domyślne"/>
 		<!-- END: Misc -->
