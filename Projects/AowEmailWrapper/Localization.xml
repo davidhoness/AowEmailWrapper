@@ -1098,7 +1098,7 @@
 		<lookup key="accountOther" value="Inne"/>
 		<lookup key="lblThunderbirdTitle" value="Baza danych Thunderbird"/>
 		<lookup key="lblAutoconfigHeaderMessage" value="Kreator autokonfiguracji"/>
-		<lookup key="lblAutoconfigPage1WrapperMessage" value="Wrapper jest specjalistycznym klientem poczty, który używa tych samych ustawień serwera, których używa się dla programów takich jak Outlook Express. Baza danych do apliakcji utoworzona jest przez Fundację Mozilla, która używa jej we własnym kliencie poczty - Thunderbird. Baza ta jest stale aktualizowana, co pozwala aplikacji Wrapper na skuteczne automatyczne wykrywanie ustawień poczty."/>
+		<lookup key="lblAutoconfigPage1WrapperMessage" value="Wrapper jest specjalistycznym klientem poczty, który używa tych samych ustawień serwera, których używa się dla programów takich jak Outlook Express. Baza danych do aplikacji utworzona jest przez Fundację Mozilla, która używa jej we własnym kliencie poczty - Thunderbird. Baza ta jest stale aktualizowana, co pozwala aplikacji Wrapper na skuteczne automatyczne wykrywanie ustawień poczty."/>
 		<lookup key="lblAutoconfigPage1AuthMessage" value="Proszę podać dane identyfikacyjne dla konta e-mail."/>
 		<lookup key="lblAutoconfigPage2SearchMessage" value="Wyszukiwanie ustawień poczty w trybie online..."/>
 		<lookup key="groupBoxResult" value="Rezultat"/>
@@ -1107,17 +1107,17 @@
 		<lookup key="radioAutoconfigPage2Search2" value="Spróbuj zgadnąć"/>
 		<lookup key="radioAutoconfigPage2Search3" value="Ręczne wprowadzanie, pozwól mi samodzielnie wprowadzić ustawienia"/>
 		<lookup key="lblAutoconfigPage2MxLookup" value="Czasami serwer poczty figuruje w internetowej bazie danych pod inną nazwą, niż twój adres e-mail. Jeśli użyjemy wyszukiwania MX i następnie uruchomimy jeszcze raz wyszukiwanie bazy danych to mogą być znalezione wtedy  poprawne ustawienia."/>
-		<lookup key="lblAutoconfigPage2Guess" value="Użyj tej opcji tylko w ostateczności. Pozwoli to odnaleźć nazwę serwera poczty e-mail, poprzez probę połączenia się  bezpośrednio przez Internet. Na to jednak nie ma gwarancji sukcesu. Jeśli to się nie uda może trzeba będzie wprowadzić ustawienia ręcznie."/>
+		<lookup key="lblAutoconfigPage2Guess" value="Użyj tej opcji tylko w ostateczności. Pozwoli to odnaleźć nazwę serwera poczty e-mail, poprzez próbę połączenia się  bezpośrednio przez Internet. Na to jednak nie ma gwarancji sukcesu. Jeśli to się nie uda, może trzeba będzie wprowadzić ustawienia ręcznie."/>
 		<lookup key="lblAutoconfigPage3ServerMessage" value="Sprecyzuj, które ustawienia serwera powinny być użyte."/>
 		<lookup key="groupBoxOptions" value="Opcje"/>
 		<lookup key="radioAutoconfigPage3Select1" value="Pozwól aplikacji Wrapper zdecydować (domyślne)"/>
 		<lookup key="radioAutoconfigPage3Select2" value="Ręczne wprowadzanie, pokaż ustawienia, żebym mógł wybrać"/>
 		<lookup key="fbServerPreference" value="Preferencje:"/>
 		<lookup key="serverPreferenceNoPreference" value="Brak preferencji"/>
-		<lookup key="lblAutoconfigPage3WrapperDecidesMessage" value="To jest najbezpieczniejsza opcja dla większości użytkowników. Poleci ona aplikacji Wrapper wybrać najlepiej zabezpieczone serwery bazując na powyższych preferencjach. Jeśli nie ma ustawionych preferencji Wrapper wybierze serwery IMAP nad serwerami POP3."/>
+		<lookup key="lblAutoconfigPage3WrapperDecidesMessage" value="To jest najbezpieczniejsza opcja dla większości użytkowników. Poleci ona aplikacji Wrapper wybrać najlepiej zabezpieczone serwery bazując na powyższych preferencjach. Jeśli nie ma ustawionych preferencji, Wrapper wybierze serwery IMAP nad serwerami POP3."/>
 		<lookup key="lblAutoconfigPage3UserDecidesMessage" value="Użyj tej opcji jeśli chcesz kontrolować to, które automatycznie wykryte ustawienia powinny być użyte przez aplikację Wrapper."/>
 		<lookup key="ServerChoiceForm" value="Ręczne wprowadzanie"/>
-		<lookup key="groupBoxIncoming" value="Poczta wchodząca"/>
+		<lookup key="groupBoxIncoming" value="Poczta przychodząca"/>
 		<lookup key="groupBoxOutgoing" value="Poczta wychodząca"/>
 		<lookup key="lblServerChoiceCheckBoxServer" value="Serwer:"/>
 		<lookup key="lblServerChoiceCheckBoxPort" value="Port:"/>
