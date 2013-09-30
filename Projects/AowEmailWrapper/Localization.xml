@@ -374,6 +374,32 @@
 		<lookup key="AccountsCreationForm" value="Neues Konto erstellen"/>
 		<lookup key="buttonCreate" value="&amp;Erstellen"/>
 		<lookup key="accountOther" value="Andere"/>
+		<lookup key="lblThunderbirdTitle" value="Thunderbird Datenbank"/>
+		<lookup key="lblAutoconfigHeaderMessage" value="Autoconfig Assistent"/>
+		<lookup key="lblAutoconfigPage1WrapperMessage" value="Der Wrapper ist ein spezieller E-Mail Client und nutzt die gleichen Servereinstellungen, die Sie für Programme wie Outlook Express verwenden würden. Es verwendet eine online Datenbank um diese Einstellungen für Ihr E-Mail-Konto zu finden. Diese Datenbank wird von der Mozilla Foundation gepflegt, welche sie für ihren eigenen E-Mail-Client, Thunderbird genannt, nutzt. Sie halten diese Datenbank aktuell, was dem Wrapper Zukunftssicherheit garantiert und zudem eine exzellente Möglichkeit eröffnet, Ihre E-Mail-Einstellungen automatisch zu ermitteln."/>
+		<lookup key="lblAutoconfigPage1AuthMessage" value="Bitte geben Sie die Authentifizierungsdetails für Ihr E-Mail-Konto an."/>
+		<lookup key="lblAutoconfigPage2SearchMessage" value="Suche online nach Ihren E-Mail-Einstellungen..."/>
+		<lookup key="groupBoxResult" value="Ergebnis"/>
+		<lookup key="groupBoxNext" value="Weiter?"/>
+		<lookup key="radioAutoconfigPage2Search1" value="Versuche Mx Lookup"/>
+		<lookup key="radioAutoconfigPage2Search2" value="Versuche zu ermittlen"/>
+		<lookup key="radioAutoconfigPage2Search3" value="Manueller Eingriff, lassen Sie mich die Einstellungen selbst eingeben"/>
+		<lookup key="lblAutoconfigPage2MxLookup" value="Manchmal ist Ihr E-Mail-Server in der online Datenbank unter einem anderen Namen als der Ihrer E-Mail-Adresse eingetragen. Wenn wir einen Mx Lookup auf Ihre E-Mail-Adresse durchführen und dann die Datenbanksuche erneut durchführen, finden sich häufig die korrekten Einstellungen."/>
+		<lookup key="lblAutoconfigPage2Guess" value="Verwenden  Sie diese Option als letzten Ausweg. Dies wird den Namen Ihres E-Mail-Servers durch direkten Kontakt über das Internet ermitteln, allerdings nicht sicher ob es funktioniert. Wenn dies fehlschlägt müssen Sie die Einstellungen manuell eingeben."/>
+		<lookup key="lblAutoconfigPage3ServerMessage" value="Bitte geben Sie an welche Servereinstellungen verwendet werden sollen."/>
+		<lookup key="groupBoxOptions" value="Optionen"/>
+		<lookup key="radioAutoconfigPage3Select1" value="Lassen Sie den Wrapper entscheiden (Standard)"/>
+		<lookup key="radioAutoconfigPage3Select2" value="Manueller Eingriff, zeige mir die Einstellungen, so dass ich auswählen kann"/>
+		<lookup key="fbServerPreference" value="Priorität:"/>
+		<lookup key="serverPreferenceNoPreference" value="Keine priorität"/>
+		<lookup key="lblAutoconfigPage3WrapperDecidesMessage" value="Dies ist die sicherste Option für die meisten Benutzer. Es wird den Wrapper anweisen, die sichersten Server basierend auf der oben gewählten Priorität zu verwenden. Falls keine Priorität angegeben wurde, wird der Wrapper IMAP Servern POP3 Servern vorziehen."/>
+		<lookup key="lblAutoconfigPage3UserDecidesMessage" value="Verwenden Sie diese Option, wenn sie genaue Kontrolle über die automatisch ermittelten Einstellungen haben möchten, die der Wrapper nutzen soll."/>
+		<lookup key="ServerChoiceForm" value="Manueller Eingriff"/>
+		<lookup key="groupBoxIncoming" value="Eingehende E-Mail"/>
+		<lookup key="groupBoxOutgoing" value="Ausgehende E-Mail"/>
+		<lookup key="lblServerChoiceCheckBoxServer" value="Server:"/>
+		<lookup key="lblServerChoiceCheckBoxPort" value="Port:"/>
+		<lookup key="lblServerChoiceCheckBoxSocket" value="SSL Typ:"/>
 		<!-- END: Main forms -->
 		<!-- BEGIN: Messages -->
 		<lookup key="msgWrapperWriteAccess" value="Der Wrapper hat keinen Schreibzugriff auf diese Verzeichnisse:&#xA;{0}&#xA;&#xA; Bitte ändern Sie Ihre System Sicherheitseinstellungen oder starten Sie den Wrapper als Administrator."/>
@@ -391,6 +417,8 @@
 		<lookup key="msgWrapperGamesWaiting" value="Sie haben {0} Spiel(e) wartend."/>
 		<lookup key="msgInputEmailSettingsManual" value="Ich werde die Einstellungen manuell vornehmen."/>
 		<lookup key="msgWrapperResendTo" value="Erneut senden:"/>
+		<lookup key="msgAutoconfigPage2Success" value="Erfolgreich, die E-Mail-Einstellungen wurden gefunden. Klicken Sie weiter um fortzusetzen."/>
+		<lookup key="msgAutoconfigPage2Failed" value="Nicht erfolgreich, es konnten keine E-Mail-Einstellungen in der Datenbank gefunden werden. Bitte wählen Sie eine der untenstehenden Optionen."/>
 		<!-- END: Messages -->
 		<!-- BEGIN: Context Menus -->
 		<lookup key="menuItemShow" value="Anzeigen"/>
@@ -422,6 +450,10 @@
 		<!-- BEGIN: Misc -->
 		<lookup key="buttonCancel" value="Abbrechen"/>
 		<lookup key="buttonResend" value="Erneut senden"/>
+		<lookup key="cmdBack" value="&lt; Zurück"/>
+		<lookup key="cmdNext" value="Weiter &gt;"/>
+		<lookup key="cmdCancel" value="Abbruch"/>
+		<lookup key="cmdFinish" value="Beenden"/>
 		<lookup key="activeAccount" value="Aktiv"/>
 		<lookup key="startUpAccount" value="Default"/>
 		<!-- END: Misc -->
