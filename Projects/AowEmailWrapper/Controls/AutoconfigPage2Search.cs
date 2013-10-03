@@ -52,8 +52,6 @@ namespace AowEmailWrapper.Controls
 
         public void Reset()
         {
-            EnsureControlSequence();
-
             progressBar.Visible = true;
 
             groupBoxResult.Visible = false;
@@ -70,6 +68,8 @@ namespace AowEmailWrapper.Controls
             radioAutoconfigPage2Search3.Checked = false;
 
             radioAutoconfigPage2Search1.Checked = true;
+
+            EnsureControlSequence();
         }
 
         public void Success()
@@ -97,6 +97,8 @@ namespace AowEmailWrapper.Controls
             labelResultMessage.Text = Translator.Translate(AutoconfigPage2FailedKey);
             
             SetButtonFocus();
+
+            EnsureControlSequence();
         }
 
         private void SetButtonFocus()
@@ -145,8 +147,8 @@ namespace AowEmailWrapper.Controls
             this.SuspendLayout();
             lblAutoconfigPage2SearchMessage.BringToFront();
             progressBar.BringToFront();
-            groupBoxNext.BringToFront();
             groupBoxResult.BringToFront();
+            groupBoxNext.BringToFront();
             panelManual.BringToFront();
             this.ResumeLayout();
         }
