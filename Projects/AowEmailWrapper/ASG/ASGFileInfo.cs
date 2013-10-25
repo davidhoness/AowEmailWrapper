@@ -326,6 +326,8 @@ namespace AowEmailWrapper.ASG
         //       = "Midwinter (Dave, Fred, Rob) Upatch 1.asg"
         //This can cause the file saved to disk and the file name recorded for the email to differ.
         //This search pattern will compensate though.
+        //There is also a case of the above where a space can occur before the the . [solved by returnVal.Trim()]
+        //Example: "Midwinter (Dave, Fred, Rob)<space>.asg"
         public static string SafeSearchFileName(string fileName)
         {
             string returnVal = string.Empty;
@@ -337,7 +339,7 @@ namespace AowEmailWrapper.ASG
                 returnVal = fileNameTrim.Substring(0, firstDotIndex);
             }
 
-            return returnVal;
+            return returnVal.Trim();
         }
 
         public bool SaveToFolder(string folderPath)
